@@ -291,6 +291,25 @@
     .arch-row{gap:24px;}
   }
 
+  /* Brand story */
+  .brand-story{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .brand-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+  .brand-copy p{color:var(--muted);font-size:16px;line-height:1.7;}
+  .brand-tagline{margin-top:18px;font-size:19px;font-weight:800;color:var(--ink);font-style:italic;}
+  .q-meanings{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .q-item{
+    background:var(--white);border:1px solid var(--border);border-radius:14px;
+    padding:22px 18px;text-align:center;
+  }
+  .q-item .q-letter{
+    display:block;font-size:34px;font-weight:800;color:var(--teal);
+    font-family:'SF Mono',Consolas,monospace;margin-bottom:8px;
+  }
+  .q-item span:last-child{font-size:13.5px;font-weight:700;color:var(--ink);}
+  @media(max-width:860px){
+    .brand-grid{grid-template-columns:1fr;}
+  }
+
   /* Demo request form */
   .demo-section{background:var(--white);}
   .demo-form{max-width:640px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px;}
@@ -694,6 +713,28 @@
   </div>
 </section>
 
+<section class="brand-story" id="brand">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="brand_tag">About the name</span>
+      <h2 data-i18n="brand_title">Why "Quorelia"</h2>
+      <p data-i18n="brand_sub">A name built to travel — across languages, across asset types, across the next decade.</p>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-copy">
+        <p data-i18n="brand_body">Quorelia is built to sound as natural in Spanish as it does in English, and it doesn't lock the brand into solar alone — the same platform covers solar, wind, ESS, and whatever comes next. The Q carries the meaning: quality, intelligence, and the continuous stream of signal the platform never stops watching.</p>
+        <p class="brand-tagline" data-i18n="brand_tagline">Your energy. Always under watch.</p>
+      </div>
+      <div class="q-meanings">
+        <div class="q-item"><span class="q-letter">Q</span><span data-i18n="q1">Quality</span></div>
+        <div class="q-item"><span class="q-letter">Q</span><span data-i18n="q2">Intelligence</span></div>
+        <div class="q-item"><span class="q-letter">Q</span><span data-i18n="q3">Continuous monitoring</span></div>
+        <div class="q-item"><span class="q-letter">Q</span><span data-i18n="q4">Every energy signal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="cta-band">
     <h2 data-i18n="cta_title">Ready to stop building reports by hand?</h2>
@@ -853,6 +894,11 @@ const i18n = {
     w1:"Cuts report prep time from days to minutes", w2:"Consistent formatting across every client and site",
     w3:"Native English/Spanish output for global portfolios", w4:"Fewer errors from manual copy-paste reporting",
     w5:"Scales from a handful of sites to full fleets",
+    brand_tag:"About the name", brand_title:"Why \"Quorelia\"",
+    brand_sub:"A name built to travel — across languages, across asset types, across the next decade.",
+    brand_body:"Quorelia is built to sound as natural in Spanish as it does in English, and it doesn't lock the brand into solar alone — the same platform covers solar, wind, ESS, and whatever comes next. The Q carries the meaning: quality, intelligence, and the continuous stream of signal the platform never stops watching.",
+    brand_tagline:"Your energy. Always under watch.",
+    q1:"Quality", q2:"Intelligence", q3:"Continuous monitoring", q4:"Every energy signal",
     cta_title:"Ready to stop building reports by hand?", cta_body:"Show us your current O&M report and we'll show you how Quorelia automates it.", cta_btn:"Talk to us",
     cta_tagline:"When your plant never sleeps, neither does your monitoring.",
     foot_desc:"Automated O&M reporting for solar asset owners and operators — built for global, bilingual portfolios.",
@@ -931,6 +977,11 @@ const i18n = {
     w1:"Reduce el tiempo de preparación de reportes de días a minutos", w2:"Formato consistente en cada cliente y sitio",
     w3:"Salida nativa en inglés/español para portafolios globales", w4:"Menos errores por copiar y pegar manualmente",
     w5:"Escala desde unos pocos sitios hasta flotas completas",
+    brand_tag:"Sobre el nombre", brand_title:"Por qué \"Quorelia\"",
+    brand_sub:"Un nombre pensado para viajar — entre idiomas, entre tipos de activos, hacia la próxima década.",
+    brand_body:"Quorelia suena tan natural en español como en inglés, y no encasilla la marca solo en solar — la misma plataforma cubre solar, eólica, ESS y lo que venga después. La Q lleva el significado: calidad, inteligencia, y la señal continua que la plataforma nunca deja de vigilar.",
+    brand_tagline:"Tu energía. Siempre bajo vigilancia.",
+    q1:"Calidad", q2:"Inteligencia", q3:"Monitoreo continuo", q4:"Cada señal de energía",
     cta_title:"¿Listo para dejar de armar reportes a mano?", cta_body:"Muéstranos tu reporte actual de O&M y te mostramos cómo Quorelia lo automatiza.", cta_btn:"Hablemos",
     cta_tagline:"Cuando tu planta nunca duerme, tu monitoreo tampoco.",
     foot_desc:"Reportes de O&M automatizados para propietarios y operadores de activos solares — diseñado para portafolios globales y bilingües.",
