@@ -53,11 +53,19 @@
   }
   .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;}
   .nav-logo{height:48px;width:auto;object-fit:contain;display:block;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:0.3px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:0.3px;text-decoration:none;}
   .brand .mark{
     width:32px;height:32px;
     object-fit:contain;display:block;
   }
+  .brand-icon{height:38px;width:auto;display:block;}
+  .brand-word{
+    font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight:800;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--white);line-height:1;
+  }
+  footer .brand-icon{height:52px;}
+  footer .brand-word{font-size:24px;letter-spacing:3px;}
   nav.links{display:flex;gap:28px;align-items:center;font-size:15px;}
   nav.links a{opacity:0.85;transition:opacity .15s;}
   nav.links a:hover{opacity:1;}
@@ -389,7 +397,7 @@
 
 <header>
   <div class="container nav">
-    <div class="brand"><a href="/" aria-label="Quorelia — home"><img src="quorelia-logo-nav.png" alt="Quorelia" class="nav-logo"></a></div>
+    <a href="/" class="brand" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
     <nav class="links">
       <a href="#product" data-i18n="nav_product">Product</a>
       <a href="#samples" data-i18n="nav_samples">Samples</a>
@@ -796,7 +804,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="brand" style="margin-bottom:16px;"><a href="/" aria-label="Quorelia — home"><img src="quorelia-logo-nav.png" alt="Quorelia" class="nav-logo" style="height:64px;"></a></div>
+        <a href="/" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
         <p style="font-size:14px;color:#9fb0ba;max-width:280px;" data-i18n="foot_desc">Automated O&amp;M reporting for solar asset owners and operators — built for global, bilingual portfolios.</p>
       </div>
       <div>
