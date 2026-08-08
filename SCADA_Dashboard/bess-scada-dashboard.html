@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BESS SCADA — Planta 175</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0a1018;
+    --panel:#111a26;
+    --panel-2:#0d1520;
+    --border:#1e2a3a;
+    --border-hi:#2f6fed;
+    --text:#e6ebf2;
+    --muted:#7c8aa0;
+    --blue:#2f6fed;
+    --blue-soft:#1b3358;
+    --green:#22c55e;
+    --amber:#f5a623;
+    --red:#ef4444;
+    --purple:#a78bfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+    font-size:13px;
+  }
+  a{color:inherit;}
+
+  /* Top bar */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 20px;background:var(--panel-2);border-bottom:1px solid var(--border);
+  }
+  .topbar-left{display:flex;align-items:center;gap:18px;}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:.3px;}
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
+  .plant-select{
+    background:var(--panel);border:1px solid var(--border);color:var(--text);
+    padding:7px 12px;border-radius:6px;font-size:12.5px;
+  }
+  .tabs{display:flex;gap:2px;margin-left:10px;}
+  .tabs button{
+    background:transparent;border:none;color:var(--muted);padding:8px 14px;font-size:12.5px;
+    border-radius:6px;cursor:pointer;font-weight:600;
+  }
+  .tabs button.active{background:var(--blue-soft);color:#bcd2ff;}
+  .topbar-right{display:flex;align-items:center;gap:14px;}
+  .date-select{
+    background:var(--panel);border:1px solid var(--border);color:var(--text);
+    padding:7px 12px;border-radius:6px;font-size:12.5px;
+  }
+  .live-pill{
+    display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted);
+    border:1px solid var(--border);padding:6px 10px;border-radius:20px;
+  }
+  .live-pill .blip{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  /* Verdict banner */
+  .verdict{
+    margin:14px 20px 0;padding:14px 18px;border-radius:8px;display:flex;gap:14px;align-items:flex-start;
+    border:1px solid;
+  }
+  .verdict.retenido{background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.4);}
+  .verdict.aprobado{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.4);}
+  .verdict .badge{
+    flex:none;font-weight:800;font-size:11px;letter-spacing:.5px;padding:5px 10px;border-radius:5px;
+    text-transform:uppercase;
+  }
+  .verdict.retenido .badge{background:var(--amber);color:#3a2600;}
+  .verdict.aprobado .badge{background:var(--green);color:#052e12;}
+  .verdict .txt b{color:var(--text);}
+  .verdict .txt{color:#c7d0dd;line-height:1.55;font-size:12.5px;}
+
+  /* Layout grid */
+  .grid{display:grid;gap:12px;padding:14px 20px;grid-template-columns:repeat(12,1fr);}
+  .kpi-row{grid-column:span 12;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+
+  .panel{
+    background:var(--panel);border:1px solid var(--border);border-radius:8px;
+    overflow:hidden;
+  }
+  .panel-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 14px;border-bottom:1px solid var(--border);font-weight:700;font-size:12.5px;color:#c7d0dd;
+  }
+  .panel-head .sub{font-weight:500;color:var(--muted);font-size:11px;}
+  .panel-body{padding:14px;}
+
+  /* KPI cards */
+  .kpi{padding:14px;}
+  .kpi .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;}
+  .kpi .value{font-size:26px;font-weight:800;line-height:1;}
+  .kpi .value.green{color:var(--green);}
+  .kpi .value.amber{color:var(--amber);}
+  .kpi .value.red{color:var(--red);}
+  .kpi .value.blue{color:#bcd2ff;}
+  .kpi .meta{font-size:11px;color:var(--muted);margin-top:8px;}
+  .kpi .bar{height:5px;border-radius:3px;background:#1c2635;margin-top:10px;overflow:hidden;}
+  .kpi .bar-fill{height:100%;border-radius:3px;}
+
+  .col-8{grid-column:span 8;}
+  .col-4{grid-column:span 4;}
+  .col-6{grid-column:span 6;}
+  .col-12{grid-column:span 12;}
+  .col-7{grid-column:span 7;}
+  .col-5{grid-column:span 5;}
+
+  canvas{max-width:100%;}
+
+  /* Asset hierarchy */
+  .tree{display:flex;align-items:stretch;gap:0;overflow-x:auto;}
+  .tree .node{
+    flex:1;min-width:130px;background:var(--panel-2);border:1px solid var(--border);
+    border-radius:8px;padding:12px 14px;position:relative;margin-right:22px;
+  }
+  .tree .node:last-child{margin-right:0;}
+  .tree .node:not(:last-child)::after{
+    content:"›";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
+    color:var(--muted);font-size:18px;
+  }
+  .tree .node .n{font-size:20px;font-weight:800;color:#bcd2ff;}
+  .tree .node .l{font-size:11px;color:var(--muted);margin-top:3px;}
+  .tree .node .s{font-size:10px;color:#4a5568;margin-top:1px;}
+
+  /* Heatmap */
+  .heatmap{display:grid;grid-template-columns:70px repeat(16,1fr);gap:2px;font-size:9.5px;}
+  .heatmap .rowlabel{color:var(--muted);display:flex;align-items:center;padding-right:4px;justify-content:flex-end;}
+  .heatmap .collabel{color:var(--muted);text-align:center;padding-bottom:4px;}
+  .heatmap .cell{height:16px;border-radius:2px;}
+  .legend{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:10.5px;color:var(--muted);}
+  .legend .sw{width:26px;height:8px;border-radius:2px;}
+
+  /* Findings table */
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  thead th{
+    text-align:left;color:var(--muted);font-weight:600;font-size:10.5px;text-transform:uppercase;
+    letter-spacing:.3px;padding:8px 10px;border-bottom:1px solid var(--border);
+  }
+  tbody td{padding:9px 10px;border-bottom:1px solid #17202c;vertical-align:middle;}
+  tbody tr:hover{background:#0f1826;}
+  .prio{padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;}
+  .prio.urgente{background:rgba(239,68,68,.15);color:#ff8b8b;}
+  .prio.alta{background:rgba(245,166,35,.15);color:#ffc978;}
+  .prio.media{background:rgba(47,111,237,.15);color:#8fb3ff;}
+  .prio.baja{background:#1c2635;color:var(--muted);}
+  .owner{padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:600;}
+  .owner.operacion{background:rgba(47,111,237,.15);color:#8fb3ff;}
+  .owner.proyectapv{background:rgba(167,139,250,.15);color:#c9b8fc;}
+  .owner.cliente{background:rgba(245,166,35,.15);color:#ffc978;}
+  .estado{font-size:11px;font-weight:600;}
+  .estado.abierto{color:var(--amber);}
+  .estado.resuelto{color:var(--green);}
+  .estado.pendiente{color:var(--muted);}
+  .estado.informativo{color:#8fb3ff;}
+
+  /* Trazabilidad pipeline */
+  .pipeline{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+  .pipeline .stage{
+    background:var(--panel-2);border:1px solid var(--border);border-radius:6px;
+    padding:10px 14px;font-size:11px;font-weight:700;color:#c7d0dd;text-align:center;flex:1;min-width:110px;
+  }
+  .pipeline .stage .d{font-size:9.5px;font-weight:500;color:var(--muted);margin-top:3px;}
+  .pipeline .arrow{color:var(--muted);padding:0 8px;font-size:16px;}
+  .manifest{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;font-size:11px;
+  }
+  .manifest div{background:var(--panel-2);border:1px solid var(--border);border-radius:6px;padding:9px 12px;}
+  .manifest .k{color:var(--muted);font-size:10px;text-transform:uppercase;margin-bottom:3px;}
+  .manifest .v{color:var(--text);font-weight:600;font-family:'SF Mono',Consolas,monospace;font-size:11px;}
+
+  .impact-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .impact-strip .box{
+    background:var(--panel-2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;
+  }
+  .impact-strip .box .big{font-size:22px;font-weight:800;color:#bcd2ff;}
+  .impact-strip .box .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;}
+
+  .foot{padding:16px 20px 30px;color:#4a5568;font-size:11px;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo"><span class="dot"></span> BESS Control Room</div>
+    <select class="plant-select">
+      <option>Planta 175 — CATL / Grenergy</option>
+    </select>
+    <div class="tabs">
+      <button class="active">Resumen</button>
+      <button>Energía &amp; SOC</button>
+      <button>Celdas &amp; Racks</button>
+      <button>Alarmas</button>
+      <button>Hallazgos</button>
+      <button>Trazabilidad</button>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <select class="date-select" id="dateSelect">
+      <option value="today">2026-08-06 · informe diario</option>
+      <option value="good">2026-07-28 · corrida de referencia</option>
+    </select>
+    <div class="live-pill"><span class="blip"></span> Datos SCADA ProyectaPV</div>
+  </div>
+</div>
+
+<div class="verdict" id="verdictBanner"></div>
+
+<div class="grid">
+
+  <!-- KPI ROW -->
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <!-- Availability vs target -->
+  <div class="panel col-12">
+    <div class="panel-head">Disponibilidad contractual — objetivo 98% vs. real<span class="sub" id="availSub"></span></div>
+    <div class="panel-body"><canvas id="chartAvailability" height="70"></canvas></div>
+  </div>
+
+  <!-- Energy + SOC -->
+  <div class="panel col-7">
+    <div class="panel-head">Carga / Descarga — tendencia<span class="sub" id="energySub"></span></div>
+    <div class="panel-body"><canvas id="chartEnergy" height="110"></canvas></div>
+  </div>
+  <div class="panel col-5">
+    <div class="panel-head">SOC — inicio → fin del período</div>
+    <div class="panel-body"><canvas id="chartSOC" height="110"></canvas></div>
+  </div>
+
+  <!-- Variance / tendencia -->
+  <div class="panel col-7">
+    <div class="panel-head">Tendencia de descarga — 5 días hábiles<span class="sub">excluye días sin datos</span></div>
+    <div class="panel-body"><canvas id="chartTrend" height="105"></canvas></div>
+  </div>
+  <div class="panel col-5">
+    <div class="panel-head">Alarmas por familia<span class="sub" id="alarmSub"></span></div>
+    <div class="panel-body"><canvas id="chartAlarms" height="105"></canvas></div>
+  </div>
+
+  <!-- Alerts / dispatch callout -->
+  <div class="panel col-12">
+    <div class="panel-body" style="display:flex;align-items:center;gap:18px;">
+      <div style="flex:none;width:48px;height:48px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:22px;">🔔</div>
+      <div>
+        <div style="font-weight:800;font-size:13.5px;color:#e6ebf2;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
+        <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica por familia y severidad y se enruta a un dueño (Operación, ProyectaPV o Cliente). El sistema vigila continuamente; las personas se despachan solo cuando hay una alarma real que atender — no para observar una pantalla.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset hierarchy -->
+  <div class="panel col-12">
+    <div class="panel-head">Jerarquía de activos — cómo el modelo ve el parque<span class="sub">punto de medición: DC</span></div>
+    <div class="panel-body">
+      <div class="tree">
+        <div class="node"><div class="n">1</div><div class="l">Planta</div><div class="s">Planta 175</div></div>
+        <div class="node"><div class="n">37</div><div class="l">Estaciones</div><div class="s">2 unidades ESS c/u</div></div>
+        <div class="node"><div class="n">74</div><div class="l">Unidades ESS</div><div class="s">12 racks c/u</div></div>
+        <div class="node"><div class="n">888</div><div class="l">Racks físicos</div><div class="s">deduplicados de 1.776 (OPC-UA + ModBus)</div></div>
+        <div class="node"><div class="n">369.408</div><div class="l">Celdas de batería</div><div class="s">416 por rack · solo bajo excepción</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Heatmap dispersión -->
+  <div class="panel col-12">
+    <div class="panel-head">Dispersión entre celdas por unidad ESS — mV, por hora<span class="sub" id="heatmapSub"></span></div>
+    <div class="panel-body">
+      <div class="heatmap" id="heatmap"></div>
+      <div class="legend">
+        <span>0 mV</span><span class="sw" style="background:#1b3358"></span>
+        <span class="sw" style="background:#2f6fed"></span>
+        <span class="sw" style="background:#22c55e"></span>
+        <span class="sw" style="background:#f5a623"></span>
+        <span class="sw" style="background:#ef4444"></span><span>≥500 mV (umbral)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Findings -->
+  <div class="panel col-12">
+    <div class="panel-head">Hallazgos con dueño<span class="sub">acciones derivadas del informe, no solo indicadores</span></div>
+    <div class="panel-body" style="padding:0;">
+      <table>
+        <thead><tr><th style="width:80px;">Prioridad</th><th>Hallazgo</th><th style="width:110px;">Equipo</th><th style="width:120px;">Dueño</th><th style="width:100px;">Estado</th></tr></thead>
+        <tbody id="findingsBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Trazabilidad -->
+  <div class="panel col-12">
+    <div class="panel-head">Trazabilidad y verificación<span class="sub">tres verificaciones independientes, todas antes de publicar</span></div>
+    <div class="panel-body">
+      <div class="pipeline">
+        <div class="stage">SCADA<div class="d">ProyectaPV GRE-API</div></div>
+        <span class="arrow">→</span>
+        <div class="stage">Motor de KPI<div class="d">determinístico</div></div>
+        <span class="arrow">→</span>
+        <div class="stage">Cifras congeladas<div class="d">con procedencia</div></div>
+        <span class="arrow">→</span>
+        <div class="stage">Redacción IA<div class="d">solo prosa, no calcula</div></div>
+        <span class="arrow">→</span>
+        <div class="stage">Verificación<div class="d">compuerta: re-deriva y compara</div></div>
+        <span class="arrow">→</span>
+        <div class="stage">PDF / envío<div class="d">simulación por defecto</div></div>
+      </div>
+      <div class="manifest">
+        <div><div class="k">Motor</div><div class="v">v1.0.0</div></div>
+        <div><div class="k">Pruebas automatizadas</div><div class="v">670</div></div>
+        <div><div class="k">Cifras detenidas por la compuerta</div><div class="v">2 (202% RTE, 54.41% disp.)</div></div>
+        <div><div class="k">Zona horaria</div><div class="v">UTC</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impact strip -->
+  <div class="panel col-12">
+    <div class="panel-head">Impacto vs. proceso manual</div>
+    <div class="panel-body">
+      <div class="impact-strip">
+        <div class="box"><div class="big">2–3 h → ~2 min</div><div class="lbl">por día, sobre 888 racks</div></div>
+        <div class="box"><div class="big">500–750 h</div><div class="lbl">ahorradas por año (250 días hábiles)</div></div>
+        <div class="box"><div class="big">CLP 12–19M</div><div class="lbl">costo cargado equivalente evitado</div></div>
+        <div class="box"><div class="big">2</div><div class="lbl">cifras erróneas detenidas antes de publicarse</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="foot">Mockup de referencia — BESS Control Room · datos tomados del informe diario y la corrida de referencia de Planta 175 (CATL / Grenergy, SCADA ProyectaPV). No es una vista en producción.</div>
+
+<script>
+const DATA = {
+  today: {
+    label: "2026-08-06 (informe diario)",
+    verdict: "retenido",
+    verdictText: "Cobertura de datos: <b>54.8%</b> — por debajo del umbral de 90.0%. Los indicadores se calculan sobre el tiempo efectivamente observado; los veredictos contractuales que no alcanzan cobertura suficiente se informan como <b>retenidos</b>, no como incumplimiento.",
+    kpis: [
+      {label:"Disponibilidad contractual (GAA)", value:"98.757%", cls:"amber", meta:"meta 98.0% · veredicto retenido (cobertura insuficiente)", pct:98.8},
+      {label:"Disponibilidad operacional (diaria)", value:"93.44%", cls:"blue", meta:"hv_online_event_timeweighted · métrica interna", pct:93.4},
+      {label:"Cobertura de datos", value:"54.8%", cls:"red", meta:"umbral requerido: 90.0%", pct:54.8},
+      {label:"Racks con estado inicial conocido", value:"204 / 888", cls:"amber", meta:"481 transiciones de estado", pct:23},
+      {label:"Eventos de alarma", value:"34", cls:"amber", meta:"0 críticas de seguridad · 2 fire_safety en atención", pct:60},
+      {label:"Eficiencia round-trip", value:"no disp.", cls:"red", meta:"SOC no cerró ciclo (+9.07 pp)", pct:0},
+    ],
+    availDates:["07-24","07-25","07-26","07-27","07-28","07-29","07-30","07-31","08-01","08-02","08-03","08-04","08-05","08-06"],
+    availSeries:[99.05,99.41,98.92,99.12,99.297,99.02,98.61,98.14,97.86,98.33,98.9,99.05,98.9,98.757],
+    availTarget:98.0,
+    energy:{carga:1267.02, descarga:1108.88, series:[880,910,860,905,895,538.68,1108.88]},
+    soc:{inicial:71.17, final:80.23},
+    trendLabels:["Base 5d","T-4","T-3","T-2","T-1","Hoy"],
+    trendVals:[538.68,610,545,700,690,1108.88],
+    trendBands:{good:900,warn:600},
+    alarms:[{f:"access",n:12},{f:"tms",n:11},{f:"communication",n:7},{f:"fire_safety",n:3},{f:"power_supply",n:1}],
+    heatmapSub:"12 unidades de muestra · mediana del parque 202.0 mV, máxima 313.0 mV, 0 sobre umbral",
+    heatmapUnits:["ESS-01.01","ESS-01.02","ESS-03.01","ESS-05.02","ESS-08.01","ESS-08.02","ESS-11.01","ESS-11.02","ESS-19.01","ESS-22.02","ESS-30.01","ESS-34.02"],
+    heatmapFlag:[],
+    findings:[
+      {p:"urgente",t:"Fire system failure warning MBMU — 2 eventos",eq:"ESS-01.02",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
+      {p:"alta",t:"Fire system failure warning MBMU — 1 evento",eq:"ESS-11.01",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
+      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
+      {p:"alta",t:"Cobertura de datos bajo umbral (54.8% < 90%) — veredicto GAA retenido",eq:"Planta 175",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
+      {p:"media",t:"Eficiencia round-trip no publicable — ciclo abierto, SOC derivó +9.07 pp",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
+      {p:"media",t:"Guaranteed Unit Count no confirmado — supuesto 74 unidades (conservador)",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
+      {p:"baja",t:"4 ventanas de mantención confirmadas retroactivamente — requiere respaldo documental",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
+      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"resuelto"},
+      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"pendiente"},
+    ]
+  },
+  good: {
+    label: "2026-07-28 (corrida de referencia)",
+    verdict: "aprobado",
+    verdictText: "Cobertura de datos: <b>94.89%</b> (1.896 de 1.998 canales periódicos) — sobre el umbral de 90.0%. El veredicto contractual se informa como <b>aprobado</b>: 99.297% supera la meta de 98.0%.",
+    kpis: [
+      {label:"Disponibilidad contractual (GAA)", value:"99.297%", cls:"green", meta:"meta 98.0% · veredicto aprobado", pct:99.3},
+      {label:"Disponibilidad operacional (diaria)", value:"—", cls:"blue", meta:"no reportada en esta corrida", pct:0},
+      {label:"Cobertura de datos", value:"94.89%", cls:"green", meta:"1.896 / 1.998 canales periódicos", pct:94.9},
+      {label:"Racks con estado inicial conocido", value:"888 / 888", cls:"green", meta:"1.055 transiciones de estado", pct:100},
+      {label:"Eventos de alarma", value:"24", cls:"green", meta:"0 críticas", pct:35},
+      {label:"Eficiencia round-trip", value:"retenida", cls:"amber", meta:"no publicada en esta corrida", pct:0},
+    ],
+    availDates:["07-15","07-16","07-17","07-18","07-19","07-20","07-21","07-22","07-23","07-24","07-25","07-26","07-27","07-28"],
+    availSeries:[98.7,98.4,98.9,99.1,99.3,99.0,98.6,98.8,99.2,99.4,99.1,98.95,99.15,99.297],
+    availTarget:98.0,
+    energy:{carga:420.08, descarga:805.63, series:[610,640,700,690,780,538.68,805.63]},
+    soc:{inicial:50.32, final:21.50},
+    trendLabels:["Base 5d","T-4","T-3","T-2","T-1","Hoy"],
+    trendVals:[538.68,690,720,760,780,805.63],
+    trendBands:{good:900,warn:600},
+    alarms:[{f:"access",n:8},{f:"tms",n:6},{f:"communication",n:5},{f:"fire_safety",n:0},{f:"power_supply",n:5}],
+    heatmapSub:"12 unidades de muestra · mediana 122 mV, máxima 788 mV, 2 de 74 sobre umbral",
+    heatmapUnits:["ESS-01.01","ESS-01.02","ESS-03.01","ESS-05.02","ESS-08.01","ESS-08.02","ESS-11.01","ESS-11.02","ESS-19.01","ESS-22.02","ESS-30.01","ESS-34.02"],
+    heatmapFlag:["ESS-08.01","ESS-08.02"],
+    findings:[
+      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
+      {p:"alta",t:"92 de 288 muestras sobre 500 mV — dispersión sostenida, no un peak",eq:"ESS-08.01",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
+      {p:"media",t:"Eficiencia round-trip retenida en esta corrida",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
+      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"resuelto"},
+      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"pendiente"},
+    ]
+  }
+};
+
+let charts = {};
+
+function colorForMv(mv){
+  if(mv >= 500) return '#ef4444';
+  if(mv >= 350) return '#f5a623';
+  if(mv >= 200) return '#22c55e';
+  if(mv >= 80) return '#2f6fed';
+  return '#1b3358';
+}
+
+function render(key){
+  const d = DATA[key];
+
+  // Verdict banner
+  const vb = document.getElementById('verdictBanner');
+  vb.className = 'verdict ' + d.verdict;
+  vb.innerHTML = `<div class="badge">${d.verdict === 'retenido' ? 'Veredicto: Retenido' : 'Veredicto: Aprobado'}</div><div class="txt">${d.verdictText}</div>`;
+
+  // KPI row
+  const kr = document.getElementById('kpiRow');
+  kr.innerHTML = d.kpis.map(k => `
+    <div class="panel kpi">
+      <div class="label">${k.label}</div>
+      <div class="value ${k.cls}">${k.value}</div>
+      <div class="meta">${k.meta}</div>
+      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#22c55e':k.cls==='amber'?'#f5a623':k.cls==='red'?'#ef4444':'#2f6fed'}"></div></div>
+    </div>`).join('');
+
+  document.getElementById('energySub').textContent = `carga ${d.energy.carga} MWh · descarga ${d.energy.descarga} MWh`;
+  document.getElementById('alarmSub').textContent = `${d.alarms.reduce((a,b)=>a+b.n,0)} eventos totales`;
+  document.getElementById('heatmapSub').textContent = d.heatmapSub;
+  const lastAvail = d.availSeries[d.availSeries.length-1];
+  const daysAbove = d.availSeries.filter(v=>v>=d.availTarget).length;
+  document.getElementById('availSub').textContent = `hoy: ${lastAvail}% · ${daysAbove} de ${d.availSeries.length} días sobre el objetivo de ${d.availTarget}%`;
+
+  // Availability vs target chart
+  if(charts.avail) charts.avail.destroy();
+  charts.avail = new Chart(document.getElementById('chartAvailability'), {
+    data:{
+      labels:d.availDates,
+      datasets:[
+        {
+          type:'line', label:'Disponibilidad real (%)', data:d.availSeries,
+          borderColor:'#2f6fed', backgroundColor:'rgba(47,111,237,0.12)', fill:true,
+          tension:0.3, pointRadius:3,
+          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ef4444'),
+          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ef4444'),
+        },
+        {
+          type:'line', label:`Objetivo (${d.availTarget}%)`, data:d.availDates.map(()=>d.availTarget),
+          borderColor:'#f5a623', borderDash:[6,4], pointRadius:0, fill:false,
+        }
+      ]
+    },
+    options:{
+      plugins:{legend:{labels:{color:'#7c8aa0',font:{size:10}}}},
+      scales:{
+        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
+        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}, suggestedMin:96, suggestedMax:100,
+           title:{display:true,text:'% disponibilidad',color:'#7c8aa0',font:{size:10}}}
+      }
+    }
+  });
+
+  // Energy chart
+  if(charts.energy) charts.energy.destroy();
+  charts.energy = new Chart(document.getElementById('chartEnergy'), {
+    type:'bar',
+    data:{
+      labels:['D-6','D-5','D-4','D-3','D-2','D-1','Hoy'],
+      datasets:[
+        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#2f6fed', borderRadius:3},
+      ]
+    },
+    options:{
+      plugins:{legend:{labels:{color:'#7c8aa0',font:{size:10}}}},
+      scales:{
+        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
+        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}}
+      }
+    }
+  });
+
+  // SOC chart (gauge-like doughnut)
+  if(charts.soc) charts.soc.destroy();
+  charts.soc = new Chart(document.getElementById('chartSOC'), {
+    type:'doughnut',
+    data:{
+      labels:['SOC inicial','SOC final','Restante'],
+      datasets:[{
+        data:[d.soc.inicial, Math.max(d.soc.final-d.soc.inicial,0), 100-Math.max(d.soc.final,d.soc.inicial)],
+        backgroundColor:['#2f6fed','#22c55e','#1c2635'],
+        borderWidth:0
+      }]
+    },
+    options:{
+      cutout:'70%',
+      plugins:{legend:{position:'bottom',labels:{color:'#7c8aa0',font:{size:10},boxWidth:10}}}
+    }
+  });
+
+  // Trend chart
+  if(charts.trend) charts.trend.destroy();
+  charts.trend = new Chart(document.getElementById('chartTrend'), {
+    type:'bar',
+    data:{
+      labels:d.trendLabels,
+      datasets:[{
+        data:d.trendVals,
+        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#22c55e':v>=d.trendBands.warn?'#f5a623':'#ef4444'),
+        borderRadius:3
+      }]
+    },
+    options:{
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
+        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}, title:{display:true,text:'MWh',color:'#7c8aa0',font:{size:10}}}
+      }
+    }
+  });
+
+  // Alarms doughnut
+  if(charts.alarms) charts.alarms.destroy();
+  charts.alarms = new Chart(document.getElementById('chartAlarms'), {
+    type:'doughnut',
+    data:{
+      labels:d.alarms.map(a=>a.f),
+      datasets:[{
+        data:d.alarms.map(a=>a.n),
+        backgroundColor:['#2f6fed','#a78bfa','#22c55e','#ef4444','#f5a623'],
+        borderWidth:0
+      }]
+    },
+    options:{
+      plugins:{legend:{position:'bottom',labels:{color:'#7c8aa0',font:{size:10},boxWidth:10}}}
+    }
+  });
+
+  // Heatmap
+  const hours = ['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'];
+  let hm = '<div class="rowlabel"></div>' + hours.map(h=>`<div class="collabel">${h}</div>`).join('');
+  d.heatmapUnits.forEach(u => {
+    const flagged = d.heatmapFlag.includes(u);
+    hm += `<div class="rowlabel">${u}</div>`;
+    for(let i=0;i<16;i++){
+      let base = flagged ? 420 + Math.random()*300 : 60 + Math.random()*260;
+      if (base > 900) base = 900;
+      hm += `<div class="cell" style="background:${colorForMv(base)}" title="${u} ${hours[i]}: ${Math.round(base)} mV"></div>`;
+    }
+  });
+  document.getElementById('heatmap').innerHTML = hm;
+
+  // Findings
+  document.getElementById('findingsBody').innerHTML = d.findings.map(f => `
+    <tr>
+      <td><span class="prio ${f.p}">${f.p}</span></td>
+      <td>${f.t}</td>
+      <td>${f.eq}</td>
+      <td><span class="owner ${f.owner}">${f.ownerLabel}</span></td>
+      <td><span class="estado ${f.estado}">${f.estado}</span></td>
+    </tr>`).join('');
+}
+
+document.getElementById('dateSelect').addEventListener('change', e => render(e.target.value));
+render('today');
+</script>
+</body>
+</html>
