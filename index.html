@@ -278,6 +278,25 @@
     .arch-row{gap:24px;}
   }
 
+  /* Demo request form */
+  .demo-section{background:var(--white);}
+  .demo-form{max-width:640px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:36px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;
+    font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--white);
+    transition:border-color .15s;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--teal);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .demo-form button[type="submit"]{width:100%;border:none;font-size:15px;}
+  .form-status{margin-top:14px;font-size:14px;text-align:center;min-height:20px;}
+  .form-status.ok{color:#178a45;font-weight:600;}
+  .form-status.err{color:#c0392b;font-weight:600;}
+  @media(max-width:640px){.form-row{grid-template-columns:1fr;}}
+
   .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
   .split .panel{
     background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;
@@ -666,12 +685,60 @@
   <div class="cta-band">
     <h2 data-i18n="cta_title">Ready to stop building reports by hand?</h2>
     <p data-i18n="cta_body">Show us your current O&amp;M report and we'll show you how Quorelia automates it.</p>
-    <a href="mailto:jay@quorelia.org" class="btn btn-primary" data-i18n="cta_btn">Talk to us</a>
+    <a href="#contact" class="btn btn-primary" data-i18n="cta_btn">Talk to us</a>
     <p class="cta-tagline" data-i18n="cta_tagline">When your plant never sleeps, neither does your monitoring.</p>
   </div>
 </section>
 
-<footer id="contact">
+<section class="demo-section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="form_tag">Get a demo</span>
+      <h2 data-i18n="form_title">Tell us about your fleet</h2>
+      <p data-i18n="form_sub">Share a few details and we'll get back to you to schedule a demo.</p>
+    </div>
+    <form class="demo-form" id="demo-form">
+      <input type="hidden" name="access_key" value="083bb3bd-8039-4fd2-b31f-839e12845852">
+      <input type="hidden" name="subject" value="New demo request — Quorelia website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name" data-i18n="form_name">Name</label>
+          <input id="f-name" type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label for="f-country" data-i18n="form_country">Country</label>
+          <input id="f-country" type="text" name="country" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-institution" data-i18n="form_institution">Institution</label>
+          <input id="f-institution" type="text" name="institution" required>
+        </div>
+        <div class="field">
+          <label for="f-email" data-i18n="form_email">Email</label>
+          <input id="f-email" type="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-phone" data-i18n="form_phone">Phone number</label>
+          <input id="f-phone" type="tel" name="phone">
+        </div>
+        <div></div>
+      </div>
+      <div class="field">
+        <label for="f-details" data-i18n="form_details">Details — what are you interested in?</label>
+        <textarea id="f-details" name="details" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" data-i18n="form_submit">Send request</button>
+      <p class="form-status" id="demo-form-status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
   <div class="container">
     <div class="foot-grid">
       <div>
@@ -778,6 +845,11 @@ const i18n = {
     foot_desc:"Automated O&M reporting for solar asset owners and operators — built for global, bilingual portfolios.",
     foot_product:"Product", foot_company:"Company", foot_about:"About", foot_careers:"Careers", foot_legal:"Legal",
     foot_contact:"Contact", foot_support:"Support", foot_copy:"© 2026 Quorelia. All rights reserved.", foot_tag:"Solar O&M Intelligence",
+    form_tag:"Get a demo", form_title:"Tell us about your fleet", form_sub:"Share a few details and we'll get back to you to schedule a demo.",
+    form_name:"Name", form_country:"Country", form_institution:"Institution", form_email:"Email", form_phone:"Phone number",
+    form_details:"Details — what are you interested in?", form_submit:"Send request",
+    form_sending:"Sending…", form_success:"Thanks — we've received your request and will be in touch shortly.",
+    form_error:"Something went wrong. Please email jay@quorelia.org directly.",
     foot_confidentiality:"<b style=\"color:#c7d4dc;\">Confidentiality &amp; Data Security.</b> Quorelia is built to serve government agencies, utilities, and private institutions operating sensitive infrastructure. All plant, SCADA, and report data transmitted through Quorelia is treated as strictly confidential: access is limited to authorized personnel on a need-to-know basis, all data is encrypted in transit and at rest, and nothing is shared, sold, sublicensed, or repurposed beyond the contracted service under any circumstances. We execute formal NDAs and data processing agreements before any onboarding, retain client data only as long as the contract requires, and align our handling practices with applicable data protection and critical-infrastructure regulations in each client's jurisdiction.",
     foot_disclaimer:"\"Quorelia\" is a working name; content on this site is for planning purposes. quorelia.org is registered and in use. Complete a formal trademark clearance search (USPTO / EUIPO / WIPO Madrid + target countries) before broader commercial use."
   },
@@ -851,12 +923,19 @@ const i18n = {
     foot_desc:"Reportes de O&M automatizados para propietarios y operadores de activos solares — diseñado para portafolios globales y bilingües.",
     foot_product:"Producto", foot_company:"Empresa", foot_about:"Nosotros", foot_careers:"Empleo", foot_legal:"Legal",
     foot_contact:"Contacto", foot_support:"Soporte", foot_copy:"© 2026 Quorelia. Todos los derechos reservados.", foot_tag:"Inteligencia de O&M Solar",
+    form_tag:"Solicitar demo", form_title:"Cuéntanos sobre tu flota", form_sub:"Comparte algunos datos y nos pondremos en contacto para agendar una demo.",
+    form_name:"Nombre", form_country:"País", form_institution:"Institución", form_email:"Correo electrónico", form_phone:"Teléfono",
+    form_details:"Detalles — ¿qué te interesa?", form_submit:"Enviar solicitud",
+    form_sending:"Enviando…", form_success:"Gracias — hemos recibido tu solicitud y te contactaremos pronto.",
+    form_error:"Algo salió mal. Por favor escribe directamente a jay@quorelia.org.",
     foot_confidentiality:"<b style=\"color:#c7d4dc;\">Confidencialidad y Seguridad de Datos.</b> Quorelia está diseñado para servir a agencias gubernamentales, empresas de servicios públicos e instituciones privadas que operan infraestructura sensible. Todos los datos de planta, SCADA y reportes transmitidos a través de Quorelia se tratan como estrictamente confidenciales: el acceso está limitado a personal autorizado según necesidad de conocimiento, todos los datos se cifran en tránsito y en reposo, y nada se comparte, vende, sublicencia o reutiliza más allá del servicio contratado bajo ninguna circunstancia. Firmamos acuerdos de confidencialidad (NDA) y de procesamiento de datos formales antes de cualquier incorporación, retenemos los datos del cliente solo durante el tiempo que exige el contrato, y alineamos nuestras prácticas de manejo con las regulaciones de protección de datos e infraestructura crítica aplicables en la jurisdicción de cada cliente.",
     foot_disclaimer:"\"Quorelia\" es un nombre de trabajo; el contenido de este sitio es para fines de planificación. quorelia.org está registrado y en uso. Realiza una búsqueda formal de disponibilidad de marca (USPTO / EUIPO / WIPO Madrid + países objetivo) antes de un uso comercial más amplio."
   }
 };
 
+let currentLang = 'en';
 function setLang(lang){
+  currentLang = lang;
   document.getElementById('html-root').setAttribute('lang', lang);
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
   document.getElementById('btn-es').classList.toggle('active', lang==='es');
@@ -866,6 +945,40 @@ function setLang(lang){
   });
 }
 setLang('en');
+
+const demoForm = document.getElementById('demo-form');
+const demoStatus = document.getElementById('demo-form-status');
+if(demoForm){
+  demoForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    demoStatus.className = 'form-status';
+    demoStatus.textContent = i18n[currentLang].form_sending;
+    const submitBtn = demoForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    const formData = new FormData(demoForm);
+    try{
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method:'POST',
+        headers:{ 'Accept':'application/json' },
+        body: formData
+      });
+      const data = await res.json();
+      if(data.success){
+        demoStatus.textContent = i18n[currentLang].form_success;
+        demoStatus.className = 'form-status ok';
+        demoForm.reset();
+      } else {
+        demoStatus.textContent = i18n[currentLang].form_error;
+        demoStatus.className = 'form-status err';
+      }
+    } catch(err){
+      demoStatus.textContent = i18n[currentLang].form_error;
+      demoStatus.className = 'form-status err';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
 </script>
 </body>
 </html>
