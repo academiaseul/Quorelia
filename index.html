@@ -38,19 +38,12 @@
     color:var(--white);
     border-bottom:1px solid rgba(255,255,255,0.08);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;}
+  .nav-logo{height:48px;width:auto;object-fit:contain;display:block;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:0.3px;}
   .brand .mark{
-    position:relative;
-    width:32px;height:32px;border-radius:50%;
-    background:radial-gradient(circle at 34% 30%, var(--teal), var(--teal-dark) 72%);
-    display:flex;align-items:center;justify-content:center;
-    font-size:15px;font-weight:800;color:var(--navy);
-    box-shadow:0 0 0 3px rgba(31,182,168,0.15);
-  }
-  .brand .mark::after{
-    content:'';position:absolute;top:-2px;right:-2px;width:8px;height:8px;border-radius:50%;
-    background:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,0.22);
+    width:32px;height:32px;
+    object-fit:contain;display:block;
   }
   nav.links{display:flex;gap:28px;align-items:center;font-size:15px;}
   nav.links a{opacity:0.85;transition:opacity .15s;}
@@ -251,6 +244,40 @@
   .step h4{font-size:16px;font-weight:700;margin-bottom:8px;}
   .step p{font-size:14px;color:#b9c9d1;}
 
+  /* Architecture */
+  .architecture{background:#0A0D0F;color:#E6EDF0;}
+  .architecture .section-head p{color:#9AAAB3;}
+  .architecture .tag{color:#00CFC0;}
+  .arch-panel{
+    background:#12171A;border:1px solid #1E262B;border-radius:16px;
+    padding:40px 24px;margin-top:32px;
+  }
+  .arch-flow{display:flex;flex-direction:column;align-items:center;font-family:'SF Mono',Consolas,monospace;}
+  .arch-node{
+    background:#161C20;border:1px solid #2A353B;border-radius:8px;
+    padding:12px 20px;font-size:13px;font-weight:600;letter-spacing:.02em;
+    color:#E6EDF0;text-align:center;white-space:nowrap;
+  }
+  .arch-node.accent{border-color:rgba(0,207,192,0.45);color:#00CFC0;}
+  .arch-line{width:1px;height:22px;background:#2A353B;}
+  .arch-row{display:flex;align-items:flex-start;gap:64px;}
+  .arch-branch{display:flex;flex-direction:column;align-items:center;}
+  .arch-connector{position:relative;width:100%;max-width:340px;height:22px;}
+  .arch-connector::before{
+    content:'';position:absolute;top:0;left:calc(25% - 0.5px);right:calc(25% - 0.5px);height:1px;background:#2A353B;
+  }
+  .arch-connector .arch-line{position:absolute;top:0;left:25%;}
+  .arch-connector .arch-line.right{left:75%;}
+  .arch-note{
+    margin-top:28px;font-size:13px;color:#9AAAB3;text-align:center;max-width:520px;
+    line-height:1.6;
+  }
+  .arch-note b{color:#E6EDF0;}
+  @media(max-width:640px){
+    .arch-node{white-space:normal;font-size:12px;padding:10px 14px;}
+    .arch-row{gap:24px;}
+  }
+
   .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
   .split .panel{
     background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;
@@ -311,7 +338,7 @@
 
 <header>
   <div class="container nav">
-    <div class="brand"><span class="mark">Q</span><span>Quorelia</span></div>
+    <div class="brand"><img src="quorelia-logo-nav.png" alt="Quorelia" class="nav-logo"></div>
     <nav class="links">
       <a href="#product" data-i18n="nav_product">Product</a>
       <a href="#samples" data-i18n="nav_samples">Samples</a>
@@ -575,6 +602,47 @@
   </div>
 </section>
 
+<section class="architecture" id="architecture">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="arch_tag">Architecture</span>
+      <h2 style="color:#fff;" data-i18n="arch_title">The architecture is simple, by design</h2>
+      <p data-i18n="arch_sub">Every stage is separable and auditable — data flows one direction, validation happens twice, and nothing publishes without a match.</p>
+    </div>
+    <div class="arch-panel">
+      <div class="arch-flow">
+        <div class="arch-node" data-i18n="arch_n1">SCADA / Plant Data</div>
+        <div class="arch-line"></div>
+        <div class="arch-node accent" data-i18n="arch_n2">QUORELIA INGESTION</div>
+        <div class="arch-line"></div>
+        <div class="arch-node" data-i18n="arch_n3">Data Validation</div>
+        <div class="arch-connector"><div class="arch-line"></div><div class="arch-line right"></div></div>
+        <div class="arch-row">
+          <div class="arch-branch"><div class="arch-node" data-i18n="arch_n4">KPI Calculation</div></div>
+          <div class="arch-branch"><div class="arch-node" data-i18n="arch_n5">Data Quality Engine</div></div>
+        </div>
+        <div class="arch-connector"><div class="arch-line"></div><div class="arch-line right"></div></div>
+        <div class="arch-line"></div>
+        <div class="arch-node accent" data-i18n="arch_n6">Verification Engine</div>
+        <div class="arch-connector"><div class="arch-line"></div><div class="arch-line right"></div></div>
+        <div class="arch-row">
+          <div class="arch-branch">
+            <div class="arch-node" data-i18n="arch_n7">Dashboard</div>
+            <div class="arch-line"></div>
+            <div class="arch-node" data-i18n="arch_n8">Client Portal</div>
+          </div>
+          <div class="arch-branch">
+            <div class="arch-node" data-i18n="arch_n9">Reporting</div>
+            <div class="arch-line"></div>
+            <div class="arch-node" data-i18n="arch_n10">PDF / Excel / Email</div>
+          </div>
+        </div>
+      </div>
+      <p class="arch-note" data-i18n="arch_note">Raw data, calculated results, and provenance are all stored together — so every number on every report can be traced back and explained.</p>
+    </div>
+  </div>
+</section>
+
 <section id="why">
   <div class="container split">
     <div>
@@ -598,7 +666,7 @@
   <div class="cta-band">
     <h2 data-i18n="cta_title">Ready to stop building reports by hand?</h2>
     <p data-i18n="cta_body">Show us your current O&amp;M report and we'll show you how Quorelia automates it.</p>
-    <a href="mailto:hello@quorelia.io" class="btn btn-primary" data-i18n="cta_btn">Talk to us</a>
+    <a href="mailto:jay@quorelia.org" class="btn btn-primary" data-i18n="cta_btn">Talk to us</a>
     <p class="cta-tagline" data-i18n="cta_tagline">When your plant never sleeps, neither does your monitoring.</p>
   </div>
 </section>
@@ -607,7 +675,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="brand" style="color:#fff;margin-bottom:12px;"><span class="mark">Q</span><span>Quorelia</span></div>
+        <div class="brand" style="color:#fff;margin-bottom:12px;"><img src="quorelia-symbol-color.png" alt="Quorelia" class="mark"><span>Quorelia</span></div>
         <p style="font-size:14px;color:#9fb0ba;max-width:280px;" data-i18n="foot_desc">Automated O&amp;M reporting for solar asset owners and operators — built for global, bilingual portfolios.</p>
       </div>
       <div>
@@ -625,7 +693,7 @@
       </div>
       <div>
         <h5 data-i18n="foot_contact">Contact</h5>
-        <a href="mailto:hello@quorelia.io">hello@quorelia.io</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
         <a href="#" data-i18n="foot_support">Support</a>
       </div>
     </div>
@@ -633,7 +701,8 @@
       <span data-i18n="foot_copy">© 2026 Quorelia. All rights reserved.</span>
       <span data-i18n="foot_tag">Solar O&amp;M Intelligence</span>
     </div>
-    <p class="disclaimer" data-i18n="foot_disclaimer">"Quorelia" is a proposed working name and placeholder content for planning purposes. quorelia.com is already registered by a third party; materials here assume an alternate domain (quorelia.io). Confirm domain availability and complete a formal trademark clearance search (USPTO / EUIPO / WIPO Madrid + target countries) before commercial use.</p>
+    <p class="disclaimer" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);" data-i18n="foot_confidentiality"><b style="color:#c7d4dc;">Confidentiality &amp; Data Security.</b> Quorelia is built to serve government agencies, utilities, and private institutions operating sensitive infrastructure. All plant, SCADA, and report data transmitted through Quorelia is treated as strictly confidential: access is limited to authorized personnel on a need-to-know basis, all data is encrypted in transit and at rest, and nothing is shared, sold, sublicensed, or repurposed beyond the contracted service under any circumstances. We execute formal NDAs and data processing agreements before any onboarding, retain client data only as long as the contract requires, and align our handling practices with applicable data protection and critical-infrastructure regulations in each client's jurisdiction.</p>
+    <p class="disclaimer" data-i18n="foot_disclaimer">"Quorelia" is a working name; content on this site is for planning purposes. quorelia.org is registered and in use. Complete a formal trademark clearance search (USPTO / EUIPO / WIPO Madrid + target countries) before broader commercial use.</p>
   </div>
 </footer>
 
@@ -693,6 +762,12 @@ const i18n = {
     s2_title:"Normalize", s2_body:"Quorelia cleans and structures the data across every site and vendor.",
     s3_title:"Generate", s3_body:"Reports build automatically on your schedule — daily, weekly, monthly.",
     s4_title:"Deliver", s4_body:"Clients get a branded portal or PDF, in their preferred language.",
+    arch_tag:"Architecture", arch_title:"The architecture is simple, by design",
+    arch_sub:"Every stage is separable and auditable — data flows one direction, validation happens twice, and nothing publishes without a match.",
+    arch_n1:"SCADA / Plant Data", arch_n2:"QUORELIA INGESTION", arch_n3:"Data Validation",
+    arch_n4:"KPI Calculation", arch_n5:"Data Quality Engine", arch_n6:"Verification Engine",
+    arch_n7:"Dashboard", arch_n8:"Client Portal", arch_n9:"Reporting", arch_n10:"PDF / Excel / Email",
+    arch_note:"Raw data, calculated results, and provenance are all stored together — so every number on every report can be traced back and explained.",
     why_tag:"Why Quorelia", why_title:"Built for teams tired of building reports by hand",
     why_body:"O&M teams lose hours every week exporting spreadsheets and formatting client decks. Quorelia replaces that with a system that runs itself, so your team spends time on the plants, not the paperwork.",
     w1:"Cuts report prep time from days to minutes", w2:"Consistent formatting across every client and site",
@@ -703,7 +778,8 @@ const i18n = {
     foot_desc:"Automated O&M reporting for solar asset owners and operators — built for global, bilingual portfolios.",
     foot_product:"Product", foot_company:"Company", foot_about:"About", foot_careers:"Careers", foot_legal:"Legal",
     foot_contact:"Contact", foot_support:"Support", foot_copy:"© 2026 Quorelia. All rights reserved.", foot_tag:"Solar O&M Intelligence",
-    foot_disclaimer:"\"Quorelia\" is a proposed working name and placeholder content for planning purposes. quorelia.com is already registered by a third party; materials here assume an alternate domain (quorelia.io). Confirm domain availability and complete a formal trademark clearance search (USPTO / EUIPO / WIPO Madrid + target countries) before commercial use."
+    foot_confidentiality:"<b style=\"color:#c7d4dc;\">Confidentiality &amp; Data Security.</b> Quorelia is built to serve government agencies, utilities, and private institutions operating sensitive infrastructure. All plant, SCADA, and report data transmitted through Quorelia is treated as strictly confidential: access is limited to authorized personnel on a need-to-know basis, all data is encrypted in transit and at rest, and nothing is shared, sold, sublicensed, or repurposed beyond the contracted service under any circumstances. We execute formal NDAs and data processing agreements before any onboarding, retain client data only as long as the contract requires, and align our handling practices with applicable data protection and critical-infrastructure regulations in each client's jurisdiction.",
+    foot_disclaimer:"\"Quorelia\" is a working name; content on this site is for planning purposes. quorelia.org is registered and in use. Complete a formal trademark clearance search (USPTO / EUIPO / WIPO Madrid + target countries) before broader commercial use."
   },
   es: {
     nav_product:"Producto", nav_samples:"Ejemplos", nav_how:"Cómo funciona", nav_why:"Por qué Quorelia", nav_contact:"Contacto", nav_cta:"Solicitar demo",
@@ -759,6 +835,12 @@ const i18n = {
     s2_title:"Normalizar", s2_body:"Quorelia limpia y estructura los datos de cada sitio y proveedor.",
     s3_title:"Generar", s3_body:"Los reportes se construyen automáticamente según tu calendario — diario, semanal, mensual.",
     s4_title:"Entregar", s4_body:"Los clientes reciben un portal o PDF con marca propia, en su idioma preferido.",
+    arch_tag:"Arquitectura", arch_title:"La arquitectura es simple, por diseño",
+    arch_sub:"Cada etapa es independiente y auditable — los datos fluyen en una sola dirección, la validación ocurre dos veces, y nada se publica sin una coincidencia.",
+    arch_n1:"SCADA / Datos de planta", arch_n2:"INGESTA QUORELIA", arch_n3:"Validación de datos",
+    arch_n4:"Cálculo de KPI", arch_n5:"Motor de calidad de datos", arch_n6:"Motor de verificación",
+    arch_n7:"Dashboard", arch_n8:"Portal de cliente", arch_n9:"Reportes", arch_n10:"PDF / Excel / Correo",
+    arch_note:"Los datos crudos, los resultados calculados y la procedencia se almacenan juntos — para que cada cifra de cada reporte pueda rastrearse y explicarse.",
     why_tag:"Por qué Quorelia", why_title:"Diseñado para equipos cansados de armar reportes a mano",
     why_body:"Los equipos de O&M pierden horas cada semana exportando hojas de cálculo y formateando presentaciones para clientes. Quorelia lo reemplaza con un sistema que se ejecuta solo, para que tu equipo dedique tiempo a las plantas, no al papeleo.",
     w1:"Reduce el tiempo de preparación de reportes de días a minutos", w2:"Formato consistente en cada cliente y sitio",
@@ -769,7 +851,8 @@ const i18n = {
     foot_desc:"Reportes de O&M automatizados para propietarios y operadores de activos solares — diseñado para portafolios globales y bilingües.",
     foot_product:"Producto", foot_company:"Empresa", foot_about:"Nosotros", foot_careers:"Empleo", foot_legal:"Legal",
     foot_contact:"Contacto", foot_support:"Soporte", foot_copy:"© 2026 Quorelia. Todos los derechos reservados.", foot_tag:"Inteligencia de O&M Solar",
-    foot_disclaimer:"\"Quorelia\" es un nombre de trabajo propuesto y contenido de referencia para fines de planificación. quorelia.com ya está registrado por un tercero; los materiales aquí asumen un dominio alternativo (quorelia.io). Confirma la disponibilidad del dominio y realiza una búsqueda formal de disponibilidad de marca (USPTO / EUIPO / WIPO Madrid + países objetivo) antes de su uso comercial."
+    foot_confidentiality:"<b style=\"color:#c7d4dc;\">Confidencialidad y Seguridad de Datos.</b> Quorelia está diseñado para servir a agencias gubernamentales, empresas de servicios públicos e instituciones privadas que operan infraestructura sensible. Todos los datos de planta, SCADA y reportes transmitidos a través de Quorelia se tratan como estrictamente confidenciales: el acceso está limitado a personal autorizado según necesidad de conocimiento, todos los datos se cifran en tránsito y en reposo, y nada se comparte, vende, sublicencia o reutiliza más allá del servicio contratado bajo ninguna circunstancia. Firmamos acuerdos de confidencialidad (NDA) y de procesamiento de datos formales antes de cualquier incorporación, retenemos los datos del cliente solo durante el tiempo que exige el contrato, y alineamos nuestras prácticas de manejo con las regulaciones de protección de datos e infraestructura crítica aplicables en la jurisdicción de cada cliente.",
+    foot_disclaimer:"\"Quorelia\" es un nombre de trabajo; el contenido de este sitio es para fines de planificación. quorelia.org está registrado y en uso. Realiza una búsqueda formal de disponibilidad de marca (USPTO / EUIPO / WIPO Madrid + países objetivo) antes de un uso comercial más amplio."
   }
 };
 
