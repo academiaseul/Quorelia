@@ -22,6 +22,7 @@
     --purple:#a78bfa;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{overflow-x:hidden;}
   body{
     background:var(--bg);
     color:var(--text);
@@ -32,23 +33,24 @@
 
   /* Top bar */
   .topbar{
-    display:flex;align-items:center;justify-content:space-between;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 0;
     padding:10px 20px;background:var(--panel-2);border-bottom:1px solid var(--border);
   }
-  .topbar-left{display:flex;align-items:center;gap:18px;}
-  .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:.3px;}
+  .topbar-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;row-gap:8px;}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:.3px;flex:none;white-space:nowrap;}
   .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
   .plant-select{
     background:var(--panel);border:1px solid var(--border);color:var(--text);
-    padding:7px 12px;border-radius:6px;font-size:12.5px;
+    padding:7px 10px;border-radius:6px;font-size:12px;flex:none;max-width:190px;
   }
-  .tabs{display:flex;gap:2px;margin-left:10px;}
+  .tabs{display:flex;gap:2px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
   .tabs button{
-    background:transparent;border:none;color:var(--muted);padding:8px 14px;font-size:12.5px;
-    border-radius:6px;cursor:pointer;font-weight:600;
+    background:transparent;border:none;color:var(--muted);padding:8px 12px;font-size:12px;
+    border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap;flex:none;
   }
   .tabs button.active{background:var(--blue-soft);color:#a1d8e6;}
-  .topbar-right{display:flex;align-items:center;gap:14px;}
+  .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   .date-select{
     background:var(--panel);border:1px solid var(--border);color:var(--text);
     padding:7px 12px;border-radius:6px;font-size:12.5px;
@@ -78,7 +80,7 @@
 
   /* Layout grid */
   .grid{display:grid;gap:12px;padding:14px 20px;grid-template-columns:repeat(12,1fr);}
-  .kpi-row{grid-column:span 12;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  .kpi-row{grid-column:span 12;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
 
   .panel{
     background:var(--panel);border:1px solid var(--border);border-radius:8px;
@@ -128,7 +130,8 @@
   .tree .node .s{font-size:10px;color:#78716c;margin-top:1px;}
 
   /* Heatmap */
-  .heatmap{display:grid;grid-template-columns:70px repeat(16,1fr);gap:2px;font-size:9.5px;}
+  .heatmap-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .heatmap{display:grid;grid-template-columns:70px repeat(16,minmax(34px,1fr));gap:2px;font-size:9.5px;min-width:680px;}
   .heatmap .rowlabel{color:var(--muted);display:flex;align-items:center;padding-right:4px;justify-content:flex-end;}
   .heatmap .collabel{color:var(--muted);text-align:center;padding-bottom:4px;}
   .heatmap .cell{height:16px;border-radius:2px;}
@@ -167,13 +170,13 @@
   .pipeline .stage .d{font-size:9.5px;font-weight:500;color:var(--muted);margin-top:3px;}
   .pipeline .arrow{color:var(--muted);padding:0 8px;font-size:16px;}
   .manifest{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;font-size:11px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:14px;font-size:11px;
   }
   .manifest div{background:var(--panel-2);border:1px solid var(--border);border-radius:6px;padding:9px 12px;}
   .manifest .k{color:var(--muted);font-size:10px;text-transform:uppercase;margin-bottom:3px;}
   .manifest .v{color:var(--text);font-weight:600;font-family:'SF Mono',Consolas,monospace;font-size:11px;}
 
-  .impact-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .impact-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
   .impact-strip .box{
     background:var(--panel-2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;
   }
@@ -277,7 +280,7 @@
   <div class="panel col-12">
     <div class="panel-head">Dispersión entre celdas por unidad ESS — mV, por hora<span class="sub" id="heatmapSub"></span></div>
     <div class="panel-body">
-      <div class="heatmap" id="heatmap"></div>
+      <div class="heatmap-scroll"><div class="heatmap" id="heatmap"></div></div>
       <div class="legend">
         <span>0 mV</span><span class="sw" style="background:rgba(0,182,212,0.16)"></span>
         <span class="sw" style="background:#00b6d4"></span>

@@ -89,9 +89,9 @@
   a{color:inherit;text-decoration:none;}
   .container{max-width:1140px;margin:0 auto;padding:0 24px;}
 
-  /* Header */
+  /* Header — fixed head block (nav + observation trace) */
+  .site-head{position:sticky;top:0;z-index:50;}
   header{
-    position:sticky;top:0;z-index:50;
     background:var(--navy);
     color:var(--white);
     border-bottom:0.8px solid rgba(255,255,255,0.08);
@@ -700,37 +700,39 @@
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="/" class="brand" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
-    <nav class="links">
-      <a href="#product" data-i18n="nav_product">Product</a>
-      <a href="#samples" data-i18n="nav_samples">Samples</a>
-      <a href="#how" data-i18n="nav_how">How it works</a>
-      <a href="#why" data-i18n="nav_why">Why Quorelia</a>
-      <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <div class="lang-toggle">
-        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
-        <button id="btn-es" onclick="setLang('es')">ES</button>
+<div class="site-head">
+  <header>
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
+      <nav class="links">
+        <a href="#product" data-i18n="nav_product">Product</a>
+        <a href="#samples" data-i18n="nav_samples">Samples</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
+        <a href="#why" data-i18n="nav_why">Why Quorelia</a>
+        <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button id="btn-es" onclick="setLang('es')">ES</button>
+        </div>
+        <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">Get a demo</a>
       </div>
-      <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">Get a demo</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="obs-trace" aria-hidden="true">
-  <div class="container">
-    <div class="obs-bars" id="obs-bars"></div>
-    <div class="obs-meta">
-      <span class="obs-caption" data-i18n="obs_caption">Observation trace · last 24h</span>
-      <span class="obs-legend">
-        <span><i class="ob-dot ob-nom"></i><span data-i18n="obs_nominal">Nominal</span></span>
-        <span><i class="ob-dot ob-warn"></i><span data-i18n="obs_warning">Warning</span></span>
-        <span><i class="ob-dot ob-unobs"></i><span data-i18n="obs_unobserved">Not observed</span></span>
-      </span>
+  <div class="obs-trace" aria-hidden="true">
+    <div class="container">
+      <div class="obs-bars" id="obs-bars"></div>
+      <div class="obs-meta">
+        <span class="obs-caption" data-i18n="obs_caption">Observation trace · last 24h</span>
+        <span class="obs-legend">
+          <span><i class="ob-dot ob-nom"></i><span data-i18n="obs_nominal">Nominal</span></span>
+          <span><i class="ob-dot ob-warn"></i><span data-i18n="obs_warning">Warning</span></span>
+          <span><i class="ob-dot ob-unobs"></i><span data-i18n="obs_unobserved">Not observed</span></span>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -863,6 +865,13 @@
       <div>
         <h3 data-i18n="alert_title">Alerts do the watching, so people don't have to</h3>
         <p data-i18n="alert_body">Quorelia raises automatic alerts the moment something needs attention — an inverter fault, a comms drop, a threshold breach — and routes them to the right owner. Your team gets dispatched to do the actual maintenance instead of staring at a screen 24/7/365.</p>
+      </div>
+    </div>
+    <div class="alert-callout" style="margin-top:16px;background:linear-gradient(135deg,rgba(245,166,35,0.08),rgba(31,182,168,0.06));border-color:rgba(245,166,35,0.25);">
+      <div class="ac-icon" style="background:var(--teal-dark);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg></div>
+      <div>
+        <h3 data-i18n="maint_title">An AI maintenance agent, not just an alarm</h3>
+        <p data-i18n="maint_body">Every alert carries a recommended preventive or corrective action, so your team acts before a contractual availability or SOC target is at risk — not after it's already missed. Quorelia optimizes the maintenance workflow for both sides: less wasted time for your personnel in the field, and contractual percentages you can defend at close.</p>
       </div>
     </div>
   </div>
@@ -1257,6 +1266,8 @@ const i18n = {
     f6_title:"Works with your data sources", f6_body:"Integrates with common SCADA, inverter, and BESS/BMS monitoring platforms — solar or battery storage — so you keep your existing backend.",
     alert_title:"Alerts do the watching, so people don't have to",
     alert_body:"Quorelia raises automatic alerts the moment something needs attention — an inverter fault, a comms drop, a threshold breach — and routes them to the right owner. Your team gets dispatched to do the actual maintenance instead of staring at a screen 24/7/365.",
+    maint_title:"An AI maintenance agent, not just an alarm",
+    maint_body:"Every alert carries a recommended preventive or corrective action, so your team acts before a contractual availability or SOC target is at risk — not after it's already missed. Quorelia optimizes the maintenance workflow for both sides: less wasted time for your personnel in the field, and contractual percentages you can defend at close.",
     samples_tag:"Sample reports", samples_title:"See it before you commit",
     samples_sub:"Illustrative examples — an interactive dashboard you can click through right now, and a sample daily report, built the same way real Quorelia output is: from data, not from a template.",
     report_cta:"View the full sample report →",
@@ -1365,6 +1376,8 @@ const i18n = {
     f6_title:"Compatible con tus fuentes de datos", f6_body:"Se integra con plataformas comunes de SCADA, inversores y monitoreo BESS/BMS — solar o almacenamiento en baterías — para que conserves tu backend actual.",
     alert_title:"Las alertas vigilan, para que las personas no tengan que hacerlo",
     alert_body:"Quorelia genera alertas automáticas en el momento en que algo necesita atención — una falla de inversor, pérdida de comunicación, un umbral superado — y las dirige al dueño correcto. Tu equipo se despacha para hacer la mantención real, en vez de mirar una pantalla 24/7/365.",
+    maint_title:"Un agente de mantenimiento con IA, no solo una alarma",
+    maint_body:"Cada alerta llega con una acción preventiva o correctiva recomendada, para que tu equipo actúe antes de poner en riesgo un objetivo contractual de disponibilidad o SOC — no después de haberlo incumplido. Quorelia optimiza el flujo de mantenimiento para ambas partes: menos tiempo perdido para tu personal en terreno, y porcentajes contractuales que puedes defender al cierre.",
     samples_tag:"Reportes de ejemplo", samples_title:"Compruébalo antes de decidir",
     samples_sub:"Ejemplos ilustrativos — un dashboard interactivo que puedes explorar ahora mismo, y un reporte diario de muestra, construidos de la misma forma que el resultado real de Quorelia: a partir de datos, no de una plantilla.",
     report_cta:"Ver el reporte de muestra completo →",
