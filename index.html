@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://quorelia.org/quorelia-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0b1c2c;
@@ -86,8 +86,8 @@
   }
   .brand-icon{height:38px;width:auto;display:block;}
   .brand-word{
-    font-family:'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-weight:700;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;
+    font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-weight:800;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;
     color:var(--white);line-height:1;
   }
   footer .brand-icon{height:52px;}
@@ -106,11 +106,13 @@
   .lang-toggle button.active{background:var(--teal);opacity:1;color:var(--navy);}
   .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;}
 
-  /* Hero */
+  /* Hero — full-bleed cinematic */
   .hero{
     position:relative;
     color:var(--white);
-    padding:88px 0 96px;
+    min-height:88vh;
+    display:flex;align-items:center;
+    padding:120px 0 140px;
     overflow:hidden;
     background:var(--navy);
   }
@@ -121,21 +123,32 @@
   .hero-overlay{
     position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;
     background:
-      radial-gradient(1200px 500px at 80% -10%, rgba(31,182,168,0.20), transparent),
-      linear-gradient(180deg, rgba(11,28,44,0.88), rgba(11,28,44,0.80) 40%, rgba(18,42,64,0.90));
+      radial-gradient(1200px 600px at 50% 20%, rgba(11,28,44,0.42), transparent 70%),
+      linear-gradient(180deg, rgba(11,28,44,0.55), rgba(11,28,44,0.30) 45%, rgba(11,28,44,0.72));
   }
-  .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .hero .container{position:relative;z-index:2;display:block;text-align:center;max-width:1000px;}
+  .hero-scroll{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
+    color:rgba(255,255,255,0.75);animation:heroBob 2.4s var(--ease-in-out-cubic) infinite;
+  }
+  .hero-scroll svg{width:22px;height:22px;}
+  @keyframes heroBob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
   .eyebrow{
     display:inline-block;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
     color:var(--teal);background:rgba(31,182,168,0.12);border:0.8px solid rgba(31,182,168,0.35);
     padding:6px 12px;border-radius:var(--radius-pill);margin-bottom:20px;
   }
-  .hero h1{font-size:var(--fs-display);line-height:1.03;letter-spacing:-0.03em;font-weight:500;margin-bottom:20px;}
-  .hero p.lead{font-size:18px;color:#c7d4dc;max-width:520px;margin-bottom:24px;}
-  .hero-features{display:flex;flex-wrap:wrap;align-items:center;font-size:13px;font-weight:700;
-    color:var(--teal);margin-bottom:28px;letter-spacing:.2px;}
-  .hero-features .sep{color:rgba(255,255,255,0.28);margin:0 10px;font-weight:400;}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero h1{
+    font-family:var(--font-display);
+    font-size:var(--fs-display);line-height:1.02;letter-spacing:-0.03em;font-weight:400;
+    margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.35);
+  }
+  .hero p.lead{font-size:18px;color:#dbe5eb;max-width:600px;margin:0 auto 26px;
+    text-shadow:0 1px 20px rgba(0,0,0,0.4);}
+  .hero-features{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+    color:var(--teal);margin-bottom:30px;letter-spacing:.2px;}
+  .hero-features .sep{color:rgba(255,255,255,0.32);margin:0 10px;font-weight:400;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
   .btn{
     display:inline-block;padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;
     cursor:pointer;border:2px solid transparent;transition:transform .15s, background .15s;
@@ -445,7 +458,7 @@
 
 <header>
   <div class="container nav">
-    <a href="/" class="brand" aria-label="Quorelia — home"><img src="Brand_Assets/quorelia-symbol-white.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
+    <a href="/" class="brand" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
     <nav class="links">
       <a href="#product" data-i18n="nav_product">Product</a>
       <a href="#samples" data-i18n="nav_samples">Samples</a>
@@ -838,7 +851,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="/" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><img src="Brand_Assets/quorelia-symbol-white.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
+        <a href="/" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
         <p style="font-size:14px;color:#9fb0ba;max-width:280px;" data-i18n="foot_desc">Automated O&amp;M reporting for solar asset owners and operators — built for global, bilingual portfolios.</p>
       </div>
       <div>
