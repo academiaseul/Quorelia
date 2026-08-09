@@ -396,14 +396,33 @@
   .visual-lang{background:#0A0D0F;color:#E6EDF0;}
   .visual-lang .section-head p{color:#9AAAB3;}
   .visual-lang .tag{color:#00CFC0;}
-  .state-legend{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0;}
-  .state-item{display:flex;align-items:center;gap:10px;background:#12171A;border:0.8px solid #1E262B;
-    border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;}
-  .state-chip{width:22px;height:22px;border-radius:var(--radius-sm);flex:none;border:0.8px solid rgba(255,255,255,.08);}
+  .state-legend{
+    display:flex;flex-wrap:wrap;justify-content:center;
+    gap:12px;margin:32px auto 0;
+  }
+  .state-item{
+    display:flex;align-items:center;gap:11px;
+    background:#12171A;border:0.8px solid #1E262B;
+    border-radius:var(--radius-sm);padding:12px 16px;
+    flex:0 1 auto;
+  }
+  .state-chip{width:20px;height:20px;border-radius:var(--radius-sm);flex:none;
+    border:0.8px solid rgba(255,255,255,.08);}
   .state-chip.hatched{background-color:#1A2126;border:0.8px solid #5A6B75;
     background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 6px);}
-  .state-item .sn{font-weight:600;display:block;}
-  .state-item .sh{font-family:'SF Mono',Consolas,monospace;font-size:10.5px;color:#63737C;}
+  .state-text{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;}
+  .state-item .sn{
+    display:block;font-size:13px;font-weight:600;line-height:1.15;
+    color:#E6EDF0;white-space:nowrap;
+  }
+  .state-item .sh{
+    display:block;font-family:'SF Mono',Consolas,monospace;
+    font-size:10.5px;line-height:1.15;letter-spacing:0.04em;color:#63737C;white-space:nowrap;
+  }
+  @media(max-width:560px){
+    .state-legend{gap:8px;}
+    .state-item{padding:10px 12px;gap:9px;}
+  }
   .vl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;}
   .vl-panel{background:#12171A;border:0.8px solid #1E262B;border-radius:var(--radius-sm);padding:22px;}
   .vl-panel h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#63737C;
@@ -668,7 +687,7 @@
   <div class="container">
     <div class="hero-copy">
       <span class="eyebrow" data-i18n="hero_eyebrow">24/7 Intelligent Oversight for Renewable Energy</span>
-      <h1 data-i18n="hero_title">Your energy. Always under watch.</h1>
+      <h1 data-i18n="hero_title">Ever watching. In service of the planet's energy.</h1>
       <p class="lead" data-i18n="hero_lead">Quorelia monitors, alerts, diagnoses, and reports on your solar, wind, and ESS assets — continuously and automatically, in English or Spanish.</p>
       <div class="hero-features">
         <span data-i18n="hf1">24/7 Monitoring</span><span class="sep">•</span>
@@ -831,12 +850,12 @@
     </div>
 
     <div class="state-legend">
-      <div class="state-item"><div class="state-chip" style="background:#3FD07A"></div><div><span class="sn" data-i18n="st_ok">Nominal</span><span class="sh">#3FD07A</span></div></div>
-      <div class="state-item"><div class="state-chip" style="background:#F2B441"></div><div><span class="sn" data-i18n="st_warn">Warning</span><span class="sh">#F2B441</span></div></div>
-      <div class="state-item"><div class="state-chip" style="background:#FF6B35"></div><div><span class="sn" data-i18n="st_fault">Fault</span><span class="sh">#FF6B35</span></div></div>
-      <div class="state-item"><div class="state-chip" style="background:#FF3B4E"></div><div><span class="sn" data-i18n="st_crit">Critical</span><span class="sh">#FF3B4E</span></div></div>
-      <div class="state-item"><div class="state-chip hatched"></div><div><span class="sn" data-i18n="st_unobs">Not observed</span><span class="sh">45° hatch</span></div></div>
-      <div class="state-item"><div class="state-chip" style="background:#1A2126;border-color:#5A6B75;"></div><div><span class="sn" data-i18n="st_held">Withheld</span><span class="sh">#5A6B75</span></div></div>
+      <div class="state-item"><div class="state-chip" style="background:#3FD07A"></div><div class="state-text"><span class="sn" data-i18n="st_ok">Nominal</span><span class="sh">#3FD07A</span></div></div>
+      <div class="state-item"><div class="state-chip" style="background:#F2B441"></div><div class="state-text"><span class="sn" data-i18n="st_warn">Warning</span><span class="sh">#F2B441</span></div></div>
+      <div class="state-item"><div class="state-chip" style="background:#FF6B35"></div><div class="state-text"><span class="sn" data-i18n="st_fault">Fault</span><span class="sh">#FF6B35</span></div></div>
+      <div class="state-item"><div class="state-chip" style="background:#FF3B4E"></div><div class="state-text"><span class="sn" data-i18n="st_crit">Critical</span><span class="sh">#FF3B4E</span></div></div>
+      <div class="state-item"><div class="state-chip hatched"></div><div class="state-text"><span class="sn" data-i18n="st_unobs">Not observed</span><span class="sh">45° hatch</span></div></div>
+      <div class="state-item"><div class="state-chip" style="background:#1A2126;border-color:#5A6B75;"></div><div class="state-text"><span class="sn" data-i18n="st_held">Withheld</span><span class="sh">#5A6B75</span></div></div>
     </div>
 
     <div class="vl-grid">
@@ -1023,9 +1042,9 @@
       </div>
       <div class="q-meanings">
         <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q1">Quality</span></div>
-        <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q2">Intelligence</span></div>
+        <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q2">IQ — intelligence</span></div>
         <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q3">Continuous monitoring</span></div>
-        <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q4">Every energy signal</span></div>
+        <div class="q-item"><img src="Brand_Assets/quorelia-symbol-color.png" alt="" class="q-letter"><span data-i18n="q4">Quantity — every KPI captured</span></div>
       </div>
     </div>
   </div>
@@ -1128,7 +1147,7 @@ const i18n = {
   en: {
     nav_product:"Product", nav_samples:"Samples", nav_how:"How it works", nav_why:"Why Quorelia", nav_contact:"Contact", nav_cta:"Get a demo",
     hero_eyebrow:"24/7 Intelligent Oversight for Renewable Energy",
-    hero_title:"Your energy. Always under watch.",
+    hero_title:"Ever watching. In service of the planet's energy.",
     hero_lead:"Quorelia monitors, alerts, diagnoses, and reports on your solar, wind, and ESS assets — continuously and automatically, in English or Spanish.",
     hf1:"24/7 Monitoring", hf2:"Alarms &amp; Alerts", hf3:"Smart Diagnostics", hf4:"Automatic Reports",
     hero_cta1:"Request a demo", hero_cta2:"See how it works",
@@ -1213,7 +1232,7 @@ const i18n = {
     brand_sub:"A name built to travel — across languages, across asset types, across the next decade.",
     brand_body:"Quorelia is built to sound as natural in Spanish as it does in English, and it doesn't lock the brand into solar alone — the same platform covers solar, wind, ESS, and whatever comes next. The Q carries the meaning: quality, intelligence, and the continuous stream of signal the platform never stops watching.",
     brand_tagline:"Your energy. Always under watch.",
-    q1:"Quality", q2:"Intelligence", q3:"Continuous monitoring", q4:"Every energy signal",
+    q1:"Quality", q2:"IQ — intelligence", q3:"Continuous monitoring", q4:"Quantity — every KPI captured",
     cta_title:"Ready to stop building reports by hand?", cta_body:"Show us your current O&M report and we'll show you how Quorelia automates it.", cta_btn:"Talk to us",
     cta_tagline:"When your plant never sleeps, neither does your monitoring.",
     foot_desc:"Automated O&M reporting for solar asset owners and operators — built for global, bilingual portfolios.",
@@ -1230,7 +1249,7 @@ const i18n = {
   es: {
     nav_product:"Producto", nav_samples:"Ejemplos", nav_how:"Cómo funciona", nav_why:"Por qué Quorelia", nav_contact:"Contacto", nav_cta:"Solicitar demo",
     hero_eyebrow:"Supervisión Inteligente 24/7 para Energías Renovables",
-    hero_title:"Tu energía. Siempre bajo vigilancia.",
+    hero_title:"Siempre vigilando. Al servicio de la energía del planeta.",
     hero_lead:"Quorelia monitorea, alerta, diagnostica y reporta sobre tus activos solares, eólicos y de almacenamiento (ESS) — de forma continua y automática, en inglés o español.",
     hf1:"Monitoreo 24/7", hf2:"Alarmas y Alertas", hf3:"Diagnóstico Inteligente", hf4:"Reportes Automáticos",
     hero_cta1:"Solicitar una demo", hero_cta2:"Ver cómo funciona",
@@ -1315,7 +1334,7 @@ const i18n = {
     brand_sub:"Un nombre pensado para viajar — entre idiomas, entre tipos de activos, hacia la próxima década.",
     brand_body:"Quorelia suena tan natural en español como en inglés, y no encasilla la marca solo en solar — la misma plataforma cubre solar, eólica, ESS y lo que venga después. La Q lleva el significado: calidad, inteligencia, y la señal continua que la plataforma nunca deja de vigilar.",
     brand_tagline:"Tu energía. Siempre bajo vigilancia.",
-    q1:"Calidad", q2:"Inteligencia", q3:"Monitoreo continuo", q4:"Cada señal de energía",
+    q1:"Calidad", q2:"IQ — inteligencia", q3:"Monitoreo continuo", q4:"Cantidad — cada KPI capturado",
     cta_title:"¿Listo para dejar de armar reportes a mano?", cta_body:"Muéstranos tu reporte actual de O&M y te mostramos cómo Quorelia lo automatiza.", cta_btn:"Hablemos",
     cta_tagline:"Cuando tu planta nunca duerme, tu monitoreo tampoco.",
     foot_desc:"Reportes de O&M automatizados para propietarios y operadores de activos solares — diseñado para portafolios globales y bilingües.",
