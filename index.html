@@ -21,6 +21,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* Hero title face — mac's Tweaked Minecraft (SIL OFL) */
+  @font-face{
+    font-family:'Quorelia Title';
+    src:url('quorelia-title.woff2') format('woff2'),
+        url('quorelia-title.ttf') format('truetype');
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'Quorelia Title';
+    src:url('quorelia-title-bold.woff2') format('woff2'),
+        url('quorelia-title-bold.ttf') format('truetype');
+    font-weight:700;font-style:normal;font-display:swap;
+  }
   :root{
     --navy:#0b1c2c;
     --navy-2:#122a40;
@@ -42,9 +55,11 @@
 
     /* Inter — Palantir's brand sans; used sitewide for body and headings */
     --font-display:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    /* Hero banner title only */
+    --font-title:'Quorelia Title','Courier New',monospace;
 
     /* Bimodal type scale — deliberate gap between body and display sizes */
-    --fs-display: clamp(2.75rem, 2rem + 3.4vw, 5.25rem);
+    --fs-display: clamp(2.1rem, 1.5rem + 2.6vw, 4.25rem);
     --fs-h2: clamp(1.85rem, 1.5rem + 1.6vw, 3rem);
     --fs-h3: clamp(1.3rem, 1.15rem + 0.7vw, 1.7rem);
     --fs-body: 1.0625rem;
@@ -143,8 +158,8 @@
     padding:6px 12px;border-radius:var(--radius-pill);margin-bottom:20px;
   }
   .hero h1{
-    font-family:var(--font-display);
-    font-size:var(--fs-display);line-height:1.05;letter-spacing:-0.035em;font-weight:500;
+    font-family:var(--font-title);
+    font-size:var(--fs-display);line-height:1.25;letter-spacing:0.01em;font-weight:400;
     margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.45);
   }
   .hero p.lead{font-size:18px;color:#dbe5eb;max-width:600px;margin:0 auto 26px;
