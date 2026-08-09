@@ -381,7 +381,12 @@
   .gaa-value{display:flex;align-items:baseline;gap:10px;margin-top:8px;}
   .gaa-value .gv{font-family:'SF Mono',Consolas,monospace;font-size:30px;color:#3FD07A;font-weight:600;}
 
-  .how{background:var(--navy);color:var(--white);}
+  .how{
+    background:
+      linear-gradient(180deg,rgba(11,28,44,0.93),rgba(11,28,44,0.97)),
+      url('quorelia-tex-solar.jpg') center/cover no-repeat fixed;
+    color:var(--white);position:relative;
+  }
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px;}
   .step{position:relative;padding-top:8px;}
   .step .idx{
@@ -392,7 +397,12 @@
   .step p{font-size:14px;color:#b9c9d1;}
 
   /* Architecture */
-  .architecture{background:#0A0D0F;color:#E6EDF0;}
+  .architecture{
+    background:
+      linear-gradient(180deg,rgba(10,13,15,0.95),rgba(10,13,15,0.985)),
+      url('quorelia-tex-data.jpg') center/cover no-repeat;
+    color:#E6EDF0;
+  }
   .architecture .section-head p{color:#9AAAB3;}
   .architecture .tag{color:#00CFC0;}
   .arch-panel{
@@ -480,12 +490,16 @@
   }
 
   .cta-band{
-    background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+    position:relative;overflow:hidden;
+    background:
+      linear-gradient(135deg,rgba(31,182,168,0.92),rgba(20,148,135,0.94)),
+      url('quorelia-tex-solar.jpg') center/cover no-repeat;
     color:var(--navy);border-radius:var(--radius-lg);padding:56px;text-align:center;
     margin:0 24px;
   }
-  .cta-band h2{font-size:28px;font-weight:800;margin-bottom:12px;}
-  .cta-band p{font-size:16px;margin-bottom:26px;opacity:0.9;}
+  .cta-band > *{position:relative;z-index:1;}
+  .cta-band h2{font-size:var(--fs-h3);margin-bottom:12px;}
+  .cta-band p{font-size:16px;margin-bottom:26px;opacity:0.92;}
   .cta-band .btn-primary{background:var(--navy);color:var(--white);}
   .cta-band .btn-primary:hover{background:#08131f;}
   .cta-tagline{font-size:14px;font-weight:700;opacity:0.75;margin-top:22px;font-style:italic;}
