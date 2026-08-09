@@ -40,6 +40,9 @@
     --radius-lg:16px;
     --radius-pill:999px;
 
+    /* Display typeface — geometric, technical; used for all headings */
+    --font-display:'Space Grotesk','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+
     /* Bimodal type scale — deliberate gap between body and display sizes */
     --fs-display: clamp(2.75rem, 2rem + 3.2vw, 5.5rem);
     --fs-h2: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
@@ -66,6 +69,7 @@
     background:var(--bg);
     line-height:1.55;
   }
+  h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:-0.015em;}
   img,svg{display:block;max-width:100%;}
   a{color:inherit;text-decoration:none;}
   .container{max-width:1140px;margin:0 auto;padding:0 24px;}
@@ -163,14 +167,37 @@
     background:rgba(255,255,255,0.04);border:0.8px solid rgba(255,255,255,0.12);
     border-radius:var(--radius-lg);padding:24px;backdrop-filter:blur(4px);
   }
-  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .stat-card{background:rgba(255,255,255,0.05);border:0.8px solid rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:18px;}
-  .stat-card .num{font-size:26px;font-weight:800;color:var(--teal);}
-  .stat-card .label{font-size:13px;color:#aebfc9;margin-top:4px;}
+  /* Stat strip — full-width band under the hero */
+  .stat-strip{background:var(--navy-2);color:var(--white);padding:36px 0;
+    border-bottom:0.8px solid rgba(255,255,255,0.08);}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .stat-card{
+    background:transparent;border:0;border-left:0.8px solid rgba(255,255,255,0.12);
+    border-radius:0;padding:6px 28px;
+  }
+  .stat-card:first-child{border-left:0;padding-left:0;}
+  .stat-card .num{font-family:var(--font-display);font-size:34px;font-weight:400;color:var(--teal);
+    letter-spacing:-0.02em;line-height:1.1;}
+  .stat-card .label{font-size:12.5px;color:#9fb2bd;margin-top:6px;line-height:1.45;}
+  @media(max-width:760px){
+    .stat-grid{grid-template-columns:1fr 1fr;gap:24px 0;}
+    .stat-card{padding:0 18px;}
+    .stat-card:nth-child(odd){border-left:0;padding-left:0;}
+  }
 
   /* Banner */
-  .banner-wrap{background:var(--navy-2);}
+  .banner-wrap{background:var(--navy-2);position:relative;}
   .banner-img{width:100%;display:block;}
+  .banner-caption{
+    position:absolute;left:0;right:0;bottom:0;padding:60px 24px 28px;
+    background:linear-gradient(180deg,transparent,rgba(11,28,44,0.85));
+    text-align:center;
+  }
+  .banner-caption p{
+    font-family:var(--font-display);font-size:clamp(1.1rem,0.9rem+1vw,1.75rem);
+    font-weight:400;letter-spacing:-0.02em;color:var(--white);
+  }
+  @media(max-width:640px){.banner-caption{padding:30px 16px 14px;}}
 
   /* Trust strip */
   .trust{background:var(--white);border-bottom:0.8px solid var(--border);padding:22px 0;}
@@ -181,7 +208,7 @@
   /* Sections */
   section{padding:80px 0;}
   .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .section-head h2{font-size:var(--fs-h2);line-height:1.06;letter-spacing:-0.02em;font-weight:500;margin-bottom:14px;}
+  .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.06;letter-spacing:-0.025em;font-weight:400;margin-bottom:14px;}
   .section-head p{color:var(--muted);font-size:16px;}
   .tag{
     display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
@@ -440,7 +467,7 @@
   @media(max-width:860px){
     nav.links{display:none;}
     .menu-btn{display:block;}
-    .hero .container{grid-template-columns:1fr;}
+    .hero{min-height:auto;padding:80px 0 100px;}
     .grid-3{grid-template-columns:1fr;}
     .pillars-grid{grid-template-columns:1fr 1fr;}
     .steps{grid-template-columns:1fr 1fr;}
@@ -482,7 +509,7 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
-    <div>
+    <div class="hero-copy">
       <span class="eyebrow" data-i18n="hero_eyebrow">24/7 Intelligent Oversight for Renewable Energy</span>
       <h1 data-i18n="hero_title">Your energy. Always under watch.</h1>
       <p class="lead" data-i18n="hero_lead">Quorelia monitors, alerts, diagnoses, and reports on your solar, wind, and ESS assets — continuously and automatically, in English or Spanish.</p>
@@ -497,19 +524,28 @@
         <a href="#product" class="btn btn-outline" data-i18n="hero_cta2">See how it works</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="stat-grid">
-        <div class="stat-card"><div class="num">98.4%</div><div class="label" data-i18n="stat1">Avg. fleet availability tracked</div></div>
-        <div class="stat-card"><div class="num">&lt;24h</div><div class="label" data-i18n="stat2">Report turnaround, fully automated</div></div>
-        <div class="stat-card"><div class="num">2</div><div class="label" data-i18n="stat3">Languages out of the box (EN/ES)</div></div>
-        <div class="stat-card"><div class="num">100%</div><div class="label" data-i18n="stat4">Client-branded exports</div></div>
-      </div>
+  </div>
+  <a href="#stats" class="hero-scroll" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </a>
+</section>
+
+<div class="stat-strip" id="stats">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num">98.4%</div><div class="label" data-i18n="stat1">Avg. fleet availability tracked</div></div>
+      <div class="stat-card"><div class="num">&lt;24h</div><div class="label" data-i18n="stat2">Report turnaround, fully automated</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="label" data-i18n="stat3">Languages out of the box (EN/ES)</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="label" data-i18n="stat4">Client-branded exports</div></div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="banner-wrap">
   <img src="quorelia-banner.jpg" alt="Automatic SCADA monitoring, operating and report system — real-time monitoring and intelligent automation for solar, wind and ESS power plants" class="banner-img">
+  <div class="banner-caption">
+    <p data-i18n="banner_caption">One system. Every asset. Continuously verified.</p>
+  </div>
 </div>
 
 <div class="trust">
@@ -893,6 +929,7 @@ const i18n = {
     hero_cta1:"Request a demo", hero_cta2:"See how it works",
     stat1:"Avg. fleet availability tracked", stat2:"Report turnaround, fully automated",
     stat3:"Languages out of the box (EN/ES)", stat4:"Client-branded exports",
+    banner_caption:"One system. Every asset. Continuously verified.",
     trust_label:"Built for asset owners, EPCs, and O&M teams managing solar, wind, and battery storage",
     pillars_tag:"Four pillars", pillars_title:"One continuous loop, running around the clock",
     pillars_sub:"Each pillar feeds the next — so nothing sits unwatched between reports.",
@@ -976,6 +1013,7 @@ const i18n = {
     hero_cta1:"Solicitar una demo", hero_cta2:"Ver cómo funciona",
     stat1:"Disponibilidad promedio de flota monitoreada", stat2:"Tiempo de entrega del reporte, totalmente automatizado",
     stat3:"Idiomas incluidos (EN/ES)", stat4:"Exportaciones con marca del cliente",
+    banner_caption:"Un solo sistema. Todos los activos. Verificación continua.",
     trust_label:"Diseñado para propietarios de activos, EPCs y equipos de O&M que gestionan solar, eólica y almacenamiento en baterías",
     pillars_tag:"Cuatro pilares", pillars_title:"Un ciclo continuo, las 24 horas",
     pillars_sub:"Cada pilar alimenta al siguiente — para que nada quede sin vigilancia entre reportes.",
