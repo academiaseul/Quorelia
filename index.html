@@ -233,24 +233,41 @@
   }
 
   /* Banner */
-  .banner-wrap{background:var(--navy-2);position:relative;}
-  .banner-img{width:100%;display:block;}
-  .banner-caption{
-    position:absolute;left:0;right:0;bottom:0;padding:60px 24px 28px;
-    background:linear-gradient(180deg,transparent,rgba(11,28,44,0.85));
-    text-align:center;
+  /* Trust strip — centered statement band */
+  .trust{
+    background:var(--white);
+    border-top:0.8px solid var(--border);
+    border-bottom:0.8px solid var(--border);
+    padding:88px 0 72px;
   }
-  .banner-caption p{
-    font-family:var(--font-display);font-size:clamp(1.1rem,0.9rem+1vw,1.75rem);
-    font-weight:400;letter-spacing:-0.02em;color:var(--white);
+  .trust .container{
+    display:flex;flex-direction:column;align-items:center;text-align:center;max-width:900px;
   }
-  @media(max-width:640px){.banner-caption{padding:30px 16px 14px;}}
-
-  /* Trust strip */
-  .trust{background:var(--white);border-bottom:0.8px solid var(--border);padding:22px 0;}
-  .trust .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-  .trust p{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;font-weight:600;}
-  .trust .marks{display:flex;gap:26px;flex-wrap:wrap;font-weight:700;color:#9aa9b2;font-size:14px;}
+  .trust-statement{
+    font-family:var(--font-display);
+    font-size:var(--fs-h2);line-height:1.1;letter-spacing:-0.03em;font-weight:500;
+    color:var(--ink);max-width:16ch;
+  }
+  .trust-label{
+    margin-top:22px;font-size:15px;line-height:1.6;color:var(--muted);
+    max-width:52ch;font-weight:400;
+  }
+  .trust .marks{
+    display:flex;flex-wrap:wrap;justify-content:center;
+    margin-top:44px;padding-top:28px;
+    border-top:0.8px solid var(--border);width:100%;max-width:720px;
+  }
+  .trust .marks span{
+    font-family:'SF Mono',Consolas,monospace;
+    font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--muted);padding:0 20px;border-left:0.8px solid var(--border);
+    line-height:1.2;
+  }
+  .trust .marks span:first-child{border-left:0;}
+  @media(max-width:640px){
+    .trust{padding:56px 0 48px;}
+    .trust .marks span{padding:6px 12px;border-left:0;}
+  }
 
   /* Sections */
   section{padding:80px 0;}
@@ -628,16 +645,10 @@
   </div>
 </section>
 
-<div class="banner-wrap">
-  <img src="quorelia-banner.jpg" alt="Automatic SCADA monitoring, operating and report system — real-time monitoring and intelligent automation for solar, wind and ESS power plants" class="banner-img">
-  <div class="banner-caption">
-    <p data-i18n="banner_caption">One system. Every asset. Continuously verified.</p>
-  </div>
-</div>
-
 <div class="trust">
   <div class="container">
-    <p data-i18n="trust_label">Built for asset owners, EPCs, and O&amp;M teams managing solar, wind, and battery storage</p>
+    <p class="trust-statement" data-i18n="banner_caption">One system. Every asset. Continuously verified.</p>
+    <p class="trust-label" data-i18n="trust_label">Built for asset owners, EPCs, and O&amp;M teams managing solar, wind, and battery storage</p>
     <div class="marks"><span>PV</span><span>Wind</span><span>SCADA</span><span>Inverters</span><span>Trackers</span><span>BESS</span></div>
   </div>
 </div>
