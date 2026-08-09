@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quorelia — Independent Verification &amp; O&amp;M Report (Sample)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
+    --amber:#f5a623; --green:#22c55e; --red:#ef4444; --orange:#ff6b35;
+    --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa; --white:#ffffff; --border:#e3e9ec;
+    --mono:'SF Mono',Consolas,'Courier New',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#dfe4e7;line-height:1.55;}
+  .page{
+    width:8.5in;min-height:11in;margin:0 auto 18px;background:var(--white);
+    padding:0.55in 0.65in;position:relative;box-shadow:0 6px 24px rgba(11,28,44,0.14);
+    page-break-after:always;
+  }
+  .page:last-child{page-break-after:auto;}
+  @media print{
+    body{background:none;}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;}
+  }
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
+  .eyebrow{
+    font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--teal-dark);margin-bottom:6px;display:block;
+  }
+  .foot{
+    position:absolute;bottom:0.4in;left:0.65in;right:0.65in;
+    display:flex;justify-content:space-between;font-size:9.5px;color:#9aa9b2;
+    border-top:0.8px solid var(--border);padding-top:8px;font-family:var(--mono);letter-spacing:0.03em;
+  }
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{
+    text-align:left;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;
+    color:var(--muted);padding:8px 10px;border-bottom:1.5px solid var(--ink);background:#f2f5f6;
+  }
+  td{padding:7px 10px;border-bottom:0.8px solid var(--border);}
+  tr:last-child td{border-bottom:0.8px solid var(--ink);}
+  .mono{font-family:var(--mono);}
+  .pill{
+    display:inline-block;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:700;
+    text-transform:uppercase;letter-spacing:0.04em;
+  }
+  .pill.approved{background:rgba(34,197,94,0.14);color:#178a45;}
+  .pill.withheld{background:rgba(92,112,128,0.14);color:#4b5b68;}
+  .pill.warn{background:rgba(245,166,35,0.16);color:#a5670c;}
+
+  /* ---- Cover ---- */
+  .cover{background:var(--navy);color:#fff;padding:0;}
+  .cover-top{padding:0.55in 0.65in 0;}
+  .cover-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:2px;}
+  .cover-tag{font-size:10.5px;color:#9fb2bd;letter-spacing:0.14em;text-transform:uppercase;margin-top:4px;font-family:var(--mono);}
+  .cover-sample{
+    display:inline-block;margin-top:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--amber);border:0.8px solid rgba(245,166,35,0.5);
+    background:rgba(245,166,35,0.1);padding:5px 12px;border-radius:20px;
+  }
+  .cover-title{font-size:40px;line-height:1.12;font-weight:700;letter-spacing:-0.02em;margin-top:22px;max-width:6.5in;}
+  .cover-sub{font-size:15px;color:#c7d4dc;margin-top:14px;max-width:5.6in;}
+  .cover-block{
+    margin-top:0.7in;padding:0.4in 0.65in;background:var(--navy-2);
+    border-top:0.8px solid rgba(255,255,255,0.1);
+  }
+  .cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .cover-grid .k{font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#7f93a0;margin-bottom:5px;}
+  .cover-grid .v{font-size:14px;font-weight:600;color:#fff;}
+  .cover-foot{
+    padding:0.3in 0.65in 0.5in;font-size:10px;color:#7f93a0;line-height:1.6;
+    border-top:0.8px solid rgba(255,255,255,0.08);
+  }
+
+  /* ---- TOC ---- */
+  .toc-num{font-family:var(--mono);font-size:34px;font-weight:700;color:var(--border);display:inline-block;width:0.65in;}
+  .toc-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:0.8px solid var(--border);}
+  .toc-row .t{font-size:15px;font-weight:600;}
+  .toc-row .p{font-family:var(--mono);color:var(--muted);font-size:12px;}
+  .toc-sub{font-size:12.5px;color:var(--muted);padding:6px 0 6px 0.8in;display:flex;justify-content:space-between;border-bottom:0.8px solid #eef1f2;}
+
+  /* ---- Section header ---- */
+  .sec-h{margin-bottom:22px;}
+  .sec-h h1{font-size:23px;}
+  .sec-h p{color:var(--muted);font-size:13px;margin-top:5px;max-width:6in;}
+
+  /* ---- Workflow ---- */
+  .wf-step{display:flex;gap:16px;padding:16px 0;border-bottom:0.8px solid var(--border);}
+  .wf-step:last-child{border-bottom:none;}
+  .wf-idx{
+    flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--teal);
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:12px;
+  }
+  .wf-step h4{font-size:13.5px;margin-bottom:4px;}
+  .wf-step p{font-size:12px;color:var(--muted);}
+
+  /* ---- Opinion ---- */
+  .opinion-box{border:0.8px solid var(--border);border-left:3px solid var(--teal);padding:16px 18px;margin:14px 0;background:#f7fbfb;}
+  .opinion-box h4{font-size:12.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--teal-dark);margin-bottom:6px;font-family:var(--mono);}
+  .opinion-box p{font-size:12.5px;color:#2b3d4a;}
+  .verdict-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:16px;}
+  .vcard{border:0.8px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
+  .vcard .pct{font-family:var(--mono);font-size:26px;font-weight:700;}
+  .vcard .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.04em;}
+
+  /* ---- Bar chart (SVG) ---- */
+  .chart-wrap{margin-top:10px;}
+  .chart-legend{display:flex;gap:16px;font-size:10.5px;color:var(--muted);margin-bottom:8px;font-family:var(--mono);}
+  .chart-legend span{display:inline-flex;align-items:center;gap:5px;}
+  .chart-legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+
+  /* ---- Findings ---- */
+  .finding{border:0.8px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:10px;}
+  .finding .fh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .finding .fh b{font-size:13px;}
+  .finding p{font-size:12px;color:var(--muted);}
+  .finding .rec{margin-top:8px;font-size:11.5px;color:var(--teal-dark);font-weight:600;}
+
+  /* ---- Commentary ---- */
+  .quote-block{border-left:3px solid var(--amber);padding:4px 0 4px 18px;margin:16px 0;}
+  .quote-block p{font-size:13px;line-height:1.75;color:#2b3d4a;font-style:italic;}
+  .signoff{margin-top:22px;padding-top:14px;border-top:0.8px solid var(--border);font-size:11.5px;color:var(--muted);}
+  .signoff b{color:var(--ink);}
+
+  /* ---- Appendix def list ---- */
+  .def-item{display:flex;gap:14px;padding:10px 0;border-bottom:0.8px solid var(--border);align-items:flex-start;}
+  .def-chip{flex:none;width:20px;height:20px;border-radius:5px;margin-top:2px;border:0.8px solid rgba(0,0,0,.08);}
+  .def-item h5{font-size:12.5px;margin-bottom:2px;}
+  .def-item p{font-size:11.5px;color:var(--muted);}
+
+  /* ---- Back page ---- */
+  .back-navy{background:var(--navy);color:#fff;padding:0.55in 0.65in;}
+  .back-navy .cover-brand{color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 — COVER ================= -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-brand"><span>QUORELIA</span></div>
+    <div class="cover-tag">Renewable Energy Intelligence</div>
+    <div class="cover-sample">Sample report — illustrative data, for demonstration purposes only</div>
+    <h1 class="cover-title">Independent Verification &amp; O&amp;M Performance Report</h1>
+    <p class="cover-sub">Monthly reporting period · Solar + BESS hybrid asset · Prepared under Quorelia's continuous monitoring and verification methodology.</p>
+  </div>
+  <div class="cover-block">
+    <div class="cover-grid">
+      <div><div class="k">Facility</div><div class="v">Atacama Coya Project</div></div>
+      <div><div class="k">Location</div><div class="v">Atacama Region, Chile</div></div>
+      <div><div class="k">Installed capacity</div><div class="v">1.02 GWac (PV + BESS)</div></div>
+      <div><div class="k">Reporting period</div><div class="v">01–31 Jan 2026</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    Report reference QOR-2026-01-ACY · Prepared by Quorelia Renewable Energy Intelligence · This document contains illustrative sample data generated for demonstration purposes and does not represent an active client engagement or real facility performance.<br>
+    © 2026 Quorelia. Confidential — prepared solely for the addressee.
+  </div>
+</div>
+
+<!-- ================= PAGE 2 — TOC ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">Contents</span>
+    <h1>Table of contents</h1>
+  </div>
+
+  <div class="toc-row"><span class="t"><span class="toc-num">01</span>Engagement information</span><span class="p">03</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">02</span>Scope &amp; methodology</span><span class="p">04</span></div>
+  <div class="toc-sub"><span>Data ingestion &amp; validation pipeline</span><span>04</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">03</span>Independent verification opinion</span><span class="p">05</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">04</span>Performance data</span><span class="p">06</span></div>
+  <div class="toc-sub"><span>Asset-level data coverage &amp; availability</span><span>06</span></div>
+  <div class="toc-sub"><span>Data coverage by asset (chart)</span><span>07</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">05</span>Findings &amp; exceptions</span><span class="p">08</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">06</span>Independent reviewer's note</span><span class="p">09</span></div>
+  <div class="toc-row"><span class="t"><span class="toc-num">07</span>Appendix — definitions &amp; methodology</span><span class="p">10</span></div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>02</span></div>
+</div>
+
+<!-- ================= PAGE 3 — ENGAGEMENT INFO ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">01 · Engagement information</span>
+    <h1>Engagement information</h1>
+  </div>
+  <table>
+    <tr><th style="width:34%;">Field</th><th>Detail</th></tr>
+    <tr><td>Client organization</td><td>Meridian Power Holdings <span style="color:var(--muted);font-size:10.5px;">(fictional entity — illustrative only)</span></td></tr>
+    <tr><td>Facility</td><td>Atacama Coya Project</td></tr>
+    <tr><td>Asset type</td><td>Utility-scale PV + Battery Energy Storage System (BESS)</td></tr>
+    <tr><td>Installed capacity</td><td>1.02 GWac / 1.35 GWp (PV) &nbsp;+&nbsp; 420 MWh (BESS)</td></tr>
+    <tr><td>Location</td><td>Atacama Region, northern Chile</td></tr>
+    <tr><td>Reporting period</td><td>1 – 31 January 2026</td></tr>
+    <tr><td>Scope of work</td><td>Continuous SCADA monitoring, automated fault diagnostics, contractual availability calculation, and independent verification of monthly O&amp;M reporting figures</td></tr>
+    <tr><td>Standard applied</td><td>Quorelia Data Verification Methodology v2.1, aligned to IEC 61724-1 (PV performance monitoring) reporting conventions</td></tr>
+    <tr><td>Data source</td><td>Client SCADA / PPC historian — no hardware or system replacement required</td></tr>
+    <tr><td>Prepared by</td><td>Jay — Quorelia Renewable Energy Intelligence, Automated Verification Engine</td></tr>
+    <tr><td>Reviewed by</td><td>Quorelia Independent Review — Energy Consulting Advisory (see Section 06)</td></tr>
+    <tr><td>Report reference</td><td class="mono">QOR-2026-01-ACY</td></tr>
+  </table>
+
+  <div class="opinion-box" style="margin-top:24px;">
+    <h4>Note on sample data</h4>
+    <p>All facility names, figures, and findings in this document are illustrative and generated for demonstration purposes only. They do not represent a real client, facility, or contractual engagement. Quorelia produces a version of this report using your own SCADA data during onboarding, at no cost and with no disruption to your operation.</p>
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>03</span></div>
+</div>
+
+<!-- ================= PAGE 4 — METHODOLOGY ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">02 · Scope &amp; methodology</span>
+    <h1>Data ingestion &amp; validation pipeline</h1>
+    <p>Every figure in this report is produced by the same automated pipeline, on top of the SCADA and historian systems already deployed at the facility — no rip-and-replace, no additional hardware.</p>
+  </div>
+
+  <div class="wf-step">
+    <div class="wf-idx">1</div>
+    <div><h4>Plant data ingestion</h4><p>Continuous polling of SCADA, PPC, and BMS/BESS historian channels — inverters, strings, trackers, meters, and battery racks — at native resolution.</p></div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-idx">2</div>
+    <div><h4>Data validation</h4><p>Every channel is checked against expected behaviour: range limits, rate-of-change bounds, cross-channel consistency, and gap detection. Each data point is tagged Nominal, Warning, Fault, or Not observed before any KPI is calculated.</p></div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-idx">3</div>
+    <div><h4>KPI calculation &amp; data quality engine</h4><p>Availability, performance ratio, and energy figures are computed only from data that passes validation. Where coverage falls below the defensible threshold for a given period, the figure is withheld rather than estimated.</p></div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-idx">4</div>
+    <div><h4>Verification engine</h4><p>Each published figure carries its source channel, its transformation, and its data-coverage percentage — reproducible back to the raw measurement, on request.</p></div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-idx">5</div>
+    <div><h4>Report &amp; delivery</h4><p>Daily and monthly reports are generated automatically, in client-branded PDF and portal formats, in English, Spanish, or any language sourced for the engagement.</p></div>
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>04</span></div>
+</div>
+
+<!-- ================= PAGE 5 — OPINION ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">03 · Independent verification opinion</span>
+    <h1>Opinion on reported availability</h1>
+  </div>
+
+  <div class="opinion-box">
+    <h4>Basis for opinion</h4>
+    <p>Quorelia's Automated Verification Engine continuously ingests and validates plant data against the methodology described in Section 02. This opinion is based on the data coverage, consistency checks, and cross-source reconciliation performed over the reporting period stated on the cover of this report.</p>
+  </div>
+
+  <div class="opinion-box">
+    <h4>Management's responsibility</h4>
+    <p>The client is responsible for the operation and instrumentation of the facility, and for providing Quorelia with unobstructed, continuous access to the SCADA and historian systems from which reported figures are derived.</p>
+  </div>
+
+  <div class="opinion-box">
+    <h4>Quorelia's responsibility</h4>
+    <p>Quorelia is responsible for the completeness of the validation pipeline applied to the data received, and for disclosing — rather than estimating past — any period in which data coverage does not support a defensible figure.</p>
+  </div>
+
+  <div class="opinion-box" style="border-left-color:var(--green);background:#f4faf6;">
+    <h4 style="color:#178a45;">Opinion</h4>
+    <p>Based on the procedures performed, contractual availability for the reporting period is <b>certified at 96.2%</b>, supported by 96.2% observed data coverage across monitored assets. One asset block (INV-11) is <b>withheld</b> due to data coverage below the defensible threshold; see Section 05, Finding F-01.</p>
+  </div>
+
+  <div class="verdict-row">
+    <div class="vcard"><div class="pct" style="color:#178a45;">96.2%</div><div class="lbl">Approved</div></div>
+    <div class="vcard"><div class="pct" style="color:#4b5b68;">3.1%</div><div class="lbl">Withheld</div></div>
+    <div class="vcard"><div class="pct" style="color:#5A6B75;">0.7%</div><div class="lbl">Not observed</div></div>
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>05</span></div>
+</div>
+
+<!-- ================= PAGE 6 — PERFORMANCE DATA TABLE ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">04 · Performance data</span>
+    <h1>Asset-level data coverage &amp; availability</h1>
+    <p>Figures below are calculated for 15 monitored asset blocks. For example, in block INV-01, data coverage is 99.1% and certified availability is 98.7%, drawing on 44,640 fifteen-minute samples over the period.</p>
+  </div>
+
+  <table>
+    <tr>
+      <th>Asset ID</th><th>Samples</th><th>Coverage&nbsp;(%)</th><th>Availability&nbsp;(%)</th><th>PR&nbsp;(%)</th><th>Energy&nbsp;(MWh)</th><th>Verdict</th>
+    </tr>
+    <tr><td class="mono">INV-01</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.7</td><td class="mono">84.2</td><td class="mono">18,240</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-02</td><td class="mono">44,512</td><td class="mono">98.8</td><td class="mono">97.9</td><td class="mono">83.6</td><td class="mono">17,905</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-03</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">99.0</td><td class="mono">85.1</td><td class="mono">18,412</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-04</td><td class="mono">44,398</td><td class="mono">98.6</td><td class="mono">97.4</td><td class="mono">82.9</td><td class="mono">17,660</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-05</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.5</td><td class="mono">84.7</td><td class="mono">18,190</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-06</td><td class="mono">44,180</td><td class="mono">98.1</td><td class="mono">96.8</td><td class="mono">83.2</td><td class="mono">17,420</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-07</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.9</td><td class="mono">85.4</td><td class="mono">18,505</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-08</td><td class="mono">44,352</td><td class="mono">98.5</td><td class="mono">97.6</td><td class="mono">83.8</td><td class="mono">17,810</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-09</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.3</td><td class="mono">84.0</td><td class="mono">18,050</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-10</td><td class="mono">44,467</td><td class="mono">98.7</td><td class="mono">97.7</td><td class="mono">83.4</td><td class="mono">17,730</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr style="background:#f9f6f0;"><td class="mono">INV-11</td><td class="mono">21,984</td><td class="mono">48.8</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td><td><span class="pill withheld">Withheld</span></td></tr>
+    <tr><td class="mono">INV-12</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.8</td><td class="mono">85.0</td><td class="mono">18,380</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">INV-13</td><td class="mono">44,530</td><td class="mono">98.9</td><td class="mono">98.1</td><td class="mono">84.3</td><td class="mono">18,020</td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">BESS-01</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">99.3</td><td class="mono">—</td><td class="mono">4,120<span style="color:var(--muted);"> (dis.)</span></td><td><span class="pill approved">Approved</span></td></tr>
+    <tr><td class="mono">BESS-02</td><td class="mono">44,601</td><td class="mono">99.0</td><td class="mono">99.0</td><td class="mono">—</td><td class="mono">4,085<span style="color:var(--muted);"> (dis.)</span></td><td><span class="pill approved">Approved</span></td></tr>
+  </table>
+
+  <p style="font-size:10.5px;color:var(--muted);margin-top:12px;">
+    Asset ID — monitored inverter or BESS unit. Samples — 15-minute interval readings received over the period, max 44,640. Coverage — share of expected samples that passed validation. Availability — contractual availability calculated only from validated samples. PR — performance ratio (PV assets only). Energy — net energy delivered (BESS rows show net discharge).
+  </p>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>06</span></div>
+</div>
+
+<!-- ================= PAGE 7 — CHARTS ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">04 · Performance data</span>
+    <h1>Data coverage by asset</h1>
+    <p>Total monitored assets: 15. Threshold for a defensible availability figure: 90% data coverage.</p>
+  </div>
+
+  <div class="chart-wrap">
+    <svg viewBox="0 0 720 430" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <line x1="140" y1="10" x2="140" y2="410" stroke="#e3e9ec" stroke-width="1"/>
+      <text x="140" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">0</text>
+      <text x="330" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">50</text>
+      <text x="520" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">100%</text>
+      <line x1="330" y1="10" x2="330" y2="410" stroke="#eef1f2" stroke-width="1"/>
+      <line x1="520" y1="10" x2="520" y2="410" stroke="#eef1f2" stroke-width="1"/>
+
+      <g font-family="Inter, sans-serif" font-size="11" fill="#0b1c2c">
+        <text x="130" y="30" text-anchor="end">INV-01</text><rect x="140" y="18" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="30" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="55" text-anchor="end">INV-02</text><rect x="140" y="43" width="375.2" height="16" rx="2" fill="#1fb6a8"/><text x="521" y="55" font-family="SF Mono" font-size="10" fill="#5c7080">98.8</text>
+        <text x="130" y="80" text-anchor="end">INV-03</text><rect x="140" y="68" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="80" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="105" text-anchor="end">INV-04</text><rect x="140" y="93" width="374.6" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="105" font-family="SF Mono" font-size="10" fill="#5c7080">98.6</text>
+        <text x="130" y="130" text-anchor="end">INV-05</text><rect x="140" y="118" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="130" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="155" text-anchor="end">INV-06</text><rect x="140" y="143" width="372.8" height="16" rx="2" fill="#1fb6a8"/><text x="517" y="155" font-family="SF Mono" font-size="10" fill="#5c7080">98.1</text>
+        <text x="130" y="180" text-anchor="end">INV-07</text><rect x="140" y="168" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="180" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="205" text-anchor="end">INV-08</text><rect x="140" y="193" width="374" height="16" rx="2" fill="#1fb6a8"/><text x="518" y="205" font-family="SF Mono" font-size="10" fill="#5c7080">98.5</text>
+        <text x="130" y="230" text-anchor="end">INV-09</text><rect x="140" y="218" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="230" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="255" text-anchor="end">INV-10</text><rect x="140" y="243" width="375.1" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="255" font-family="SF Mono" font-size="10" fill="#5c7080">98.7</text>
+        <text x="130" y="280" text-anchor="end" font-weight="700">INV-11</text><rect x="140" y="268" width="185.4" height="16" rx="2" fill="#5A6B75"/><text x="330" y="280" font-family="SF Mono" font-size="10" fill="#5c7080" font-weight="700">48.8</text>
+        <text x="130" y="305" text-anchor="end">INV-12</text><rect x="140" y="293" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="305" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="330" text-anchor="end">INV-13</text><rect x="140" y="318" width="375.8" height="16" rx="2" fill="#1fb6a8"/><text x="522" y="330" font-family="SF Mono" font-size="10" fill="#5c7080">98.9</text>
+        <text x="130" y="355" text-anchor="end">BESS-01</text><rect x="140" y="343" width="376.4" height="16" rx="2" fill="#149487"/><text x="524" y="355" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
+        <text x="130" y="380" text-anchor="end">BESS-02</text><rect x="140" y="368" width="376.0" height="16" rx="2" fill="#149487"/><text x="523" y="380" font-family="SF Mono" font-size="10" fill="#5c7080">99.0</text>
+      </g>
+      <line x1="482" y1="10" x2="482" y2="410" stroke="#f5a623" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="484" y="12" font-size="8.5" fill="#a5670c" font-family="SF Mono">90% threshold</text>
+    </svg>
+  </div>
+
+  <div class="chart-legend">
+    <span><i style="background:#1fb6a8;"></i>PV inverter block</span>
+    <span><i style="background:#149487;"></i>BESS unit</span>
+    <span><i style="background:#5A6B75;"></i>Below threshold — withheld</span>
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>07</span></div>
+</div>
+
+<!-- ================= PAGE 8 — FINDINGS ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">05 · Findings &amp; exceptions</span>
+    <h1>Findings &amp; exceptions</h1>
+    <p>Exceptions identified during validation for the reporting period, in order of materiality.</p>
+  </div>
+
+  <div class="finding">
+    <div class="fh"><b>F-01 — Data coverage below threshold, INV-11</b><span class="pill withheld">Withheld</span></div>
+    <p>Communication loss between the block-11 datalogger and the plant historian from 14–28 Jan (14.2 days), reducing period coverage to 48.8% — below the 90% threshold for a defensible availability figure. Availability for INV-11 is withheld for this period rather than estimated.</p>
+    <div class="rec">Recommendation: replace or reconfigure the block-11 datalogger's communication module; Quorelia will re-certify the period once coverage is restored and back-filled data is validated.</div>
+  </div>
+
+  <div class="finding">
+    <div class="fh"><b>F-02 — Elevated warning rate, INV-06 (6–9 Jan)</b><span class="pill warn">Warning</span></div>
+    <p>String-level current imbalance flagged on 6 occasions over a 72-hour window, consistent with a soiling pattern rather than a fault. Did not affect certified availability.</p>
+    <div class="rec">Recommendation: schedule a cleaning cycle for row 6 ahead of the next reporting period.</div>
+  </div>
+
+  <div class="finding">
+    <div class="fh"><b>F-03 — Short data gap, BESS-01 (22 Jan, 04:10–05:55)</b><span class="pill warn">Warning</span></div>
+    <p>1h 45m telemetry gap during a scheduled SCADA maintenance window, pre-notified by the client. Excluded from coverage denominator per methodology Section 02.</p>
+    <div class="rec">No action required — handled per standard scheduled-maintenance exclusion.</div>
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>08</span></div>
+</div>
+
+<!-- ================= PAGE 9 — REVIEWER COMMENTARY ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">06 · Independent reviewer's note</span>
+    <h1>Independent reviewer's note</h1>
+    <p>A market and technical context review, performed independently of the automated verification pipeline in Sections 02–05.</p>
+  </div>
+
+  <div class="quote-block">
+    <p>"A 96.2% certified availability, on a 1 GWac-class hybrid asset, sits comfortably ahead of the regional benchmark range for first-three-years operation in northern Chile, where curtailment exposure and dust-driven soiling losses typically weigh on reported PR more than equipment failure does. The single withheld block in this period is a communications issue, not a generation issue — the distinction matters, because it is the difference between a defensible number and a number that simply wasn't checked closely enough to know.</p>
+    <p style="margin-top:12px;">The discipline worth noting here isn't the 96.2% — it's the 48.8%. Most commercial monitoring stacks would either quietly interpolate that gap or report a number that implies more confidence than the data supports. Withholding it, and naming the root cause on the first page rather than in an appendix, is the behaviour an asset owner, lender, or offtake counterparty actually needs to see before they can rely on a platform's output without re-checking it themselves."</p>
+  </div>
+
+  <div class="signoff">
+    <b>Independent Review — Energy Consulting Advisory</b><br>
+    Prepared as part of Quorelia's independent reviewer program. This commentary reflects an external, sector-informed reading of the verification results in Sections 02–05 and is illustrative for this sample report.
+  </div>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>09</span></div>
+</div>
+
+<!-- ================= PAGE 10 — APPENDIX ================= -->
+<div class="page">
+  <div class="sec-h">
+    <span class="eyebrow">07 · Appendix</span>
+    <h1>Definitions &amp; methodology</h1>
+  </div>
+
+  <h4 style="font-size:13px;margin-bottom:8px;">State legend</h4>
+  <div class="def-item"><div class="def-chip" style="background:#3FD07A;"></div><div><h5>Nominal</h5><p>Measured, verified, and within expected range.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#F2B441;"></div><div><h5>Warning</h5><p>Threshold breach or anomaly flagged; does not affect certified availability unless it persists.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#FF6B35;"></div><div><h5>Fault</h5><p>Confirmed equipment or channel fault, traced to source and timestamped.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#FF3B4E;"></div><div><h5>Critical</h5><p>Fault with material impact on availability or safety; routed for immediate escalation.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 4px);border:0.8px solid #5A6B75;"></div><div><h5>Not observed</h5><p>The channel never responded for the period. Drawn as a hatch pattern — never reported as zero.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#5A6B75;"></div><div><h5>Withheld</h5><p>Data exists but falls below the coverage threshold required to support a contractual claim; the figure is not published for that period.</p></div></div>
+
+  <h4 style="font-size:13px;margin:22px 0 8px;">Methodology notes</h4>
+  <table>
+    <tr><th style="width:30%;">Parameter</th><th>Value / rule</th></tr>
+    <tr><td>Sampling interval</td><td>15 minutes (native SCADA resolution)</td></tr>
+    <tr><td>Coverage threshold for certification</td><td>90% of expected samples per asset, per period</td></tr>
+    <tr><td>Scheduled maintenance handling</td><td>Excluded from coverage denominator when pre-notified in writing</td></tr>
+    <tr><td>PR calculation basis</td><td>IEC 61724-1, corrected for on-site irradiance and temperature</td></tr>
+    <tr><td>BESS availability basis</td><td>Contracted dispatch-readiness window, per interconnection agreement terms</td></tr>
+    <tr><td>Report delivery</td><td>Automated PDF + client portal, generated on schedule, no manual assembly</td></tr>
+  </table>
+
+  <div class="foot"><span>Sample report — illustrative data only</span><span>10</span></div>
+</div>
+
+<!-- ================= PAGE 11 — BACK / CONTACT ================= -->
+<div class="page back-navy" style="display:flex;flex-direction:column;justify-content:space-between;">
+  <div>
+    <div class="cover-brand"><span>QUORELIA</span></div>
+    <div class="cover-tag" style="margin-bottom:40px;">Renewable Energy Intelligence</div>
+
+    <h2 style="font-size:20px;color:#fff;margin-bottom:14px;">Confidentiality &amp; data security</h2>
+    <p style="font-size:12px;color:#b9c9d1;max-width:6in;line-height:1.7;">
+      All plant, SCADA, and report data referenced in this document is treated as strictly confidential: access limited to authorised personnel, encrypted in transit and at rest, and nothing shared, sold, or sublicensed beyond the contracted service. Quorelia executes NDAs and data processing agreements before any onboarding, and retains client data only for the duration required by contract.
+    </p>
+
+    <h2 style="font-size:20px;color:#fff;margin:30px 0 14px;">Get the same report on your data</h2>
+    <p style="font-size:12px;color:#b9c9d1;max-width:6in;line-height:1.7;">
+      Show us your current monthly report. We'll hand back the same report generated by Quorelia, from your own SCADA — every figure traceable to the measurement behind it. No commitment, no disruption to your operation.
+    </p>
+  </div>
+  <div style="border-top:0.8px solid rgba(255,255,255,0.15);padding-top:16px;font-size:11px;color:#7f93a0;display:flex;justify-content:space-between;">
+    <span>jay@quorelia.org &nbsp;·&nbsp; quorelia.org</span>
+    <span>© 2026 Quorelia — Sample report, illustrative data only</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -420,6 +420,7 @@
   .vc-box.approved{background:rgba(34,197,94,0.07);border:0.8px solid rgba(34,197,94,0.3);}
   .vc-box.withheld{background:rgba(245,166,35,0.08);border:0.8px solid rgba(245,166,35,0.35);}
   .vc-box b{display:block;margin-bottom:3px;}
+  .report-cta{display:block;text-align:center;margin-top:18px;padding:13px 20px;font-size:14px;}
 
   /* Visual language */
   .visual-lang{background:#0A0D0F;color:#E6EDF0;}
@@ -891,6 +892,7 @@
           <div class="vc-box approved"><b data-i18n="vc1_title">Coverage 96% → Approved</b><span data-i18n="vc1_body">Enough observed data to certify the contractual figure with confidence.</span></div>
           <div class="vc-box withheld"><b data-i18n="vc2_title">Coverage 54% → Withheld</b><span data-i18n="vc2_body">Below the defensible threshold — Quorelia reports why instead of asserting compliance.</span></div>
         </div>
+        <a href="quorelia-sample-report.html" target="_blank" rel="noopener" class="btn btn-primary report-cta" data-i18n="report_cta">View the full sample report →</a>
       </div>
     </div>
   </div>
@@ -1257,6 +1259,7 @@ const i18n = {
     alert_body:"Quorelia raises automatic alerts the moment something needs attention — an inverter fault, a comms drop, a threshold breach — and routes them to the right owner. Your team gets dispatched to do the actual maintenance instead of staring at a screen 24/7/365.",
     samples_tag:"Sample reports", samples_title:"See it before you commit",
     samples_sub:"Illustrative examples — an interactive dashboard you can click through right now, and a sample daily report, built the same way real Quorelia output is: from data, not from a template.",
+    report_cta:"View the full sample report →",
     mk1:"Contractual availability", mk2:"Data coverage", mk3:"Racks / units confirmed", mk4:"Open findings",
     dash_link:"Open full-screen example →", dash_live:"Live sample — try it",
     rc1:"Contractual availability (GAA)", rc2:"Target", rc3:"Data coverage", rc4:"Verdict", rc_approved:"Approved",
@@ -1364,6 +1367,7 @@ const i18n = {
     alert_body:"Quorelia genera alertas automáticas en el momento en que algo necesita atención — una falla de inversor, pérdida de comunicación, un umbral superado — y las dirige al dueño correcto. Tu equipo se despacha para hacer la mantención real, en vez de mirar una pantalla 24/7/365.",
     samples_tag:"Reportes de ejemplo", samples_title:"Compruébalo antes de decidir",
     samples_sub:"Ejemplos ilustrativos — un dashboard interactivo que puedes explorar ahora mismo, y un reporte diario de muestra, construidos de la misma forma que el resultado real de Quorelia: a partir de datos, no de una plantilla.",
+    report_cta:"Ver el reporte de muestra completo →",
     mk1:"Disponibilidad contractual", mk2:"Cobertura de datos", mk3:"Racks / unidades confirmadas", mk4:"Hallazgos abiertos",
     dash_link:"Abrir ejemplo a pantalla completa →", dash_live:"Muestra en vivo — pruébala",
     rc1:"Disponibilidad contractual (GAA)", rc2:"Meta", rc3:"Cobertura de datos", rc4:"Veredicto", rc_approved:"Aprobado",

@@ -191,13 +191,13 @@
     <select class="plant-select">
       <option>Planta 175 — CATL / Grenergy</option>
     </select>
-    <div class="tabs">
-      <button class="active">Resumen</button>
-      <button>Energía &amp; SOC</button>
-      <button>Celdas &amp; Racks</button>
-      <button>Alarmas</button>
-      <button>Hallazgos</button>
-      <button>Trazabilidad</button>
+    <div class="tabs" id="tabBar">
+      <button class="active" data-view="resumen">Resumen</button>
+      <button data-view="energia">Energía &amp; SOC</button>
+      <button data-view="celdas">Celdas &amp; Racks</button>
+      <button data-view="alarmas">Alarmas</button>
+      <button data-view="hallazgos">Hallazgos</button>
+      <button data-view="trazabilidad">Trazabilidad</button>
     </div>
   </div>
   <div class="topbar-right">
@@ -211,7 +211,7 @@
 
 <div class="verdict" id="verdictBanner"></div>
 
-<div class="grid">
+<div class="grid view" data-view="resumen">
 
   <!-- KPI ROW -->
   <div class="kpi-row" id="kpiRow"></div>
@@ -221,6 +221,23 @@
     <div class="panel-head">Disponibilidad contractual — objetivo 98% vs. real<span class="sub" id="availSub"></span></div>
     <div class="panel-body"><canvas id="chartAvailability" height="70"></canvas></div>
   </div>
+
+  <!-- Impact strip -->
+  <div class="panel col-12">
+    <div class="panel-head">Impacto vs. proceso manual</div>
+    <div class="panel-body">
+      <div class="impact-strip">
+        <div class="box"><div class="big">2–3 h → ~2 min</div><div class="lbl">por día, sobre 888 racks</div></div>
+        <div class="box"><div class="big">500–750 h</div><div class="lbl">ahorradas por año (250 días hábiles)</div></div>
+        <div class="box"><div class="big">CLP 12–19M</div><div class="lbl">costo cargado equivalente evitado</div></div>
+        <div class="box"><div class="big">2</div><div class="lbl">cifras erróneas detenidas antes de publicarse</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid view" data-view="energia" style="display:none;">
 
   <!-- Energy + SOC -->
   <div class="panel col-7">
@@ -233,25 +250,14 @@
   </div>
 
   <!-- Variance / tendencia -->
-  <div class="panel col-7">
+  <div class="panel col-12">
     <div class="panel-head">Tendencia de descarga — 5 días hábiles<span class="sub">excluye días sin datos</span></div>
-    <div class="panel-body"><canvas id="chartTrend" height="105"></canvas></div>
-  </div>
-  <div class="panel col-5">
-    <div class="panel-head">Alarmas por familia<span class="sub" id="alarmSub"></span></div>
-    <div class="panel-body"><canvas id="chartAlarms" height="105"></canvas></div>
+    <div class="panel-body"><canvas id="chartTrend" height="90"></canvas></div>
   </div>
 
-  <!-- Alerts / dispatch callout -->
-  <div class="panel col-12">
-    <div class="panel-body" style="display:flex;align-items:center;gap:18px;">
-      <div style="flex:none;width:48px;height:48px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:22px;">🔔</div>
-      <div>
-        <div style="font-weight:800;font-size:13.5px;color:#fafaf9;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
-        <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica por familia y severidad y se enruta a un dueño (Operación, ProyectaPV o Cliente). El sistema vigila continuamente; las personas se despachan solo cuando hay una alarma real que atender — no para observar una pantalla.</div>
-      </div>
-    </div>
-  </div>
+</div>
+
+<div class="grid view" data-view="celdas" style="display:none;">
 
   <!-- Asset hierarchy -->
   <div class="panel col-12">
@@ -282,6 +288,31 @@
     </div>
   </div>
 
+</div>
+
+<div class="grid view" data-view="alarmas" style="display:none;">
+
+  <!-- Alarms chart -->
+  <div class="panel col-12">
+    <div class="panel-head">Alarmas por familia<span class="sub" id="alarmSub"></span></div>
+    <div class="panel-body"><canvas id="chartAlarms" height="90"></canvas></div>
+  </div>
+
+  <!-- Alerts / dispatch callout -->
+  <div class="panel col-12">
+    <div class="panel-body" style="display:flex;align-items:center;gap:18px;">
+      <div style="flex:none;width:48px;height:48px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:22px;">🔔</div>
+      <div>
+        <div style="font-weight:800;font-size:13.5px;color:#fafaf9;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
+        <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica como preventiva o correctiva según su severidad y patrón, y se enruta al técnico o electricista correspondiente (Operación, ProyectaPV o Cliente). El sistema vigila continuamente y clasifica cada evento; el despacho final lo confirma una persona — no se envía a nadie a observar una pantalla.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid view" data-view="hallazgos" style="display:none;">
+
   <!-- Findings -->
   <div class="panel col-12">
     <div class="panel-head">Hallazgos con dueño<span class="sub">acciones derivadas del informe, no solo indicadores</span></div>
@@ -292,6 +323,10 @@
       </table>
     </div>
   </div>
+
+</div>
+
+<div class="grid view" data-view="trazabilidad" style="display:none;">
 
   <!-- Trazabilidad -->
   <div class="panel col-12">
@@ -315,19 +350,6 @@
         <div><div class="k">Pruebas automatizadas</div><div class="v">670</div></div>
         <div><div class="k">Cifras detenidas por la compuerta</div><div class="v">2 (202% RTE, 54.41% disp.)</div></div>
         <div><div class="k">Zona horaria</div><div class="v">UTC</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Impact strip -->
-  <div class="panel col-12">
-    <div class="panel-head">Impacto vs. proceso manual</div>
-    <div class="panel-body">
-      <div class="impact-strip">
-        <div class="box"><div class="big">2–3 h → ~2 min</div><div class="lbl">por día, sobre 888 racks</div></div>
-        <div class="box"><div class="big">500–750 h</div><div class="lbl">ahorradas por año (250 días hábiles)</div></div>
-        <div class="box"><div class="big">CLP 12–19M</div><div class="lbl">costo cargado equivalente evitado</div></div>
-        <div class="box"><div class="big">2</div><div class="lbl">cifras erróneas detenidas antes de publicarse</div></div>
       </div>
     </div>
   </div>
@@ -574,6 +596,23 @@ function render(key){
 
 document.getElementById('dateSelect').addEventListener('change', e => render(e.target.value));
 render('today');
+
+// --- SPA tab navigation ---
+function setView(view){
+  document.querySelectorAll('.view').forEach(el => {
+    el.style.display = (el.getAttribute('data-view') === view) ? 'grid' : 'none';
+  });
+  document.querySelectorAll('#tabBar button').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-view') === view);
+  });
+  // Chart.js canvases created while hidden report zero size — resize once visible.
+  requestAnimationFrame(() => {
+    Object.values(charts).forEach(c => { if(c) c.resize(); });
+  });
+}
+document.querySelectorAll('#tabBar button').forEach(btn => {
+  btn.addEventListener('click', () => setView(btn.getAttribute('data-view')));
+});
 </script>
 </body>
 </html>
