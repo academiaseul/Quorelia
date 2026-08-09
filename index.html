@@ -476,6 +476,10 @@
   @media(max-width:640px){.form-row{grid-template-columns:1fr;}}
 
   .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .why-shot{
+    width:100%;border-radius:var(--radius-sm);border:0.8px solid var(--border);
+    margin-top:8px;display:block;
+  }
   .split .panel{
     background:var(--white);border:0.8px solid var(--border);border-radius:var(--radius-lg);padding:28px;
   }
@@ -864,8 +868,9 @@
   <div class="container split">
     <div>
       <span class="tag" data-i18n="why_tag">Why Quorelia</span>
-      <h2 style="font-size:30px;font-weight:800;margin-bottom:16px;" data-i18n="why_title">Built for teams tired of building reports by hand</h2>
+      <h2 style="font-size:var(--fs-h3);margin-bottom:16px;" data-i18n="why_title">Built for teams tired of building reports by hand</h2>
       <p style="color:var(--muted);font-size:16px;margin-bottom:20px;" data-i18n="why_body">O&amp;M teams lose hours every week exporting spreadsheets and formatting client decks. Quorelia replaces that with a system that runs itself, so your team spends time on the plants, not the paperwork.</p>
+      <img src="quorelia-tex-data.jpg" alt="Quorelia data pipeline view" class="why-shot" loading="lazy">
     </div>
     <div class="panel">
       <ul>
