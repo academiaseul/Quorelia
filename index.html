@@ -207,8 +207,9 @@
   }
   .feature-band.reverse{direction:rtl;}
   .feature-band.reverse > *{direction:ltr;}
-  .fb-media{position:relative;min-height:420px;}
-  .fb-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .fb-media{position:relative;min-height:420px;overflow:hidden;}
+  .fb-media img,.fb-media video{width:100%;height:100%;object-fit:cover;display:block;}
+  .fb-media video{background:var(--navy);}
   .fb-media::after{
     content:'';position:absolute;inset:0;
     background:linear-gradient(90deg,transparent 55%,rgba(11,28,44,0.75));
@@ -608,7 +609,12 @@
 
 <section class="feature-band">
   <div class="fb-media">
-    <img src="quorelia-banner-solar.jpg" alt="Utility-scale solar tracker array under continuous monitoring" loading="lazy">
+    <video class="fb-video" autoplay muted loop playsinline preload="metadata"
+           poster="quorelia-aerial-poster.jpg"
+           aria-label="Aerial view of a rooftop solar array under continuous monitoring">
+      <source src="quorelia-aerial.mp4" type="video/mp4">
+      <img src="quorelia-banner-solar.jpg" alt="Utility-scale solar tracker array under continuous monitoring">
+    </video>
   </div>
   <div class="fb-copy">
     <span class="fb-eyebrow" data-i18n="fb1_eyebrow">Field</span>
