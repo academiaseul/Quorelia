@@ -77,7 +77,7 @@
     *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  html,body{scroll-behavior:smooth;}
+  html,body{scroll-behavior:smooth;overflow-x:hidden;}
   body{
     font-family:'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color:var(--ink);
@@ -96,9 +96,11 @@
     color:var(--white);
     border-bottom:0.8px solid rgba(255,255,255,0.08);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;min-width:0;}
+  .nav-actions{display:flex;align-items:center;gap:16px;flex:none;}
   .nav-logo{height:48px;width:auto;object-fit:contain;display:block;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:0.3px;text-decoration:none;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:0.3px;text-decoration:none;flex:none;}
+  .nav-cta{padding:10px 18px;font-size:14px;white-space:nowrap;}
   .brand .mark{
     width:32px;height:32px;
     object-fit:contain;display:block;
@@ -471,6 +473,44 @@
     .arch-row{gap:24px;}
   }
 
+  /* Philosophy */
+  .philosophy{background:var(--navy);color:var(--white);}
+  .philosophy .section-head p{color:#b9c9d1;}
+  .philosophy .tag{color:var(--teal);}
+  .motto{
+    max-width:760px;margin:0 auto 40px;text-align:center;
+    padding:32px 24px;border-top:0.8px solid rgba(255,255,255,0.18);
+    border-bottom:0.8px solid rgba(255,255,255,0.18);
+  }
+  .motto-line{
+    font-family:var(--font-display);
+    font-size:clamp(1.4rem,1.1rem+1.3vw,2.2rem);line-height:1.2;
+    letter-spacing:-0.025em;font-weight:500;color:var(--white);
+  }
+  .motto-sub{
+    margin-top:12px;font-size:15px;font-style:italic;color:var(--teal);
+    letter-spacing:0.01em;
+  }
+  .phil-lead{
+    max-width:680px;margin:0 auto 48px;text-align:center;
+    font-size:17px;line-height:1.7;color:#c7d4dc;
+  }
+  .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+  .phil-item{padding:0 28px;border-left:0.8px solid rgba(255,255,255,0.16);}
+  .phil-item:first-child{border-left:0;padding-left:0;}
+  .phil-item:last-child{padding-right:0;}
+  .phil-k{
+    display:block;font-family:'SF Mono',Consolas,monospace;
+    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--teal);margin-bottom:12px;
+  }
+  .phil-item p{font-size:14.5px;line-height:1.7;color:#b9c9d1;}
+  @media(max-width:860px){
+    .phil-grid{grid-template-columns:1fr;gap:28px;}
+    .phil-item{border-left:0;padding:0 0 0 16px;border-left:0.8px solid rgba(255,255,255,0.16);}
+    .phil-item:first-child{padding-left:16px;}
+  }
+
   /* Brand story */
   .brand-story{background:var(--bg);border-top:0.8px solid var(--border);border-bottom:0.8px solid var(--border);}
   .brand-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
@@ -572,26 +612,50 @@
     .foot-grid{grid-template-columns:1fr 1fr;}
     .cta-band{margin:0 8px;padding:36px 20px;}
   }
+
+  /* Header — small screens */
+  @media(max-width:560px){
+    .container{padding:0 16px;}
+    .nav{gap:8px;padding:8px 0;}
+    .nav-actions{gap:8px;}
+    .brand-word{font-size:15px;letter-spacing:1.6px;}
+    .lang-toggle button{padding:5px 9px;font-size:11px;}
+    .nav-cta{padding:8px 12px;font-size:12.5px;}
+    .hero{padding:56px 0 76px;}
+    .hero .container{padding:0 16px;}
+    .eyebrow{font-size:11px;letter-spacing:0.6px;padding:5px 10px;margin-bottom:16px;}
+    .hero p.lead{font-size:16px;}
+    .hero-features{font-size:12px;}
+    .hero-features .sep{margin:0 7px;}
+    .cta-row{flex-direction:column;align-items:stretch;}
+    .cta-row .btn{width:100%;text-align:center;}
+    .hero-scroll{display:none;}
+  }
+  @media(max-width:380px){
+    .brand-word{font-size:13.5px;letter-spacing:1.2px;}
+    .nav-cta{padding:7px 10px;font-size:12px;}
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <a href="/" class="brand" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
+    <a href="/" class="brand" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
     <nav class="links">
       <a href="#product" data-i18n="nav_product">Product</a>
       <a href="#samples" data-i18n="nav_samples">Samples</a>
       <a href="#how" data-i18n="nav_how">How it works</a>
       <a href="#why" data-i18n="nav_why">Why Quorelia</a>
+      <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <div style="display:flex;align-items:center;gap:16px;">
+    <div class="nav-actions">
       <div class="lang-toggle">
         <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
         <button id="btn-es" onclick="setLang('es')">ES</button>
       </div>
-      <a href="#contact" class="btn btn-primary" style="padding:10px 18px;font-size:14px;" data-i18n="nav_cta">Get a demo</a>
+      <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">Get a demo</a>
     </div>
   </div>
 </header>
@@ -914,6 +978,37 @@
   </div>
 </section>
 
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="phil_tag">Our philosophy</span>
+      <h2 data-i18n="phil_title">Why Quorelia exists</h2>
+    </div>
+
+    <blockquote class="motto">
+      <p class="motto-line" data-i18n="phil_motto">Ever watching. In service of the planet's energy.</p>
+      <p class="motto-sub" data-i18n="phil_tagline">Your energy. Always under watch.</p>
+    </blockquote>
+
+    <p class="phil-lead" data-i18n="phil_lead">We didn't set out to build a dashboard. We set out because someone was checking a screen at 2&nbsp;a.m. so a number would be right at 8&nbsp;a.m. Quorelia exists so that person can go build something instead — and the plant is still watched, still verified, still accounted for, every hour they're not there.</p>
+
+    <div class="phil-grid">
+      <div class="phil-item">
+        <span class="phil-k" data-i18n="phil_k1">Vision</span>
+        <p data-i18n="phil_v1">A world where no renewable energy asset operates unwatched, and where trusting a plant's numbers is the default — not something an investor has to independently verify.</p>
+      </div>
+      <div class="phil-item">
+        <span class="phil-k" data-i18n="phil_k2">Mission</span>
+        <p data-i18n="phil_v2">Make every number a renewable asset reports provable — monitored continuously, verified independently, delivered on schedule — so the people responsible for it can trust it without re-checking it themselves.</p>
+      </div>
+      <div class="phil-item">
+        <span class="phil-k" data-i18n="phil_k3">Our rule</span>
+        <p data-i18n="phil_v3">Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="brand-story" id="brand">
   <div class="container">
     <div class="section-head">
@@ -997,7 +1092,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="/" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><img src="quorelia-icon.png" alt="" class="brand-icon"><span class="brand-word">Quorelia</span></a>
+        <a href="/" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
         <p style="font-size:14px;color:#9fb0ba;max-width:280px;" data-i18n="foot_desc">Automated O&amp;M reporting for solar asset owners and operators — built for global, bilingual portfolios.</p>
       </div>
       <div>
@@ -1045,6 +1140,18 @@ const i18n = {
     fb2_eyebrow:"Platform",
     fb2_title:"Raw signal in. Defensible report out.",
     fb2_body:"Ingestion, validation, KPI calculation, and verification run as one traceable pipeline — so every figure you publish can be traced back to the measurement behind it.",
+    nav_philosophy:"Philosophy",
+    phil_tag:"Our philosophy",
+    phil_title:"Why Quorelia exists",
+    phil_motto:"Ever watching. In service of the planet's energy.",
+    phil_tagline:"Your energy. Always under watch.",
+    phil_lead:"We didn't set out to build a dashboard. We set out because someone was checking a screen at 2&nbsp;a.m. so a number would be right at 8&nbsp;a.m. Quorelia exists so that person can go build something instead — and the plant is still watched, still verified, still accounted for, every hour they're not there.",
+    phil_k1:"Vision",
+    phil_v1:"A world where no renewable energy asset operates unwatched, and where trusting a plant's numbers is the default — not something an investor has to independently verify.",
+    phil_k2:"Mission",
+    phil_v2:"Make every number a renewable asset reports provable — monitored continuously, verified independently, delivered on schedule — so the people responsible for it can trust it without re-checking it themselves.",
+    phil_k3:"Our rule",
+    phil_v3:"Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.",
     banner_caption:"One system. Every asset. Continuously verified.",
     trust_label:"Built for asset owners, EPCs, and O&M teams managing solar, wind, and battery storage",
     pillars_tag:"Four pillars", pillars_title:"One continuous loop, running around the clock",
@@ -1135,6 +1242,18 @@ const i18n = {
     fb2_eyebrow:"Plataforma",
     fb2_title:"Entra la señal. Sale el informe defendible.",
     fb2_body:"Ingesta, validación, cálculo de KPI y verificación funcionan como un único flujo trazable — cada cifra que publicas se puede rastrear hasta la medición que la respalda.",
+    nav_philosophy:"Filosofía",
+    phil_tag:"Nuestra filosofía",
+    phil_title:"Por qué existe Quorelia",
+    phil_motto:"Siempre vigilando. Al servicio de la energía del planeta.",
+    phil_tagline:"Tu energía. Siempre bajo vigilancia.",
+    phil_lead:"No nos propusimos construir un dashboard. Nos propusimos esto porque alguien revisaba una pantalla a las 2&nbsp;a.m. para que una cifra estuviera correcta a las 8&nbsp;a.m. Quorelia existe para que esa persona pueda dedicarse a construir — y la planta siga vigilada, verificada y auditada cada hora que no está ahí.",
+    phil_k1:"Visión",
+    phil_v1:"Un mundo donde ningún activo de energía renovable opere sin vigilancia, y donde confiar en las cifras de una planta sea lo normal — no algo que un inversionista deba verificar por su cuenta.",
+    phil_k2:"Misión",
+    phil_v2:"Hacer que cada cifra que reporta un activo renovable sea demostrable — monitoreada de forma continua, verificada de forma independiente y entregada a tiempo — para que quienes responden por ese activo puedan confiar en ella sin volver a revisarla.",
+    phil_k3:"Nuestra regla",
+    phil_v3:"Nada se publica si no puede explicarse a una persona, en lenguaje claro y con toda su trazabilidad adjunta. Si los datos no alcanzan para sostener una afirmación, lo decimos.",
     banner_caption:"Un solo sistema. Todos los activos. Verificación continua.",
     trust_label:"Diseñado para propietarios de activos, EPCs y equipos de O&M que gestionan solar, eólica y almacenamiento en baterías",
     pillars_tag:"Cuatro pilares", pillars_title:"Un ciclo continuo, las 24 horas",
