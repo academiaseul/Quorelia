@@ -514,20 +514,32 @@
     max-width:680px;margin:0 auto 48px;text-align:center;
     font-size:17px;line-height:1.7;color:#c7d4dc;
   }
-  .phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-  .phil-item{padding:0 28px;border-left:0.8px solid rgba(255,255,255,0.16);}
+  .phil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .phil-item{padding:0 24px;border-left:0.8px solid rgba(255,255,255,0.16);}
   .phil-item:first-child{border-left:0;padding-left:0;}
   .phil-item:last-child{padding-right:0;}
+  .phil-close{
+    max-width:760px;margin:48px auto 0;text-align:center;
+    padding-top:32px;border-top:0.8px solid rgba(255,255,255,0.18);
+    font-family:var(--font-display);font-size:clamp(1.05rem,0.95rem+0.6vw,1.45rem);
+    line-height:1.35;letter-spacing:-0.02em;font-weight:500;color:var(--white);
+  }
   .phil-k{
     display:block;font-family:'SF Mono',Consolas,monospace;
     font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
     color:var(--teal);margin-bottom:12px;
   }
   .phil-item p{font-size:14.5px;line-height:1.7;color:#b9c9d1;}
-  @media(max-width:860px){
-    .phil-grid{grid-template-columns:1fr;gap:28px;}
-    .phil-item{border-left:0;padding:0 0 0 16px;border-left:0.8px solid rgba(255,255,255,0.16);}
-    .phil-item:first-child{padding-left:16px;}
+  @media(max-width:900px){
+    .phil-grid{grid-template-columns:1fr 1fr;gap:32px 0;}
+    .phil-item{padding:0 20px;}
+    .phil-item:nth-child(odd){border-left:0;padding-left:0;}
+  }
+  @media(max-width:560px){
+    .phil-grid{grid-template-columns:1fr;gap:26px;}
+    .phil-item,.phil-item:nth-child(odd){
+      border-left:0.8px solid rgba(255,255,255,0.16);padding:0 0 0 16px;
+    }
   }
 
   /* Brand story */
@@ -1021,10 +1033,16 @@
         <p data-i18n="phil_v2">Make every number a renewable asset reports provable — monitored continuously, verified independently, delivered on schedule — so the people responsible for it can trust it without re-checking it themselves.</p>
       </div>
       <div class="phil-item">
-        <span class="phil-k" data-i18n="phil_k3">Our rule</span>
-        <p data-i18n="phil_v3">Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.</p>
+        <span class="phil-k" data-i18n="phil_k3">Our approach</span>
+        <p data-i18n="phil_v3">Automated AI monitoring absorbs the scope of work, with the plan and parameters tuned to each client's interest. Big-data reporting runs continuously — and every output is audited by senior professionals.</p>
+      </div>
+      <div class="phil-item">
+        <span class="phil-k" data-i18n="phil_k4">Our rule</span>
+        <p data-i18n="phil_v4">Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.</p>
       </div>
     </div>
+
+    <p class="phil-close" data-i18n="phil_close">Intelligent asset management, humanizing renewable energy.</p>
   </div>
 </section>
 
@@ -1169,8 +1187,11 @@ const i18n = {
     phil_v1:"A world where no renewable energy asset operates unwatched, and where trusting a plant's numbers is the default — not something an investor has to independently verify.",
     phil_k2:"Mission",
     phil_v2:"Make every number a renewable asset reports provable — monitored continuously, verified independently, delivered on schedule — so the people responsible for it can trust it without re-checking it themselves.",
-    phil_k3:"Our rule",
-    phil_v3:"Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.",
+    phil_k3:"Our approach",
+    phil_v3:"Automated AI monitoring absorbs the scope of work, with the plan and parameters tuned to each client's interest. Big-data reporting runs continuously — and every output is audited by senior professionals.",
+    phil_k4:"Our rule",
+    phil_v4:"Nothing gets published unless it can be explained to a person, in plain language, with its full trail of evidence attached. If the data isn't good enough to support a claim, we say so.",
+    phil_close:"Intelligent asset management, humanizing renewable energy.",
     banner_caption:"One system. Every asset. Continuously verified.",
     trust_label:"Built for asset owners, EPCs, and O&M teams managing solar, wind, and battery storage",
     pillars_tag:"Four pillars", pillars_title:"One continuous loop, running around the clock",
@@ -1271,8 +1292,11 @@ const i18n = {
     phil_v1:"Un mundo donde ningún activo de energía renovable opere sin vigilancia, y donde confiar en las cifras de una planta sea lo normal — no algo que un inversionista deba verificar por su cuenta.",
     phil_k2:"Misión",
     phil_v2:"Hacer que cada cifra que reporta un activo renovable sea demostrable — monitoreada de forma continua, verificada de forma independiente y entregada a tiempo — para que quienes responden por ese activo puedan confiar en ella sin volver a revisarla.",
-    phil_k3:"Nuestra regla",
-    phil_v3:"Nada se publica si no puede explicarse a una persona, en lenguaje claro y con toda su trazabilidad adjunta. Si los datos no alcanzan para sostener una afirmación, lo decimos.",
+    phil_k3:"Nuestro enfoque",
+    phil_v3:"El monitoreo automatizado con IA absorbe el alcance del trabajo, con el plan y los parámetros ajustados al interés de cada cliente. El reporte de big data corre de forma continua — y cada resultado es auditado por profesionales senior.",
+    phil_k4:"Nuestra regla",
+    phil_v4:"Nada se publica si no puede explicarse a una persona, en lenguaje claro y con toda su trazabilidad adjunta. Si los datos no alcanzan para sostener una afirmación, lo decimos.",
+    phil_close:"Gestión inteligente de activos, humanizando la energía renovable.",
     banner_caption:"Un solo sistema. Todos los activos. Verificación continua.",
     trust_label:"Diseñado para propietarios de activos, EPCs y equipos de O&M que gestionan solar, eólica y almacenamiento en baterías",
     pillars_tag:"Cuatro pilares", pillars_title:"Un ciclo continuo, las 24 horas",
