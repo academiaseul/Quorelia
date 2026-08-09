@@ -21,6 +21,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* Header display face — VCR OSD Mono */
+  @font-face{
+    font-family:'VCR OSD Mono';
+    src:url('vcr-osd-mono.woff2') format('woff2'),
+        url('vcr-osd-mono.ttf') format('truetype');
+    font-weight:400;font-style:normal;font-display:swap;
+  }
   :root{
     --navy:#0b1c2c;
     --navy-2:#122a40;
@@ -40,12 +47,12 @@
     --radius-lg:16px;
     --radius-pill:999px;
 
-    /* Display typeface — geometric, technical; used for all headings */
-    --font-display:'Space Grotesk','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    /* Display typeface — VCR OSD Mono for all headings */
+    --font-display:'VCR OSD Mono','Space Grotesk','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 
     /* Bimodal type scale — deliberate gap between body and display sizes */
-    --fs-display: clamp(2.75rem, 2rem + 3.2vw, 5.5rem);
-    --fs-h2: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
+    --fs-display: clamp(2rem, 1.4rem + 2.4vw, 4rem);
+    --fs-h2: clamp(1.5rem, 1.2rem + 1.3vw, 2.35rem);
     --fs-h3: clamp(1.35rem, 1.2rem + 0.7vw, 1.75rem);
     --fs-body: 1.0625rem;
     --fs-eyebrow: 0.75rem;
@@ -69,7 +76,7 @@
     background:var(--bg);
     line-height:1.55;
   }
-  h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:-0.015em;}
+  h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:0;font-weight:400;}
   img,svg{display:block;max-width:100%;}
   a{color:inherit;text-decoration:none;}
   .container{max-width:1140px;margin:0 auto;padding:0 24px;}
@@ -144,8 +151,8 @@
   }
   .hero h1{
     font-family:var(--font-display);
-    font-size:var(--fs-display);line-height:1.02;letter-spacing:-0.03em;font-weight:400;
-    margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.35);
+    font-size:var(--fs-display);line-height:1.15;letter-spacing:0;font-weight:400;
+    margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.45);
   }
   .hero p.lead{font-size:18px;color:#dbe5eb;max-width:600px;margin:0 auto 26px;
     text-shadow:0 1px 20px rgba(0,0,0,0.4);}
@@ -185,6 +192,38 @@
     .stat-card:nth-child(odd){border-left:0;padding-left:0;}
   }
 
+  /* Feature bands — full-bleed image + copy */
+  .feature-band{
+    display:grid;grid-template-columns:1.15fr 0.85fr;align-items:stretch;
+    background:var(--navy);color:var(--white);padding:0;overflow:hidden;
+  }
+  .feature-band.reverse{direction:rtl;}
+  .feature-band.reverse > *{direction:ltr;}
+  .fb-media{position:relative;min-height:420px;}
+  .fb-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .fb-media::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent 55%,rgba(11,28,44,0.75));
+  }
+  .feature-band.reverse .fb-media::after{
+    background:linear-gradient(270deg,transparent 55%,rgba(11,28,44,0.75));
+  }
+  .fb-copy{display:flex;flex-direction:column;justify-content:center;padding:56px 60px;}
+  .fb-eyebrow{
+    font-family:var(--font-display);font-size:var(--fs-eyebrow);
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;
+  }
+  .fb-copy h2{font-size:var(--fs-h3);line-height:1.25;margin-bottom:14px;}
+  .fb-copy p{color:#b9c9d1;font-size:15.5px;line-height:1.65;}
+  @media(max-width:860px){
+    .feature-band,.feature-band.reverse{grid-template-columns:1fr;direction:ltr;}
+    .fb-media{min-height:240px;}
+    .fb-media::after,.feature-band.reverse .fb-media::after{
+      background:linear-gradient(180deg,transparent 50%,rgba(11,28,44,0.85));
+    }
+    .fb-copy{padding:32px 24px 40px;}
+  }
+
   /* Banner */
   .banner-wrap{background:var(--navy-2);position:relative;}
   .banner-img{width:100%;display:block;}
@@ -208,7 +247,7 @@
   /* Sections */
   section{padding:80px 0;}
   .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.06;letter-spacing:-0.025em;font-weight:400;margin-bottom:14px;}
+  .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.2;letter-spacing:0;font-weight:400;margin-bottom:14px;}
   .section-head p{color:var(--muted);font-size:16px;}
   .tag{
     display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
@@ -540,6 +579,28 @@
     </div>
   </div>
 </div>
+
+<section class="feature-band">
+  <div class="fb-media">
+    <img src="quorelia-banner-solar.jpg" alt="Utility-scale solar tracker array under continuous monitoring" loading="lazy">
+  </div>
+  <div class="fb-copy">
+    <span class="fb-eyebrow" data-i18n="fb1_eyebrow">Field</span>
+    <h2 data-i18n="fb1_title">Every asset, always under watch</h2>
+    <p data-i18n="fb1_body">Trackers, inverters, strings, and storage — polled continuously and checked against expected behaviour, not just logged.</p>
+  </div>
+</section>
+
+<section class="feature-band reverse">
+  <div class="fb-media">
+    <img src="quorelia-banner-platform.jpg" alt="Quorelia platform showing plant data pipeline and verification flow" loading="lazy">
+  </div>
+  <div class="fb-copy">
+    <span class="fb-eyebrow" data-i18n="fb2_eyebrow">Platform</span>
+    <h2 data-i18n="fb2_title">Raw signal in. Defensible report out.</h2>
+    <p data-i18n="fb2_body">Ingestion, validation, KPI calculation, and verification run as one traceable pipeline — so every figure you publish can be traced back to the measurement behind it.</p>
+  </div>
+</section>
 
 <div class="banner-wrap">
   <img src="quorelia-banner.jpg" alt="Automatic SCADA monitoring, operating and report system — real-time monitoring and intelligent automation for solar, wind and ESS power plants" class="banner-img">
@@ -929,6 +990,12 @@ const i18n = {
     hero_cta1:"Request a demo", hero_cta2:"See how it works",
     stat1:"Avg. fleet availability tracked", stat2:"Report turnaround, fully automated",
     stat3:"Languages out of the box (EN/ES)", stat4:"Client-branded exports",
+    fb1_eyebrow:"Field",
+    fb1_title:"Every asset, always under watch",
+    fb1_body:"Trackers, inverters, strings, and storage — polled continuously and checked against expected behaviour, not just logged.",
+    fb2_eyebrow:"Platform",
+    fb2_title:"Raw signal in. Defensible report out.",
+    fb2_body:"Ingestion, validation, KPI calculation, and verification run as one traceable pipeline — so every figure you publish can be traced back to the measurement behind it.",
     banner_caption:"One system. Every asset. Continuously verified.",
     trust_label:"Built for asset owners, EPCs, and O&M teams managing solar, wind, and battery storage",
     pillars_tag:"Four pillars", pillars_title:"One continuous loop, running around the clock",
@@ -1013,6 +1080,12 @@ const i18n = {
     hero_cta1:"Solicitar una demo", hero_cta2:"Ver cómo funciona",
     stat1:"Disponibilidad promedio de flota monitoreada", stat2:"Tiempo de entrega del reporte, totalmente automatizado",
     stat3:"Idiomas incluidos (EN/ES)", stat4:"Exportaciones con marca del cliente",
+    fb1_eyebrow:"Campo",
+    fb1_title:"Cada activo, siempre bajo vigilancia",
+    fb1_body:"Seguidores, inversores, strings y almacenamiento — monitoreados de forma continua y contrastados con su comportamiento esperado, no solo registrados.",
+    fb2_eyebrow:"Plataforma",
+    fb2_title:"Entra la señal. Sale el informe defendible.",
+    fb2_body:"Ingesta, validación, cálculo de KPI y verificación funcionan como un único flujo trazable — cada cifra que publicas se puede rastrear hasta la medición que la respalda.",
     banner_caption:"Un solo sistema. Todos los activos. Verificación continua.",
     trust_label:"Diseñado para propietarios de activos, EPCs y equipos de O&M que gestionan solar, eólica y almacenamiento en baterías",
     pillars_tag:"Cuatro pilares", pillars_title:"Un ciclo continuo, las 24 horas",
