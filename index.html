@@ -127,6 +127,32 @@
   .lang-toggle button.active{background:var(--teal);opacity:1;color:var(--navy);}
   .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer;}
 
+  /* Observation trace strip */
+  .obs-trace{background:var(--navy-2);border-bottom:0.8px solid rgba(255,255,255,0.08);padding:10px 0 9px;}
+  .obs-bars{display:flex;align-items:flex-end;gap:2px;height:16px;}
+  .obs-bars span{flex:1;min-width:1px;border-radius:1px;background:#3FD07A;}
+  .obs-bars span.warn{background:#F2B441;}
+  .obs-bars span.unobs{
+    height:100% !important;background-color:transparent;
+    background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 4px);
+  }
+  .obs-meta{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;
+    margin-top:7px;font-family:'SF Mono',Consolas,monospace;font-size:9.5px;
+    letter-spacing:0.1em;text-transform:uppercase;color:#63737C;
+  }
+  .obs-legend{display:flex;gap:16px;flex-wrap:wrap;}
+  .obs-legend span{display:inline-flex;align-items:center;gap:5px;}
+  .ob-dot{width:7px;height:7px;border-radius:1px;display:inline-block;flex:none;}
+  .ob-dot.ob-nom{background:#3FD07A;}
+  .ob-dot.ob-warn{background:#F2B441;}
+  .ob-dot.ob-unobs{
+    background-color:transparent;
+    background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 3px);
+    border:0.8px solid #5A6B75;
+  }
+  @media(max-width:640px){.obs-trace{padding:8px 0;}.obs-bars{height:12px;}.obs-legend{gap:10px;}}
+
   /* Hero — full-bleed cinematic */
   .hero{
     position:relative;
@@ -157,9 +183,10 @@
   .hero-scroll svg{width:22px;height:22px;}
   @keyframes heroBob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
   .eyebrow{
-    display:inline-block;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    display:inline-block;font-family:'SF Mono',Consolas,monospace;
+    font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
     color:var(--teal);background:rgba(31,182,168,0.12);border:0.8px solid rgba(31,182,168,0.35);
-    padding:6px 12px;border-radius:var(--radius-pill);margin-bottom:20px;
+    padding:7px 14px;border-radius:var(--radius-pill);margin-bottom:20px;
   }
   .hero h1{
     font-family:var(--font-title);
@@ -288,9 +315,11 @@
   .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.08;letter-spacing:-0.03em;font-weight:500;margin-bottom:14px;}
   .section-head p{color:var(--muted);font-size:16px;}
   .tag{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    display:inline-block;font-family:'SF Mono',Consolas,monospace;
+    font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
     color:var(--teal-dark);margin-bottom:10px;
   }
+  .philosophy .tag,.architecture .tag,.visual-lang .tag{color:var(--teal);}
 
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .pillars{background:var(--white);border-bottom:0.8px solid var(--border);}
@@ -690,6 +719,20 @@
     </div>
   </div>
 </header>
+
+<div class="obs-trace" aria-hidden="true">
+  <div class="container">
+    <div class="obs-bars" id="obs-bars"></div>
+    <div class="obs-meta">
+      <span class="obs-caption" data-i18n="obs_caption">Observation trace · last 24h</span>
+      <span class="obs-legend">
+        <span><i class="ob-dot ob-nom"></i><span data-i18n="obs_nominal">Nominal</span></span>
+        <span><i class="ob-dot ob-warn"></i><span data-i18n="obs_warning">Warning</span></span>
+        <span><i class="ob-dot ob-unobs"></i><span data-i18n="obs_unobserved">Not observed</span></span>
+      </span>
+    </div>
+  </div>
+</div>
 
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="quorelia-banner.jpg">
@@ -1166,11 +1209,11 @@ const i18n = {
     nav_product:"Product", nav_samples:"Samples", nav_how:"How it works", nav_why:"Why Quorelia", nav_contact:"Contact", nav_cta:"Get a demo",
     hero_eyebrow:"24/7 Intelligent Oversight for Renewable Energy",
     hero_title:"Ever watching. In service of the planet's energy.",
-    hero_lead:"Quorelia monitors, alerts, diagnoses, and reports on your solar, wind, and ESS assets — continuously and automatically, in English or Spanish.",
+    hero_lead:"Quorelia monitors, alerts, diagnoses, and reports on your solar, wind, and ESS assets — continuously and automatically, in English, Spanish, or any language we can source translation for.",
     hf1:"24/7 Monitoring", hf2:"Alarms &amp; Alerts", hf3:"Smart Diagnostics", hf4:"Automatic Reports",
     hero_cta1:"Request a demo", hero_cta2:"See how it works",
     stat1:"Avg. fleet availability tracked", stat2:"Report turnaround, fully automated",
-    stat3:"Languages out of the box (EN/ES)", stat4:"Client-branded exports",
+    stat3:"Languages — EN/ES built in, more sourced on request", stat4:"Client-branded exports",
     fb1_eyebrow:"Field",
     fb1_title:"Every asset, always under watch",
     fb1_body:"Trackers, inverters, strings, and storage — polled continuously and checked against expected behaviour, not just logged.",
@@ -1178,6 +1221,8 @@ const i18n = {
     fb2_title:"Raw signal in. Defensible report out.",
     fb2_body:"Ingestion, validation, KPI calculation, and verification run as one traceable pipeline — so every figure you publish can be traced back to the measurement behind it.",
     nav_philosophy:"Philosophy",
+    obs_caption:"Observation trace · last 24h",
+    obs_nominal:"Nominal", obs_warning:"Warning", obs_unobserved:"Not observed",
     phil_tag:"Our philosophy",
     phil_title:"Why Quorelia exists",
     phil_motto:"Ever watching. In service of the planet's energy.",
@@ -1197,7 +1242,7 @@ const i18n = {
     pillars_tag:"Four pillars", pillars_title:"One continuous loop, running around the clock",
     pillars_sub:"Each pillar feeds the next — so nothing sits unwatched between reports.",
     p1_title:"Monitor", p1_body:"Real-time visibility into every plant, inverter, rack, and channel — solar, wind, or ESS.",
-    p2_title:"Alert", p2_body:"Automatic alarms the moment a threshold is breached, a channel drops, or a fault appears.",
+    p2_title:"Alert", p2_body:"Automatic alarms the moment a threshold is breached, a channel drops, or a fault appears — classified as preventive or corrective, and routed to the right technician to act on.",
     p3_title:"Diagnose", p3_body:"Findings are traced to source data and provenance — not just flagged and left for someone to chase.",
     p4_title:"Report", p4_body:"Daily and monthly reports build themselves, in English and Spanish, ready for stakeholders.",
     product_tag:"Product", product_title:"Monitoring and automated reporting. Nothing you didn't ask for.",
@@ -1247,7 +1292,7 @@ const i18n = {
     why_tag:"Why Quorelia", why_title:"Built for teams tired of building reports by hand",
     why_body:"O&M teams lose hours every week exporting spreadsheets and formatting client decks. Quorelia replaces that with a system that runs itself, so your team spends time on the plants, not the paperwork.",
     w1:"Cuts report prep time from days to minutes", w2:"Consistent formatting across every client and site",
-    w3:"Native English/Spanish output for global portfolios", w4:"Fewer errors from manual copy-paste reporting",
+    w3:"Native English/Spanish output, with Chinese, Korean, and other languages sourced for your portfolio on request", w4:"Fewer errors from manual copy-paste reporting",
     w5:"Scales from a handful of sites to full fleets",
     brand_tag:"About the name", brand_title:"Why \"Quorelia\"",
     brand_sub:"A name built to travel — across languages, across asset types, across the next decade.",
@@ -1271,11 +1316,11 @@ const i18n = {
     nav_product:"Producto", nav_samples:"Ejemplos", nav_how:"Cómo funciona", nav_why:"Por qué Quorelia", nav_contact:"Contacto", nav_cta:"Solicitar demo",
     hero_eyebrow:"Supervisión Inteligente 24/7 para Energías Renovables",
     hero_title:"Siempre vigilando. Al servicio de la energía del planeta.",
-    hero_lead:"Quorelia monitorea, alerta, diagnostica y reporta sobre tus activos solares, eólicos y de almacenamiento (ESS) — de forma continua y automática, en inglés o español.",
+    hero_lead:"Quorelia monitorea, alerta, diagnostica y reporta sobre tus activos solares, eólicos y de almacenamiento (ESS) — de forma continua y automática, en inglés, español o cualquier idioma para el que podamos gestionar traducción.",
     hf1:"Monitoreo 24/7", hf2:"Alarmas y Alertas", hf3:"Diagnóstico Inteligente", hf4:"Reportes Automáticos",
     hero_cta1:"Solicitar una demo", hero_cta2:"Ver cómo funciona",
     stat1:"Disponibilidad promedio de flota monitoreada", stat2:"Tiempo de entrega del reporte, totalmente automatizado",
-    stat3:"Idiomas incluidos (EN/ES)", stat4:"Exportaciones con marca del cliente",
+    stat3:"Idiomas — EN/ES incluidos, más idiomas gestionados bajo pedido", stat4:"Exportaciones con marca del cliente",
     fb1_eyebrow:"Campo",
     fb1_title:"Cada activo, siempre bajo vigilancia",
     fb1_body:"Seguidores, inversores, strings y almacenamiento — monitoreados de forma continua y contrastados con su comportamiento esperado, no solo registrados.",
@@ -1283,6 +1328,8 @@ const i18n = {
     fb2_title:"Entra la señal. Sale el informe defendible.",
     fb2_body:"Ingesta, validación, cálculo de KPI y verificación funcionan como un único flujo trazable — cada cifra que publicas se puede rastrear hasta la medición que la respalda.",
     nav_philosophy:"Filosofía",
+    obs_caption:"Traza de observación · últimas 24h",
+    obs_nominal:"Nominal", obs_warning:"Alerta", obs_unobserved:"No observado",
     phil_tag:"Nuestra filosofía",
     phil_title:"Por qué existe Quorelia",
     phil_motto:"Siempre vigilando. Al servicio de la energía del planeta.",
@@ -1302,7 +1349,7 @@ const i18n = {
     pillars_tag:"Cuatro pilares", pillars_title:"Un ciclo continuo, las 24 horas",
     pillars_sub:"Cada pilar alimenta al siguiente — para que nada quede sin vigilancia entre reportes.",
     p1_title:"Monitorear", p1_body:"Visibilidad en tiempo real de cada planta, inversor, rack y canal — solar, eólica o ESS.",
-    p2_title:"Alertar", p2_body:"Alarmas automáticas en el momento en que se supera un umbral, cae un canal o aparece una falla.",
+    p2_title:"Alertar", p2_body:"Alarmas automáticas en el momento en que se supera un umbral, cae un canal o aparece una falla — clasificadas como preventivas o correctivas, y enrutadas al técnico correspondiente para actuar.",
     p3_title:"Diagnosticar", p3_body:"Los hallazgos se rastrean hasta los datos de origen y su trazabilidad — no solo se marcan para que alguien los persiga.",
     p4_title:"Reportar", p4_body:"Los reportes diarios y mensuales se generan solos, en inglés y español, listos para los stakeholders.",
     product_tag:"Producto", product_title:"Monitoreo y reportes automatizados. Nada que no hayas pedido.",
@@ -1352,7 +1399,7 @@ const i18n = {
     why_tag:"Por qué Quorelia", why_title:"Diseñado para equipos cansados de armar reportes a mano",
     why_body:"Los equipos de O&M pierden horas cada semana exportando hojas de cálculo y formateando presentaciones para clientes. Quorelia lo reemplaza con un sistema que se ejecuta solo, para que tu equipo dedique tiempo a las plantas, no al papeleo.",
     w1:"Reduce el tiempo de preparación de reportes de días a minutos", w2:"Formato consistente en cada cliente y sitio",
-    w3:"Salida nativa en inglés/español para portafolios globales", w4:"Menos errores por copiar y pegar manualmente",
+    w3:"Salida nativa en inglés/español, con chino, coreano y otros idiomas gestionados para tu portafolio bajo pedido", w4:"Menos errores por copiar y pegar manualmente",
     w5:"Escala desde unos pocos sitios hasta flotas completas",
     brand_tag:"Sobre el nombre", brand_title:"Por qué \"Quorelia\"",
     brand_sub:"Un nombre pensado para viajar — entre idiomas, entre tipos de activos, hacia la próxima década.",
@@ -1373,6 +1420,26 @@ const i18n = {
     foot_disclaimer:"\"Quorelia\" es un nombre de trabajo; el contenido de este sitio es para fines de planificación. quorelia.org está registrado y en uso. Realiza una búsqueda formal de disponibilidad de marca (USPTO / EUIPO / WIPO Madrid + países objetivo) antes de un uso comercial más amplio."
   }
 };
+
+(function renderObsTrace(){
+  const el = document.getElementById('obs-bars');
+  if(!el) return;
+  const n = 90;
+  let html = '';
+  for(let i=0;i<n;i++){
+    const r = Math.random();
+    if(r < 0.045){
+      html += '<span class="unobs"></span>';
+    } else if(r < 0.12){
+      const h = 45 + Math.random()*45;
+      html += '<span class="warn" style="height:'+h.toFixed(0)+'%"></span>';
+    } else {
+      const h = 40 + Math.random()*60;
+      html += '<span style="height:'+h.toFixed(0)+'%"></span>';
+    }
+  }
+  el.innerHTML = html;
+})();
 
 let currentLang = 'en';
 function setLang(lang){
