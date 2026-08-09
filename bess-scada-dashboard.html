@@ -7,18 +7,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
   :root{
-    --bg:#0a1018;
-    --panel:#111a26;
-    --panel-2:#0d1520;
-    --border:#1e2a3a;
-    --border-hi:#2f6fed;
-    --text:#e6ebf2;
-    --muted:#7c8aa0;
-    --blue:#2f6fed;
-    --blue-soft:#1b3358;
+    --bg:#0c0a09;
+    --panel:#1c1917;
+    --panel-2:#110f0e;
+    --border:rgba(255,255,255,0.10);
+    --border-hi:#00b6d4;
+    --text:#fafaf9;
+    --muted:#a6a09b;
+    --blue:#00b6d4;
+    --blue-soft:rgba(0,182,212,0.16);
     --green:#22c55e;
     --amber:#f5a623;
-    --red:#ef4444;
+    --red:#ff6568;
     --purple:#a78bfa;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -47,7 +47,7 @@
     background:transparent;border:none;color:var(--muted);padding:8px 14px;font-size:12.5px;
     border-radius:6px;cursor:pointer;font-weight:600;
   }
-  .tabs button.active{background:var(--blue-soft);color:#bcd2ff;}
+  .tabs button.active{background:var(--blue-soft);color:#a1d8e6;}
   .topbar-right{display:flex;align-items:center;gap:14px;}
   .date-select{
     background:var(--panel);border:1px solid var(--border);color:var(--text);
@@ -98,9 +98,9 @@
   .kpi .value.green{color:var(--green);}
   .kpi .value.amber{color:var(--amber);}
   .kpi .value.red{color:var(--red);}
-  .kpi .value.blue{color:#bcd2ff;}
+  .kpi .value.blue{color:#a1d8e6;}
   .kpi .meta{font-size:11px;color:var(--muted);margin-top:8px;}
-  .kpi .bar{height:5px;border-radius:3px;background:#1c2635;margin-top:10px;overflow:hidden;}
+  .kpi .bar{height:5px;border-radius:3px;background:#292524;margin-top:10px;overflow:hidden;}
   .kpi .bar-fill{height:100%;border-radius:3px;}
 
   .col-8{grid-column:span 8;}
@@ -123,9 +123,9 @@
     content:"›";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
     color:var(--muted);font-size:18px;
   }
-  .tree .node .n{font-size:20px;font-weight:800;color:#bcd2ff;}
+  .tree .node .n{font-size:20px;font-weight:800;color:#a1d8e6;}
   .tree .node .l{font-size:11px;color:var(--muted);margin-top:3px;}
-  .tree .node .s{font-size:10px;color:#4a5568;margin-top:1px;}
+  .tree .node .s{font-size:10px;color:#78716c;margin-top:1px;}
 
   /* Heatmap */
   .heatmap{display:grid;grid-template-columns:70px repeat(16,1fr);gap:2px;font-size:9.5px;}
@@ -141,22 +141,22 @@
     text-align:left;color:var(--muted);font-weight:600;font-size:10.5px;text-transform:uppercase;
     letter-spacing:.3px;padding:8px 10px;border-bottom:1px solid var(--border);
   }
-  tbody td{padding:9px 10px;border-bottom:1px solid #17202c;vertical-align:middle;}
-  tbody tr:hover{background:#0f1826;}
+  tbody td{padding:9px 10px;border-bottom:1px solid #211e1c;vertical-align:middle;}
+  tbody tr:hover{background:#1c1917;}
   .prio{padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;}
-  .prio.urgente{background:rgba(239,68,68,.15);color:#ff8b8b;}
+  .prio.urgente{background:rgba(255,101,104,.15);color:#ff8b8b;}
   .prio.alta{background:rgba(245,166,35,.15);color:#ffc978;}
-  .prio.media{background:rgba(47,111,237,.15);color:#8fb3ff;}
-  .prio.baja{background:#1c2635;color:var(--muted);}
+  .prio.media{background:rgba(0,182,212,.15);color:#6ec6db;}
+  .prio.baja{background:#292524;color:var(--muted);}
   .owner{padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:600;}
-  .owner.operacion{background:rgba(47,111,237,.15);color:#8fb3ff;}
+  .owner.operacion{background:rgba(0,182,212,.15);color:#6ec6db;}
   .owner.proyectapv{background:rgba(167,139,250,.15);color:#c9b8fc;}
   .owner.cliente{background:rgba(245,166,35,.15);color:#ffc978;}
   .estado{font-size:11px;font-weight:600;}
   .estado.abierto{color:var(--amber);}
   .estado.resuelto{color:var(--green);}
   .estado.pendiente{color:var(--muted);}
-  .estado.informativo{color:#8fb3ff;}
+  .estado.informativo{color:#6ec6db;}
 
   /* Trazabilidad pipeline */
   .pipeline{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
@@ -177,10 +177,10 @@
   .impact-strip .box{
     background:var(--panel-2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;
   }
-  .impact-strip .box .big{font-size:22px;font-weight:800;color:#bcd2ff;}
+  .impact-strip .box .big{font-size:22px;font-weight:800;color:#a1d8e6;}
   .impact-strip .box .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;}
 
-  .foot{padding:16px 20px 30px;color:#4a5568;font-size:11px;text-align:center;}
+  .foot{padding:16px 20px 30px;color:#78716c;font-size:11px;text-align:center;}
 </style>
 </head>
 <body>
@@ -247,7 +247,7 @@
     <div class="panel-body" style="display:flex;align-items:center;gap:18px;">
       <div style="flex:none;width:48px;height:48px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:22px;">🔔</div>
       <div>
-        <div style="font-weight:800;font-size:13.5px;color:#e6ebf2;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
+        <div style="font-weight:800;font-size:13.5px;color:#fafaf9;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
         <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica por familia y severidad y se enruta a un dueño (Operación, ProyectaPV o Cliente). El sistema vigila continuamente; las personas se despachan solo cuando hay una alarma real que atender — no para observar una pantalla.</div>
       </div>
     </div>
@@ -273,11 +273,11 @@
     <div class="panel-body">
       <div class="heatmap" id="heatmap"></div>
       <div class="legend">
-        <span>0 mV</span><span class="sw" style="background:#1b3358"></span>
-        <span class="sw" style="background:#2f6fed"></span>
+        <span>0 mV</span><span class="sw" style="background:rgba(0,182,212,0.16)"></span>
+        <span class="sw" style="background:#00b6d4"></span>
         <span class="sw" style="background:#22c55e"></span>
         <span class="sw" style="background:#f5a623"></span>
-        <span class="sw" style="background:#ef4444"></span><span>≥500 mV (umbral)</span>
+        <span class="sw" style="background:#ff6568"></span><span>≥500 mV (umbral)</span>
       </div>
     </div>
   </div>
@@ -411,11 +411,11 @@ const DATA = {
 let charts = {};
 
 function colorForMv(mv){
-  if(mv >= 500) return '#ef4444';
+  if(mv >= 500) return '#ff6568';
   if(mv >= 350) return '#f5a623';
   if(mv >= 200) return '#22c55e';
-  if(mv >= 80) return '#2f6fed';
-  return '#1b3358';
+  if(mv >= 80) return '#00b6d4';
+  return 'rgba(0,182,212,0.16)';
 }
 
 function render(key){
@@ -433,7 +433,7 @@ function render(key){
       <div class="label">${k.label}</div>
       <div class="value ${k.cls}">${k.value}</div>
       <div class="meta">${k.meta}</div>
-      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#22c55e':k.cls==='amber'?'#f5a623':k.cls==='red'?'#ef4444':'#2f6fed'}"></div></div>
+      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#22c55e':k.cls==='amber'?'#f5a623':k.cls==='red'?'#ff6568':'#00b6d4'}"></div></div>
     </div>`).join('');
 
   document.getElementById('energySub').textContent = `carga ${d.energy.carga} MWh · descarga ${d.energy.descarga} MWh`;
@@ -451,10 +451,10 @@ function render(key){
       datasets:[
         {
           type:'line', label:'Disponibilidad real (%)', data:d.availSeries,
-          borderColor:'#2f6fed', backgroundColor:'rgba(47,111,237,0.12)', fill:true,
+          borderColor:'#00b6d4', backgroundColor:'rgba(0,182,212,0.12)', fill:true,
           tension:0.3, pointRadius:3,
-          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ef4444'),
-          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ef4444'),
+          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ff6568'),
+          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ff6568'),
         },
         {
           type:'line', label:`Objetivo (${d.availTarget}%)`, data:d.availDates.map(()=>d.availTarget),
@@ -463,11 +463,11 @@ function render(key){
       ]
     },
     options:{
-      plugins:{legend:{labels:{color:'#7c8aa0',font:{size:10}}}},
+      plugins:{legend:{labels:{color:'#a6a09b',font:{size:10}}}},
       scales:{
-        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
-        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}, suggestedMin:96, suggestedMax:100,
-           title:{display:true,text:'% disponibilidad',color:'#7c8aa0',font:{size:10}}}
+        x:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}},
+        y:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}, suggestedMin:96, suggestedMax:100,
+           title:{display:true,text:'% disponibilidad',color:'#a6a09b',font:{size:10}}}
       }
     }
   });
@@ -479,14 +479,14 @@ function render(key){
     data:{
       labels:['D-6','D-5','D-4','D-3','D-2','D-1','Hoy'],
       datasets:[
-        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#2f6fed', borderRadius:3},
+        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#00b6d4', borderRadius:3},
       ]
     },
     options:{
-      plugins:{legend:{labels:{color:'#7c8aa0',font:{size:10}}}},
+      plugins:{legend:{labels:{color:'#a6a09b',font:{size:10}}}},
       scales:{
-        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
-        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}}
+        x:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}},
+        y:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}}
       }
     }
   });
@@ -499,13 +499,13 @@ function render(key){
       labels:['SOC inicial','SOC final','Restante'],
       datasets:[{
         data:[d.soc.inicial, Math.max(d.soc.final-d.soc.inicial,0), 100-Math.max(d.soc.final,d.soc.inicial)],
-        backgroundColor:['#2f6fed','#22c55e','#1c2635'],
+        backgroundColor:['#00b6d4','#22c55e','#292524'],
         borderWidth:0
       }]
     },
     options:{
       cutout:'70%',
-      plugins:{legend:{position:'bottom',labels:{color:'#7c8aa0',font:{size:10},boxWidth:10}}}
+      plugins:{legend:{position:'bottom',labels:{color:'#a6a09b',font:{size:10},boxWidth:10}}}
     }
   });
 
@@ -517,15 +517,15 @@ function render(key){
       labels:d.trendLabels,
       datasets:[{
         data:d.trendVals,
-        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#22c55e':v>=d.trendBands.warn?'#f5a623':'#ef4444'),
+        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#22c55e':v>=d.trendBands.warn?'#f5a623':'#ff6568'),
         borderRadius:3
       }]
     },
     options:{
       plugins:{legend:{display:false}},
       scales:{
-        x:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}},
-        y:{ticks:{color:'#7c8aa0',font:{size:10}}, grid:{color:'#17202c'}, title:{display:true,text:'MWh',color:'#7c8aa0',font:{size:10}}}
+        x:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}},
+        y:{ticks:{color:'#a6a09b',font:{size:10}}, grid:{color:'#211e1c'}, title:{display:true,text:'MWh',color:'#a6a09b',font:{size:10}}}
       }
     }
   });
@@ -538,12 +538,12 @@ function render(key){
       labels:d.alarms.map(a=>a.f),
       datasets:[{
         data:d.alarms.map(a=>a.n),
-        backgroundColor:['#2f6fed','#a78bfa','#22c55e','#ef4444','#f5a623'],
+        backgroundColor:['#00b6d4','#a78bfa','#22c55e','#ff6568','#f5a623'],
         borderWidth:0
       }]
     },
     options:{
-      plugins:{legend:{position:'bottom',labels:{color:'#7c8aa0',font:{size:10},boxWidth:10}}}
+      plugins:{legend:{position:'bottom',labels:{color:'#a6a09b',font:{size:10},boxWidth:10}}}
     }
   });
 
