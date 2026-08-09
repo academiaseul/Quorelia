@@ -19,15 +19,8 @@
 <meta name="twitter:image" content="https://quorelia.org/quorelia-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* Header display face — VCR OSD Mono */
-  @font-face{
-    font-family:'VCR OSD Mono';
-    src:url('vcr-osd-mono.woff2') format('woff2'),
-        url('vcr-osd-mono.ttf') format('truetype');
-    font-weight:400;font-style:normal;font-display:swap;
-  }
   :root{
     --navy:#0b1c2c;
     --navy-2:#122a40;
@@ -47,13 +40,13 @@
     --radius-lg:16px;
     --radius-pill:999px;
 
-    /* Display typeface — VCR OSD Mono for all headings */
-    --font-display:'VCR OSD Mono','Space Grotesk','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    /* Display typeface — pixel face for all headings */
+    --font-display:'Silkscreen','Space Grotesk','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 
     /* Bimodal type scale — deliberate gap between body and display sizes */
-    --fs-display: clamp(2rem, 1.4rem + 2.4vw, 4rem);
-    --fs-h2: clamp(1.5rem, 1.2rem + 1.3vw, 2.35rem);
-    --fs-h3: clamp(1.35rem, 1.2rem + 0.7vw, 1.75rem);
+    --fs-display: clamp(1.75rem, 1.2rem + 2.1vw, 3.4rem);
+    --fs-h2: clamp(1.3rem, 1.05rem + 1.1vw, 2rem);
+    --fs-h3: clamp(1.05rem, 0.95rem + 0.5vw, 1.4rem);
     --fs-body: 1.0625rem;
     --fs-eyebrow: 0.75rem;
 
@@ -151,7 +144,7 @@
   }
   .hero h1{
     font-family:var(--font-display);
-    font-size:var(--fs-display);line-height:1.15;letter-spacing:0;font-weight:400;
+    font-size:var(--fs-display);line-height:1.4;letter-spacing:0;font-weight:400;
     margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.45);
   }
   .hero p.lead{font-size:18px;color:#dbe5eb;max-width:600px;margin:0 auto 26px;
@@ -247,7 +240,7 @@
   /* Sections */
   section{padding:80px 0;}
   .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.2;letter-spacing:0;font-weight:400;margin-bottom:14px;}
+  .section-head h2{font-family:var(--font-display);font-size:var(--fs-h2);line-height:1.4;letter-spacing:0;font-weight:400;margin-bottom:14px;}
   .section-head p{color:var(--muted);font-size:16px;}
   .tag{
     display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
