@@ -21,6 +21,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  /* Main title face — mac's Tweaked Minecraft (SIL OFL) */
+  @font-face{
+    font-family:'Quorelia Title';
+    src:url('quorelia-title.woff2') format('woff2'),
+        url('quorelia-title.ttf') format('truetype');
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'Quorelia Title';
+    src:url('quorelia-title-bold.woff2') format('woff2'),
+        url('quorelia-title-bold.ttf') format('truetype');
+    font-weight:700;font-style:normal;font-display:swap;
+  }
   :root{
     --navy:#0b1c2c;
     --navy-2:#122a40;
@@ -43,10 +56,10 @@
     /* Section headings use the body typeface */
     --font-display:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     /* Pixel face — hero banner headline only */
-    --font-pixel:'Silkscreen','Courier New',monospace;
+    --font-pixel:'Quorelia Title','Silkscreen','Courier New',monospace;
 
     /* Bimodal type scale — deliberate gap between body and display sizes */
-    --fs-display: clamp(1.75rem, 1.2rem + 2.1vw, 3.4rem);
+    --fs-display: clamp(2.1rem, 1.5rem + 2.6vw, 4.25rem);
     --fs-h2: clamp(1.85rem, 1.5rem + 1.6vw, 3rem);
     --fs-h3: clamp(1.3rem, 1.15rem + 0.7vw, 1.7rem);
     --fs-body: 1.0625rem;
@@ -146,7 +159,7 @@
   }
   .hero h1{
     font-family:var(--font-pixel);
-    font-size:var(--fs-display);line-height:1.45;letter-spacing:0;font-weight:400;
+    font-size:var(--fs-display);line-height:1.25;letter-spacing:0.01em;font-weight:400;
     margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,0.45);
   }
   .hero p.lead{font-size:18px;color:#dbe5eb;max-width:600px;margin:0 auto 26px;
