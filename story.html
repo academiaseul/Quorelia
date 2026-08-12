@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Our Story — Quorelia</title>
+<meta name="description" content="Two friends, ten years of trying, and the belief that led to Quorelia: energy should be measurable, understandable, and always watched — with AI made human enough to trust.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quorelia.org/story.html">
+<meta property="og:title" content="Our Story — Quorelia">
+<meta property="og:description" content="Two friends, ten years of trying, and the belief that led to Quorelia: energy should be measurable, understandable, and always watched.">
+<meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Story — Quorelia">
+<meta name="twitter:description" content="Two friends, ten years of trying, and the belief that led to Quorelia.">
+<meta name="twitter:image" content="https://quorelia.org/quorelia-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1c2c;
+    --navy-2:#122a40;
+    --teal:#1fb6a8;
+    --teal-dark:#149487;
+    --ink:#0b1c2c;
+    --muted:#5c7080;
+    --bg:#f7f9fa;
+    --white:#ffffff;
+    --border:#e3e9ec;
+    --radius-sm:6px;
+    --radius-lg:16px;
+    --radius-pill:999px;
+    --font-display:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --fs-display: clamp(2.1rem, 1.5rem + 2.6vw, 4.25rem);
+    --fs-h2: clamp(1.85rem, 1.5rem + 1.6vw, 3rem);
+    --fs-h3: clamp(1.3rem, 1.15rem + 0.7vw, 1.7rem);
+    --ease-in-out-cubic: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  @media(prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-display);color:var(--ink);background:var(--bg);line-height:1.55;}
+  h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:-0.02em;font-weight:500;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* Header (matches site) */
+  .site-head{position:sticky;top:0;z-index:50;}
+  header{background:var(--navy);color:var(--white);border-bottom:0.8px solid rgba(255,255,255,0.08);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;min-width:0;}
+  .nav-actions{display:flex;align-items:center;gap:16px;flex:none;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;text-decoration:none;flex:none;}
+  .brand-word{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:800;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;color:var(--white);line-height:1;}
+  footer .brand-word{font-size:24px;letter-spacing:3px;}
+  nav.links{display:flex;gap:28px;align-items:center;font-size:15px;}
+  nav.links a{opacity:0.85;transition:opacity .15s;}
+  nav.links a:hover{opacity:1;}
+  nav.links a.current{opacity:1;font-weight:700;}
+  .nav-cta{padding:10px 18px;font-size:14px;white-space:nowrap;}
+  .lang-toggle{display:flex;background:rgba(255,255,255,0.08);border-radius:var(--radius-pill);padding:3px;gap:2px;}
+  .lang-toggle button{border:none;background:transparent;color:var(--white);padding:6px 14px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;cursor:pointer;opacity:0.65;transition:all .15s;}
+  .lang-toggle button.active{background:var(--teal);opacity:1;color:var(--navy);}
+  @media(max-width:860px){ nav.links{display:none;} }
+
+  /* Observation trace */
+  .obs-trace{background:var(--navy-2);border-bottom:0.8px solid rgba(255,255,255,0.08);padding:10px 0 9px;}
+  .obs-bars{display:flex;align-items:flex-end;gap:2px;height:16px;}
+  .obs-bars span{flex:1;min-width:1px;border-radius:1px;background:#3FD07A;}
+  .obs-bars span.warn{background:#F2B441;}
+  .obs-bars span.unobs{height:100% !important;background-color:transparent;background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 4px);}
+  .obs-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-top:7px;font-family:'SF Mono',Consolas,monospace;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#63737C;}
+  .obs-legend{display:flex;gap:16px;flex-wrap:wrap;}
+  .obs-legend span{display:inline-flex;align-items:center;gap:5px;}
+  .ob-dot{width:7px;height:7px;border-radius:1px;display:inline-block;flex:none;}
+  .ob-dot.ob-nom{background:#3FD07A;}
+  .ob-dot.ob-warn{background:#F2B441;}
+  .ob-dot.ob-unobs{background-color:transparent;background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 3px);border:0.8px solid #5A6B75;}
+  @media(max-width:640px){.obs-trace{padding:8px 0;}.obs-bars{height:12px;}.obs-legend{gap:10px;}}
+
+  .btn{display:inline-block;padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;cursor:pointer;border:2px solid transparent;transition:transform .15s, background .15s;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--teal);color:var(--navy);}
+  .btn-primary:hover{background:var(--teal-dark);}
+
+  /* Story hero */
+  .story-hero{background:var(--navy);color:var(--white);padding:96px 0 84px;text-align:center;}
+  .tag{display:inline-block;font-family:'SF Mono',Consolas,monospace;font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
+  .story-hero h1{font-size:var(--fs-display);line-height:1.18;letter-spacing:-0.02em;font-weight:500;max-width:820px;margin:0 auto 22px;}
+  .story-hero .sub{max-width:640px;margin:0 auto;font-size:17px;color:#c7d4dc;line-height:1.6;}
+
+  /* Article */
+  .story-body{background:var(--white);padding:88px 0;}
+  article{max-width:680px;margin:0 auto;}
+  .opener{font-size:20px;line-height:1.75;color:var(--ink);margin-bottom:26px;}
+  .opener:last-of-type{margin-bottom:64px;}
+  .opener .cap{font-size:1.15em;}
+  .story-section{padding:0 0 56px;}
+  .story-section .eyebrow{display:block;font-family:'SF Mono',Consolas,monospace;font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;}
+  .story-section h2{font-size:var(--fs-h3);line-height:1.25;letter-spacing:-0.02em;margin-bottom:18px;color:var(--ink);}
+  .story-section p{font-size:17px;line-height:1.8;color:#33454f;margin-bottom:18px;}
+  .story-section p:last-child{margin-bottom:0;}
+
+  .pull{
+    background:var(--navy);color:var(--white);border-radius:var(--radius-lg);
+    padding:52px 48px;margin:16px 0 64px;text-align:center;
+  }
+  .pull p{font-family:var(--font-display);font-size:clamp(1.25rem,1.05rem+0.9vw,1.7rem);line-height:1.4;letter-spacing:-0.015em;font-weight:500;max-width:560px;margin:0 auto;}
+
+  .founders{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:8px 0 8px;}
+  .founder{background:var(--bg);border:0.8px solid var(--border);border-radius:var(--radius-lg);padding:26px 24px;}
+  .founder h3{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--ink);}
+  .founder p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0;}
+  @media(max-width:640px){.founders{grid-template-columns:1fr;}}
+
+  /* Three-word principle row */
+  .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:28px 0 8px;}
+  .triad-item{padding:0 22px;border-left:0.8px solid var(--border);}
+  .triad-item:first-child{border-left:0;padding-left:0;}
+  .triad-item:last-child{padding-right:0;}
+  .triad-k{display:block;font-family:'SF Mono',Consolas,monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:10px;}
+  .triad-item p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0;}
+  @media(max-width:640px){
+    .triad{grid-template-columns:1fr;gap:24px;}
+    .triad-item,.triad-item:first-child{border-left:0.8px solid var(--border);padding:0 0 0 16px;}
+  }
+
+  .closing{background:var(--navy);color:var(--white);padding:88px 0;text-align:center;}
+  .closing .motto-line{font-size:clamp(1.4rem,1.1rem+1.3vw,2.2rem);line-height:1.25;letter-spacing:-0.025em;font-weight:500;max-width:680px;margin:0 auto 14px;}
+  .closing .motto-sub{font-size:15px;font-style:italic;color:var(--teal);margin-bottom:36px;}
+  .closing .line2{font-size:15px;color:#9fb2bd;margin-top:36px;}
+
+  footer{background:var(--navy-2);color:#b9c9d1;padding:48px 0 24px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  .foot-grid h5{color:var(--white);font-size:14px;margin-bottom:14px;}
+  .foot-grid a{display:block;font-size:14px;color:#9fb0ba;padding:6px 0;}
+  .foot-grid a:hover{color:var(--white);}
+  .foot-bottom{border-top:0.8px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#7f93a0;}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;}}
+
+  @media(max-width:640px){
+    .story-hero{padding:64px 0 56px;}
+    .story-body{padding:56px 0;}
+    .pull{padding:36px 28px;}
+    .closing{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
+      <nav class="links">
+        <a href="index.html#product" data-i18n="nav_product">Product</a>
+        <a href="index.html#samples" data-i18n="nav_samples">Samples</a>
+        <a href="index.html#how" data-i18n="nav_how">How it works</a>
+        <a href="index.html#why" data-i18n="nav_why">Why Quorelia</a>
+        <a href="story.html" class="current" data-i18n="nav_story">Our Story</a>
+        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+          <button id="btn-es" onclick="setLang('es')">ES</button>
+        </div>
+        <a href="index.html#contact" class="btn btn-primary nav-cta" data-i18n="nav_cta">Get a demo</a>
+      </div>
+    </div>
+  </header>
+  <div class="obs-trace" aria-hidden="true">
+    <div class="container">
+      <div class="obs-bars" id="obs-bars"></div>
+      <div class="obs-meta">
+        <span data-i18n="obs_caption">Observation trace · last 24h</span>
+        <span class="obs-legend">
+          <span><i class="ob-dot ob-nom"></i><span data-i18n="obs_nominal">Nominal</span></span>
+          <span><i class="ob-dot ob-warn"></i><span data-i18n="obs_warning">Warning</span></span>
+          <span><i class="ob-dot ob-unobs"></i><span data-i18n="obs_unobserved">Not observed</span></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="story-hero">
+  <div class="container">
+    <span class="tag" data-i18n="st_tag">Our story</span>
+    <h1 data-i18n="st_title">Two friends. Ten years of trying. One mission to make energy measurable.</h1>
+    <p class="sub" data-i18n="st_sub">Before Quorelia was a company, it was a friendship that refused to stop building things.</p>
+  </div>
+</section>
+
+<section class="story-body">
+  <div class="container">
+    <article>
+      <p class="opener" data-i18n="st_open1"><span class="cap">S</span>omewhere in the Atacama, a solar plant is running right now, and it is talking constantly. Its inverters are talking. Its meters are talking. Its SCADA system is talking. Every second, thousands of small facts are being generated about how well that plant is actually doing its job — and almost none of them will ever be heard by a human being. They'll sit in a database, technically collected, functionally silent.</p>
+      <p class="opener" data-i18n="st_open2">Quorelia exists to close that gap. But before it was a company, it was two friends who couldn't stop starting things together.</p>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e1">Where it started</span>
+        <h2 data-i18n="st_h1">The friendship came first</h2>
+        <p data-i18n="st_p1a">For more than ten years, Diego and Jay have been building things — together, badly, well, and occasionally brilliantly. Medical kits. Biomedical devices. An international food business. Korean fried chicken. Software. Half-finished ideas that taught them more than the ones that worked.</p>
+        <p data-i18n="st_p1b">Most of it didn't survive contact with the real world. All of it mattered. Because somewhere in that decade of trying, a pattern started to emerge that neither of them had planned for: they kept ending up at the same intersection — the place where data, technology, and money all had to agree with each other before anything could actually get built.</p>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e2">The founders</span>
+        <h2 data-i18n="st_h2">Two backgrounds, one obsession</h2>
+        <p data-i18n="st_p2">Different training. Different instincts. The same conviction, arrived at from opposite directions: technology's only job is to make complicated things simple. If it isn't doing that, it isn't finished yet.</p>
+        <div class="founders">
+          <div class="founder">
+            <h3 data-i18n="st_f1n">Diego</h3>
+            <p data-i18n="st_f1b">Spanish, German, and Chilean — a degree in Marketing and an MBA in Finance, both from the University of Chile, and an instinct for the question that matters most in any business: will someone actually pay for this, and why. He turns a good idea into something that survives a boardroom.</p>
+          </div>
+          <div class="founder">
+            <h3 data-i18n="st_f2n">Jay</h3>
+            <p data-i18n="st_f2b">Grew up shuttling between Korea and Chile, a Bachelor's in Economics, and five years spent inside the machinery of renewable energy — developing and operating solar power plants. Today he also runs Macrogen Chile, a Korean biotech company built on automated systems, big data, and AI.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e3">The problem</span>
+        <h2 data-i18n="st_h3">Hiding in plain sight</h2>
+        <p data-i18n="st_p3a">Renewable energy has a data problem that looks, from the outside, like a data abundance. Solar plants and battery storage systems produce an almost absurd volume of information every day — SCADA feeds, meter readings, inverter logs, weather stations, maintenance tickets. On paper, the industry has never known more about its own assets.</p>
+        <p data-i18n="st_p3b">But ask the people actually responsible for those assets a simple question — how is the plant really doing, right now, and what needs my attention — and the honest answer, most days, is: someone is still finding out. Buried in a spreadsheet. Reconstructed manually. Delivered a day, a week, sometimes a month after it would have been useful.</p>
+      </div>
+
+      <div class="pull">
+        <p data-i18n="st_pull1">Having data was never the hard part. Knowing what it means, fast enough to act on it — that was the problem nobody had actually solved.</p>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e4">What we believe</span>
+        <h2 data-i18n="st_h4">We humanize AI</h2>
+        <p data-i18n="st_p4a">There is a version of artificial intelligence that impresses people and a version that helps them. The first one produces more: more charts, more scores, more confident-sounding output nobody asked for. The second one produces less, and means more.</p>
+        <p data-i18n="st_p4b">We build the second one. Our job is to take something enormously complex — millions of measurements a day, from thousands of devices, across a plant nobody can hold in their head at once — and hand a person back transparent numbers and facts about their own asset: something they can read in two minutes and act on with confidence. That translation, from machine scale to human scale, is the entire craft.</p>
+        <div class="triad">
+          <div class="triad-item">
+            <span class="triad-k" data-i18n="st_t1k">Precise</span>
+            <p data-i18n="st_t1v">Every figure traceable to the measurement behind it. If the data can't support the claim, we say so rather than round it into something reassuring.</p>
+          </div>
+          <div class="triad-item">
+            <span class="triad-k" data-i18n="st_t2k">Concise</span>
+            <p data-i18n="st_t2v">Not everything that can be reported should be. We surface what changes a decision, and leave the rest available rather than in the way.</p>
+          </div>
+          <div class="triad-item">
+            <span class="triad-k" data-i18n="st_t3k">Simple</span>
+            <p data-i18n="st_t3v">Written in plain language, in the reader's language, so an investor and a field technician each get the version that's actually useful to them.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e5">What we built</span>
+        <h2 data-i18n="st_h5">What Quorelia is</h2>
+        <p data-i18n="st_p5a">Quorelia is the layer that was missing: an AI-agent system built to sit between a plant's raw data and the people who depend on understanding it. It connects to what the plant is already producing, watches it continuously, calculates the KPIs that actually matter, catches the events worth flagging, and turns all of it into something a human can read, trust, and act on — without asking anyone to spend their afternoon reconciling numbers by hand.</p>
+        <p data-i18n="st_p5b">Not another dashboard demanding to be checked. Not one more login to remember. An agent that does the watching so the people who run these assets can do the deciding.</p>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e6">The vision</span>
+        <h2 data-i18n="st_h6">From monitoring to understanding</h2>
+        <p data-i18n="st_p6a">What we're building toward is simple to say and hard to build: a system that watches a plant twenty-four hours a day, every day, and never gets tired of asking whether the number it's about to report is actually true.</p>
+        <p data-i18n="st_p6b">A system that understands the operational story behind the data, not just the data itself. That calculates real performance, not convenient performance. That tells owners, operators, asset managers, investors, and O&amp;M teams exactly what each of them needs to know — because a report that's useful to an investor and a report that's useful to a field technician were never the same document, and shouldn't pretend to be.</p>
+        <p data-i18n="st_p6c">The goal was never to replace the people running these plants. It's to hand them better information, faster than they've ever had it — so their judgment, which is irreplaceable, has something worth trusting to work with.</p>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e7">Looking back</span>
+        <h2 data-i18n="st_h7">Ten years, one straight line</h2>
+        <p data-i18n="st_p7a">It's only in hindsight that the ten years stop looking scattered. The medical projects taught precision. The biomedical work taught systems thinking at scale. The food businesses taught the unglamorous discipline of actually operating something, day after day, for real customers. The careers in finance, energy, and biotechnology taught the language of stakeholders who all speak differently but need to be told the truth in a way they can use.</p>
+        <p data-i18n="st_p7b">None of it was wasted. It was all assembly — for a problem the two of them didn't fully recognize until they were standing right in front of it: energy, data, finance, and trust, all needing the same thing at once.</p>
+      </div>
+
+      <div class="story-section">
+        <span class="eyebrow" data-i18n="st_e8">Why now</span>
+        <h2 data-i18n="st_h8">The bet we're making</h2>
+        <p data-i18n="st_p8a">The energy transition isn't short on ambition. Solar and storage assets are getting larger, more complex, and more numerous by the year. What they are not automatically getting is more understood.</p>
+        <p data-i18n="st_p8b">We don't think the next breakthrough in renewable energy is collecting more data. We think it's making the data we already have intelligent, honest, and immediately useful to the person who needs it. That's the bet Quorelia is built on.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p class="motto-line" data-i18n="st_motto">Ever watching. In service of the planet's energy.</p>
+    <p class="motto-sub" data-i18n="st_motto_sub">Your energy. Always under watch.</p>
+    <a href="index.html#contact" class="btn btn-primary" data-i18n="st_cta">Talk to us</a>
+    <p class="line2" data-i18n="st_close">Two friends. Ten years of trying. And this is only the beginning.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:16px;" aria-label="Quorelia — home"><span class="brand-word">Quorelia</span></a>
+        <p style="font-size:14px;color:#9fb0ba;max-width:280px;" data-i18n="foot_desc">Automated O&amp;M reporting for solar asset owners and operators — built for global, bilingual portfolios.</p>
+      </div>
+      <div>
+        <h5 data-i18n="foot_product">Product</h5>
+        <a href="index.html#product" data-i18n="nav_product">Product</a>
+        <a href="index.html#samples" data-i18n="nav_samples">Samples</a>
+        <a href="index.html#how" data-i18n="nav_how">How it works</a>
+        <a href="index.html#why" data-i18n="nav_why">Why Quorelia</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot_company">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="index.html#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+        <a href="#" data-i18n="foot_legal">Legal</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot_contact">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="index.html#contact" data-i18n="nav_cta">Get a demo</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="foot_copy">© 2026 Quorelia. All rights reserved.</span>
+      <span data-i18n="foot_tag">Renewable Energy Intelligence</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function renderObsTrace(){
+  const el = document.getElementById('obs-bars');
+  if(!el) return;
+  const n = 90;
+  let html = '';
+  for(let i=0;i<n;i++){
+    const r = Math.random();
+    if(r < 0.045){
+      html += '<span class="unobs"></span>';
+    } else if(r < 0.12){
+      const h = 45 + Math.random()*45;
+      html += '<span class="warn" style="height:'+h.toFixed(0)+'%"></span>';
+    } else {
+      const h = 40 + Math.random()*60;
+      html += '<span style="height:'+h.toFixed(0)+'%"></span>';
+    }
+  }
+  el.innerHTML = html;
+})();
+
+const i18n = {
+  en:{
+    nav_product:"Product", nav_samples:"Samples", nav_how:"How it works", nav_why:"Why Quorelia",
+    nav_story:"Our Story", nav_philosophy:"Philosophy", nav_contact:"Contact", nav_cta:"Get a demo",
+    obs_caption:"Observation trace · last 24h", obs_nominal:"Nominal", obs_warning:"Warning", obs_unobserved:"Not observed",
+
+    st_tag:"Our story",
+    st_title:"Two friends. Ten years of trying. One mission to make energy measurable.",
+    st_sub:"Before Quorelia was a company, it was a friendship that refused to stop building things.",
+
+    st_open1:"<span class='cap'>S</span>omewhere in the Atacama, a solar plant is running right now, and it is talking constantly. Its inverters are talking. Its meters are talking. Its SCADA system is talking. Every second, thousands of small facts are being generated about how well that plant is actually doing its job — and almost none of them will ever be heard by a human being. They'll sit in a database, technically collected, functionally silent.",
+    st_open2:"Quorelia exists to close that gap. But before it was a company, it was two friends who couldn't stop starting things together.",
+
+    st_e1:"Where it started",
+    st_h1:"The friendship came first",
+    st_p1a:"For more than ten years, Diego and Jay have been building things — together, badly, well, and occasionally brilliantly. Medical kits. Biomedical devices. An international food business. Korean fried chicken. Software. Half-finished ideas that taught them more than the ones that worked.",
+    st_p1b:"Most of it didn't survive contact with the real world. All of it mattered. Because somewhere in that decade of trying, a pattern started to emerge that neither of them had planned for: they kept ending up at the same intersection — the place where data, technology, and money all had to agree with each other before anything could actually get built.",
+
+    st_e2:"The founders",
+    st_h2:"Two backgrounds, one obsession",
+    st_p2:"Different training. Different instincts. The same conviction, arrived at from opposite directions: technology's only job is to make complicated things simple. If it isn't doing that, it isn't finished yet.",
+    st_f1n:"Diego",
+    st_f1b:"Spanish, German, and Chilean — a degree in Marketing and an MBA in Finance, both from the University of Chile, and an instinct for the question that matters most in any business: will someone actually pay for this, and why. He turns a good idea into something that survives a boardroom.",
+    st_f2n:"Jay",
+    st_f2b:"Grew up shuttling between Korea and Chile, a Bachelor's in Economics, and five years spent inside the machinery of renewable energy — developing and operating solar power plants. Today he also runs Macrogen Chile, a Korean biotech company built on automated systems, big data, and AI.",
+
+    st_e3:"The problem",
+    st_h3:"Hiding in plain sight",
+    st_p3a:"Renewable energy has a data problem that looks, from the outside, like a data abundance. Solar plants and battery storage systems produce an almost absurd volume of information every day — SCADA feeds, meter readings, inverter logs, weather stations, maintenance tickets. On paper, the industry has never known more about its own assets.",
+    st_p3b:"But ask the people actually responsible for those assets a simple question — how is the plant really doing, right now, and what needs my attention — and the honest answer, most days, is: someone is still finding out. Buried in a spreadsheet. Reconstructed manually. Delivered a day, a week, sometimes a month after it would have been useful.",
+
+    st_pull1:"Having data was never the hard part. Knowing what it means, fast enough to act on it — that was the problem nobody had actually solved.",
+
+    st_e4:"What we believe",
+    st_h4:"We humanize AI",
+    st_p4a:"There is a version of artificial intelligence that impresses people and a version that helps them. The first one produces more: more charts, more scores, more confident-sounding output nobody asked for. The second one produces less, and means more.",
+    st_p4b:"We build the second one. Our job is to take something enormously complex — millions of measurements a day, from thousands of devices, across a plant nobody can hold in their head at once — and hand a person back transparent numbers and facts about their own asset: something they can read in two minutes and act on with confidence. That translation, from machine scale to human scale, is the entire craft.",
+    st_t1k:"Precise",
+    st_t1v:"Every figure traceable to the measurement behind it. If the data can't support the claim, we say so rather than round it into something reassuring.",
+    st_t2k:"Concise",
+    st_t2v:"Not everything that can be reported should be. We surface what changes a decision, and leave the rest available rather than in the way.",
+    st_t3k:"Simple",
+    st_t3v:"Written in plain language, in the reader's language, so an investor and a field technician each get the version that's actually useful to them.",
+
+    st_e5:"What we built",
+    st_h5:"What Quorelia is",
+    st_p5a:"Quorelia is the layer that was missing: an AI-agent system built to sit between a plant's raw data and the people who depend on understanding it. It connects to what the plant is already producing, watches it continuously, calculates the KPIs that actually matter, catches the events worth flagging, and turns all of it into something a human can read, trust, and act on — without asking anyone to spend their afternoon reconciling numbers by hand.",
+    st_p5b:"Not another dashboard demanding to be checked. Not one more login to remember. An agent that does the watching so the people who run these assets can do the deciding.",
+
+    st_e6:"The vision",
+    st_h6:"From monitoring to understanding",
+    st_p6a:"What we're building toward is simple to say and hard to build: a system that watches a plant twenty-four hours a day, every day, and never gets tired of asking whether the number it's about to report is actually true.",
+    st_p6b:"A system that understands the operational story behind the data, not just the data itself. That calculates real performance, not convenient performance. That tells owners, operators, asset managers, investors, and O&M teams exactly what each of them needs to know — because a report that's useful to an investor and a report that's useful to a field technician were never the same document, and shouldn't pretend to be.",
+    st_p6c:"The goal was never to replace the people running these plants. It's to hand them better information, faster than they've ever had it — so their judgment, which is irreplaceable, has something worth trusting to work with.",
+
+    st_e7:"Looking back",
+    st_h7:"Ten years, one straight line",
+    st_p7a:"It's only in hindsight that the ten years stop looking scattered. The medical projects taught precision. The biomedical work taught systems thinking at scale. The food businesses taught the unglamorous discipline of actually operating something, day after day, for real customers. The careers in finance, energy, and biotechnology taught the language of stakeholders who all speak differently but need to be told the truth in a way they can use.",
+    st_p7b:"None of it was wasted. It was all assembly — for a problem the two of them didn't fully recognize until they were standing right in front of it: energy, data, finance, and trust, all needing the same thing at once.",
+
+    st_e8:"Why now",
+    st_h8:"The bet we're making",
+    st_p8a:"The energy transition isn't short on ambition. Solar and storage assets are getting larger, more complex, and more numerous by the year. What they are not automatically getting is more understood.",
+    st_p8b:"We don't think the next breakthrough in renewable energy is collecting more data. We think it's making the data we already have intelligent, honest, and immediately useful to the person who needs it. That's the bet Quorelia is built on.",
+
+    st_motto:"Ever watching. In service of the planet's energy.",
+    st_motto_sub:"Your energy. Always under watch.",
+    st_cta:"Talk to us",
+    st_close:"Two friends. Ten years of trying. And this is only the beginning.",
+
+    foot_desc:"Automated O&M reporting for solar asset owners and operators — built for global, bilingual portfolios.",
+    foot_product:"Product", foot_company:"Company", foot_contact:"Contact", foot_legal:"Legal",
+    foot_copy:"© 2026 Quorelia. All rights reserved.", foot_tag:"Renewable Energy Intelligence"
+  },
+  es:{
+    nav_product:"Producto", nav_samples:"Ejemplos", nav_how:"Cómo funciona", nav_why:"Por qué Quorelia",
+    nav_story:"Nuestra historia", nav_philosophy:"Filosofía", nav_contact:"Contacto", nav_cta:"Solicitar demo",
+    obs_caption:"Traza de observación · últimas 24 h", obs_nominal:"Nominal", obs_warning:"Alerta", obs_unobserved:"Sin observar",
+
+    st_tag:"Nuestra historia",
+    st_title:"Dos amigos. Diez años intentándolo. Una misión: hacer medible la energía.",
+    st_sub:"Antes de ser una empresa, Quorelia fue una amistad que nunca dejó de construir cosas.",
+
+    st_open1:"<span class='cap'>E</span>n algún punto del Atacama hay una planta solar funcionando ahora mismo, y no deja de hablar. Hablan sus inversores. Hablan sus medidores. Habla su SCADA. Cada segundo se generan miles de pequeños datos sobre qué tan bien está haciendo su trabajo esa planta — y casi ninguno llegará jamás a oídos de una persona. Quedarán en una base de datos: técnicamente recopilados, funcionalmente mudos.",
+    st_open2:"Quorelia existe para cerrar esa brecha. Pero antes de ser una empresa, fueron dos amigos que no podían dejar de emprender juntos.",
+
+    st_e1:"Dónde empezó",
+    st_h1:"Primero fue la amistad",
+    st_p1a:"Durante más de diez años, Diego y Jay han construido cosas juntos — mal, bien y, de vez en cuando, brillantemente. Kits médicos. Dispositivos biomédicos. Un negocio internacional de alimentos. Pollo frito coreano. Software. Ideas a medio terminar que enseñaron más que las que funcionaron.",
+    st_p1b:"Casi nada sobrevivió al contacto con el mundo real. Todo sirvió. Porque en algún momento de esa década apareció un patrón que ninguno de los dos había planeado: siempre terminaban en el mismo cruce — ese lugar donde los datos, la tecnología y el dinero tienen que ponerse de acuerdo antes de que algo se pueda construir de verdad.",
+
+    st_e2:"Los fundadores",
+    st_h2:"Dos trayectorias, una misma obsesión",
+    st_p2:"Formaciones distintas. Instintos distintos. La misma convicción, alcanzada desde direcciones opuestas: el único trabajo de la tecnología es hacer simple lo complicado. Si no lo está haciendo, todavía no está terminada.",
+    st_f1n:"Diego",
+    st_f1b:"Español, alemán y chileno — titulado en Marketing y MBA en Finanzas, ambos por la Universidad de Chile, y con instinto para la pregunta que más importa en cualquier negocio: ¿alguien pagará por esto, y por qué? Él convierte una buena idea en algo que sobrevive a un directorio.",
+    st_f2n:"Jay",
+    st_f2b:"Creció entre Corea y Chile, licenciado en Economía, con cinco años dentro de la maquinaria real de la energía renovable — desarrollando y operando plantas solares. Hoy además es CEO de Macrogen Chile, una biotecnológica coreana construida sobre sistemas automatizados, big data e IA.",
+
+    st_e3:"El problema",
+    st_h3:"A plena vista",
+    st_p3a:"La energía renovable tiene un problema de datos que, desde fuera, parece abundancia de datos. Las plantas solares y los sistemas de almacenamiento generan cada día un volumen de información casi absurdo — señales SCADA, lecturas de medidores, registros de inversores, estaciones meteorológicas, órdenes de mantenimiento. En el papel, la industria nunca supo tanto sobre sus propios activos.",
+    st_p3b:"Pero hazle a quien realmente responde por esos activos una pregunta simple — ¿cómo está la planta ahora mismo y qué requiere mi atención? — y la respuesta honesta, la mayoría de los días, es: alguien todavía lo está averiguando. Enterrado en una planilla. Reconstruido a mano. Entregado un día, una semana, a veces un mes después de cuando habría servido.",
+
+    st_pull1:"Tener los datos nunca fue lo difícil. Saber qué significan, a tiempo para actuar — ese era el problema que nadie había resuelto de verdad.",
+
+    st_e4:"Lo que creemos",
+    st_h4:"Humanizamos la IA",
+    st_p4a:"Existe una inteligencia artificial que impresiona a la gente y otra que la ayuda. La primera produce más: más gráficos, más puntajes, más resultados que suenan seguros y que nadie pidió. La segunda produce menos, y significa más.",
+    st_p4b:"Nosotros construimos la segunda. Nuestro trabajo es tomar algo enormemente complejo — millones de mediciones al día, de miles de dispositivos, en una planta que nadie puede abarcar mentalmente de una sola vez — y devolverle a una persona números y hechos transparentes sobre su propio activo: algo que pueda leer en dos minutos y sobre lo que pueda actuar con confianza. Esa traducción, de escala de máquina a escala humana, es todo el oficio.",
+    st_t1k:"Precisa",
+    st_t1v:"Cada cifra trazable hasta la medición que la respalda. Si los datos no sostienen la afirmación, lo decimos en vez de redondearla hacia algo tranquilizador.",
+    st_t2k:"Concisa",
+    st_t2v:"No todo lo que se puede informar debe informarse. Mostramos lo que cambia una decisión y dejamos el resto disponible, no en el camino.",
+    st_t3k:"Simple",
+    st_t3v:"Escrita en lenguaje claro y en el idioma de quien la lee, para que un inversionista y un técnico en terreno reciban cada uno la versión que de verdad les sirve.",
+
+    st_e5:"Lo que construimos",
+    st_h5:"Qué es Quorelia",
+    st_p5a:"Quorelia es la capa que faltaba: un sistema de agentes de IA diseñado para situarse entre los datos crudos de la planta y las personas que dependen de entenderlos. Se conecta a lo que la planta ya produce, la observa de forma continua, calcula los KPI que realmente importan, detecta los eventos que vale la pena levantar y convierte todo eso en algo que una persona puede leer, creer y usar — sin que nadie tenga que pasar la tarde cuadrando números a mano.",
+    st_p5b:"No es otro tablero exigiendo ser revisado. No es un login más que recordar. Es un agente que hace la vigilancia para que quienes operan estos activos puedan dedicarse a decidir.",
+
+    st_e6:"La visión",
+    st_h6:"De monitorear a entender",
+    st_p6a:"Lo que estamos construyendo es fácil de decir y difícil de hacer: un sistema que observa una planta veinticuatro horas al día, todos los días, y que nunca se cansa de preguntarse si la cifra que está a punto de reportar es realmente cierta.",
+    st_p6b:"Un sistema que entiende la historia operacional detrás del dato, no solo el dato. Que calcula el desempeño real, no el desempeño cómodo. Que le dice a propietarios, operadores, asset managers, inversionistas y equipos de O&M exactamente lo que cada uno necesita saber — porque un informe útil para un inversionista y uno útil para un técnico en terreno nunca fueron el mismo documento, y no deberían fingir serlo.",
+    st_p6c:"El objetivo nunca fue reemplazar a quienes operan estas plantas. Es entregarles mejor información, más rápido de lo que la han tenido nunca — para que su criterio, que es insustituible, tenga algo confiable con lo que trabajar.",
+
+    st_e7:"Mirando atrás",
+    st_h7:"Diez años, una sola línea",
+    st_p7a:"Solo en retrospectiva los diez años dejan de parecer dispersos. Los proyectos médicos enseñaron precisión. El trabajo biomédico enseñó a pensar en sistemas a escala. Los negocios de alimentos enseñaron la disciplina poco glamorosa de operar algo de verdad, día tras día, para clientes reales. Las carreras en finanzas, energía y biotecnología enseñaron el idioma de actores que hablan distinto pero necesitan que se les diga la verdad de una forma que puedan usar.",
+    st_p7b:"Nada se desperdició. Todo fue ensamblaje — para un problema que ninguno de los dos reconoció del todo hasta tenerlo enfrente: energía, datos, finanzas y confianza, necesitando lo mismo al mismo tiempo.",
+
+    st_e8:"Por qué ahora",
+    st_h8:"La apuesta que hacemos",
+    st_p8a:"A la transición energética no le falta ambición. Los activos solares y de almacenamiento son cada año más grandes, más complejos y más numerosos. Lo que no se vuelven automáticamente es más comprendidos.",
+    st_p8b:"No creemos que el próximo salto en energía renovable sea recopilar más datos. Creemos que es volver inteligentes, honestos e inmediatamente útiles los datos que ya tenemos, para la persona que los necesita. Esa es la apuesta sobre la que está construida Quorelia.",
+
+    st_motto:"Siempre vigilando. Al servicio de la energía del planeta.",
+    st_motto_sub:"Tu energía. Siempre bajo observación.",
+    st_cta:"Conversemos",
+    st_close:"Dos amigos. Diez años intentándolo. Y esto es solo el comienzo.",
+
+    foot_desc:"Reportes de O&M automatizados para propietarios y operadores de activos solares — construidos para portafolios globales y bilingües.",
+    foot_product:"Producto", foot_company:"Empresa", foot_contact:"Contacto", foot_legal:"Legal",
+    foot_copy:"© 2026 Quorelia. Todos los derechos reservados.", foot_tag:"Inteligencia en Energía Renovable"
+  }
+};
+
+function setLang(lang){
+  document.getElementById('html-root').setAttribute('lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-es').classList.toggle('active', lang==='es');
+  const dict = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  try{ localStorage.setItem('quorelia-lang', lang); }catch(e){}
+}
+
+(function initLang(){
+  let saved = null;
+  try{ saved = localStorage.getItem('quorelia-lang'); }catch(e){}
+  const lang = saved || ((navigator.language||'en').toLowerCase().startsWith('es') ? 'es' : 'en');
+  setLang(lang);
+})();
+</script>
+
+</body>
+</html>
