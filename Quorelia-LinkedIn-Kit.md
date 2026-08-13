@@ -169,7 +169,7 @@ Medical kits. Biomedical devices. An international food business. Korean fried c
 
 Most of it failed.
 
-We're Diego and Jay. Different backgrounds — Diego is Spanish, German and Chilean, a marketing degree and an MBA in Finance from the Universidad de Chile. I grew up between Korea and Chile, spent five years developing and operating solar plants, and today also run Macrogen Chile.
+We're Diego and Jay. Different backgrounds — Diego is Spanish, German and Chilean, a marketing degree and an MBA in Finance from the Universidad de Chile. I grew up between Korea and Chile, spent five years developing and operating solar plants, and have since spent years leading work in biotechnology, where automated systems, big data and AI run at industrial scale.
 
 What kept pulling us back to the same place was a problem we both kept running into from opposite directions.
 
@@ -209,7 +209,7 @@ Kits médicos. Dispositivos biomédicos. Un negocio internacional de alimentos. 
 
 Casi todo falló.
 
-Somos Diego y Jay. Trayectorias distintas — Diego es español, alemán y chileno, titulado en Marketing y MBA en Finanzas por la Universidad de Chile. Yo crecí entre Corea y Chile, pasé cinco años desarrollando y operando plantas solares, y hoy además soy CEO de Macrogen Chile.
+Somos Diego y Jay. Trayectorias distintas — Diego es español, alemán y chileno, titulado en Marketing y MBA en Finanzas por la Universidad de Chile. Yo crecí entre Corea y Chile, pasé cinco años desarrollando y operando plantas solares, y desde entonces he liderado durante años trabajo en biotecnología, donde los sistemas automatizados, el big data y la IA operan a escala industrial.
 
 Lo que nos seguía llevando al mismo lugar era un problema con el que ambos nos topábamos desde direcciones opuestas.
 
