@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quorelia — Intelligence for the infrastructure that powers tomorrow</title>
+<meta name="description" content="The intelligence layer for large-scale energy infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --ink:#05090f;
+    --navy:#0b1c2c;
+    --navy-2:#0f2233;
+    --teal:#1fb6a8;
+    --teal-lo:#0d6b63;
+    --white:#ffffff;
+    --dim:#8fa3b0;
+    --dim-2:#5c7080;
+    --line:rgba(255,255,255,0.09);
+    --mono:'SF Mono',Consolas,'Courier New',monospace;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:#2a3138;color:var(--white);
+    line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  .slide{
+    width:13.333in;height:7.5in;margin:0 auto 20px;
+    background:var(--ink);position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+    padding:0.62in 0.78in;
+    box-shadow:0 3px 34px rgba(0,0,0,0.55);
+    page-break-after:always;
+  }
+  @page{size:13.333in 7.5in;margin:0;}
+  @media print{body{background:#fff;}.slide{box-shadow:none;margin:0;}}
+
+  .bg{position:absolute;inset:0;z-index:0;}
+  .bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .veil{position:absolute;inset:0;z-index:1;}
+  .inner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
+
+  .mark{font-family:var(--mono);font-size:11px;letter-spacing:.34em;font-weight:700;}
+  .kicker{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--teal);
+  }
+  .rule{width:44px;height:1.5px;background:var(--teal);margin:20px 0;}
+  h1{font-size:58px;line-height:1.06;letter-spacing:-0.035em;font-weight:300;}
+  h2{font-size:40px;line-height:1.12;letter-spacing:-0.032em;font-weight:300;}
+  h3{font-size:16px;letter-spacing:-0.01em;font-weight:600;}
+  .lede{font-size:19px;line-height:1.62;color:var(--dim);font-weight:300;max-width:8.4in;}
+  .sm{font-size:12.5px;line-height:1.66;color:var(--dim-2);}
+  .foot{
+    position:absolute;bottom:0.42in;left:0.78in;right:0.78in;z-index:3;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#3f4d58;
+    border-top:1px solid rgba(255,255,255,0.06);padding-top:11px;
+  }
+  .spacer{flex:1;}
+
+  /* p1 */
+  .hero-line{font-size:24px;line-height:1.5;font-weight:200;color:var(--dim);max-width:7.6in;}
+  .hero-line b{color:var(--white);font-weight:400;}
+  .wordmark{font-family:var(--mono);font-size:44px;letter-spacing:.30em;font-weight:700;}
+
+  /* p2 fragments */
+  .frag{display:flex;flex-wrap:wrap;gap:9px;max-width:9.6in;margin-top:6px;}
+  .frag span{
+    font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:3px;padding:8px 13px;color:#6d8390;
+  }
+  .frag span.hot{color:var(--teal);border-color:rgba(31,182,168,.34);}
+
+  /* flow */
+  .flow{display:flex;align-items:stretch;gap:0;margin-top:10px;}
+  .fstep{flex:1;padding:22px 24px;border-left:1px solid var(--line);}
+  .fstep:first-child{border-left:0;padding-left:0;}
+  .fstep .n{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--teal);margin-bottom:14px;}
+  .fstep .t{font-size:21px;font-weight:300;letter-spacing:-0.02em;margin-bottom:9px;}
+  .fstep .d{font-size:12.5px;line-height:1.68;color:var(--dim-2);}
+
+  /* solutions */
+  .sol{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:22px;}
+  .scell{padding:0 20px;border-left:1px solid var(--line);}
+  .scell:first-child{border-left:0;padding-left:0;}
+  .scell .v{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--teal);margin-bottom:16px;}
+  .scell h3{margin-bottom:10px;font-size:19px;font-weight:400;letter-spacing:-0.02em;}
+  .scell p{font-size:12.5px;line-height:1.7;color:var(--dim-2);}
+
+  /* traction */
+  .gw{font-size:170px;line-height:.86;font-weight:200;letter-spacing:-0.055em;}
+  .gw span{font-size:56px;font-weight:300;letter-spacing:-0.02em;color:var(--teal);vertical-align:top;margin-left:6px;}
+
+  /* founders */
+  .fdr{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:24px;}
+  .fdr .card{border-top:1px solid var(--line);padding-top:22px;}
+  .fdr .nm{font-size:26px;font-weight:300;letter-spacing:-0.025em;margin-bottom:5px;}
+  .fdr .rl{font-family:var(--mono);font-size:9.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
+  .fdr p{font-size:13px;line-height:1.75;color:var(--dim-2);}
+
+  .tagbar{display:flex;gap:0;margin-top:16px;border-top:1px solid var(--line);padding-top:13px;}
+  .tagbar div{
+    flex:1;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:#5f7481;border-left:1px solid var(--line);padding-left:16px;
+  }
+  .tagbar div:first-child{border-left:0;padding-left:0;}
+
+  /* trace viz */
+  .trace{display:flex;align-items:flex-end;gap:2.5px;height:64px;}
+  .trace i{flex:1;background:var(--teal-lo);border-radius:1px;display:block;}
+  .trace i.a{background:var(--teal);}
+  .trace i.g{background:#243642;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ 1 · THE HOOK ══════════════ -->
+<section class="slide">
+  <div class="bg"><img src="quorelia-bess-bg.jpg" alt=""></div>
+  <div class="veil" style="background:
+      radial-gradient(120% 90% at 78% 30%, rgba(5,9,15,0.62), rgba(5,9,15,0.93) 62%),
+      linear-gradient(90deg, rgba(5,9,15,0.97) 34%, rgba(5,9,15,0.70) 68%, rgba(5,9,15,0.86));"></div>
+  <div class="inner">
+    <div class="mark">QUORELIA</div>
+    <div class="spacer"></div>
+    <p class="hero-line">The energy transition is generating<br><b>more data than ever.</b></p>
+    <div class="rule"></div>
+    <p class="hero-line" style="color:var(--white);font-weight:300;">The next challenge is knowing<br>what to do with it.</p>
+    <div class="spacer"></div>
+    <div class="wordmark">QUORELIA</div>
+    <p class="kicker" style="margin-top:14px;">Intelligence for large-scale energy infrastructure</p>
+  </div>
+  <div class="foot"><span>Confidential teaser</span><span>01</span></div>
+</section>
+
+<!-- ══════════════ 2 · THE PROBLEM ══════════════ -->
+<section class="slide">
+  <div class="veil" style="background:
+      radial-gradient(90% 120% at 100% 0%, rgba(31,182,168,0.075), transparent 58%),
+      linear-gradient(160deg,#05090f, #0a1520 62%, #05090f);"></div>
+  <div class="inner">
+    <p class="kicker">The problem</p>
+    <div class="rule"></div>
+    <h2 style="max-width:8.6in;">A modern energy asset produces<br>a continuous stream of signal.</h2>
+    <div class="frag" style="margin-top:34px;">
+      <span>SCADA</span><span>BESS</span><span>Inverters</span><span class="hot">Alarms</span>
+      <span>Availability</span><span>State of charge</span><span>KPIs</span><span class="hot">Deviations</span>
+      <span>Energy production</span><span>Cell behaviour</span><span>Maintenance events</span>
+      <span>Equipment status</span><span class="hot">Historical trends</span><span>Meters</span>
+      <span>Weather</span><span>Curtailment</span><span>Work orders</span><span>Spreadsheets</span>
+      <span>Dashboards</span><span>Email</span><span>Monthly reports</span><span class="hot">Human interpretation</span>
+    </div>
+    <div class="spacer"></div>
+    <div style="display:flex;align-items:flex-end;gap:56px;">
+      <div style="flex:1;">
+        <p class="lede" style="max-width:6.4in;">It arrives fragmented — across systems that were never designed to speak to each other, and formats that were never designed to be compared.</p>
+      </div>
+      <div style="flex:none;text-align:right;border-left:1px solid var(--line);padding-left:44px;">
+        <p style="font-size:31px;font-weight:300;letter-spacing:-0.028em;line-height:1.3;">
+          Data is abundant.<br><span style="color:var(--teal);">Intelligence is scarce.</span>
+        </p>
+      </div>
+    </div>
+    <p class="sm" style="margin-top:30px;max-width:7.4in;">More data does not automatically create better decisions. Operators and asset managers should not have to spend hours interpreting thousands of signals to understand what actually matters.</p>
+  </div>
+  <div class="foot"><span>The problem</span><span>02</span></div>
+</section>
+
+<!-- ══════════════ 3 · THE IDEA ══════════════ -->
+<section class="slide">
+  <div class="veil" style="background:linear-gradient(150deg,#05090f,#0d1c29 70%,#05090f);"></div>
+  <div class="inner">
+    <p class="kicker">The idea</p>
+    <div class="rule"></div>
+    <h2 style="max-width:9in;">The intelligence layer between energy<br>infrastructure and the people responsible for it.</h2>
+
+    <div class="flow" style="margin-top:46px;">
+      <div class="fstep">
+        <div class="n">01</div><div class="t">Raw data</div>
+        <div class="d">Everything the asset already produces, at native resolution, from the systems already installed.</div>
+      </div>
+      <div class="fstep">
+        <div class="n">02</div><div class="t">Operational intelligence</div>
+        <div class="d">Validated, reconciled and interpreted — separating what changed from what merely moved.</div>
+      </div>
+      <div class="fstep">
+        <div class="n">03</div><div class="t">Management visibility</div>
+        <div class="d">One version of operational reality, legible to an engineer and to a board in the same document.</div>
+      </div>
+      <div class="fstep">
+        <div class="n">04</div><div class="t">Action</div>
+        <div class="d">What deserves attention, why it matters, and what should happen next.</div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+    <div style="border-top:1px solid var(--line);padding-top:26px;display:flex;gap:52px;align-items:flex-end;">
+      <p style="font-size:26px;font-weight:300;letter-spacing:-0.025em;line-height:1.35;flex:1;">
+        From operational data<br>to operational intelligence.
+      </p>
+      <p class="sm" style="max-width:4.6in;">Quorelia does not replace the systems already installed at the plant. It sits above them — connecting to what they produce, and returning something a person can act on.</p>
+    </div>
+  </div>
+  <div class="foot"><span>The idea</span><span>03</span></div>
+</section>
+
+<!-- ══════════════ 4 · THE SOLUTION ══════════════ -->
+<section class="slide">
+  <div class="veil" style="background:linear-gradient(200deg,#05090f,#0a1621 74%,#05090f);"></div>
+  <div class="inner">
+    <p class="kicker">The ecosystem</p>
+    <div class="rule"></div>
+    <h2>Monitor. Understand. Alert. Report. Act.</h2>
+
+    <div class="sol">
+      <div class="scell">
+        <div class="v">01</div><h3>Monitor</h3>
+        <p>Continuous performance intelligence across availability, energy behaviour, equipment status and operational trends.</p>
+      </div>
+      <div class="scell">
+        <div class="v">02</div><h3>Understand</h3>
+        <p>Operational information processed automatically into concise management-level insight — not one more dashboard to check.</p>
+      </div>
+      <div class="scell">
+        <div class="v">03</div><h3>Alert</h3>
+        <p>Not simply that something happened, but why it matters and what deserves attention.</p>
+      </div>
+      <div class="scell">
+        <div class="v">04</div><h3>Report</h3>
+        <p>Daily and monthly reporting that is automatic, standardised, transparent and traceable to its source measurement.</p>
+      </div>
+      <div class="scell">
+        <div class="v">05</div><h3>Act</h3>
+        <p>Operational signal turned into maintenance priorities — what requires attention, when, and why.</p>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div style="display:flex;gap:0;border-top:1px solid var(--line);padding-top:30px;">
+      <div style="flex:1.35;padding-right:52px;">
+        <p style="font-size:23px;font-weight:300;letter-spacing:-0.024em;line-height:1.42;">
+          Every report answers the same five questions.
+        </p>
+        <p class="sm" style="margin-top:16px;max-width:5.2in;">What happened. Why it happened. What matters. What needs attention. What should happen next.</p>
+      </div>
+      <div style="flex:1;border-left:1px solid var(--line);padding-left:44px;">
+        <p class="kicker" style="color:#5f7481;margin-bottom:16px;">Management transparency</p>
+        <p style="font-size:17px;font-weight:300;line-height:1.6;color:var(--white);">
+          One infrastructure.<br>One source of operational truth.<br>One intelligent layer.
+        </p>
+        <p class="sm" style="margin-top:15px;">Executives, asset managers, owners and technical teams looking at the same operational reality — through a layer each of them can read.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>The ecosystem</span><span>04</span></div>
+</section>
+
+<!-- ══════════════ 5 · TRACTION ══════════════ -->
+<section class="slide">
+  <div class="bg"><img src="quorelia-banner-platform.jpg" alt=""></div>
+  <div class="veil" style="background:
+      linear-gradient(90deg, rgba(5,9,15,0.975) 46%, rgba(5,9,15,0.72) 74%, rgba(5,9,15,0.90)),
+      linear-gradient(180deg, rgba(5,9,15,0.62), rgba(5,9,15,0.88));"></div>
+  <div class="inner">
+    <p class="kicker">Real-world context</p>
+    <div class="rule"></div>
+    <div style="display:flex;align-items:center;gap:60px;flex:1;">
+      <div style="flex:none;">
+        <div class="gw">1<span>GW</span></div>
+        <p class="kicker" style="color:var(--dim);margin-top:22px;letter-spacing:.15em;">
+          Installed energy-storage capacity
+        </p>
+      </div>
+      <div style="flex:1;border-left:1px solid var(--line);padding-left:56px;">
+        <p style="font-size:25px;font-weight:300;letter-spacing:-0.024em;line-height:1.44;max-width:5.4in;">
+          Quorelia's technology is being applied in the context of approximately 1 GW-scale BESS infrastructure.
+        </p>
+        <div class="trace" style="margin-top:34px;">
+          <i class="a" style="height:52%"></i><i style="height:71%"></i><i class="a" style="height:44%"></i>
+          <i style="height:83%"></i><i class="a" style="height:61%"></i><i style="height:38%"></i>
+          <i class="a" style="height:77%"></i><i style="height:55%"></i><i class="g" style="height:100%"></i>
+          <i class="a" style="height:66%"></i><i style="height:47%"></i><i class="a" style="height:88%"></i>
+          <i style="height:59%"></i><i class="a" style="height:73%"></i><i style="height:41%"></i>
+          <i class="a" style="height:80%"></i><i style="height:64%"></i><i class="g" style="height:100%"></i>
+          <i class="a" style="height:50%"></i><i style="height:86%"></i><i class="a" style="height:69%"></i>
+          <i style="height:45%"></i><i class="a" style="height:75%"></i><i style="height:57%"></i>
+        </div>
+        <p class="sm" style="margin-top:20px;max-width:5.2in;">
+          Built and tested around real, large-scale battery energy storage operations — not a theoretical concept, and not a demonstration environment.
+        </p>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--line);padding-top:24px;display:flex;gap:60px;">
+      <p style="font-size:22px;font-weight:300;letter-spacing:-0.022em;">Built around real infrastructure.</p>
+      <p style="font-size:22px;font-weight:300;letter-spacing:-0.022em;color:var(--teal);">Designed for real operations.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Real-world context</span><span>05</span></div>
+</section>
+
+<!-- ══════════════ 6 · THE FOUNDERS ══════════════ -->
+<section class="slide">
+  <div class="veil" style="background:linear-gradient(140deg,#05090f,#0b1926 66%,#05090f);"></div>
+  <div class="inner">
+    <p class="kicker">The founders</p>
+    <div class="rule"></div>
+    <h2 style="max-width:10.9in;">Two founders. A decade of building together.<br>One problem worth the next decade.</h2>
+
+    <div class="fdr" style="margin-top:18px;">
+      <div class="card">
+        <div class="nm">Diego Ostertag</div>
+        <div class="rl">Co-Founder &amp; Chief Executive Officer</div>
+        <p>Finance, business strategy and commercialisation, with a technology-oriented approach to how a company is built and taken to market. MBA in Finance from the University of Chile, with a background in marketing and business development.</p>
+      </div>
+      <div class="card">
+        <div class="nm">Jae Hee Kim</div>
+        <div class="rl">Co-Founder &amp; Chief Operating Officer</div>
+        <p>Energy infrastructure, renewables, technology and international business, with direct experience in large-scale solar operations and in building systems that turn complex operational information into management intelligence — across data, automation and AI.</p>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div style="border-top:1px solid var(--line);padding-top:26px;margin-top:26px;">
+      <p class="lede" style="max-width:8.8in;color:var(--dim);">
+        Diego and Jae Hee have built businesses together for roughly ten years, across several industries, before converging on a single observation: critical infrastructure produces enormous quantities of data, and the people responsible for it still struggle to turn that data into something simple, transparent and actionable.
+      </p>
+      <p style="font-size:21px;font-weight:300;letter-spacing:-0.022em;margin-top:22px;color:var(--white);">
+        Quorelia was born from that problem.
+      </p>
+    </div>
+
+    <div class="tagbar">
+      <div>Finance</div><div>Operations</div><div>Energy</div>
+      <div>Technology</div><div>AI &amp; Automation</div><div>International Business</div>
+    </div>
+  </div>
+  <div class="foot"><span>The founders</span><span>06</span></div>
+</section>
+
+<!-- ══════════════ 7 · THE VISION ══════════════ -->
+<section class="slide">
+  <div class="bg"><img src="quorelia-banner-solar.jpg" alt=""></div>
+  <div class="veil" style="background:
+      radial-gradient(110% 100% at 20% 78%, rgba(5,9,15,0.60), rgba(5,9,15,0.94) 66%),
+      linear-gradient(180deg, rgba(5,9,15,0.90), rgba(5,9,15,0.72) 40%, rgba(5,9,15,0.97));"></div>
+  <div class="inner">
+    <p class="kicker">The vision</p>
+    <div class="rule"></div>
+    <div class="spacer"></div>
+    <h1 style="max-width:9.2in;">
+      The future of energy<br>will not only be renewable.<br>
+      <span style="color:var(--teal);">It will be intelligent.</span>
+    </h1>
+    <p class="lede" style="margin-top:30px;max-width:7.2in;">
+      Infrastructure is becoming more complex — solar, storage, hybrid assets, grid interaction. Management cannot scale by adding more dashboards and more people. The next generation of infrastructure will observe, understand, communicate and recommend.
+    </p>
+    <div class="spacer"></div>
+    <div style="border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;align-items:flex-end;gap:56px;">
+      <div>
+        <div class="wordmark" style="font-size:34px;">QUORELIA</div>
+        <p class="kicker" style="margin-top:13px;letter-spacing:.15em;">Intelligence for the infrastructure that powers tomorrow</p>
+      </div>
+      <div style="text-align:right;max-width:4.9in;">
+        <p class="sm" style="color:var(--dim);">We are working with energy infrastructure stakeholders who want to see what intelligent operations can look like.</p>
+        <p style="font-size:15px;font-weight:400;margin-top:12px;color:var(--white);">Let's build the next layer of energy infrastructure together.</p>
+        <p style="margin-top:16px;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--teal);">jay@quorelia.org</p>
+        <p class="sm" style="margin-top:5px;font-family:var(--mono);letter-spacing:.06em;color:var(--dim-2);">quorelia.org</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 Quorelia · Confidential</span><span>07</span></div>
+</section>
+
+</body>
+</html>

@@ -84,6 +84,44 @@
   @media(prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
   }
+
+  /* ── Scroll reveal — blur-in, resolves as the element settles into view ──
+     Note: `filter` and `transform` create a containing block, which would break
+     position:sticky. Never apply .reveal to .site-head or any of its ancestors. */
+  .reveal{
+    opacity:0;
+    filter:blur(9px);
+    transform:translate3d(0,22px,0) scale(0.995);
+    transition:
+      opacity   0.85s var(--ease-out-quint),
+      filter    0.95s var(--ease-out-quint),
+      transform 0.85s var(--ease-out-quint);
+    will-change:opacity, filter, transform;
+  }
+  .reveal.in{
+    opacity:1;
+    filter:blur(0);
+    transform:translate3d(0,0,0) scale(1);
+  }
+  /* once settled, release the compositor + stop clipping any sticky children */
+  .reveal.done{will-change:auto;filter:none;transform:none;}
+  /* staggered children inside a revealed group */
+  .reveal-group > *{
+    opacity:0;filter:blur(7px);transform:translate3d(0,18px,0);
+    transition:opacity .75s var(--ease-out-quint), filter .85s var(--ease-out-quint), transform .75s var(--ease-out-quint);
+  }
+  .reveal-group.in > *{opacity:1;filter:blur(0);transform:none;}
+  .reveal-group.in > *:nth-child(1){transition-delay:0ms;}
+  .reveal-group.in > *:nth-child(2){transition-delay:70ms;}
+  .reveal-group.in > *:nth-child(3){transition-delay:140ms;}
+  .reveal-group.in > *:nth-child(4){transition-delay:210ms;}
+  .reveal-group.in > *:nth-child(5){transition-delay:280ms;}
+  .reveal-group.in > *:nth-child(6){transition-delay:350ms;}
+  .reveal-group.done > *{will-change:auto;filter:none;transform:none;}
+  @media(prefers-reduced-motion: reduce){
+    .reveal,.reveal-group > *{opacity:1 !important;filter:none !important;transform:none !important;transition:none !important;}
+  }
+
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
@@ -1524,6 +1562,69 @@ if(demoForm){
     }
   });
 }
+
+/* ── Scroll reveal ────────────────────────────────────────────────────────
+   Elements settle into place as they enter the viewport: blur resolves,
+   opacity rises, and a small upward drift comes to rest.
+   Tagging happens here rather than in the markup so the HTML stays clean. */
+(function scrollReveal(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Single elements that fade in as a unit.
+  const SOLO = [
+    '.section-head', '.alert-callout', '.fb-copy', '.trust .container',
+    '.motto', '.phil-lead', '.phil-close', '.brand-copy',
+    '.cta-band', '.demo-form', '.report-cta', '.dash-frame', '.why-shot'
+  ];
+  // Containers whose direct children stagger in one after another.
+  const GROUPS = [
+    '.pillars-grid', '.grid-3', '.phil-grid', '.q-meanings',
+    '.stat-grid', '.split', '.state-legend'
+  ];
+
+  // Never touch the sticky header or the hero — a transform or filter on an
+  // ancestor creates a containing block and would break position:sticky.
+  const FORBIDDEN = '.site-head, header, .obs-trace, .hero';
+
+  const tag = (sel, cls) => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (el.closest(FORBIDDEN)) return;
+      el.classList.add(cls);
+    });
+  };
+  SOLO.forEach(s => tag(s, 'reveal'));
+  GROUPS.forEach(s => tag(s, 'reveal-group'));
+
+  const targets = document.querySelectorAll('.reveal, .reveal-group');
+  if (!targets.length) return;
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('in');
+      obs.unobserve(el);
+      // Drop the filter/transform once settled so nothing stays composited
+      // and no descendant sticky/fixed positioning is affected.
+      el.addEventListener('transitionend', function done(e){
+        if (e.target !== el && !el.classList.contains('reveal-group')) return;
+        el.classList.add('done');
+        el.removeEventListener('transitionend', done);
+      });
+      setTimeout(() => el.classList.add('done'), 1400); // fallback
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+  targets.forEach(el => io.observe(el));
+
+  // Anything already on screen at load resolves immediately.
+  requestAnimationFrame(() => {
+    targets.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) { el.classList.add('in'); io.unobserve(el); }
+    });
+  });
+})();
 </script>
 </body>
 </html>

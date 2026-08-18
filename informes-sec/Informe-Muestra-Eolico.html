@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Quorelia — Parque Eólico Sierra Guanaco — Informe Eólico (Muestra)</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
+  --amber:#f5a623; --green:#22c55e; --red:#ef4444;
+  --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa; --white:#fff; --border:#e3e9ec;
+  --mono:'SF Mono',Consolas,'Courier New',monospace;
+}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:#8a929a;line-height:1.55;}
+.page{width:8.5in;min-height:11in;margin:0 auto 18px;background:#fff;padding:0.7in 0.75in 0.55in;
+  position:relative;page-break-after:always;box-shadow:0 2px 18px rgba(0,0,0,.25);}
+@media print{ body{background:#fff;} .page{box-shadow:none;margin:0;} }
+h1,h2,h3,h4{letter-spacing:-0.02em;font-weight:600;}
+.eyebrow{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:7px;}
+.sec-num{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border-bottom:0.8px solid var(--border);padding-bottom:6px;margin-bottom:16px;}
+h2.t{font-size:19px;margin-bottom:5px;} h3.t{font-size:13.5px;margin:16px 0 7px;}
+p{font-size:10.2px;line-height:1.62;color:#33454f;margin-bottom:8px;}
+.small{font-size:8.6px;color:var(--muted);line-height:1.55;}
+.foot{position:absolute;bottom:0.4in;left:0.75in;right:0.75in;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:7.6px;letter-spacing:.07em;text-transform:uppercase;color:#8fa0ab;
+  border-top:0.8px solid var(--border);padding-top:6px;}
+table{width:100%;border-collapse:collapse;margin:9px 0;}
+th{font-family:var(--mono);font-size:7.8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  text-align:left;padding:6px 7px;border-bottom:1.2px solid var(--navy);white-space:nowrap;}
+td{font-size:9.4px;padding:5px 7px;border-bottom:0.8px solid var(--border);vertical-align:top;}
+td.n{font-family:var(--mono);text-align:right;font-size:9px;}
+tr.alt td{background:#f7f9fa;}
+.kv{width:100%;border-collapse:collapse;}
+.kv td{font-size:9.6px;padding:6px 0;border-bottom:0.8px solid var(--border);}
+.kv td:first-child{width:34%;color:var(--muted);font-family:var(--mono);font-size:8.2px;
+  letter-spacing:.07em;text-transform:uppercase;padding-right:12px;}
+.chip{display:inline-block;font-family:var(--mono);font-size:7.6px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;padding:2.5px 7px;border-radius:3px;white-space:nowrap;}
+.c-ok{background:rgba(34,197,94,.14);color:#15803d;}
+.c-warn{background:rgba(245,166,35,.16);color:#b45309;}
+.c-hold{background:rgba(239,68,68,.12);color:#b91c1c;}
+.c-info{background:rgba(31,182,168,.14);color:var(--teal-dark);}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:12px 0 4px;
+  border:0.8px solid var(--border);border-radius:6px;overflow:hidden;}
+.kpi{padding:11px 13px;border-left:0.8px solid var(--border);}
+.kpi:first-child{border-left:0;}
+.kpi .l{font-family:var(--mono);font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.kpi .v{font-size:20px;font-weight:600;letter-spacing:-0.03em;line-height:1;}
+.kpi .s{font-size:8px;color:var(--muted);margin-top:4px;}
+.box{border:0.8px solid var(--border);border-radius:6px;padding:13px 15px;margin:10px 0;background:#fbfcfd;}
+.box.teal{border-color:rgba(31,182,168,.35);background:rgba(31,182,168,.05);}
+.box.amber{border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.05);}
+.box h4{font-size:11px;margin-bottom:6px;}
+.finding{border-left:2.5px solid var(--border);padding:9px 0 9px 13px;margin:10px 0;}
+.finding.hold{border-left-color:var(--red);} .finding.warn{border-left-color:var(--amber);}
+.finding.ok{border-left-color:var(--green);}
+.finding .fh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:5px;}
+.finding .fh b{font-size:10.4px;}
+.cover{background:var(--navy);color:#fff;}
+.cover .page-in{min-height:9.6in;display:flex;flex-direction:column;}
+.wm{display:inline-block;font-family:var(--mono);font-size:7.6px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--amber);border:0.8px solid rgba(245,166,35,.5);padding:3.5px 9px;border-radius:3px;}
+.steps{counter-reset:s;}
+.step{display:flex;gap:11px;margin-bottom:9px;}
+.step .i{flex:none;width:19px;height:19px;border-radius:4px;background:var(--navy);color:var(--teal);
+  font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.step .b{font-size:9.6px;line-height:1.6;color:#33454f;}
+.step .b b{color:var(--ink);font-size:10px;}
+</style></head><body><div class="page cover"><div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="margin-top:26px;"><span class="wm">Informe de muestra · datos ilustrativos</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+<div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">PARQUE EÓLICO · WIND</div>
+<h1 style="font-size:34px;line-height:1.12;font-weight:500;letter-spacing:-.03em;max-width:6.2in;">Informe de Verificación Independiente y Desempeño Operacional</h1>
+<p style="color:#9fb2bd;font-size:11px;max-width:5.4in;margin-top:14px;">Preparado bajo la metodología de monitoreo y verificación continua de Quorelia, sobre los sistemas SCADA y de medición ya instalados en el parque.</p>
+<table class="kv" style="margin-top:26px;max-width:5.6in;">
+<tr><td style="color:#8fa0ab;">Instalación</td><td style="color:#fff;">Parque Eólico Sierra Guanaco</td></tr>
+<tr><td style="color:#8fa0ab;">Ubicación</td><td style="color:#fff;">Región del Biobío, Chile</td></tr>
+<tr><td style="color:#8fa0ab;">Capacidad</td><td style="color:#fff;">108 MW · 24 aerogeneradores de 4,5 MW</td></tr>
+<tr><td style="color:#8fa0ab;">Período informado</td><td style="color:#fff;">01 – 31 julio 2026</td></tr>
+<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">QOR-SEC-2026-08-EOL-01</td></tr></table></div>
+<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">Documento de muestra con datos ilustrativos. No representa un cliente, instalación ni desempeño real. © 2026 Quorelia.</p></div><div class="foot"><span>Quorelia · Informe de muestra</span><span>01</span></div></div><div class="page "><div class="sec-num">01 · Identificación y opinión</div>
+<div class="eyebrow">Antecedentes</div><h2 class="t">Identificación del activo</h2>
+<table class="kv">
+<tr><td>Nombre del parque</td><td>Parque Eólico Sierra Guanaco <span class="chip c-info">Entidad ficticia</span></td></tr>
+<tr><td>Titular</td><td>Eólica Sierra Guanaco SpA (ficticio)</td></tr>
+<tr><td>Región / Comuna</td><td>Región del Biobío / Los Ángeles</td></tr>
+<tr><td>Tecnología</td><td>24 aerogeneradores de eje horizontal, 4,5 MW, altura de buje 115 m</td></tr>
+<tr><td>Capacidad instalada</td><td>108 MW</td></tr>
+<tr><td>Régimen</td><td>Coordinado — conectado en transmisión zonal</td></tr>
+<tr><td>Período informado</td><td>01 – 31 julio 2026 (744 horas)</td></tr>
+<tr><td>Medición de recurso</td><td>2 torres meteorológicas + anemometría de góndola en cada unidad</td></tr></table>
+<div class="eyebrow" style="margin-top:18px;">Conclusión</div><h2 class="t">Opinión sobre el desempeño informado</h2>
+<div class="kpis">
+<div class="kpi"><div class="l">Disponibilidad certificada</div><div class="v" style="color:#149487">97.60%</div><div class="s">23 de 24 unidades</div></div>
+<div class="kpi"><div class="l">Factor de planta</div><div class="v">39.1%</div><div class="s">del período</div></div>
+<div class="kpi"><div class="l">Horas equivalentes</div><div class="v">291 h</div><div class="s">sobre capacidad certificada</div></div>
+<div class="kpi"><div class="l">Cobertura de datos</div><div class="v">99.0%</div><div class="s">unidades certificadas</div></div></div>
+<h3 class="t">Opinión</h3>
+<p>La disponibilidad técnica del período se certifica en <b>97.60%</b>, sustentada en cobertura observada de <b>99.0%</b> sobre las 23 unidades certificadas. La generación certificada asciende a <b>30,102 MWh</b>, equivalente a un factor de planta de <b>39.1%</b> y <b>291 horas equivalentes</b> de operación a plena carga.</p>
+<p>La unidad <b>WTG-21 se retiene</b> por cobertura de datos de 62,4%, inferior al umbral de 90%. Véase Sección 04, Hallazgo H-01. No se publica cifra de disponibilidad ni de generación imputable a dicha unidad.</p>
+<div class="box teal"><h4>Por qué la disponibilidad eólica no se mide como en solar</h4>
+<p style="margin-bottom:0;">Un aerogenerador detenido por ausencia de viento no está indisponible: está correctamente fuera de servicio. La disponibilidad técnica informada excluye del denominador las horas bajo velocidad de arranque y sobre velocidad de corte, de modo que la cifra refleje el estado del equipo y no el del recurso. Confundir ambos conceptos es el error más frecuente en la fiscalización de activos eólicos.</p></div><div class="foot"><span>QOR-SEC-2026-08-EOL-01 · Muestra ilustrativa</span><span>02</span></div></div><div class="page "><div class="sec-num">02 · Datos de desempeño</div>
+<div class="eyebrow">Detalle por aerogenerador</div><h2 class="t">Desempeño por unidad</h2>
+<p class="small">Desviación de curva de potencia: diferencia entre la energía medida y la esperada según la curva garantizada del fabricante, corregida por densidad de aire del sitio.</p>
+<table><tr><th>Unidad</th><th style="text-align:right">Cobertura %</th><th style="text-align:right">Disponib. %</th><th style="text-align:right">Energía MWh</th><th style="text-align:right">Desv. curva %</th><th>Veredicto</th></tr><tr><td>WTG-01</td><td class="n">99.2</td><td class="n">97.8</td><td class="n">1,312</td><td class="n">-0.4</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-02</td><td class="n">99.1</td><td class="n">98.1</td><td class="n">1,325</td><td class="n">-0.2</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-03</td><td class="n">98.9</td><td class="n">97.4</td><td class="n">1,301</td><td class="n">-0.6</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-04</td><td class="n">99.1</td><td class="n">98.3</td><td class="n">1,331</td><td class="n">+0.1</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-05</td><td class="n">98.7</td><td class="n">96.9</td><td class="n">1,288</td><td class="n">-0.9</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-06</td><td class="n">99.0</td><td class="n">97.7</td><td class="n">1,309</td><td class="n">-0.5</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-07</td><td class="n">99.1</td><td class="n">98.0</td><td class="n">1,318</td><td class="n">-0.3</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-08</td><td class="n">98.5</td><td class="n">96.2</td><td class="n">1,272</td><td class="n">-1.4</td><td><span class="chip c-warn">Aprobado</span></td></tr><tr><td>WTG-09</td><td class="n">99.1</td><td class="n">98.2</td><td class="n">1,327</td><td class="n">-0.2</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-10</td><td class="n">98.8</td><td class="n">97.1</td><td class="n">1,294</td><td class="n">-0.8</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-11</td><td class="n">99.1</td><td class="n">97.9</td><td class="n">1,315</td><td class="n">-0.4</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-12</td><td class="n">99.0</td><td class="n">98.4</td><td class="n">1,334</td><td class="n">+0.2</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-13</td><td class="n">99.1</td><td class="n">97.6</td><td class="n">1,306</td><td class="n">-0.5</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-14</td><td class="n">98.6</td><td class="n">96.7</td><td class="n">1,283</td><td class="n">-1.1</td><td><span class="chip c-warn">Aprobado</span></td></tr><tr><td>WTG-15</td><td class="n">99.1</td><td class="n">98.1</td><td class="n">1,322</td><td class="n">-0.3</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-16</td><td class="n">98.9</td><td class="n">97.3</td><td class="n">1,298</td><td class="n">-0.7</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-17</td><td class="n">99.1</td><td class="n">98.5</td><td class="n">1,338</td><td class="n">+0.3</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-18</td><td class="n">98.4</td><td class="n">95.8</td><td class="n">1,264</td><td class="n">-1.8</td><td><span class="chip c-warn">Aprobado</span></td></tr><tr><td>WTG-19</td><td class="n">99.0</td><td class="n">97.8</td><td class="n">1,311</td><td class="n">-0.4</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-20</td><td class="n">99.1</td><td class="n">98.2</td><td class="n">1,329</td><td class="n">-0.2</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-21</td><td class="n">62.4</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td><span class="chip c-hold">Retenido</span></td></tr><tr class="alt"><td>WTG-22</td><td class="n">99.1</td><td class="n">97.5</td><td class="n">1,304</td><td class="n">-0.6</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr><td>WTG-23</td><td class="n">98.8</td><td class="n">97.0</td><td class="n">1,291</td><td class="n">-0.9</td><td><span class="chip c-ok">Aprobado</span></td></tr><tr class="alt"><td>WTG-24</td><td class="n">99.1</td><td class="n">98.3</td><td class="n">1,330</td><td class="n">+0.1</td><td><span class="chip c-ok">Aprobado</span></td></tr>
+<tr style="border-top:1.4px solid var(--navy);font-weight:600;"><td>Total certificado</td><td class="n">99.0</td><td class="n">97.60</td><td class="n">30,102</td><td class="n">-0.5</td><td></td></tr></table>
+<h3 class="t">Velocidad media diaria de viento</h3>
+<svg viewBox="0 0 680 150" style="width:100%;height:auto;font-family:var(--mono)"><line x1="32" y1="128.0" x2="670" y2="128.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="27" y="130.5" font-size="7" fill="#8fa0ab" text-anchor="end">6</text><line x1="32" y1="68.0" x2="670" y2="68.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="27" y="70.5" font-size="7" fill="#8fa0ab" text-anchor="end">9</text><line x1="32" y1="8.0" x2="670" y2="8.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="27" y="10.5" font-size="7" fill="#8fa0ab" text-anchor="end">12</text><path d="M32.0,104.5 L53.3,84.5 L74.5,55.6 L95.8,69.0 L117.1,111.2 L138.3,97.9 L159.6,37.9 L180.9,17.9 L202.1,51.2 L223.4,82.3 L244.7,106.8 L265.9,122.3 L287.2,91.2 L308.5,44.5 L329.7,24.5 L351.0,60.1 L372.3,77.9 L393.5,95.6 L414.8,113.4 L436.1,66.8 L457.3,33.4 L478.6,49.0 L499.9,80.1 L521.1,104.5 L542.4,117.9 L563.7,86.8 L584.9,53.4 L606.2,40.1 L627.5,71.2 L648.7,89.0 L670.0,73.4 L670.0,128 L32,128 Z" fill="#1fb6a8" opacity="0.10"/><path d="M32.0,104.5 L53.3,84.5 L74.5,55.6 L95.8,69.0 L117.1,111.2 L138.3,97.9 L159.6,37.9 L180.9,17.9 L202.1,51.2 L223.4,82.3 L244.7,106.8 L265.9,122.3 L287.2,91.2 L308.5,44.5 L329.7,24.5 L351.0,60.1 L372.3,77.9 L393.5,95.6 L414.8,113.4 L436.1,66.8 L457.3,33.4 L478.6,49.0 L499.9,80.1 L521.1,104.5 L542.4,117.9 L563.7,86.8 L584.9,53.4 L606.2,40.1 L627.5,71.2 L648.7,89.0 L670.0,73.4" fill="none" stroke="#1fb6a8" stroke-width="1.6"/><text x="32.0" y="143" font-size="6.4" fill="#5c7080" text-anchor="middle">01</text><text x="159.6" y="143" font-size="6.4" fill="#5c7080" text-anchor="middle">07</text><text x="287.2" y="143" font-size="6.4" fill="#5c7080" text-anchor="middle">14</text><text x="414.8" y="143" font-size="6.4" fill="#5c7080" text-anchor="middle">21</text><text x="542.4" y="143" font-size="6.4" fill="#5c7080" text-anchor="middle">28</text><text x="32" y="7" font-size="6.6" fill="#8fa0ab">m/s a 115 m</text></svg>
+<p class="small">Velocidad media del período: 8.55 m/s a altura de buje. Densidad de aire media corregida: 1,196 kg/m³. Horas bajo velocidad de arranque (3,0 m/s): 41 h, excluidas del denominador de disponibilidad técnica.</p><div class="foot"><span>QOR-SEC-2026-08-EOL-01 · Muestra ilustrativa</span><span>03</span></div></div><div class="page "><div class="sec-num">03 · Recurso, curva de potencia y pérdidas</div>
+<div class="eyebrow">Condiciones del período</div><h2 class="t">Variables de recurso</h2>
+<table><tr><th>Variable</th><th style="text-align:right">Media</th><th style="text-align:right">Máx</th><th style="text-align:right">Mín</th><th>Fuente</th></tr>
+<tr><td>Velocidad de viento (115 m)</td><td class="n">8,52 m/s</td><td class="n">11,1</td><td class="n">6,4</td><td>Torre meteorológica + góndola</td></tr>
+<tr class="alt"><td>Dirección predominante</td><td class="n">SO (223°)</td><td class="n">—</td><td class="n">—</td><td>Veleta de góndola</td></tr>
+<tr><td>Densidad de aire corregida</td><td class="n">1,196 kg/m³</td><td class="n">1,214</td><td class="n">1,178</td><td>Calculada — presión y temperatura</td></tr>
+<tr class="alt"><td>Temperatura ambiente</td><td class="n">9,1 °C</td><td class="n">18,4</td><td class="n">-1,8</td><td>Torre meteorológica</td></tr>
+<tr><td>Turbulencia (TI a 15 m/s)</td><td class="n">0,112</td><td class="n">0,168</td><td class="n">0,081</td><td>Calculada</td></tr>
+<tr class="alt"><td>Horas bajo velocidad de arranque</td><td class="n">41 h</td><td class="n">—</td><td class="n">—</td><td>SCADA</td></tr>
+<tr><td>Horas sobre velocidad de corte</td><td class="n">6 h</td><td class="n">—</td><td class="n">—</td><td>SCADA</td></tr>
+<tr class="alt"><td>Horas de operación con generación</td><td class="n">631 h</td><td class="n">—</td><td class="n">—</td><td>SCADA</td></tr></table>
+<h3 class="t">Descomposición de pérdidas de energía</h3>
+<table><tr><th>Concepto</th><th style="text-align:right">Pérdida</th><th>Naturaleza</th><th>Evaluación</th></tr>
+<tr><td>Indisponibilidad de equipos</td><td class="n">2,1%</td><td>Accionable</td><td><span class="chip c-ok">Conforme</span></td></tr>
+<tr class="alt"><td>Desviación de curva de potencia</td><td class="n">0,5%</td><td>Accionable — calibración/pitch</td><td><span class="chip c-ok">Conforme</span></td></tr>
+<tr><td>Efecto estela entre unidades</td><td class="n">6,4%</td><td>De diseño</td><td><span class="chip c-ok">Conforme</span></td></tr>
+<tr class="alt"><td>Vertimiento por instrucción del Coordinador</td><td class="n">1,2%</td><td>Sistémico</td><td><span class="chip c-info">Documentado</span></td></tr>
+<tr><td>Pérdidas eléctricas internas</td><td class="n">1,8%</td><td>De diseño</td><td><span class="chip c-ok">Conforme</span></td></tr>
+<tr class="alt"><td>Restricción por ruido / fauna</td><td class="n">0,4%</td><td>Ambiental — compromiso RCA</td><td><span class="chip c-info">Documentado</span></td></tr></table>
+<div class="box amber"><h4>Desviación de curva de potencia — WTG-18</h4>
+<p style="margin-bottom:0;">La unidad WTG-18 presenta una desviación de -1,8% respecto de la curva garantizada, la mayor del parque y 1,3 puntos peor que la media. El patrón se concentra en el rango de 7 a 11 m/s, compatible con desalineación de yaw o desviación de calibración del anemómetro de góndola, más que con degradación de pala. Un error de calibración de 0,3 m/s en la anemometría produce una desviación aparente de esta magnitud sin que exista falla real de equipo — razón por la cual el hallazgo se clasifica como verificación de instrumentación y no como falla mecánica.</p></div><div class="foot"><span>QOR-SEC-2026-08-EOL-01 · Muestra ilustrativa</span><span>04</span></div></div><div class="page "><div class="sec-num">04 · Hallazgos y excepciones</div>
+<div class="eyebrow">Excepciones del período</div><h2 class="t">Hallazgos, en orden de materialidad</h2>
+<div class="finding hold"><div class="fh"><b>H-01 — Cobertura bajo umbral, WTG-21</b><span class="chip c-hold">Retenido</span></div>
+<p>Interrupción del enlace de fibra al aerogenerador 21 entre el 14 y el 25 de julio (11,6 días), reduciendo la cobertura del período a 62,4%. Disponibilidad y generación imputable a WTG-21 <b>se retienen</b> en lugar de estimarse. La energía de esta unidad tampoco se incluye en el total certificado del parque.</p>
+<p class="small"><b>Recomendación:</b> revisión del enlace de fibra del ramal norte y del conversor de medio asociado. Clasificada como <b>correctiva</b>.</p></div>
+<div class="finding warn"><div class="fh"><b>H-02 — Desviación de curva de potencia, WTG-18</b><span class="chip c-warn">Alerta</span></div>
+<p>Desviación sostenida de -1,8% respecto de la curva garantizada, concentrada en el rango de 7 a 11 m/s. Patrón compatible con desalineación de yaw o desviación de calibración de anemometría de góndola.</p>
+<p class="small"><b>Recomendación:</b> verificación de calibración del anemómetro de góndola y de la alineación de yaw antes de escalar a inspección mecánica. Clasificada como <b>preventiva</b>.</p></div>
+<div class="finding warn"><div class="fh"><b>H-03 — Disponibilidad bajo media, WTG-08 y WTG-18</b><span class="chip c-warn">Alerta</span></div>
+<p>Ambas unidades registran disponibilidad bajo 96,5%, contra una media de parque de 97.60%. Las detenciones se concentran en eventos de sistema de pitch, con reinicio automático exitoso en la mayoría de los casos.</p>
+<p class="small"><b>Recomendación:</b> revisión del sistema hidráulico de pitch en la próxima ventana programada. Clasificada como <b>preventiva</b>.</p></div>
+<div class="finding ok"><div class="fh"><b>H-04 — Vertimiento por instrucción del Coordinador</b><span class="chip c-ok">Sin impacto en evaluación</span></div>
+<p>Once eventos de limitación de inyección por instrucción del Coordinador, totalizando 19h 15min y 371 MWh no inyectados, documentados con marca de tiempo y referencia de instrucción.</p>
+<p class="small"><b>Acción:</b> ninguna requerida al titular. Se documenta separadamente para no imputar al activo una limitación de origen sistémico.</p></div>
+<div class="box"><h4>Resumen de derivación</h4>
+<table style="margin:6px 0 0;"><tr><th>Hallazgo</th><th>Clasificación</th><th>Derivado a</th><th>Estado</th></tr>
+<tr><td>H-01</td><td>Correctiva</td><td>Comunicaciones / TI de planta</td><td><span class="chip c-hold">Abierto</span></td></tr>
+<tr class="alt"><td>H-02</td><td>Preventiva</td><td>Especialidad control / instrumentación</td><td><span class="chip c-warn">Abierto</span></td></tr>
+<tr><td>H-03</td><td>Preventiva</td><td>Mantenimiento mecánico</td><td><span class="chip c-warn">Abierto</span></td></tr>
+<tr class="alt"><td>H-04</td><td>Sistémico</td><td>—</td><td><span class="chip c-ok">Cerrado</span></td></tr></table>
+<p class="small" style="margin:8px 0 0;">La clasificación preventiva/correctiva y la derivación son automáticas. El despacho de personal a terreno lo confirma siempre una persona.</p></div>
+<p class="small" style="margin-top:16px;border-top:0.8px solid var(--border);padding-top:11px;"><b>Datos de muestra.</b> Nombres, cifras y hallazgos ilustrativos, generados con fines de demostración. No representan un cliente, instalación ni desempeño real.<br>jay@quorelia.org · quorelia.org · © 2026 Quorelia</p><div class="foot"><span>QOR-SEC-2026-08-EOL-01 · Muestra ilustrativa</span><span>05</span></div></div></body></html>

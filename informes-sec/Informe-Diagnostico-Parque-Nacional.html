@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Quorelia — Diagnóstico del Registro Técnico Nacional</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
+  --amber:#f5a623; --green:#22c55e; --red:#ef4444;
+  --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa; --white:#fff; --border:#e3e9ec;
+  --mono:'SF Mono',Consolas,'Courier New',monospace;
+}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:#8a929a;line-height:1.55;}
+.page{width:8.5in;min-height:11in;margin:0 auto 18px;background:#fff;padding:0.7in 0.75in 0.55in;
+  position:relative;page-break-after:always;box-shadow:0 2px 18px rgba(0,0,0,.25);}
+@media print{ body{background:#fff;} .page{box-shadow:none;margin:0;} }
+h1,h2,h3,h4{letter-spacing:-0.02em;font-weight:600;}
+.eyebrow{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:7px;}
+.sec-num{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border-bottom:0.8px solid var(--border);padding-bottom:6px;margin-bottom:16px;}
+h2.t{font-size:19px;margin-bottom:5px;} h3.t{font-size:13.5px;margin:16px 0 7px;}
+p{font-size:10.2px;line-height:1.62;color:#33454f;margin-bottom:8px;}
+.small{font-size:8.6px;color:var(--muted);line-height:1.55;}
+.foot{position:absolute;bottom:0.4in;left:0.75in;right:0.75in;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:7.6px;letter-spacing:.07em;text-transform:uppercase;color:#8fa0ab;
+  border-top:0.8px solid var(--border);padding-top:6px;}
+table{width:100%;border-collapse:collapse;margin:9px 0;}
+th{font-family:var(--mono);font-size:7.8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  text-align:left;padding:6px 7px;border-bottom:1.2px solid var(--navy);white-space:nowrap;}
+td{font-size:9.4px;padding:5px 7px;border-bottom:0.8px solid var(--border);vertical-align:top;}
+td.n{font-family:var(--mono);text-align:right;font-size:9px;}
+tr.alt td{background:#f7f9fa;}
+.kv{width:100%;border-collapse:collapse;}
+.kv td{font-size:9.6px;padding:6px 0;border-bottom:0.8px solid var(--border);}
+.kv td:first-child{width:34%;color:var(--muted);font-family:var(--mono);font-size:8.2px;
+  letter-spacing:.07em;text-transform:uppercase;padding-right:12px;}
+.chip{display:inline-block;font-family:var(--mono);font-size:7.6px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;padding:2.5px 7px;border-radius:3px;white-space:nowrap;}
+.c-ok{background:rgba(34,197,94,.14);color:#15803d;}
+.c-warn{background:rgba(245,166,35,.16);color:#b45309;}
+.c-hold{background:rgba(239,68,68,.12);color:#b91c1c;}
+.c-info{background:rgba(31,182,168,.14);color:var(--teal-dark);}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:12px 0 4px;
+  border:0.8px solid var(--border);border-radius:6px;overflow:hidden;}
+.kpi{padding:11px 13px;border-left:0.8px solid var(--border);}
+.kpi:first-child{border-left:0;}
+.kpi .l{font-family:var(--mono);font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.kpi .v{font-size:20px;font-weight:600;letter-spacing:-0.03em;line-height:1;}
+.kpi .s{font-size:8px;color:var(--muted);margin-top:4px;}
+.box{border:0.8px solid var(--border);border-radius:6px;padding:13px 15px;margin:10px 0;background:#fbfcfd;}
+.box.teal{border-color:rgba(31,182,168,.35);background:rgba(31,182,168,.05);}
+.box.amber{border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.05);}
+.box h4{font-size:11px;margin-bottom:6px;}
+.finding{border-left:2.5px solid var(--border);padding:9px 0 9px 13px;margin:10px 0;}
+.finding.hold{border-left-color:var(--red);} .finding.warn{border-left-color:var(--amber);}
+.finding.ok{border-left-color:var(--green);}
+.finding .fh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:5px;}
+.finding .fh b{font-size:10.4px;}
+.cover{background:var(--navy);color:#fff;}
+.cover .page-in{min-height:9.6in;display:flex;flex-direction:column;}
+.wm{display:inline-block;font-family:var(--mono);font-size:7.6px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--amber);border:0.8px solid rgba(245,166,35,.5);padding:3.5px 9px;border-radius:3px;}
+.steps{counter-reset:s;}
+.step{display:flex;gap:11px;margin-bottom:9px;}
+.step .i{flex:none;width:19px;height:19px;border-radius:4px;background:var(--navy);color:var(--teal);
+  font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.step .b{font-size:9.6px;line-height:1.6;color:#33454f;}
+.step .b b{color:var(--ink);font-size:10px;}
+</style></head><body><div class="page cover"><div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="margin-top:26px;"><span class="wm" style="color:var(--teal);border-color:rgba(31,182,168,.5);">Datos oficiales · Infotécnica del Coordinador</span></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+<div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">DIAGNÓSTICO DEL REGISTRO TÉCNICO NACIONAL</div>
+<h1 style="font-size:31px;line-height:1.14;font-weight:500;letter-spacing:-.03em;max-width:6.3in;">Estado de completitud del registro de unidades generadoras del Sistema Eléctrico Nacional</h1>
+<p style="color:#9fb2bd;font-size:11px;max-width:5.5in;margin-top:14px;">Análisis sobre la totalidad del registro público de Infotécnica: 2,618 unidades generadoras, 2,029 centrales, 1,614 propietarios. Sin datos simulados.</p>
+<table class="kv" style="margin-top:26px;max-width:5.6in;">
+<tr><td style="color:#8fa0ab;">Fuente</td><td style="color:#fff;">Infotécnica · Coordinador Eléctrico Nacional</td></tr>
+<tr><td style="color:#8fa0ab;">Extracción</td><td style="color:#fff;">16 de agosto de 2026</td></tr>
+<tr><td style="color:#8fa0ab;">Universo</td><td style="color:#fff;">1,641 unidades coordinadas + 977 unidades PMGD</td></tr>
+<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">QOR-DIAG-2026-08-01</td></tr></table></div>
+<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">
+Documento de trabajo elaborado a partir de información pública. Las cifras de este informe son reproducibles ejecutando el análisis sobre los mismos archivos de origen. © 2026 Quorelia.</p></div><div class="foot"><span>Quorelia · Diagnóstico sobre datos oficiales</span><span>01</span></div></div><div class="page "><div class="sec-num">01 · Dimensión real del parque</div>
+<div class="eyebrow">Punto de partida</div><h2 class="t">Cuántas instalaciones hay que fiscalizar</h2>
+<div class="kpis">
+<div class="kpi"><div class="l">Unidades generadoras</div><div class="v" style="color:#149487">2,618</div><div class="s">1,641 coordinadas + 977 PMGD</div></div>
+<div class="kpi"><div class="l">Centrales únicas</div><div class="v">2,029</div><div class="s">1,198 coordinadas + 831 PMGD</div></div>
+<div class="kpi"><div class="l">Propietarios distintos</div><div class="v" style="color:#b45309">1,614</div><div class="s">titulares registrados</div></div>
+<div class="kpi"><div class="l">Centrales por propietario</div><div class="v">1.26</div><div class="s">promedio nacional</div></div></div>
+<p>La distinción entre <b>unidad generadora</b> y <b>central</b> es la primera fuente de confusión al dimensionar el parque: una central puede contener múltiples unidades. El registro contiene 2,618 unidades agrupadas en 2,029 centrales.</p>
+<h3 class="t">Distribución por tecnología — centrales</h3>
+<table><tr><th>Tecnología</th><th style="text-align:right">Coordinadas</th><th style="text-align:right">PMGD</th><th style="text-align:right">Total</th><th style="text-align:right">% del parque</th></tr>
+<tr><td>Fotovoltaica</td><td class="n">736</td><td class="n">639</td><td class="n">1375</td><td class="n">67.8</td></tr><tr class=alt><td>Motor de Combustión Interna</td><td class="n">146</td><td class="n">89</td><td class="n">235</td><td class="n">11.6</td></tr><tr><td>Minihidro de pasada</td><td class="n">121</td><td class="n">75</td><td class="n">196</td><td class="n">9.7</td></tr><tr class=alt><td>Eólica</td><td class="n">68</td><td class="n">7</td><td class="n">75</td><td class="n">3.7</td></tr><tr><td>Hidroeléctrica de Pasada</td><td class="n">47</td><td class="n">4</td><td class="n">51</td><td class="n">2.5</td></tr><tr class=alt><td>Termoeléctrica TG</td><td class="n">30</td><td class="n">5</td><td class="n">35</td><td class="n">1.7</td></tr><tr><td>Termoeléctrica TV</td><td class="n">30</td><td class="n">0</td><td class="n">30</td><td class="n">1.5</td></tr><tr class=alt><td>Hidroeléctrica de Embalse</td><td class="n">12</td><td class="n">0</td><td class="n">12</td><td class="n">0.6</td></tr><tr><td>Termoeléctrica CC</td><td class="n">11</td><td class="n">1</td><td class="n">12</td><td class="n">0.6</td></tr><tr class=alt><td>Cogeneración - TV</td><td class="n">2</td><td class="n">10</td><td class="n">12</td><td class="n">0.6</td></tr>
+<tr style="border-top:1.4px solid var(--navy);font-weight:600;"><td>Total</td><td class="n">1,198</td><td class="n">831</td><td class="n">2,029</td><td class="n">100,0</td></tr></table>
+<div class="box teal"><h4>La fotovoltaica define el problema</h4>
+<p style="margin-bottom:0;">Con 1,375 centrales, la fotovoltaica representa el <b>67.8%</b> del parque nacional en número de instalaciones. Cualquier estrategia de fiscalización que no resuelva primero el caso fotovoltaico no resuelve el problema de escala.</p></div><div class="foot"><span>Fuente: Infotécnica · Coordinador Eléctrico Nacional</span><span>02</span></div></div><div class="page "><div class="sec-num">02 · Estructura de propiedad</div>
+<div class="eyebrow">Quién opera estas centrales</div><h2 class="t">Un parque extremadamente fragmentado</h2>
+<table><tr><th>Segmento</th><th style="text-align:right">Propietarios</th><th style="text-align:right">Con 1 sola central</th><th style="text-align:right">%</th><th style="text-align:right">Centrales que operan</th><th style="text-align:right">% del segmento</th></tr>
+<tr><td>Coordinadas</td><td class="n">905</td><td class="n">818</td><td class="n">90.4</td><td class="n">818</td><td class="n">68.3</td></tr>
+<tr class="alt"><td>PMGD</td><td class="n">709</td><td class="n">662</td><td class="n">93.4</td><td class="n">662</td><td class="n">79.7</td></tr>
+<tr style="border-top:1.4px solid var(--navy);font-weight:600;"><td>Total</td><td class="n">1614</td><td class="n">1480</td><td class="n">91.7</td><td class="n">1480</td><td class="n">72.9</td></tr></table>
+<div class="kpis">
+<div class="kpi"><div class="l">Propietarios de 1 central</div><div class="v" style="color:#b45309">91.7%</div><div class="s">del total de titulares</div></div>
+<div class="kpi"><div class="l">Centrales que operan</div><div class="v">72.9%</div><div class="s">del parque nacional</div></div>
+<div class="kpi"><div class="l">Propietarios con 4+</div><div class="v">37</div><div class="s">de 1614 titulares</div></div>
+<div class="kpi"><div class="l">PMGD monoactivo</div><div class="v" style="color:#b45309">93.4%</div><div class="s">de titulares PMGD</div></div></div>
+<h3 class="t">Por qué esto es determinante para el diseño de la fiscalización</h3>
+<p>El <b>91.7%</b> de los titulares del país opera <b>una sola central</b>. Entre los PMGD la cifra sube a 93.4%. Estos titulares, por definición, no cuentan con un área de monitoreo, ni con un equipo de ingeniería dedicado, ni con capacidad de producir informes normalizados de desempeño.</p>
+<p>La consecuencia es directa: <b>exigir un formato de reporte más exigente no produce mejor información en este segmento</b> — produce incumplimiento, o produce planillas llenadas a mano con la misma calidad que se buscaba corregir. La única vía escalable es que el informe se genere automáticamente desde los datos que la central ya produce.</p>
+<div class="box amber"><h4>Concentración inversa</h4>
+<p style="margin-bottom:0;">Solo 37 titulares de 1614 operan 4 o más centrales. La capacidad de reporte profesional se concentra en ese grupo reducido; el resto del parque — que es la mayoría de las instalaciones — carece estructuralmente de ella.</p></div><div class="foot"><span>Fuente: Infotécnica · Coordinador Eléctrico Nacional</span><span>03</span></div></div><div class="page "><div class="sec-num">03 · Completitud del registro técnico</div>
+<div class="eyebrow">El hallazgo central</div><h2 class="t">Cuánto del registro está efectivamente informado</h2>
+<p class="small">Metodología: para cada ficha técnica se consideran únicamente las unidades que declararon al menos un campo real. Se tratan como <b>ausentes</b> los valores «no aplica», «S/I», «sin información» y guiones. Completitud = campos con dato real sobre campos totales de la ficha.</p>
+<table><tr><th>Ficha técnica</th><th>Ámbito</th><th style="text-align:right">Unidades</th><th style="text-align:right">Campos</th><th style="text-align:right">Completitud</th><th>Evaluación</th></tr><tr><td>Planta fotovoltaica</td><td>COORD</td><td class="n">698</td><td class="n">42</td><td class="n">23.3%</td><td><span class="chip c-hold">Crítico</span></td></tr><tr class="alt"><td>Turbinas eólicas</td><td>COORD</td><td class="n">81</td><td class="n">59</td><td class="n">60.2%</td><td><span class="chip c-warn">Bajo</span></td></tr><tr><td>Turbinas hidráulicas</td><td>COORD</td><td class="n">286</td><td class="n">47</td><td class="n">53.2%</td><td><span class="chip c-warn">Bajo</span></td></tr><tr class="alt"><td>Turbina a gas</td><td>COORD</td><td class="n">109</td><td class="n">37</td><td class="n">39.5%</td><td><span class="chip c-hold">Crítico</span></td></tr><tr><td>Turbinas a vapor</td><td>COORD</td><td class="n">101</td><td class="n">60</td><td class="n">40.6%</td><td><span class="chip c-warn">Bajo</span></td></tr><tr class="alt"><td>Motor combustión interna</td><td>COORD</td><td class="n">197</td><td class="n">22</td><td class="n">71.1%</td><td><span class="chip c-ok">Aceptable</span></td></tr><tr><td>Generadores</td><td>COORD</td><td class="n">628</td><td class="n">46</td><td class="n">64.0%</td><td><span class="chip c-warn">Bajo</span></td></tr><tr class="alt"><td>Almacenamiento (SAE)</td><td>PMGD</td><td class="n">2</td><td class="n">31</td><td class="n">74.2%</td><td><span class="chip c-ok">Aceptable</span></td></tr></table>
+<h3 class="t">Completitud por ficha</h3>
+<svg viewBox="0 0 680 190" style="width:100%;height:auto;font-family:var(--mono)"><line x1="30" y1="156.0" x2="670" y2="156.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="25" y="158.5" font-size="7" fill="#8fa0ab" text-anchor="end">0</text><line x1="30" y1="119.5" x2="670" y2="119.5" stroke="#e3e9ec" stroke-width="0.8"/><text x="25" y="122.0" font-size="7" fill="#8fa0ab" text-anchor="end">21</text><line x1="30" y1="83.0" x2="670" y2="83.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="25" y="85.5" font-size="7" fill="#8fa0ab" text-anchor="end">42</text><line x1="30" y1="46.5" x2="670" y2="46.5" stroke="#e3e9ec" stroke-width="0.8"/><text x="25" y="49.0" font-size="7" fill="#8fa0ab" text-anchor="end">62</text><line x1="30" y1="10.0" x2="670" y2="10.0" stroke="#e3e9ec" stroke-width="0.8"/><text x="25" y="12.5" font-size="7" fill="#8fa0ab" text-anchor="end">83</text><rect x="45.2" y="115.1" width="49.6" height="40.9" fill="#ef4444" rx="1.5"/><text x="70.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Planta foto</text><text x="70.0" y="112.1" font-size="6.4" fill="#33454f" text-anchor="middle">23.3</text><rect x="125.2" y="50.2" width="49.6" height="105.8" fill="#ef4444" rx="1.5"/><text x="150.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Turbinas eó</text><text x="150.0" y="47.2" font-size="6.4" fill="#33454f" text-anchor="middle">60.2</text><rect x="205.2" y="62.5" width="49.6" height="93.5" fill="#ef4444" rx="1.5"/><text x="230.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Turbinas hi</text><text x="230.0" y="59.5" font-size="6.4" fill="#33454f" text-anchor="middle">53.2</text><rect x="285.2" y="86.6" width="49.6" height="69.4" fill="#ef4444" rx="1.5"/><text x="310.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Turbina a g</text><text x="310.0" y="83.6" font-size="6.4" fill="#33454f" text-anchor="middle">39.5</text><rect x="365.2" y="84.7" width="49.6" height="71.3" fill="#ef4444" rx="1.5"/><text x="390.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Turbinas a </text><text x="390.0" y="81.7" font-size="6.4" fill="#33454f" text-anchor="middle">40.6</text><rect x="445.2" y="31.1" width="49.6" height="124.9" fill="#1fb6a8" rx="1.5"/><text x="470.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Motor combu</text><text x="470.0" y="28.1" font-size="6.4" fill="#33454f" text-anchor="middle">71.1</text><rect x="525.2" y="43.6" width="49.6" height="112.4" fill="#ef4444" rx="1.5"/><text x="550.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Generadores</text><text x="550.0" y="40.6" font-size="6.4" fill="#33454f" text-anchor="middle">64</text><rect x="605.2" y="25.6" width="49.6" height="130.4" fill="#1fb6a8" rx="1.5"/><text x="630.0" y="166.0" font-size="6.4" fill="#5c7080" text-anchor="middle">Almacenamie</text><text x="630.0" y="22.6" font-size="6.4" fill="#33454f" text-anchor="middle">74.2</text><line x1="30" y1="41.8" x2="670" y2="41.8" stroke="#f5a623" stroke-width="1.1" stroke-dasharray="5 3"/><text x="668" y="37.8" font-size="6.8" fill="#b45309" text-anchor="end">referencia 65%</text></svg>
+<div class="box amber"><h4>La tecnología más numerosa es la peor documentada</h4>
+<p>La ficha de <b>planta de generación solar</b> del segmento coordinado presenta una completitud de <b>23.3%</b> — la más baja de todas las fichas analizadas. Es, simultáneamente, la tecnología con más centrales del país (1,375).</p>
+<p style="margin-bottom:0;">Dicho de otro modo: <b>el segmento sobre el que existe menos información técnica estructurada es el que concentra dos tercios de las instalaciones a fiscalizar.</b></p></div>
+<h3 class="t">Salvedad metodológica</h3>
+<p class="small">Parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta — por ejemplo, características de seguimiento en una planta de estructura fija. Esta cifra <b>no debe leerse como incumplimiento</b> de los titulares, sino como una medida de cuánta información estructurada y comparable está efectivamente disponible hoy para un análisis automatizado de cartera. La distinción entre «no aplica» y «no informado» no es recuperable desde el registro, y esa ambigüedad es en sí misma un hallazgo.</p><div class="foot"><span>Fuente: Infotécnica · Coordinador Eléctrico Nacional</span><span>04</span></div></div><div class="page "><div class="sec-num">04 · Almacenamiento</div>
+<div class="eyebrow">El punto ciego</div><h2 class="t">El registro de almacenamiento está prácticamente vacío</h2>
+<div class="kpis">
+<div class="kpi"><div class="l">Unidades PMGD</div><div class="v">977</div><div class="s">en el registro</div></div>
+<div class="kpi"><div class="l">Con SAE declarado</div><div class="v" style="color:#b91c1c">2</div><div class="s">unidades</div></div>
+<div class="kpi"><div class="l">Proporción</div><div class="v" style="color:#b91c1c">0.20%</div><div class="s">del segmento PMGD</div></div>
+<div class="kpi"><div class="l">Campos de la ficha</div><div class="v">31</div><div class="s">definidos y sin poblar</div></div></div>
+<p>La ficha de Sistema de Almacenamiento de Energía del segmento PMGD contempla <b>31 campos técnicos</b>. De las <b>977 unidades</b> del registro, únicamente <b>2</b> tienen un sistema de almacenamiento efectivamente declarado. Las 975 restantes consignan «no aplica» en la totalidad de los campos.</p>
+<div class="box teal"><h4>Por qué esto importa ahora y no antes</h4>
+<p style="margin-bottom:0;">El Decreto N°1 de 2026 modificó el D.S. 88 incorporando los sistemas de almacenamiento al reglamento de medios de generación de pequeña escala — que hasta entonces solo contemplaba generación — e introdujo exigencias de <b>sistemas de monitoreo y control</b> para la integración con el centro de control de la distribuidora. El registro nacional enfrentará el ingreso masivo de una tecnología de la cual hoy contiene <b>dos ejemplares</b>. No existe todavía un formato consolidado de reporte de desempeño para ella.</p></div>
+<h3 class="t">Las dos únicas fichas pobladas — y lo que revelan</h3>
+<table><tr><th>Campo</th><th>Unidad A</th><th>Unidad B</th><th>Observación</th></tr>
+<tr><td>Tipo de batería</td><td>LFP (LiFePO4)</td><td>Ion-Litio</td><td>Granularidad distinta para la misma familia química</td></tr>
+<tr class="alt"><td>Potencia nominal DC</td><td class="n">3.600</td><td class="n">2.937,6</td><td>Coherente</td></tr>
+<tr><td>Energía nominal DC</td><td class="n">7.200</td><td class="n">11.750,4</td><td>Duración 2,0 h vs 4,0 h</td></tr>
+<tr class="alt"><td>Rango operativo SOC</td><td class="n">[5% – 95%]</td><td class="n">[0% – 100%]</td><td><span class="chip c-warn">Implausible</span> ningún BMS opera de 0 a 100%</td></tr>
+<tr><td>Fecha entrada en operación</td><td>«En Pruebas»</td><td>20-04-2026</td><td><span class="chip c-warn">Inconsistente</span> texto en campo de fecha</td></tr></table>
+<p>Con una muestra de dos registros ya aparecen tres problemas estructurales: <b>vocabulario no normalizado</b> en el tipo de batería, un <b>valor físicamente implausible</b> en el rango de SOC, y un <b>tipo de dato inconsistente</b> en un campo de fecha. Ninguno de los tres es detectable por inspección visual a escala de cartera; los tres son detectables automáticamente en el momento de la carga.</p>
+<div class="box"><h4>Lectura para el diseño normativo</h4>
+<p style="margin-bottom:0;">El momento de definir el formato de reporte de almacenamiento es <b>antes</b> de que ingresen los cientos de instalaciones que el nuevo marco habilita, no después. Corregir un registro de dos unidades es trivial; corregir uno de trescientas, con vocabularios divergentes ya consolidados, no lo es.</p></div><div class="foot"><span>Fuente: Infotécnica · Coordinador Eléctrico Nacional</span><span>05</span></div></div><div class="page "><div class="sec-num">05 · Conclusiones y propuesta</div>
+<div class="eyebrow">Síntesis</div><h2 class="t">Cuatro conclusiones del análisis</h2>
+<div class="steps">
+<div class="step"><div class="i">1</div><div class="b"><b>El parque es más grande y más fragmentado de lo que sugiere la cifra de capacidad.</b> 2,029 centrales en manos de 1,614 titulares distintos, de los cuales el 91.7% opera una sola instalación.</div></div>
+<div class="step"><div class="i">2</div><div class="b"><b>La capacidad de reporte no está distribuida.</b> Solo 37 titulares operan 4 o más centrales. Exigir más formato a un parque monoactivo no produce mejor dato.</div></div>
+<div class="step"><div class="i">3</div><div class="b"><b>La tecnología dominante es la menos documentada.</b> La fotovoltaica concentra el 67.8% de las centrales y su ficha técnica coordinada alcanza 23.3% de completitud.</div></div>
+<div class="step"><div class="i">4</div><div class="b"><b>Almacenamiento es una hoja en blanco con plazo encima.</b> 2 de 977 unidades PMGD, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo.</div></div></div>
+<h3 class="t">Propuesta: piloto acotado, medible y sin riesgo institucional</h3>
+<table><tr><th>Elemento</th><th>Definición</th></tr>
+<tr><td>Alcance</td><td>10 a 15 centrales voluntarias: fotovoltaica coordinada, PMGD fotovoltaico y al menos una con almacenamiento</td></tr>
+<tr class="alt"><td>Duración</td><td>Tres meses, en paralelo al reporte habitual — no reemplaza ningún proceso vigente</td></tr>
+<tr><td>Insumo</td><td>Datos SCADA que las centrales ya generan. Sin hardware nuevo, sin acceso a sistemas de la autoridad</td></tr>
+<tr class="alt"><td>Producto</td><td>Informe estandarizado por central + vista consolidada de cartera, con trazabilidad por cifra</td></tr>
+<tr><td>Métrica de éxito</td><td>Tiempo de revisión documental medido por el equipo revisor de la autoridad, formato actual vs. estandarizado</td></tr>
+<tr class="alt"><td>Definición de fracaso</td><td>Si el tiempo de revisión no baja de forma medible, el piloto se declara sin éxito y termina</td></tr></table>
+<div class="box teal"><h4>Lo que no se propone</h4>
+<p style="margin-bottom:0;">No se propone sustituir la fiscalización en terreno, ni emitir certificaciones con efecto regulatorio, ni acceder a sistemas de la autoridad, ni modificar la normativa vigente. Se propone un insumo documental estandarizado y verificable, y que su utilidad la mida quien lo va a usar.</p></div>
+<p class="small" style="margin-top:16px;border-top:0.8px solid var(--border);padding-top:11px;">
+<b>Reproducibilidad.</b> Todas las cifras de este informe se obtienen del registro público de Infotécnica del Coordinador Eléctrico Nacional, extraído el 16 de agosto de 2026. El análisis es reproducible ejecutando el mismo procedimiento sobre los archivos de origen. No se emplearon datos simulados ni estimados.<br><br>
+jay@quorelia.org · quorelia.org · © 2026 Quorelia</p><div class="foot"><span>Fuente: Infotécnica · Coordinador Eléctrico Nacional</span><span>06</span></div></div></body></html>
