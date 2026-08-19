@@ -310,26 +310,6 @@
 </footer>
 
 <script src="quorelia.js"></script>
-<script>
-/* Video del hero: póster de respaldo, sin descarga en móvil ni con reducción de movimiento */
-(function heroVideo(){
-  var v = document.getElementById('hero-video');
-  if (!v) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || window.innerWidth < 720){
-    v.removeAttribute('autoplay'); v.pause();
-    var s = v.querySelector('source'); if (s) s.removeAttribute('src');
-    v.removeAttribute('src'); v.load(); return;
-  }
-  v.addEventListener('canplay', function(){ v.classList.add('ready'); }, {once:true});
-  v.addEventListener('error', function(){ v.style.display='none'; });
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      if (es[0].isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
-      else v.pause();
-    },{threshold:0.01}).observe(v.parentNode);
-  }
-})();
-</script>
+
 </body>
 </html>

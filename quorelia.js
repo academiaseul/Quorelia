@@ -51,6 +51,33 @@
   });
 })();
 
+/* ── Video de fondo del hero ────────────────────────────────────────────
+   Se activa si existe #hero-video. El póster y el fondo CSS quedan de
+   respaldo mientras descarga y si el navegador no puede reproducirlo.
+   En móvil y con reducción de movimiento no se descarga en absoluto. */
+(function heroVideo(){
+  var v = document.getElementById('hero-video');
+  if (!v) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduce || window.innerWidth < 720){
+    v.removeAttribute('autoplay'); v.pause();
+    var src = v.querySelector('source');
+    if (src) src.removeAttribute('src');
+    v.removeAttribute('src'); v.load();
+    return;
+  }
+  v.addEventListener('canplay', function(){ v.classList.add('ready'); }, {once:true});
+  v.addEventListener('error', function(){ v.style.display = 'none'; });
+
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      if (es[0].isIntersecting){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else v.pause();
+    }, {threshold:0.01}).observe(v.parentNode);
+  }
+})();
+
 /* ── Revelado al hacer scroll ───────────────────────────────────────────── */
 (function revelado(){
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
