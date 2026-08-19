@@ -61,6 +61,29 @@ h1,h2,h3{font-weight:400;letter-spacing:-0.035em;line-height:1.06;}
 .lede{font-size:17px;line-height:1.62;color:var(--ink-2);max-width:62ch;}
 p{font-size:15px;line-height:1.6;color:var(--ink-2);}
 
+/* ── Centrado ───────────────────────────────────────────────────────────
+   Los titulares y bajadas de sección van al eje central. El contenido de
+   bloque — tarjetas, tablas, listas y artículos — se mantiene alineado a
+   la izquierda: centrar párrafos dentro de una columna angosta rompe el
+   borde visual y cuesta más leerlos. */
+section > .wrap > .tag,
+section > .wrap > h1,
+section > .wrap > h2,
+section > .wrap > h3,
+section > .wrap > .lede,
+section > .wrap > p{
+  margin-left:auto;margin-right:auto;text-align:center;
+}
+section > .wrap > h1,
+section > .wrap > h2{max-width:24ch;}
+.hero .wrap,.s-hero .wrap{text-align:center;}
+.hero .wrap h1,.hero .wrap .lede,
+.s-hero .wrap h1,.s-hero .wrap .lede{margin-left:auto;margin-right:auto;}
+.hero-acts,.hero-meta{justify-content:center;}
+/* utilidades de escape */
+.left{text-align:left !important;margin-left:0 !important;}
+.card,.note,.grp,.fl,article,td,th{text-align:left;}
+
 .tag{font-family:var(--mono);font-size:11px;font-weight:500;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink);}
 .tag.g{color:var(--grey);}
@@ -177,6 +200,16 @@ p{font-size:15px;line-height:1.6;color:var(--ink-2);}
   .fig:nth-child(-n+2){border-bottom:1px solid var(--line);}
   .dark .fig:nth-child(-n+2){border-bottom-color:rgba(255,255,255,.16);}
 }
+
+/* ── Banda de imagen a sangre completa ─────────────────────────────────── */
+.band{position:relative;min-height:clamp(300px,42vw,520px);display:flex;align-items:center;
+  background-size:cover;background-position:center;overflow:hidden;}
+.band::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,28,44,.62),rgba(11,28,44,.46) 45%,rgba(11,28,44,.78));}
+.band .wrap{position:relative;z-index:2;text-align:center;padding-top:70px;padding-bottom:70px;}
+.band h2,.band .tag{color:#fff;}
+.band .lede{color:#dbe6ec;margin-left:auto;margin-right:auto;}
+.band .tag{color:var(--teal-lt);}
 
 /* ── Dos columnas ──────────────────────────────────────────────────────── */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
