@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Quorelia — Inteligencia para un sistema eléctrico más transparente</title>
+<meta name="description" content="Tecnología de monitoreo y verificación de datos operacionales para infraestructura energética: visibilidad, trazabilidad y evidencia reproducible para la toma de decisiones.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quorelia.org/gobierno.html">
+<meta property="og:title" content="Quorelia — Inteligencia para un sistema eléctrico más transparente">
+<meta property="og:description" content="Visibilidad, trazabilidad y evidencia reproducible sobre infraestructura energética.">
+<meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
+    --amber:#f5a623; --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa;
+    --white:#fff; --border:#e3e9ec;
+    --radius-sm:6px; --radius-lg:16px; --radius-pill:999px;
+    --font-display:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SF Mono',Consolas,'Courier New',monospace;
+    --fs-h2: clamp(1.7rem, 1.4rem + 1.5vw, 2.7rem);
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media(prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+    .reveal{opacity:1 !important;filter:none !important;transform:none !important;}
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-display);color:var(--ink);background:var(--bg);line-height:1.55;}
+  h1,h2,h3,h4{letter-spacing:-0.025em;font-weight:500;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:76px 0;}
+
+  .reveal{opacity:0;filter:blur(9px);transform:translate3d(0,22px,0);
+    transition:opacity .85s var(--ease-out-quint),filter .95s var(--ease-out-quint),transform .85s var(--ease-out-quint);}
+  .reveal.in{opacity:1;filter:blur(0);transform:none;}
+
+  /* header */
+  .site-head{position:sticky;top:0;z-index:50;}
+  header{background:var(--navy);color:#fff;border-bottom:.8px solid rgba(255,255,255,.08);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;}
+  .brand-word{font-family:'Segoe UI',Roboto,sans-serif;font-weight:800;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;color:#fff;}
+  nav.links{display:flex;gap:26px;font-size:14.5px;}
+  nav.links a{opacity:.85;} nav.links a:hover{opacity:1;}
+  nav.links a.current{opacity:1;font-weight:700;}
+  .btn{display:inline-block;padding:13px 24px;border-radius:var(--radius-sm);font-weight:700;font-size:14.5px;cursor:pointer;border:2px solid transparent;transition:transform .15s,background .15s;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--teal);color:var(--navy);}
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-outline{border-color:rgba(255,255,255,.35);color:#fff;}
+  .nav-cta{padding:9px 16px;font-size:13.5px;white-space:nowrap;}
+  @media(max-width:900px){nav.links{display:none;}}
+
+  /* hero */
+  .hero{background:var(--navy);color:#fff;padding:92px 0 76px;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;inset:0;
+    background:radial-gradient(80% 90% at 85% 10%,rgba(31,182,168,.10),transparent 60%);}
+  .hero .container{position:relative;z-index:2;}
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);border:.8px solid rgba(31,182,168,.35);
+    background:rgba(31,182,168,.10);padding:6px 13px;border-radius:var(--radius-pill);margin-bottom:20px;}
+  .hero h1{font-size:clamp(2rem,1.5rem+2.2vw,3.5rem);line-height:1.1;font-weight:400;max-width:15ch;margin-bottom:20px;}
+  .hero p{font-size:17.5px;color:#c7d4dc;max-width:60ch;line-height:1.7;}
+  .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px;}
+
+  .disclaimer-band{background:var(--navy-2);color:#c7d4dc;padding:18px 0;border-top:.8px solid rgba(255,255,255,.08);}
+  .disclaimer-band p{font-size:13px;line-height:1.65;max-width:88ch;}
+  .disclaimer-band b{color:#fff;}
+
+  .sec-head{max-width:720px;margin-bottom:40px;}
+  .eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;}
+  .sec-head h2{font-size:var(--fs-h2);line-height:1.12;margin-bottom:14px;}
+  .sec-head p{color:var(--muted);font-size:16.5px;line-height:1.7;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);
+    border:.8px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:26px 0;}
+  .stat{padding:24px 22px;border-left:.8px solid var(--border);}
+  .stat:first-child{border-left:0;}
+  .stat .n{font-size:32px;font-weight:500;letter-spacing:-.03em;color:var(--navy);line-height:1;}
+  .stat .n.hot{color:var(--amber);}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.5;}
+  @media(max-width:760px){.stat-row{grid-template-columns:1fr 1fr;}.stat:nth-child(odd){border-left:0;}}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--white);border:.8px solid var(--border);border-radius:var(--radius-lg);padding:26px;}
+  .card .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;}
+  .card h3{font-size:17px;margin-bottom:9px;}
+  .card p{font-size:14.3px;color:var(--muted);line-height:1.68;}
+  @media(max-width:860px){.cards{grid-template-columns:1fr;}}
+
+  .dark{background:var(--navy);color:#fff;}
+  .dark .sec-head h2{color:#fff;} .dark .sec-head p{color:#b9c9d1;} .dark .eyebrow{color:var(--teal);}
+  .dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);}
+  .dark .card h3{color:#fff;} .dark .card p{color:#b9c9d1;} .dark .card .k{color:var(--teal);}
+
+  table{width:100%;border-collapse:collapse;background:var(--white);border:.8px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:13px 16px;border-bottom:1.4px solid var(--navy);background:#fbfcfd;}
+  td{font-size:14px;padding:12px 16px;border-bottom:.8px solid var(--border);vertical-align:top;color:#33454f;}
+  tr:last-child td{border-bottom:0;}
+  td b{color:var(--ink);}
+
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px;}
+  .fl{padding:0 20px;border-left:.8px solid rgba(255,255,255,.15);}
+  .fl:first-child{border-left:0;padding-left:0;}
+  .fl .n{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--teal);margin-bottom:13px;}
+  .fl h3{font-size:18px;font-weight:400;margin-bottom:9px;color:#fff;}
+  .fl p{font-size:13.5px;line-height:1.68;color:#b9c9d1;}
+  @media(max-width:900px){.flow{grid-template-columns:1fr 1fr;gap:26px 0;}.fl{padding:0 16px;}.fl:nth-child(odd){border-left:0;padding-left:0;}}
+  @media(max-width:560px){.flow{grid-template-columns:1fr;}.fl,.fl:nth-child(odd){border-left:.8px solid rgba(255,255,255,.15);padding:0 0 0 16px;}}
+
+  .note{border-left:3px solid var(--amber);background:rgba(245,166,35,.06);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-top:26px;}
+  .note h4{font-size:15px;margin-bottom:8px;}
+  .note p{font-size:14px;color:#4a5c67;line-height:1.7;}
+  .note.teal{border-left-color:var(--teal);background:rgba(31,182,168,.06);}
+
+  .cta{background:var(--navy-2);color:#fff;text-align:center;padding:76px 0;}
+  .cta h2{font-size:var(--fs-h2);margin-bottom:14px;}
+  .cta p{color:#b9c9d1;max-width:62ch;margin:0 auto 28px;font-size:16.5px;line-height:1.7;}
+
+  footer{background:var(--navy-2);color:#b9c9d1;padding:44px 0 26px;border-top:.8px solid rgba(255,255,255,.08);}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#7f93a0;}
+  .fine{font-size:12px;color:#7f93a0;line-height:1.65;margin-top:16px;padding-top:16px;border-top:.8px solid rgba(255,255,255,.08);}
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Quorelia"><span class="brand-word">Quorelia</span></a>
+      <nav class="links">
+        <a href="index.html#product">Plataforma</a>
+        <a href="index.html#samples">Informes</a>
+        <a href="index.html#how">Cómo funciona</a>
+        <a href="gobierno.html" class="current">Gobierno</a>
+        <a href="story.html">Nuestra historia</a>
+      </nav>
+      <a href="#contacto" class="btn btn-primary nav-cta">Solicitar una sesión técnica</a>
+    </div>
+  </header>
+</div>
+
+<!-- ───────── HERO ───────── -->
+<section class="hero">
+  <div class="container">
+    <span class="tag">Sector público · Autoridad fiscalizadora</span>
+    <h1>Inteligencia para un sistema eléctrico más transparente</h1>
+    <p>Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es simple: que la información sobre el desempeño de una instalación sea <b style="color:#fff;">comparable entre activos</b>, <b style="color:#fff;">trazable hasta la medición que la sustenta</b> y <b style="color:#fff;">reproducible ante un requerimiento</b>.</p>
+    <div class="hero-actions">
+      <a href="#que-permite" class="btn btn-primary">Qué permite ver</a>
+      <a href="#piloto" class="btn btn-outline">Propuesta de piloto</a>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer-band">
+  <div class="container">
+    <p><b>Declaración de alcance.</b> Quorelia es una empresa privada de tecnología. <b>No es un sistema oficial de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado</b>, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente. Lo que ofrece es tecnología capaz de <b>respaldar</b> una mayor visibilidad, trazabilidad y toma de decisiones basada en evidencia sobre infraestructura energética.</p>
+  </div>
+</div>
+
+<!-- ───────── EL PROBLEMA ───────── -->
+<section class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">El punto de partida</div>
+      <h2>El cuello de botella no está en terreno. Está en la revisión documental.</h2>
+      <p>De acuerdo con la Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025, en el segmento de generación distribuida se ejecutaron 2.341 fiscalizaciones. De ellas, 2.100 fueron revisiones documentales y 241 revisiones en terreno.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">10.769</div><div class="l">Fiscalizaciones 2025 · sector eléctrico y combustibles</div></div>
+      <div class="stat"><div class="n">2.341</div><div class="l">Fiscalizaciones en generación distribuida</div></div>
+      <div class="stat"><div class="n hot">2.100</div><div class="l">Revisiones documentales — cerca del 90% del esfuerzo del segmento</div></div>
+      <div class="stat"><div class="n">241</div><div class="l">Revisiones en terreno</div></div>
+    </div>
+    <p style="font-size:16px;color:var(--muted);max-width:76ch;line-height:1.75;">Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda. El resultado es una revisión que consume tiempo de especialistas sin poder verificar lo esencial.</p>
+
+    <div class="cards" style="margin-top:34px;">
+      <div class="card">
+        <div class="k">Consecuencia 01</div>
+        <h3>No se puede comparar</h3>
+        <p>Dos centrales equivalentes informan disponibilidad con denominadores distintos. La cifra parece comparable y no lo es.</p>
+      </div>
+      <div class="card">
+        <div class="k">Consecuencia 02</div>
+        <h3>No se puede verificar</h3>
+        <p>Un informe sin cadena de trazabilidad no permite distinguir si una cifra proviene de una medición, de una estimación o de una interpolación sobre datos faltantes.</p>
+      </div>
+      <div class="card">
+        <div class="k">Consecuencia 03</div>
+        <h3>No se puede priorizar</h3>
+        <p>Sin una señal homogénea de calidad de dato, el criterio para decidir qué instalación amerita visita queda sujeto a denuncia o a rotación, no a riesgo objetivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── EVIDENCIA ───────── -->
+<section class="dark reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Capacidad analítica demostrada</div>
+      <h2>Cuatro hallazgos sobre el registro público nacional</h2>
+      <p>Análisis ejecutado sobre la totalidad del registro de Infotécnica del Coordinador Eléctrico Nacional — 2.618 unidades generadoras en 2.029 centrales, extracción del 16 de agosto de 2026. Sin datos simulados. Reproducible ejecutando el mismo procedimiento sobre los archivos de origen.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Estructura</div>
+        <h3>91,7% de los titulares opera una sola central</h3>
+        <p>De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento o planillas llenadas a mano.</p>
+      </div>
+      <div class="card">
+        <div class="k">Documentación</div>
+        <h3>La tecnología dominante es la menos documentada</h3>
+        <p>La fotovoltaica concentra 1.375 de las 2.029 centrales (67,8%) y su ficha técnica coordinada alcanza 23,1% de completitud — la más baja del registro.</p>
+      </div>
+      <div class="card">
+        <div class="k">Almacenamiento</div>
+        <h3>2 de 977 unidades PMGD declaran un sistema de almacenamiento</h3>
+        <p>Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco incorpora almacenamiento con exigencias de monitoreo y control.</p>
+      </div>
+    </div>
+    <div class="note teal" style="background:rgba(31,182,168,.08);border-left-color:var(--teal);margin-top:26px;">
+      <h4 style="color:#fff;">Con solo dos fichas de almacenamiento ya aparecen tres problemas estructurales</h4>
+      <p style="color:#b9c9d1;">Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera. Los tres se detectan automáticamente al momento de la carga. <b style="color:#fff;">Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b></p>
+    </div>
+    <p style="font-size:13px;color:#8fa3b0;margin-top:20px;max-width:80ch;line-height:1.7;">Salvedad metodológica: parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta. Esta medida no debe leerse como incumplimiento de los titulares, sino como una medida de cuánta información estructurada está disponible hoy para análisis automatizado de cartera. Que el registro no permita distinguir «no aplica» de «no informado» es, en sí mismo, parte del hallazgo.</p>
+  </div>
+</section>
+
+<!-- ───────── QUÉ PERMITE VER ───────── -->
+<section id="que-permite" class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Alcance funcional</div>
+      <h2>Qué podría observar una autoridad debidamente autorizada</h2>
+      <p>El acceso a información de una instalación depende siempre de la autorización expresa de su titular y del marco legal aplicable. Lo que sigue describe capacidades técnicas, no atribuciones.</p>
+    </div>
+    <table>
+      <tr><th>Dimensión</th><th>Qué entrega la tecnología</th><th>Naturaleza del dato</th></tr>
+      <tr><td><b>Visibilidad operacional</b></td><td>Estado de la instalación y de sus unidades, con marca de tiempo y resolución nativa del sistema de origen.</td><td>Medición</td></tr>
+      <tr><td><b>Indicadores de seguridad y desempeño</b></td><td>Disponibilidad técnica, energía, factor de planta y horas de operación, calculados solo sobre datos validados.</td><td>Cálculo sobre medición</td></tr>
+      <tr><td><b>Alertas críticas</b></td><td>Eventos que superan umbrales definidos, clasificados y con su cadena de origen.</td><td>Medición + regla</td></tr>
+      <tr><td><b>Eventos históricos</b></td><td>Registro cronológico de fallas, ventanas de mantenimiento y limitaciones de inyección, diferenciando lo sistémico de lo atribuible al activo.</td><td>Registro</td></tr>
+      <tr><td><b>Información de equipos</b></td><td>Inventario y estado de unidades monitoreadas, con deduplicación previa de catálogo.</td><td>Registro</td></tr>
+      <tr><td><b>Condiciones ambientales</b></td><td>Irradiancia, viento, temperatura y densidad de aire, vinculadas al desempeño del período.</td><td>Medición</td></tr>
+      <tr><td><b>Trazabilidad</b></td><td>Cada cifra publicada conserva su canal de origen, su transformación y su porcentaje de cobertura, reproducible hasta la medición cruda.</td><td>Metadato de auditoría</td></tr>
+      <tr><td><b>Informes</b></td><td>Emisión diaria y mensual automática, con estructura idéntica entre tecnologías y entre instalaciones.</td><td>Documento</td></tr>
+    </table>
+    <div class="note">
+      <h4>El principio que gobierna todo lo anterior</h4>
+      <p>Si la cobertura de datos de un activo no alcanza el umbral definido, <b>la cifra no se publica</b>. Se declara la brecha, su causa raíz y la acción requerida. Una cifra retenida con su razón declarada es verificable; una cifra estimada que aparenta certeza no lo es. El silencio de un canal se informa como <b>no observado</b> y se excluye del denominador — nunca se reporta como cero.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CINCO CAPACIDADES ───────── -->
+<section class="dark reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Cómo opera</div>
+      <h2>Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
+      <p>Cinco capacidades encadenadas. Las tres primeras están operativas hoy; las dos últimas se describen con el alcance que efectivamente tienen.</p>
+    </div>
+    <div class="flow">
+      <div class="fl"><div class="n">01</div><h3>Ver</h3><p>Visibilidad operacional continua sobre los sistemas SCADA, PPC y BMS ya instalados. Sin equipamiento adicional.</p></div>
+      <div class="fl"><div class="n">02</div><h3>Entender</h3><p>Validación, reconciliación y cálculo de indicadores exclusivamente sobre datos que superaron control de calidad.</p></div>
+      <div class="fl"><div class="n">03</div><h3>Anticipar</h3><p>Detección de desviaciones sostenidas respecto del comportamiento esperado, antes de que se conviertan en falla.</p></div>
+      <div class="fl"><div class="n">04</div><h3>Actuar</h3><p>Cada evento se clasifica como preventivo o correctivo y se dirige al equipo competente. El despacho de personal lo confirma siempre una persona.</p></div>
+      <div class="fl"><div class="n">05</div><h3>Optimizar</h3><p>Priorización del esfuerzo de mantenimiento según evidencia, en lugar de rotación o denuncia.</p></div>
+    </div>
+    <div class="note" style="background:rgba(245,166,35,.10);border-left-color:var(--amber);margin-top:34px;">
+      <h4 style="color:#fff;">Precisión sobre el alcance de «anticipar»</h4>
+      <p style="color:#b9c9d1;">Quorelia detecta <b style="color:#fff;">desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── GOBERNANZA Y SEGURIDAD ───────── -->
+<section class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Gobernanza de datos</div>
+      <h2>Construido para infraestructura crítica</h2>
+      <p>La información operacional de una central es sensible y en muchos casos estratégica. Estos son los principios de arquitectura que aplicamos.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="k">Acceso</div><h3>Control por rol</h3><p>Cada perfil accede únicamente a lo que su función requiere. El acceso se otorga por instalación y por tipo de información, nunca de forma global.</p></div>
+      <div class="card"><div class="k">Identidad</div><h3>Autenticación robusta</h3><p>Credenciales individuales y no compartidas, con segundo factor y expiración de sesión.</p></div>
+      <div class="card"><div class="k">Confidencialidad</div><h3>Cifrado en tránsito y en reposo</h3><p>Los datos viajan y se almacenan cifrados. Nada se comparte, vende ni sublicencia más allá del servicio contratado.</p></div>
+      <div class="card"><div class="k">Auditoría</div><h3>Registro de accesos</h3><p>Quién consultó qué información y cuándo queda registrado y es consultable por el titular.</p></div>
+      <div class="card"><div class="k">Aislamiento</div><h3>Segregación por cliente</h3><p>La información de cada titular permanece separada. No existe agregación entre clientes sin autorización expresa.</p></div>
+      <div class="card"><div class="k">Continuidad</div><h3>Respaldo y recuperación</h3><p>Respaldos periódicos y procedimiento de recuperación documentado, con exportación de datos y manifiestos de auditoría al término del contrato.</p></div>
+    </div>
+    <div class="note">
+      <h4>Sobre certificaciones</h4>
+      <p>Los principios anteriores describen decisiones de arquitectura, no acreditaciones de terceros. <b>Quorelia no declara certificaciones ni cumplimiento normativo que no hayan sido auditados y emitidos por un organismo competente.</b> Cuando una certificación específica sea requisito de una contratación, se indicará su estado real de avance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── PILOTO ───────── -->
+<section id="piloto" class="dark reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Propuesta concreta</div>
+      <h2>Un piloto acotado, medible y sin riesgo institucional</h2>
+      <p>No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.</p>
+    </div>
+    <table style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);">
+      <tr><th style="background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);">Elemento</th><th style="background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);">Definición</th></tr>
+      <tr><td style="color:#fff;"><b>Alcance</b></td><td style="color:#b9c9d1;">10 a 15 centrales voluntarias, cubriendo fotovoltaica coordinada, PMGD y al menos una instalación con almacenamiento.</td></tr>
+      <tr><td style="color:#fff;"><b>Duración</b></td><td style="color:#b9c9d1;">Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente.</td></tr>
+      <tr><td style="color:#fff;"><b>Insumo</b></td><td style="color:#b9c9d1;">Datos SCADA que las centrales ya producen, con autorización expresa de cada titular.</td></tr>
+      <tr><td style="color:#fff;"><b>Producto</b></td><td style="color:#b9c9d1;">Informe estandarizado por central y vista consolidada de cartera, con trazabilidad por cifra.</td></tr>
+      <tr><td style="color:#fff;"><b>Métrica de éxito</b></td><td style="color:#b9c9d1;">Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor de la autoridad: formato actual contra formato estandarizado.</td></tr>
+      <tr><td style="color:#fff;"><b>Definición de fracaso</b></td><td style="color:#b9c9d1;">Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.</td></tr>
+    </table>
+    <p style="color:#8fa3b0;font-size:14px;margin-top:22px;max-width:80ch;line-height:1.75;"><b style="color:#fff;">Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
+  </div>
+</section>
+
+<!-- ───────── LO QUE NO HACE ───────── -->
+<section class="reveal">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Límites explícitos</div>
+      <h2>Lo que Quorelia no hace</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>No reemplaza la fiscalización en terreno</h3><p>La inspección presencial resuelve preguntas que ningún dato remoto puede responder. El objetivo es dirigir mejor ese esfuerzo, no sustituirlo.</p></div>
+      <div class="card"><h3>No sustituye el juicio del fiscalizador</h3><p>El sistema entrega evidencia ordenada y trazable. La interpretación, la calificación y la decisión son siempre humanas.</p></div>
+      <div class="card"><h3>No accede a sistemas de la autoridad</h3><p>El piloto corre sobre datos de titulares privados que lo autorizan voluntariamente. No requiere integración con plataformas del Estado.</p></div>
+      <div class="card"><h3>No emite certificaciones con efecto regulatorio</h3><p>Los informes son un insumo documental verificable. No tienen ni pretenden tener valor de acto administrativo.</p></div>
+      <div class="card"><h3>No opera ni controla instalaciones</h3><p>Quorelia observa y reporta. No ejecuta maniobras, no despacha, no interviene en la operación de ningún activo.</p></div>
+      <div class="card"><h3>No agrega datos entre titulares sin autorización</h3><p>Cualquier vista consolidada de cartera requiere el consentimiento expreso de cada titular involucrado.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CTA ───────── -->
+<section class="cta" id="contacto">
+  <div class="container">
+    <h2>Una sesión técnica de 45 minutos</h2>
+    <p>Podemos mostrar el análisis completo del registro de Infotécnica, los informes estandarizados por tecnología y la trazabilidad de una cifra hasta su medición de origen. Sin presentación comercial.</p>
+    <a href="mailto:jay@quorelia.org?subject=Sesi%C3%B3n%20t%C3%A9cnica%20Quorelia" class="btn btn-primary">Escribir a jay@quorelia.org</a>
+    <p style="margin-top:24px;font-size:14px;color:#8fa3b0;">Quorelia SpA · Santiago, Chile · quorelia.org</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-bottom">
+      <span>© 2026 Quorelia. Todos los derechos reservados.</span>
+      <span>Inteligencia en Energía Renovable</span>
+    </div>
+    <p class="fine"><b style="color:#c7d4dc;">Declaración de alcance y fuentes.</b> Quorelia es una empresa privada de tecnología y no forma parte de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado. Las cifras de fiscalización citadas provienen de la Cuenta Pública 2026 de la SEC. El análisis del parque generador se basa en el registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y es reproducible sobre los archivos de origen. Los informes de muestra referidos en este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(es, obs){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in'); obs.unobserve(e.target);
+    });
+  }, { rootMargin:'0px 0px -10% 0px', threshold:0.06 });
+  els.forEach(function(el){ io.observe(el); });
+  requestAnimationFrame(function(){
+    els.forEach(function(el){
+      if (el.getBoundingClientRect().top < window.innerHeight*0.92){ el.classList.add('in'); io.unobserve(el); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
