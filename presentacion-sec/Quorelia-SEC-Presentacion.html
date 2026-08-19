@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quorelia — Presentación SEC · Ley de Lobby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b1c2c; --ink-2:#3d4a54; --grey:#8a949c; --line:#e2e5e8;
+    --paper:#fff; --paper-2:#f4f6f7; --paper-3:#e9ecee;
+    --navy:#0b1c2c; --navy-2:#122a40; --teal:#149487; --teal-lt:#1fb6a8; --amber:#b45309;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:#8f979e;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .s{
+    width:13.333in;height:7.5in;margin:0 auto 18px;background:var(--paper);
+    position:relative;overflow:hidden;padding:0.6in 0.78in 0.85in;
+    display:flex;flex-direction:column;page-break-after:always;
+    box-shadow:0 3px 30px rgba(0,0,0,.35);
+  }
+  @page{size:13.333in 7.5in;margin:0;}
+  @media print{body{background:#fff;} .s{box-shadow:none;margin:0;}}
+
+  h1,h2,h3{font-weight:400;letter-spacing:-0.035em;line-height:1.05;}
+  .mega{font-size:52px;} .big{font-size:38px;} .mid{font-size:25px;letter-spacing:-0.028em;line-height:1.18;}
+  .dim{color:var(--grey);}
+  p{font-size:14.5px;line-height:1.6;color:var(--ink-2);}
+  .lede{font-size:17px;line-height:1.58;color:var(--ink-2);max-width:74ch;}
+  .tag{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+  .tag.g{color:var(--grey);}
+  .rule{border:0;border-top:1px solid var(--line);margin:16px 0;}
+  .sp{flex:1;}
+  .foot{position:absolute;left:0.78in;right:0.78in;bottom:0.34in;display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9aa4ac;
+    border-top:1px solid var(--line);padding-top:9px;}
+
+  .dark{background:var(--navy);color:#fff;}
+  .dark h1,.dark h2,.dark h3{color:#fff;} .dark p{color:#b9c9d1;} .dark .lede{color:#c7d4dc;}
+  .dark .foot{color:#5b6d7a;border-top-color:rgba(255,255,255,.12);}
+  .dark .rule{border-top-color:rgba(255,255,255,.14);}
+  .dark .tag.g{color:#8fa3b0;}
+
+  /* cifras */
+  .figs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:6px;}
+  .fig{padding:18px 18px 18px 0;border-right:1px solid var(--line);}
+  .fig:last-child{border-right:0;}
+  .fig .v{font-size:34px;letter-spacing:-0.04em;line-height:1;}
+  .fig .v.t{color:var(--teal);} .fig .v.a{color:var(--amber);}
+  .fig .k{font-size:11.5px;color:var(--ink-2);margin-top:8px;line-height:1.42;}
+  .dark .figs{border-top-color:rgba(255,255,255,.16);}
+  .dark .fig{border-right-color:rgba(255,255,255,.16);}
+  .dark .fig .k{color:#9fb2bd;}
+
+  /* tarjetas esquina recortada */
+  .cards{display:grid;gap:13px;}
+  .c{background:var(--paper-2);padding:17px 17px 19px;
+     clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);}
+  .c h4{font-size:14px;font-weight:600;margin:7px 0 6px;letter-spacing:-0.01em;}
+  .c p{font-size:12.3px;line-height:1.52;}
+  .dark .c{background:rgba(255,255,255,.055);}
+  .dark .c h4{color:#fff;} .dark .c p{color:#a9bcc7;}
+
+  /* flujo horizontal */
+  .flow{display:flex;align-items:stretch;gap:0;margin-top:10px;}
+  .fs{flex:1;padding:0 15px;border-left:1px solid var(--line);}
+  .fs:first-child{border-left:0;padding-left:0;}
+  .fs .n{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.14em;margin-bottom:9px;}
+  .fs h4{font-size:15px;font-weight:600;margin-bottom:6px;}
+  .fs p{font-size:11.8px;line-height:1.5;}
+  .dark .fs{border-left-color:rgba(255,255,255,.16);}
+
+  /* cadena / pipeline */
+  .chain{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:12px;}
+  .ch{background:var(--paper-2);border:1px solid var(--line);padding:9px 13px;font-size:12px;font-weight:500;}
+  .ch.k{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .ch.t{background:rgba(20,148,135,.12);border-color:rgba(20,148,135,.4);color:var(--teal);}
+  .arw{color:var(--grey);font-size:14px;}
+  .dark .ch{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#dbe6ec;}
+  .dark .ch.t{background:rgba(31,182,168,.16);border-color:rgba(31,182,168,.45);color:var(--teal-lt);}
+  .dark .arw{color:#5b6d7a;}
+
+  table{width:100%;border-collapse:collapse;margin-top:10px;}
+  th{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);
+     text-align:left;padding:8px 10px;border-bottom:1.5px solid var(--ink);}
+  td{font-size:12.5px;padding:9px 10px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top;}
+  td b{color:var(--ink);}
+  .dark th{color:#8fa3b0;border-bottom-color:var(--teal);}
+  .dark td{color:#b9c9d1;border-bottom-color:rgba(255,255,255,.1);}
+  .dark td b{color:#fff;}
+
+  .note{border-left:3px solid var(--teal);background:rgba(20,148,135,.06);padding:14px 17px;margin-top:14px;}
+  .note.a{border-left-color:var(--amber);background:rgba(180,83,9,.06);}
+  .note h4{font-size:13.5px;margin-bottom:5px;}
+  .note p{font-size:12.5px;}
+  .dark .note{background:rgba(31,182,168,.10);border-left-color:var(--teal-lt);}
+  .dark .note h4{color:#fff;} .dark .note p{color:#b9c9d1;}
+
+  .bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;}
+  .veil{position:absolute;inset:0;z-index:1;}
+  .in{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
+  .src{font-size:10px;color:var(--grey);margin-top:9px;line-height:1.45;}
+  .dark .src{color:#7f93a0;}
+</style>
+</head>
+<body>
+
+<!-- ═══ 1 · PORTADA ═══ -->
+<section class="s dark">
+  <div class="bg" style="background-image:url('gob-hero-poster.jpg');"></div>
+  <div class="veil" style="background:linear-gradient(100deg,rgba(11,28,44,.96) 42%,rgba(11,28,44,.72) 72%,rgba(11,28,44,.90));"></div>
+  <div class="in">
+    <div style="font-family:var(--mono);font-size:14px;letter-spacing:.30em;font-weight:600;">QUORELIA</div>
+    <div class="sp"></div>
+    <p class="tag" style="margin-bottom:14px;">Reunión bajo Ley 20.730 de Lobby</p>
+    <h1 class="mega" style="max-width:17ch;">Del exceso de datos a la <span style="color:var(--teal-lt);">trazabilidad regulatoria</span></h1>
+    <p class="lede" style="margin-top:18px;max-width:60ch;">Tecnología de monitoreo y verificación de datos operacionales para infraestructura energética crítica.</p>
+    <div class="sp"></div>
+    <table style="max-width:6.6in;">
+      <tr><td style="width:32%;color:#8fa3b0;border-bottom-color:rgba(255,255,255,.1);">Audiencia</td><td style="color:#fff;border-bottom-color:rgba(255,255,255,.1);">Superintendencia de Electricidad y Combustibles</td></tr>
+      <tr><td style="color:#8fa3b0;border-bottom-color:rgba(255,255,255,.1);">Materia</td><td style="color:#fff;border-bottom-color:rgba(255,255,255,.1);">Estandarización y trazabilidad de información operacional</td></tr>
+      <tr><td style="color:#8fa3b0;border-bottom:0;">Expone</td><td style="color:#fff;border-bottom:0;">Quorelia SpA · Santiago, Chile</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Documento de trabajo · Confidencial</span><span>01</span></div>
+</section>
+
+<!-- ═══ 2 · EL CONTEXTO ═══ -->
+<section class="s">
+  <p class="tag g">01 · El contexto</p>
+  <h2 class="big" style="margin:12px 0 14px;max-width:26ch;">Hoy no hay escasez de datos.<br>Hay un exceso.</h2>
+  <p class="lede">El Sistema Eléctrico Nacional supera los <b>38.700 MW</b> de capacidad instalada y crece a un ritmo que ninguna revisión manual puede seguir. El almacenamiento con baterías pasó de una base marginal a <b>2.283 MW</b> en marzo de 2026, y el Coordinador proyecta que se duplique hacia fin de año.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">38.709</div><div class="k">MW de capacidad instalada en el SEN · mayo 2026</div></div>
+    <div class="fig"><div class="v t">2.283</div><div class="k">MW de almacenamiento BESS en operación · marzo 2026</div></div>
+    <div class="fig"><div class="v t">5.081</div><div class="k">MW de BESS proyectados a fin de 2026 · 18.643 MWh</div></div>
+    <div class="fig"><div class="v a">2.029</div><div class="k">centrales en el registro nacional, de 1.614 titulares distintos</div></div>
+  </div>
+  <div class="note a" style="margin-top:16px;">
+    <h4>El cuello de botella no está en terreno</h4>
+    <p>Según la Cuenta Pública 2026 de la SEC, en generación distribuida se ejecutaron 2.341 fiscalizaciones durante 2025: <b>2.100 fueron revisiones documentales</b> y 241 en terreno. Cerca del 90% del esfuerzo del segmento consiste en leer documentos que llegan en formatos definidos por cada titular, sin una cadena que permita reproducir la cifra informada.</p>
+  </div>
+  <div class="sp"></div>
+  <p class="src">Fuentes: Coordinador Eléctrico Nacional y CNE (capacidad instalada y proyección BESS 2026); Infotécnica del Coordinador, extracción del 16 de agosto de 2026 (centrales y titulares); Cuenta Pública 2026 de la SEC (fiscalizaciones, gestión 2025).</p>
+  <div class="foot"><span>Quorelia · SEC</span><span>02</span></div>
+</section>
+
+<!-- ═══ 3 · HALLAZGOS ═══ -->
+<section class="s dark">
+  <p class="tag g">02 · Evidencia sobre el registro público</p>
+  <h2 class="big" style="margin:12px 0 8px;max-width:30ch;">Cuatro hallazgos que nadie ha puesto sobre la mesa</h2>
+  <p class="lede" style="margin-bottom:6px;">Análisis propio sobre la totalidad del registro de Infotécnica: 2.618 unidades generadoras en 2.029 centrales. Reproducible desde los archivos de origen. Sin datos simulados.</p>
+  <div class="cards" style="grid-template-columns:repeat(4,1fr);margin-top:14px;">
+    <div class="c"><p class="tag">Estructura</p><h4>91,7% opera una sola central</h4><p>De 1.614 titulares, solo 37 operan cuatro o más. Exigir un formato más estricto a un parque monoactivo no produce mejor información.</p></div>
+    <div class="c"><p class="tag">Documentación</p><h4>23,1% de completitud</h4><p>La ficha solar coordinada es la menos completa del registro — en la tecnología que concentra 1.375 de las 2.029 centrales.</p></div>
+    <div class="c"><p class="tag">Almacenamiento</p><h4>2 de 977 unidades PMGD</h4><p>Las otras 975 consignan «no aplica» en los 31 campos, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo.</p></div>
+    <div class="c"><p class="tag">Calidad de dato</p><h4>3 errores en 2 fichas</h4><p>Vocabulario divergente, un rango de SOC de [0%–100%] que ningún BMS permite, y «En Pruebas» dentro de un campo de fecha.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px;">
+    <h4>La ventana es ahora</h4>
+    <p>Definir el formato de reporte de almacenamiento es trivial con dos registros. Con trescientos, y vocabularios ya consolidados, deja de serlo.</p>
+  </div>
+  <div class="sp"></div>
+  <p class="src">Salvedad metodológica: parte de los campos vacíos puede ser legítimamente no aplicable a una instalación concreta. Es una medida de información estructurada disponible para análisis automatizado, no un hallazgo de incumplimiento de los titulares.</p>
+  <div class="foot"><span>Quorelia · SEC</span><span>03</span></div>
+</section>
+
+<!-- ═══ 4 · VELOCIDAD ADAPTATIVA ═══ -->
+<section class="s">
+  <p class="tag g">03 · Marco de trabajo</p>
+  <h2 class="big" style="margin:12px 0 6px;">Velocidad Adaptativa</h2>
+  <p class="lede" style="margin-bottom:4px;">Siete etapas encadenadas que convierten señal cruda en cambio sostenido. No es una metodología abstracta: cada etapa define qué se mide y qué se declara cuando no se puede medir.</p>
+  <div class="flow" style="margin-top:16px;">
+    <div class="fs"><div class="n">01</div><h4>Sensar</h4><p>Detectar señales relevantes del entorno en tiempo real, sobre los sistemas ya instalados.</p></div>
+    <div class="fs"><div class="n">02</div><h4>Seleccionar</h4><p>Priorizar lo crítico entre muchas opciones posibles.</p></div>
+    <div class="fs"><div class="n">03</div><h4>Traducir</h4><p>Convertir señales en criterio y en lenguaje que una persona pueda usar.</p></div>
+    <div class="fs"><div class="n">04</div><h4>Experimentar</h4><p>Probar de forma repetida y validar con evidencia temprana.</p></div>
+    <div class="fs"><div class="n">05</div><h4>Transformar</h4><p>Rediseñar procesos y modelos para escalar el impacto.</p></div>
+    <div class="fs"><div class="n">06</div><h4>Institucionalizar</h4><p>Alinear incentivos, gobernanza y cultura para sostener el cambio.</p></div>
+    <div class="fs"><div class="n">07</div><h4>Aprender</h4><p>Capturar conocimiento y mejorar el sistema de forma continua.</p></div>
+  </div>
+  <hr class="rule" style="margin-top:22px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:6px;">
+    <div>
+      <p class="tag g" style="margin-bottom:9px;">Ciclo de valor</p>
+      <div class="chain">
+        <span class="ch">Contexto</span><span class="arw">→</span>
+        <span class="ch">Decisión</span><span class="arw">→</span>
+        <span class="ch">Acción</span><span class="arw">→</span>
+        <span class="ch">Dato</span><span class="arw">→</span>
+        <span class="ch">Aprendizaje</span>
+      </div>
+    </div>
+    <div>
+      <p class="tag g" style="margin-bottom:9px;">Equivalente cognitivo</p>
+      <div class="chain">
+        <span class="ch t">Observe</span><span class="arw">→</span>
+        <span class="ch t">Reason</span><span class="arw">→</span>
+        <span class="ch t">Act</span><span class="arw">→</span>
+        <span class="ch t">Learn</span>
+      </div>
+    </div>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>04</span></div>
+</section>
+
+<!-- ═══ 5 · ARQUITECTURA ═══ -->
+<section class="s dark">
+  <p class="tag g">04 · Arquitectura</p>
+  <h2 class="big" style="margin:12px 0 8px;max-width:32ch;">Primero la base de datos. Después la inteligencia artificial.</h2>
+  <p class="lede">Ninguna capa de IA corrige un dato mal ingerido. Por eso la cadena de auditoría es el producto, y el modelo va después.</p>
+
+  <p class="tag" style="margin-top:20px;">Capa 1 · Datos de planta y SCADA</p>
+  <div class="chain">
+    <span class="ch k">SCADA / PPC / BMS</span><span class="arw">→</span>
+    <span class="ch">Ingesta de datos</span><span class="arw">→</span>
+    <span class="ch">Validación</span><span class="arw">→</span>
+    <span class="ch">Cálculo de KPI</span><span class="arw">→</span>
+    <span class="ch t">Motor de calidad</span><span class="arw">→</span>
+    <span class="ch t">Motor de verificación</span><span class="arw">→</span>
+    <span class="ch">Portal · Informes</span>
+  </div>
+
+  <p class="tag" style="margin-top:22px;">Capa 2 · Imágenes satelitales y modelos</p>
+  <div class="chain">
+    <span class="ch k">Satélite + modelos</span><span class="arw">→</span>
+    <span class="ch">Monitorear desempeño</span><span class="arw">→</span>
+    <span class="ch">Optimizar mantenimiento</span><span class="arw">→</span>
+    <span class="ch">Actuar</span>
+  </div>
+
+  <div class="note" style="margin-top:22px;">
+    <h4>Honestidad por diseño</h4>
+    <p>El motor de verificación deduplica el catálogo de equipos antes de calcular — un rack publicado en dos protocolos duplicaría la energía e inflaría la eficiencia por sobre 100%. Y si dos vías de cálculo independientes no coinciden, <b>la publicación se bloquea</b>. Si la cobertura de datos no alcanza el umbral, la cifra se retiene y se declara la causa: el silencio de un canal nunca se informa como cero.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>05</span></div>
+</section>
+
+<!-- ═══ 6 · MADUREZ DEL AGENTE ═══ -->
+<section class="s">
+  <p class="tag g">05 · Madurez</p>
+  <h2 class="big" style="margin:12px 0 8px;max-width:30ch;">De agente potencial a <span class="dim">agente confiable</span></h2>
+  <p class="lede">La confianza no se declara: se construye demostrando que el sistema se detiene cuando no puede sustentar lo que dice.</p>
+  <div class="chain" style="margin-top:20px;">
+    <span class="ch">Agente potencial</span><span class="arw">→</span>
+    <span class="ch">Agente utilizable</span><span class="arw">→</span>
+    <span class="ch k">Agente confiable</span>
+  </div>
+  <hr class="rule" style="margin:22px 0 14px;">
+  <p class="tag g" style="margin-bottom:10px;">Curva de adopción</p>
+  <div class="flow">
+    <div class="fs"><div class="n">01</div><h4>Adopción</h4><p>Conectar el activo y producir el primer informe verificable sin alterar la operación.</p></div>
+    <div class="fs"><div class="n">02</div><h4>Complejidad</h4><p>Incorporar tecnologías y regímenes distintos bajo las mismas reglas de validez.</p></div>
+    <div class="fs"><div class="n">03</div><h4>Creación</h4><p>Generar criterio nuevo: atribución recurso-activo, hallazgos con responsable.</p></div>
+    <div class="fs"><div class="n">04</div><h4>Profundización</h4><p>Institucionalizar el formato hasta que comparar activos distintos sea directo.</p></div>
+  </div>
+  <div class="note" style="margin-top:20px;">
+    <h4>Escalar deja de ser el problema</h4>
+    <p>Una vez definidos y validados los parámetros, replicar el sistema a un activo nuevo es un ejercicio de configuración, no de desarrollo. El costo está en definir bien la primera vez.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>06</span></div>
+</section>
+
+<!-- ═══ 7 · SOBERANÍA DE DATOS ═══ -->
+<section class="s dark">
+  <div class="bg" style="background-image:url('gob-solar-aerial.jpg');"></div>
+  <div class="veil" style="background:linear-gradient(180deg,rgba(11,28,44,.93),rgba(11,28,44,.88) 45%,rgba(11,28,44,.95));"></div>
+  <div class="in">
+    <p class="tag g">06 · Gobernanza</p>
+    <h2 class="big" style="margin:12px 0 8px;max-width:28ch;">Soberanía del dato e infraestructura propia</h2>
+    <p class="lede">La información operacional de una central es sensible y en muchos casos estratégica. Operamos servidor propio para mantener el dato bajo control estricto de extremo a extremo.</p>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr);margin-top:18px;">
+      <div class="c"><p class="tag">01</p><h4>Menos movimiento de datos</h4><p>Cada traslado entre nubes y terceros es una superficie de exposición adicional. Procesar donde el dato ya está reduce ese riesgo por diseño.</p></div>
+      <div class="c"><p class="tag">02</p><h4>Más control y trazabilidad</h4><p>Todo incidente sigue una traza auditable: detección, notificación, acción y resolución, con registro de quién consultó qué y cuándo.</p></div>
+      <div class="c"><p class="tag">03</p><h4>Inferencia en entorno propio</h4><p>Los modelos se ejecutan dentro de nuestra infraestructura. El dato de planta no sale del perímetro para ser interpretado.</p></div>
+    </div>
+    <div class="note" style="margin-top:18px;">
+      <h4>Sobre certificaciones</h4>
+      <p>Lo anterior describe decisiones de arquitectura, no acreditaciones de terceros. <b>Quorelia no declara certificaciones ni cumplimiento normativo que no hayan sido auditados y emitidos por un organismo competente.</b></p>
+    </div>
+    <div class="sp"></div>
+    <div class="foot"><span>Quorelia · SEC</span><span>07</span></div>
+  </div>
+</section>
+
+<!-- ═══ 8 · IMPACTO ═══ -->
+<section class="s">
+  <p class="tag g">07 · Impacto sistémico</p>
+  <h2 class="big" style="margin:12px 0 8px;max-width:30ch;">Qué cambia cuando la cifra es verificable</h2>
+  <table>
+    <tr><th>Dimensión</th><th>Situación actual</th><th>Con información verificable</th></tr>
+    <tr><td><b>Fiscalización</b></td><td>90% del esfuerzo del segmento en revisión documental de formatos heterogéneos</td><td>Priorización por riesgo objetivo; la revisión de lo conforme se automatiza</td></tr>
+    <tr><td><b>Localización de falla</b></td><td>El problema se detecta cuando ya afectó la generación</td><td>Se identifica el equipo o módulo que se desvía, con su evidencia</td></tr>
+    <tr><td><b>Pérdida de ingreso</b></td><td>Indisponibilidad detectada tarde y difícil de atribuir</td><td>Separación explícita entre recurso, activo y limitación sistémica</td></tr>
+    <tr><td><b>Huella de carbono</b></td><td>Intervenciones en terreno por rotación o denuncia</td><td>Menos desplazamientos: se va donde hay evidencia de problema</td></tr>
+    <tr><td><b>Conocimiento</b></td><td>Criterio concentrado en pocos equipos con capacidad analítica</td><td>Formato común que democratiza la lectura técnica del desempeño</td></tr>
+  </table>
+  <div class="note" style="margin-top:16px;">
+    <h4>Sobre las magnitudes</h4>
+    <p>Deliberadamente no proyectamos cifras de ahorro. Sería fácil presentar un porcentaje optimista de reducción de tiempo o de pérdida evitada. Preferimos que esos números los produzca un piloto y los mida el propio equipo revisor de la autoridad.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>08</span></div>
+</section>
+
+<!-- ═══ 9 · PILOTO ═══ -->
+<section class="s dark">
+  <p class="tag g">08 · Propuesta</p>
+  <h2 class="big" style="margin:12px 0 8px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
+  <p class="lede">No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Corre sobre datos que las centrales ya generan.</p>
+  <table style="margin-top:14px;">
+    <tr><th>Elemento</th><th>Definición</th></tr>
+    <tr><td><b>Alcance</b></td><td>10 a 15 centrales voluntarias: fotovoltaica coordinada, PMGD y al menos una con almacenamiento</td></tr>
+    <tr><td><b>Duración</b></td><td>Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente</td></tr>
+    <tr><td><b>Insumo</b></td><td>Datos SCADA existentes, con autorización expresa de cada titular</td></tr>
+    <tr><td><b>Producto</b></td><td>Informe estandarizado por central y vista consolidada de cartera, con trazabilidad por cifra</td></tr>
+    <tr><td><b>Métrica de éxito</b></td><td>Tiempo de revisión documental, medido con cronómetro por el equipo revisor de la autoridad</td></tr>
+    <tr><td><b>Definición de fracaso</b></td><td>Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina</td></tr>
+  </table>
+  <div class="sp"></div>
+  <p class="src">Quorelia es una empresa privada de tecnología. No es un sistema oficial de la SEC ni de ningún organismo del Estado, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente.</p>
+  <div class="foot"><span>Quorelia · SEC</span><span>09</span></div>
+</section>
+
+<!-- ═══ 10 · CIERRE ═══ -->
+<section class="s dark">
+  <div class="bg" style="background-image:url('gob-wind-field.jpg');"></div>
+  <div class="veil" style="background:linear-gradient(110deg,rgba(11,28,44,.95) 46%,rgba(11,28,44,.74) 74%,rgba(11,28,44,.92));"></div>
+  <div class="in">
+    <p class="tag g">09 · Cierre</p>
+    <div class="sp"></div>
+    <h2 class="mega" style="max-width:20ch;">Si el dato no sostiene la cifra, no la estimamos.<br><span style="color:var(--teal-lt);">La declaramos.</span></h2>
+    <p class="lede" style="margin-top:20px;max-width:62ch;">Una cifra retenida con su razón declarada es verificable. Una cifra estimada que aparenta certeza no lo es. Esa distinción es todo el producto.</p>
+    <div class="sp"></div>
+    <hr class="rule">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;">
+      <div>
+        <div style="font-family:var(--mono);font-size:22px;letter-spacing:.26em;font-weight:600;">QUORELIA</div>
+        <p class="tag" style="margin-top:9px;">Inteligencia en energía renovable</p>
+      </div>
+      <div style="text-align:right;">
+        <p style="font-size:14px;color:#fff;">Solicitamos una sesión técnica de 45 minutos</p>
+        <p style="font-family:var(--mono);font-size:13px;color:var(--teal-lt);margin-top:7px;">jay@quorelia.org · quorelia.org</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 Quorelia · Documento de trabajo</span><span>10</span></div>
+</section>
+
+</body>
+</html>

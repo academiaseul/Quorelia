@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Quorelia — Intelligence for critical energy infrastructure</title>
+<meta name="description" content="Quorelia turns raw plant and SCADA data into automated, defensible O&M reports for solar, wind and BESS assets — every figure traceable to the measurement behind it.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quorelia.org/">
+<meta property="og:title" content="Quorelia — Intelligence for critical energy infrastructure">
+<meta property="og:description" content="Every number your plant reports, made defensible.">
+<meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta clara, estilo Palantir: casi todo blanco y negro, un solo acento */
+    --ink:#101418;
+    --ink-2:#3d474f;
+    --grey:#8a949c;
+    --line:#e2e5e8;
+    --paper:#ffffff;
+    --paper-2:#f2f3f4;
+    --paper-3:#e9eaec;
+    --black:#1a1d21;
+    --accent:#149487;
+
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+
+    --fs-mega: clamp(2.3rem, 1.4rem + 3.4vw, 4.1rem);
+    --fs-big:  clamp(1.75rem, 1.2rem + 2.1vw, 2.9rem);
+    --fs-mid:  clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --gut: 28px;
+  }
+  @media(prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+    .rv{opacity:1 !important;transform:none !important;}
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    font-family:var(--sans);background:var(--paper);color:var(--ink);
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 var(--gut);}
+  section{padding:96px 0;}
+  hr.rule{border:0;border-top:1px solid var(--line);margin:0;}
+
+  /* tipografía Palantir: peso ligero, tracking negativo, mucho aire */
+  h1,h2,h3{font-weight:400;letter-spacing:-0.035em;line-height:1.06;}
+  .mega{font-size:var(--fs-mega);}
+  .big{font-size:var(--fs-big);}
+  .mid{font-size:var(--fs-mid);letter-spacing:-0.025em;line-height:1.2;}
+  .dim{color:var(--grey);}          /* palabra en gris dentro del titular */
+  .lede{font-size:17px;line-height:1.62;color:var(--ink-2);max-width:62ch;}
+
+  /* etiqueta monoespaciada en versales */
+  .tag{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+  }
+  .tag.g{color:var(--grey);}
+  .num{font-family:var(--mono);font-size:11.5px;color:var(--grey);letter-spacing:.04em;}
+
+  /* ── Encabezado ─────────────────────────────────────────────── */
+  .head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
+  .brand{font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.24em;text-transform:uppercase;}
+  .nav-links{display:flex;gap:30px;font-size:14px;color:var(--ink-2);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang{display:flex;border:1px solid var(--line);}
+  .lang button{border:0;background:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    padding:6px 10px;cursor:pointer;color:var(--grey);}
+  .lang button.on{background:var(--ink);color:#fff;}
+  .btn-sm{border:1px solid var(--ink);padding:8px 16px;font-size:13.5px;transition:background .18s,color .18s;}
+  .btn-sm:hover{background:var(--ink);color:#fff;}
+  .burger{display:none;background:none;border:0;padding:6px;cursor:pointer;color:var(--ink);}
+  .burger svg{width:22px;height:22px;}
+  @media(max-width:1000px){
+    .nav-links{display:none;} .burger{display:block;} .lang{display:none;}
+  }
+
+  /* ── Hero ───────────────────────────────────────────────────── */
+  .hero{padding:120px 0 84px;}
+  .hero .mega{max-width:19ch;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 40px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+  .hero-meta div{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);}
+
+  /* ── Bloque de módulos (estilo "Our Software") ──────────────── */
+  .mod{display:grid;grid-template-columns:210px 1fr auto;gap:28px;align-items:center;
+    padding:38px 0;border-top:1px solid var(--line);transition:background .2s;}
+  .mod:hover{background:var(--paper-2);}
+  .mod .m-lead{font-size:13px;line-height:1.45;color:var(--ink-2);}
+  .mod .m-name{font-family:var(--mono);font-size:clamp(1.7rem,1.2rem+2vw,3.1rem);
+    letter-spacing:.08em;font-weight:400;text-transform:uppercase;}
+  .mod .m-n{font-family:var(--mono);font-size:11px;color:var(--grey);}
+  @media(max-width:820px){
+    .mod{grid-template-columns:1fr;gap:12px;padding:28px 0;}
+    .mod .m-name{font-size:2rem;}
+  }
+
+  /* ── Tarjetas con esquina recortada ─────────────────────────── */
+  .rail{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin;}
+  .rail::-webkit-scrollbar{height:6px;}
+  .rail::-webkit-scrollbar-thumb{background:var(--paper-3);}
+  .card{
+    flex:0 0 300px;background:var(--paper-2);padding:22px 22px 26px;
+    min-height:330px;display:flex;flex-direction:column;
+    clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
+  }
+  .card .c-src{margin-bottom:auto;}
+  .card p{font-size:14.5px;line-height:1.55;color:var(--ink-2);}
+  .card .c-fig{font-size:30px;letter-spacing:-0.03em;margin-bottom:10px;}
+
+  /* ── Listas con ↳ ───────────────────────────────────────────── */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:52px;}
+  .grp{margin-bottom:30px;}
+  .grp h4{font-size:14.5px;font-weight:600;margin-bottom:12px;letter-spacing:-0.01em;}
+  .grp a,.grp span{display:block;font-size:14.5px;color:var(--ink-2);padding:5px 0 5px 22px;position:relative;}
+  .grp a::before,.grp span::before{content:'↳';position:absolute;left:0;color:var(--grey);}
+  .grp a:hover{color:var(--ink);}
+  @media(max-width:820px){.cols{grid-template-columns:1fr;gap:8px;}}
+
+  /* ── Enlace con flecha a la derecha ─────────────────────────── */
+  .arrow-link{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    font-size:16px;transition:padding-left .2s var(--ease);}
+  .arrow-link:hover{padding-left:8px;}
+  .arrow-link .ar{font-size:19px;color:var(--ink-2);}
+
+  /* ── CTA partido: gris + negro ──────────────────────────────── */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .split a{display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:52px 34px;font-size:clamp(1.4rem,1.1rem+1.2vw,2.1rem);letter-spacing:-0.03em;
+    transition:transform .22s var(--ease);}
+  .split a:hover{transform:translateY(-3px);}
+  .split .s-grey{background:var(--paper-3);color:var(--ink);}
+  .split .s-black{background:var(--black);color:#fff;}
+  .split .ar{font-size:26px;}
+  @media(max-width:760px){.split{grid-template-columns:1fr;}.split a{padding:36px 24px;}}
+
+  /* ── Cifras ─────────────────────────────────────────────────── */
+  .figs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);}
+  .fig{padding:30px 24px 30px 0;border-right:1px solid var(--line);}
+  .fig:last-child{border-right:0;}
+  .fig .v{font-size:clamp(1.9rem,1.4rem+1.4vw,2.7rem);letter-spacing:-0.04em;line-height:1;}
+  .fig .k{font-size:12.5px;color:var(--ink-2);margin-top:10px;line-height:1.45;}
+  @media(max-width:820px){
+    .figs{grid-template-columns:1fr 1fr;}
+    .fig{padding:24px 18px 24px 0;}
+    .fig:nth-child(2n){border-right:0;}
+    .fig:nth-child(-n+2){border-bottom:1px solid var(--line);}
+  }
+
+  /* ── Media + texto ──────────────────────────────────────────── */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .duo img{width:100%;height:auto;object-fit:cover;}
+  @media(max-width:900px){.duo{grid-template-columns:1fr;gap:30px;}}
+
+  /* ── Pie ────────────────────────────────────────────────────── */
+  footer{border-top:1px solid var(--line);padding:60px 0 34px;}
+  .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px;}
+  .f-grid h5{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:14px;}
+  .f-grid a{display:block;font-size:14px;color:var(--ink-2);padding:5px 0;}
+  .f-grid a:hover{color:var(--ink);}
+  .f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);
+    border-top:1px solid var(--line);padding-top:22px;}
+  .fine{font-size:11.5px;color:var(--grey);line-height:1.6;margin-top:20px;max-width:92ch;}
+  @media(max-width:820px){.f-grid{grid-template-columns:1fr 1fr;}}
+
+  /* ── Menú móvil ─────────────────────────────────────────────── */
+  .scrim{position:fixed;inset:0;z-index:60;background:rgba(16,20,24,.42);opacity:0;visibility:hidden;transition:opacity .26s,visibility .26s;}
+  .scrim.on{opacity:1;visibility:visible;}
+  .drawer{position:fixed;top:0;right:0;bottom:0;z-index:61;width:min(86vw,340px);
+    background:var(--paper);border-left:1px solid var(--line);transform:translateX(100%);
+    transition:transform .32s var(--ease);display:flex;flex-direction:column;
+    padding:16px 24px calc(24px + env(safe-area-inset-bottom));overflow-y:auto;}
+  .drawer.on{transform:translateX(0);}
+  .d-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .drawer nav a{display:block;font-size:16px;padding:15px 0;border-bottom:1px solid var(--line);}
+  .d-foot{margin-top:auto;padding-top:22px;}
+  .d-foot .btn-sm{display:block;text-align:center;}
+  .d-lang{display:flex;justify-content:center;margin-top:16px;}
+  body.locked{overflow:hidden;}
+
+  /* revelado sutil */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .rv.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- menú móvil -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand">Quorelia</span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
+    <a href="#evidence" data-i18n="nav_ev">Evidence</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  </nav>
+  <div class="d-foot">
+    <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="/" class="brand">Quorelia</a>
+    <nav class="nav-links">
+      <a href="#software" data-i18n="nav_sw">Our Software</a>
+      <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
+      <a href="#evidence" data-i18n="nav_ev">Evidence</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="mega rv in" data-i18n="hero">Our software makes every number a renewable plant reports <span class="dim">defensible</span> — traceable to the measurement behind it.</h1>
+    <div class="hero-meta">
+      <div data-i18n="hm1">Solar · Wind · BESS</div>
+      <div data-i18n="hm2">SCADA · PPC · BMS</div>
+      <div data-i18n="hm3">Daily &amp; monthly reporting</div>
+      <div data-i18n="hm4">Santiago · Chile</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MÓDULOS ══════════ -->
+<section id="software" style="padding-top:20px;">
+  <div class="wrap">
+    <h2 class="big rv" style="margin-bottom:44px;" data-i18n="sw_t">Our Software</h2>
+
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m1l">Watch every asset continuously, on the systems already installed</div>
+      <div class="m-name">Observe</div>
+      <div class="m-n">/0.1</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m2l">Validate before calculating — silence is never reported as zero</div>
+      <div class="m-name">Verify</div>
+      <div class="m-n">/0.2</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m3l">Daily and monthly reports, generated without manual assembly</div>
+      <div class="m-name">Report</div>
+      <div class="m-n">/0.3</div>
+    </div>
+    <hr class="rule">
+  </div>
+</section>
+
+<!-- ══════════ CAPACIDADES ══════════ -->
+<section id="capabilities" style="padding-top:40px;">
+  <div class="wrap duo">
+    <div class="rv">
+      <img src="bg/gob-wind-field.jpg" alt="" loading="lazy">
+      <div class="grp" style="margin-top:32px;">
+        <h4 data-i18n="g1">Verification</h4>
+        <span data-i18n="g1a">Contractual availability</span>
+        <span data-i18n="g1b">Data coverage &amp; traceability</span>
+        <span data-i18n="g1c">Independent opinion format</span>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="grp">
+        <h4 data-i18n="g2">Operations</h4>
+        <span data-i18n="g2a">Asset and unit status</span>
+        <span data-i18n="g2b">Plant performance</span>
+        <span data-i18n="g2c">Curtailment accounting</span>
+      </div>
+      <div class="grp">
+        <h4 data-i18n="g3">Maintenance</h4>
+        <span data-i18n="g3a">Preventive / corrective classification</span>
+        <span data-i18n="g3b">Routing to the right specialty</span>
+        <span data-i18n="g3c">Findings with named owners</span>
+      </div>
+      <div class="grp">
+        <h4 data-i18n="g4">Analytics</h4>
+        <span data-i18n="g4a">Resource vs. asset attribution</span>
+        <span data-i18n="g4b">Cell dispersion &amp; state of health</span>
+        <span data-i18n="g4c">Round-trip efficiency on closed cycles</span>
+      </div>
+      <a href="quorelia-sample-report.html" target="_blank" rel="noopener" class="arrow-link" style="margin-top:40px;">
+        <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CIFRAS ══════════ -->
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:24px;" data-i18n="fig_t">The Chilean generation fleet · Infotécnica, 16 Aug 2026</p>
+    <div class="figs rv">
+      <div class="fig"><div class="v">2,029</div><div class="k" data-i18n="f1">Plants in the national registry</div></div>
+      <div class="fig"><div class="v">1,614</div><div class="k" data-i18n="f2">Distinct owners</div></div>
+      <div class="fig"><div class="v">91.7%</div><div class="k" data-i18n="f3">Owners operating a single plant</div></div>
+      <div class="fig"><div class="v">2 / 977</div><div class="k" data-i18n="f4">PMGD units declaring storage</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EVIDENCIA (formato tarjetas) ══════════ -->
+<section id="evidence">
+  <div class="wrap">
+    <h2 class="big rv" style="margin-bottom:14px;" data-i18n="ev_t">What the public record actually shows</h2>
+    <p class="lede rv" style="margin-bottom:40px;" data-i18n="ev_s">Findings from our own analysis of the complete Infotécnica registry of the Coordinador Eléctrico Nacional. Reproducible from the source files. No simulated data.</p>
+    <div class="rail rv">
+      <article class="card">
+        <div class="c-src"><span class="tag">Structure</span></div>
+        <div class="c-fig">91.7%</div>
+        <p data-i18n="c1">of owners operate exactly one plant. Only 37 of 1,614 operate four or more. A stricter reporting format does not produce better data in a fleet with no monitoring team.</p>
+      </article>
+      <article class="card">
+        <div class="c-src"><span class="tag">Documentation</span></div>
+        <div class="c-fig">23.1%</div>
+        <p data-i18n="c2">completeness in the coordinated solar technical record — the lowest of any sheet, in the technology that holds 1,375 of the country's 2,029 plants.</p>
+      </article>
+      <article class="card">
+        <div class="c-src"><span class="tag">Storage</span></div>
+        <div class="c-fig">2 / 977</div>
+        <p data-i18n="c3">PMGD units declare a storage system. The other 975 record "not applicable" across all 31 fields — just as the new framework brings storage into scope with monitoring requirements.</p>
+      </article>
+      <article class="card">
+        <div class="c-src"><span class="tag">Data quality</span></div>
+        <div class="c-fig">3 / 2</div>
+        <p data-i18n="c4">structural errors in the only two storage records that exist: divergent vocabulary, a state-of-charge range of [0%–100%] that no BMS permits, and the word "In Testing" inside a date field.</p>
+      </article>
+      <article class="card">
+        <div class="c-src"><span class="tag">Method</span></div>
+        <div class="c-fig">86.3%</div>
+        <p data-i18n="c5">round-trip efficiency on closed cycles only. Including one unclosed cycle would have returned 87.5% — the same data, a different denominator, and a figure that cannot be defended.</p>
+      </article>
+    </div>
+    <p class="fine rv" style="margin-top:22px;" data-i18n="ev_note">Methodological caveat: some empty fields may be legitimately non-applicable to a given installation. This is a measure of structured information available for automated analysis, not a finding of non-compliance by owners.</p>
+  </div>
+</section>
+
+<!-- ══════════ PRINCIPIO ══════════ -->
+<section style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:20px;" data-i18n="pr_t">The rule that governs every figure</p>
+    <h2 class="big rv" style="max-width:24ch;" data-i18n="pr_h">If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span></h2>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="pr_p">A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.</p>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO / CTA ══════════ -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="big rv" style="margin-bottom:40px;" data-i18n="cta_t">See it on your own assets</h2>
+    <div class="split rv">
+      <a class="s-grey" href="mailto:jay@quorelia.org?subject=Quorelia%20demo">
+        <span data-i18n="cta_demo2">Request a Demo</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="gobierno.html">
+        <span data-i18n="cta_gov">For Public Authorities</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">Quorelia</div>
+        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+      </div>
+      <div>
+        <h5 data-i18n="f_prod">Platform</h5>
+        <a href="#software" data-i18n="nav_sw">Our Software</a>
+        <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
+        <a href="quorelia-sample-report.html" data-i18n="f_sample">Sample report</a>
+        <a href="bess-scada-dashboard.html" data-i18n="f_dash">Live dashboard</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_co">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_ct">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia</span>
+      <span data-i18n="f_tag">Renewable Energy Intelligence</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Figures cited from the public Infotécnica registry of the Coordinador Eléctrico Nacional, extracted 16 August 2026, and from the SEC 2026 public account. Sample reports contain illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Our Software", nav_cap:"Capabilities", nav_ev:"Evidence", nav_gov:"Government",
+  nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
+  hero:'Our software makes every number a renewable plant reports <span class="dim">defensible</span> — traceable to the measurement behind it.',
+  hm1:"Solar · Wind · BESS", hm2:"SCADA · PPC · BMS", hm3:"Daily & monthly reporting", hm4:"Santiago · Chile",
+  sw_t:"Our Software",
+  m1l:"Watch every asset continuously, on the systems already installed",
+  m2l:"Validate before calculating — silence is never reported as zero",
+  m3l:"Daily and monthly reports, generated without manual assembly",
+  g1:"Verification", g1a:"Contractual availability", g1b:"Data coverage &amp; traceability", g1c:"Independent opinion format",
+  g2:"Operations", g2a:"Asset and unit status", g2b:"Plant performance", g2c:"Curtailment accounting",
+  g3:"Maintenance", g3a:"Preventive / corrective classification", g3b:"Routing to the right specialty", g3c:"Findings with named owners",
+  g4:"Analytics", g4a:"Resource vs. asset attribution", g4b:"Cell dispersion &amp; state of health", g4c:"Round-trip efficiency on closed cycles",
+  sample:"Read the full sample report",
+  fig_t:"The Chilean generation fleet · Infotécnica, 16 Aug 2026",
+  f1:"Plants in the national registry", f2:"Distinct owners",
+  f3:"Owners operating a single plant", f4:"PMGD units declaring storage",
+  ev_t:"What the public record actually shows",
+  ev_s:"Findings from our own analysis of the complete Infotécnica registry of the Coordinador Eléctrico Nacional. Reproducible from the source files. No simulated data.",
+  c1:"of owners operate exactly one plant. Only 37 of 1,614 operate four or more. A stricter reporting format does not produce better data in a fleet with no monitoring team.",
+  c2:"completeness in the coordinated solar technical record — the lowest of any sheet, in the technology that holds 1,375 of the country's 2,029 plants.",
+  c3:'PMGD units declare a storage system. The other 975 record "not applicable" across all 31 fields — just as the new framework brings storage into scope with monitoring requirements.',
+  c4:'structural errors in the only two storage records that exist: divergent vocabulary, a state-of-charge range of [0%–100%] that no BMS permits, and the word "In Testing" inside a date field.',
+  c5:"round-trip efficiency on closed cycles only. Including one unclosed cycle would have returned 87.5% — the same data, a different denominator, and a figure that cannot be defended.",
+  ev_note:"Methodological caveat: some empty fields may be legitimately non-applicable to a given installation. This is a measure of structured information available for automated analysis, not a finding of non-compliance by owners.",
+  pr_t:"The rule that governs every figure",
+  pr_h:'If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span>',
+  pr_p:"A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.",
+  cta_t:"See it on your own assets", cta_demo2:"Request a Demo", cta_gov:"For Public Authorities",
+  f_desc:"Intelligence for critical energy infrastructure. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_dash:"Live dashboard",
+  f_co:"Company", f_ct:"Contact", f_tag:"Renewable Energy Intelligence",
+  f_fine:"Figures cited from the public Infotécnica registry of the Coordinador Eléctrico Nacional, extracted 16 August 2026, and from the SEC 2026 public account. Sample reports contain illustrative data and do not represent real facilities or clients."
+ },
+ es:{
+  nav_sw:"Plataforma", nav_cap:"Capacidades", nav_ev:"Evidencia", nav_gov:"Gobierno",
+  nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
+  hero:'Nuestro software vuelve <span class="dim">defendible</span> cada cifra que informa una planta renovable, trazable hasta la medición que la sustenta.',
+  hm1:"Solar · Eólica · BESS", hm2:"SCADA · PPC · BMS", hm3:"Informes diarios y mensuales", hm4:"Santiago · Chile",
+  sw_t:"Nuestra plataforma",
+  m1l:"Observa cada activo de forma continua, sobre los sistemas ya instalados",
+  m2l:"Valida antes de calcular — el silencio nunca se informa como cero",
+  m3l:"Informes diarios y mensuales, generados sin ensamblaje manual",
+  g1:"Verificación", g1a:"Disponibilidad contractual", g1b:"Cobertura de datos y trazabilidad", g1c:"Formato de opinión independiente",
+  g2:"Operación", g2a:"Estado de activos y unidades", g2b:"Desempeño de planta", g2c:"Registro de vertimiento",
+  g3:"Mantenimiento", g3a:"Clasificación preventiva / correctiva", g3b:"Derivación a la especialidad correcta", g3c:"Hallazgos con responsable asignado",
+  g4:"Analítica", g4a:"Atribución recurso vs. activo", g4b:"Dispersión de celdas y estado de salud", g4c:"Eficiencia de ciclo sobre ciclos cerrados",
+  sample:"Ver el informe de muestra completo",
+  fig_t:"El parque generador chileno · Infotécnica, 16 ago 2026",
+  f1:"Centrales en el registro nacional", f2:"Propietarios distintos",
+  f3:"Titulares que operan una sola central", f4:"Unidades PMGD que declaran almacenamiento",
+  ev_t:"Lo que muestra el registro público",
+  ev_s:"Hallazgos de nuestro propio análisis del registro completo de Infotécnica del Coordinador Eléctrico Nacional. Reproducible desde los archivos de origen. Sin datos simulados.",
+  c1:"de los titulares opera exactamente una central. Solo 37 de 1.614 operan cuatro o más. Un formato de reporte más estricto no produce mejor información en un parque sin equipo de monitoreo.",
+  c2:"de completitud en la ficha técnica solar coordinada — la más baja del registro, en la tecnología que concentra 1.375 de las 2.029 centrales del país.",
+  c3:'unidades PMGD declaran un sistema de almacenamiento. Las otras 975 consignan «no aplica» en los 31 campos, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo.',
+  c4:'errores estructurales en las dos únicas fichas de almacenamiento que existen: vocabulario divergente, un rango de estado de carga de [0%–100%] que ningún BMS permite, y la palabra «En Pruebas» dentro de un campo de fecha.',
+  c5:"de eficiencia de ciclo completo, solo sobre ciclos cerrados. Incluir un ciclo abierto habría arrojado 87,5% — los mismos datos, otro denominador, y una cifra que no se puede defender.",
+  ev_note:"Salvedad metodológica: parte de los campos vacíos puede ser legítimamente no aplicable a una instalación concreta. Es una medida de información estructurada disponible para análisis automatizado, no un hallazgo de incumplimiento de los titulares.",
+  pr_t:"La regla que gobierna cada cifra",
+  pr_h:'Si los datos no sostienen una cifra defendible, no la estimamos. <span class="dim">La declaramos.</span>',
+  pr_p:"Una cifra retenida con su razón declarada es verificable; una cifra estimada que aparenta certeza no lo es. Un canal que no responde se informa como no observado y se excluye del denominador — nunca como cero.",
+  cta_t:"Véalo sobre sus propios activos", cta_demo2:"Solicitar demo", cta_gov:"Para autoridades públicas",
+  f_desc:"Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_dash:"Tablero en vivo",
+  f_co:"Empresa", f_ct:"Contacto", f_tag:"Inteligencia en Energía Renovable",
+  f_fine:"Cifras citadas del registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y de la Cuenta Pública 2026 de la SEC. Los informes de muestra contienen datos ilustrativos y no representan instalaciones ni clientes reales."
+ }
+};
+
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    var en=document.getElementById(p+'-en'), es=document.getElementById(p+'-es');
+    if(en) en.classList.toggle('on', l==='en');
+    if(es) es.classList.toggle('on', l==='es');
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  setLang(s || ((navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es':'en'));
+})();
+
+/* menú móvil */
+(function(){
+  var b=document.getElementById('burger'), d=document.getElementById('drawer'),
+      s=document.getElementById('scrim'), c=document.getElementById('d-close'), last=null;
+  if(!b||!d||!s) return;
+  function open(){
+    last=document.activeElement; d.hidden=false; s.hidden=false;
+    requestAnimationFrame(function(){ d.classList.add('on'); s.classList.add('on'); });
+    b.setAttribute('aria-expanded','true'); document.body.classList.add('locked');
+    var f=d.querySelector('nav a'); if(f) f.focus({preventScroll:true});
+  }
+  function close(){
+    d.classList.remove('on'); s.classList.remove('on');
+    b.setAttribute('aria-expanded','false'); document.body.classList.remove('locked');
+    setTimeout(function(){ if(!d.classList.contains('on')){ d.hidden=true; s.hidden=true; } },330);
+    if(last) last.focus({preventScroll:true});
+  }
+  b.addEventListener('click',function(){ d.classList.contains('on')?close():open(); });
+  s.addEventListener('click',close); if(c) c.addEventListener('click',close);
+  d.querySelectorAll('nav a, .d-foot a').forEach(function(a){ a.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){
+    if(!d.classList.contains('on')) return;
+    if(e.key==='Escape'){ close(); return; }
+    if(e.key!=='Tab') return;
+    var f=d.querySelectorAll('a[href], button:not([disabled])');
+    if(!f.length) return;
+    var a=f[0], z=f[f.length-1];
+    if(e.shiftKey && document.activeElement===a){ e.preventDefault(); z.focus(); }
+    else if(!e.shiftKey && document.activeElement===z){ e.preventDefault(); a.focus(); }
+  });
+  window.addEventListener('resize',function(){ if(window.innerWidth>1000 && d.classList.contains('on')) close(); });
+})();
+
+/* revelado al hacer scroll */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.rv');
+  var io=new IntersectionObserver(function(es,o){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); o.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  els.forEach(function(el){ io.observe(el); });
+  requestAnimationFrame(function(){
+    els.forEach(function(el){ if(el.getBoundingClientRect().top < innerHeight*0.95){ el.classList.add('in'); io.unobserve(el);} });
+  });
+})();
+</script>
+</body>
+</html>
