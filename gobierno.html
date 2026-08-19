@@ -116,6 +116,16 @@
   tr:last-child td{border-bottom:0;}
   td b{color:var(--ink);}
 
+  /* Tablas dentro de secciones oscuras — el <b> heredaba el color de tinta oscura */
+  .dark table{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14);}
+  .dark th{background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);}
+  .dark td{color:#b9c9d1;border-bottom-color:rgba(255,255,255,.10);}
+  .dark td b{color:#fff;}
+  /* avisos y párrafos sueltos dentro de secciones oscuras */
+  .dark .note h4{color:#fff;}
+  .dark .note p{color:#b9c9d1;}
+  .dark > .container > p{color:#b9c9d1;}
+
   .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px;}
   .fl{padding:0 20px;border-left:.8px solid rgba(255,255,255,.15);}
   .fl:first-child{border-left:0;padding-left:0;}
@@ -324,14 +334,14 @@
       <h2>Un piloto acotado, medible y sin riesgo institucional</h2>
       <p>No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.</p>
     </div>
-    <table style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);">
-      <tr><th style="background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);">Elemento</th><th style="background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);">Definición</th></tr>
-      <tr><td style="color:#fff;"><b>Alcance</b></td><td style="color:#b9c9d1;">10 a 15 centrales voluntarias, cubriendo fotovoltaica coordinada, PMGD y al menos una instalación con almacenamiento.</td></tr>
-      <tr><td style="color:#fff;"><b>Duración</b></td><td style="color:#b9c9d1;">Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente.</td></tr>
-      <tr><td style="color:#fff;"><b>Insumo</b></td><td style="color:#b9c9d1;">Datos SCADA que las centrales ya producen, con autorización expresa de cada titular.</td></tr>
-      <tr><td style="color:#fff;"><b>Producto</b></td><td style="color:#b9c9d1;">Informe estandarizado por central y vista consolidada de cartera, con trazabilidad por cifra.</td></tr>
-      <tr><td style="color:#fff;"><b>Métrica de éxito</b></td><td style="color:#b9c9d1;">Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor de la autoridad: formato actual contra formato estandarizado.</td></tr>
-      <tr><td style="color:#fff;"><b>Definición de fracaso</b></td><td style="color:#b9c9d1;">Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.</td></tr>
+    <table>
+      <tr><th>Elemento</th><th>Definición</th></tr>
+      <tr><td><b>Alcance</b></td><td>10 a 15 centrales voluntarias, cubriendo fotovoltaica coordinada, PMGD y al menos una instalación con almacenamiento.</td></tr>
+      <tr><td><b>Duración</b></td><td>Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente.</td></tr>
+      <tr><td><b>Insumo</b></td><td>Datos SCADA que las centrales ya producen, con autorización expresa de cada titular.</td></tr>
+      <tr><td><b>Producto</b></td><td>Informe estandarizado por central y vista consolidada de cartera, con trazabilidad por cifra.</td></tr>
+      <tr><td><b>Métrica de éxito</b></td><td>Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor de la autoridad: formato actual contra formato estandarizado.</td></tr>
+      <tr><td><b>Definición de fracaso</b></td><td>Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.</td></tr>
     </table>
     <p style="color:#8fa3b0;font-size:14px;margin-top:22px;max-width:80ch;line-height:1.75;"><b style="color:#fff;">Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
   </div>
