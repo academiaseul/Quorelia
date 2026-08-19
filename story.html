@@ -305,6 +305,7 @@ function setLang(l){
     if(d[k]!==undefined) el.innerHTML=d[k];
   });
   try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}

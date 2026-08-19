@@ -170,13 +170,22 @@
 <!-- ══════════ CIFRAS ══════════ -->
 <section style="padding-top:20px;">
   <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:24px;" data-i18n="cap_t">Installed capacity · CNE report, July 2026</p>
+    <div class="figs rv" style="margin-bottom:56px;">
+      <div class="fig"><div class="v">38.616</div><div class="k" data-i18n="cp1">MW of net installed capacity in the national system</div></div>
+      <div class="fig"><div class="v t">20.223</div><div class="k" data-i18n="cp2">MW from non-conventional renewables — 52,4% of the matrix</div></div>
+      <div class="fig"><div class="v t">12.438</div><div class="k" data-i18n="cp3">MW of solar PV — the largest single technology, 32,2%</div></div>
+      <div class="fig"><div class="v">6.297</div><div class="k" data-i18n="cp4">MW of wind across 65 units, 16,3%</div></div>
+    </div>
+
     <p class="tag g rv" style="margin-bottom:24px;" data-i18n="fig_t">The Chilean generation fleet · Infotécnica, 16 Aug 2026</p>
     <div class="figs rv">
-      <div class="fig"><div class="v">2,029</div><div class="k" data-i18n="f1">Plants in the national registry</div></div>
-      <div class="fig"><div class="v">1,614</div><div class="k" data-i18n="f2">Distinct owners</div></div>
-      <div class="fig"><div class="v">91.7%</div><div class="k" data-i18n="f3">Owners operating a single plant</div></div>
+      <div class="fig"><div class="v">2.029</div><div class="k" data-i18n="f1">Plants in the national registry</div></div>
+      <div class="fig"><div class="v">1.614</div><div class="k" data-i18n="f2">Distinct owners</div></div>
+      <div class="fig"><div class="v">91,7%</div><div class="k" data-i18n="f3">Owners operating a single plant</div></div>
       <div class="fig"><div class="v">2 / 977</div><div class="k" data-i18n="f4">PMGD units declaring storage</div></div>
     </div>
+    <p class="src rv" style="margin-top:22px;text-align:center;" data-i18n="cap_src">Capacity: CNE, Reporte Capacidad Instalada Generación, July 2026 — net power of units in operation. Registry: Infotécnica, Coordinador Eléctrico Nacional, extracted 16 August 2026. The two counts differ because they are different registries measuring different things.</p>
   </div>
 </section>
 
@@ -304,6 +313,12 @@ const i18n = {
   band2_t:"Wind and storage",
   band2_h:"Each technology defines \u00aboperation\u00bb differently",
   band2_p:"A turbine stopped for lack of wind is not unavailable. A battery with an open cycle has no calculable efficiency. What can be identical across technologies is the definition of what makes a figure valid.",
+  cap_t:"Installed capacity \u00b7 CNE report, July 2026",
+  cp1:"MW of net installed capacity in the national system",
+  cp2:"MW from non-conventional renewables \u2014 52,4% of the matrix",
+  cp3:"MW of solar PV \u2014 the largest single technology, 32,2%",
+  cp4:"MW of wind across 65 units, 16,3%",
+  cap_src:"Capacity: CNE, Reporte Capacidad Instalada Generaci\u00f3n, July 2026 \u2014 net power of units in operation. Registry: Infot\u00e9cnica, Coordinador El\u00e9ctrico Nacional, extracted 16 August 2026. The two counts differ because they are different registries measuring different things.",
   fig_t:"The Chilean generation fleet · Infotécnica, 16 Aug 2026",
   f1:"Plants in the national registry", f2:"Distinct owners",
   f3:"Owners operating a single plant", f4:"PMGD units declaring storage",
@@ -344,6 +359,12 @@ const i18n = {
   band2_t:"E\u00f3lica y almacenamiento",
   band2_h:"Cada tecnolog\u00eda define \u00aboperaci\u00f3n\u00bb de forma distinta",
   band2_p:"Un aerogenerador detenido por falta de viento no est\u00e1 indisponible. Una bater\u00eda con el ciclo abierto no tiene eficiencia calculable. Lo que s\u00ed puede ser id\u00e9ntico entre tecnolog\u00edas es la definici\u00f3n de qu\u00e9 hace v\u00e1lida a una cifra.",
+  cap_t:"Capacidad instalada \u00b7 Reporte CNE, julio 2026",
+  cp1:"MW de potencia neta instalada en el sistema nacional",
+  cp2:"MW de energ\u00edas renovables no convencionales \u2014 52,4% de la matriz",
+  cp3:"MW de solar fotovoltaica \u2014 la mayor tecnolog\u00eda individual, 32,2%",
+  cp4:"MW de e\u00f3lica en 65 unidades, 16,3%",
+  cap_src:"Capacidad: CNE, Reporte Capacidad Instalada Generaci\u00f3n, julio 2026 \u2014 potencia neta de unidades en operaci\u00f3n. Registro: Infot\u00e9cnica, Coordinador El\u00e9ctrico Nacional, extracci\u00f3n del 16 de agosto de 2026. Ambos conteos difieren porque son registros distintos que miden cosas distintas.",
   fig_t:"El parque generador chileno · Infotécnica, 16 ago 2026",
   f1:"Centrales en el registro nacional", f2:"Propietarios distintos",
   f3:"Titulares que operan una sola central", f4:"Unidades PMGD que declaran almacenamiento",
@@ -379,6 +400,7 @@ function setLang(l){
     if(d[k]!==undefined) el.innerHTML=d[k];
   });
   try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
