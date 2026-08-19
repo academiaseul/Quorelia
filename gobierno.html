@@ -109,10 +109,15 @@
   }
 
   /* hero */
+  /* image-set(): el navegador toma WebP si lo soporta y JPEG si no. */
   .hero{
     background:
       linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.88)),
       url('bg/gob-wind-close.jpg') center 28%/cover no-repeat;
+    background-image:
+      linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.88)),
+      image-set(url('bg/gob-wind-close.webp') type('image/webp'),
+                url('bg/gob-wind-close.jpg')  type('image/jpeg'));
     color:#fff;padding:92px 0 76px;position:relative;overflow:hidden;
   }
   /* Velo por ENCIMA del lienzo 3D: el canvas dibuja la foto sin el degradado
@@ -141,11 +146,10 @@
     line-height:1.7;text-shadow:0 1px 12px rgba(0,0,0,0.7);}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px;}
 
-  .disclaimer-band{
-    background:
-      linear-gradient(180deg,rgba(18,42,64,0.93),rgba(18,42,64,0.95)),
-      url('bg/gob-solar-grid.jpg') center/cover no-repeat;
-    color:#c7d4dc;padding:18px 0;border-top:.8px solid rgba(255,255,255,.08);}
+  /* Color plano: es una declaración legal y se lee mejor sin textura detrás.
+     Además evitaba cargar 255 KB para una franja de cuatro líneas. */
+  .disclaimer-band{background:var(--navy-2);color:#c7d4dc;padding:18px 0;
+    border-top:.8px solid rgba(255,255,255,.08);}
   .disclaimer-band p{font-size:13px;line-height:1.65;max-width:88ch;margin:0 auto;text-align:center;}
   .disclaimer-band b{color:#fff;}
 
@@ -181,14 +185,24 @@
 
   .dark{
     background:
-      linear-gradient(180deg,rgba(11,28,44,0.82),rgba(11,28,44,0.74) 45%,rgba(11,28,44,0.86)),
+      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
       url('bg/gob-solar-aerial.jpg') center/cover no-repeat;
+    background-image:
+      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
+      image-set(url('bg/gob-solar-aerial.webp') type('image/webp'),
+                url('bg/gob-solar-aerial.jpg')  type('image/jpeg'));
     color:#fff;
   }
   /* alterna la imagen entre secciones oscuras para que no se repita el patrón */
-  .dark.alt{background:
-      linear-gradient(180deg,rgba(11,28,44,0.82),rgba(11,28,44,0.74) 45%,rgba(11,28,44,0.86)),
-      url('bg/gob-wind-field.jpg') center 35%/cover no-repeat;}
+  .dark.alt{
+    background:
+      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
+      url('bg/gob-wind-field.jpg') center 35%/cover no-repeat;
+    background-image:
+      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
+      image-set(url('bg/gob-wind-field.webp') type('image/webp'),
+                url('bg/gob-wind-field.jpg')  type('image/jpeg'));
+  }
   .dark .sec-head h2{color:#fff;} .dark .sec-head p{color:#b9c9d1;} .dark .eyebrow{color:var(--teal);}
   .dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);}
   .dark .card h3{color:#fff;} .dark .card p{color:#b9c9d1;} .dark .card .k{color:var(--teal);}
@@ -226,12 +240,10 @@
   .note p{font-size:14px;color:#4a5c67;line-height:1.7;}
   .note.teal{border-left-color:var(--teal);background:rgba(31,182,168,.06);}
 
-  .cta{
-    background:
-      linear-gradient(180deg,rgba(18,42,64,0.80),rgba(18,42,64,0.70) 50%,rgba(18,42,64,0.88)),
-      url('bg/gob-hybrid.jpg') center 45%/cover no-repeat;
-    color:#fff;text-align:center;padding:76px 0;
-  }
+  /* Sin imagen: azul sólido de marca, como el cierre del home. La foto aquí
+     lavaba el fondo y restaba legibilidad al bloque de contacto. */
+  .cta{background:var(--navy);color:#fff;text-align:center;padding:76px 0;}
+  .cta p{color:#c7d4dc;}
   .cta h2{font-family:var(--font-display);font-size:var(--fs-h3);letter-spacing:-0.025em;font-weight:500;margin-bottom:14px;}
   .cta p{color:#b9c9d1;max-width:62ch;margin:0 auto 28px;font-size:16.5px;line-height:1.7;}
 
