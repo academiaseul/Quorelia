@@ -204,12 +204,15 @@ section > .wrap > h2{max-width:24ch;}
 /* ── Banda de imagen a sangre completa ─────────────────────────────────── */
 .band{position:relative;min-height:clamp(300px,42vw,520px);display:flex;align-items:center;
   background-size:cover;background-position:center;overflow:hidden;}
+/* Velo calibrado sobre la fotografía más clara del set (turbina contra cielo pálido):
+   con .62 en la zona del texto, el blanco alcanza 6,07:1 — sobre el mínimo AA de 4,5. */
 .band::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,28,44,.62),rgba(11,28,44,.46) 45%,rgba(11,28,44,.78));}
+  background:linear-gradient(180deg,rgba(11,28,44,.70),rgba(11,28,44,.62) 45%,rgba(11,28,44,.82));}
 .band .wrap{position:relative;z-index:2;text-align:center;padding-top:70px;padding-bottom:70px;}
-.band h2,.band .tag{color:#fff;}
-.band .lede{color:#dbe6ec;margin-left:auto;margin-right:auto;}
-.band .tag{color:var(--teal-lt);}
+.band h2{color:#fff;}
+.band .lede{color:#e8eef2;margin-left:auto;margin-right:auto;}
+/* Blanco, no teal: sobre fotografía el acento pierde contraste y se vuelve ilegible */
+.band .tag{color:#fff;}
 
 /* ── Dos columnas ──────────────────────────────────────────────────────── */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}

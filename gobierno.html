@@ -25,25 +25,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="quorelia.css">
 <style>
-  /* Sólo lo específico de esta página */
-  .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:120px 0 96px;}
-  .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;
-    filter:blur(2px) brightness(0.55) saturate(0.8);transform:scale(1.04);
-    opacity:0;transition:opacity 1.2s var(--ease);}
-  .hero-video.ready{opacity:1;}
-  .hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,rgba(11,28,44,.72),rgba(11,28,44,.60) 45%,rgba(11,28,44,.92));}
-  .hero .wrap{position:relative;z-index:2;}
-  .hero h1{max-width:17ch;}
-  .hero .lede{color:#c7d4dc;max-width:64ch;margin-top:22px;}
-  .hero-acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
-  .hero .btn-sm{border-color:rgba(255,255,255,.5);color:#fff;}
-  .hero .btn-sm:hover{background:#fff;color:var(--navy);}
-  .hero .btn-sm.fill{background:var(--teal-lt);border-color:var(--teal-lt);color:var(--navy);font-weight:600;}
-  .hero .btn-sm.fill:hover{background:#fff;border-color:#fff;}
-  .scope{background:var(--navy-2);color:#c7d4dc;padding:22px 0;}
-  .scope p{font-size:13px;line-height:1.65;color:#c7d4dc;max-width:100ch;}
-  .scope b{color:#fff;}
+  /* ── Página de gobierno: blanco limpio, todo al eje central ──────────── */
+  .hero{background:var(--paper);padding:118px 0 82px;text-align:center;}
+  .hero h1{max-width:19ch;margin:0 auto;}
+  .hero .lede{max-width:70ch;margin:24px auto 0;}
+  .hero-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:36px;}
+  .hero .btn-sm.fill{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .hero .btn-sm.fill:hover{background:var(--paper);color:var(--ink);}
+
+  /* Banda de alcance: gris muy claro, sin peso visual */
+  .scope{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;}
+  .scope p{font-size:13px;line-height:1.7;color:var(--ink-2);max-width:104ch;margin:0 auto;text-align:center;}
+  .scope b{color:var(--ink);}
+
+  /* Alternancia clara en vez de secciones oscuras.
+     Dentro de una sección gris, las tarjetas van en blanco para que
+     conserven su borde visual — si no, se funden con el fondo. */
+  .alt{background:var(--paper-2);}
+  .alt .card{background:var(--paper);}
+  .alt .note{background:rgba(20,148,135,.07);}
+  .alt .note.a{background:rgba(180,83,9,.07);}
 </style>
 </head>
 <body>
@@ -90,14 +91,10 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
-         poster="bg/gob-hero-poster.jpg" aria-hidden="true">
-    <source src="bg/gob-hero.mp4" type="video/mp4">
-  </video>
   <div class="wrap">
-    <p class="tag t">Sector público · Autoridad fiscalizadora</p>
-    <h1 class="mega" style="margin-top:18px;">Inteligencia para un sistema eléctrico más <span style="color:var(--teal-lt);">transparente</span></h1>
-    <p class="lede">Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es que la información sobre el desempeño de una instalación sea <b style="color:#fff;">comparable entre activos</b>, <b style="color:#fff;">trazable hasta la medición que la sustenta</b> y <b style="color:#fff;">reproducible ante un requerimiento</b>.</p>
+    <p class="tag g">Sector público · Autoridad fiscalizadora</p>
+    <h1 class="mega" style="margin-top:18px;">Inteligencia para un sistema eléctrico más <span style="color:var(--grey);">transparente</span></h1>
+    <p class="lede">Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es que la información sobre el desempeño de una instalación sea <b>comparable entre activos</b>, <b>trazable hasta la medición que la sustenta</b> y <b>reproducible ante un requerimiento</b>.</p>
     <div class="hero-acts">
       <a href="#que-permite" class="btn-sm fill">Qué permite ver</a>
       <a href="#piloto" class="btn-sm">Propuesta de piloto</a>
@@ -115,7 +112,7 @@
 <section>
   <div class="wrap">
     <p class="tag g rv">01 · El punto de partida</p>
-    <h2 class="big rv" style="margin:14px 0 18px;max-width:28ch;">El cuello de botella no está en terreno. Está en la revisión documental.</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:28ch;">El cuello de botella no está en terreno. Está en la revisión documental.</h2>
     <p class="lede rv" style="margin-bottom:32px;">Según la Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025, en generación distribuida se ejecutaron 2.341 fiscalizaciones. De ellas, 2.100 fueron revisiones documentales y 241 en terreno.</p>
 
     <div class="figs rv">
@@ -125,7 +122,7 @@
       <div class="fig"><div class="v">241</div><div class="k">Revisiones en terreno</div></div>
     </div>
 
-    <p class="lede rv" style="margin:32px 0 40px;max-width:78ch;">Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda.</p>
+    <p class="lede rv" style="margin:32px auto 40px;max-width:78ch;">Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda.</p>
 
     <div class="cards c3 rv">
       <div class="card"><p class="tag g">Consecuencia 01</p><h4>No se puede comparar</h4><p>Dos centrales equivalentes informan disponibilidad con denominadores distintos. La cifra parece comparable y no lo es.</p></div>
@@ -136,21 +133,21 @@
 </section>
 
 <!-- ═══ EVIDENCIA ═══ -->
-<section class="dark">
+<section class="alt">
   <div class="wrap">
     <p class="tag g rv">02 · Capacidad analítica demostrada</p>
-    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Cuatro hallazgos sobre el registro público nacional</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:30ch;">Cuatro hallazgos sobre el registro público nacional</h2>
     <p class="lede rv" style="margin-bottom:36px;">Análisis ejecutado sobre la totalidad del registro de Infotécnica del Coordinador Eléctrico Nacional — 2.618 unidades generadoras en 2.029 centrales, extracción del 16 de agosto de 2026. Sin datos simulados. Reproducible ejecutando el mismo procedimiento sobre los archivos de origen.</p>
 
     <div class="cards c3 rv">
-      <div class="card"><p class="tag t">Estructura</p><div class="c-fig">91,7%</div><p>de los titulares opera una sola central. De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento.</p></div>
-      <div class="card"><p class="tag t">Documentación</p><div class="c-fig">23,1%</div><p>de completitud en la ficha técnica solar coordinada — la más baja del registro. La fotovoltaica concentra 1.375 de las 2.029 centrales del país (67,8%).</p></div>
-      <div class="card"><p class="tag t">Almacenamiento</p><div class="c-fig">2 / 977</div><p>unidades PMGD declaran un sistema de almacenamiento. Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo y control.</p></div>
+      <div class="card"><p class="tag g">Estructura</p><div class="c-fig">91,7%</div><p>de los titulares opera una sola central. De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento.</p></div>
+      <div class="card"><p class="tag g">Documentación</p><div class="c-fig">23,1%</div><p>de completitud en la ficha técnica solar coordinada — la más baja del registro. La fotovoltaica concentra 1.375 de las 2.029 centrales del país (67,8%).</p></div>
+      <div class="card"><p class="tag g">Almacenamiento</p><div class="c-fig">2 / 977</div><p>unidades PMGD declaran un sistema de almacenamiento. Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo y control.</p></div>
     </div>
 
     <div class="note rv" style="margin-top:26px;">
       <h4>Con solo dos fichas de almacenamiento ya aparecen tres problemas estructurales</h4>
-      <p>Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera; los tres se detectan automáticamente al momento de la carga. <b style="color:#fff;">Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b></p>
+      <p>Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera; los tres se detectan automáticamente al momento de la carga. <b>Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b></p>
     </div>
 
     <p class="src rv" style="margin-top:22px;max-width:88ch;">Salvedad metodológica: parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta. Esta medida no debe leerse como incumplimiento de los titulares, sino como una medida de cuánta información estructurada está disponible hoy para análisis automatizado de cartera. Que el registro no permita distinguir «no aplica» de «no informado» es, en sí mismo, parte del hallazgo.</p>
@@ -161,7 +158,7 @@
 <section id="que-permite">
   <div class="wrap">
     <p class="tag g rv">03 · Alcance funcional</p>
-    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Qué podría observar una autoridad debidamente autorizada</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:30ch;">Qué podría observar una autoridad debidamente autorizada</h2>
     <p class="lede rv" style="margin-bottom:34px;">El acceso a información de una instalación depende siempre de la autorización expresa de su titular y del marco legal aplicable. Lo que sigue describe capacidades técnicas, no atribuciones.</p>
 
     <table class="rv">
@@ -184,10 +181,10 @@
 </section>
 
 <!-- ═══ CINCO CAPACIDADES ═══ -->
-<section class="dark">
+<section class="alt">
   <div class="wrap">
     <p class="tag g rv">04 · Cómo opera</p>
-    <h2 class="big rv" style="margin:14px 0 18px;">Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;">Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
     <p class="lede rv" style="margin-bottom:38px;">Cinco capacidades encadenadas. Las tres primeras están operativas hoy; las dos últimas se describen con el alcance que efectivamente tienen.</p>
 
     <div class="flow rv">
@@ -200,7 +197,7 @@
 
     <div class="note a rv" style="margin-top:38px;">
       <h4>Precisión sobre el alcance de «anticipar»</h4>
-      <p>Quorelia detecta <b style="color:#fff;">desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.</p>
+      <p>Quorelia detecta <b>desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.</p>
     </div>
   </div>
 </section>
@@ -209,7 +206,7 @@
 <section>
   <div class="wrap">
     <p class="tag g rv">05 · Gobernanza de datos</p>
-    <h2 class="big rv" style="margin:14px 0 18px;">Construido para infraestructura crítica</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;">Construido para infraestructura crítica</h2>
     <p class="lede rv" style="margin-bottom:34px;">La información operacional de una central es sensible y en muchos casos estratégica. Estos son los principios de arquitectura que aplicamos.</p>
 
     <div class="cards c3 rv">
@@ -229,10 +226,10 @@
 </section>
 
 <!-- ═══ PILOTO ═══ -->
-<section id="piloto" class="dark">
+<section id="piloto" class="alt">
   <div class="wrap">
     <p class="tag g rv">06 · Propuesta concreta</p>
-    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
     <p class="lede rv" style="margin-bottom:34px;">No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.</p>
 
     <table class="rv">
@@ -245,7 +242,7 @@
       <tr><td><b>Definición de fracaso</b></td><td>Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.</td></tr>
     </table>
 
-    <p class="lede rv" style="margin-top:28px;max-width:82ch;"><b style="color:#fff;">Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
+    <p class="lede rv" style="margin-top:28px;max-width:82ch;"><b>Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
   </div>
 </section>
 
@@ -253,7 +250,7 @@
 <section>
   <div class="wrap">
     <p class="tag g rv">07 · Límites explícitos</p>
-    <h2 class="big rv" style="margin:14px 0 34px;">Lo que Quorelia no hace</h2>
+    <h2 class="big rv" style="margin:14px auto 34px;">Lo que Quorelia no hace</h2>
     <div class="cards c3 rv">
       <div class="card"><h4>No reemplaza la fiscalización en terreno</h4><p>La inspección presencial resuelve preguntas que ningún dato remoto puede responder. El objetivo es dirigir mejor ese esfuerzo, no sustituirlo.</p></div>
       <div class="card"><h4>No sustituye el juicio del fiscalizador</h4><p>El sistema entrega evidencia ordenada y trazable. La interpretación, la calificación y la decisión son siempre humanas.</p></div>
