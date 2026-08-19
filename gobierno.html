@@ -109,28 +109,32 @@
   }
 
   /* hero */
-  /* image-set(): el navegador toma WebP si lo soporta y JPEG si no. */
+  /* El fondo CSS queda como cartel de carga y respaldo: se ve mientras el
+     video descarga, y permanece si el navegador no puede reproducirlo. */
   .hero{
     background:
       linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.88)),
-      url('bg/gob-wind-close.jpg') center 28%/cover no-repeat;
-    background-image:
-      linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.88)),
-      image-set(url('bg/gob-wind-close.webp') type('image/webp'),
-                url('bg/gob-wind-close.jpg')  type('image/jpeg'));
+      url('bg/gob-hero-poster.jpg') center/cover no-repeat;
     color:#fff;padding:92px 0 76px;position:relative;overflow:hidden;
   }
+  /* Mismo tratamiento que el hero de index.html, para que las dos páginas
+     se vean como el mismo sitio: leve desenfoque, brillo bajado y saturación
+     reducida antes de aplicar el velo. */
+  .hero-video{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    object-fit:cover;z-index:0;
+    filter:blur(2px) brightness(0.62) saturate(0.85);
+    transform:scale(1.04);
+    opacity:0;transition:opacity 1.2s var(--ease-out-quint);
+  }
+  .hero-video.ready{opacity:1;}
   /* Velo por ENCIMA del lienzo 3D: el canvas dibuja la foto sin el degradado
      del fondo CSS, así que el oscurecimiento tiene que ir sobre él. */
+  /* Velo idéntico al .hero-overlay de index.html, sobre el video. */
   .hero::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
     background:
-      radial-gradient(80% 90% at 85% 10%,rgba(31,182,168,.10),transparent 60%),
-      linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.90));}
-  /* Lienzo 3D del hero. Se dibuja sobre la imagen de fondo CSS, que queda
-     como respaldo si WebGL no está disponible o si el usuario pidió menos movimiento. */
-  #hero-gl{position:absolute;inset:0;z-index:1;display:block;opacity:0;
-    transition:opacity 1.1s var(--ease-out-quint);pointer-events:none;}
-  #hero-gl.ready{opacity:1;}
+      radial-gradient(900px 520px at 50% 46%, rgba(11,28,44,0.72), rgba(11,28,44,0.30) 75%, transparent),
+      linear-gradient(180deg, rgba(11,28,44,0.80), rgba(11,28,44,0.52) 45%, rgba(11,28,44,0.88));}
   .hero .container{position:relative;z-index:3;text-align:center;max-width:1000px;}
   /* .tag idéntico al eyebrow del hero de index.html */
   .tag{display:inline-block;font-family:'SF Mono',Consolas,monospace;
@@ -272,7 +276,10 @@
 
 <!-- ───────── HERO ───────── -->
 <section class="hero">
-  <canvas id="hero-gl" aria-hidden="true"></canvas>
+  <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
+         poster="bg/gob-hero-poster.jpg" aria-hidden="true">
+    <source src="bg/gob-hero.mp4" type="video/mp4">
+  </video>
   <div class="container">
     <span class="tag">Sector público · Autoridad fiscalizadora</span>
     <h1>Inteligencia para un sistema eléctrico más transparente</h1>
@@ -491,122 +498,37 @@
 
 <script>
 /* ═══════════════════════════════════════════════════════════════════════
-   HERO 3D — parallax de profundidad sobre la fotografía.
-   La imagen se monta sobre una malla y se desplaza según la luminancia
-   del propio pixel: las zonas claras (cielo, palas) quedan al frente y
-   las oscuras al fondo. Al mover el puntero, la cámara se desplaza muy
-   levemente y aparece profundidad real.
-
-   Se carga sólo si: hay WebGL, la pantalla no es pequeña y el usuario no
-   pidió reducir el movimiento. En cualquier otro caso queda la imagen
-   de fondo CSS, que ya está puesta y se ve idéntica en reposo.
+   HERO — video de fondo.
+   El póster y el fondo CSS se ven mientras el video descarga y permanecen
+   si el navegador no puede reproducirlo. En pantallas pequeñas y con
+   reducción de movimiento activada no se descarga el video en absoluto.
    ═══════════════════════════════════════════════════════════════════════ */
-(function heroGL(){
-  var cv = document.getElementById('hero-gl');
-  if (!cv) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.innerWidth < 720) return;                     // en móvil no compensa
-  try { if (!document.createElement('canvas').getContext('webgl')) return; }
-  catch(e){ return; }
+(function heroVideo(){
+  var v = document.getElementById('hero-video');
+  if (!v) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var s = document.createElement('script');
-  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-  s.async = true;
-  s.onerror = function(){ /* sin three.js: se mantiene el fondo CSS */ };
-  s.onload = function(){
-    var hero = cv.parentNode, W = hero.clientWidth, H = hero.clientHeight;
-    var renderer = new THREE.WebGLRenderer({canvas:cv, antialias:true, alpha:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(W, H, false);
+  // Sin video en móvil ni con reducción de movimiento: queda el póster.
+  if (reduce || window.innerWidth < 720) {
+    v.removeAttribute('autoplay');
+    v.pause();
+    var src = v.querySelector('source');
+    if (src) src.removeAttribute('src');
+    v.removeAttribute('src');
+    v.load();
+    return;
+  }
 
-    var scene  = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(38, W/H, 0.1, 100);
-    camera.position.z = 10;
+  v.addEventListener('canplay', function(){ v.classList.add('ready'); }, {once:true});
+  v.addEventListener('error', function(){ v.style.display = 'none'; });
 
-    new THREE.TextureLoader().load('bg/gob-wind-close.jpg', function(tex){
-      tex.minFilter = THREE.LinearFilter;
-
-      var uni = {
-        map:      { value: tex },
-        mouse:    { value: new THREE.Vector2(0,0) },
-        time:     { value: 0 },
-        cover:    { value: new THREE.Vector2(1,1) },
-        strength: { value: 0.42 }
-      };
-      // ajuste "cover": la textura llena el plano sin deformarse
-      var ia = tex.image.width / tex.image.height, pa = W/H;
-      if (pa > ia) uni.cover.value.set(1, ia/pa); else uni.cover.value.set(pa/ia, 1);
-
-      var mat = new THREE.ShaderMaterial({
-        uniforms: uni,
-        vertexShader: [
-          'varying vec2 vUv;',
-          'uniform sampler2D map;',
-          'uniform vec2 cover;',
-          'uniform float strength;',
-          'void main(){',
-          '  vUv = (uv - 0.5) * cover + 0.5;',
-          '  vec3 c = texture2D(map, vUv).rgb;',
-          '  float lum = dot(c, vec3(0.299,0.587,0.114));',   // profundidad por luminancia
-          '  vec3 p = position;',
-          '  p.z += (lum - 0.35) * strength * 3.0;',
-          '  gl_Position = projectionMatrix * modelViewMatrix * vec4(p,1.0);',
-          '}'
-        ].join('\n'),
-        fragmentShader: [
-          'varying vec2 vUv;',
-          'uniform sampler2D map;',
-          'void main(){',
-          '  vec3 c = texture2D(map, vUv).rgb;',
-          '  gl_FragColor = vec4(c, 1.0);',
-          '}'
-        ].join('\n')
-      });
-
-      var h = 2 * Math.tan((38*Math.PI/180)/2) * camera.position.z;
-      var mesh = new THREE.Mesh(new THREE.PlaneGeometry(h*(W/H), h, 220, 220), mat);
-      scene.add(mesh);
-
-      var tx=0, ty=0, cx=0, cy=0;
-      hero.addEventListener('pointermove', function(e){
-        var r = hero.getBoundingClientRect();
-        tx = ((e.clientX - r.left)/r.width  - 0.5) * 2;
-        ty = ((e.clientY - r.top )/r.height - 0.5) * 2;
-      });
-      hero.addEventListener('pointerleave', function(){ tx=0; ty=0; });
-
-      var raf, visible = true;
-      new IntersectionObserver(function(es){ visible = es[0].isIntersecting; })
-        .observe(hero);
-
-      (function loop(t){
-        raf = requestAnimationFrame(loop);
-        if (!visible) return;
-        cx += (tx - cx) * 0.045;          // amortiguación: movimiento suave, nunca brusco
-        cy += (ty - cy) * 0.045;
-        camera.position.x = cx * 0.42;
-        camera.position.y = -cy * 0.28;
-        camera.lookAt(0,0,0);
-        uni.time.value = t * 0.001;
-        renderer.render(scene, camera);
-      })(0);
-
-      cv.classList.add('ready');
-
-      var rt;
-      window.addEventListener('resize', function(){
-        clearTimeout(rt);
-        rt = setTimeout(function(){
-          W = hero.clientWidth; H = hero.clientHeight;
-          renderer.setSize(W,H,false);
-          camera.aspect = W/H; camera.updateProjectionMatrix();
-          var pa2 = W/H;
-          if (pa2 > ia) uni.cover.value.set(1, ia/pa2); else uni.cover.value.set(pa2/ia, 1);
-        }, 180);
-      });
-    });
-  };
-  document.head.appendChild(s);
+  // Pausa cuando el hero sale de pantalla: no gasta CPU ni batería de fondo.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      if (es[0].isIntersecting) { var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+      else v.pause();
+    }, {threshold:0.01}).observe(v.parentNode);
+  }
 })();
 
 (function(){
