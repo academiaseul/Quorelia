@@ -33,18 +33,33 @@ Ten preparada la respuesta precisa: qué instalaciones, bajo qué figura contrac
 
 ---
 
-## 2. «BESS Cerro Aurora, Valle Luna y Salar Bravo» — no existen en tus archivos
+## 2. «BESS Cerro Aurora, Valle Luna y Salar Bravo» — resuelto: son maquetas
 
-El brief describe *"las 3 plantas activas que actualmente integran el sistema (BESS Cerro Aurora, Valle Luna y Salar Bravo, sumando 303 MW y 1.872 MWh)"*.
+**Confirmado por Jay: los tres nombres son demo mocks creados internamente.** Eso cierra el riesgo mayor, pero deja una distinción que sí importa.
 
-**Busqué esos tres nombres en todo el repositorio de Quorelia y no aparecen en ningún archivo.** No están en el tablero SCADA, ni en los informes de muestra, ni en el sitio. Las instalaciones ficticias que sí creamos se llaman *Parque de Almacenamiento Tamarugal*, *Planta Solar Cerro Tinaja* y *Parque Eólico Sierra Guanaco*, y están marcadas como ilustrativas en cada página.
+### Mostrarlos está bien. Describirlos como activos, no.
 
-Hay dos posibilidades y conviene aclararlas antes del viernes:
+No hay ningún problema en abrir el tablero y recorrerlo en la reunión. Es lo que hace cualquier proveedor serio y **es la mejor forma de demostrar que el producto existe**. Lo único que cambia es la frase con que se introduce:
 
-- **Son plantas reales de un cliente.** Entonces necesitas autorización escrita para nombrarlas ante la autoridad, y hay que verificar sus cifras contra la fuente.
-- **Son nombres de demostración generados para una maqueta.** Entonces **no pueden presentarse como "3 plantas activas que actualmente integran el sistema"**. Eso sería describir una capacidad instalada que no existe, ante un fiscalizador, en una audiencia de registro público.
+| ❌ No decir | ✅ Decir |
+|---|---|
+| «Las 3 plantas activas que actualmente integran el sistema» | «Esta es una demostración con datos ilustrativos, construida para mostrar la estructura de salida» |
+| «Sumando 303 MW y 1.872 MWh» | «Configurada sobre un caso de 303 MW y 1.872 MWh para mostrar el comportamiento a esa escala» |
+| «Nuestros clientes» | «Un activo de referencia» |
 
-**Recomendación:** no incluir nombres de instalaciones en esta presentación. La versión que construí no menciona ninguna. El argumento se sostiene con el análisis de Infotécnica, que es real, verificable y —esto es lo importante— *nadie más lo ha hecho*.
+La diferencia es de una sola oración, y es exactamente la que separa una demostración legítima de una afirmación falsa sobre capacidad instalada ante un fiscalizador.
+
+### Regla práctica para el viernes
+
+**Di «demostración» en voz alta antes de que alguien lo pregunte.** Si el Jefe de Unidad descubre por su cuenta que los datos son simulados, el resto de la reunión se lee bajo sospecha. Si lo dices tú primero, refuerza justamente lo que estás vendiendo: que declaras lo que no está medido.
+
+Es el mismo principio del producto — una cifra retenida con su razón declarada vale más que una que aparenta certeza.
+
+### Sobre la presentación
+
+Las diez láminas **no nombran ninguna instalación**, a propósito: el argumento se sostiene solo con el análisis de Infotécnica, que es real y verificable. Si quieres, puedo agregar una lámina de producto que muestre el tablero con la marca de «datos ilustrativos» visible, para pasar del argumento a la demostración dentro del mismo documento.
+
+**Nota de consistencia:** los informes de muestra usan otros nombres ficticios — *Parque de Almacenamiento Tamarugal*, *Planta Solar Cerro Tinaja*, *Parque Eólico Sierra Guanaco*—, todos marcados como ilustrativos en cada página. Conviene unificar la nomenclatura entre el tablero y los informes para que no parezcan carteras distintas.
 
 ---
 
@@ -75,7 +90,8 @@ En la presentación las redacté como capacidades **del sistema de información*
 
 - [ ] Corregir mentalmente 2.291 MW → **2.283 MW de BESS**, sistema total ~38.700 MW
 - [ ] Definir con precisión qué respalda el «1 GW» y en qué unidades
-- [ ] Decidir sobre los tres nombres de plantas: autorización, o no mencionarlos
+- [x] ~~Decidir sobre los tres nombres de plantas~~ — resuelto: son maquetas. Mostrarlas diciendo **«demostración con datos ilustrativos»** antes de que lo pregunten
+- [ ] Unificar nomenclatura entre el tablero y los informes de muestra
 - [ ] Confirmar la razón social «Quorelia SpA»
 - [ ] Llevar los dos Excel de Infotécnica por si piden ver el origen del análisis
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" id="html-root">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
   gtag('config', 'G-H1F1ZXMMT2');
 </script>
 <title>Quorelia — Inteligencia para un sistema eléctrico más transparente</title>
-<meta name="description" content="Tecnología de monitoreo y verificación de datos operacionales para infraestructura energética: visibilidad, trazabilidad y evidencia reproducible para la toma de decisiones.">
+<meta name="description" content="Tecnología de monitoreo y verificación de datos operacionales para infraestructura energética: visibilidad, trazabilidad y evidencia reproducible.">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <meta property="og:type" content="website">
@@ -22,444 +22,152 @@
 <meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
 <style>
-  /* Tipografía de titular — mac's Tweaked Minecraft (SIL OFL), idéntica al home */
-  @font-face{
-    font-family:'Quorelia Title';
-    src:url('quorelia-title.woff2') format('woff2'),
-        url('quorelia-title.ttf') format('truetype');
-    font-weight:400;font-style:normal;font-display:swap;
-  }
-  @font-face{
-    font-family:'Quorelia Title';
-    src:url('quorelia-title-bold.woff2') format('woff2'),
-        url('quorelia-title-bold.ttf') format('truetype');
-    font-weight:700;font-style:normal;font-display:swap;
-  }
-  :root{
-    --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
-    --amber:#f5a623; --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa;
-    --white:#fff; --border:#e3e9ec;
-    --radius-sm:6px; --radius-lg:16px; --radius-pill:999px;
-
-    /* Inter — tipografía de marca, uso general */
-    --font-display:'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    /* Sólo para el titular del hero */
-    --font-title:'Quorelia Title','Courier New',monospace;
-    --mono:'SF Mono',Consolas,'Courier New',monospace;
-
-    /* Escala tipográfica bimodal — misma del home */
-    --fs-display: clamp(2.1rem, 1.5rem + 2.6vw, 4.25rem);
-    --fs-h2: clamp(1.85rem, 1.5rem + 1.6vw, 3rem);
-    --fs-h3: clamp(1.3rem, 1.15rem + 0.7vw, 1.7rem);
-    --fs-body: 1.0625rem;
-    --fs-eyebrow: 0.75rem;
-
-    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  @media(prefers-reduced-motion: reduce){
-    *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
-    .reveal{opacity:1 !important;filter:none !important;transform:none !important;}
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--font-display);color:var(--ink);background:var(--bg);line-height:1.55;font-size:var(--fs-body);}
-  h1,h2,h3,h4,h5,h6{font-family:var(--font-display);letter-spacing:-0.02em;font-weight:500;}
-  img,svg{display:block;max-width:100%;}
-  a{color:inherit;text-decoration:none;}
-  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
-  section{padding:76px 0;}
-  /* Párrafos sueltos de sección: centrados, como el ritmo del home.
-     Las tarjetas y los avisos con filete lateral se mantienen alineados
-     a la izquierda — son otro registro tipográfico y así se leen mejor. */
-  section > .container > p{margin-left:auto;margin-right:auto;text-align:center;}
-
-  .reveal{opacity:0;filter:blur(9px);transform:translate3d(0,22px,0);
-    transition:opacity .85s var(--ease-out-quint),filter .95s var(--ease-out-quint),transform .85s var(--ease-out-quint);}
-  .reveal.in{opacity:1;filter:blur(0);transform:none;}
-
-  /* header */
-  .site-head{position:sticky;top:0;z-index:50;}
-  header{background:var(--navy);color:#fff;border-bottom:.8px solid rgba(255,255,255,.08);}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;}
-  .brand-word{font-family:'Segoe UI',Roboto,sans-serif;font-weight:800;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;color:#fff;}
-  nav.links{display:flex;gap:28px;align-items:center;font-size:15px;}
-  nav.links a{opacity:0.85;transition:opacity .15s;} nav.links a:hover{opacity:1;}
-  nav.links a.current{opacity:1;font-weight:700;}
-  .btn{display:inline-block;padding:14px 26px;border-radius:var(--radius-sm);font-weight:700;font-size:15px;
-    cursor:pointer;border:2px solid transparent;transition:transform .15s, background .15s;}
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--teal);color:var(--navy);}
-  .btn-primary:hover{background:var(--teal-dark);}
-  .btn-outline{border-color:rgba(255,255,255,0.35);color:var(--white);}
-  .btn-outline:hover{border-color:var(--white);}
-  .nav-cta{padding:10px 18px;font-size:14px;white-space:nowrap;}
-  /* Mismos puntos de quiebre que index.html */
-  @media(max-width:860px){
-    nav.links{display:none;}
-    .menu-btn{display:block;}
-  }
-  @media(max-width:560px){
-    .container{padding:0 16px;}
-    .nav{gap:8px;padding:8px 0;}
-    .brand-word{font-size:15px;letter-spacing:1.6px;}
-  }
-  @media(max-width:380px){
-    .brand-word{font-size:13.5px;letter-spacing:1.2px;}
-    .nav-cta{padding:7px 10px;font-size:12px;}
-  }
-
-  /* hero */
-  /* El fondo CSS queda como cartel de carga y respaldo: se ve mientras el
-     video descarga, y permanece si el navegador no puede reproducirlo. */
-  .hero{
-    background:
-      linear-gradient(180deg,rgba(11,28,44,0.58),rgba(11,28,44,0.74) 55%,rgba(11,28,44,0.88)),
-      url('bg/gob-hero-poster.jpg') center/cover no-repeat;
-    color:#fff;padding:92px 0 76px;position:relative;overflow:hidden;
-  }
-  /* Mismo tratamiento que el hero de index.html, para que las dos páginas
-     se vean como el mismo sitio: leve desenfoque, brillo bajado y saturación
-     reducida antes de aplicar el velo. */
-  .hero-video{
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    object-fit:cover;z-index:0;
-    filter:blur(2px) brightness(0.62) saturate(0.85);
-    transform:scale(1.04);
-    opacity:0;transition:opacity 1.2s var(--ease-out-quint);
-  }
+  /* Sólo lo específico de esta página */
+  .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:120px 0 96px;}
+  .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;
+    filter:blur(2px) brightness(0.55) saturate(0.8);transform:scale(1.04);
+    opacity:0;transition:opacity 1.2s var(--ease);}
   .hero-video.ready{opacity:1;}
-  /* Velo por ENCIMA del lienzo 3D: el canvas dibuja la foto sin el degradado
-     del fondo CSS, así que el oscurecimiento tiene que ir sobre él. */
-  /* Velo idéntico al .hero-overlay de index.html, sobre el video. */
-  .hero::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-    background:
-      radial-gradient(900px 520px at 50% 46%, rgba(11,28,44,0.72), rgba(11,28,44,0.30) 75%, transparent),
-      linear-gradient(180deg, rgba(11,28,44,0.80), rgba(11,28,44,0.52) 45%, rgba(11,28,44,0.88));}
-  .hero .container{position:relative;z-index:3;text-align:center;max-width:1000px;}
-  /* .tag idéntico al eyebrow del hero de index.html */
-  .tag{display:inline-block;font-family:'SF Mono',Consolas,monospace;
-    font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;
-    color:var(--teal);background:rgba(31,182,168,0.12);border:0.8px solid rgba(31,182,168,0.35);
-    padding:7px 14px;border-radius:var(--radius-pill);margin-bottom:20px;}
-  .hero h1{
-    font-family:var(--font-title);
-    font-size:var(--fs-display);line-height:1.25;letter-spacing:0.01em;font-weight:400;
-    margin-bottom:24px;text-shadow:0 2px 24px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.6);
-  }
-  .hero p{font-size:18px;color:#e3ebf0;max-width:600px;margin:0 auto 26px;
-    line-height:1.7;text-shadow:0 1px 12px rgba(0,0,0,0.7);}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px;}
-
-  /* Color plano: es una declaración legal y se lee mejor sin textura detrás.
-     Además evitaba cargar 255 KB para una franja de cuatro líneas. */
-  .disclaimer-band{background:var(--navy-2);color:#c7d4dc;padding:18px 0;
-    border-top:.8px solid rgba(255,255,255,.08);}
-  .disclaimer-band p{font-size:13px;line-height:1.65;max-width:88ch;margin:0 auto;text-align:center;}
-  .disclaimer-band b{color:#fff;}
-
-  /* .sec-head replica exactamente .section-head de index.html */
-  .sec-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .eyebrow{display:inline-block;font-family:'SF Mono',Consolas,monospace;
-    font-size:11.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--teal-dark);margin-bottom:10px;}
-  .sec-head h2{font-family:var(--font-display);font-size:var(--fs-h2);
-    line-height:1.08;letter-spacing:-0.03em;font-weight:500;margin-bottom:14px;}
-  .sec-head p{color:var(--muted);font-size:16px;line-height:1.7;}
-
-  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);
-    border:.8px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:26px 0;}
-  .stat{padding:24px 22px;border-left:.8px solid var(--border);}
-  .stat:first-child{border-left:0;}
-  /* mismas proporciones que .stat-card de index.html */
-  .stat .n{font-family:var(--font-display);font-size:34px;font-weight:400;color:var(--navy);
-    letter-spacing:-0.02em;line-height:1.1;}
-  .stat .n.hot{color:#b45309;}
-  .stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.45;}
-  @media(max-width:760px){.stat-row{grid-template-columns:1fr 1fr;}.stat:nth-child(odd){border-left:0;}}
-
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .card{background:var(--white);border:0.8px solid var(--border);border-radius:var(--radius-lg);padding:28px;
-    transition:box-shadow .2s, transform .2s;}
-  .card:hover{box-shadow:0 12px 28px rgba(11,28,44,0.08);transform:translateY(-3px);}
-  .card .k{font-family:'SF Mono',Consolas,monospace;font-size:12px;letter-spacing:1px;
-    text-transform:uppercase;color:var(--teal-dark);margin-bottom:10px;}
-  .card h3{font-size:18px;font-weight:700;margin-bottom:10px;}
-  .card p{color:var(--muted);font-size:14.5px;}
-  @media(max-width:860px){.cards{grid-template-columns:1fr;}}
-
-  .dark{
-    background:
-      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
-      url('bg/gob-solar-aerial.jpg') center/cover no-repeat;
-    background-image:
-      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
-      image-set(url('bg/gob-solar-aerial.webp') type('image/webp'),
-                url('bg/gob-solar-aerial.jpg')  type('image/jpeg'));
-    color:#fff;
-  }
-  /* alterna la imagen entre secciones oscuras para que no se repita el patrón */
-  .dark.alt{
-    background:
-      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
-      url('bg/gob-wind-field.jpg') center 35%/cover no-repeat;
-    background-image:
-      linear-gradient(180deg,rgba(11,28,44,0.86),rgba(11,28,44,0.80) 45%,rgba(11,28,44,0.90)),
-      image-set(url('bg/gob-wind-field.webp') type('image/webp'),
-                url('bg/gob-wind-field.jpg')  type('image/jpeg'));
-  }
-  .dark .sec-head h2{color:#fff;} .dark .sec-head p{color:#b9c9d1;} .dark .eyebrow{color:var(--teal);}
-  .dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);}
-  .dark .card h3{color:#fff;} .dark .card p{color:#b9c9d1;} .dark .card .k{color:var(--teal);}
-
-  table{width:100%;border-collapse:collapse;background:var(--white);border:.8px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
-  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
-    text-align:left;padding:13px 16px;border-bottom:1.4px solid var(--navy);background:#fbfcfd;}
-  td{font-size:14px;padding:12px 16px;border-bottom:.8px solid var(--border);vertical-align:top;color:#33454f;}
-  tr:last-child td{border-bottom:0;}
-  td b{color:var(--ink);}
-
-  /* Tablas dentro de secciones oscuras — el <b> heredaba el color de tinta oscura */
-  .dark table{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14);}
-  .dark th{background:rgba(255,255,255,.05);color:#8fa3b0;border-bottom-color:var(--teal);}
-  .dark td{color:#b9c9d1;border-bottom-color:rgba(255,255,255,.10);}
-  .dark td b{color:#fff;}
-  /* avisos y párrafos sueltos dentro de secciones oscuras */
-  .dark .note h4{color:#fff;}
-  .dark .note p{color:#b9c9d1;}
-  .dark > .container > p{color:#b9c9d1;}
-
-  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px;}
-  .fl{padding:0 20px;border-left:.8px solid rgba(255,255,255,.15);}
-  .fl:first-child{border-left:0;padding-left:0;}
-  /* mismo tratamiento que .pillar en index.html */
-  .fl .n{font-family:'SF Mono',Consolas,monospace;font-size:12px;color:var(--teal);
-    letter-spacing:1px;margin-bottom:10px;}
-  .fl h3{font-size:19px;font-weight:800;margin-bottom:8px;color:#fff;}
-  .fl p{font-size:13.5px;color:#b9c9d1;line-height:1.68;}
-  @media(max-width:900px){.flow{grid-template-columns:1fr 1fr;gap:26px 0;}.fl{padding:0 16px;}.fl:nth-child(odd){border-left:0;padding-left:0;}}
-  @media(max-width:560px){.flow{grid-template-columns:1fr;}.fl,.fl:nth-child(odd){border-left:.8px solid rgba(255,255,255,.15);padding:0 0 0 16px;}}
-
-  .note{border-left:3px solid var(--amber);background:rgba(245,166,35,.06);padding:20px 24px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-top:26px;}
-  .note h4{font-size:15px;margin-bottom:8px;}
-  .note p{font-size:14px;color:#4a5c67;line-height:1.7;}
-  .note.teal{border-left-color:var(--teal);background:rgba(31,182,168,.06);}
-
-  /* Sin imagen: azul sólido de marca, como el cierre del home. La foto aquí
-     lavaba el fondo y restaba legibilidad al bloque de contacto. */
-  .cta{background:var(--navy);color:#fff;text-align:center;padding:76px 0;}
-  .cta p{color:#c7d4dc;}
-  .cta h2{font-family:var(--font-display);font-size:var(--fs-h3);letter-spacing:-0.025em;font-weight:500;margin-bottom:14px;}
-  .cta p{color:#b9c9d1;max-width:62ch;margin:0 auto 28px;font-size:16.5px;line-height:1.7;}
-
-  footer{background:var(--navy-2);color:#b9c9d1;padding:44px 0 26px;border-top:.8px solid rgba(255,255,255,.08);}
-  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#7f93a0;}
-  .fine{font-size:12px;color:#7f93a0;line-height:1.65;margin-top:16px;padding-top:16px;border-top:.8px solid rgba(255,255,255,.08);}
-  /* ── Menú móvil ─────────────────────────────────────────────────────── */
-  .menu-btn{
-    display:none;background:none;border:0;padding:8px;margin:-8px -4px -8px 0;
-    color:var(--white);cursor:pointer;line-height:0;border-radius:var(--radius-sm);
-  }
-  .menu-btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
-  .menu-btn svg{width:24px;height:24px;display:block;}
-  .menu-btn .ico-close{display:none;}
-  .menu-btn[aria-expanded="true"] .ico-open{display:none;}
-  .menu-btn[aria-expanded="true"] .ico-close{display:block;}
-
-  .menu-scrim{
-    position:fixed;inset:0;z-index:60;background:rgba(5,9,15,0.55);
-    backdrop-filter:blur(2px);opacity:0;visibility:hidden;
-    transition:opacity .28s var(--ease-out-cubic), visibility .28s;
-  }
-  .menu-scrim.open{opacity:1;visibility:visible;}
-
-  .menu-panel{
-    position:fixed;top:0;right:0;bottom:0;z-index:61;
-    width:min(86vw,340px);background:var(--navy);
-    border-left:0.8px solid rgba(255,255,255,0.10);
-    box-shadow:-18px 0 48px rgba(0,0,0,0.42);
-    transform:translateX(100%);
-    transition:transform .34s var(--ease-out-quint);
-    display:flex;flex-direction:column;
-    padding:18px 22px calc(22px + env(safe-area-inset-bottom));
-    overflow-y:auto;-webkit-overflow-scrolling:touch;
-  }
-  .menu-panel.open{transform:translateX(0);}
-  .menu-panel .mp-head{
-    display:flex;align-items:center;justify-content:space-between;
-    padding-bottom:16px;margin-bottom:10px;
-    border-bottom:0.8px solid rgba(255,255,255,0.10);
-  }
-  .menu-panel nav{display:flex;flex-direction:column;}
-  .menu-panel nav a{
-    color:var(--white);font-size:16.5px;font-weight:500;letter-spacing:-0.01em;
-    padding:15px 0;border-bottom:0.8px solid rgba(255,255,255,0.07);
-  }
-  .menu-panel nav a:active{color:var(--teal);}
-  .menu-panel .mp-foot{margin-top:auto;padding-top:22px;}
-  .menu-panel .mp-foot .btn{width:100%;text-align:center;}
-  .menu-panel .mp-lang{display:flex;justify-content:center;margin-top:16px;}
-  .menu-panel .mp-mail{
-    display:block;text-align:center;margin-top:16px;font-size:13px;color:#8fa3b0;
-    font-family:'SF Mono',Consolas,monospace;
-  }
-  body.menu-open{overflow:hidden;}
-  @media(prefers-reduced-motion: reduce){
-    .menu-panel,.menu-scrim{transition:none;}
-  }
+  .hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(11,28,44,.72),rgba(11,28,44,.60) 45%,rgba(11,28,44,.92));}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero h1{max-width:17ch;}
+  .hero .lede{color:#c7d4dc;max-width:64ch;margin-top:22px;}
+  .hero-acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+  .hero .btn-sm{border-color:rgba(255,255,255,.5);color:#fff;}
+  .hero .btn-sm:hover{background:#fff;color:var(--navy);}
+  .hero .btn-sm.fill{background:var(--teal-lt);border-color:var(--teal-lt);color:var(--navy);font-weight:600;}
+  .hero .btn-sm.fill:hover{background:#fff;border-color:#fff;}
+  .scope{background:var(--navy-2);color:#c7d4dc;padding:22px 0;}
+  .scope p{font-size:13px;line-height:1.65;color:#c7d4dc;max-width:100ch;}
+  .scope b{color:#fff;}
 </style>
 </head>
 <body>
 
-<!-- Menú móvil -->
-<div class="menu-scrim" id="menu-scrim" hidden></div>
-<aside class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Menú de navegación" hidden>
-  <div class="mp-head">
-    <span class="brand-word">Quorelia</span>
-    <button class="menu-btn" id="menu-close" style="display:block;" aria-label="Cerrar menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="d-head">
+    <span class="brand">Quorelia</span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
     </button>
   </div>
   <nav>
-    <a href="index.html#product">Plataforma</a>
-    <a href="index.html#samples">Informes</a>
-    <a href="index.html#how">Cómo funciona</a>
+    <a href="index.html#software">Plataforma</a>
+    <a href="index.html#capabilities">Capacidades</a>
+    <a href="index.html#evidence">Evidencia</a>
     <a href="gobierno.html">Gobierno</a>
     <a href="story.html">Nuestra historia</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <div class="mp-foot">
-    <a href="#contacto" class="btn btn-primary">Solicitar una sesión técnica</a>
-    <a class="mp-mail" href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+  <div class="d-foot">
+    <a href="#contacto" class="btn-sm">Solicitar sesión técnica</a>
   </div>
 </aside>
 
-<div class="site-head">
-  <header>
-    <div class="container nav">
-      <a href="index.html" class="brand" aria-label="Quorelia"><span class="brand-word">Quorelia</span></a>
-      <nav class="links">
-        <a href="index.html#product">Plataforma</a>
-        <a href="index.html#samples">Informes</a>
-        <a href="index.html#how">Cómo funciona</a>
-        <a href="gobierno.html" class="current">Gobierno</a>
-        <a href="story.html">Nuestra historia</a>
-      </nav>
-      <a href="#contacto" class="btn btn-primary nav-cta">Solicitar una sesión técnica</a>
-        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-panel" aria-label="Menú">
-          <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-          <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
-        </button>
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Quorelia</a>
+    <nav class="nav-links">
+      <a href="index.html#software">Plataforma</a>
+      <a href="index.html#capabilities">Capacidades</a>
+      <a href="index.html#evidence">Evidencia</a>
+      <a href="gobierno.html" class="on">Gobierno</a>
+      <a href="story.html">Nuestra historia</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contacto" class="btn-sm">Solicitar sesión técnica</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
-  </header>
-</div>
+  </div>
+</header>
 
-<!-- ───────── HERO ───────── -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
   <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="metadata"
          poster="bg/gob-hero-poster.jpg" aria-hidden="true">
     <source src="bg/gob-hero.mp4" type="video/mp4">
   </video>
-  <div class="container">
-    <span class="tag">Sector público · Autoridad fiscalizadora</span>
-    <h1>Inteligencia para un sistema eléctrico más transparente</h1>
-    <p>Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es simple: que la información sobre el desempeño de una instalación sea <b style="color:#fff;">comparable entre activos</b>, <b style="color:#fff;">trazable hasta la medición que la sustenta</b> y <b style="color:#fff;">reproducible ante un requerimiento</b>.</p>
-    <div class="hero-actions">
-      <a href="#que-permite" class="btn btn-primary">Qué permite ver</a>
-      <a href="#piloto" class="btn btn-outline">Propuesta de piloto</a>
+  <div class="wrap">
+    <p class="tag t">Sector público · Autoridad fiscalizadora</p>
+    <h1 class="mega" style="margin-top:18px;">Inteligencia para un sistema eléctrico más <span style="color:var(--teal-lt);">transparente</span></h1>
+    <p class="lede">Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es que la información sobre el desempeño de una instalación sea <b style="color:#fff;">comparable entre activos</b>, <b style="color:#fff;">trazable hasta la medición que la sustenta</b> y <b style="color:#fff;">reproducible ante un requerimiento</b>.</p>
+    <div class="hero-acts">
+      <a href="#que-permite" class="btn-sm fill">Qué permite ver</a>
+      <a href="#piloto" class="btn-sm">Propuesta de piloto</a>
     </div>
   </div>
 </section>
 
-<div class="disclaimer-band">
-  <div class="container">
-    <p><b>Declaración de alcance.</b> Quorelia es una empresa privada de tecnología. <b>No es un sistema oficial de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado</b>, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente. Lo que ofrece es tecnología capaz de <b>respaldar</b> una mayor visibilidad, trazabilidad y toma de decisiones basada en evidencia sobre infraestructura energética.</p>
+<div class="scope">
+  <div class="wrap">
+    <p><b>Declaración de alcance.</b> Quorelia es una empresa privada de tecnología. <b>No es un sistema oficial de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado</b>, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente. Lo que ofrece es tecnología capaz de <b>respaldar</b> una mayor visibilidad, trazabilidad y toma de decisiones basada en evidencia.</p>
   </div>
 </div>
 
-<!-- ───────── EL PROBLEMA ───────── -->
-<section class="reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">El punto de partida</div>
-      <h2>El cuello de botella no está en terreno. Está en la revisión documental.</h2>
-      <p>De acuerdo con la Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025, en el segmento de generación distribuida se ejecutaron 2.341 fiscalizaciones. De ellas, 2.100 fueron revisiones documentales y 241 revisiones en terreno.</p>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="n">10.769</div><div class="l">Fiscalizaciones 2025 · sector eléctrico y combustibles</div></div>
-      <div class="stat"><div class="n">2.341</div><div class="l">Fiscalizaciones en generación distribuida</div></div>
-      <div class="stat"><div class="n hot">2.100</div><div class="l">Revisiones documentales — cerca del 90% del esfuerzo del segmento</div></div>
-      <div class="stat"><div class="n">241</div><div class="l">Revisiones en terreno</div></div>
-    </div>
-    <p style="font-size:16px;color:var(--muted);max-width:76ch;line-height:1.75;">Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda. El resultado es una revisión que consume tiempo de especialistas sin poder verificar lo esencial.</p>
+<!-- ═══ EL PROBLEMA ═══ -->
+<section>
+  <div class="wrap">
+    <p class="tag g rv">01 · El punto de partida</p>
+    <h2 class="big rv" style="margin:14px 0 18px;max-width:28ch;">El cuello de botella no está en terreno. Está en la revisión documental.</h2>
+    <p class="lede rv" style="margin-bottom:32px;">Según la Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025, en generación distribuida se ejecutaron 2.341 fiscalizaciones. De ellas, 2.100 fueron revisiones documentales y 241 en terreno.</p>
 
-    <div class="cards" style="margin-top:34px;">
-      <div class="card">
-        <div class="k">Consecuencia 01</div>
-        <h3>No se puede comparar</h3>
-        <p>Dos centrales equivalentes informan disponibilidad con denominadores distintos. La cifra parece comparable y no lo es.</p>
-      </div>
-      <div class="card">
-        <div class="k">Consecuencia 02</div>
-        <h3>No se puede verificar</h3>
-        <p>Un informe sin cadena de trazabilidad no permite distinguir si una cifra proviene de una medición, de una estimación o de una interpolación sobre datos faltantes.</p>
-      </div>
-      <div class="card">
-        <div class="k">Consecuencia 03</div>
-        <h3>No se puede priorizar</h3>
-        <p>Sin una señal homogénea de calidad de dato, el criterio para decidir qué instalación amerita visita queda sujeto a denuncia o a rotación, no a riesgo objetivo.</p>
-      </div>
+    <div class="figs rv">
+      <div class="fig"><div class="v">10.769</div><div class="k">Fiscalizaciones 2025 · sector eléctrico y combustibles</div></div>
+      <div class="fig"><div class="v">2.341</div><div class="k">Fiscalizaciones en generación distribuida</div></div>
+      <div class="fig"><div class="v a">2.100</div><div class="k">Revisiones documentales — cerca del 90% del esfuerzo del segmento</div></div>
+      <div class="fig"><div class="v">241</div><div class="k">Revisiones en terreno</div></div>
+    </div>
+
+    <p class="lede rv" style="margin:32px 0 40px;max-width:78ch;">Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda.</p>
+
+    <div class="cards c3 rv">
+      <div class="card"><p class="tag g">Consecuencia 01</p><h4>No se puede comparar</h4><p>Dos centrales equivalentes informan disponibilidad con denominadores distintos. La cifra parece comparable y no lo es.</p></div>
+      <div class="card"><p class="tag g">Consecuencia 02</p><h4>No se puede verificar</h4><p>Un informe sin cadena de trazabilidad no permite distinguir si una cifra proviene de una medición, de una estimación o de una interpolación sobre datos faltantes.</p></div>
+      <div class="card"><p class="tag g">Consecuencia 03</p><h4>No se puede priorizar</h4><p>Sin una señal homogénea de calidad de dato, el criterio para decidir qué instalación amerita visita queda sujeto a denuncia o a rotación, no a riesgo objetivo.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ───────── EVIDENCIA ───────── -->
-<section class="dark reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Capacidad analítica demostrada</div>
-      <h2>Cuatro hallazgos sobre el registro público nacional</h2>
-      <p>Análisis ejecutado sobre la totalidad del registro de Infotécnica del Coordinador Eléctrico Nacional — 2.618 unidades generadoras en 2.029 centrales, extracción del 16 de agosto de 2026. Sin datos simulados. Reproducible ejecutando el mismo procedimiento sobre los archivos de origen.</p>
+<!-- ═══ EVIDENCIA ═══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="tag g rv">02 · Capacidad analítica demostrada</p>
+    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Cuatro hallazgos sobre el registro público nacional</h2>
+    <p class="lede rv" style="margin-bottom:36px;">Análisis ejecutado sobre la totalidad del registro de Infotécnica del Coordinador Eléctrico Nacional — 2.618 unidades generadoras en 2.029 centrales, extracción del 16 de agosto de 2026. Sin datos simulados. Reproducible ejecutando el mismo procedimiento sobre los archivos de origen.</p>
+
+    <div class="cards c3 rv">
+      <div class="card"><p class="tag t">Estructura</p><div class="c-fig">91,7%</div><p>de los titulares opera una sola central. De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento.</p></div>
+      <div class="card"><p class="tag t">Documentación</p><div class="c-fig">23,1%</div><p>de completitud en la ficha técnica solar coordinada — la más baja del registro. La fotovoltaica concentra 1.375 de las 2.029 centrales del país (67,8%).</p></div>
+      <div class="card"><p class="tag t">Almacenamiento</p><div class="c-fig">2 / 977</div><p>unidades PMGD declaran un sistema de almacenamiento. Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo y control.</p></div>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="k">Estructura</div>
-        <h3>91,7% de los titulares opera una sola central</h3>
-        <p>De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento o planillas llenadas a mano.</p>
-      </div>
-      <div class="card">
-        <div class="k">Documentación</div>
-        <h3>La tecnología dominante es la menos documentada</h3>
-        <p>La fotovoltaica concentra 1.375 de las 2.029 centrales (67,8%) y su ficha técnica coordinada alcanza 23,1% de completitud — la más baja del registro.</p>
-      </div>
-      <div class="card">
-        <div class="k">Almacenamiento</div>
-        <h3>2 de 977 unidades PMGD declaran un sistema de almacenamiento</h3>
-        <p>Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco incorpora almacenamiento con exigencias de monitoreo y control.</p>
-      </div>
+
+    <div class="note rv" style="margin-top:26px;">
+      <h4>Con solo dos fichas de almacenamiento ya aparecen tres problemas estructurales</h4>
+      <p>Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera; los tres se detectan automáticamente al momento de la carga. <b style="color:#fff;">Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b></p>
     </div>
-    <div class="note teal" style="background:rgba(31,182,168,.08);border-left-color:var(--teal);margin-top:26px;">
-      <h4 style="color:#fff;">Con solo dos fichas de almacenamiento ya aparecen tres problemas estructurales</h4>
-      <p style="color:#b9c9d1;">Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera. Los tres se detectan automáticamente al momento de la carga. <b style="color:#fff;">Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b></p>
-    </div>
-    <p style="font-size:13px;color:#8fa3b0;margin-top:20px;max-width:80ch;line-height:1.7;">Salvedad metodológica: parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta. Esta medida no debe leerse como incumplimiento de los titulares, sino como una medida de cuánta información estructurada está disponible hoy para análisis automatizado de cartera. Que el registro no permita distinguir «no aplica» de «no informado» es, en sí mismo, parte del hallazgo.</p>
+
+    <p class="src rv" style="margin-top:22px;max-width:88ch;">Salvedad metodológica: parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta. Esta medida no debe leerse como incumplimiento de los titulares, sino como una medida de cuánta información estructurada está disponible hoy para análisis automatizado de cartera. Que el registro no permita distinguir «no aplica» de «no informado» es, en sí mismo, parte del hallazgo.</p>
   </div>
 </section>
 
-<!-- ───────── QUÉ PERMITE VER ───────── -->
-<section id="que-permite" class="reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Alcance funcional</div>
-      <h2>Qué podría observar una autoridad debidamente autorizada</h2>
-      <p>El acceso a información de una instalación depende siempre de la autorización expresa de su titular y del marco legal aplicable. Lo que sigue describe capacidades técnicas, no atribuciones.</p>
-    </div>
-    <table>
+<!-- ═══ QUÉ PERMITE VER ═══ -->
+<section id="que-permite">
+  <div class="wrap">
+    <p class="tag g rv">03 · Alcance funcional</p>
+    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Qué podría observar una autoridad debidamente autorizada</h2>
+    <p class="lede rv" style="margin-bottom:34px;">El acceso a información de una instalación depende siempre de la autorización expresa de su titular y del marco legal aplicable. Lo que sigue describe capacidades técnicas, no atribuciones.</p>
+
+    <table class="rv">
       <tr><th>Dimensión</th><th>Qué entrega la tecnología</th><th>Naturaleza del dato</th></tr>
       <tr><td><b>Visibilidad operacional</b></td><td>Estado de la instalación y de sus unidades, con marca de tiempo y resolución nativa del sistema de origen.</td><td>Medición</td></tr>
-      <tr><td><b>Indicadores de seguridad y desempeño</b></td><td>Disponibilidad técnica, energía, factor de planta y horas de operación, calculados solo sobre datos validados.</td><td>Cálculo sobre medición</td></tr>
+      <tr><td><b>Indicadores de desempeño</b></td><td>Disponibilidad técnica, energía, factor de planta y horas de operación, calculados solo sobre datos validados.</td><td>Cálculo sobre medición</td></tr>
       <tr><td><b>Alertas críticas</b></td><td>Eventos que superan umbrales definidos, clasificados y con su cadena de origen.</td><td>Medición + regla</td></tr>
       <tr><td><b>Eventos históricos</b></td><td>Registro cronológico de fallas, ventanas de mantenimiento y limitaciones de inyección, diferenciando lo sistémico de lo atribuible al activo.</td><td>Registro</td></tr>
       <tr><td><b>Información de equipos</b></td><td>Inventario y estado de unidades monitoreadas, con deduplicación previa de catálogo.</td><td>Registro</td></tr>
@@ -467,67 +175,67 @@
       <tr><td><b>Trazabilidad</b></td><td>Cada cifra publicada conserva su canal de origen, su transformación y su porcentaje de cobertura, reproducible hasta la medición cruda.</td><td>Metadato de auditoría</td></tr>
       <tr><td><b>Informes</b></td><td>Emisión diaria y mensual automática, con estructura idéntica entre tecnologías y entre instalaciones.</td><td>Documento</td></tr>
     </table>
-    <div class="note">
+
+    <div class="note rv" style="margin-top:30px;">
       <h4>El principio que gobierna todo lo anterior</h4>
       <p>Si la cobertura de datos de un activo no alcanza el umbral definido, <b>la cifra no se publica</b>. Se declara la brecha, su causa raíz y la acción requerida. Una cifra retenida con su razón declarada es verificable; una cifra estimada que aparenta certeza no lo es. El silencio de un canal se informa como <b>no observado</b> y se excluye del denominador — nunca se reporta como cero.</p>
     </div>
   </div>
 </section>
 
-<!-- ───────── CINCO CAPACIDADES ───────── -->
-<section class="dark reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Cómo opera</div>
-      <h2>Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
-      <p>Cinco capacidades encadenadas. Las tres primeras están operativas hoy; las dos últimas se describen con el alcance que efectivamente tienen.</p>
+<!-- ═══ CINCO CAPACIDADES ═══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="tag g rv">04 · Cómo opera</p>
+    <h2 class="big rv" style="margin:14px 0 18px;">Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
+    <p class="lede rv" style="margin-bottom:38px;">Cinco capacidades encadenadas. Las tres primeras están operativas hoy; las dos últimas se describen con el alcance que efectivamente tienen.</p>
+
+    <div class="flow rv">
+      <div class="fl"><div class="n">01</div><h4>Ver</h4><p>Visibilidad operacional continua sobre los sistemas SCADA, PPC y BMS ya instalados. Sin equipamiento adicional.</p></div>
+      <div class="fl"><div class="n">02</div><h4>Entender</h4><p>Validación, reconciliación y cálculo de indicadores exclusivamente sobre datos que superaron control de calidad.</p></div>
+      <div class="fl"><div class="n">03</div><h4>Anticipar</h4><p>Detección de desviaciones sostenidas respecto del comportamiento esperado, antes de que se conviertan en falla.</p></div>
+      <div class="fl"><div class="n">04</div><h4>Actuar</h4><p>Cada evento se clasifica como preventivo o correctivo y se dirige al equipo competente. El despacho de personal lo confirma siempre una persona.</p></div>
+      <div class="fl"><div class="n">05</div><h4>Optimizar</h4><p>Priorización del esfuerzo de mantenimiento según evidencia, en lugar de rotación o denuncia.</p></div>
     </div>
-    <div class="flow">
-      <div class="fl"><div class="n">01</div><h3>Ver</h3><p>Visibilidad operacional continua sobre los sistemas SCADA, PPC y BMS ya instalados. Sin equipamiento adicional.</p></div>
-      <div class="fl"><div class="n">02</div><h3>Entender</h3><p>Validación, reconciliación y cálculo de indicadores exclusivamente sobre datos que superaron control de calidad.</p></div>
-      <div class="fl"><div class="n">03</div><h3>Anticipar</h3><p>Detección de desviaciones sostenidas respecto del comportamiento esperado, antes de que se conviertan en falla.</p></div>
-      <div class="fl"><div class="n">04</div><h3>Actuar</h3><p>Cada evento se clasifica como preventivo o correctivo y se dirige al equipo competente. El despacho de personal lo confirma siempre una persona.</p></div>
-      <div class="fl"><div class="n">05</div><h3>Optimizar</h3><p>Priorización del esfuerzo de mantenimiento según evidencia, en lugar de rotación o denuncia.</p></div>
-    </div>
-    <div class="note" style="background:rgba(245,166,35,.10);border-left-color:var(--amber);margin-top:34px;">
-      <h4 style="color:#fff;">Precisión sobre el alcance de «anticipar»</h4>
-      <p style="color:#b9c9d1;">Quorelia detecta <b style="color:#fff;">desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.</p>
+
+    <div class="note a rv" style="margin-top:38px;">
+      <h4>Precisión sobre el alcance de «anticipar»</h4>
+      <p>Quorelia detecta <b style="color:#fff;">desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.</p>
     </div>
   </div>
 </section>
 
-<!-- ───────── GOBERNANZA Y SEGURIDAD ───────── -->
-<section class="reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Gobernanza de datos</div>
-      <h2>Construido para infraestructura crítica</h2>
-      <p>La información operacional de una central es sensible y en muchos casos estratégica. Estos son los principios de arquitectura que aplicamos.</p>
+<!-- ═══ GOBERNANZA ═══ -->
+<section>
+  <div class="wrap">
+    <p class="tag g rv">05 · Gobernanza de datos</p>
+    <h2 class="big rv" style="margin:14px 0 18px;">Construido para infraestructura crítica</h2>
+    <p class="lede rv" style="margin-bottom:34px;">La información operacional de una central es sensible y en muchos casos estratégica. Estos son los principios de arquitectura que aplicamos.</p>
+
+    <div class="cards c3 rv">
+      <div class="card"><p class="tag g">Acceso</p><h4>Control por rol</h4><p>Cada perfil accede únicamente a lo que su función requiere. El acceso se otorga por instalación y por tipo de información, nunca de forma global.</p></div>
+      <div class="card"><p class="tag g">Identidad</p><h4>Autenticación robusta</h4><p>Credenciales individuales y no compartidas, con segundo factor y expiración de sesión.</p></div>
+      <div class="card"><p class="tag g">Confidencialidad</p><h4>Cifrado en tránsito y reposo</h4><p>Los datos viajan y se almacenan cifrados. Nada se comparte, vende ni sublicencia más allá del servicio contratado.</p></div>
+      <div class="card"><p class="tag g">Auditoría</p><h4>Registro de accesos</h4><p>Quién consultó qué información y cuándo queda registrado y es consultable por el titular.</p></div>
+      <div class="card"><p class="tag g">Aislamiento</p><h4>Segregación por cliente</h4><p>La información de cada titular permanece separada. No existe agregación entre clientes sin autorización expresa.</p></div>
+      <div class="card"><p class="tag g">Continuidad</p><h4>Respaldo y recuperación</h4><p>Respaldos periódicos y procedimiento documentado, con exportación de datos y manifiestos de auditoría al término del contrato.</p></div>
     </div>
-    <div class="cards">
-      <div class="card"><div class="k">Acceso</div><h3>Control por rol</h3><p>Cada perfil accede únicamente a lo que su función requiere. El acceso se otorga por instalación y por tipo de información, nunca de forma global.</p></div>
-      <div class="card"><div class="k">Identidad</div><h3>Autenticación robusta</h3><p>Credenciales individuales y no compartidas, con segundo factor y expiración de sesión.</p></div>
-      <div class="card"><div class="k">Confidencialidad</div><h3>Cifrado en tránsito y en reposo</h3><p>Los datos viajan y se almacenan cifrados. Nada se comparte, vende ni sublicencia más allá del servicio contratado.</p></div>
-      <div class="card"><div class="k">Auditoría</div><h3>Registro de accesos</h3><p>Quién consultó qué información y cuándo queda registrado y es consultable por el titular.</p></div>
-      <div class="card"><div class="k">Aislamiento</div><h3>Segregación por cliente</h3><p>La información de cada titular permanece separada. No existe agregación entre clientes sin autorización expresa.</p></div>
-      <div class="card"><div class="k">Continuidad</div><h3>Respaldo y recuperación</h3><p>Respaldos periódicos y procedimiento de recuperación documentado, con exportación de datos y manifiestos de auditoría al término del contrato.</p></div>
-    </div>
-    <div class="note">
+
+    <div class="note a rv" style="margin-top:30px;">
       <h4>Sobre certificaciones</h4>
       <p>Los principios anteriores describen decisiones de arquitectura, no acreditaciones de terceros. <b>Quorelia no declara certificaciones ni cumplimiento normativo que no hayan sido auditados y emitidos por un organismo competente.</b> Cuando una certificación específica sea requisito de una contratación, se indicará su estado real de avance.</p>
     </div>
   </div>
 </section>
 
-<!-- ───────── PILOTO ───────── -->
-<section id="piloto" class="dark alt reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Propuesta concreta</div>
-      <h2>Un piloto acotado, medible y sin riesgo institucional</h2>
-      <p>No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.</p>
-    </div>
-    <table>
+<!-- ═══ PILOTO ═══ -->
+<section id="piloto" class="dark">
+  <div class="wrap">
+    <p class="tag g rv">06 · Propuesta concreta</p>
+    <h2 class="big rv" style="margin:14px 0 18px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
+    <p class="lede rv" style="margin-bottom:34px;">No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.</p>
+
+    <table class="rv">
       <tr><th>Elemento</th><th>Definición</th></tr>
       <tr><td><b>Alcance</b></td><td>10 a 15 centrales voluntarias, cubriendo fotovoltaica coordinada, PMGD y al menos una instalación con almacenamiento.</td></tr>
       <tr><td><b>Duración</b></td><td>Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente.</td></tr>
@@ -536,157 +244,92 @@
       <tr><td><b>Métrica de éxito</b></td><td>Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor de la autoridad: formato actual contra formato estandarizado.</td></tr>
       <tr><td><b>Definición de fracaso</b></td><td>Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.</td></tr>
     </table>
-    <p style="color:#8fa3b0;font-size:14px;margin-top:22px;max-width:80ch;line-height:1.75;"><b style="color:#fff;">Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
+
+    <p class="lede rv" style="margin-top:28px;max-width:82ch;"><b style="color:#fff;">Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
   </div>
 </section>
 
-<!-- ───────── LO QUE NO HACE ───────── -->
-<section class="reveal">
-  <div class="container">
-    <div class="sec-head">
-      <div class="eyebrow">Límites explícitos</div>
-      <h2>Lo que Quorelia no hace</h2>
-    </div>
-    <div class="cards">
-      <div class="card"><h3>No reemplaza la fiscalización en terreno</h3><p>La inspección presencial resuelve preguntas que ningún dato remoto puede responder. El objetivo es dirigir mejor ese esfuerzo, no sustituirlo.</p></div>
-      <div class="card"><h3>No sustituye el juicio del fiscalizador</h3><p>El sistema entrega evidencia ordenada y trazable. La interpretación, la calificación y la decisión son siempre humanas.</p></div>
-      <div class="card"><h3>No accede a sistemas de la autoridad</h3><p>El piloto corre sobre datos de titulares privados que lo autorizan voluntariamente. No requiere integración con plataformas del Estado.</p></div>
-      <div class="card"><h3>No emite certificaciones con efecto regulatorio</h3><p>Los informes son un insumo documental verificable. No tienen ni pretenden tener valor de acto administrativo.</p></div>
-      <div class="card"><h3>No opera ni controla instalaciones</h3><p>Quorelia observa y reporta. No ejecuta maniobras, no despacha, no interviene en la operación de ningún activo.</p></div>
-      <div class="card"><h3>No agrega datos entre titulares sin autorización</h3><p>Cualquier vista consolidada de cartera requiere el consentimiento expreso de cada titular involucrado.</p></div>
+<!-- ═══ LÍMITES ═══ -->
+<section>
+  <div class="wrap">
+    <p class="tag g rv">07 · Límites explícitos</p>
+    <h2 class="big rv" style="margin:14px 0 34px;">Lo que Quorelia no hace</h2>
+    <div class="cards c3 rv">
+      <div class="card"><h4>No reemplaza la fiscalización en terreno</h4><p>La inspección presencial resuelve preguntas que ningún dato remoto puede responder. El objetivo es dirigir mejor ese esfuerzo, no sustituirlo.</p></div>
+      <div class="card"><h4>No sustituye el juicio del fiscalizador</h4><p>El sistema entrega evidencia ordenada y trazable. La interpretación, la calificación y la decisión son siempre humanas.</p></div>
+      <div class="card"><h4>No accede a sistemas de la autoridad</h4><p>El piloto corre sobre datos de titulares privados que lo autorizan voluntariamente. No requiere integración con plataformas del Estado.</p></div>
+      <div class="card"><h4>No emite certificaciones con efecto regulatorio</h4><p>Los informes son un insumo documental verificable. No tienen ni pretenden tener valor de acto administrativo.</p></div>
+      <div class="card"><h4>No opera ni controla instalaciones</h4><p>Quorelia observa y reporta. No ejecuta maniobras, no despacha, no interviene en la operación de ningún activo.</p></div>
+      <div class="card"><h4>No agrega datos entre titulares sin autorización</h4><p>Cualquier vista consolidada de cartera requiere el consentimiento expreso de cada titular involucrado.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ───────── CTA ───────── -->
-<section class="cta" id="contacto">
-  <div class="container">
-    <h2>Una sesión técnica de 45 minutos</h2>
-    <p>Podemos mostrar el análisis completo del registro de Infotécnica, los informes estandarizados por tecnología y la trazabilidad de una cifra hasta su medición de origen. Sin presentación comercial.</p>
-    <a href="mailto:jay@quorelia.org?subject=Sesi%C3%B3n%20t%C3%A9cnica%20Quorelia" class="btn btn-primary">Escribir a jay@quorelia.org</a>
-    <p style="margin-top:24px;font-size:14px;color:#8fa3b0;">Quorelia SpA · Santiago, Chile · quorelia.org</p>
+<!-- ═══ CTA ═══ -->
+<section id="contacto" style="padding-top:0;">
+  <div class="wrap">
+    <h2 class="big rv" style="margin-bottom:34px;">Una sesión técnica de 45 minutos</h2>
+    <p class="lede rv" style="margin-bottom:34px;">Podemos mostrar el análisis completo del registro de Infotécnica, los informes estandarizados por tecnología y la trazabilidad de una cifra hasta su medición de origen. Sin presentación comercial.</p>
+    <div class="split rv">
+      <a class="s-grey" href="mailto:jay@quorelia.org?subject=Sesi%C3%B3n%20t%C3%A9cnica%20Quorelia"><span>Escribir a Quorelia</span><span class="ar">→</span></a>
+      <a class="s-black" href="quorelia-sample-report.html" target="_blank" rel="noopener"><span>Ver informe de muestra</span><span class="ar">→</span></a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="foot-bottom">
-      <span>© 2026 Quorelia. Todos los derechos reservados.</span>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">Quorelia</div>
+        <p style="font-size:13.5px;max-width:34ch;">Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.</p>
+      </div>
+      <div>
+        <h5>Plataforma</h5>
+        <a href="index.html#software">Nuestra plataforma</a>
+        <a href="index.html#capabilities">Capacidades</a>
+        <a href="quorelia-sample-report.html">Informe de muestra</a>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <a href="story.html">Nuestra historia</a>
+        <a href="gobierno.html">Gobierno</a>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia</span>
       <span>Inteligencia en Energía Renovable</span>
     </div>
-    <p class="fine"><b style="color:#c7d4dc;">Declaración de alcance y fuentes.</b> Quorelia es una empresa privada de tecnología y no forma parte de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado. Las cifras de fiscalización citadas provienen de la Cuenta Pública 2026 de la SEC. El análisis del parque generador se basa en el registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y es reproducible sobre los archivos de origen. Los informes de muestra referidos en este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales.</p>
+    <p class="fine"><b>Declaración de alcance y fuentes.</b> Quorelia es una empresa privada de tecnología y no forma parte de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado. Las cifras de fiscalización citadas provienen de la Cuenta Pública 2026 de la SEC. El análisis del parque generador se basa en el registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y es reproducible sobre los archivos de origen. Los informes de muestra referidos contienen datos ilustrativos y no representan instalaciones ni clientes reales.</p>
   </div>
 </footer>
 
+<script src="quorelia.js"></script>
 <script>
-/* ═══════════════════════════════════════════════════════════════════════
-   HERO — video de fondo.
-   El póster y el fondo CSS se ven mientras el video descarga y permanecen
-   si el navegador no puede reproducirlo. En pantallas pequeñas y con
-   reducción de movimiento activada no se descarga el video en absoluto.
-   ═══════════════════════════════════════════════════════════════════════ */
+/* Video del hero: póster de respaldo, sin descarga en móvil ni con reducción de movimiento */
 (function heroVideo(){
   var v = document.getElementById('hero-video');
   if (!v) return;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Sin video en móvil ni con reducción de movimiento: queda el póster.
-  if (reduce || window.innerWidth < 720) {
-    v.removeAttribute('autoplay');
-    v.pause();
-    var src = v.querySelector('source');
-    if (src) src.removeAttribute('src');
-    v.removeAttribute('src');
-    v.load();
-    return;
+  if (reduce || window.innerWidth < 720){
+    v.removeAttribute('autoplay'); v.pause();
+    var s = v.querySelector('source'); if (s) s.removeAttribute('src');
+    v.removeAttribute('src'); v.load(); return;
   }
-
   v.addEventListener('canplay', function(){ v.classList.add('ready'); }, {once:true});
-  v.addEventListener('error', function(){ v.style.display = 'none'; });
-
-  // Pausa cuando el hero sale de pantalla: no gasta CPU ni batería de fondo.
-  if ('IntersectionObserver' in window) {
+  v.addEventListener('error', function(){ v.style.display='none'; });
+  if ('IntersectionObserver' in window){
     new IntersectionObserver(function(es){
-      if (es[0].isIntersecting) { var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+      if (es[0].isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
       else v.pause();
-    }, {threshold:0.01}).observe(v.parentNode);
+    },{threshold:0.01}).observe(v.parentNode);
   }
 })();
-
-(function(){
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var els = document.querySelectorAll('.reveal');
-  var io = new IntersectionObserver(function(es, obs){
-    es.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in'); obs.unobserve(e.target);
-    });
-  }, { rootMargin:'0px 0px -10% 0px', threshold:0.06 });
-  els.forEach(function(el){ io.observe(el); });
-  requestAnimationFrame(function(){
-    els.forEach(function(el){
-      if (el.getBoundingClientRect().top < window.innerHeight*0.92){ el.classList.add('in'); io.unobserve(el); }
-    });
-  });
-})();
-
-/* ── Menú móvil ───────────────────────────────────────────────────────────
-   Panel lateral con foco atrapado, cierre con Escape, con toque fuera y al
-   elegir un enlace. Bloquea el scroll del fondo mientras está abierto. */
-(function menuMovil(){
-  var btn   = document.getElementById('menu-btn'),
-      panel = document.getElementById('menu-panel'),
-      scrim = document.getElementById('menu-scrim'),
-      cerrar= document.getElementById('menu-close');
-  if (!btn || !panel || !scrim) return;
-  var ultimoFoco = null;
-
-  function abrir(){
-    ultimoFoco = document.activeElement;
-    panel.hidden = false; scrim.hidden = false;
-    requestAnimationFrame(function(){
-      panel.classList.add('open'); scrim.classList.add('open');
-    });
-    btn.setAttribute('aria-expanded','true');
-    document.body.classList.add('menu-open');
-    var primero = panel.querySelector('nav a');
-    if (primero) primero.focus({preventScroll:true});
-  }
-  function cerrarMenu(){
-    panel.classList.remove('open'); scrim.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-    document.body.classList.remove('menu-open');
-    setTimeout(function(){
-      if (!panel.classList.contains('open')){ panel.hidden = true; scrim.hidden = true; }
-    }, 340);
-    if (ultimoFoco) ultimoFoco.focus({preventScroll:true});
-  }
-
-  btn.addEventListener('click', function(){
-    panel.classList.contains('open') ? cerrarMenu() : abrir();
-  });
-  scrim.addEventListener('click', cerrarMenu);
-  if (cerrar) cerrar.addEventListener('click', cerrarMenu);
-  panel.querySelectorAll('nav a, .mp-foot a').forEach(function(a){
-    a.addEventListener('click', cerrarMenu);
-  });
-  document.addEventListener('keydown', function(e){
-    if (!panel.classList.contains('open')) return;
-    if (e.key === 'Escape'){ cerrarMenu(); return; }
-    if (e.key !== 'Tab') return;
-    // foco atrapado dentro del panel
-    var f = panel.querySelectorAll('a[href], button:not([disabled])');
-    if (!f.length) return;
-    var primero = f[0], ultimo = f[f.length-1];
-    if (e.shiftKey && document.activeElement === primero){ e.preventDefault(); ultimo.focus(); }
-    else if (!e.shiftKey && document.activeElement === ultimo){ e.preventDefault(); primero.focus(); }
-  });
-  // si se vuelve a escritorio con el menú abierto, cerrarlo
-  window.addEventListener('resize', function(){
-    if (window.innerWidth > 860 && panel.classList.contains('open')) cerrarMenu();
-  });
-})();
-
 </script>
 </body>
 </html>
