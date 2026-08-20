@@ -109,6 +109,12 @@ section > .wrap > h2{max-width:24ch;}
   display:inline-flex;align-items:center;gap:10px;}
 .brand img{flex:none;}
 
+/* ── Efecto de tipeo en encabezados ────────────────────────────────────── */
+.typing::after{content:'▍';color:var(--teal);margin-left:2px;
+  animation:parpadeo .9s steps(1) infinite;}
+@keyframes parpadeo{50%{opacity:0;}}
+.dark .typing::after,.svc-st.key .typing::after{color:var(--teal-lt);}
+
 /* ── Logo del pie: la Q grande arriba, centrada; las letras debajo ─────── */
 .f-logo{display:flex;flex-direction:column;align-items:center;gap:30px;margin:70px 0 40px;}
 .f-logo .fq{width:min(170px,36vw);height:auto;}
@@ -183,8 +189,11 @@ section > .wrap > h2{max-width:24ch;}
 }
 
 /* ── Módulos numerados ─────────────────────────────────────────────────── */
-.mod{display:grid;grid-template-columns:210px 1fr auto;gap:28px;align-items:center;
+.mod{display:grid;grid-template-columns:max-content 1fr auto;gap:38px;align-items:center;
   padding:38px 0;border-top:1px solid var(--line);transition:background .2s;}
+/* la palabra grande va primero, a la izquierda */
+.mod .m-name{order:-1;}
+.mod .m-lead{max-width:520px;}
 .mod:hover{background:var(--paper-2);}
 .mod .m-lead{font-size:13px;line-height:1.45;color:var(--ink-2);}
 .mod .m-name{font-family:var(--mono);font-size:clamp(1.7rem,1.2rem+2vw,3.1rem);
@@ -588,8 +597,8 @@ body.locked{overflow:hidden;}
 /* 4 · Módulos: la fila se desplaza levemente al pasar el puntero */
 .mod{transition:background .2s var(--ease), padding-left .28s var(--ease);}
 .mod:hover{padding-left:14px;}
-.mod .m-name{transition:letter-spacing .32s var(--ease);}
-.mod:hover .m-name{letter-spacing:.13em;}
+.mod:hover .m-name{color:var(--teal);}
+.mod .m-name{transition:color .3s var(--ease);}
 
 /* 5 · Tarjetas: elevación sutil */
 .card{transition:transform .3s var(--ease), box-shadow .3s var(--ease);}

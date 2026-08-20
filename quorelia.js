@@ -324,3 +324,57 @@ function partirEnLineas(el){
     });
   });
 })();
+
+
+/* 7 · Tipeo de encabezados
+   Las palabras clave del producto se escriben al entrar en pantalla,
+   como en una consola. El ancho se fija antes de empezar para que la
+   maqueta no salte, y al cambiar de idioma se vuelve a tipear. */
+(function tipeo(){
+  if (REDUCE) return;
+  var SEL='.m-name, .capgrid .capcol h4, .grp h4, .svc-st h4, .fl h4, .card > .tag';
+
+  function escribir(el){
+    var txt=el.textContent;
+    if(!txt.trim()) return;
+    el.style.minWidth=el.offsetWidth+'px';
+    el.style.minHeight=el.offsetHeight+'px';
+    el.textContent='';
+    el.classList.add('typing');
+    var i=0;
+    var t=setInterval(function(){
+      i++;
+      el.textContent=txt.slice(0,i);
+      if(i>=txt.length){
+        clearInterval(t);
+        setTimeout(function(){ el.classList.remove('typing'); }, 900);
+      }
+    }, 46);
+  }
+
+  var io=('IntersectionObserver' in window) && new IntersectionObserver(function(es,o){
+    es.forEach(function(e){
+      if(e.isIntersecting){ o.unobserve(e.target); escribir(e.target); }
+    });
+  },{rootMargin:'0px 0px -10% 0px',threshold:0.3});
+
+  function armar(){
+    document.querySelectorAll(SEL).forEach(function(el){
+      if(el.dataset.tipeo) return;
+      el.dataset.tipeo='1';
+      if(io) io.observe(el); else escribir(el);
+    });
+  }
+  armar();
+
+  window.addEventListener('quorelia:lang', function(){
+    setTimeout(function(){
+      document.querySelectorAll(SEL).forEach(function(el){
+        delete el.dataset.tipeo;
+        el.classList.remove('typing');
+        el.style.minWidth=''; el.style.minHeight='';
+      });
+      armar();
+    }, 80);
+  });
+})();
