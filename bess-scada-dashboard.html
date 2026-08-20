@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-H1F1ZXMMT2');
 </script>
-<title>BESS SCADA — Planta 175</title>
+<title>BESS SCADA — Cerro Aurora · Demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -167,7 +167,7 @@
   .prio.baja{background:#292524;color:var(--muted);}
   .owner{padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:600;}
   .owner.operacion{background:rgba(31,182,168,.15);color:#6ec6db;}
-  .owner.proyectapv{background:rgba(167,139,250,.15);color:#c9b8fc;}
+  .owner.scada{background:rgba(143,157,216,.15);color:#c3cdf0;}
   .owner.cliente{background:rgba(245,166,35,.15);color:#ffc978;}
   .estado{font-size:11px;font-weight:600;}
   .estado.abierto{color:var(--amber);}
@@ -211,7 +211,9 @@
   <div class="topbar-left">
     <div class="logo"><span class="dot"></span> BESS Control Room</div>
     <select class="plant-select">
-      <option>Planta 175 — CATL / Grenergy</option>
+      <option>BESS Cerro Aurora — 126 MW / 780 MWh · Antofagasta</option>
+      <option disabled>BESS Valle Luna — 101 MW / 624 MWh · Atacama</option>
+      <option disabled>BESS Salar Bravo — 76 MW / 468 MWh · Tarapacá</option>
     </select>
     <div class="tabs" id="tabBar">
       <button class="active" data-view="resumen">Resumen</button>
@@ -227,7 +229,7 @@
       <option value="today">2026-08-06 · informe diario</option>
       <option value="good">2026-07-28 · corrida de referencia</option>
     </select>
-    <div class="live-pill"><span class="blip"></span> Datos SCADA ProyectaPV</div>
+    <div class="live-pill"><span class="blip"></span> Datos SCADA SCADA de planta</div>
   </div>
 </div>
 
@@ -286,7 +288,7 @@
     <div class="panel-head">Jerarquía de activos — cómo el modelo ve el parque<span class="sub">punto de medición: DC</span></div>
     <div class="panel-body">
       <div class="tree">
-        <div class="node"><div class="n">1</div><div class="l">Planta</div><div class="s">Planta 175</div></div>
+        <div class="node"><div class="n">1</div><div class="l">Planta</div><div class="s">Cerro Aurora</div></div>
         <div class="node"><div class="n">37</div><div class="l">Estaciones</div><div class="s">2 unidades ESS c/u</div></div>
         <div class="node"><div class="n">74</div><div class="l">Unidades ESS</div><div class="s">12 racks c/u</div></div>
         <div class="node"><div class="n">888</div><div class="l">Racks físicos</div><div class="s">deduplicados de 1.776 (OPC-UA + ModBus)</div></div>
@@ -326,7 +328,7 @@
       <div style="flex:none;width:48px;height:48px;border-radius:10px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:22px;">🔔</div>
       <div>
         <div style="font-weight:800;font-size:13.5px;color:#fafaf9;margin-bottom:4px;">Alertas automáticas — no hace falta monitoreo 24/7/365</div>
-        <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica como preventiva o correctiva según su severidad y patrón, y se enruta al técnico o electricista correspondiente (Operación, ProyectaPV o Cliente). El sistema vigila continuamente y clasifica cada evento; el despacho final lo confirma una persona — no se envía a nadie a observar una pantalla.</div>
+        <div style="font-size:12px;color:var(--muted);">Cada alarma se clasifica como preventiva o correctiva según su severidad y patrón, y se enruta al técnico o electricista correspondiente (Operación, SCADA de planta o Cliente). El sistema vigila continuamente y clasifica cada evento; el despacho final lo confirma una persona — no se envía a nadie a observar una pantalla.</div>
       </div>
     </div>
   </div>
@@ -355,7 +357,7 @@
     <div class="panel-head">Trazabilidad y verificación<span class="sub">tres verificaciones independientes, todas antes de publicar</span></div>
     <div class="panel-body">
       <div class="pipeline">
-        <div class="stage">SCADA<div class="d">ProyectaPV GRE-API</div></div>
+        <div class="stage">SCADA<div class="d">SCADA de planta GRE-API</div></div>
         <span class="arrow">→</span>
         <div class="stage">Motor de KPI<div class="d">determinístico</div></div>
         <span class="arrow">→</span>
@@ -378,7 +380,7 @@
 
 </div>
 
-<div class="foot">Mockup de referencia — BESS Control Room · datos tomados del informe diario y la corrida de referencia de Planta 175 (CATL / Grenergy, SCADA ProyectaPV). No es una vista en producción.</div>
+<div class="foot">Muestra demo — BESS Control Room · misma flota ficticia del Control Center de Quorelia (BESS Cerro Aurora, 126 MW / 780 MWh, Región de Antofagasta). Datos ilustrativos; construimos Control Centers personalizados para cada cliente. No es una vista en producción.</div>
 
 <script>
 const DATA = {
@@ -409,13 +411,13 @@ const DATA = {
     findings:[
       {p:"urgente",t:"Fire system failure warning MBMU — 2 eventos",eq:"ESS-01.02",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
       {p:"alta",t:"Fire system failure warning MBMU — 1 evento",eq:"ESS-11.01",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
-      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
-      {p:"alta",t:"Cobertura de datos bajo umbral (54.8% < 90%) — veredicto GAA retenido",eq:"Planta 175",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
-      {p:"media",t:"Eficiencia round-trip no publicable — ciclo abierto, SOC derivó +9.07 pp",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
-      {p:"media",t:"Guaranteed Unit Count no confirmado — supuesto 74 unidades (conservador)",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
-      {p:"baja",t:"4 ventanas de mantención confirmadas retroactivamente — requiere respaldo documental",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
-      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"resuelto"},
-      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"pendiente"},
+      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"scada",ownerLabel:"SCADA planta",estado:"abierto"},
+      {p:"alta",t:"Cobertura de datos bajo umbral (54.8% < 90%) — veredicto GAA retenido",eq:"Cerro Aurora",owner:"scada",ownerLabel:"SCADA planta",estado:"abierto"},
+      {p:"media",t:"Eficiencia round-trip no publicable — ciclo abierto, SOC derivó +9.07 pp",eq:"Cerro Aurora",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
+      {p:"media",t:"Guaranteed Unit Count no confirmado — supuesto 74 unidades (conservador)",eq:"Cerro Aurora",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
+      {p:"baja",t:"4 ventanas de mantención confirmadas retroactivamente — requiere respaldo documental",eq:"Cerro Aurora",owner:"cliente",ownerLabel:"Cliente",estado:"pendiente"},
+      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"scada",ownerLabel:"SCADA planta",estado:"resuelto"},
+      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"scada",ownerLabel:"SCADA planta",estado:"pendiente"},
     ]
   },
   good: {
@@ -443,11 +445,11 @@ const DATA = {
     heatmapUnits:["ESS-01.01","ESS-01.02","ESS-03.01","ESS-05.02","ESS-08.01","ESS-08.02","ESS-11.01","ESS-11.02","ESS-19.01","ESS-22.02","ESS-30.01","ESS-34.02"],
     heatmapFlag:["ESS-08.01","ESS-08.02"],
     findings:[
-      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"abierto"},
+      {p:"alta",t:"12 racks sin dato de energía",eq:"ESS-34.02",owner:"scada",ownerLabel:"SCADA planta",estado:"abierto"},
       {p:"alta",t:"92 de 288 muestras sobre 500 mV — dispersión sostenida, no un peak",eq:"ESS-08.01",owner:"operacion",ownerLabel:"Operación",estado:"abierto"},
-      {p:"media",t:"Eficiencia round-trip retenida en esta corrida",eq:"Planta 175",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
-      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"resuelto"},
-      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"proyectapv",ownerLabel:"ProyectaPV",estado:"pendiente"},
+      {p:"media",t:"Eficiencia round-trip retenida en esta corrida",eq:"Cerro Aurora",owner:"cliente",ownerLabel:"Cliente",estado:"informativo"},
+      {p:"baja",t:"Doble conteo de racks por gemelo OPC-UA/ModBus",eq:"Integración",owner:"scada",ownerLabel:"SCADA planta",estado:"resuelto"},
+      {p:"baja",t:"Rotación de APIKEY pendiente",eq:"Integración",owner:"scada",ownerLabel:"SCADA planta",estado:"pendiente"},
     ]
   }
 };
