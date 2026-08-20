@@ -22,7 +22,7 @@
   --teal-lt:#1fb6a8;
   --amber:#b45309;
 
-  --sans:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --sans:'Inter','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
 
   /* Escala tipográfica */
@@ -34,9 +34,14 @@
   --gut: 28px;
 }
 
+/* El chino no lleva tracking negativo: los hanzi se tocan y pierden ritmo. */
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3,
+:lang(zh) .mega,:lang(zh) .big,:lang(zh) .mid,:lang(zh) .lede{letter-spacing:0;}
+:lang(zh) .mega,:lang(zh) .big{line-height:1.22;}
+
 @media(prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
-  .rv{opacity:1 !important;transform:none !important;}
+  .rv{opacity:1 !important;transform:none !important;filter:none !important;}
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -106,7 +111,7 @@ section > .wrap > h2{max-width:24ch;}
 .nav-links a.on{color:var(--ink);font-weight:600;}
 .nav-right{display:flex;align-items:center;gap:14px;}
 .lang{display:flex;border:1px solid var(--line);}
-.lang button{border:0;background:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+.lang button{border:0;background:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
   padding:6px 10px;cursor:pointer;color:var(--grey);}
 .lang button.on{background:var(--ink);color:#fff;}
 .btn-sm{border:1px solid var(--ink);padding:8px 16px;font-size:13.5px;transition:background .18s,color .18s;white-space:nowrap;}
@@ -333,6 +338,22 @@ section > .wrap > h2{max-width:24ch;}
   .lang-c:last-child{border-bottom:0;}
 }
 
+/* ── Informes de muestra ───────────────────────────────────────────────── */
+.reps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;}
+.rep{background:var(--paper-2);padding:22px 22px 24px;display:flex;flex-direction:column;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);
+  transition:background-color .3s var(--ease);}
+.rep:hover{background:var(--paper-3);}
+.rep .rp-t{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:12px;}
+.rep h4{font-size:18px;font-weight:400;letter-spacing:-.02em;margin-bottom:14px;color:var(--ink);}
+.rep a{display:block;font-size:13.5px;color:var(--ink-2);padding:8px 0 8px 20px;position:relative;
+  border-top:1px solid var(--line);transition:color .2s;}
+.rep a:first-of-type{margin-top:auto;}
+.rep a::before{content:'↳';position:absolute;left:0;color:var(--grey);}
+.rep a:hover{color:var(--ink);}
+@media(max-width:860px){.reps{grid-template-columns:1fr;}}
+
 /* ── Formulario de contacto ────────────────────────────────────────────── */
 .form-wrap{max-width:880px;margin:0 auto;text-align:left;}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;}
@@ -495,8 +516,12 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;}
 body.locked{overflow:hidden;}
 
 /* ── Revelado al hacer scroll ──────────────────────────────────────────── */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-.rv.in{opacity:1;transform:none;}
+.rv{opacity:0;transform:translateY(22px);filter:blur(10px);
+  transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);
+  will-change:opacity,transform,filter;}
+.rv.in{opacity:1;transform:none;filter:blur(0);}
+/* escalonado sutil dentro de una misma sección */
+.rv.in ~ .rv.in{transition-delay:.06s;}
 
 /* ══════════════════════════════════════════════════════════════════════════
    MOVIMIENTO — sistema tipo Palantir

@@ -58,7 +58,6 @@
     <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
     <a href="index.html#platform" data-i18n="nav_plat">Control Center</a>
     <a href="index.html#capabilities" data-i18n="nav_cap">Capabilities</a>
-    <a href="index.html#evidence" data-i18n="nav_ev">Evidence</a>
     <a href="gobierno.html" data-i18n="nav_gov">Government</a>
     <a href="story.html" data-i18n="nav_story">Our Story</a>
   </nav>
@@ -67,6 +66,7 @@
     <div class="d-lang"><div class="lang">
       <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
       <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
     </div></div>
   </div>
 </aside>
@@ -78,7 +78,6 @@
       <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
     <a href="index.html#platform" data-i18n="nav_plat">Control Center</a>
       <a href="index.html#capabilities" data-i18n="nav_cap">Capabilities</a>
-      <a href="index.html#evidence" data-i18n="nav_ev">Evidence</a>
       <a href="gobierno.html" data-i18n="nav_gov">Government</a>
       <a href="story.html" class="on" data-i18n="nav_story">Our Story</a>
     </nav>
@@ -86,6 +85,7 @@
       <div class="lang">
         <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
         <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
       </div>
       <a href="index.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
@@ -219,7 +219,7 @@
 <script>
 const i18n = {
  en:{
-  nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_ev:"Evidence", nav_gov:"Government",
+  nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_gov:"Government",
   nav_story:"Our Story", cta_demo:"Request a Demo", cta_demo2:"Request a Demo", cta_gov:"For Public Authorities",
   st_tag:"Our story",
   st_title:'Two friends. Ten years of trying. One mission to make energy <span class="dim">measurable</span>.',
@@ -256,8 +256,46 @@ const i18n = {
   f_prod:"Platform", f_sample:"Sample report", f_co:"Company", f_ct:"Contact",
   f_tag:"Renewable Energy Intelligence"
  },
+ zh:{
+  nav_sw:"软件平台", nav_plat:"控制中心", nav_cap:"能力", nav_gov:"政府事务",
+  nav_story:"我们的故事", cta_demo:"预约演示", cta_demo2:"预约演示", cta_gov:"面向公共机构",
+  st_tag:"我们的故事",
+  st_title:'两位朋友。十年的尝试。一个使命：让能源<span class="dim">可度量</span>。',
+  st_sub:"在成为一家公司之前，Quorelia 是一段从未停止创造的友谊。",
+  st_open1:"此刻，在阿塔卡马沙漠的某处，一座光伏电站正在运行，而且它一刻不停地在说话。逆变器在说话，电表在说话，SCADA 系统在说话。每一秒，都有成千上万条关于这座电站运行状况的小事实被生成——而其中几乎没有一条会被人类听到。",
+  st_open2:"Quorelia 的存在就是为了弥合这道鸿沟。但在成为一家公司之前，是两位停不下来、总想一起创业的朋友。",
+  st_e1:"故事的起点", st_h1:"先有的是友谊",
+  st_p1a:"十多年来，Diego 与 Jay 一直在一起创造——有时糟糕，有时不错，偶尔精彩。医疗器材包、生物医学设备、一门跨国食品生意、韩式炸鸡、软件，还有那些半途而废、却比成功之作教会他们更多的想法。",
+  st_p1b:"其中大多数没能经受住现实世界的考验。但每一次都算数。因为在那十年的尝试中，一个谁也没有计划过的模式逐渐浮现：他们总是走到同一个交汇点——数据、技术与资金必须彼此吻合，事情才真正建得起来的地方。",
+  st_e2:"创始人", st_h2:"两种背景，同一种执念",
+  st_p2:"不同的训练，不同的直觉，却从相反的方向抵达同一个信念：技术唯一的工作，是把复杂的事情变简单。如果它没有做到，那它就还没有完成。",
+  st_f1n:"Diego Ostertag", st_f1r:"联合创始人 &amp; CEO",
+  st_f1b:"西班牙、德国与智利三重背景——智利大学市场营销学位与金融 MBA，以及对任何生意中最关键问题的直觉：真的会有人为此付钱吗，为什么。",
+  st_f2n:"Jae Hee Kim", st_f2r:"联合创始人 &amp; COO",
+  st_f2b:"在韩国与智利之间往返长大，经济学学士，五年时间置身可再生能源的机器内部——开发并运营光伏电站。此后他主导过生物科技领域的工作，那里的自动化系统、大数据与 AI 以工业规模运转。",
+  st_e3:"问题所在", st_h3:"藏在光天化日之下",
+  st_p3a:"可再生能源有一个数据问题，从外面看却像是数据的富足。光伏电站与储能系统每天产生的信息量近乎荒谬。纸面上，这个行业对自己资产的了解从未如此之多。",
+  st_p3b:"但去问真正为这些资产负责的人一个简单的问题——电站此刻到底怎么样，什么需要我关注——大多数日子里，诚实的回答是：还有人正在查。埋在某张表格里，靠手工拼出来，在它本该有用的一周之后才送到。",
+  st_pull:"拥有数据从来不是难点。难的是及时知道数据意味着什么，来得及据此行动——这才是从未真正被解决的问题。",
+  st_e4:"我们的信念", st_h4:"我们让 AI 有人情味",
+  st_p4a:"人工智能有两种：一种让人惊叹，一种帮到人。前者产出更多：更多图表、更多评分、更多没人要求却言之凿凿的输出。后者产出更少，却更有分量。",
+  st_p4b:"我们造的是后者。我们的工作是把极其复杂的东西——每天来自数千台设备的数百万条测量——变成交还给人的、关于其自身资产的透明数字与事实：两分钟读完，便可放心行动。",
+  st_t1k:"精确", st_t1v:"每个数字都可追溯至背后的测量。数据撑不起结论时，我们直说。",
+  st_t2k:"简明", st_t2v:"能报告的不等于该报告的。我们只呈现会改变决策的东西。",
+  st_t3k:"简单", st_t3v:"平实的语言，用读者的语言，让投资人和现场技术员各自得到对自己有用的东西。",
+  st_e5:"回望", st_h5:"十年，一条直线",
+  st_p5a:"只有回头看，那十年才不再显得零散。医疗项目教会了精确，生物医学的工作教会了规模化的系统思维，食品生意教会了日复一日为真实客户运营的朴素纪律。",
+  st_p5b:"没有一步是浪费。那全是装配——为了一个两人直到迎面撞上才完全认出的问题：能源、数据、金融与信任，同时需要同一样东西。",
+  st_e6:"为什么是现在", st_h6:"我们下的赌注",
+  st_p6:"我们不认为可再生能源的下一次突破是收集更多数据。我们认为，是让已有的数据变得智能、诚实，并对需要它的人即刻有用。这就是 Quorelia 立身的赌注。",
+  st_close_h:'能源的未来不仅是可再生的。<span style="color:var(--teal-lt);">它将是智能的。</span>',
+  st_close_p:"两位朋友。十年的尝试。而这仅仅是开始。",
+  f_desc:"面向关键能源基础设施的智能。光伏、风电与储能。",
+  f_prod:"平台", f_sample:"样例报告", f_co:"公司", f_ct:"联系",
+  f_tag:"可再生能源智能"
+ },
  es:{
-  nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_ev:"Evidencia", nav_gov:"Gobierno",
+  nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_gov:"Gobierno",
   nav_story:"Nuestra historia", cta_demo:"Solicitar demo", cta_demo2:"Solicitar demo", cta_gov:"Para autoridades públicas",
   st_tag:"Nuestra historia",
   st_title:'Dos amigos. Diez años intentándolo. Una misión: hacer <span class="dim">medible</span> la energía.',
@@ -298,9 +336,10 @@ const i18n = {
 function setLang(l){
   document.getElementById('html-root').setAttribute('lang', l);
   ['btn','mb'].forEach(function(p){
-    var en=document.getElementById(p+'-en'), es=document.getElementById(p+'-es');
-    if(en) en.classList.toggle('on', l==='en');
-    if(es) es.classList.toggle('on', l==='es');
+    ['en','es','zh'].forEach(function(k){
+      var btn=document.getElementById(p+'-'+k);
+      if(btn) btn.classList.toggle('on', l===k);
+    });
   });
   var d=i18n[l];
   document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -312,7 +351,8 @@ function setLang(l){
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
-  setLang(s || ((navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es':'en'));
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
 })();
 </script>
 </body>
