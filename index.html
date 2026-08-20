@@ -428,7 +428,11 @@
     <div class="lang-blk rv">
       <p class="tag g" data-i18n="lg_t">The same report, in your language</p>
       <h3 class="mid" style="margin:12px auto 16px;max-width:30ch;" data-i18n="lg_h">One verified dataset, issued in the language of whoever has to read it</h3>
-      <p class="lede" style="margin-bottom:38px;" data-i18n="lg_s">Chilean operations, an Asian owner and a European lender rarely share a working language. The figures do not change between versions — only the words around them. Nothing is re-keyed, so nothing drifts.</p>
+      <p class="lede" style="margin-bottom:34px;" data-i18n="lg_s">Chilean operations, an Asian owner and a European lender rarely share a working language. The figures do not change between versions — only the words around them. Nothing is re-keyed, so nothing drifts.</p>
+      <div class="scale" style="margin-bottom:44px;">
+        <div class="scale-v" data-i18n="lg_249">249</div>
+        <div class="scale-k" data-i18n="lg_249k">languages available on request — the full coverage of Google’s AI translation stack. Spanish, English and Chinese are maintained natively.</div>
+      </div>
       <div class="lang-grid">
         <div class="lang-c">
           <div class="lang-n">Español</div>
@@ -492,6 +496,15 @@
         <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
       </div>
     </div>
+    <div class="split rv" style="margin-top:34px;">
+      <a class="s-grey" href="bess-scada-dashboard.html" target="_blank" rel="noopener">
+        <span data-i18n="rp_lv1">Open the live BESS dashboard</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="control-center.html" target="_blank" rel="noopener">
+        <span data-i18n="rp_lv2">Open the Control Center demo</span><span class="ar">→</span>
+      </a>
+    </div>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="rp_lvp">We build customized Control Centers for each client — modules, thresholds and views shaped to your fleet. What you see here is a demo sample with illustrative data.</p>
     <p class="fine rv" style="margin-top:24px;" data-i18n="rp_note">Reports are shown in Spanish — the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.</p>
   </div>
 </section>
@@ -637,6 +650,8 @@
 const i18n = {
  en:{
   cta_gov:"For Public Authorities",
+  rp_lv1:"Open the live BESS dashboard", rp_lv2:"Open the Control Center demo",
+  rp_lvp:"We build customized Control Centers for each client \u2014 modules, thresholds and views shaped to your fleet. What you see here is a demo sample with illustrative data.",
   rp_t:"Sample reports",
   rp_hint:"Click a report to open it",
   rp4t:"Fleet &amp; portfolio", rp4h:"The whole fleet in one document",
@@ -672,7 +687,9 @@ const i18n = {
   lg_t:"The same report, in your language",
   lg_h:"One verified dataset, issued in the language of whoever has to read it",
   lg_s:"Chilean operations, an Asian owner and a European lender rarely share a working language. The figures do not change between versions \u2014 only the words around them. Nothing is re-keyed, so nothing drifts.",
-  lg_note:"Spanish, English and Chinese today \u2014 and any language we can translate on request. The report template is separated from the data layer, so a new language is a translation task, never a recalculation.",
+  lg_249:"249",
+  lg_249k:"languages available on request \u2014 the full coverage of Google\u2019s AI translation stack. Spanish, English and Chinese are maintained natively.",
+  lg_note:"The report template is separated from the data layer, so any new language is a translation task \u2014 never a recalculation. Machine-translated versions are always reviewed before issuance.",
   nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_gov:"Government",
   nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
   hero:"The intelligence layer between energy infrastructure and <span class=\"dim\">the people answerable for it</span>.",
@@ -788,7 +805,9 @@ const i18n = {
   lg_t:"同一份报告，用您的语言",
   lg_h:"同一套经验证的数据，以读者的语言签发",
   lg_s:"智利的运营团队、亚洲的业主与欧洲的贷款方很少共用一种工作语言。数字在各版本之间不会改变——变的只是围绕数字的文字。没有任何内容被重新录入，因此没有任何数据会漂移。",
-  lg_note:"现有西班牙语、英语与中文——并可按需提供我们能够翻译的任何语言。报告模板与数据层分离，新增语言只是翻译工作，绝不涉及重新计算。",
+  lg_249:"249",
+  lg_249k:"种语言可按需提供——即 Google AI 翻译体系的全部覆盖范围。西班牙语、英语与中文为原生维护。",
+  lg_note:"报告模板与数据层分离：新增语言只是翻译工作，绝不涉及重新计算。所有机器翻译版本在签发前均经人工复核。",
   nav_sw:"软件平台", nav_plat:"控制中心", nav_cap:"能力", nav_gov:"政府事务",
   nav_story:"我们的故事", nav_contact:"联系我们", cta_demo:"预约演示",
   hero:"能源基础设施与<span class=\"dim\">为其负责的人</span>之间的智能层。",
@@ -842,6 +861,8 @@ const i18n = {
   cc_g3:"情报", cc_g3a:"引导式提问",
   cc_g4:"管理", cc_g4a:"预测性维护", cc_g4b:"资产折旧", cc_g4c:"报告", cc_g4d:"引擎配置",
   cc_cta:"预约控制中心演示",
+  rp_lv1:"打开实时 BESS 仪表盘", rp_lv2:"打开控制中心演示",
+  rp_lvp:"我们为每位客户构建定制化的控制中心——模块、阈值与视图均按您的电站群量身打造。此处所见为示意数据的演示样例。",
   rp_t:"样例报告",
   rp_hint:"点击任一报告即可打开",
   rp4t:"电站群与投资组合", rp4h:"整个电站群，一份文件",
@@ -895,6 +916,8 @@ const i18n = {
  },
  es:{
   cta_gov:"Para autoridades p\u00fablicas",
+  rp_lv1:"Abrir el tablero BESS en vivo", rp_lv2:"Abrir la demo del Control Center",
+  rp_lvp:"Construimos Control Centers personalizados para cada cliente \u2014 m\u00f3dulos, umbrales y vistas a la medida de su parque. Lo que ve aqu\u00ed es una muestra demo con datos ilustrativos.",
   rp_t:"Informes de muestra",
   rp_hint:"Haga clic en un informe para abrirlo",
   rp4t:"Cartera y flota", rp4h:"Todo el parque en un solo documento",
@@ -930,7 +953,9 @@ const i18n = {
   lg_t:"El mismo informe, en su idioma",
   lg_h:"Un solo conjunto de datos verificado, emitido en el idioma de quien deba leerlo",
   lg_s:"Una operaci\u00f3n chilena, un propietario asi\u00e1tico y un financista europeo rara vez comparten idioma de trabajo. Las cifras no cambian entre versiones \u2014 s\u00f3lo las palabras alrededor. Nada se vuelve a digitar, as\u00ed que nada se desv\u00eda.",
-  lg_note:"Hoy espa\u00f1ol, ingl\u00e9s y chino \u2014 y a solicitud, cualquier idioma que podamos traducir. La plantilla del informe est\u00e1 separada de la capa de datos: un idioma nuevo es una tarea de traducci\u00f3n, nunca un rec\u00e1lculo.",
+  lg_249:"249",
+  lg_249k:"idiomas disponibles a solicitud \u2014 la cobertura completa de la traducci\u00f3n con IA de Google. Espa\u00f1ol, ingl\u00e9s y chino se mantienen de forma nativa.",
+  lg_note:"La plantilla del informe est\u00e1 separada de la capa de datos: un idioma nuevo es una tarea de traducci\u00f3n, nunca un rec\u00e1lculo. Toda versi\u00f3n traducida autom\u00e1ticamente se revisa antes de emitirse.",
   nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_gov:"Gobierno",
   nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
   hero:"La capa de inteligencia entre la infraestructura energética y <span class=\"dim\">quienes responden por ella</span>.",

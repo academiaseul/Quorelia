@@ -12,29 +12,35 @@
   gtag('config', 'G-H1F1ZXMMT2');
 </script>
 <title>BESS SCADA — Planta 175</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
   :root{
-    --bg:#0c0a09;
-    --panel:#1c1917;
-    --panel-2:#110f0e;
-    --border:rgba(255,255,255,0.10);
-    --border-hi:#00b6d4;
-    --text:#fafaf9;
-    --muted:#a6a09b;
-    --blue:#00b6d4;
-    --blue-soft:rgba(0,182,212,0.16);
-    --green:#22c55e;
-    --amber:#f5a623;
-    --red:#ff6568;
-    --purple:#a78bfa;
+    /* paleta Palantir oscura: azul marino profundo, acento teal */
+    --bg:#081522;
+    --panel:#0e2233;
+    --panel-2:#0a1a29;
+    --border:rgba(255,255,255,0.12);
+    --border-hi:#1fb6a8;
+    --text:#f2f5f7;
+    --muted:#8fa3b0;
+    --blue:#1fb6a8;
+    --blue-soft:rgba(31,182,168,0.16);
+    --green:#2f9e6e;
+    --amber:#d97706;
+    --red:#e05252;
+    --purple:#8f9dd8;
+    --sans:'Inter','PingFang SC','Microsoft YaHei',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html,body{overflow-x:hidden;}
   body{
     background:var(--bg);
     color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+    font-family:var(--sans);-webkit-font-smoothing:antialiased;
     font-size:13px;
   }
   a{color:inherit;}
@@ -153,14 +159,14 @@
     letter-spacing:.3px;padding:8px 10px;border-bottom:1px solid var(--border);
   }
   tbody td{padding:9px 10px;border-bottom:1px solid #211e1c;vertical-align:middle;}
-  tbody tr:hover{background:#1c1917;}
+  tbody tr:hover{background:#0e2233;}
   .prio{padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;}
   .prio.urgente{background:rgba(255,101,104,.15);color:#ff8b8b;}
   .prio.alta{background:rgba(245,166,35,.15);color:#ffc978;}
-  .prio.media{background:rgba(0,182,212,.15);color:#6ec6db;}
+  .prio.media{background:rgba(31,182,168,.15);color:#6ec6db;}
   .prio.baja{background:#292524;color:var(--muted);}
   .owner{padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:600;}
-  .owner.operacion{background:rgba(0,182,212,.15);color:#6ec6db;}
+  .owner.operacion{background:rgba(31,182,168,.15);color:#6ec6db;}
   .owner.proyectapv{background:rgba(167,139,250,.15);color:#c9b8fc;}
   .owner.cliente{background:rgba(245,166,35,.15);color:#ffc978;}
   .estado{font-size:11px;font-weight:600;}
@@ -192,6 +198,11 @@
   .impact-strip .box .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;}
 
   .foot{padding:16px 20px 30px;color:#78716c;font-size:11px;text-align:center;}
+
+  /* ── Alineación Palantir: esquinas rectas, mono para cifras ── */
+  *:not(.dot):not(circle){border-radius:0 !important;}
+  .logo{font-family:var(--mono);font-weight:500;letter-spacing:.24em;text-transform:uppercase;}
+  .tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
 </style>
 </head>
 <body>
@@ -290,11 +301,11 @@
     <div class="panel-body">
       <div class="heatmap-scroll"><div class="heatmap" id="heatmap"></div></div>
       <div class="legend">
-        <span>0 mV</span><span class="sw" style="background:rgba(0,182,212,0.16)"></span>
-        <span class="sw" style="background:#00b6d4"></span>
-        <span class="sw" style="background:#22c55e"></span>
-        <span class="sw" style="background:#f5a623"></span>
-        <span class="sw" style="background:#ff6568"></span><span>≥500 mV (umbral)</span>
+        <span>0 mV</span><span class="sw" style="background:rgba(31,182,168,0.16)"></span>
+        <span class="sw" style="background:#1fb6a8"></span>
+        <span class="sw" style="background:#2f9e6e"></span>
+        <span class="sw" style="background:#d97706"></span>
+        <span class="sw" style="background:#e05252"></span><span>≥500 mV (umbral)</span>
       </div>
     </div>
   </div>
@@ -444,11 +455,11 @@ const DATA = {
 let charts = {};
 
 function colorForMv(mv){
-  if(mv >= 500) return '#ff6568';
-  if(mv >= 350) return '#f5a623';
-  if(mv >= 200) return '#22c55e';
-  if(mv >= 80) return '#00b6d4';
-  return 'rgba(0,182,212,0.16)';
+  if(mv >= 500) return '#e05252';
+  if(mv >= 350) return '#d97706';
+  if(mv >= 200) return '#2f9e6e';
+  if(mv >= 80) return '#1fb6a8';
+  return 'rgba(31,182,168,0.16)';
 }
 
 function render(key){
@@ -466,7 +477,7 @@ function render(key){
       <div class="label">${k.label}</div>
       <div class="value ${k.cls}">${k.value}</div>
       <div class="meta">${k.meta}</div>
-      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#22c55e':k.cls==='amber'?'#f5a623':k.cls==='red'?'#ff6568':'#00b6d4'}"></div></div>
+      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#2f9e6e':k.cls==='amber'?'#d97706':k.cls==='red'?'#e05252':'#1fb6a8'}"></div></div>
     </div>`).join('');
 
   document.getElementById('energySub').textContent = `carga ${d.energy.carga} MWh · descarga ${d.energy.descarga} MWh`;
@@ -484,14 +495,14 @@ function render(key){
       datasets:[
         {
           type:'line', label:'Disponibilidad real (%)', data:d.availSeries,
-          borderColor:'#00b6d4', backgroundColor:'rgba(0,182,212,0.12)', fill:true,
+          borderColor:'#1fb6a8', backgroundColor:'rgba(31,182,168,0.12)', fill:true,
           tension:0.3, pointRadius:3,
-          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ff6568'),
-          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#22c55e':'#ff6568'),
+          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#2f9e6e':'#e05252'),
+          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#2f9e6e':'#e05252'),
         },
         {
           type:'line', label:`Objetivo (${d.availTarget}%)`, data:d.availDates.map(()=>d.availTarget),
-          borderColor:'#f5a623', borderDash:[6,4], pointRadius:0, fill:false,
+          borderColor:'#d97706', borderDash:[6,4], pointRadius:0, fill:false,
         }
       ]
     },
@@ -512,7 +523,7 @@ function render(key){
     data:{
       labels:['D-6','D-5','D-4','D-3','D-2','D-1','Hoy'],
       datasets:[
-        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#00b6d4', borderRadius:3},
+        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#1fb6a8', borderRadius:3},
       ]
     },
     options:{
@@ -532,7 +543,7 @@ function render(key){
       labels:['SOC inicial','SOC final','Restante'],
       datasets:[{
         data:[d.soc.inicial, Math.max(d.soc.final-d.soc.inicial,0), 100-Math.max(d.soc.final,d.soc.inicial)],
-        backgroundColor:['#00b6d4','#22c55e','#292524'],
+        backgroundColor:['#1fb6a8','#2f9e6e','#292524'],
         borderWidth:0
       }]
     },
@@ -550,7 +561,7 @@ function render(key){
       labels:d.trendLabels,
       datasets:[{
         data:d.trendVals,
-        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#22c55e':v>=d.trendBands.warn?'#f5a623':'#ff6568'),
+        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#2f9e6e':v>=d.trendBands.warn?'#d97706':'#e05252'),
         borderRadius:3
       }]
     },
@@ -571,7 +582,7 @@ function render(key){
       labels:d.alarms.map(a=>a.f),
       datasets:[{
         data:d.alarms.map(a=>a.n),
-        backgroundColor:['#00b6d4','#a78bfa','#22c55e','#ff6568','#f5a623'],
+        backgroundColor:['#1fb6a8','#8f9dd8','#2f9e6e','#e05252','#d97706'],
         borderWidth:0
       }]
     },

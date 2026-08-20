@@ -28,7 +28,11 @@
   /* Específico de la historia */
   .s-hero{padding:118px 0 74px;}
   .s-hero .mega{max-width:21ch;}
-  article{max-width:720px;}
+  /* La columna del relato va centrada en la página; los párrafos siguen
+     alineados a la izquierda porque centrar texto corrido cansa la lectura. */
+  article{max-width:720px;margin:0 auto;}
+  .chap .tag,.chap h2{text-align:center;}
+  .open{text-align:center;}
   .chap{padding:0 0 54px;}
   .chap h2{font-size:var(--fs-mid);margin-bottom:16px;}
   .chap p{font-size:17px;line-height:1.78;color:#33454f;margin-bottom:17px;}
