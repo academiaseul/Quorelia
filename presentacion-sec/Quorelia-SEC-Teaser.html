@@ -72,6 +72,24 @@
   .split .g{background:var(--paper-3);color:var(--ink);}
   .split .k{background:var(--navy);color:#fff;}
   .src{font-size:10.5px;color:var(--grey);line-height:1.5;margin-top:12px;}
+
+  /* diagrama de arquitectura — misma topología que quorelia.org */
+  .arq{display:flex;align-items:stretch;margin-top:16px;min-height:2.35in;}
+  .aq-col{flex:1;display:flex;flex-direction:column;}
+  .aq-col.w{flex:1.22;}
+  .aq-lb{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--grey);margin-bottom:6px;}
+  .aq-box{flex:1;background:var(--paper-2);border:1px solid var(--line);padding:11px 12px 12px;}
+  .aq-box + .aq-box{margin-top:8px;}
+  .aq-box b{display:block;font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:-.008em;margin-bottom:5px;}
+  .aq-box span{display:block;font-size:9.8px;line-height:1.42;color:var(--ink-2);}
+  .aq-box.src{background:transparent;border-style:dashed;border-color:#c8ced3;}
+  /* los dos motores propios en negativo: es lo único que aporta Quorelia */
+  .aq-box.key{background:var(--navy);border-color:var(--navy);}
+  .aq-box.key b{color:#fff;} .aq-box.key span{color:#a9bcc7;}
+  .aq-box.out{background:var(--paper-3);border-color:transparent;}
+  .aq-ar{display:flex;align-items:center;justify-content:center;width:26px;flex:none;
+    color:var(--grey);font-size:13px;padding-top:14px;}
   .cover-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 30%;}
   .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,28,44,.70),rgba(11,28,44,.58) 45%,rgba(11,28,44,.88));}
   .in{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
@@ -156,9 +174,62 @@
   <div class="foot"><span>Quorelia · SEC</span><span>04</span></div>
 </section>
 
-<!-- 5 · CÓMO OPERA -->
+<!-- 5 · ARQUITECTURA -->
+<section class="s">
+  <p class="tag">04 · Cómo funciona</p>
+  <h2 class="big" style="margin:14px 0 14px;max-width:28ch;">Un solo camino desde el sensor hasta la cifra firmada</h2>
+  <p class="lede">La arquitectura es deliberadamente simple. El dato entra una vez, se valida una vez, y ningún resultado llega a un informe sin pasar antes por el motor de verificación.</p>
+
+  <div class="arq">
+    <div class="aq-col">
+      <div class="aq-lb">Entrada</div>
+      <div class="aq-box src"><b>SCADA · PPC · BMS</b><span>Los sistemas propios del titular. No se reemplaza nada.</span></div>
+    </div>
+    <div class="aq-ar">&#8594;</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/01</div>
+      <div class="aq-box key"><b>Ingesta</b><span>Una cadencia de 300 s, una marca de tiempo, un sistema de unidades.</span></div>
+    </div>
+    <div class="aq-ar">&#8594;</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/02</div>
+      <div class="aq-box"><b>Validación</b><span>Vacíos, canales congelados, valores fuera de rango y deriva de reloj.</span></div>
+    </div>
+    <div class="aq-ar">&#8594;</div>
+
+    <div class="aq-col w">
+      <div class="aq-lb">/03 · en paralelo</div>
+      <div class="aq-box"><b>Cálculo de KPI</b><span>Disponibilidad, factor de planta, eficiencia de ciclo, vertimiento.</span></div>
+      <div class="aq-box"><b>Motor de calidad</b><span>Cobertura, número de muestras y cierre de ciclo contra umbral.</span></div>
+    </div>
+    <div class="aq-ar">&#8594;</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/04</div>
+      <div class="aq-box key"><b>Motor de verificación</b><span>La compuerta. Lo que no cumple no se publica: se publica la razón.</span></div>
+    </div>
+    <div class="aq-ar">&#8594;</div>
+
+    <div class="aq-col w">
+      <div class="aq-lb">/05 · salidas</div>
+      <div class="aq-box out"><b>Tablero</b><span>Portal del cliente · vista regulatoria</span></div>
+      <div class="aq-box out"><b>Reportería</b><span>PDF · Excel · correo, diaria y mensual</span></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h4>Toda cifra conserva su procedencia</h4>
+    <p>Se almacenan las tres cosas: la medición cruda sin modificar, el resultado calculado junto a la fórmula que lo produjo, y la cadena que une una con otra. Por eso cualquier número puede recorrerse hacia atrás hasta la medición que lo respalda — que es exactamente lo que hoy no se puede hacer con un informe en PDF.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>05</span></div>
+</section>
+
+<!-- 6 · CÓMO OPERA -->
 <section class="s" style="background:var(--paper-2);">
-  <p class="tag">04 · Cómo opera</p>
+  <p class="tag">05 · Cómo opera</p>
   <h2 class="big" style="margin:14px 0 14px;">Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
   <p class="lede">Cinco capacidades encadenadas sobre los sistemas SCADA ya instalados. Sin equipamiento adicional.</p>
   <div class="capgrid">
@@ -173,12 +244,12 @@
     <p>Detectamos desviaciones sostenidas respecto del comportamiento esperado. <b>No emitimos pronósticos de vida útil remanente ni probabilidades de falla</b>: eso exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que no se sostenga ante una revisión técnica.</p>
   </div>
   <div class="sp"></div>
-  <div class="foot"><span>Quorelia · SEC</span><span>05</span></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>06</span></div>
 </section>
 
-<!-- 6 · PILOTO Y CIERRE -->
+<!-- 7 · PILOTO Y CIERRE -->
 <section class="s">
-  <p class="tag">05 · Propuesta</p>
+  <p class="tag">06 · Propuesta</p>
   <h2 class="big" style="margin:14px 0 14px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
   <table>
     <tr><th>Elemento</th><th>Definición</th></tr>
@@ -195,7 +266,7 @@
   </div>
   <div class="sp"></div>
   <p class="src">Quorelia es una empresa privada de tecnología. No es un sistema oficial de la SEC ni de ningún organismo del Estado, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente.</p>
-  <div class="foot"><span>© 2026 Quorelia · quorelia.org</span><span>06</span></div>
+  <div class="foot"><span>© 2026 Quorelia · quorelia.org</span><span>07</span></div>
 </section>
 
 </body>

@@ -167,8 +167,17 @@ function partirEnLineas(el){
   window.addEventListener('resize', function(){
     clearTimeout(t); t = setTimeout(preparar, 220);
   });
-  // el cambio de idioma reescribe el texto: volver a partir
-  window.addEventListener('quorelia:lang', function(){ setTimeout(preparar, 40); });
+  /* El cambio de idioma reescribe el texto: hay que volver a partirlo.
+     Ojo: partirEnLineas guarda una copia en dataset.original la primera vez
+     y luego restaura desde ella. Si no la descartamos aquí, esa copia —en el
+     idioma anterior— pisa la traducción que setLang acaba de escribir, y el
+     titular se queda en el idioma viejo mientras el resto de la página cambia. */
+  window.addEventListener('quorelia:lang', function(){
+    titulares.forEach(function(h){
+      if (h.hasAttribute('data-i18n')) delete h.dataset.original;
+    });
+    setTimeout(preparar, 40);
+  });
 })();
 
 /* 2 · Palabra rotativa — cicla los verbos del producto en su sitio */

@@ -100,6 +100,25 @@
   .dark .note{background:rgba(31,182,168,.10);border-left-color:var(--teal-lt);}
   .dark .note h4{color:#fff;} .dark .note p{color:#b9c9d1;}
 
+  /* diagrama de arquitectura — misma topología que quorelia.org */
+  .arq{display:flex;align-items:stretch;margin-top:14px;min-height:2.05in;}
+  .aq-col{flex:1;display:flex;flex-direction:column;}
+  .aq-col.w{flex:1.22;}
+  .aq-lb{font-family:var(--mono);font-size:8px;letter-spacing:.16em;text-transform:uppercase;
+    color:#7f93a0;margin-bottom:6px;}
+  .aq-box{flex:1;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.15);
+    padding:10px 11px 11px;}
+  .aq-box + .aq-box{margin-top:7px;}
+  .aq-box b{display:block;font-size:12px;font-weight:600;color:#fff;letter-spacing:-.008em;margin-bottom:4px;}
+  .aq-box span{display:block;font-size:9.5px;line-height:1.4;color:#9fb2bd;}
+  .aq-box.src{background:transparent;border-style:dashed;border-color:rgba(255,255,255,.3);}
+  /* los dos motores propios van encendidos: es lo único que aporta Quorelia */
+  .aq-box.key{background:#fff;border-color:#fff;}
+  .aq-box.key b{color:var(--navy);} .aq-box.key span{color:#46545f;}
+  .aq-box.out{background:rgba(255,255,255,.13);border-color:transparent;}
+  .aq-ar{display:flex;align-items:center;justify-content:center;width:26px;flex:none;
+    color:#63788a;font-size:13px;padding-top:14px;}
+
   .bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;}
   .veil{position:absolute;inset:0;z-index:1;}
   .in{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
@@ -215,28 +234,51 @@
   <h2 class="big" style="margin:12px 0 8px;max-width:32ch;">Primero la base de datos. Después la inteligencia artificial.</h2>
   <p class="lede">Ninguna capa de IA corrige un dato mal ingerido. Por eso la cadena de auditoría es el producto, y el modelo va después.</p>
 
-  <p class="tag" style="margin-top:20px;">Capa 1 · Datos de planta y SCADA</p>
-  <div class="chain">
-    <span class="ch k">SCADA / PPC / BMS</span><span class="arw">→</span>
-    <span class="ch">Ingesta de datos</span><span class="arw">→</span>
-    <span class="ch">Validación</span><span class="arw">→</span>
-    <span class="ch">Cálculo de KPI</span><span class="arw">→</span>
-    <span class="ch t">Motor de calidad</span><span class="arw">→</span>
-    <span class="ch t">Motor de verificación</span><span class="arw">→</span>
-    <span class="ch">Portal · Informes</span>
+  <p class="tag" style="margin-top:18px;">Capa 1 · Un solo camino desde el sensor hasta la cifra firmada</p>
+  <div class="arq">
+    <div class="aq-col">
+      <div class="aq-lb">Entrada</div>
+      <div class="aq-box src"><b>SCADA · PPC · BMS</b><span>Los sistemas propios del titular. No se reemplaza nada.</span></div>
+    </div>
+    <div class="aq-ar">→</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/01</div>
+      <div class="aq-box key"><b>Ingesta</b><span>Una cadencia de 300 s, una marca de tiempo, un sistema de unidades.</span></div>
+    </div>
+    <div class="aq-ar">→</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/02</div>
+      <div class="aq-box"><b>Validación</b><span>Vacíos, canales congelados, valores fuera de rango y deriva de reloj.</span></div>
+    </div>
+    <div class="aq-ar">→</div>
+
+    <div class="aq-col w">
+      <div class="aq-lb">/03 · en paralelo</div>
+      <div class="aq-box"><b>Cálculo de KPI</b><span>Disponibilidad, factor de planta, eficiencia de ciclo, vertimiento.</span></div>
+      <div class="aq-box"><b>Motor de calidad</b><span>Cobertura, número de muestras y cierre de ciclo contra umbral.</span></div>
+    </div>
+    <div class="aq-ar">→</div>
+
+    <div class="aq-col">
+      <div class="aq-lb">/04</div>
+      <div class="aq-box key"><b>Motor de verificación</b><span>La compuerta. Lo que no cumple no se publica: se publica la razón.</span></div>
+    </div>
+    <div class="aq-ar">→</div>
+
+    <div class="aq-col w">
+      <div class="aq-lb">/05 · salidas</div>
+      <div class="aq-box out"><b>Tablero</b><span>Portal del cliente · vista regulatoria</span></div>
+      <div class="aq-box out"><b>Reportería</b><span>PDF · Excel · correo, diaria y mensual</span></div>
+    </div>
   </div>
 
-  <p class="tag" style="margin-top:22px;">Capa 2 · Imágenes satelitales y modelos</p>
-  <div class="chain">
-    <span class="ch k">Satélite + modelos</span><span class="arw">→</span>
-    <span class="ch">Monitorear desempeño</span><span class="arw">→</span>
-    <span class="ch">Optimizar mantenimiento</span><span class="arw">→</span>
-    <span class="ch">Actuar</span>
-  </div>
+  <p class="src" style="margin-top:13px;">Se conservan las tres cosas — la medición cruda, el resultado calculado con su fórmula, y la cadena de procedencia que une una con otra. Por eso cada cifra puede recorrerse hacia atrás hasta la medición que la produjo. <b style="color:#c7d4dc;">Capa 2</b>, posterior: imágenes satelitales y modelos para monitorear desempeño y optimizar mantenimiento — siempre sobre el manifiesto ya verificado, nunca sobre el dato crudo.</p>
 
-  <div class="note" style="margin-top:22px;">
+  <div class="note" style="margin-top:16px;">
     <h4>Honestidad por diseño</h4>
-    <p>El motor de verificación deduplica el catálogo de equipos antes de calcular — un rack publicado en dos protocolos duplicaría la energía e inflaría la eficiencia por sobre 100%. Y si dos vías de cálculo independientes no coinciden, <b>la publicación se bloquea</b>. Si la cobertura de datos no alcanza el umbral, la cifra se retiene y se declara la causa: el silencio de un canal nunca se informa como cero.</p>
+    <p>El motor de verificación deduplica el catálogo de equipos antes de calcular — un rack publicado en dos protocolos duplicaría la energía e inflaría la eficiencia por sobre 100%. Si dos vías de cálculo independientes no coinciden, <b>la publicación se bloquea</b>. Si la cobertura no alcanza el umbral, la cifra se retiene y se declara la causa: el silencio de un canal nunca se informa como cero.</p>
   </div>
   <div class="sp"></div>
   <div class="foot"><span>Quorelia · SEC</span><span>05</span></div>
