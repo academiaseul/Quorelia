@@ -451,24 +451,6 @@
   </div>
 </section>
 
-<!-- ══════════ BANDA DE IMAGEN 2 ══════════ -->
-<section class="band" style="background-image:url('bg/gob-wind-close.jpg');padding:0;">
-  <div class="wrap">
-    <p class="tag rv" data-i18n="band2_t">Boardroom</p>
-    <h2 class="big rv" style="margin:16px auto 18px;max-width:24ch;" data-i18n="band2_h">One version of operational reality</h2>
-    <p class="lede rv" data-i18n="band2_p">Readable by an engineer and by a board in the same document. Each technology defines «operation» differently — a turbine idle for lack of wind is not unavailable — but what makes a figure valid can be identical across all of them.</p>
-  </div>
-</section>
-
-<!-- ══════════ PRINCIPIO ══════════ -->
-<section style="background:var(--paper-2);">
-  <div class="wrap">
-    <p class="tag g rv" style="margin-bottom:20px;" data-i18n="pr_t">The rule that governs every figure</p>
-    <h2 class="big rv" style="max-width:24ch;" data-i18n="pr_h">If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span></h2>
-    <p class="lede rv" style="margin-top:26px;" data-i18n="pr_p">A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.</p>
-  </div>
-</section>
-
 <!-- ══════════ INFORMES DE MUESTRA ══════════ -->
 <section id="reports" style="background:var(--paper-2);">
   <div class="wrap">
@@ -498,8 +480,33 @@
         <a href="informes-sec/Informe-Mensual-BESS.html" target="_blank" rel="noopener" data-i18n="rp_m3">Monthly report</a>
         <a href="informes-sec/Informe-Muestra-BESS.html" target="_blank" rel="noopener" data-i18n="rp_x3">Extended sample report</a>
       </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp4t">Fleet &amp; portfolio</div>
+        <h4 data-i18n="rp4h">The whole fleet in one document</h4>
+        <a href="informes-sec/Informe-Muestra-Cartera-SEC.html" target="_blank" rel="noopener" data-i18n="rp_c1">Portfolio oversight report</a>
+        <a href="informes-sec/Informe-Diagnostico-Parque-Nacional.html" target="_blank" rel="noopener" data-i18n="rp_c2">National fleet diagnostic</a>
+        <a href="quorelia-sample-report.html" target="_blank" rel="noopener" data-i18n="rp_c3">Independent verification &amp; O&amp;M report — the original sample</a>
+      </div>
     </div>
     <p class="fine rv" style="margin-top:24px;" data-i18n="rp_note">Reports are shown in Spanish — the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.</p>
+  </div>
+</section>
+
+<!-- ══════════ BANDA DE IMAGEN 2 ══════════ -->
+<section class="band" style="background-image:url('bg/gob-wind-close.jpg');padding:0;">
+  <div class="wrap">
+    <p class="tag rv" data-i18n="band2_t">Boardroom</p>
+    <h2 class="big rv" style="margin:16px auto 18px;max-width:24ch;" data-i18n="band2_h">One version of operational reality</h2>
+    <p class="lede rv" data-i18n="band2_p">Readable by an engineer and by a board in the same document. Each technology defines «operation» differently — a turbine idle for lack of wind is not unavailable — but what makes a figure valid can be identical across all of them.</p>
+  </div>
+</section>
+
+<!-- ══════════ PRINCIPIO ══════════ -->
+<section style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:20px;" data-i18n="pr_t">The rule that governs every figure</p>
+    <h2 class="big rv" style="max-width:24ch;" data-i18n="pr_h">If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span></h2>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="pr_p">A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.</p>
   </div>
 </section>
 
@@ -627,6 +634,8 @@ const i18n = {
  en:{
   cta_gov:"For Public Authorities",
   rp_t:"Sample reports",
+  rp4t:"Fleet &amp; portfolio", rp4h:"The whole fleet in one document",
+  rp_c1:"Portfolio oversight report", rp_c2:"National fleet diagnostic", rp_c3:"Independent verification &amp; O&amp;M report \u2014 the original sample",
   rp_h:"Read exactly what you would receive",
   rp_s:"Real report structure, illustrative data. Every figure inside carries its coverage, its formula and its reason when withheld \u2014 open one and check.",
   rp1t:"Solar PV", rp1h:"Tracking, inverters and irradiance",
@@ -829,6 +838,8 @@ const i18n = {
   cc_g4:"管理", cc_g4a:"预测性维护", cc_g4b:"资产折旧", cc_g4c:"报告", cc_g4d:"引擎配置",
   cc_cta:"预约控制中心演示",
   rp_t:"样例报告",
+  rp4t:"电站群与投资组合", rp4h:"整个电站群，一份文件",
+  rp_c1:"投资组合监督报告", rp_c2:"国家电站群诊断报告", rp_c3:"独立验证与运维报告——最初的样例",
   rp_h:"亲自阅读您将收到的东西",
   rp_s:"真实的报告结构，示意性的数据。其中每个数字都带有覆盖率、公式，以及被扣留时的原因——打开一份，亲自核对。",
   rp1t:"光伏", rp1h:"跟踪支架、逆变器与辐照",
@@ -879,6 +890,8 @@ const i18n = {
  es:{
   cta_gov:"Para autoridades p\u00fablicas",
   rp_t:"Informes de muestra",
+  rp4t:"Cartera y flota", rp4h:"Todo el parque en un solo documento",
+  rp_c1:"Informe de supervisi\u00f3n de cartera", rp_c2:"Diagn\u00f3stico del parque nacional", rp_c3:"Informe de verificaci\u00f3n independiente y O&amp;M \u2014 la muestra original",
   rp_h:"Lea exactamente lo que recibir\u00eda",
   rp_s:"Estructura real de informe, datos ilustrativos. Cada cifra lleva su cobertura, su f\u00f3rmula y su raz\u00f3n cuando se retiene \u2014 abra uno y compru\u00e9belo.",
   rp1t:"Solar FV", rp1h:"Seguimiento, inversores e irradiancia",

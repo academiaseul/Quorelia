@@ -339,7 +339,7 @@ section > .wrap > h2{max-width:24ch;}
 }
 
 /* ── Informes de muestra ───────────────────────────────────────────────── */
-.reps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;}
+.reps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left;}
 .rep{background:var(--paper-2);padding:22px 22px 24px;display:flex;flex-direction:column;
   clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);
   transition:background-color .3s var(--ease);}
@@ -352,7 +352,8 @@ section > .wrap > h2{max-width:24ch;}
 .rep a:first-of-type{margin-top:auto;}
 .rep a::before{content:'↳';position:absolute;left:0;color:var(--grey);}
 .rep a:hover{color:var(--ink);}
-@media(max-width:860px){.reps{grid-template-columns:1fr;}}
+@media(max-width:1100px){.reps{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.reps{grid-template-columns:1fr;}}
 
 /* ── Formulario de contacto ────────────────────────────────────────────── */
 .form-wrap{max-width:880px;margin:0 auto;text-align:left;}
