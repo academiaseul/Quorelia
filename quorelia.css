@@ -143,6 +143,28 @@ section > .wrap > h2{max-width:24ch;}
 .rail .card{flex:0 0 300px;min-height:330px;display:flex;flex-direction:column;}
 .rail .card .c-src{margin-bottom:auto;}
 
+/* Carrusel continuo: el JS duplica las tarjetas y anima la pista.
+   Se detiene al pasar el puntero y al salir de pantalla. */
+.rail.auto{
+  overflow:hidden;padding-bottom:0;
+  /* difuminar los bordes para que las tarjetas entren y salgan sin corte seco */
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.rail.auto .track{display:flex;gap:16px;width:max-content;will-change:transform;
+  animation:railSlide var(--rail-dur,48s) linear infinite;}
+.rail.auto:hover .track,
+.rail.auto:focus-within .track,
+.rail.auto.paused .track{animation-play-state:paused;}
+@keyframes railSlide{
+  from{transform:translate3d(0,0,0);}
+  to{transform:translate3d(calc(-50% - 8px),0,0);}   /* -8px = mitad del gap */
+}
+@media(prefers-reduced-motion: reduce){
+  .rail.auto{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+  .rail.auto .track{animation:none;width:auto;}
+}
+
 /* ── Módulos numerados ─────────────────────────────────────────────────── */
 .mod{display:grid;grid-template-columns:210px 1fr auto;gap:28px;align-items:center;
   padding:38px 0;border-top:1px solid var(--line);transition:background .2s;}

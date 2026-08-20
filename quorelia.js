@@ -215,6 +215,51 @@ function partirEnLineas(el){
   });
 })();
 
+/* 2-bis · Carrusel continuo de tarjetas
+   Envuelve las tarjetas en una pista y las duplica para que el bucle no
+   tenga corte. La duración se calcula según el ancho real, así todos los
+   rieles se mueven a la misma velocidad aunque tengan distinto contenido. */
+(function carrusel(){
+  document.querySelectorAll('.rail[data-auto]').forEach(function(rail){
+    var cards = Array.prototype.slice.call(rail.children);
+    if (cards.length < 2) return;
+
+    var track = document.createElement('div');
+    track.className = 'track';
+    cards.forEach(function(c){ track.appendChild(c); });
+    // copia para el bucle sin costura; oculta a lectores de pantalla
+    cards.forEach(function(c){
+      var clon = c.cloneNode(true);
+      clon.setAttribute('aria-hidden','true');
+      track.appendChild(clon);
+    });
+    rail.appendChild(track);
+    rail.classList.add('auto');
+
+    if (REDUCE) return;
+
+    // velocidad constante: ~55 px por segundo
+    function ajustarDuracion(){
+      var ancho = track.scrollWidth / 2;
+      rail.style.setProperty('--rail-dur', Math.max(20, Math.round(ancho / 55)) + 's');
+    }
+    ajustarDuracion();
+    var t; window.addEventListener('resize', function(){
+      clearTimeout(t); t = setTimeout(ajustarDuracion, 220);
+    });
+
+    // no gastar ciclos fuera de pantalla
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        rail.classList.toggle('paused', !es[0].isIntersecting);
+      }, {threshold:0}).observe(rail);
+    }
+    document.addEventListener('visibilitychange', function(){
+      rail.classList.toggle('paused', document.hidden);
+    });
+  });
+})();
+
 /* 3 · Conteo de cifras — sube hasta el valor al entrar en pantalla */
 (function contarCifras(){
   var vals = document.querySelectorAll('.fig .v');
