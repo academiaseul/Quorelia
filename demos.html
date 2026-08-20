@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Demos — Quorelia</title>
+<meta name="description" content="Live demos of Quorelia's BESS SCADA dashboard and Control Center, embedded with illustrative sample data.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Específico de la página de demos: la vista incrustada ocupa casi toda la
+     ventana; el sitio conserva su cabecera y su pie para no perder la navegación. */
+  .demo-head{padding:44px 0 26px;}
+  .demo-tabs{display:flex;justify-content:center;gap:0;border:1px solid var(--line);
+    width:max-content;margin:22px auto 0;}
+  .demo-tabs button{border:0;background:none;cursor:pointer;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--grey);padding:11px 22px;transition:background .2s,color .2s;}
+  .demo-tabs button.on{background:var(--ink);color:#fff;}
+  .frame-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--navy);}
+  .frame-wrap iframe{display:block;width:100%;height:calc(100vh - 118px);
+    min-height:540px;border:0;}
+  .demo-note{padding:26px 0 8px;}
+  @media(max-width:700px){ .demo-tabs{width:100%;} .demo-tabs button{flex:1;padding:11px 8px;} }
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand">Quorelia</span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+    <a href="index.html#capabilities" data-i18n="nav_cap">Capabilities</a>
+    <a href="index.html#reports" data-i18n="nav_rep">Reports</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+  </nav>
+  <div class="d-foot">
+    <a href="index.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Quorelia</a>
+    <nav class="nav-links">
+      <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
+      <a href="demos.html" class="on" data-i18n="nav_demos">Demos</a>
+      <a href="index.html#capabilities" data-i18n="nav_cap">Capabilities</a>
+      <a href="index.html#reports" data-i18n="nav_rep">Reports</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="index.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="demo-head" style="padding-bottom:0;">
+  <div class="wrap">
+    <p class="tag g" data-i18n="dm_t">Live demos</p>
+    <h1 class="big" style="margin:12px auto 14px;" data-i18n="dm_h">The platform, running on sample data</h1>
+    <p class="lede" data-i18n="dm_s">We build customized Control Centers for each client — modules, thresholds and views shaped to your fleet. Everything below is a demo sample of the fictional Cerro Aurora fleet.</p>
+    <div class="demo-tabs" role="tablist">
+      <button id="tab-scada" class="on" onclick="verDemo('scada')" data-i18n="dm_tab1">BESS SCADA dashboard</button>
+      <button id="tab-cc" onclick="verDemo('cc')" data-i18n="dm_tab2">Control Center</button>
+    </div>
+  </div>
+</section>
+
+<div class="frame-wrap" style="margin-top:30px;">
+  <iframe id="demo-frame" src="bess-scada-dashboard.html" title="Quorelia demo" loading="lazy"></iframe>
+</div>
+
+<section class="demo-note" style="padding-top:26px;padding-bottom:64px;">
+  <div class="wrap">
+    <p class="fine" style="text-align:center;max-width:82ch;margin:0 auto;" data-i18n="dm_note">Illustrative data — no real facility or client. The dashboard scrolls inside its own frame; use the tabs above to switch views, or open the demo full screen.</p>
+    <div class="split" style="margin-top:30px;">
+      <a class="s-grey" id="full-link" href="bess-scada-dashboard.html" target="_blank" rel="noopener">
+        <span data-i18n="dm_full">Open this demo full screen</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="index.html#contact">
+        <span data-i18n="dm_cta">Request your customized Control Center</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">Quorelia</div>
+        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+      </div>
+      <div>
+        <h5 data-i18n="f_prod">Platform</h5>
+        <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
+        <a href="demos.html" data-i18n="nav_demos">Demos</a>
+        <a href="index.html#reports" data-i18n="nav_rep">Reports</a>
+        <a href="quorelia-sample-report.html" data-i18n="f_sample">Sample report</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_co">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_ct">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia</span>
+      <span data-i18n="f_tag">Renewable Energy Intelligence</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Our Software", nav_demos:"Demos", nav_cap:"Capabilities", nav_rep:"Reports",
+  nav_gov:"Government", nav_story:"Our Story", cta_demo:"Request a Demo",
+  dm_t:"Live demos",
+  dm_h:"The platform, running on sample data",
+  dm_s:"We build customized Control Centers for each client — modules, thresholds and views shaped to your fleet. Everything below is a demo sample of the fictional Cerro Aurora fleet.",
+  dm_tab1:"BESS SCADA dashboard", dm_tab2:"Control Center",
+  dm_note:"Illustrative data — no real facility or client. The dashboard scrolls inside its own frame; use the tabs above to switch views, or open the demo full screen.",
+  dm_full:"Open this demo full screen", dm_cta:"Request your customized Control Center",
+  f_desc:"Intelligence for critical energy infrastructure. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_co:"Company", f_ct:"Contact",
+  f_tag:"Renewable Energy Intelligence",
+  f_fine:"Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients."
+ },
+ es:{
+  nav_sw:"Plataforma", nav_demos:"Demos", nav_cap:"Capacidades", nav_rep:"Informes",
+  nav_gov:"Gobierno", nav_story:"Nuestra historia", cta_demo:"Solicitar demo",
+  dm_t:"Demos en vivo",
+  dm_h:"La plataforma, corriendo sobre datos de muestra",
+  dm_s:"Construimos Control Centers personalizados para cada cliente — módulos, umbrales y vistas a la medida de su parque. Todo lo de abajo es una muestra demo de la flota ficticia Cerro Aurora.",
+  dm_tab1:"Tablero SCADA BESS", dm_tab2:"Control Center",
+  dm_note:"Datos ilustrativos — ninguna instalación ni cliente real. El tablero se desplaza dentro de su propio marco; use las pestañas para cambiar de vista, o abra la demo a pantalla completa.",
+  dm_full:"Abrir esta demo a pantalla completa", dm_cta:"Solicite su Control Center personalizado",
+  f_desc:"Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_co:"Empresa", f_ct:"Contacto",
+  f_tag:"Inteligencia en Energía Renovable",
+  f_fine:"Las demos y los informes de muestra de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales."
+ },
+ zh:{
+  nav_sw:"软件平台", nav_demos:"演示", nav_cap:"能力", nav_rep:"报告",
+  nav_gov:"政府事务", nav_story:"我们的故事", cta_demo:"预约演示",
+  dm_t:"实时演示",
+  dm_h:"平台实机运行，基于示意数据",
+  dm_s:"我们为每位客户构建定制化的控制中心——模块、阈值与视图均按您的电站群量身打造。以下全部内容均为虚构的 Cerro Aurora 电站群演示样例。",
+  dm_tab1:"BESS SCADA 仪表盘", dm_tab2:"控制中心",
+  dm_note:"示意数据——不代表任何真实电站或客户。仪表盘在自身框架内滚动；使用上方标签切换视图，或全屏打开演示。",
+  dm_full:"全屏打开此演示", dm_cta:"定制您的专属控制中心",
+  f_desc:"面向关键能源基础设施的智能。光伏、风电与储能。",
+  f_prod:"平台", f_sample:"样例报告", f_co:"公司", f_ct:"联系",
+  f_tag:"可再生能源智能",
+  f_fine:"本站的演示与样例报告均为示意数据，不代表真实电站或客户。"
+ }
+};
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var b=document.getElementById(p+'-'+k);
+      if(b) b.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
+})();
+
+/* pestañas de demo — el ancla permite enlazar directo: demos.html#cc */
+var VISTAS={scada:'bess-scada-dashboard.html', cc:'control-center.html'};
+function verDemo(v){
+  document.getElementById('demo-frame').src=VISTAS[v];
+  document.getElementById('full-link').href=VISTAS[v];
+  document.getElementById('tab-scada').classList.toggle('on', v==='scada');
+  document.getElementById('tab-cc').classList.toggle('on', v==='cc');
+  if(history.replaceState) history.replaceState(null,'','#'+v);
+}
+if(location.hash==='#cc') verDemo('cc');
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
