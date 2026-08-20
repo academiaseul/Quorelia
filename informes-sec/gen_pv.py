@@ -22,20 +22,20 @@ MES=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
 print(f"gen={gen} PR={PR:.1f} CF={CF:.1f} desv={desv:+.2f}")
 P=[]
 P.append(page(f"""<div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm">Informe de muestra · recurso solar real de Santiago</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">CENTRAL FOTOVOLTAICA · PV</div>
 <h1 style="font-size:34px;line-height:1.12;font-weight:500;letter-spacing:-.03em;max-width:6.2in;">Informe de Verificación Independiente y Desempeño Operacional</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.4in;margin-top:14px;">Perfil de recurso solar calculado para las coordenadas de Santiago (33,45° S · 70,67° O) mediante modelos NREL SPA e Ineichen, contrastado con el Explorador Solar del Ministerio de Energía.</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.4in;margin-top:14px;">Perfil de recurso solar calculado para las coordenadas de Santiago (33,45° S · 70,67° O) mediante modelos NREL SPA e Ineichen, contrastado con el Explorador Solar del Ministerio de Energía.</p>
 <table class="kv" style="margin-top:26px;max-width:5.6in;">
-<tr><td style="color:#8fa0ab;">Instalación</td><td style="color:#fff;">{NOM}</td></tr>
-<tr><td style="color:#8fa0ab;">Ubicación</td><td style="color:#fff;">{REG}, Chile</td></tr>
-<tr><td style="color:#8fa0ab;">Capacidad</td><td style="color:#fff;">{PAC:.0f} MWac / {PDC:.0f} MWp</td></tr>
-<tr><td style="color:#8fa0ab;">Período informado</td><td style="color:#fff;">{PER}</td></tr>
-<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">{REF}</td></tr></table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">La instalación, el titular y los hallazgos son ilustrativos. El recurso solar es calculado a partir de la posición geográfica real de Santiago. © 2026 Quorelia.</p></div>""",
+<tr><td style="color:var(--grey);">Instalación</td><td style="color:var(--ink);">{NOM}</td></tr>
+<tr><td style="color:var(--grey);">Ubicación</td><td style="color:var(--ink);">{REG}, Chile</td></tr>
+<tr><td style="color:var(--grey);">Capacidad</td><td style="color:var(--ink);">{PAC:.0f} MWac / {PDC:.0f} MWp</td></tr>
+<tr><td style="color:var(--grey);">Período informado</td><td style="color:var(--ink);">{PER}</td></tr>
+<tr><td style="color:var(--grey);">Referencia</td><td style="color:var(--ink);font-family:var(--mono);">{REF}</td></tr></table></div>
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">La instalación, el titular y los hallazgos son ilustrativos. El recurso solar es calculado a partir de la posición geográfica real de Santiago. © 2026 Quorelia.</p></div>""",
 "Quorelia · Informe de muestra","01","cover"))
 
 P.append(page(f"""<div class="sec-num">01 · Identificación del activo</div>

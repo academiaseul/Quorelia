@@ -45,6 +45,7 @@
   </div>
   <nav>
     <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
     <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
     <a href="#evidence" data-i18n="nav_ev">Evidence</a>
     <a href="gobierno.html" data-i18n="nav_gov">Government</a>
@@ -65,6 +66,7 @@
     <a href="/" class="brand">Quorelia</a>
     <nav class="nav-links">
       <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
       <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
       <a href="#evidence" data-i18n="nav_ev">Evidence</a>
       <a href="gobierno.html" data-i18n="nav_gov">Government</a>
@@ -121,39 +123,116 @@
 </section>
 
 <!-- ══════════ CAPACIDADES ══════════ -->
-<section id="capabilities" style="padding-top:40px;">
-  <div class="wrap duo">
-    <div class="rv">
-      <img src="bg/gob-wind-field.jpg" alt="" loading="lazy">
-      <div class="grp" style="margin-top:32px;">
+<section id="capabilities">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="cap_eyebrow">Capabilities</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="cap_h">Four domains, one chain of evidence</h2>
+    <p class="lede rv" style="margin-bottom:52px;" data-i18n="cap_s">Every capability below reads from the same validated manifest. Nothing is calculated on data that has not passed quality control first.</p>
+
+    <div class="capgrid rv">
+      <div class="capcol">
+        <div class="capnum">/01</div>
         <h4 data-i18n="g1">Verification</h4>
-        <span data-i18n="g1a">Contractual availability</span>
-        <span data-i18n="g1b">Data coverage &amp; traceability</span>
-        <span data-i18n="g1c">Independent opinion format</span>
+        <ul>
+          <li data-i18n="g1a">Contractual availability</li>
+          <li data-i18n="g1b">Data coverage &amp; traceability</li>
+          <li data-i18n="g1c">Independent opinion format</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/02</div>
+        <h4 data-i18n="g2">Operations</h4>
+        <ul>
+          <li data-i18n="g2a">Asset and unit status</li>
+          <li data-i18n="g2b">Plant performance</li>
+          <li data-i18n="g2c">Curtailment accounting</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/03</div>
+        <h4 data-i18n="g3">Maintenance</h4>
+        <ul>
+          <li data-i18n="g3a">Preventive / corrective classification</li>
+          <li data-i18n="g3b">Routing to the right specialty</li>
+          <li data-i18n="g3c">Findings with named owners</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/04</div>
+        <h4 data-i18n="g4">Analytics</h4>
+        <ul>
+          <li data-i18n="g4a">Resource vs. asset attribution</li>
+          <li data-i18n="g4b">Cell dispersion &amp; state of health</li>
+          <li data-i18n="g4c">Round-trip efficiency on closed cycles</li>
+        </ul>
       </div>
     </div>
-    <div class="rv">
-      <div class="grp">
-        <h4 data-i18n="g2">Operations</h4>
-        <span data-i18n="g2a">Asset and unit status</span>
-        <span data-i18n="g2b">Plant performance</span>
-        <span data-i18n="g2c">Curtailment accounting</span>
-      </div>
-      <div class="grp">
-        <h4 data-i18n="g3">Maintenance</h4>
-        <span data-i18n="g3a">Preventive / corrective classification</span>
-        <span data-i18n="g3b">Routing to the right specialty</span>
-        <span data-i18n="g3c">Findings with named owners</span>
-      </div>
-      <div class="grp">
-        <h4 data-i18n="g4">Analytics</h4>
-        <span data-i18n="g4a">Resource vs. asset attribution</span>
-        <span data-i18n="g4b">Cell dispersion &amp; state of health</span>
-        <span data-i18n="g4c">Round-trip efficiency on closed cycles</span>
-      </div>
-      <a href="quorelia-sample-report.html" target="_blank" rel="noopener" class="arrow-link" style="margin-top:40px;">
+
+    <div class="split rv" style="margin-top:56px;">
+      <a class="s-grey" href="quorelia-sample-report.html" target="_blank" rel="noopener">
         <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
       </a>
+      <a class="s-black" href="control-center.html" target="_blank" rel="noopener">
+        <span data-i18n="cc_cta">Open the Control Center demo</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTROL CENTER ══════════ -->
+<section id="platform" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="cc_t">The Control Center</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="cc_h">Fourteen modules over one verified dataset</h2>
+    <p class="lede rv" style="margin-bottom:44px;" data-i18n="cc_s">Operations, regulator, intelligence and management views — all reading from the same validated manifest. No module can publish a figure the verification engine has not cleared.</p>
+
+    <div class="cols rv" style="gap:52px;text-align:left;">
+      <div>
+        <div class="grp">
+          <h4 data-i18n="cc_g1">Operations</h4>
+          <span data-i18n="cc_g1a">Executive view</span>
+          <span data-i18n="cc_g1b">Energy flow</span>
+          <span data-i18n="cc_g1c">Environment · weather stations</span>
+          <span data-i18n="cc_g1d">Plant detail</span>
+          <span data-i18n="cc_g1e">Rack room 4D</span>
+          <span data-i18n="cc_g1f">Alert centre</span>
+          <span data-i18n="cc_g1g">Operational timeline</span>
+        </div>
+        <div class="grp">
+          <h4 data-i18n="cc_g2">Regulator</h4>
+          <span data-i18n="cc_g2a">Regulatory view</span>
+          <span data-i18n="cc_g2b">Data infrastructure</span>
+        </div>
+      </div>
+      <div>
+        <div class="grp">
+          <h4 data-i18n="cc_g3">Intelligence</h4>
+          <span data-i18n="cc_g3a">Guided questions</span>
+        </div>
+        <div class="grp">
+          <h4 data-i18n="cc_g4">Management</h4>
+          <span data-i18n="cc_g4a">Predictive maintenance</span>
+          <span data-i18n="cc_g4b">Asset depreciation</span>
+          <span data-i18n="cc_g4c">Reports</span>
+          <span data-i18n="cc_g4d">Engine configuration</span>
+        </div>
+        <a href="control-center.html" target="_blank" rel="noopener" class="arrow-link" style="margin-top:34px;">
+          <span data-i18n="cc_cta">Open the Control Center demo</span><span class="ar">→</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="tag g rv" style="margin:64px auto 22px;" data-i18n="cc_p">Verification engine · thresholds in force</p>
+    <div class="figs rv">
+      <div class="fig"><div class="v">90%</div><div class="k" data-i18n="cc_p1">Minimum data coverage before a figure may be published</div></div>
+      <div class="fig"><div class="v">288</div><div class="k" data-i18n="cc_p2">Samples per channel per day — 300-second cadence</div></div>
+      <div class="fig"><div class="v">2,0 pp</div><div class="k" data-i18n="cc_p3">SOC tolerance for a cycle to count as closed</div></div>
+      <div class="fig"><div class="v">500 mV</div><div class="k" data-i18n="cc_p4">Cell dispersion threshold before drill-down</div></div>
+    </div>
+
+    <div class="note rv" style="margin-top:36px;text-align:left;">
+      <h4 data-i18n="cc_n">A withheld figure, live in the demo</h4>
+      <p data-i18n="cc_nb">On 17 August the round-trip efficiency of one plant is not published. The engine writes the reason instead: <b>"open cycle: SOC drifted +16.43 pp over the window (tolerance 2.0 pp); round-trip efficiency is not defined."</b> Anyone can show a panel of green numbers. This one blocks itself when it cannot substantiate what it says.</p>
     </div>
   </div>
 </section>
@@ -268,6 +347,7 @@
       <div>
         <h5 data-i18n="f_prod">Platform</h5>
         <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
         <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
         <a href="quorelia-sample-report.html" data-i18n="f_sample">Sample report</a>
         <a href="bess-scada-dashboard.html" data-i18n="f_dash">Live dashboard</a>
@@ -294,7 +374,7 @@
 <script>
 const i18n = {
  en:{
-  nav_sw:"Our Software", nav_cap:"Capabilities", nav_ev:"Evidence", nav_gov:"Government",
+  nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_ev:"Evidence", nav_gov:"Government",
   nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
   hero:'Our software makes every number a renewable plant reports <span class="dim">defensible</span> — traceable to the measurement behind it.',
   hm1:"Solar · Wind · BESS", hm2:"SCADA · PPC · BMS", hm3:"Daily & monthly reporting", hm4:"Santiago · Chile",
@@ -313,6 +393,25 @@ const i18n = {
   band2_t:"Wind and storage",
   band2_h:"Each technology defines \u00aboperation\u00bb differently",
   band2_p:"A turbine stopped for lack of wind is not unavailable. A battery with an open cycle has no calculable efficiency. What can be identical across technologies is the definition of what makes a figure valid.",
+  cap_eyebrow:"Capabilities",
+  cap_h:"Four domains, one chain of evidence",
+  cap_s:"Every capability below reads from the same validated manifest. Nothing is calculated on data that has not passed quality control first.",
+  cc_t:"The Control Center",
+  cc_h:"Fourteen modules over one verified dataset",
+  cc_s:"Operations, regulator, intelligence and management views \u2014 all reading from the same validated manifest. No module can publish a figure the verification engine has not cleared.",
+  cc_g1:"Operations", cc_g1a:"Executive view", cc_g1b:"Energy flow", cc_g1c:"Environment \u00b7 weather stations",
+  cc_g1d:"Plant detail", cc_g1e:"Rack room 4D", cc_g1f:"Alert centre", cc_g1g:"Operational timeline",
+  cc_g2:"Regulator", cc_g2a:"Regulatory view", cc_g2b:"Data infrastructure",
+  cc_g3:"Intelligence", cc_g3a:"Guided questions",
+  cc_g4:"Management", cc_g4a:"Predictive maintenance", cc_g4b:"Asset depreciation", cc_g4c:"Reports", cc_g4d:"Engine configuration",
+  cc_cta:"Open the Control Center demo",
+  cc_p:"Verification engine \u00b7 thresholds in force",
+  cc_p1:"Minimum data coverage before a figure may be published",
+  cc_p2:"Samples per channel per day \u2014 300-second cadence",
+  cc_p3:"SOC tolerance for a cycle to count as closed",
+  cc_p4:"Cell dispersion threshold before drill-down",
+  cc_n:"A withheld figure, live in the demo",
+  cc_nb:"On 17 August the round-trip efficiency of one plant is not published. The engine writes the reason instead: <b>\u201copen cycle: SOC drifted +16.43 pp over the window (tolerance 2.0 pp); round-trip efficiency is not defined.\u201d</b> Anyone can show a panel of green numbers. This one blocks itself when it cannot substantiate what it says.",
   cap_t:"Installed capacity \u00b7 CNE report, July 2026",
   cp1:"MW of net installed capacity in the national system",
   cp2:"MW from non-conventional renewables \u2014 52,4% of the matrix",
@@ -340,7 +439,7 @@ const i18n = {
   f_fine:"Figures cited from the public Infotécnica registry of the Coordinador Eléctrico Nacional, extracted 16 August 2026, and from the SEC 2026 public account. Sample reports contain illustrative data and do not represent real facilities or clients."
  },
  es:{
-  nav_sw:"Plataforma", nav_cap:"Capacidades", nav_ev:"Evidencia", nav_gov:"Gobierno",
+  nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_ev:"Evidencia", nav_gov:"Gobierno",
   nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
   hero:'Nuestro software vuelve <span class="dim">defendible</span> cada cifra que informa una planta renovable, trazable hasta la medición que la sustenta.',
   hm1:"Solar · Eólica · BESS", hm2:"SCADA · PPC · BMS", hm3:"Informes diarios y mensuales", hm4:"Santiago · Chile",
@@ -359,6 +458,25 @@ const i18n = {
   band2_t:"E\u00f3lica y almacenamiento",
   band2_h:"Cada tecnolog\u00eda define \u00aboperaci\u00f3n\u00bb de forma distinta",
   band2_p:"Un aerogenerador detenido por falta de viento no est\u00e1 indisponible. Una bater\u00eda con el ciclo abierto no tiene eficiencia calculable. Lo que s\u00ed puede ser id\u00e9ntico entre tecnolog\u00edas es la definici\u00f3n de qu\u00e9 hace v\u00e1lida a una cifra.",
+  cap_eyebrow:"Capacidades",
+  cap_h:"Cuatro dominios, una sola cadena de evidencia",
+  cap_s:"Cada capacidad lee del mismo manifiesto validado. Nada se calcula sobre datos que no hayan superado antes el control de calidad.",
+  cc_t:"El Control Center",
+  cc_h:"Catorce m\u00f3dulos sobre un mismo dato verificado",
+  cc_s:"Vistas de operaci\u00f3n, regulador, inteligencia y gesti\u00f3n \u2014 todas leen del mismo manifiesto validado. Ning\u00fan m\u00f3dulo puede publicar una cifra que el motor de verificaci\u00f3n no haya aprobado.",
+  cc_g1:"Operaci\u00f3n", cc_g1a:"Vista ejecutiva", cc_g1b:"Flujo de energ\u00eda", cc_g1c:"Entorno \u00b7 estaciones meteorol\u00f3gicas",
+  cc_g1d:"Detalle de planta", cc_g1e:"Sala de racks 4D", cc_g1f:"Centro de alertas", cc_g1g:"L\u00ednea de tiempo operacional",
+  cc_g2:"Regulador", cc_g2a:"Vista regulatoria", cc_g2b:"Infraestructura de datos",
+  cc_g3:"Inteligencia", cc_g3a:"Preguntas guiadas",
+  cc_g4:"Gesti\u00f3n", cc_g4a:"Mantenimiento predictivo", cc_g4b:"Depreciaci\u00f3n de activos", cc_g4c:"Reportes", cc_g4d:"Configuraci\u00f3n del motor",
+  cc_cta:"Abrir la demostraci\u00f3n del Control Center",
+  cc_p:"Motor de verificaci\u00f3n \u00b7 umbrales vigentes",
+  cc_p1:"Cobertura m\u00ednima de datos para poder publicar una cifra",
+  cc_p2:"Muestras por canal y por d\u00eda \u2014 cadencia de 300 segundos",
+  cc_p3:"Tolerancia de SOC para que un ciclo cuente como cerrado",
+  cc_p4:"Umbral de dispersi\u00f3n de celdas antes de bajar al detalle",
+  cc_n:"Una cifra retenida, viva en la demostraci\u00f3n",
+  cc_nb:"El 17 de agosto la eficiencia de ciclo completo de una planta no se publica. El motor escribe la raz\u00f3n en su lugar: <b>\u00abciclo abierto: el SOC deriv\u00f3 +16,43 pp en la ventana (tolerancia 2,0 pp); la eficiencia de ciclo no est\u00e1 definida\u00bb.</b> Cualquiera puede mostrar un panel con n\u00fameros verdes. Este se bloquea a s\u00ed mismo cuando no puede respaldar lo que dice.",
   cap_t:"Capacidad instalada \u00b7 Reporte CNE, julio 2026",
   cp1:"MW de potencia neta instalada en el sistema nacional",
   cp2:"MW de energ\u00edas renovables no convencionales \u2014 52,4% de la matriz",

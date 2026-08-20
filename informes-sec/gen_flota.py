@@ -9,19 +9,19 @@ tot_n=sum(c[1] for c in CART); tot_mw=sum(c[2] for c in CART)
 cob=sum(c[3]*c[1] for c in CART)/tot_n; flag=sum(c[4] for c in CART)
 P=[]
 P.append(page(f"""<div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm">Documento de muestra · datos ilustrativos</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">VISTA AGREGADA DE CARTERA · AUTORIDAD FISCALIZADORA</div>
 <h1 style="font-size:32px;line-height:1.14;font-weight:500;letter-spacing:-.03em;max-width:6.3in;">Informe Consolidado de Verificación de Cartera de Generación</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.5in;margin-top:14px;">Propuesta de formato estandarizado para la revisión documental de desempeño de centrales de generación, con trazabilidad reproducible de cada cifra informada.</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.5in;margin-top:14px;">Propuesta de formato estandarizado para la revisión documental de desempeño de centrales de generación, con trazabilidad reproducible de cada cifra informada.</p>
 <table class="kv" style="margin-top:26px;max-width:5.6in;">
-<tr><td style="color:#8fa0ab;">Destinatario</td><td style="color:#fff;">Subsecretaría de Energía · Documento de trabajo</td></tr>
-<tr><td style="color:#8fa0ab;">Alcance de la muestra</td><td style="color:#fff;">{tot_n} centrales · {tot_mw:,} MW</td></tr>
-<tr><td style="color:#8fa0ab;">Período</td><td style="color:#fff;">{PER}</td></tr>
-<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">{REF}</td></tr></table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">
+<tr><td style="color:var(--grey);">Destinatario</td><td style="color:var(--ink);">Subsecretaría de Energía · Documento de trabajo</td></tr>
+<tr><td style="color:var(--grey);">Alcance de la muestra</td><td style="color:var(--ink);">{tot_n} centrales · {tot_mw:,} MW</td></tr>
+<tr><td style="color:var(--grey);">Período</td><td style="color:var(--ink);">{PER}</td></tr>
+<tr><td style="color:var(--grey);">Referencia</td><td style="color:var(--ink);font-family:var(--mono);">{REF}</td></tr></table></div>
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">
 Documento de trabajo con datos ilustrativos preparado para efectos de discusión metodológica. No constituye una fiscalización, ni contiene información de centrales reales. © 2026 Quorelia.</p></div>""",
 "Quorelia · Documento de muestra","01","cover"))
 

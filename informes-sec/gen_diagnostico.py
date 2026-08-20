@@ -42,19 +42,19 @@ solar_c=[c for c in comp if c[0].startswith("Planta fotov")][0][4]
 FECHA="16 de agosto de 2026"
 P=[]
 P.append(page(f"""<div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm" style="color:var(--teal);border-color:rgba(31,182,168,.5);">Datos oficiales · Infotécnica del Coordinador</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">DIAGNÓSTICO DEL REGISTRO TÉCNICO NACIONAL</div>
 <h1 style="font-size:31px;line-height:1.14;font-weight:500;letter-spacing:-.03em;max-width:6.3in;">Estado de completitud del registro de unidades generadoras del Sistema Eléctrico Nacional</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.5in;margin-top:14px;">Análisis sobre la totalidad del registro público de Infotécnica: {NU+NP:,} unidades generadoras, {CU+CP:,} centrales, {OU+OP:,} propietarios. Sin datos simulados.</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.5in;margin-top:14px;">Análisis sobre la totalidad del registro público de Infotécnica: {NU+NP:,} unidades generadoras, {CU+CP:,} centrales, {OU+OP:,} propietarios. Sin datos simulados.</p>
 <table class="kv" style="margin-top:26px;max-width:5.6in;">
-<tr><td style="color:#8fa0ab;">Fuente</td><td style="color:#fff;">Infotécnica · Coordinador Eléctrico Nacional</td></tr>
-<tr><td style="color:#8fa0ab;">Extracción</td><td style="color:#fff;">{FECHA}</td></tr>
-<tr><td style="color:#8fa0ab;">Universo</td><td style="color:#fff;">{NU:,} unidades coordinadas + {NP} unidades PMGD</td></tr>
-<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">QOR-DIAG-2026-08-01</td></tr></table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">
+<tr><td style="color:var(--grey);">Fuente</td><td style="color:var(--ink);">Infotécnica · Coordinador Eléctrico Nacional</td></tr>
+<tr><td style="color:var(--grey);">Extracción</td><td style="color:var(--ink);">{FECHA}</td></tr>
+<tr><td style="color:var(--grey);">Universo</td><td style="color:var(--ink);">{NU:,} unidades coordinadas + {NP} unidades PMGD</td></tr>
+<tr><td style="color:var(--grey);">Referencia</td><td style="color:var(--ink);font-family:var(--mono);">QOR-DIAG-2026-08-01</td></tr></table></div>
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">
 Documento de trabajo elaborado a partir de información pública. Las cifras de este informe son reproducibles ejecutando el análisis sobre los mismos archivos de origen. © 2026 Quorelia.</p></div>""",
 "Quorelia · Diagnóstico sobre datos oficiales","01","cover"))
 

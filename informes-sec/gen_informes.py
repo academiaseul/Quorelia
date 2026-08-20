@@ -15,18 +15,18 @@ CFG={
    n=8,uni="ESS",cap="200 MW / 800 MWh",tipo="SISTEMA DE ALMACENAMIENTO",
    tec="Almacenamiento · ion-litio LFP, 8 unidades de 25 MW"),
 }
-def kv(*p): return "".join(f'<tr><td style="color:#8fa0ab;">{a}</td><td style="color:#fff;">{b}</td></tr>' for a,b in p)
+def kv(*p): return "".join(f'<tr><td style="color:var(--grey);">{a}</td><td style="color:var(--ink);">{b}</td></tr>' for a,b in p)
 def portada(c,titulo,sub,kvs,marca):
     return page(f"""<div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm">{marca}</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">{c['tipo']}</div>
 <h1 style="font-size:33px;line-height:1.13;font-weight:500;letter-spacing:-.03em;max-width:6.2in;">{titulo}</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.4in;margin-top:14px;">{sub}</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.4in;margin-top:14px;">{sub}</p>
 <table class="kv" style="margin-top:24px;max-width:5.6in;">{kvs}</table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">
 Documento de muestra. La instalación, el titular y los hallazgos son ilustrativos. © 2026 Quorelia.</p></div>""",
 "Quorelia · Informe de muestra","01","cover")
 PIE='<p class="small" style="margin-top:14px;border-top:0.8px solid var(--border);padding-top:10px;">jay@quorelia.org · quorelia.org · © 2026 Quorelia — informe de muestra</p>'

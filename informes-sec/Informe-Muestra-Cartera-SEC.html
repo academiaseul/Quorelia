@@ -1,82 +1,105 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Quorelia — Informe Consolidado de Cartera (Muestra)</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
-  --amber:#f5a623; --green:#22c55e; --red:#ef4444;
-  --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa; --white:#fff; --border:#e3e9ec;
-  --mono:'SF Mono',Consolas,'Courier New',monospace;
+  --ink:#101418; --ink-2:#3d474f; --grey:#8a949c; --line:#e2e5e8;
+  --paper:#fff; --paper-2:#f2f3f4; --paper-3:#e9eaec;
+  --navy:#0b1c2c; --teal:#149487; --teal-lt:#1fb6a8; --amber:#b45309; --red:#b91c1c;
+  --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
 }
-body{font-family:'Inter',sans-serif;color:var(--ink);background:#8a929a;line-height:1.55;}
-.page{width:8.5in;min-height:11in;margin:0 auto 18px;background:#fff;padding:0.7in 0.75in 0.55in;
+body{font-family:var(--sans);color:var(--ink);background:#8a929a;line-height:1.5;-webkit-font-smoothing:antialiased;}
+.page{width:8.5in;min-height:11in;margin:0 auto 18px;background:var(--paper);padding:0.72in 0.78in 0.62in;
   position:relative;page-break-after:always;box-shadow:0 2px 18px rgba(0,0,0,.25);}
 @media print{ body{background:#fff;} .page{box-shadow:none;margin:0;} }
-h1,h2,h3,h4{letter-spacing:-0.02em;font-weight:600;}
-.eyebrow{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:7px;}
-.sec-num{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  border-bottom:0.8px solid var(--border);padding-bottom:6px;margin-bottom:16px;}
-h2.t{font-size:19px;margin-bottom:5px;} h3.t{font-size:13.5px;margin:16px 0 7px;}
-p{font-size:10.2px;line-height:1.62;color:#33454f;margin-bottom:8px;}
-.small{font-size:8.6px;color:var(--muted);line-height:1.55;}
-.foot{position:absolute;bottom:0.4in;left:0.75in;right:0.75in;display:flex;justify-content:space-between;
-  font-family:var(--mono);font-size:7.6px;letter-spacing:.07em;text-transform:uppercase;color:#8fa0ab;
-  border-top:0.8px solid var(--border);padding-top:6px;}
-table{width:100%;border-collapse:collapse;margin:9px 0;}
-th{font-family:var(--mono);font-size:7.8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-  text-align:left;padding:6px 7px;border-bottom:1.2px solid var(--navy);white-space:nowrap;}
-td{font-size:9.4px;padding:5px 7px;border-bottom:0.8px solid var(--border);vertical-align:top;}
-td.n{font-family:var(--mono);text-align:right;font-size:9px;}
-tr.alt td{background:#f7f9fa;}
+
+/* Tipografía Palantir: peso ligero, tracking negativo */
+h1,h2,h3,h4{font-weight:400;letter-spacing:-0.032em;line-height:1.08;}
+h2.t{font-size:23px;margin-bottom:6px;}
+h3.t{font-size:14px;font-weight:600;letter-spacing:-0.012em;margin:20px 0 8px;}
+p{font-size:10.2px;line-height:1.62;color:var(--ink-2);margin-bottom:8px;}
+.small{font-size:8.6px;color:var(--grey);line-height:1.55;}
+
+/* Etiqueta monoespaciada en versales */
+.eyebrow{font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:9px;}
+.sec-num{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--grey);border-bottom:1px solid var(--ink);padding-bottom:7px;margin-bottom:18px;}
+.foot{position:absolute;bottom:0.42in;left:0.78in;right:0.78in;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:7.6px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);
+  border-top:1px solid var(--line);padding-top:7px;}
+
+/* Tablas: regla superior gruesa, filas con hairline */
+table{width:100%;border-collapse:collapse;margin:10px 0;}
+th{font-family:var(--mono);font-size:7.6px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--grey);text-align:left;padding:8px 8px 8px 0;border-bottom:1.4px solid var(--ink);white-space:nowrap;}
+td{font-size:9.4px;padding:7px 8px 7px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2);}
+td.n{font-family:var(--mono);text-align:right;font-size:8.8px;padding-right:0;color:var(--ink);}
+td b{color:var(--ink);font-weight:600;}
+tr.alt td{background:transparent;}
+
 .kv{width:100%;border-collapse:collapse;}
-.kv td{font-size:9.6px;padding:6px 0;border-bottom:0.8px solid var(--border);}
-.kv td:first-child{width:34%;color:var(--muted);font-family:var(--mono);font-size:8.2px;
-  letter-spacing:.07em;text-transform:uppercase;padding-right:12px;}
-.chip{display:inline-block;font-family:var(--mono);font-size:7.6px;font-weight:600;letter-spacing:.08em;
-  text-transform:uppercase;padding:2.5px 7px;border-radius:3px;white-space:nowrap;}
-.c-ok{background:rgba(34,197,94,.14);color:#15803d;}
-.c-warn{background:rgba(245,166,35,.16);color:#b45309;}
-.c-hold{background:rgba(239,68,68,.12);color:#b91c1c;}
-.c-info{background:rgba(31,182,168,.14);color:var(--teal-dark);}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:12px 0 4px;
-  border:0.8px solid var(--border);border-radius:6px;overflow:hidden;}
-.kpi{padding:11px 13px;border-left:0.8px solid var(--border);}
-.kpi:first-child{border-left:0;}
-.kpi .l{font-family:var(--mono);font-size:7.4px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
-.kpi .v{font-size:20px;font-weight:600;letter-spacing:-0.03em;line-height:1;}
-.kpi .s{font-size:8px;color:var(--muted);margin-top:4px;}
-.box{border:0.8px solid var(--border);border-radius:6px;padding:13px 15px;margin:10px 0;background:#fbfcfd;}
-.box.teal{border-color:rgba(31,182,168,.35);background:rgba(31,182,168,.05);}
-.box.amber{border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.05);}
-.box h4{font-size:11px;margin-bottom:6px;}
-.finding{border-left:2.5px solid var(--border);padding:9px 0 9px 13px;margin:10px 0;}
-.finding.hold{border-left-color:var(--red);} .finding.warn{border-left-color:var(--amber);}
-.finding.ok{border-left-color:var(--green);}
-.finding .fh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:5px;}
-.finding .fh b{font-size:10.4px;}
-.cover{background:var(--navy);color:#fff;}
-.cover .page-in{min-height:9.6in;display:flex;flex-direction:column;}
-.wm{display:inline-block;font-family:var(--mono);font-size:7.6px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--amber);border:0.8px solid rgba(245,166,35,.5);padding:3.5px 9px;border-radius:3px;}
+.kv td{font-size:9.6px;padding:7px 0;border-bottom:1px solid var(--line);}
+.kv td:first-child{width:34%;color:var(--grey);font-family:var(--mono);font-size:8px;
+  letter-spacing:.11em;text-transform:uppercase;padding-right:12px;}
+
+/* Chips sin relleno: sólo texto en mono, estilo Palantir */
+.chip{display:inline-block;font-family:var(--mono);font-size:7.4px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;white-space:nowrap;padding:2px 0;}
+.c-ok{color:var(--teal);}
+.c-warn{color:var(--amber);}
+.c-hold{color:var(--red);}
+.c-info{color:var(--grey);}
+
+/* Cifras: peso ligero y grandes, con regla superior */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:14px 0 6px;border-top:1.4px solid var(--ink);}
+.kpi{padding:14px 14px 14px 0;border-right:1px solid var(--line);}
+.kpi:last-child{border-right:0;}
+.kpi .l{font-family:var(--mono);font-size:7.4px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);margin-bottom:8px;}
+.kpi .v{font-size:24px;font-weight:400;letter-spacing:-.04em;line-height:1;}
+.kpi .s{font-size:7.8px;color:var(--grey);margin-top:5px;}
+
+/* Avisos: filete lateral, sin fondo saturado */
+.box{border-left:2px solid var(--ink);padding:13px 0 13px 15px;margin:12px 0;}
+.box.teal{border-left-color:var(--teal);}
+.box.amber{border-left-color:var(--amber);}
+.box h4{font-size:11px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em;}
+.box p{font-size:9.8px;}
+
+/* Hallazgos */
+.finding{border-top:1px solid var(--line);padding:13px 0;margin:0;}
+.finding.hold{border-top-color:var(--red);}
+.finding.warn{border-top-color:var(--amber);}
+.finding.ok{border-top-color:var(--teal);}
+.finding .fh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:5px;}
+.finding .fh b{font-size:10.6px;font-weight:600;color:var(--ink);}
+
+/* Portada clara */
+.cover{background:var(--paper);}
+.cover .page-in{min-height:9.4in;display:flex;flex-direction:column;}
+.wm{display:inline-block;font-family:var(--mono);font-size:7.4px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--amber);border:1px solid rgba(180,83,9,.4);padding:3px 9px;}
+
+/* Pasos numerados */
 .steps{counter-reset:s;}
-.step{display:flex;gap:11px;margin-bottom:9px;}
-.step .i{flex:none;width:19px;height:19px;border-radius:4px;background:var(--navy);color:var(--teal);
-  font-family:var(--mono);font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:700;}
-.step .b{font-size:9.6px;line-height:1.6;color:#33454f;}
-.step .b b{color:var(--ink);font-size:10px;}
+.step{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line);}
+.step .i{font-family:var(--mono);font-size:9px;color:var(--grey);letter-spacing:.06em;}
+.step .b{font-size:9.6px;line-height:1.6;color:var(--ink-2);}
+.step .b b{color:var(--ink);font-size:10px;font-weight:600;}
 </style></head><body><div class="page cover"><div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm">Documento de muestra · datos ilustrativos</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">VISTA AGREGADA DE CARTERA · AUTORIDAD FISCALIZADORA</div>
 <h1 style="font-size:32px;line-height:1.14;font-weight:500;letter-spacing:-.03em;max-width:6.3in;">Informe Consolidado de Verificación de Cartera de Generación</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.5in;margin-top:14px;">Propuesta de formato estandarizado para la revisión documental de desempeño de centrales de generación, con trazabilidad reproducible de cada cifra informada.</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.5in;margin-top:14px;">Propuesta de formato estandarizado para la revisión documental de desempeño de centrales de generación, con trazabilidad reproducible de cada cifra informada.</p>
 <table class="kv" style="margin-top:26px;max-width:5.6in;">
-<tr><td style="color:#8fa0ab;">Destinatario</td><td style="color:#fff;">Subsecretaría de Energía · Documento de trabajo</td></tr>
-<tr><td style="color:#8fa0ab;">Alcance de la muestra</td><td style="color:#fff;">100 centrales · 4,446 MW</td></tr>
-<tr><td style="color:#8fa0ab;">Período</td><td style="color:#fff;">julio 2026</td></tr>
-<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">QOR-SEC-2026-08-FLOTA-01</td></tr></table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">
+<tr><td style="color:var(--grey);">Destinatario</td><td style="color:var(--ink);">Subsecretaría de Energía · Documento de trabajo</td></tr>
+<tr><td style="color:var(--grey);">Alcance de la muestra</td><td style="color:var(--ink);">100 centrales · 4,446 MW</td></tr>
+<tr><td style="color:var(--grey);">Período</td><td style="color:var(--ink);">julio 2026</td></tr>
+<tr><td style="color:var(--grey);">Referencia</td><td style="color:var(--ink);font-family:var(--mono);">QOR-SEC-2026-08-FLOTA-01</td></tr></table></div>
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">
 Documento de trabajo con datos ilustrativos preparado para efectos de discusión metodológica. No constituye una fiscalización, ni contiene información de centrales reales. © 2026 Quorelia.</p></div><div class="foot"><span>Quorelia · Documento de muestra</span><span>01</span></div></div><div class="page "><div class="sec-num">01 · Planteamiento</div>
 <div class="eyebrow">El problema que aborda este formato</div><h2 class="t">La revisión documental es el cuello de botella, no la fiscalización en terreno</h2>
 <p>Durante 2025, la Superintendencia de Electricidad y Combustibles realizó <b>10.769 fiscalizaciones</b> en el sector eléctrico y de combustibles. En el segmento de generación distribuida, se ejecutaron <b>2.341 fiscalizaciones</b>, de las cuales <b>2.100 fueron revisiones documentales</b> y 241 revisiones en terreno.</p>

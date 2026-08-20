@@ -20,20 +20,20 @@ vel=[7.2,8.1,9.4,8.8,6.9,7.5,10.2,11.1,9.6,8.2,7.1,6.4,7.8,9.9,10.8,9.2,8.4,7.6,
 print(f"gen={gen} cob={cob:.2f} disp={disp:.2f} cf={cf:.2f} heq={heq:.0f} vmed={sum(vel)/len(vel):.2f}")
 P=[]
 P.append(page(f"""<div class="page-in" style="min-height:9.6in;display:flex;flex-direction:column;">
-<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:800;">QUORELIA</div>
-<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:5px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
+<div style="font-family:var(--mono);font-size:16px;letter-spacing:.28em;font-weight:600;">QUORELIA</div>
+<div style="font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--teal);margin-top:6px;">INTELIGENCIA EN ENERGÍA RENOVABLE</div>
 <div style="margin-top:26px;"><span class="wm">Informe de muestra · datos ilustrativos</span></div>
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
 <div style="font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--teal);margin-bottom:14px;">PARQUE EÓLICO · WIND</div>
 <h1 style="font-size:34px;line-height:1.12;font-weight:500;letter-spacing:-.03em;max-width:6.2in;">Informe de Verificación Independiente y Desempeño Operacional</h1>
-<p style="color:#9fb2bd;font-size:11px;max-width:5.4in;margin-top:14px;">Preparado bajo la metodología de monitoreo y verificación continua de Quorelia, sobre los sistemas SCADA y de medición ya instalados en el parque.</p>
+<p style="color:var(--ink-2);font-size:11px;max-width:5.4in;margin-top:14px;">Preparado bajo la metodología de monitoreo y verificación continua de Quorelia, sobre los sistemas SCADA y de medición ya instalados en el parque.</p>
 <table class="kv" style="margin-top:26px;max-width:5.6in;">
-<tr><td style="color:#8fa0ab;">Instalación</td><td style="color:#fff;">{NOM}</td></tr>
-<tr><td style="color:#8fa0ab;">Ubicación</td><td style="color:#fff;">{REG}, Chile</td></tr>
-<tr><td style="color:#8fa0ab;">Capacidad</td><td style="color:#fff;">{POT:.0f} MW · {NT} aerogeneradores de 4,5 MW</td></tr>
-<tr><td style="color:#8fa0ab;">Período informado</td><td style="color:#fff;">{PER}</td></tr>
-<tr><td style="color:#8fa0ab;">Referencia</td><td style="color:#fff;font-family:var(--mono);">{REF}</td></tr></table></div>
-<p class="small" style="color:#7f93a0;border-top:0.8px solid rgba(255,255,255,.15);padding-top:11px;">Documento de muestra con datos ilustrativos. No representa un cliente, instalación ni desempeño real. © 2026 Quorelia.</p></div>""",
+<tr><td style="color:var(--grey);">Instalación</td><td style="color:var(--ink);">{NOM}</td></tr>
+<tr><td style="color:var(--grey);">Ubicación</td><td style="color:var(--ink);">{REG}, Chile</td></tr>
+<tr><td style="color:var(--grey);">Capacidad</td><td style="color:var(--ink);">{POT:.0f} MW · {NT} aerogeneradores de 4,5 MW</td></tr>
+<tr><td style="color:var(--grey);">Período informado</td><td style="color:var(--ink);">{PER}</td></tr>
+<tr><td style="color:var(--grey);">Referencia</td><td style="color:var(--ink);font-family:var(--mono);">{REF}</td></tr></table></div>
+<p class="small" style="color:var(--grey);border-top:1px solid var(--line);padding-top:11px;">Documento de muestra con datos ilustrativos. No representa un cliente, instalación ni desempeño real. © 2026 Quorelia.</p></div>""",
 "Quorelia · Informe de muestra","01","cover"))
 
 P.append(page(f"""<div class="sec-num">01 · Identificación y opinión</div>
