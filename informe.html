@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Sample report — Quorelia</title>
+<meta name="description" content="Quorelia sample reports, viewed inside the site: daily, monthly and extended reports for solar, wind, BESS and portfolio.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Visor de informes: el documento corre dentro del sitio, con una barra
+     que dice qué se está viendo y cómo salir. */
+  .doc-bar{border-bottom:1px solid var(--line);background:var(--paper-2);}
+  .doc-bar .wrap{display:flex;align-items:center;justify-content:space-between;
+    gap:14px;padding-top:13px;padding-bottom:13px;flex-wrap:wrap;}
+  .doc-name{display:flex;align-items:baseline;gap:12px;min-width:0;}
+  .doc-name .tag{white-space:nowrap;}
+  .doc-name h1{font-size:16.5px;font-weight:500;letter-spacing:-.014em;margin:0;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .doc-acts{display:flex;gap:10px;flex:none;}
+  .doc-acts a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);
+    padding:7px 13px;transition:background .2s,color .2s;}
+  .doc-acts a:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .frame-wrap iframe{display:block;width:100%;height:calc(100vh - 112px);
+    min-height:560px;border:0;background:#8f979e;}
+  @media(max-width:700px){ .doc-name h1{font-size:14px;} }
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand">Quorelia</span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+    <a href="demos.html#reports" data-i18n="nav_rep">Reports</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+  </nav>
+  <div class="d-foot">
+    <a href="index.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Quorelia</a>
+    <nav class="nav-links">
+      <a href="index.html#software" data-i18n="nav_sw">Our Software</a>
+      <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="demos.html#reports" class="on" data-i18n="nav_rep">Reports</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="index.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="doc-bar">
+  <div class="wrap">
+    <div class="doc-name">
+      <span class="tag t" data-i18n="vw_t">Sample report</span>
+      <h1 id="doc-title">—</h1>
+    </div>
+    <div class="doc-acts">
+      <a href="demos.html#reports" data-i18n="vw_all">All reports</a>
+      <a id="full-link" href="#" target="_blank" rel="noopener" data-i18n="vw_full">Full screen</a>
+    </div>
+  </div>
+</div>
+
+<div class="frame-wrap">
+  <iframe id="doc-frame" src="about:blank" title="Quorelia sample report"></iframe>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-bot" style="border-top:0;padding-top:18px;">
+      <span>© 2026 Quorelia</span>
+      <span data-i18n="f_tag">Renewable Energy Intelligence</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Sample reports contain illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Our Software", nav_demos:"Demos", nav_rep:"Reports",
+  nav_gov:"Government", nav_story:"Our Story", cta_demo:"Request a Demo",
+  vw_t:"Sample report", vw_all:"All reports", vw_full:"Full screen",
+  f_tag:"Renewable Energy Intelligence",
+  f_fine:"Sample reports contain illustrative data and do not represent real facilities or clients.",
+  d_fv_d:"Solar PV · Daily operation report", d_fv_m:"Solar PV · Monthly report", d_fv_x:"Solar PV · Extended sample report",
+  d_eol_d:"Wind · Daily operation report", d_eol_m:"Wind · Monthly report", d_eol_x:"Wind · Extended sample report",
+  d_bess_d:"BESS · Daily operation report", d_bess_m:"BESS · Monthly report", d_bess_x:"BESS · Extended sample report",
+  d_cartera:"Portfolio oversight report", d_diagnostico:"National fleet diagnostic",
+  d_original:"Independent verification & O&M report — the original sample"
+ },
+ es:{
+  nav_sw:"Plataforma", nav_demos:"Demos", nav_rep:"Informes",
+  nav_gov:"Gobierno", nav_story:"Nuestra historia", cta_demo:"Solicitar demo",
+  vw_t:"Informe de muestra", vw_all:"Todos los informes", vw_full:"Pantalla completa",
+  f_tag:"Inteligencia en Energía Renovable",
+  f_fine:"Los informes de muestra contienen datos ilustrativos y no representan instalaciones ni clientes reales.",
+  d_fv_d:"Solar FV · Informe diario de operación", d_fv_m:"Solar FV · Informe mensual", d_fv_x:"Solar FV · Informe de muestra extendido",
+  d_eol_d:"Eólica · Informe diario de operación", d_eol_m:"Eólica · Informe mensual", d_eol_x:"Eólica · Informe de muestra extendido",
+  d_bess_d:"BESS · Informe diario de operación", d_bess_m:"BESS · Informe mensual", d_bess_x:"BESS · Informe de muestra extendido",
+  d_cartera:"Informe de supervisión de cartera", d_diagnostico:"Diagnóstico del parque nacional",
+  d_original:"Informe de verificación independiente y O&M — la muestra original"
+ },
+ zh:{
+  nav_sw:"软件平台", nav_demos:"演示", nav_rep:"报告",
+  nav_gov:"政府事务", nav_story:"我们的故事", cta_demo:"预约演示",
+  vw_t:"样例报告", vw_all:"全部报告", vw_full:"全屏",
+  f_tag:"可再生能源智能",
+  f_fine:"样例报告均为示意数据，不代表真实电站或客户。",
+  d_fv_d:"光伏 · 运行日报", d_fv_m:"光伏 · 月度报告", d_fv_x:"光伏 · 扩展样例报告",
+  d_eol_d:"风电 · 运行日报", d_eol_m:"风电 · 月度报告", d_eol_x:"风电 · 扩展样例报告",
+  d_bess_d:"储能 · 运行日报", d_bess_m:"储能 · 月度报告", d_bess_x:"储能 · 扩展样例报告",
+  d_cartera:"投资组合监督报告", d_diagnostico:"国家电站群诊断报告",
+  d_original:"独立验证与运维报告——最初的样例"
+ }
+};
+
+/* Catálogo cerrado: el hash sólo puede abrir estos documentos. */
+const DOCS = {
+  'fv-d':'informes-sec/Informe-Diario-FV.html',
+  'fv-m':'informes-sec/Informe-Mensual-FV.html',
+  'fv-x':'informes-sec/Informe-Muestra-Solar-PV.html',
+  'eol-d':'informes-sec/Informe-Diario-EOL.html',
+  'eol-m':'informes-sec/Informe-Mensual-EOL.html',
+  'eol-x':'informes-sec/Informe-Muestra-Eolico.html',
+  'bess-d':'informes-sec/Informe-Diario-BESS.html',
+  'bess-m':'informes-sec/Informe-Mensual-BESS.html',
+  'bess-x':'informes-sec/Informe-Muestra-BESS.html',
+  'cartera':'informes-sec/Informe-Muestra-Cartera-SEC.html',
+  'diagnostico':'informes-sec/Informe-Diagnostico-Parque-Nacional.html',
+  'original':'quorelia-sample-report.html'
+};
+let docActual='fv-d';
+
+function tituloDoc(){
+  const l=document.getElementById('html-root').getAttribute('lang')||'en';
+  const k='d_'+docActual.replace(/-/g,'_');
+  document.getElementById('doc-title').textContent=(i18n[l]&&i18n[l][k])||docActual;
+}
+function abrirDoc(slug){
+  if(!DOCS[slug]) slug='fv-d';
+  docActual=slug;
+  document.getElementById('doc-frame').src=DOCS[slug];
+  document.getElementById('full-link').href=DOCS[slug];
+  tituloDoc();
+  if(history.replaceState) history.replaceState(null,'','#'+slug);
+}
+
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var b=document.getElementById(p+'-'+k);
+      if(b) b.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  tituloDoc();
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
+  abrirDoc((location.hash||'#fv-d').slice(1));
+})();
+window.addEventListener('hashchange',function(){ abrirDoc(location.hash.slice(1)); });
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
