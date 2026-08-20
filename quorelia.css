@@ -562,7 +562,9 @@ body.locked{overflow:hidden;}
 
 /* 1 · Revelado por líneas: el texto sube desde detrás de una máscara.
       Es el gesto característico de Palantir en titulares. */
-.reveal-lines .ln{display:block;overflow:hidden;}
+/* La máscara recortaba los descendentes (g, j, p, y) con line-height apretado:
+   se le da aire por abajo y se compensa con margen negativo — mismo alto visual. */
+.reveal-lines .ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em;}
 .reveal-lines .ln > span{
   display:block;transform:translateY(105%);
   transition:transform .9s var(--ease);
