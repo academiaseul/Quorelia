@@ -271,7 +271,7 @@
       <a class="s-grey" href="quorelia-sample-report.html" target="_blank" rel="noopener">
         <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
       </a>
-      <a class="s-black" href="mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you." data-i18n-href="demo_href">
+      <a class="s-black" href="#contact" data-demo="control-center">
         <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
       </a>
     </div>
@@ -315,7 +315,7 @@
           <span data-i18n="cc_g4c">Reports</span>
           <span data-i18n="cc_g4d">Engine configuration</span>
         </div>
-        <a href="mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you." data-i18n-href="demo_href" class="arrow-link" style="margin-top:34px;">
+        <a href="#contact" data-demo="control-center" class="arrow-link" style="margin-top:34px;">
           <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
         </a>
       </div>
@@ -606,12 +606,12 @@ const i18n = {
   ct_ph:"Technology, installed capacity, number of plants, what you need reported\u2026",
   ct_hint:"Tell us about your project. A bit of context lets us connect you to the right team faster.",
   ct_send:"Send request", ct_sending:"Sending\u2026",
+  ct_seed_cc:"I would like a demo of the Control Center.",
   ct_priv:"Your details go to Jay Kim at Quorelia and are used only to answer you. We do not share them.",
   ct_err_req:"Please complete the required fields marked with an asterisk.",
   ct_ok:"Thank you \u2014 your request has arrived. Jay will reply within one business day.",
   ct_fail:"The request could not be sent. Please write to {mail} directly \u2014 your details are already in the message.",
   ct_mailto:"Your email application should have opened with the details filled in. Press Send to finish, or write to jay@quorelia.org directly.",
-  demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you.",
   cc_p:"Verification engine \u00b7 thresholds in force",
   cc_p1:"Minimum data coverage before a figure may be published",
   cc_p2:"Samples per channel per day \u2014 300-second cadence",
@@ -710,12 +710,12 @@ const i18n = {
   ct_ph:"Tecnolog\u00eda, capacidad instalada, n\u00famero de plantas, qu\u00e9 necesita informar\u2026",
   ct_hint:"Cu\u00e9ntenos sobre su proyecto. Un poco de contexto nos permite conectarlo m\u00e1s r\u00e1pido con el equipo correcto.",
   ct_send:"Enviar solicitud", ct_sending:"Enviando\u2026",
+  ct_seed_cc:"Me gustar\u00eda ver una demo del Control Center.",
   ct_priv:"Sus datos llegan a Jay Kim en Quorelia y se usan s\u00f3lo para responderle. No los compartimos.",
   ct_err_req:"Complete los campos obligatorios marcados con asterisco.",
   ct_ok:"Gracias \u2014 su solicitud lleg\u00f3. Jay responder\u00e1 dentro de un d\u00eda h\u00e1bil.",
   ct_fail:"No se pudo enviar la solicitud. Escriba directamente a {mail} \u2014 sus datos ya vienen en el mensaje.",
   ct_mailto:"Deber\u00eda haberse abierto su aplicaci\u00f3n de correo con los datos ya escritos. Pulse Enviar para terminar, o escriba directamente a jay@quorelia.org.",
-  demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Demo%20del%20Control%20Center&body=Hola%20Jay%2C%0A%0AMe%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n%20del%20Control%20Center.%0A%0ANombre%3A%0AOrganizaci%C3%B3n%3A%0ATecnolog%C3%ADa%20%28solar%20%2F%20e%C3%B3lico%20%2F%20BESS%29%3A%0A%0AGracias.",
   cc_p:"Motor de verificaci\u00f3n \u00b7 umbrales vigentes",
   cc_p1:"Cobertura m\u00ednima de datos para poder publicar una cifra",
   cc_p2:"Muestras por canal y por d\u00eda \u2014 cadencia de 300 segundos",
@@ -872,6 +872,20 @@ var FORM_ID = 'mljraopz';   /* Formspree · proyecto Quorelia → jay@quorelia.o
   /* Si cambia el idioma con el formulario ya en pantalla, repintar el botón */
   window.addEventListener('quorelia:lang', function(){
     if(!btn.disabled) lbl.textContent=t('ct_send');
+  });
+
+  /* Los CTA del Control Center bajan al formulario. Sembramos el motivo en
+     Detalles —sólo si está vacío— para saber de qué botón vino cada lead,
+     y dejamos el cursor en el primer campo. */
+  document.querySelectorAll('a[data-demo]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var det=document.getElementById('q-details');
+      setTimeout(function(){
+        if(det && !det.value.trim()) det.value=t('ct_seed_cc');
+        var pri=document.getElementById('q-first');
+        if(pri && window.matchMedia('(min-width:760px)').matches) pri.focus({preventScroll:true});
+      }, 520);
+    });
   });
 })();
 
