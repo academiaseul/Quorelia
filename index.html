@@ -271,8 +271,8 @@
       <a class="s-grey" href="quorelia-sample-report.html" target="_blank" rel="noopener">
         <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
       </a>
-      <a class="s-black" href="control-center.html" target="_blank" rel="noopener">
-        <span data-i18n="cc_cta">Open the Control Center demo</span><span class="ar">→</span>
+      <a class="s-black" href="mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you." data-i18n-href="demo_href">
+        <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
       </a>
     </div>
   </div>
@@ -315,8 +315,8 @@
           <span data-i18n="cc_g4c">Reports</span>
           <span data-i18n="cc_g4d">Engine configuration</span>
         </div>
-        <a href="control-center.html" target="_blank" rel="noopener" class="arrow-link" style="margin-top:34px;">
-          <span data-i18n="cc_cta">Open the Control Center demo</span><span class="ar">→</span>
+        <a href="mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you." data-i18n-href="demo_href" class="arrow-link" style="margin-top:34px;">
+          <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
         </a>
       </div>
     </div>
@@ -525,7 +525,8 @@ const i18n = {
   cc_g2:"Regulator", cc_g2a:"Regulatory view", cc_g2b:"Data infrastructure",
   cc_g3:"Intelligence", cc_g3a:"Guided questions",
   cc_g4:"Management", cc_g4a:"Predictive maintenance", cc_g4b:"Asset depreciation", cc_g4c:"Reports", cc_g4d:"Engine configuration",
-  cc_cta:"Open the Control Center demo",
+  cc_cta:"Request a Control Center demo",
+  demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you.",
   cc_p:"Verification engine \u00b7 thresholds in force",
   cc_p1:"Minimum data coverage before a figure may be published",
   cc_p2:"Samples per channel per day \u2014 300-second cadence",
@@ -612,7 +613,8 @@ const i18n = {
   cc_g2:"Regulador", cc_g2a:"Vista regulatoria", cc_g2b:"Infraestructura de datos",
   cc_g3:"Inteligencia", cc_g3a:"Preguntas guiadas",
   cc_g4:"Gesti\u00f3n", cc_g4a:"Mantenimiento predictivo", cc_g4b:"Depreciaci\u00f3n de activos", cc_g4c:"Reportes", cc_g4d:"Configuraci\u00f3n del motor",
-  cc_cta:"Abrir la demostraci\u00f3n del Control Center",
+  cc_cta:"Solicitar una demo del Control Center",
+  demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Demo%20del%20Control%20Center&body=Hola%20Jay%2C%0A%0AMe%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n%20del%20Control%20Center.%0A%0ANombre%3A%0AOrganizaci%C3%B3n%3A%0ATecnolog%C3%ADa%20%28solar%20%2F%20e%C3%B3lico%20%2F%20BESS%29%3A%0A%0AGracias.",
   cc_p:"Motor de verificaci\u00f3n \u00b7 umbrales vigentes",
   cc_p1:"Cobertura m\u00ednima de datos para poder publicar una cifra",
   cc_p2:"Muestras por canal y por d\u00eda \u2014 cadencia de 300 segundos",
@@ -659,6 +661,10 @@ function setLang(l){
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var k=el.getAttribute('data-i18n');
     if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  document.querySelectorAll('[data-i18n-href]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-href');
+    if(d[k]!==undefined) el.setAttribute('href', d[k]);
   });
   try{ localStorage.setItem('q-lang', l); }catch(e){}
   window.dispatchEvent(new Event('quorelia:lang'));
