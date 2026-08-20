@@ -118,6 +118,51 @@
   </div>
 </section>
 
+<!-- ══════════ TODOS LOS INFORMES DE MUESTRA ══════════ -->
+<section id="reports" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="rp_t">Sample reports</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="rp_h">Every sample report, in one place</h2>
+    <p class="lede rv" style="margin-bottom:48px;" data-i18n="rp_s">Real report structure, illustrative data. Every figure inside carries its coverage, its formula and its reason when withheld — open one and check.</p>
+
+    <div class="reps rv">
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp1t">Solar PV</div>
+        <h4 data-i18n="rp1h">Tracking, inverters and irradiance</h4>
+        <a href="informes-sec/Informe-Diario-FV.html" data-i18n="rp_d">Daily operation report</a>
+        <a href="informes-sec/Informe-Mensual-FV.html" data-i18n="rp_m">Monthly report</a>
+        <a href="informes-sec/Informe-Muestra-Solar-PV.html" data-i18n="rp_x">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp2t">Wind</div>
+        <h4 data-i18n="rp2h">Turbines, wind resource and availability</h4>
+        <a href="informes-sec/Informe-Diario-EOL.html" data-i18n="rp_d2">Daily operation report</a>
+        <a href="informes-sec/Informe-Mensual-EOL.html" data-i18n="rp_m2">Monthly report</a>
+        <a href="informes-sec/Informe-Muestra-Eolico.html" data-i18n="rp_x2">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint2">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp3t">Storage · BESS</div>
+        <h4 data-i18n="rp3h">Cycles, state of charge and efficiency</h4>
+        <a href="informes-sec/Informe-Diario-BESS.html" data-i18n="rp_d3">Daily operation report</a>
+        <a href="informes-sec/Informe-Mensual-BESS.html" data-i18n="rp_m3">Monthly report</a>
+        <a href="informes-sec/Informe-Muestra-BESS.html" data-i18n="rp_x3">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint3">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp4t">Fleet &amp; portfolio</div>
+        <h4 data-i18n="rp4h">The whole fleet in one document</h4>
+        <a href="informes-sec/Informe-Muestra-Cartera-SEC.html" data-i18n="rp_c1">Portfolio oversight report</a>
+        <a href="informes-sec/Informe-Diagnostico-Parque-Nacional.html" data-i18n="rp_c2">National fleet diagnostic</a>
+        <a href="quorelia-sample-report.html" data-i18n="rp_c3">Independent verification &amp; O&amp;M report — the original sample</a>
+        <div class="rp-hint" data-i18n="rp_hint4">Click a report to open it</div>
+      </div>
+    </div>
+    <p class="fine rv" style="margin-top:24px;" data-i18n="rp_note">Reports are shown in Spanish — the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="f-grid">
@@ -156,6 +201,20 @@ const i18n = {
  en:{
   nav_sw:"Our Software", nav_demos:"Demos", nav_rep:"Reports",
   nav_gov:"Government", nav_story:"Our Story", cta_demo:"Request a Demo",
+  rp_t:"Sample reports", rp_h:"Every sample report, in one place",
+  rp_s:"Real report structure, illustrative data. Every figure inside carries its coverage, its formula and its reason when withheld \u2014 open one and check.",
+  rp1t:"Solar PV", rp1h:"Tracking, inverters and irradiance",
+  rp2t:"Wind", rp2h:"Turbines, wind resource and availability",
+  rp3t:"Storage \u00b7 BESS", rp3h:"Cycles, state of charge and efficiency",
+  rp4t:"Fleet &amp; portfolio", rp4h:"The whole fleet in one document",
+  rp_d:"Daily operation report", rp_m:"Monthly report", rp_x:"Extended sample report",
+  rp_d2:"Daily operation report", rp_m2:"Monthly report", rp_x2:"Extended sample report",
+  rp_d3:"Daily operation report", rp_m3:"Monthly report", rp_x3:"Extended sample report",
+  rp_c1:"Portfolio oversight report", rp_c2:"National fleet diagnostic",
+  rp_c3:"Independent verification &amp; O&amp;M report \u2014 the original sample",
+  rp_hint:"Click a report to open it", rp_hint2:"Click a report to open it",
+  rp_hint3:"Click a report to open it", rp_hint4:"Click a report to open it",
+  rp_note:"Reports are shown in Spanish \u2014 the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.",
   dm_t:"Live demos",
   dm_h:"The platform, running on sample data",
   dm_s:"We build customized Control Centers for each client — modules, thresholds and views shaped to your fleet. Everything below is a demo sample of the fictional Cerro Aurora fleet.",
@@ -170,6 +229,20 @@ const i18n = {
  es:{
   nav_sw:"Plataforma", nav_demos:"Demos", nav_rep:"Informes",
   nav_gov:"Gobierno", nav_story:"Nuestra historia", cta_demo:"Solicitar demo",
+  rp_t:"Informes de muestra", rp_h:"Todos los informes de muestra, en un solo lugar",
+  rp_s:"Estructura real de informe, datos ilustrativos. Cada cifra lleva su cobertura, su f\u00f3rmula y su raz\u00f3n cuando se retiene \u2014 abra uno y compru\u00e9belo.",
+  rp1t:"Solar FV", rp1h:"Seguimiento, inversores e irradiancia",
+  rp2t:"E\u00f3lica", rp2h:"Turbinas, recurso e\u00f3lico y disponibilidad",
+  rp3t:"Almacenamiento \u00b7 BESS", rp3h:"Ciclos, estado de carga y eficiencia",
+  rp4t:"Cartera y flota", rp4h:"Todo el parque en un solo documento",
+  rp_d:"Informe diario de operaci\u00f3n", rp_m:"Informe mensual", rp_x:"Informe de muestra extendido",
+  rp_d2:"Informe diario de operaci\u00f3n", rp_m2:"Informe mensual", rp_x2:"Informe de muestra extendido",
+  rp_d3:"Informe diario de operaci\u00f3n", rp_m3:"Informe mensual", rp_x3:"Informe de muestra extendido",
+  rp_c1:"Informe de supervisi\u00f3n de cartera", rp_c2:"Diagn\u00f3stico del parque nacional",
+  rp_c3:"Informe de verificaci\u00f3n independiente y O&amp;M \u2014 la muestra original",
+  rp_hint:"Haga clic en un informe para abrirlo", rp_hint2:"Haga clic en un informe para abrirlo",
+  rp_hint3:"Haga clic en un informe para abrirlo", rp_hint4:"Haga clic en un informe para abrirlo",
+  rp_note:"Los informes se muestran en espa\u00f1ol \u2014 el idioma de trabajo del parque que modelan. Los entregables se emiten en su idioma: la plantilla est\u00e1 separada de los datos, as\u00ed que la traducci\u00f3n nunca toca una cifra.",
   dm_t:"Demos en vivo",
   dm_h:"La plataforma, corriendo sobre datos de muestra",
   dm_s:"Construimos Control Centers personalizados para cada cliente — módulos, umbrales y vistas a la medida de su parque. Todo lo de abajo es una muestra demo de la flota ficticia Cerro Aurora.",
@@ -184,6 +257,20 @@ const i18n = {
  zh:{
   nav_sw:"软件平台", nav_demos:"演示", nav_rep:"报告",
   nav_gov:"政府事务", nav_story:"我们的故事", cta_demo:"预约演示",
+  rp_t:"样例报告", rp_h:"全部样例报告，尽在一处",
+  rp_s:"真实的报告结构，示意性的数据。其中每个数字都带有覆盖率、公式，以及被扣留时的原因——打开一份，亲自核对。",
+  rp1t:"光伏", rp1h:"跟踪支架、逆变器与辐照",
+  rp2t:"风电", rp2h:"风机、风资源与可用率",
+  rp3t:"储能 · BESS", rp3h:"循环、荷电状态与效率",
+  rp4t:"电站群与投资组合", rp4h:"整个电站群，一份文件",
+  rp_d:"运行日报", rp_m:"月度报告", rp_x:"扩展样例报告",
+  rp_d2:"运行日报", rp_m2:"月度报告", rp_x2:"扩展样例报告",
+  rp_d3:"运行日报", rp_m3:"月度报告", rp_x3:"扩展样例报告",
+  rp_c1:"投资组合监督报告", rp_c2:"国家电站群诊断报告",
+  rp_c3:"独立验证与运维报告——最初的样例",
+  rp_hint:"点击任一报告即可打开", rp_hint2:"点击任一报告即可打开",
+  rp_hint3:"点击任一报告即可打开", rp_hint4:"点击任一报告即可打开",
+  rp_note:"样例报告以西班牙语展示——那是其所模拟电站群的工作语言。正式交付物以您的语言签发：模板与数据分离，翻译绝不触及任何数字。",
   dm_t:"实时演示",
   dm_h:"平台实机运行，基于示意数据",
   dm_s:"我们为每位客户构建定制化的控制中心——模块、阈值与视图均按您的电站群量身打造。以下全部内容均为虚构的 Cerro Aurora 电站群演示样例。",
