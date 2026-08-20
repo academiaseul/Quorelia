@@ -52,14 +52,19 @@ img,svg{display:block;max-width:100%;}
 section{padding:96px 0;}
 hr.rule{border:0;border-top:1px solid var(--line);margin:0;}
 
-/* ── Tipografía ────────────────────────────────────────────────────────── */
-h1,h2,h3{font-weight:400;letter-spacing:-0.035em;line-height:1.06;}
-.mega{font-size:var(--fs-mega);}
-.big{font-size:var(--fs-big);}
-.mid{font-size:var(--fs-mid);letter-spacing:-0.025em;line-height:1.2;}
+/* ── Tipografía ──────────────────────────────────────────────────────────
+   Inter. Los titulares de display van en 300 — delgados y anchos — y el
+   tracking se abre a -0.022em: a ese cuerpo, apretar más los engorda
+   ópticamente y borra el aire que da el carácter. Los encabezados chicos
+   suben a 400 porque el 300 se deshace bajo los 24 px. */
+h1,h2,h3{font-weight:400;letter-spacing:-0.022em;line-height:1.06;}
+.mega{font-size:var(--fs-mega);font-weight:300;letter-spacing:-0.024em;}
+.big{font-size:var(--fs-big);font-weight:300;letter-spacing:-0.022em;}
+.mid{font-size:var(--fs-mid);font-weight:400;letter-spacing:-0.02em;line-height:1.2;}
 .dim{color:var(--grey);}
-.lede{font-size:17px;line-height:1.62;color:var(--ink-2);max-width:62ch;}
-p{font-size:15px;line-height:1.6;color:var(--ink-2);}
+.lede{font-size:17px;font-weight:400;line-height:1.62;color:var(--ink-2);max-width:62ch;
+  letter-spacing:-0.006em;}
+p{font-size:15px;font-weight:400;line-height:1.6;color:var(--ink-2);}
 
 /* ── Centrado ───────────────────────────────────────────────────────────
    Los titulares y bajadas de sección van al eje central. El contenido de
