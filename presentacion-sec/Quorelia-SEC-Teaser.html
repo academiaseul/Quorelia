@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quorelia — Teaser SEC · Ley de Lobby</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101418; --ink-2:#3d474f; --grey:#8a949c; --line:#e2e5e8;
+    --paper:#fff; --paper-2:#f2f3f4; --paper-3:#e9eaec;
+    --navy:#0b1c2c; --teal:#149487; --teal-lt:#1fb6a8; --amber:#b45309; --red:#b91c1c;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:#8f979e;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .s{width:13.333in;height:7.5in;margin:0 auto 18px;background:var(--paper);
+     position:relative;overflow:hidden;padding:0.62in 0.82in 1.05in;
+     display:flex;flex-direction:column;page-break-after:always;box-shadow:0 3px 30px rgba(0,0,0,.35);}
+  @page{size:13.333in 7.5in;margin:0;}
+  @media print{body{background:#fff;} .s{box-shadow:none;margin:0;}}
+
+  h1,h2{font-weight:400;letter-spacing:-0.038em;line-height:1.04;}
+  .mega{font-size:58px;} .big{font-size:40px;}
+  .dim{color:var(--grey);}
+  p{font-size:15px;line-height:1.62;color:var(--ink-2);}
+  .lede{font-size:18px;line-height:1.56;color:var(--ink-2);max-width:76ch;}
+  .tag{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.17em;
+       text-transform:uppercase;color:var(--grey);}
+  .sp{flex:1;}
+  .foot{position:absolute;left:0.82in;right:0.82in;bottom:0.28in;display:flex;justify-content:space-between;
+        font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);
+        border-top:1px solid var(--line);padding-top:10px;}
+  .rule{border:0;border-top:1px solid var(--line);margin:18px 0;}
+
+  .figs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.4px solid var(--ink);margin-top:10px;}
+  .fig{padding:20px 20px 20px 0;border-right:1px solid var(--line);}
+  .fig:last-child{border-right:0;}
+  .fig .v{font-size:40px;font-weight:400;letter-spacing:-.045em;line-height:1;}
+  .fig .v.t{color:var(--teal);} .fig .v.a{color:var(--amber);}
+  .fig .k{font-size:12px;color:var(--ink-2);margin-top:10px;line-height:1.42;}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;}
+  .c{background:var(--paper-2);padding:18px 18px 22px;
+     clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);}
+  .c .n{font-size:32px;font-weight:400;letter-spacing:-.04em;line-height:1;margin:8px 0 9px;}
+  .c p{font-size:12px;line-height:1.5;}
+
+  .capgrid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1.4px solid var(--ink);margin-top:14px;}
+  .cap{padding:20px 16px 20px 0;border-right:1px solid var(--line);}
+  .cap:last-child{border-right:0;}
+  .cap .n{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--grey);margin-bottom:12px;}
+  .cap h4{font-size:19px;font-weight:400;letter-spacing:-.025em;margin-bottom:8px;}
+  .cap p{font-size:11.8px;line-height:1.5;}
+
+  .box{border-left:2.5px solid var(--ink);padding:16px 0 16px 20px;margin-top:18px;}
+  .box.t{border-left-color:var(--teal);} .box.a{border-left-color:var(--amber);}
+  .box h4{font-size:15px;font-weight:600;margin-bottom:7px;letter-spacing:-.012em;}
+  .box p{font-size:13.5px;}
+
+  table{width:100%;border-collapse:collapse;margin-top:12px;}
+  th{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+     color:var(--grey);text-align:left;padding:10px 12px 10px 0;border-bottom:1.4px solid var(--ink);}
+  td{font-size:13px;padding:11px 12px 11px 0;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top;}
+  td b{color:var(--ink);font-weight:600;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
+  .split div{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:34px 28px;font-size:24px;letter-spacing:-.03em;}
+  .split .g{background:var(--paper-3);color:var(--ink);}
+  .split .k{background:var(--navy);color:#fff;}
+  .src{font-size:10.5px;color:var(--grey);line-height:1.5;margin-top:12px;}
+  .cover-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 30%;}
+  .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,28,44,.70),rgba(11,28,44,.58) 45%,rgba(11,28,44,.88));}
+  .in{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="s" style="background:var(--navy);color:#fff;">
+  <div class="cover-bg" style="background-image:url('gob-hero-poster.jpg');"></div>
+  <div class="veil"></div>
+  <div class="in">
+    <div style="font-family:var(--mono);font-size:14px;letter-spacing:.30em;font-weight:600;">QUORELIA</div>
+    <div class="sp"></div>
+    <p class="tag" style="color:var(--teal-lt);">Reunión bajo Ley 20.730 de Lobby</p>
+    <h1 class="mega" style="color:#fff;max-width:16ch;margin-top:16px;">Una cifra que no se puede verificar <span style="color:#9fb2bd;">no es una cifra.</span></h1>
+    <p class="lede" style="color:#c7d4dc;margin-top:22px;max-width:56ch;">Quorelia — tecnología de monitoreo y verificación de datos operacionales para infraestructura energética.</p>
+    <div class="sp"></div>
+    <p class="tag" style="color:#8fa3b0;">Superintendencia de Electricidad y Combustibles · Santiago, 21 de agosto de 2026</p>
+  </div>
+  <div class="foot" style="color:#5b6d7a;border-top-color:rgba(255,255,255,.14);"><span>Documento de trabajo</span><span>01</span></div>
+</section>
+
+<!-- 2 · EL PROBLEMA -->
+<section class="s">
+  <p class="tag">01 · El punto de partida</p>
+  <h2 class="big" style="margin:14px 0 16px;max-width:30ch;">El cuello de botella no está en terreno.<br>Está en la revisión documental.</h2>
+  <p class="lede">En generación distribuida se ejecutaron 2.341 fiscalizaciones durante 2025. De ellas, 2.100 fueron revisiones documentales.</p>
+  <div class="figs">
+    <div class="fig"><div class="v">10.769</div><div class="k">Fiscalizaciones 2025 · sector eléctrico y combustibles</div></div>
+    <div class="fig"><div class="v">2.341</div><div class="k">En generación distribuida</div></div>
+    <div class="fig"><div class="v a">2.100</div><div class="k">Revisiones documentales — cerca del 90% del esfuerzo</div></div>
+    <div class="fig"><div class="v">241</div><div class="k">Revisiones en terreno</div></div>
+  </div>
+  <div class="box a">
+    <h4>Cada documento llega en un formato distinto</h4>
+    <p>Definido por el titular, con su propia definición de disponibilidad, y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda. No se puede comparar, no se puede verificar y no se puede priorizar por riesgo.</p>
+  </div>
+  <div class="sp"></div>
+  <p class="src">Fuente: Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025.</p>
+  <div class="foot"><span>Quorelia · SEC</span><span>02</span></div>
+</section>
+
+<!-- 3 · LOS HALLAZGOS -->
+<section class="s" style="background:var(--paper-2);">
+  <p class="tag">02 · Evidencia sobre el registro público</p>
+  <h2 class="big" style="margin:14px 0 14px;max-width:32ch;">Cuatro hallazgos que nadie ha puesto sobre la mesa</h2>
+  <p class="lede">Análisis propio sobre la totalidad del registro de Infotécnica — 2.618 unidades en 2.029 centrales. Reproducible desde los archivos de origen.</p>
+  <div class="cards">
+    <div class="c" style="background:#fff;"><p class="tag">Estructura</p><div class="n">91,7%</div><p>de los titulares opera una sola central. Solo 37 de 1.614 operan cuatro o más.</p></div>
+    <div class="c" style="background:#fff;"><p class="tag">Documentación</p><div class="n">23,1%</div><p>de completitud en la ficha solar — la peor del registro, en la tecnología con 1.375 de 2.029 centrales.</p></div>
+    <div class="c" style="background:#fff;"><p class="tag">Almacenamiento</p><div class="n">2 / 977</div><p>unidades PMGD declaran un sistema de almacenamiento. Las otras 975 dicen «no aplica».</p></div>
+    <div class="c" style="background:#fff;"><p class="tag">Calidad de dato</p><div class="n">3 / 2</div><p>errores estructurales en las dos únicas fichas que existen, incluido un SOC de [0%–100%] imposible.</p></div>
+  </div>
+  <div class="box t">
+    <h4>La consecuencia para el diseño de la fiscalización</h4>
+    <p>Exigir un formato de reporte más estricto a un parque donde el 91,7% de los titulares opera una sola central <b>no produce mejor información</b>: produce incumplimiento. La única vía escalable es que el informe se genere solo, desde los datos que la central ya produce.</p>
+  </div>
+  <div class="sp"></div>
+  <p class="src">Infotécnica, Coordinador Eléctrico Nacional · extracción del 16 de agosto de 2026. Salvedad: parte de los campos vacíos puede ser legítimamente no aplicable; es una medida de información estructurada disponible, no de incumplimiento.</p>
+  <div class="foot"><span>Quorelia · SEC</span><span>03</span></div>
+</section>
+
+<!-- 4 · LA REGLA -->
+<section class="s">
+  <p class="tag">03 · El principio</p>
+  <h2 class="big" style="margin:14px 0 16px;max-width:26ch;">Si el dato no sostiene la cifra, no la estimamos. <span class="dim">La declaramos.</span></h2>
+  <p class="lede">Una cifra retenida con su razón declarada es verificable. Una cifra estimada que aparenta certeza no lo es. El silencio de un canal se informa como no observado y se excluye del denominador — nunca como cero.</p>
+
+  <div class="figs" style="margin-top:22px;">
+    <div class="fig"><div class="v">90%</div><div class="k">Cobertura mínima de datos para poder publicar una cifra</div></div>
+    <div class="fig"><div class="v">288</div><div class="k">Muestras por canal y día · cadencia de 300 s</div></div>
+    <div class="fig"><div class="v">2,0 pp</div><div class="k">Tolerancia de SOC para que un ciclo cuente como cerrado</div></div>
+    <div class="fig"><div class="v">500 mV</div><div class="k">Umbral de dispersión de celdas antes de bajar al detalle</div></div>
+  </div>
+
+  <div class="box">
+    <h4>Un ejemplo vivo, no una promesa</h4>
+    <p>En el Control Center, la eficiencia de ciclo de una planta no se publica. El motor escribe la razón en su lugar: <b>«ciclo abierto: el SOC derivó +16,43 pp en la ventana (tolerancia 2,0 pp); la eficiencia de ciclo no está definida»</b>. Cualquiera puede mostrar un panel con números verdes. Este se bloquea a sí mismo cuando no puede respaldar lo que dice.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>04</span></div>
+</section>
+
+<!-- 5 · CÓMO OPERA -->
+<section class="s" style="background:var(--paper-2);">
+  <p class="tag">04 · Cómo opera</p>
+  <h2 class="big" style="margin:14px 0 14px;">Ver. Entender. Anticipar. Actuar. Optimizar.</h2>
+  <p class="lede">Cinco capacidades encadenadas sobre los sistemas SCADA ya instalados. Sin equipamiento adicional.</p>
+  <div class="capgrid">
+    <div class="cap"><div class="n">/01</div><h4>Ver</h4><p>Visibilidad operacional continua sobre SCADA, PPC y BMS existentes.</p></div>
+    <div class="cap"><div class="n">/02</div><h4>Entender</h4><p>Cálculo exclusivamente sobre datos que superaron control de calidad.</p></div>
+    <div class="cap"><div class="n">/03</div><h4>Anticipar</h4><p>Detección de desviaciones sostenidas antes de que se conviertan en falla.</p></div>
+    <div class="cap"><div class="n">/04</div><h4>Actuar</h4><p>Clasificación preventiva o correctiva y derivación. El despacho lo confirma una persona.</p></div>
+    <div class="cap"><div class="n">/05</div><h4>Optimizar</h4><p>Priorización del esfuerzo según evidencia, no según rotación o denuncia.</p></div>
+  </div>
+  <div class="box a">
+    <h4>Precisión sobre el alcance de «anticipar»</h4>
+    <p>Detectamos desviaciones sostenidas respecto del comportamiento esperado. <b>No emitimos pronósticos de vida útil remanente ni probabilidades de falla</b>: eso exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que no se sostenga ante una revisión técnica.</p>
+  </div>
+  <div class="sp"></div>
+  <div class="foot"><span>Quorelia · SEC</span><span>05</span></div>
+</section>
+
+<!-- 6 · PILOTO Y CIERRE -->
+<section class="s">
+  <p class="tag">05 · Propuesta</p>
+  <h2 class="big" style="margin:14px 0 14px;max-width:30ch;">Un piloto acotado, medible y sin riesgo institucional</h2>
+  <table>
+    <tr><th>Elemento</th><th>Definición</th></tr>
+    <tr><td><b>Alcance</b></td><td>10 a 15 centrales voluntarias: fotovoltaica coordinada, PMGD y al menos una con almacenamiento</td></tr>
+    <tr><td><b>Duración</b></td><td>Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente</td></tr>
+    <tr><td><b>Insumo</b></td><td>Datos SCADA existentes, con autorización expresa de cada titular. Sin acceso a sistemas de la autoridad</td></tr>
+    <tr><td><b>Métrica de éxito</b></td><td>Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor</td></tr>
+    <tr><td><b>Definición de fracaso</b></td><td>Si el tiempo de revisión no disminuye de forma medible, el piloto termina</td></tr>
+  </table>
+  <p class="src" style="margin-top:14px;"><b style="color:var(--ink);">Deliberadamente no proyectamos un ahorro de horas.</b> Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.</p>
+  <div class="split">
+    <div class="g"><span>Sesión técnica de 45 minutos</span><span>→</span></div>
+    <div class="k"><span>jay@quorelia.org</span><span>→</span></div>
+  </div>
+  <div class="sp"></div>
+  <p class="src">Quorelia es una empresa privada de tecnología. No es un sistema oficial de la SEC ni de ningún organismo del Estado, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente.</p>
+  <div class="foot"><span>© 2026 Quorelia · quorelia.org</span><span>06</span></div>
+</section>
+
+</body>
+</html>

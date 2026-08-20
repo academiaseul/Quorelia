@@ -168,6 +168,105 @@
       </div>
     </div>
 
+    <!-- ── Arquitectura ── -->
+    <div class="arch-head rv" style="margin-top:78px;">
+      <hr class="rule" style="margin-bottom:56px;">
+      <p class="tag g" data-i18n="ar_eyebrow">How it works</p>
+      <h2 class="big" style="margin:14px auto 18px;max-width:22ch;" data-i18n="ar_h">One path from the sensor to the signed figure</h2>
+      <p class="lede" style="margin-bottom:54px;" data-i18n="ar_s">The architecture is deliberately simple. Data enters once, is validated once, and no result reaches a report without passing the verification engine first.</p>
+    </div>
+
+    <div class="arch rv">
+      <div class="arch-row">
+        <div class="node src">
+          <span class="nl" data-i18n="ar_lin">Input</span>
+          <span class="nn" data-i18n="ar_n1">SCADA · plant data</span>
+          <span class="nd" data-i18n="ar_d1">Inverters, meters, weather stations, BMS. The asset owner's own systems — nothing is replaced.</span>
+        </div>
+      </div>
+      <div class="arch-link"></div>
+
+      <div class="arch-row">
+        <div class="node key">
+          <span class="nl">/01</span>
+          <span class="nn" data-i18n="ar_n2">Quorelia ingestion</span>
+          <span class="nd" data-i18n="ar_d2">One 300-second cadence, one timestamp convention, one unit system — regardless of the source.</span>
+        </div>
+      </div>
+      <div class="arch-link"></div>
+
+      <div class="arch-row">
+        <div class="node">
+          <span class="nl">/02</span>
+          <span class="nn" data-i18n="ar_n3">Data validation</span>
+          <span class="nd" data-i18n="ar_d3">Gaps, frozen channels, out-of-range values and clock drift are flagged before anything is computed.</span>
+        </div>
+      </div>
+      <div class="arch-fork"><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node">
+          <span class="nl">/03a</span>
+          <span class="nn" data-i18n="ar_n4">KPI calculation</span>
+          <span class="nd" data-i18n="ar_d4">Availability, capacity factor, round-trip efficiency, curtailment — each with its formula recorded.</span>
+        </div>
+        <div class="node">
+          <span class="nl">/03b</span>
+          <span class="nn" data-i18n="ar_n5">Data quality engine</span>
+          <span class="nd" data-i18n="ar_d5">Coverage, sample count and cycle closure, measured against the thresholds in force.</span>
+        </div>
+      </div>
+      <div class="arch-join"><span></span></div>
+
+      <div class="arch-row">
+        <div class="node key">
+          <span class="nl">/04</span>
+          <span class="nn" data-i18n="ar_n6">Verification engine</span>
+          <span class="nd" data-i18n="ar_d6">The gate. A figure that fails coverage or cycle closure is not published — the reason is published instead.</span>
+        </div>
+      </div>
+      <div class="arch-fork"><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node">
+          <span class="nl">/05a</span>
+          <span class="nn" data-i18n="ar_n7">Dashboard</span>
+        </div>
+        <div class="node">
+          <span class="nl">/05b</span>
+          <span class="nn" data-i18n="ar_n8">Reporting</span>
+        </div>
+      </div>
+      <div class="arch-link two"><span></span><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node out">
+          <span class="nl" data-i18n="ar_lout">Output</span>
+          <span class="nn" data-i18n="ar_n9">Client portal</span>
+        </div>
+        <div class="node out">
+          <span class="nl" data-i18n="ar_lout">Output</span>
+          <span class="nn" data-i18n="ar_n10">PDF · Excel · email</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-prov rv">
+      <div>
+        <div class="pk">01</div>
+        <div class="pv" data-i18n="ar_p1">The raw measurement, stored unmodified</div>
+      </div>
+      <div>
+        <div class="pk">02</div>
+        <div class="pv" data-i18n="ar_p2">The calculated result and the formula used</div>
+      </div>
+      <div>
+        <div class="pk">03</div>
+        <div class="pv" data-i18n="ar_p3">The provenance chain linking one to the other</div>
+      </div>
+    </div>
+    <p class="lede rv" style="margin-top:30px;" data-i18n="ar_note">All three are kept, which is the whole point: every number on the screen can be walked back to the measurement that produced it.</p>
+
     <div class="split rv" style="margin-top:56px;">
       <a class="s-grey" href="quorelia-sample-report.html" target="_blank" rel="noopener">
         <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
@@ -396,6 +495,28 @@ const i18n = {
   cap_eyebrow:"Capabilities",
   cap_h:"Four domains, one chain of evidence",
   cap_s:"Every capability below reads from the same validated manifest. Nothing is calculated on data that has not passed quality control first.",
+  ar_eyebrow:"How it works",
+  ar_h:"One path from the sensor to the signed figure",
+  ar_s:"The architecture is deliberately simple. Data enters once, is validated once, and no result reaches a report without passing the verification engine first.",
+  ar_lin:"Input", ar_lout:"Output",
+  ar_n1:"SCADA · plant data",
+  ar_d1:"Inverters, meters, weather stations, BMS. The asset owner's own systems — nothing is replaced.",
+  ar_n2:"Quorelia ingestion",
+  ar_d2:"One 300-second cadence, one timestamp convention, one unit system — regardless of the source.",
+  ar_n3:"Data validation",
+  ar_d3:"Gaps, frozen channels, out-of-range values and clock drift are flagged before anything is computed.",
+  ar_n4:"KPI calculation",
+  ar_d4:"Availability, capacity factor, round-trip efficiency, curtailment — each with its formula recorded.",
+  ar_n5:"Data quality engine",
+  ar_d5:"Coverage, sample count and cycle closure, measured against the thresholds in force.",
+  ar_n6:"Verification engine",
+  ar_d6:"The gate. A figure that fails coverage or cycle closure is not published — the reason is published instead.",
+  ar_n7:"Dashboard", ar_n8:"Reporting",
+  ar_n9:"Client portal", ar_n10:"PDF · Excel · email",
+  ar_p1:"The raw measurement, stored unmodified",
+  ar_p2:"The calculated result and the formula used",
+  ar_p3:"The provenance chain linking one to the other",
+  ar_note:"All three are kept, which is the whole point: every number on the screen can be walked back to the measurement that produced it.",
   cc_t:"The Control Center",
   cc_h:"Fourteen modules over one verified dataset",
   cc_s:"Operations, regulator, intelligence and management views \u2014 all reading from the same validated manifest. No module can publish a figure the verification engine has not cleared.",
@@ -461,6 +582,28 @@ const i18n = {
   cap_eyebrow:"Capacidades",
   cap_h:"Cuatro dominios, una sola cadena de evidencia",
   cap_s:"Cada capacidad lee del mismo manifiesto validado. Nada se calcula sobre datos que no hayan superado antes el control de calidad.",
+  ar_eyebrow:"Cómo funciona",
+  ar_h:"Un solo camino desde el sensor hasta la cifra firmada",
+  ar_s:"La arquitectura es deliberadamente simple. El dato entra una vez, se valida una vez, y ningún resultado llega a un informe sin pasar antes por el motor de verificación.",
+  ar_lin:"Entrada", ar_lout:"Salida",
+  ar_n1:"SCADA · datos de planta",
+  ar_d1:"Inversores, medidores, estaciones meteorológicas, BMS. Los sistemas propios del titular — no se reemplaza nada.",
+  ar_n2:"Ingesta Quorelia",
+  ar_d2:"Una sola cadencia de 300 segundos, una convención de marca de tiempo, un sistema de unidades — sea cual sea el origen.",
+  ar_n3:"Validación de datos",
+  ar_d3:"Vacíos, canales congelados, valores fuera de rango y deriva de reloj se marcan antes de calcular nada.",
+  ar_n4:"Cálculo de KPI",
+  ar_d4:"Disponibilidad, factor de planta, eficiencia de ciclo, vertimiento — cada uno con su fórmula registrada.",
+  ar_n5:"Motor de calidad de datos",
+  ar_d5:"Cobertura, número de muestras y cierre de ciclo, medidos contra los umbrales vigentes.",
+  ar_n6:"Motor de verificación",
+  ar_d6:"La compuerta. Una cifra que no cumple cobertura o cierre de ciclo no se publica — se publica la razón en su lugar.",
+  ar_n7:"Tablero", ar_n8:"Reportería",
+  ar_n9:"Portal del cliente", ar_n10:"PDF · Excel · correo",
+  ar_p1:"La medición cruda, almacenada sin modificar",
+  ar_p2:"El resultado calculado y la fórmula utilizada",
+  ar_p3:"La cadena de procedencia que une una con el otro",
+  ar_note:"Se conservan las tres, y ese es todo el punto: cada número en pantalla puede recorrerse hacia atrás hasta la medición que lo produjo.",
   cc_t:"El Control Center",
   cc_h:"Catorce m\u00f3dulos sobre un mismo dato verificado",
   cc_s:"Vistas de operaci\u00f3n, regulador, inteligencia y gesti\u00f3n \u2014 todas leen del mismo manifiesto validado. Ning\u00fan m\u00f3dulo puede publicar una cifra que el motor de verificaci\u00f3n no haya aprobado.",
