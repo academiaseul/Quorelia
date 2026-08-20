@@ -424,10 +424,79 @@
 <!-- ══════════ CONTACTO / CTA ══════════ -->
 <section id="contact">
   <div class="wrap">
-    <h2 class="big rv" style="margin-bottom:40px;" data-i18n="cta_t">See it on your own assets</h2>
-    <div class="split rv">
-      <a class="s-grey" href="mailto:jay@quorelia.org?subject=Quorelia%20demo">
-        <span data-i18n="cta_demo2">Request a Demo</span><span class="ar">→</span>
+    <p class="tag g rv" data-i18n="ct_eyebrow">Get started</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="ct_h">Interested in optimizing your asset with Quorelia?</h2>
+    <p class="lede rv" style="margin-bottom:52px;" data-i18n="ct_s">Tell us what you operate and we will show you the same reports on your own data. We reply within one business day.</p>
+
+    <div class="form-wrap rv">
+      <form id="demo-form" novalidate>
+        <!-- trampa antispam: invisible para personas, tentadora para bots -->
+        <div class="hp" aria-hidden="true">
+          <label for="q-website">Website</label>
+          <input type="text" id="q-website" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="fgrid">
+          <div class="fld">
+            <label for="q-first" data-i18n="ct_first">First name<span class="req">*</span></label>
+            <input type="text" id="q-first" name="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="fld">
+            <label for="q-last" data-i18n="ct_last">Last name<span class="req">*</span></label>
+            <input type="text" id="q-last" name="last_name" autocomplete="family-name" required>
+          </div>
+          <div class="fld">
+            <label for="q-email" data-i18n="ct_email">Work email<span class="req">*</span></label>
+            <input type="email" id="q-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="fld">
+            <label for="q-phone" data-i18n="ct_phone">Phone number</label>
+            <input type="tel" id="q-phone" name="phone" autocomplete="tel" placeholder="+56">
+          </div>
+          <div class="fld">
+            <label for="q-title" data-i18n="ct_title">Job title</label>
+            <input type="text" id="q-title" name="job_title" autocomplete="organization-title">
+          </div>
+          <div class="fld">
+            <label for="q-company" data-i18n="ct_company">Company<span class="req">*</span></label>
+            <input type="text" id="q-company" name="company" autocomplete="organization" required>
+          </div>
+          <div class="fld full">
+            <label for="q-country" data-i18n="ct_country">Country<span class="req">*</span></label>
+            <select id="q-country" name="country" required>
+              <option value="" data-i18n="ct_select">Select a country</option>
+              <option value="Chile">Chile</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Perú">Perú</option>
+              <option value="Colombia">Colombia</option>
+              <option value="México">México</option>
+              <option value="Brasil">Brasil</option>
+              <option value="España">España</option>
+              <option value="United States">United States</option>
+              <option value="__other" data-i18n="ct_other">Other</option>
+            </select>
+          </div>
+          <div class="fld full">
+            <label for="q-details" data-i18n="ct_details">Details</label>
+            <textarea id="q-details" name="details" data-i18n-ph="ct_ph" placeholder="Technology, installed capacity, number of plants, what you need reported…"></textarea>
+            <span class="hint" data-i18n="ct_hint">Tell us about your project. A bit of context lets us connect you to the right team faster.</span>
+          </div>
+        </div>
+
+        <div class="fsub">
+          <button type="submit" class="btn-send" id="q-send">
+            <span data-i18n="ct_send">Send request</span><span class="ar">→</span>
+          </button>
+          <p class="fnote" data-i18n="ct_priv">Your details go to Jay Kim at Quorelia and are used only to answer you. We do not share them.</p>
+        </div>
+
+        <div class="fmsg" id="q-msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <div class="split rv" style="margin-top:64px;">
+      <a class="s-grey" href="quorelia-sample-report.html" target="_blank" rel="noopener">
+        <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
       </a>
       <a class="s-black" href="gobierno.html">
         <span data-i18n="cta_gov">For Public Authorities</span><span class="ar">→</span>
@@ -526,6 +595,22 @@ const i18n = {
   cc_g3:"Intelligence", cc_g3a:"Guided questions",
   cc_g4:"Management", cc_g4a:"Predictive maintenance", cc_g4b:"Asset depreciation", cc_g4c:"Reports", cc_g4d:"Engine configuration",
   cc_cta:"Request a Control Center demo",
+  ct_eyebrow:"Get started",
+  ct_h:"Interested in optimizing your asset with Quorelia?",
+  ct_s:"Tell us what you operate and we will show you the same reports on your own data. We reply within one business day.",
+  ct_first:"First name<span class=\"req\">*</span>", ct_last:"Last name<span class=\"req\">*</span>",
+  ct_email:"Work email<span class=\"req\">*</span>", ct_phone:"Phone number",
+  ct_title:"Job title", ct_company:"Company<span class=\"req\">*</span>",
+  ct_country:"Country<span class=\"req\">*</span>", ct_select:"Select a country", ct_other:"Other",
+  ct_details:"Details",
+  ct_ph:"Technology, installed capacity, number of plants, what you need reported\u2026",
+  ct_hint:"Tell us about your project. A bit of context lets us connect you to the right team faster.",
+  ct_send:"Send request", ct_sending:"Sending\u2026",
+  ct_priv:"Your details go to Jay Kim at Quorelia and are used only to answer you. We do not share them.",
+  ct_err_req:"Please complete the required fields marked with an asterisk.",
+  ct_ok:"Thank you \u2014 your request has arrived. Jay will reply within one business day.",
+  ct_fail:"The request could not be sent. Please write to {mail} directly \u2014 your details are already in the message.",
+  ct_mailto:"Your email application should have opened with the details filled in. Press Send to finish, or write to jay@quorelia.org directly.",
   demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Control%20Center%20demo&body=Hi%20Jay%2C%0A%0AI%20would%20like%20to%20schedule%20a%20demo%20of%20the%20Control%20Center.%0A%0AName%3A%0AOrganisation%3A%0ATechnology%20%28solar%20%2F%20wind%20%2F%20BESS%29%3A%0A%0AThank%20you.",
   cc_p:"Verification engine \u00b7 thresholds in force",
   cc_p1:"Minimum data coverage before a figure may be published",
@@ -614,6 +699,22 @@ const i18n = {
   cc_g3:"Inteligencia", cc_g3a:"Preguntas guiadas",
   cc_g4:"Gesti\u00f3n", cc_g4a:"Mantenimiento predictivo", cc_g4b:"Depreciaci\u00f3n de activos", cc_g4c:"Reportes", cc_g4d:"Configuraci\u00f3n del motor",
   cc_cta:"Solicitar una demo del Control Center",
+  ct_eyebrow:"Comenzar",
+  ct_h:"\u00bfLe interesa optimizar su activo con Quorelia?",
+  ct_s:"Cu\u00e9ntenos qu\u00e9 opera y le mostramos los mismos informes sobre sus propios datos. Respondemos dentro de un d\u00eda h\u00e1bil.",
+  ct_first:"Nombre<span class=\"req\">*</span>", ct_last:"Apellido<span class=\"req\">*</span>",
+  ct_email:"Correo corporativo<span class=\"req\">*</span>", ct_phone:"Tel\u00e9fono",
+  ct_title:"Cargo", ct_company:"Empresa<span class=\"req\">*</span>",
+  ct_country:"Pa\u00eds<span class=\"req\">*</span>", ct_select:"Seleccione un pa\u00eds", ct_other:"Otro",
+  ct_details:"Detalles",
+  ct_ph:"Tecnolog\u00eda, capacidad instalada, n\u00famero de plantas, qu\u00e9 necesita informar\u2026",
+  ct_hint:"Cu\u00e9ntenos sobre su proyecto. Un poco de contexto nos permite conectarlo m\u00e1s r\u00e1pido con el equipo correcto.",
+  ct_send:"Enviar solicitud", ct_sending:"Enviando\u2026",
+  ct_priv:"Sus datos llegan a Jay Kim en Quorelia y se usan s\u00f3lo para responderle. No los compartimos.",
+  ct_err_req:"Complete los campos obligatorios marcados con asterisco.",
+  ct_ok:"Gracias \u2014 su solicitud lleg\u00f3. Jay responder\u00e1 dentro de un d\u00eda h\u00e1bil.",
+  ct_fail:"No se pudo enviar la solicitud. Escriba directamente a {mail} \u2014 sus datos ya vienen en el mensaje.",
+  ct_mailto:"Deber\u00eda haberse abierto su aplicaci\u00f3n de correo con los datos ya escritos. Pulse Enviar para terminar, o escriba directamente a jay@quorelia.org.",
   demo_href:"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Demo%20del%20Control%20Center&body=Hola%20Jay%2C%0A%0AMe%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n%20del%20Control%20Center.%0A%0ANombre%3A%0AOrganizaci%C3%B3n%3A%0ATecnolog%C3%ADa%20%28solar%20%2F%20e%C3%B3lico%20%2F%20BESS%29%3A%0A%0AGracias.",
   cc_p:"Motor de verificaci\u00f3n \u00b7 umbrales vigentes",
   cc_p1:"Cobertura m\u00ednima de datos para poder publicar una cifra",
@@ -666,12 +767,109 @@ function setLang(l){
     var k=el.getAttribute('data-i18n-href');
     if(d[k]!==undefined) el.setAttribute('href', d[k]);
   });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-ph');
+    if(d[k]!==undefined) el.setAttribute('placeholder', d[k]);
+  });
   try{ localStorage.setItem('q-lang', l); }catch(e){}
   window.dispatchEvent(new Event('quorelia:lang'));
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
   setLang(s || ((navigator.language||'en').toLowerCase().indexOf('es')===0 ? 'es':'en'));
+})();
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FORMULARIO "SOLICITAR DEMO"
+   ─────────────────────────────────────────────────────────────────────────
+   Para que los envíos lleguen al correo de Jay:
+
+     1. Crear una cuenta gratuita en https://formspree.io
+     2. New Form → destinatario jay@quorelia.org → confirmar el correo
+        de verificación que llega a esa casilla
+     3. Copiar el ID del formulario (algo como "xayzbwqd") y pegarlo abajo
+
+   Mientras FORM_ID siga en null, el botón abre el cliente de correo del
+   visitante con todos los campos ya escritos — funciona, pero el visitante
+   tiene que pulsar Enviar él mismo y falla en equipos sin correo configurado.
+   ══════════════════════════════════════════════════════════════════════════ */
+var FORM_ID = null;   /* ←←← pegar aquí el ID de Formspree */
+
+(function(){
+  var f = document.getElementById('demo-form');
+  if(!f) return;
+  var btn = document.getElementById('q-send'),
+      msg = document.getElementById('q-msg'),
+      lbl = btn.querySelector('span:first-child');
+
+  function t(k){ var d=i18n[document.getElementById('html-root').getAttribute('lang')]||i18n.en; return d[k]||''; }
+  function show(kind, html){ msg.className='fmsg '+kind; msg.innerHTML=html; }
+
+  /* Etiquetas legibles para el cuerpo del correo, en el idioma activo */
+  var CAMPOS=[['first_name','ct_first'],['last_name','ct_last'],['email','ct_email'],
+              ['phone','ct_phone'],['job_title','ct_title'],['company','ct_company'],
+              ['country','ct_country'],['details','ct_details']];
+
+  function limpiar(s){ return String(s||'').replace(/<[^>]*>/g,'').replace(/\s+$/,''); }
+
+  /* Las etiquetas traen <span class="req">*</span>; hay que quitarlo del correo */
+  function rotulo(k){ return limpiar(t(k)).replace('*','').trim(); }
+
+  function cuerpo(datos){
+    var out=[];
+    CAMPOS.forEach(function(c){
+      var v=limpiar(datos[c[0]]);
+      if(v) out.push(rotulo(c[1])+': '+v);
+    });
+    return out.join('\n');
+  }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f.querySelector('[name="_gotcha"]').value) return;   /* bot */
+
+    if(!f.checkValidity()){
+      show('bad', t('ct_err_req'));
+      var malo=f.querySelector(':invalid');
+      if(malo){ malo.focus(); }
+      return;
+    }
+
+    var datos={};
+    new FormData(f).forEach(function(v,k){ if(k!=='_gotcha') datos[k]=v; });
+    var nombre=(limpiar(datos.first_name)+' '+limpiar(datos.last_name)).trim();
+    var asunto='Quorelia · '+nombre+(datos.company?' · '+limpiar(datos.company):'');
+
+    /* Sin endpoint configurado todavía → abrir el cliente de correo */
+    if(!FORM_ID){
+      window.location.href='mailto:jay@quorelia.org?subject='+encodeURIComponent(asunto)+
+                           '&body='+encodeURIComponent(cuerpo(datos));
+      show('ok', t('ct_mailto'));
+      return;
+    }
+
+    btn.disabled=true; lbl.textContent=t('ct_sending');
+    datos._subject=asunto;
+    fetch('https://formspree.io/f/'+FORM_ID,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(datos)
+    }).then(function(r){
+      if(r.ok){ f.reset(); show('ok', t('ct_ok')); }
+      else { return r.json().then(function(j){ throw new Error((j.errors&&j.errors[0]&&j.errors[0].message)||'error'); }); }
+    }).catch(function(){
+      show('bad', t('ct_fail').replace('{mail}',
+        '<a href="mailto:jay@quorelia.org?subject='+encodeURIComponent(asunto)+
+        '&body='+encodeURIComponent(cuerpo(datos))+'">jay@quorelia.org</a>'));
+    }).then(function(){
+      btn.disabled=false; lbl.textContent=t('ct_send');
+    });
+  });
+
+  /* Si cambia el idioma con el formulario ya en pantalla, repintar el botón */
+  window.addEventListener('quorelia:lang', function(){
+    if(!btn.disabled) lbl.textContent=t('ct_send');
+  });
 })();
 
 </script>
