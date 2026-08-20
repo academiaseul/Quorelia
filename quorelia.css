@@ -108,6 +108,11 @@ section > .wrap > h2{max-width:24ch;}
 .brand{font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.24em;text-transform:uppercase;
   display:inline-flex;align-items:center;gap:10px;}
 .brand img{flex:none;}
+
+/* ── Logo del pie: la Q grande arriba, centrada; las letras debajo ─────── */
+.f-logo{display:flex;flex-direction:column;align-items:center;gap:30px;margin:70px 0 40px;}
+.f-logo .fq{width:min(170px,36vw);height:auto;}
+.f-logo .fw{width:min(420px,74vw);height:auto;}
 .nav-links{display:flex;gap:30px;font-size:14px;color:var(--ink-2);}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a.on{color:var(--ink);font-weight:600;}
