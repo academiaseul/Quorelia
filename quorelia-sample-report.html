@@ -14,135 +14,149 @@
 <title>Quorelia — Independent Verification &amp; O&amp;M Report (Sample)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ── Quorelia · lenguaje Palantir: claro, hilos finos, esquinas recortadas ── */
   :root{
-    --navy:#0b1c2c; --navy-2:#122a40; --teal:#1fb6a8; --teal-dark:#149487;
-    --amber:#f5a623; --green:#22c55e; --red:#ef4444; --orange:#ff6b35;
-    --ink:#0b1c2c; --muted:#5c7080; --bg:#f7f9fa; --white:#ffffff; --border:#e3e9ec;
-    --mono:'SF Mono',Consolas,'Courier New',monospace;
+    --navy:#0b1c2c; --navy-2:#122a40; --teal:#149487; --teal-dark:#149487; --teal-lt:#1fb6a8;
+    --amber:#b45309; --green:#149487; --red:#b91c1c; --orange:#b45309;
+    --ink:#101418; --muted:#3d474f; --grey:#8a949c; --bg:#f2f3f4; --white:#fff; --border:#e2e5e8;
+    --sans:'Inter','PingFang SC','Microsoft YaHei',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Inter',Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#dfe4e7;line-height:1.55;}
-  .page{
-    width:8.5in;min-height:11in;margin:0 auto 18px;background:var(--white);
-    padding:0.55in 0.65in;position:relative;box-shadow:0 6px 24px rgba(11,28,44,0.14);
-    page-break-after:always;
-  }
+  body{font-family:var(--sans);color:var(--ink);background:#8f979e;line-height:1.55;
+    -webkit-font-smoothing:antialiased;}
+  .page{width:8.5in;min-height:11in;margin:0 auto 18px;background:var(--white);
+    padding:0.55in 0.65in;position:relative;box-shadow:0 3px 30px rgba(0,0,0,.30);
+    page-break-after:always;}
   .page:last-child{page-break-after:auto;}
-  @media print{
-    body{background:none;}
-    .page{box-shadow:none;margin:0;width:auto;min-height:auto;}
-  }
-  h1,h2,h3,h4{font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
-  .eyebrow{
-    font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--teal-dark);margin-bottom:6px;display:block;
-  }
-  .foot{
-    position:absolute;bottom:0.4in;left:0.65in;right:0.65in;
-    display:flex;justify-content:space-between;font-size:9.5px;color:#9aa9b2;
-    border-top:0.8px solid var(--border);padding-top:8px;font-family:var(--mono);letter-spacing:0.03em;
-  }
-  table{width:100%;border-collapse:collapse;font-size:12px;}
-  th{
-    text-align:left;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;
-    color:var(--muted);padding:8px 10px;border-bottom:1.5px solid var(--ink);background:#f2f5f6;
-  }
-  td{padding:7px 10px;border-bottom:0.8px solid var(--border);}
-  tr:last-child td{border-bottom:0.8px solid var(--ink);}
-  .mono{font-family:var(--mono);}
-  .pill{
-    display:inline-block;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:700;
-    text-transform:uppercase;letter-spacing:0.04em;
-  }
-  .pill.approved{background:rgba(34,197,94,0.14);color:#178a45;}
-  .pill.withheld{background:rgba(92,112,128,0.14);color:#4b5b68;}
-  .pill.warn{background:rgba(245,166,35,0.16);color:#a5670c;}
+  @media print{ body{background:none;} .page{box-shadow:none;margin:0;width:auto;min-height:auto;} }
 
-  /* ---- Cover ---- */
+  h1,h2,h3{font-weight:400;letter-spacing:-.022em;color:var(--ink);line-height:1.1;}
+  h4,h5{font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+  .eyebrow{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.17em;
+    text-transform:uppercase;color:var(--grey);margin-bottom:8px;display:block;}
+  .foot{position:absolute;bottom:0.4in;left:0.65in;right:0.65in;
+    display:flex;justify-content:space-between;font-size:9px;color:var(--grey);
+    border-top:1px solid var(--border);padding-top:9px;font-family:var(--mono);
+    letter-spacing:.12em;text-transform:uppercase;}
+
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{text-align:left;font-family:var(--mono);font-size:9.5px;font-weight:500;
+    text-transform:uppercase;letter-spacing:.13em;color:var(--grey);
+    padding:9px 10px 9px 0;border-bottom:1.4px solid var(--ink);background:none;}
+  td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top;}
+  td b{color:var(--ink);}
+  tr:last-child td{border-bottom:1px solid var(--border);}
+  .mono{font-family:var(--mono);}
+
+  /* Estados: texto mono con punto de color — nada de píldoras redondeadas */
+  .pill{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:500;
+    letter-spacing:.13em;text-transform:uppercase;padding:0;border-radius:0;background:none;}
+  .pill::before{content:'●';margin-right:6px;font-size:8px;}
+  .pill.approved{color:var(--teal);}
+  .pill.withheld{color:var(--grey);}
+  .pill.warn{color:var(--amber);}
+
+  /* ── Portada ── */
   .cover{background:var(--navy);color:#fff;padding:0;}
   .cover-top{padding:0.55in 0.65in 0;}
-  .cover-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:2px;}
-  .cover-tag{font-size:10.5px;color:#9fb2bd;letter-spacing:0.14em;text-transform:uppercase;margin-top:4px;font-family:var(--mono);}
-  .cover-sample{
-    display:inline-block;margin-top:28px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--amber);border:0.8px solid rgba(245,166,35,0.5);
-    background:rgba(245,166,35,0.1);padding:5px 12px;border-radius:20px;
-  }
-  .cover-title{font-size:40px;line-height:1.12;font-weight:700;letter-spacing:-0.02em;margin-top:22px;max-width:6.5in;}
-  .cover-sub{font-size:15px;color:#c7d4dc;margin-top:14px;max-width:5.6in;}
-  .cover-block{
-    margin-top:0.7in;padding:0.4in 0.65in;background:var(--navy-2);
-    border-top:0.8px solid rgba(255,255,255,0.1);
-  }
+  .cover-brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.30em;}
+  .cover-tag{font-family:var(--mono);font-size:10px;color:#8fa3b0;letter-spacing:.17em;
+    text-transform:uppercase;margin-top:6px;}
+  .cover-sample{display:inline-block;margin-top:30px;font-family:var(--mono);font-size:9.5px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--teal-lt);
+    border:1px solid rgba(31,182,168,.45);padding:6px 12px;border-radius:0;background:none;}
+  .cover-title{font-size:42px;line-height:1.06;font-weight:300;letter-spacing:-.024em;
+    margin-top:26px;max-width:6.5in;color:#fff;}
+  .cover-sub{font-size:15px;font-weight:400;color:#c7d4dc;margin-top:16px;max-width:5.6in;line-height:1.6;}
+  .cover-block{margin-top:0.7in;padding:0.4in 0.65in;background:none;
+    border-top:1.4px solid rgba(255,255,255,.35);}
   .cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .cover-grid .k{font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:#7f93a0;margin-bottom:5px;}
-  .cover-grid .v{font-size:14px;font-weight:600;color:#fff;}
-  .cover-foot{
-    padding:0.3in 0.65in 0.5in;font-size:10px;color:#7f93a0;line-height:1.6;
-    border-top:0.8px solid rgba(255,255,255,0.08);
-  }
+  .cover-grid .k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:#7f93a0;margin-bottom:6px;}
+  .cover-grid .v{font-size:14px;font-weight:400;letter-spacing:-.01em;color:#fff;}
+  .cover-foot{padding:0.3in 0.65in 0.5in;font-size:10px;color:#7f93a0;line-height:1.65;
+    border-top:1px solid rgba(255,255,255,.10);}
 
-  /* ---- TOC ---- */
-  .toc-num{font-family:var(--mono);font-size:34px;font-weight:700;color:var(--border);display:inline-block;width:0.65in;}
-  .toc-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:0.8px solid var(--border);}
-  .toc-row .t{font-size:15px;font-weight:600;}
-  .toc-row .p{font-family:var(--mono);color:var(--muted);font-size:12px;}
-  .toc-sub{font-size:12.5px;color:var(--muted);padding:6px 0 6px 0.8in;display:flex;justify-content:space-between;border-bottom:0.8px solid #eef1f2;}
+  /* ── Índice ── */
+  .toc-num{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--grey);
+    display:inline-block;width:0.65in;letter-spacing:.1em;}
+  .toc-num::before{content:'/';}
+  .toc-row{display:flex;align-items:baseline;justify-content:space-between;
+    padding:15px 0;border-bottom:1px solid var(--border);}
+  .toc-row:first-of-type{border-top:1.4px solid var(--ink);}
+  .toc-row .t{font-size:16px;font-weight:400;letter-spacing:-.015em;}
+  .toc-row .p{font-family:var(--mono);color:var(--grey);font-size:11px;}
+  .toc-sub{font-size:12px;color:var(--muted);padding:7px 0 7px 0.8in;
+    display:flex;justify-content:space-between;border-bottom:1px solid #eef0f1;position:relative;}
+  .toc-sub::before{content:'↳';position:absolute;left:0.62in;color:var(--grey);}
 
-  /* ---- Section header ---- */
-  .sec-h{margin-bottom:22px;}
-  .sec-h h1{font-size:23px;}
-  .sec-h p{color:var(--muted);font-size:13px;margin-top:5px;max-width:6in;}
+  /* ── Encabezado de sección ── */
+  .sec-h{margin-bottom:24px;}
+  .sec-h h1{font-size:26px;font-weight:300;}
+  .sec-h p{color:var(--muted);font-size:13px;margin-top:7px;max-width:6in;}
 
-  /* ---- Workflow ---- */
-  .wf-step{display:flex;gap:16px;padding:16px 0;border-bottom:0.8px solid var(--border);}
+  /* ── Flujo de trabajo ── */
+  .wf-step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}
   .wf-step:last-child{border-bottom:none;}
-  .wf-idx{
-    flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--teal);
-    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:12px;
-  }
+  .wf-idx{flex:none;width:auto;height:auto;border-radius:0;background:none;color:var(--teal);
+    font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.1em;
+    display:block;padding-top:2px;min-width:34px;}
   .wf-step h4{font-size:13.5px;margin-bottom:4px;}
   .wf-step p{font-size:12px;color:var(--muted);}
 
-  /* ---- Opinion ---- */
-  .opinion-box{border:0.8px solid var(--border);border-left:3px solid var(--teal);padding:16px 18px;margin:14px 0;background:#f7fbfb;}
-  .opinion-box h4{font-size:12.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--teal-dark);margin-bottom:6px;font-family:var(--mono);}
-  .opinion-box p{font-size:12.5px;color:#2b3d4a;}
-  .verdict-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:16px;}
-  .vcard{border:0.8px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
-  .vcard .pct{font-family:var(--mono);font-size:26px;font-weight:700;}
-  .vcard .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.04em;}
+  /* ── Opinión ── */
+  .opinion-box{border:0;border-left:2.5px solid var(--teal);padding:14px 0 14px 18px;
+    margin:16px 0;background:none;}
+  .opinion-box h4{font-size:10px;text-transform:uppercase;letter-spacing:.15em;
+    color:var(--teal);margin-bottom:7px;font-family:var(--mono);font-weight:500;}
+  .opinion-box p{font-size:12.5px;color:var(--muted);}
+  .verdict-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:18px;
+    border-top:1.4px solid var(--ink);}
+  .vcard{border:0;border-right:1px solid var(--border);border-radius:0;
+    padding:16px 14px 14px 0;text-align:left;}
+  .vcard:last-child{border-right:0;}
+  .vcard .pct{font-family:var(--sans);font-size:30px;font-weight:400;letter-spacing:-.04em;}
+  .vcard .lbl{font-family:var(--mono);font-size:9px;color:var(--grey);margin-top:7px;
+    text-transform:uppercase;letter-spacing:.13em;}
 
-  /* ---- Bar chart (SVG) ---- */
+  /* ── Gráfico ── */
   .chart-wrap{margin-top:10px;}
-  .chart-legend{display:flex;gap:16px;font-size:10.5px;color:var(--muted);margin-bottom:8px;font-family:var(--mono);}
-  .chart-legend span{display:inline-flex;align-items:center;gap:5px;}
-  .chart-legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+  .chart-legend{display:flex;gap:16px;font-size:9.5px;color:var(--grey);margin-bottom:10px;
+    font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;}
+  .chart-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .chart-legend i{width:9px;height:9px;border-radius:0;display:inline-block;}
 
-  /* ---- Findings ---- */
-  .finding{border:0.8px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:10px;}
+  /* ── Hallazgos ── */
+  .finding{border:0;border-radius:0;background:var(--bg);padding:15px 17px;margin-bottom:10px;
+    clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);}
   .finding .fh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-  .finding .fh b{font-size:13px;}
+  .finding .fh b{font-size:13px;letter-spacing:-.01em;}
   .finding p{font-size:12px;color:var(--muted);}
-  .finding .rec{margin-top:8px;font-size:11.5px;color:var(--teal-dark);font-weight:600;}
+  .finding .rec{margin-top:9px;font-size:11.5px;color:var(--teal);font-weight:500;
+    padding-left:16px;position:relative;}
+  .finding .rec::before{content:'↳';position:absolute;left:0;color:var(--grey);}
 
-  /* ---- Commentary ---- */
-  .quote-block{border-left:3px solid var(--amber);padding:4px 0 4px 18px;margin:16px 0;}
-  .quote-block p{font-size:13px;line-height:1.75;color:#2b3d4a;font-style:italic;}
-  .signoff{margin-top:22px;padding-top:14px;border-top:0.8px solid var(--border);font-size:11.5px;color:var(--muted);}
+  /* ── Comentario ── */
+  .quote-block{border-left:2.5px solid var(--ink);padding:4px 0 4px 18px;margin:16px 0;}
+  .quote-block p{font-size:13.5px;line-height:1.75;color:var(--muted);font-style:normal;}
+  .signoff{margin-top:22px;padding-top:14px;border-top:1px solid var(--border);
+    font-size:11.5px;color:var(--muted);}
   .signoff b{color:var(--ink);}
 
-  /* ---- Appendix def list ---- */
-  .def-item{display:flex;gap:14px;padding:10px 0;border-bottom:0.8px solid var(--border);align-items:flex-start;}
-  .def-chip{flex:none;width:20px;height:20px;border-radius:5px;margin-top:2px;border:0.8px solid rgba(0,0,0,.08);}
+  /* ── Apéndice ── */
+  .def-item{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+  .def-chip{flex:none;width:14px;height:14px;border-radius:0;margin-top:3px;border:0;}
   .def-item h5{font-size:12.5px;margin-bottom:2px;}
   .def-item p{font-size:11.5px;color:var(--muted);}
 
-  /* ---- Back page ---- */
+  /* ── Contraportada ── */
   .back-navy{background:var(--navy);color:#fff;padding:0.55in 0.65in;}
   .back-navy .cover-brand{color:#fff;}
+  .back-navy h1,.back-navy h2{color:#fff;font-weight:300;}
+  .back-navy p{color:#b9c9d1;}
 </style>
 </head>
 <body>
@@ -275,14 +289,14 @@
     <p>Quorelia is responsible for the completeness of the validation pipeline applied to the data received, and for disclosing — rather than estimating past — any period in which data coverage does not support a defensible figure.</p>
   </div>
 
-  <div class="opinion-box" style="border-left-color:var(--green);background:#f4faf6;">
-    <h4 style="color:#178a45;">Opinion</h4>
+  <div class="opinion-box" style="border-left-color:var(--green);background:#f2f3f4;">
+    <h4 style="color:#149487;">Opinion</h4>
     <p>Based on the procedures performed, contractual availability for the reporting period is <b>certified at 96.2%</b>, supported by 96.2% observed data coverage across monitored assets. One asset block (INV-11) is <b>withheld</b> due to data coverage below the defensible threshold; see Section 05, Finding F-01.</p>
   </div>
 
   <div class="verdict-row">
-    <div class="vcard"><div class="pct" style="color:#178a45;">96.2%</div><div class="lbl">Approved</div></div>
-    <div class="vcard"><div class="pct" style="color:#4b5b68;">3.1%</div><div class="lbl">Withheld</div></div>
+    <div class="vcard"><div class="pct" style="color:#149487;">96.2%</div><div class="lbl">Approved</div></div>
+    <div class="vcard"><div class="pct" style="color:#3d474f;">3.1%</div><div class="lbl">Withheld</div></div>
     <div class="vcard"><div class="pct" style="color:#5A6B75;">0.7%</div><div class="lbl">Not observed</div></div>
   </div>
 
@@ -311,7 +325,7 @@
     <tr><td class="mono">INV-08</td><td class="mono">44,352</td><td class="mono">98.5</td><td class="mono">97.6</td><td class="mono">83.8</td><td class="mono">17,810</td><td><span class="pill approved">Approved</span></td></tr>
     <tr><td class="mono">INV-09</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.3</td><td class="mono">84.0</td><td class="mono">18,050</td><td><span class="pill approved">Approved</span></td></tr>
     <tr><td class="mono">INV-10</td><td class="mono">44,467</td><td class="mono">98.7</td><td class="mono">97.7</td><td class="mono">83.4</td><td class="mono">17,730</td><td><span class="pill approved">Approved</span></td></tr>
-    <tr style="background:#f9f6f0;"><td class="mono">INV-11</td><td class="mono">21,984</td><td class="mono">48.8</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td><td><span class="pill withheld">Withheld</span></td></tr>
+    <tr style="background:#f2f3f4;"><td class="mono">INV-11</td><td class="mono">21,984</td><td class="mono">48.8</td><td class="mono">—</td><td class="mono">—</td><td class="mono">—</td><td><span class="pill withheld">Withheld</span></td></tr>
     <tr><td class="mono">INV-12</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">98.8</td><td class="mono">85.0</td><td class="mono">18,380</td><td><span class="pill approved">Approved</span></td></tr>
     <tr><td class="mono">INV-13</td><td class="mono">44,530</td><td class="mono">98.9</td><td class="mono">98.1</td><td class="mono">84.3</td><td class="mono">18,020</td><td><span class="pill approved">Approved</span></td></tr>
     <tr><td class="mono">BESS-01</td><td class="mono">44,640</td><td class="mono">99.1</td><td class="mono">99.3</td><td class="mono">—</td><td class="mono">4,120<span style="color:var(--muted);"> (dis.)</span></td><td><span class="pill approved">Approved</span></td></tr>
@@ -335,32 +349,32 @@
 
   <div class="chart-wrap">
     <svg viewBox="0 0 720 430" width="100%" xmlns="http://www.w3.org/2000/svg">
-      <line x1="140" y1="10" x2="140" y2="410" stroke="#e3e9ec" stroke-width="1"/>
-      <text x="140" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">0</text>
-      <text x="330" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">50</text>
-      <text x="520" y="424" font-size="9" fill="#5c7080" text-anchor="middle" font-family="SF Mono, monospace">100%</text>
-      <line x1="330" y1="10" x2="330" y2="410" stroke="#eef1f2" stroke-width="1"/>
-      <line x1="520" y1="10" x2="520" y2="410" stroke="#eef1f2" stroke-width="1"/>
+      <line x1="140" y1="10" x2="140" y2="410" stroke="#e2e5e8" stroke-width="1"/>
+      <text x="140" y="424" font-size="9" fill="#3d474f" text-anchor="middle" font-family="SF Mono, monospace">0</text>
+      <text x="330" y="424" font-size="9" fill="#3d474f" text-anchor="middle" font-family="SF Mono, monospace">50</text>
+      <text x="520" y="424" font-size="9" fill="#3d474f" text-anchor="middle" font-family="SF Mono, monospace">100%</text>
+      <line x1="330" y1="10" x2="330" y2="410" stroke="#eef0f1" stroke-width="1"/>
+      <line x1="520" y1="10" x2="520" y2="410" stroke="#eef0f1" stroke-width="1"/>
 
       <g font-family="Inter, sans-serif" font-size="11" fill="#0b1c2c">
-        <text x="130" y="30" text-anchor="end">INV-01</text><rect x="140" y="18" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="30" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="55" text-anchor="end">INV-02</text><rect x="140" y="43" width="375.2" height="16" rx="2" fill="#1fb6a8"/><text x="521" y="55" font-family="SF Mono" font-size="10" fill="#5c7080">98.8</text>
-        <text x="130" y="80" text-anchor="end">INV-03</text><rect x="140" y="68" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="80" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="105" text-anchor="end">INV-04</text><rect x="140" y="93" width="374.6" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="105" font-family="SF Mono" font-size="10" fill="#5c7080">98.6</text>
-        <text x="130" y="130" text-anchor="end">INV-05</text><rect x="140" y="118" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="130" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="155" text-anchor="end">INV-06</text><rect x="140" y="143" width="372.8" height="16" rx="2" fill="#1fb6a8"/><text x="517" y="155" font-family="SF Mono" font-size="10" fill="#5c7080">98.1</text>
-        <text x="130" y="180" text-anchor="end">INV-07</text><rect x="140" y="168" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="180" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="205" text-anchor="end">INV-08</text><rect x="140" y="193" width="374" height="16" rx="2" fill="#1fb6a8"/><text x="518" y="205" font-family="SF Mono" font-size="10" fill="#5c7080">98.5</text>
-        <text x="130" y="230" text-anchor="end">INV-09</text><rect x="140" y="218" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="230" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="255" text-anchor="end">INV-10</text><rect x="140" y="243" width="375.1" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="255" font-family="SF Mono" font-size="10" fill="#5c7080">98.7</text>
-        <text x="130" y="280" text-anchor="end" font-weight="700">INV-11</text><rect x="140" y="268" width="185.4" height="16" rx="2" fill="#5A6B75"/><text x="330" y="280" font-family="SF Mono" font-size="10" fill="#5c7080" font-weight="700">48.8</text>
-        <text x="130" y="305" text-anchor="end">INV-12</text><rect x="140" y="293" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="305" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="330" text-anchor="end">INV-13</text><rect x="140" y="318" width="375.8" height="16" rx="2" fill="#1fb6a8"/><text x="522" y="330" font-family="SF Mono" font-size="10" fill="#5c7080">98.9</text>
-        <text x="130" y="355" text-anchor="end">BESS-01</text><rect x="140" y="343" width="376.4" height="16" rx="2" fill="#149487"/><text x="524" y="355" font-family="SF Mono" font-size="10" fill="#5c7080">99.1</text>
-        <text x="130" y="380" text-anchor="end">BESS-02</text><rect x="140" y="368" width="376.0" height="16" rx="2" fill="#149487"/><text x="523" y="380" font-family="SF Mono" font-size="10" fill="#5c7080">99.0</text>
+        <text x="130" y="30" text-anchor="end">INV-01</text><rect x="140" y="18" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="30" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="55" text-anchor="end">INV-02</text><rect x="140" y="43" width="375.2" height="16" rx="2" fill="#1fb6a8"/><text x="521" y="55" font-family="SF Mono" font-size="10" fill="#3d474f">98.8</text>
+        <text x="130" y="80" text-anchor="end">INV-03</text><rect x="140" y="68" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="80" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="105" text-anchor="end">INV-04</text><rect x="140" y="93" width="374.6" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="105" font-family="SF Mono" font-size="10" fill="#3d474f">98.6</text>
+        <text x="130" y="130" text-anchor="end">INV-05</text><rect x="140" y="118" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="130" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="155" text-anchor="end">INV-06</text><rect x="140" y="143" width="372.8" height="16" rx="2" fill="#1fb6a8"/><text x="517" y="155" font-family="SF Mono" font-size="10" fill="#3d474f">98.1</text>
+        <text x="130" y="180" text-anchor="end">INV-07</text><rect x="140" y="168" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="180" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="205" text-anchor="end">INV-08</text><rect x="140" y="193" width="374" height="16" rx="2" fill="#1fb6a8"/><text x="518" y="205" font-family="SF Mono" font-size="10" fill="#3d474f">98.5</text>
+        <text x="130" y="230" text-anchor="end">INV-09</text><rect x="140" y="218" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="230" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="255" text-anchor="end">INV-10</text><rect x="140" y="243" width="375.1" height="16" rx="2" fill="#1fb6a8"/><text x="519" y="255" font-family="SF Mono" font-size="10" fill="#3d474f">98.7</text>
+        <text x="130" y="280" text-anchor="end" font-weight="700">INV-11</text><rect x="140" y="268" width="185.4" height="16" rx="2" fill="#5A6B75"/><text x="330" y="280" font-family="SF Mono" font-size="10" fill="#3d474f" font-weight="700">48.8</text>
+        <text x="130" y="305" text-anchor="end">INV-12</text><rect x="140" y="293" width="376.4" height="16" rx="2" fill="#1fb6a8"/><text x="524" y="305" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="330" text-anchor="end">INV-13</text><rect x="140" y="318" width="375.8" height="16" rx="2" fill="#1fb6a8"/><text x="522" y="330" font-family="SF Mono" font-size="10" fill="#3d474f">98.9</text>
+        <text x="130" y="355" text-anchor="end">BESS-01</text><rect x="140" y="343" width="376.4" height="16" rx="2" fill="#149487"/><text x="524" y="355" font-family="SF Mono" font-size="10" fill="#3d474f">99.1</text>
+        <text x="130" y="380" text-anchor="end">BESS-02</text><rect x="140" y="368" width="376.0" height="16" rx="2" fill="#149487"/><text x="523" y="380" font-family="SF Mono" font-size="10" fill="#3d474f">99.0</text>
       </g>
-      <line x1="482" y1="10" x2="482" y2="410" stroke="#f5a623" stroke-width="1.2" stroke-dasharray="4 3"/>
-      <text x="484" y="12" font-size="8.5" fill="#a5670c" font-family="SF Mono">90% threshold</text>
+      <line x1="482" y1="10" x2="482" y2="410" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <text x="484" y="12" font-size="8.5" fill="#b45309" font-family="SF Mono">90% threshold</text>
     </svg>
   </div>
 
@@ -431,10 +445,10 @@
   </div>
 
   <h4 style="font-size:13px;margin-bottom:8px;">State legend</h4>
-  <div class="def-item"><div class="def-chip" style="background:#3FD07A;"></div><div><h5>Nominal</h5><p>Measured, verified, and within expected range.</p></div></div>
-  <div class="def-item"><div class="def-chip" style="background:#F2B441;"></div><div><h5>Warning</h5><p>Threshold breach or anomaly flagged; does not affect certified availability unless it persists.</p></div></div>
-  <div class="def-item"><div class="def-chip" style="background:#FF6B35;"></div><div><h5>Fault</h5><p>Confirmed equipment or channel fault, traced to source and timestamped.</p></div></div>
-  <div class="def-item"><div class="def-chip" style="background:#FF3B4E;"></div><div><h5>Critical</h5><p>Fault with material impact on availability or safety; routed for immediate escalation.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#149487;"></div><div><h5>Nominal</h5><p>Measured, verified, and within expected range.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#b45309;"></div><div><h5>Warning</h5><p>Threshold breach or anomaly flagged; does not affect certified availability unless it persists.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#b45309;"></div><div><h5>Fault</h5><p>Confirmed equipment or channel fault, traced to source and timestamped.</p></div></div>
+  <div class="def-item"><div class="def-chip" style="background:#b91c1c;"></div><div><h5>Critical</h5><p>Fault with material impact on availability or safety; routed for immediate escalation.</p></div></div>
   <div class="def-item"><div class="def-chip" style="background-image:repeating-linear-gradient(45deg,#5A6B75 0 1px,transparent 1px 4px);border:0.8px solid #5A6B75;"></div><div><h5>Not observed</h5><p>The channel never responded for the period. Drawn as a hatch pattern — never reported as zero.</p></div></div>
   <div class="def-item"><div class="def-chip" style="background:#5A6B75;"></div><div><h5>Withheld</h5><p>Data exists but falls below the coverage threshold required to support a contractual claim; the figure is not published for that period.</p></div></div>
 
