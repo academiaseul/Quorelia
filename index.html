@@ -782,18 +782,21 @@ function setLang(l){
 /* ══════════════════════════════════════════════════════════════════════════
    FORMULARIO "SOLICITAR DEMO"
    ─────────────────────────────────────────────────────────────────────────
-   Para que los envíos lleguen al correo de Jay:
+   Los envíos van a Formspree, que los reenvía a jay@quorelia.org.
+   Endpoint: https://formspree.io/f/moeaypng
 
-     1. Crear una cuenta gratuita en https://formspree.io
-     2. New Form → destinatario jay@quorelia.org → confirmar el correo
-        de verificación que llega a esa casilla
-     3. Copiar el ID del formulario (algo como "xayzbwqd") y pegarlo abajo
+   Si alguna vez hay que cambiarlo, basta con reemplazar FORM_ID abajo.
+   Poniéndolo en null el botón vuelve a abrir el cliente de correo del
+   visitante con todos los campos escritos — sirve de respaldo, pero el
+   visitante tiene que pulsar Enviar él mismo.
 
-   Mientras FORM_ID siga en null, el botón abre el cliente de correo del
-   visitante con todos los campos ya escritos — funciona, pero el visitante
-   tiene que pulsar Enviar él mismo y falla en equipos sin correo configurado.
+   Pendiente en el panel de Formspree:
+     · Confirmar el correo de verificación enviado a jay@quorelia.org.
+       Sin eso Formspree acepta el envío pero no lo reenvía.
+     · Settings → Restrict to Domain → quorelia.org (sin https://),
+       para que nadie más pueda publicar contra este endpoint.
    ══════════════════════════════════════════════════════════════════════════ */
-var FORM_ID = null;   /* ←←← pegar aquí el ID de Formspree */
+var FORM_ID = 'moeaypng';   /* Formspree · proyecto Quorelia → jay@quorelia.org */
 
 (function(){
   var f = document.getElementById('demo-form');
