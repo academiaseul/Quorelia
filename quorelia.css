@@ -340,18 +340,30 @@ section > .wrap > h2{max-width:24ch;}
 
 /* ── Informes de muestra ───────────────────────────────────────────────── */
 .reps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left;}
-.rep{background:var(--paper-2);padding:22px 22px 24px;display:flex;flex-direction:column;
+.rep{background:var(--paper-2);padding:22px 22px 18px;display:flex;flex-direction:column;
   clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);
-  transition:background-color .3s var(--ease);}
-.rep:hover{background:var(--paper-3);}
+  transition:background-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);}
+.rep:hover{background:var(--paper);transform:translateY(-4px);
+  box-shadow:0 14px 34px rgba(11,28,44,.10);}
 .rep .rp-t{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--teal);margin-bottom:12px;}
 .rep h4{font-size:18px;font-weight:400;letter-spacing:-.02em;margin-bottom:14px;color:var(--ink);}
-.rep a{display:block;font-size:13.5px;color:var(--ink-2);padding:8px 0 8px 20px;position:relative;
-  border-top:1px solid var(--line);transition:color .2s;}
+/* cada fila es un botón: cursor, flecha que aparece y fondo al pasar */
+.rep a{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;
+  font-size:13.5px;color:var(--ink-2);padding:10px 8px 10px 20px;position:relative;
+  border-top:1px solid var(--line);transition:color .2s,background-color .2s,padding-left .2s;}
 .rep a:first-of-type{margin-top:auto;}
-.rep a::before{content:'↳';position:absolute;left:0;color:var(--grey);}
-.rep a:hover{color:var(--ink);}
+.rep a::before{content:'↳';position:absolute;left:0;color:var(--grey);transition:color .2s;}
+.rep a::after{content:'→';color:var(--teal);opacity:0;transform:translateX(-6px);
+  transition:opacity .2s,transform .25s var(--ease);flex:none;}
+.rep a:hover{color:var(--ink);background:var(--paper-2);padding-left:24px;}
+.rep a:hover::before{color:var(--teal);}
+.rep a:hover::after{opacity:1;transform:none;}
+/* pista de acción: aparece con el hover de la tarjeta */
+.rep .rp-hint{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey);margin-top:14px;padding-top:12px;border-top:1px solid var(--line);
+  opacity:.55;transition:opacity .25s,color .25s;}
+.rep:hover .rp-hint{opacity:1;color:var(--teal);}
 @media(max-width:1100px){.reps{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.reps{grid-template-columns:1fr;}}
 
