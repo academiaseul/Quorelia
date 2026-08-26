@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Anexo — Programa Quorelia Governance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101418; --ink-2:#3d474f; --grey:#8a949c; --line:#e2e5e8;
+    --paper:#fff; --paper-2:#f2f3f4; --navy:#0b1c2c;
+    --teal:#149487; --teal-lt:#1fb6a8; --amber:#b45309;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:#8f979e;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .pg{width:8.5in;height:11in;margin:0 auto 18px;background:var(--paper);
+    position:relative;overflow:hidden;padding:0.55in 0.62in 0.85in;
+    display:flex;flex-direction:column;page-break-after:always;box-shadow:0 3px 30px rgba(0,0,0,.30);}
+  @page{size:8.5in 11in;margin:0;}
+  @media print{body{background:#fff;} .pg{box-shadow:none;margin:0;}}
+
+  .cab{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    border-bottom:1.4px solid var(--ink);padding-bottom:14px;}
+  .marca{display:flex;align-items:center;gap:11px;}
+  .tag{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--grey);}
+  .tag.t{color:var(--teal);}
+  h1{font-size:27px;font-weight:300;letter-spacing:-.022em;line-height:1.1;margin:16px 0 8px;}
+  .lede{font-size:12.5px;line-height:1.55;color:var(--ink-2);max-width:88ch;}
+
+  .comp{margin-top:16px;border-top:1.4px solid var(--ink);}
+  .fila{display:grid;grid-template-columns:0.42in 1.72in 1fr 1.28in;gap:14px;
+    padding:11px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .fila .n{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.1em;padding-top:2px;}
+  .fila h4{font-size:12.5px;font-weight:600;letter-spacing:-.01em;line-height:1.3;}
+  .fila p{font-size:10.8px;line-height:1.5;color:var(--ink-2);}
+  .fila .al{font-family:var(--mono);font-size:8.4px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--grey);line-height:1.5;padding-top:2px;}
+  .fila .al b{color:var(--ink-2);font-weight:500;}
+
+  .lim{margin-top:14px;border-left:2.5px solid var(--amber);padding:10px 0 10px 14px;}
+  .lim h4{font-size:11px;font-weight:600;margin-bottom:5px;}
+  .lim p{font-size:10.6px;line-height:1.55;color:var(--ink-2);}
+
+  .nota{margin-top:10px;font-size:9.2px;line-height:1.5;color:var(--grey);}
+  .sp{flex:1;}
+  .pie{position:absolute;left:0.62in;right:0.62in;bottom:0.34in;display:flex;
+    justify-content:space-between;font-family:var(--mono);font-size:8.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--grey);
+    border-top:1px solid var(--line);padding-top:8px;}
+</style>
+</head>
+<body>
+
+<section class="pg">
+  <div class="cab">
+    <div class="marca">
+      <img src="../quorelia-mark.png" alt="" style="height:30px;width:auto;">
+      <img src="../quorelia-wordmark.png" alt="Quorelia" style="height:11px;width:auto;">
+    </div>
+    <span class="tag">Anexo técnico · Reunión Ley 20.730 · 21 de agosto de 2026</span>
+  </div>
+
+  <p class="tag t" style="margin-top:16px;">Programa Quorelia Governance</p>
+  <h1>Supervisión verificada del parque generador,<br>en cinco componentes</h1>
+  <p class="lede">Un programa por etapas para que la información de cumplimiento técnico del parque sea comparable, trazable y reproducible — al servicio de la Superintendencia de Electricidad y Combustibles y, en lo que corresponda, del Coordinador Eléctrico Nacional. Dos capas: análisis universal sobre datos públicos, y verificación operacional continua sobre instalaciones cuyos titulares la autorizan.</p>
+
+  <div class="comp">
+    <div class="fila">
+      <div class="n">/01</div>
+      <div><h4>Diagnóstico nacional sobre registro público</h4></div>
+      <p>Análisis reproducible de la totalidad del registro de Infotécnica — 2.618 unidades en 2.029 centrales — midiendo completitud, consistencia y calidad estructural de la información declarada. No requiere autorización de titulares: opera sobre datos públicos. Ya ejecutado y demostrable hoy.</p>
+      <div class="al"><b>Cobertura</b><br>universal<br>· datos públicos</div>
+    </div>
+    <div class="fila">
+      <div class="n">/02</div>
+      <div><h4>Verificación continua de cumplimiento técnico</h4></div>
+      <p>Para instalaciones autorizadas por su titular: expediente estandarizado donde cada cifra conserva su cadena de procedencia hasta la medición. La revisión documental pasa de reconstruir planillas a contrastar evidencia — de forma continua, no anual.</p>
+      <div class="al"><b>Cobertura</b><br>parque autorizado<br>· opt-in del titular</div>
+    </div>
+    <div class="fila">
+      <div class="n">/03</div>
+      <div><h4>Ranking verificado de desempeño y fiscalización diferenciada</h4></div>
+      <p>Adhesión voluntaria: quien reporta bajo verificación continua obtiene visibilidad de su buen desempeño y una carga de revisión proporcional a su riesgo demostrado. El incentivo es reputacional y de eficiencia — con precedente en los rankings de calidad de servicio que la autoridad ya publica en distribución.</p>
+      <div class="al"><b>Incentivo</b><br>reputación +<br>menor carga de revisión</div>
+    </div>
+    <div class="fila">
+      <div class="n">/04</div>
+      <div><h4>Atlas territorial de desempeño</h4></div>
+      <p>Estudio periódico, con metodología publicada, de dónde el parque cumple mejor: por región, por sistema y por tecnología. Insumo de política pública para focalizar fiscalización, inversión y acompañamiento donde la evidencia lo indica.</p>
+      <div class="al"><b>Entrega</b><br>estudio anual<br>· metodología abierta</div>
+    </div>
+    <div class="fila" style="border-bottom:1.4px solid var(--ink);">
+      <div class="n">/05</div>
+      <div><h4>Contabilidad verificada de vertimiento</h4></div>
+      <p>Medición ex-post, trazable y comparable de la energía vertida: quién, cuánto, cuándo, y si la asignación resultó consistente con los criterios vigentes del Coordinador. Transparencia sobre una materia en discusión pública — sin intervenir jamás la decisión de despacho.</p>
+      <div class="al"><b>Destinatario</b><br>SEC · Coordinador<br>· ex-post, no operativo</div>
+    </div>
+  </div>
+
+  <div class="lim">
+    <h4>Dos límites que el programa declara por diseño</h4>
+    <p><b>No dirige sanciones.</b> Los informes son insumo documental verificable; el mérito, la calificación y la decisión sancionatoria son siempre de la autoridad, sobre su propio procedimiento. <b>No toca el despacho.</b> La coordinación de la operación y la asignación de vertimiento son función exclusiva del Coordinador Eléctrico Nacional; Quorelia mide y transparenta lo ocurrido, nunca decide lo que ocurre.</p>
+  </div>
+
+  <p class="nota">Los componentes /02 a /05 operan sobre datos de titulares que autorizan expresamente su tratamiento, bajo segregación por cliente y confidencialidad por defecto. Quorelia es una empresa privada de tecnología: no es un sistema oficial del Estado, no ejerce funciones fiscalizadoras y no emite certificaciones con efecto regulatorio. Cifras del registro público: Infotécnica, Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026.</p>
+
+  <div class="sp"></div>
+  <div class="pie">
+    <span>Quorelia SpA · jay@quorelia.org · quorelia.org</span>
+    <span>Documento de trabajo · Anexo 1/1</span>
+  </div>
+</section>
+
+</body>
+</html>
