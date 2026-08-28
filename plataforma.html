@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Quorelia — Platform, service and reporting</title>
+<meta name="description" content="Operational intelligence for critical energy infrastructure: Quorelia turns real-time SCADA data, equipment condition and environmental context into earlier warnings, prioritised risk and verified action for solar, wind and BESS assets.">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quorelia.org/plataforma.html">
+<meta property="og:title" content="Quorelia — Intelligence for critical energy infrastructure">
+<meta property="og:description" content="See the risk before it becomes the incident.">
+<meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Específico del home */
+  .hero{padding:120px 0 84px;}
+  .hero .mega{max-width:19ch;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 40px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+  .hero-meta div{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);}
+</style>
+</head>
+<body>
+
+<!-- menú móvil -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="#service" data-i18n="nav_svc">Service</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  </nav>
+  <div class="d-foot">
+    <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+    <nav class="nav-links">
+      <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
+      <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="#service" data-i18n="nav_svc">Service</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:20px;" data-i18n="hero_tag">Intelligence for critical energy infrastructure</p>
+    <h1 class="mega rv in" data-i18n="hero">See the risk <span class="dim">before it becomes the incident.</span></h1>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="hero_sub">Quorelia transforms real-time operational data, equipment condition and environmental context into actionable intelligence for critical energy infrastructure. <b>See the system. Understand the signal. Predict the risk. Act with confidence.</b></p>
+    <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;">
+      <a href="demos.html#cc" class="btn-sm" style="background:var(--ink);color:#fff;" data-i18n="hero_c1">Explore the Control Center</a>
+      <a href="#software" class="btn-sm" data-i18n="hero_c2">See how it works</a>
+      <a href="gobierno.html" class="btn-sm" style="border-color:var(--line);color:var(--ink-2);" data-i18n="hero_c3">Government &amp; infrastructure</a>
+    </div>
+    <div class="hero-meta">
+      <div data-i18n="hm1">1 GW under monitoring</div>
+      <div data-i18n="hm2">Solar · Wind · BESS</div>
+      <div data-i18n="hm3">Daily &amp; monthly reporting</div>
+      <div data-i18n="hm4">ES · EN · 中文</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MÓDULOS ══════════ -->
+<section id="software" style="padding-top:20px;">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="sw_e">How it works</p>
+    <h2 class="big rv" style="margin:14px auto 44px;" data-i18n="sw_t">From data to decision</h2>
+
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m1l">Real-time visibility across every asset, on the systems already installed</div>
+      <div class="m-name" data-i18n="m1n">See</div>
+      <div class="m-n">/01</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m2l">Analytics explain abnormal behaviour — validated data only, silence never reported as zero</div>
+      <div class="m-name" data-i18n="m2n">Understand</div>
+      <div class="m-n">/02</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m3l">Sustained deviations surface as emerging risk, before they become failures</div>
+      <div class="m-name" data-i18n="m3n">Predict</div>
+      <div class="m-n">/03</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m4l">Findings are prioritised and routed — dispatch is always confirmed by a person</div>
+      <div class="m-name" data-i18n="m4n">Act</div>
+      <div class="m-n">/04</div>
+    </div>
+    <div class="mod rv">
+      <div class="m-lead" data-i18n="m5l">The loop closes only when the result is confirmed — an alert is not a resolution</div>
+      <div class="m-name" data-i18n="m5n">Verify</div>
+      <div class="m-n">/05</div>
+    </div>
+    <hr class="rule">
+  </div>
+</section>
+
+<!-- ══════════ CAPACIDADES ══════════ -->
+<section id="capabilities">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="cap_eyebrow">Capabilities</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="cap_h">Four domains, one chain of evidence</h2>
+    <p class="lede rv" style="margin-bottom:52px;" data-i18n="cap_s">Every capability below reads from the same validated manifest. Nothing is calculated on data that has not passed quality control first.</p>
+
+    <div class="capgrid rv">
+      <div class="capcol">
+        <div class="capnum">/01</div>
+        <h4 data-i18n="g1">Verification</h4>
+        <ul>
+          <li data-i18n="g1a">Contractual availability</li>
+          <li data-i18n="g1b">Data coverage &amp; traceability</li>
+          <li data-i18n="g1c">Independent opinion format</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/02</div>
+        <h4 data-i18n="g2">Operations</h4>
+        <ul>
+          <li data-i18n="g2a">Asset and unit status</li>
+          <li data-i18n="g2b">Plant performance</li>
+          <li data-i18n="g2c">Curtailment accounting</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/03</div>
+        <h4 data-i18n="g3">Maintenance</h4>
+        <ul>
+          <li data-i18n="g3a">Preventive / corrective classification</li>
+          <li data-i18n="g3b">Routing to the right specialty</li>
+          <li data-i18n="g3c">Findings with named owners</li>
+        </ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/04</div>
+        <h4 data-i18n="g4">Analytics</h4>
+        <ul>
+          <li data-i18n="g4a">Resource vs. asset attribution</li>
+          <li data-i18n="g4b">Cell dispersion &amp; state of health</li>
+          <li data-i18n="g4c">Round-trip efficiency on closed cycles</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── Arquitectura ── -->
+    <div class="arch-head rv" style="margin-top:78px;">
+      <hr class="rule" style="margin-bottom:56px;">
+      <p class="tag g" data-i18n="ar_eyebrow">How it works</p>
+      <h2 class="big" style="margin:14px auto 18px;max-width:22ch;" data-i18n="ar_h">One path from the sensor to the signed figure</h2>
+      <p class="lede" style="margin-bottom:54px;" data-i18n="ar_s">The architecture is deliberately simple. Data enters once, is validated once, and no result reaches a report without passing the verification engine first.</p>
+    </div>
+
+    <div class="arch rv">
+      <div class="arch-row">
+        <div class="node src">
+          <span class="nl" data-i18n="ar_lin">Input</span>
+          <span class="nn" data-i18n="ar_n1">SCADA · plant data</span>
+          <span class="nd" data-i18n="ar_d1">Inverters, meters, weather stations, BMS. The asset owner's own systems — nothing is replaced.</span>
+        </div>
+      </div>
+      <div class="arch-link"></div>
+
+      <div class="arch-row">
+        <div class="node key">
+          <span class="nl">/01</span>
+          <span class="nn" data-i18n="ar_n2">Quorelia ingestion</span>
+          <span class="nd" data-i18n="ar_d2">One 300-second cadence, one timestamp convention, one unit system — regardless of the source.</span>
+        </div>
+      </div>
+      <div class="arch-link"></div>
+
+      <div class="arch-row">
+        <div class="node">
+          <span class="nl">/02</span>
+          <span class="nn" data-i18n="ar_n3">Data validation</span>
+          <span class="nd" data-i18n="ar_d3">Gaps, frozen channels, out-of-range values and clock drift are flagged before anything is computed.</span>
+        </div>
+      </div>
+      <div class="arch-fork"><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node">
+          <span class="nl">/03a</span>
+          <span class="nn" data-i18n="ar_n4">KPI calculation</span>
+          <span class="nd" data-i18n="ar_d4">Availability, capacity factor, round-trip efficiency, curtailment — each with its formula recorded.</span>
+        </div>
+        <div class="node">
+          <span class="nl">/03b</span>
+          <span class="nn" data-i18n="ar_n5">Data quality engine</span>
+          <span class="nd" data-i18n="ar_d5">Coverage, sample count and cycle closure, measured against the thresholds in force.</span>
+        </div>
+      </div>
+      <div class="arch-join"><span></span></div>
+
+      <div class="arch-row">
+        <div class="node key">
+          <span class="nl">/04</span>
+          <span class="nn" data-i18n="ar_n6">Verification engine</span>
+          <span class="nd" data-i18n="ar_d6">The gate. A figure that fails coverage or cycle closure is not published — the reason is published instead.</span>
+        </div>
+      </div>
+      <div class="arch-fork"><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node">
+          <span class="nl">/05a</span>
+          <span class="nn" data-i18n="ar_n7">Dashboard</span>
+        </div>
+        <div class="node">
+          <span class="nl">/05b</span>
+          <span class="nn" data-i18n="ar_n8">Reporting</span>
+        </div>
+      </div>
+      <div class="arch-link two"><span></span><span></span></div>
+
+      <div class="arch-row two">
+        <div class="node out">
+          <span class="nl" data-i18n="ar_lout">Output</span>
+          <span class="nn" data-i18n="ar_n9">Client portal</span>
+        </div>
+        <div class="node out">
+          <span class="nl" data-i18n="ar_lout">Output</span>
+          <span class="nn" data-i18n="ar_n10">PDF · Excel · email</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arch-prov rv">
+      <div>
+        <div class="pk">01</div>
+        <div class="pv" data-i18n="ar_p1">The raw measurement, stored unmodified</div>
+      </div>
+      <div>
+        <div class="pk">02</div>
+        <div class="pv" data-i18n="ar_p2">The calculated result and the formula used</div>
+      </div>
+      <div>
+        <div class="pk">03</div>
+        <div class="pv" data-i18n="ar_p3">The provenance chain linking one to the other</div>
+      </div>
+    </div>
+    <p class="lede rv" style="margin-top:30px;" data-i18n="ar_note">All three are kept, which is the whole point: every number on the screen can be walked back to the measurement that produced it.</p>
+
+    <div class="split rv" style="margin-top:56px;">
+      <a class="s-grey" href="informe.html#original">
+        <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="#contact" data-demo="control-center">
+        <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTROL CENTER ══════════ -->
+<section id="platform" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="cc_t">The Control Center</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="cc_h">Fourteen modules over one verified dataset</h2>
+    <p class="lede rv" style="margin-bottom:44px;" data-i18n="cc_s">Operations, regulator, intelligence and management views — all reading from the same validated manifest. No module can publish a figure the verification engine has not cleared.</p>
+
+    <div class="cols rv" style="gap:52px;text-align:left;">
+      <div>
+        <div class="grp">
+          <h4 data-i18n="cc_g1">Operations</h4>
+          <span data-i18n="cc_g1a">Executive view</span>
+          <span data-i18n="cc_g1b">Energy flow</span>
+          <span data-i18n="cc_g1c">Environment · weather stations</span>
+          <span data-i18n="cc_g1d">Plant detail</span>
+          <span data-i18n="cc_g1e">Rack room 4D</span>
+          <span data-i18n="cc_g1f">Alert centre</span>
+          <span data-i18n="cc_g1g">Operational timeline</span>
+        </div>
+        <div class="grp">
+          <h4 data-i18n="cc_g2">Regulator</h4>
+          <span data-i18n="cc_g2a">Regulatory view</span>
+          <span data-i18n="cc_g2b">Data infrastructure</span>
+        </div>
+      </div>
+      <div>
+        <div class="grp">
+          <h4 data-i18n="cc_g3">Intelligence</h4>
+          <span data-i18n="cc_g3a">Guided questions</span>
+        </div>
+        <div class="grp">
+          <h4 data-i18n="cc_g4">Management</h4>
+          <span data-i18n="cc_g4a">Predictive maintenance</span>
+          <span data-i18n="cc_g4b">Asset depreciation</span>
+          <span data-i18n="cc_g4c">Reports</span>
+          <span data-i18n="cc_g4d">Engine configuration</span>
+        </div>
+        <a href="#contact" data-demo="control-center" class="arrow-link" style="margin-top:34px;">
+          <span data-i18n="cc_cta">Request a Control Center demo</span><span class="ar">→</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="tag g rv" style="margin:64px auto 22px;" data-i18n="cc_p">Verification engine · thresholds in force</p>
+    <div class="figs rv">
+      <div class="fig"><div class="v">90%</div><div class="k" data-i18n="cc_p1">Minimum data coverage before a figure may be published</div></div>
+      <div class="fig"><div class="v">288</div><div class="k" data-i18n="cc_p2">Samples per channel per day — 300-second cadence</div></div>
+      <div class="fig"><div class="v">2,0 pp</div><div class="k" data-i18n="cc_p3">SOC tolerance for a cycle to count as closed</div></div>
+      <div class="fig"><div class="v">500 mV</div><div class="k" data-i18n="cc_p4">Cell dispersion threshold before drill-down</div></div>
+    </div>
+
+    <div class="note rv" style="margin-top:36px;text-align:left;">
+      <h4 data-i18n="cc_n">A withheld figure, live in the demo</h4>
+      <p data-i18n="cc_nb">On 17 August the round-trip efficiency of one plant is not published. The engine writes the reason instead: <b>"open cycle: SOC drifted +16.43 pp over the window (tolerance 2.0 pp); round-trip efficiency is not defined."</b> Anyone can show a panel of green numbers. This one blocks itself when it cannot substantiate what it says.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BANDA DE IMAGEN 1 ══════════ -->
+<section class="band" style="background-image:url('bg/gob-solar-aerial.jpg');padding:0;">
+  <div class="wrap">
+    <p class="tag rv" data-i18n="band1_t">Field</p>
+    <h2 class="big rv" style="margin:16px auto 18px;max-width:22ch;" data-i18n="band1_h">Every asset, always under watch</h2>
+    <p class="lede rv" data-i18n="band1_p">Trackers, inverters, strings and meters — read continuously, at native resolution, on the systems already installed. No new hardware, no parallel network, nothing for the field team to maintain.</p>
+  </div>
+</section>
+
+<!-- ══════════ CIFRAS ══════════ -->
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:24px;" data-i18n="cap_t">Quorelia today</p>
+    <div class="figs rv">
+      <div class="fig"><div class="v t">1 GW</div><div class="k" data-i18n="cp1">Of generation and storage capacity under monitoring</div></div>
+      <div class="fig"><div class="v">3</div><div class="k" data-i18n="cp2">Technologies covered — solar PV, wind and BESS</div></div>
+      <div class="fig"><div class="v">3</div><div class="k" data-i18n="cp3">Languages the same report is issued in</div></div>
+      <div class="fig"><div class="v t">&lt;24h</div><div class="k" data-i18n="cp4">Report turnaround, fully automated</div></div>
+    </div>
+    <p class="src rv" style="margin-top:22px;text-align:center;" data-i18n="cap_src">Capacity under monitoring covers the assets connected to the platform. Sample reports on this site carry illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</section>
+
+<!-- ══════════ EL SERVICIO ══════════ -->
+<section id="service">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="sv_eyebrow">The service</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:22ch;" data-i18n="sv_h">What you actually receive</h2>
+    <p class="lede rv" style="margin-bottom:20px;" data-i18n="sv_s">Not a dashboard licence. A finished, signed document that lands where your team already works — built by agents that read the plant, and cleared by an engine that refuses to publish what it cannot substantiate.</p>
+
+    <div class="scale rv">
+      <div class="scale-v">1 GW</div>
+      <div class="scale-k" data-i18n="sv_gw">of generation and storage capacity under monitoring today, across solar, wind and BESS</div>
+    </div>
+
+    <div class="svc rv">
+      <div class="svc-st">
+        <div class="svc-n">/01</div>
+        <h4 data-i18n="sv1h">Data &amp; KPI</h4>
+        <p data-i18n="sv1p">Your existing SCADA, PPC, meters and BMS. Ingested at one cadence, validated, and turned into the metrics that actually govern a contract.</p>
+        <ul class="svc-l">
+          <li data-i18n="sv1a">Availability &amp; capacity factor</li>
+          <li data-i18n="sv1b">Round-trip efficiency on closed cycles</li>
+          <li data-i18n="sv1c">Curtailment and event accounting</li>
+        </ul>
+      </div>
+      <div class="svc-ar">&#8594;</div>
+
+      <div class="svc-st">
+        <div class="svc-n">/02</div>
+        <h4 data-i18n="sv2h">Agents</h4>
+        <p data-i18n="sv2p">Automated readers that work the fleet continuously: they classify events, attribute a shortfall to resource or to asset, and route each finding to the right specialty.</p>
+        <ul class="svc-l">
+          <li data-i18n="sv2a">Continuous, not on request</li>
+          <li data-i18n="sv2b">Findings with a named owner</li>
+          <li data-i18n="sv2c">Preventive / corrective triage</li>
+        </ul>
+      </div>
+      <div class="svc-ar">&#8594;</div>
+
+      <div class="svc-st key">
+        <div class="svc-n">/03</div>
+        <h4 data-i18n="sv3h">Quorelia</h4>
+        <p data-i18n="sv3p">The verification engine. Every figure an agent produces is checked against coverage, sample count and cycle closure before it is allowed into a document.</p>
+        <ul class="svc-l">
+          <li data-i18n="sv3a">90% minimum data coverage</li>
+          <li data-i18n="sv3b">A figure that fails is withheld</li>
+          <li data-i18n="sv3c">The reason is published instead</li>
+        </ul>
+      </div>
+      <div class="svc-ar">&#8594;</div>
+
+      <div class="svc-st">
+        <div class="svc-n">/04</div>
+        <h4 data-i18n="sv4h">Deliverable</h4>
+        <p data-i18n="sv4p">A daily and monthly report, identical in structure across technologies and sites, issued without manual assembly — in the language your team and your investors read.</p>
+        <ul class="svc-l">
+          <li data-i18n="sv4a">Word, PDF, Excel or email</li>
+          <li data-i18n="sv4b">Same format across the whole fleet</li>
+          <li data-i18n="sv4c">Every figure traceable to its measurement</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ── Idiomas ── -->
+    <div class="lang-blk rv">
+      <p class="tag g" data-i18n="lg_t">The same report, in your language</p>
+      <h3 class="mid" style="margin:12px auto 16px;max-width:30ch;" data-i18n="lg_h">One verified dataset, issued in the language of whoever has to read it</h3>
+      <p class="lede" style="margin-bottom:34px;" data-i18n="lg_s">Chilean operations, an Asian owner and a European lender rarely share a working language. The figures do not change between versions — only the words around them. Nothing is re-keyed, so nothing drifts.</p>
+      <div class="scale" style="margin-bottom:44px;">
+        <div class="scale-v" data-i18n="lg_249">249</div>
+        <div class="scale-k" data-i18n="lg_249k">languages available on request — the full coverage of Google’s AI translation stack. Spanish, English and Chinese are maintained natively.</div>
+      </div>
+      <div class="lang-grid">
+        <div class="lang-c">
+          <div class="lang-n">Español</div>
+          <div class="lang-ttl">Reporte Diario de Operación</div>
+          <div class="lang-sub">BESS — Planta 175</div>
+        </div>
+        <div class="lang-c">
+          <div class="lang-n">English</div>
+          <div class="lang-ttl">Daily Operation Report</div>
+          <div class="lang-sub">BESS — Plant 175</div>
+        </div>
+        <div class="lang-c">
+          <div class="lang-n">中文</div>
+          <div class="lang-ttl">电站运行日报</div>
+          <div class="lang-sub">储能电站（BESS）— Plant 175</div>
+        </div>
+      </div>
+      <p class="fine" style="margin-top:20px;" data-i18n="lg_note">Additional languages on request. The report template is separated from the data layer, so a new language is a translation task — never a recalculation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INFORMES DE MUESTRA ══════════ -->
+<section id="reports" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="rp_t">Sample reports</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="rp_h">Read exactly what you would receive</h2>
+    <p class="lede rv" style="margin-bottom:48px;" data-i18n="rp_s">Real report structure, illustrative data. Every figure inside carries its coverage, its formula and its reason when withheld — open one and check.</p>
+
+    <div class="reps rv">
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp1t">Solar PV</div>
+        <h4 data-i18n="rp1h">Tracking, inverters and irradiance</h4>
+        <a href="informe.html#fv-d" data-i18n="rp_d">Daily operation report</a>
+        <a href="informe.html#fv-m" data-i18n="rp_m">Monthly report</a>
+        <a href="informe.html#fv-x" data-i18n="rp_x">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp2t">Wind</div>
+        <h4 data-i18n="rp2h">Turbines, wind resource and availability</h4>
+        <a href="informe.html#eol-d" data-i18n="rp_d2">Daily operation report</a>
+        <a href="informe.html#eol-m" data-i18n="rp_m2">Monthly report</a>
+        <a href="informe.html#eol-x" data-i18n="rp_x2">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp3t">Storage · BESS</div>
+        <h4 data-i18n="rp3h">Cycles, state of charge and efficiency</h4>
+        <a href="informe.html#bess-d" data-i18n="rp_d3">Daily operation report</a>
+        <a href="informe.html#bess-m" data-i18n="rp_m3">Monthly report</a>
+        <a href="informe.html#bess-x" data-i18n="rp_x3">Extended sample report</a>
+        <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
+      </div>
+      <div class="rep">
+        <div class="rp-t" data-i18n="rp4t">Fleet &amp; portfolio</div>
+        <h4 data-i18n="rp4h">The whole fleet in one document</h4>
+        <a href="informe.html#cartera" data-i18n="rp_c1">Portfolio oversight report</a>
+        <a href="informe.html#diagnostico" data-i18n="rp_c2">National fleet diagnostic</a>
+        <a href="informe.html#original" data-i18n="rp_c3">Independent verification &amp; O&amp;M report — the original sample</a>
+        <div class="rp-hint" data-i18n="rp_hint">Click a report to open it</div>
+      </div>
+    </div>
+    <div class="split rv" style="margin-top:34px;">
+      <a class="s-grey" href="demos.html#scada">
+        <span data-i18n="rp_lv1">Open the live BESS dashboard</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="demos.html#cc">
+        <span data-i18n="rp_lv2">Open the Control Center demo</span><span class="ar">→</span>
+      </a>
+    </div>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="rp_lvp">We build customized Control Centers for each client — modules, thresholds and views shaped to your fleet. What you see here is a demo sample with illustrative data.</p>
+    <p class="fine rv" style="margin-top:24px;" data-i18n="rp_note">Reports are shown in Spanish — the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.</p>
+  </div>
+</section>
+
+<!-- ══════════ BANDA DE IMAGEN 2 ══════════ -->
+<section class="band" style="background-image:url('bg/gob-wind-close.jpg');padding:0;">
+  <div class="wrap">
+    <p class="tag rv" data-i18n="band2_t">Boardroom</p>
+    <h2 class="big rv" style="margin:16px auto 18px;max-width:24ch;" data-i18n="band2_h">One version of operational reality</h2>
+    <p class="lede rv" data-i18n="band2_p">Readable by an engineer and by a board in the same document. Each technology defines «operation» differently — a turbine idle for lack of wind is not unavailable — but what makes a figure valid can be identical across all of them.</p>
+  </div>
+</section>
+
+<!-- ══════════ PRINCIPIO ══════════ -->
+<section style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" style="margin-bottom:20px;" data-i18n="pr_t">The rule that governs every figure</p>
+    <h2 class="big rv" style="max-width:24ch;" data-i18n="pr_h">If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span></h2>
+    <p class="lede rv" style="margin-top:26px;" data-i18n="pr_p">A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.</p>
+  </div>
+</section>
+
+<!-- ══════════ MENOS REACTIVO ══════════ -->
+<section id="om" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="om_t">Operations &amp; maintenance</p>
+    <h2 class="big rv" style="margin:14px auto 18px;" data-i18n="om_h">Less reactive. More predictive.</h2>
+    <p class="lede rv" style="margin-bottom:48px;" data-i18n="om_s">The traditional loop starts when something already failed. Quorelia's loop starts while everything still looks fine — and ends only when the fix is verified.</p>
+    <div class="cards c2 rv" style="max-width:980px;margin:0 auto;">
+      <div class="card">
+        <p class="tag g" data-i18n="om_1t">Traditional</p>
+        <ul class="svc-l" style="margin-top:14px;border-top:0;padding-top:0;">
+          <li data-i18n="om_1a">Alarm fires</li>
+          <li data-i18n="om_1b">Operator reacts</li>
+          <li data-i18n="om_1c">Inspection dispatched</li>
+          <li data-i18n="om_1d">Diagnosis on site</li>
+          <li data-i18n="om_1e">Repair — downtime already counted</li>
+        </ul>
+      </div>
+      <div class="card" style="background:var(--navy);">
+        <p class="tag" style="color:var(--teal-lt);">Quorelia</p>
+        <ul class="svc-l" style="margin-top:14px;border-top:0;padding-top:0;">
+          <li style="color:#b9c9d1;" data-i18n="om_2a">Continuous data, validated first</li>
+          <li style="color:#b9c9d1;" data-i18n="om_2b">Pattern detected before the alarm</li>
+          <li style="color:#b9c9d1;" data-i18n="om_2c">Risk prioritised, not just flagged</li>
+          <li style="color:#b9c9d1;" data-i18n="om_2d">Investigation recommended to the right team</li>
+          <li style="color:#b9c9d1;" data-i18n="om_2e">Maintenance in a planned window — then verified</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BESS · MANTENIMIENTO ANTES DE LA FALLA ══════════ -->
+<section id="bess">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="bs_t">Storage · BESS</p>
+    <h2 class="big rv" style="margin:14px auto 18px;" data-i18n="bs_h">Maintenance before failure</h2>
+    <p class="lede rv" style="margin-bottom:48px;" data-i18n="bs_s">Storage is the fastest-growing — and least documented — technology in the Chilean fleet. Quorelia reads what a battery actually says: state of charge, cell dispersion, thermal behaviour, cycle closure and communication health.</p>
+    <div class="cards c3 rv" style="max-width:1080px;margin:0 auto;">
+      <div class="card">
+        <p class="tag g" data-i18n="bs_1t">Example · demo fleet</p>
+        <h4 style="margin-top:10px;">BESS Cerro Aurora · ESS-08</h4>
+        <ul class="svc-l" style="margin-top:12px;border-top:0;padding-top:0;">
+          <li data-i18n="bs_1a">Cell dispersion rising: 131 → 470 mV</li>
+          <li data-i18n="bs_1b">Threshold in force: 500 mV</li>
+          <li data-i18n="bs_1c">Trend: degrading, not yet critical</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="tag g" data-i18n="bs_2t">What Quorelia does</p>
+        <ul class="svc-l" style="margin-top:12px;border-top:0;padding-top:0;">
+          <li data-i18n="bs_2a">Classifies it as emerging risk, with its evidence chain</li>
+          <li data-i18n="bs_2b">Recommends thermal-management inspection in the next planned window</li>
+          <li data-i18n="bs_2c">Withholds any figure the data cannot support</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="tag g" data-i18n="bs_3t">What Quorelia does not do</p>
+        <ul class="svc-l" style="margin-top:12px;border-top:0;padding-top:0;">
+          <li data-i18n="bs_3a">No remaining-useful-life forecasts without asset-specific validation</li>
+          <li data-i18n="bs_3b">No dispatch — a person always confirms the action</li>
+          <li data-i18n="bs_3c">Model outputs require engineering validation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SEGURIDAD ══════════ -->
+<section id="security" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="sec_t">Security</p>
+    <h2 class="big rv" style="margin:14px auto 18px;" data-i18n="sec_h">Critical data deserves critical security</h2>
+    <p class="lede rv" style="margin-bottom:44px;" data-i18n="sec_s">Designed for critical infrastructure: read-only by architecture, segregated by owner, encrypted end to end. We claim no certification that has not been audited and issued by a competent body.</p>
+    <div class="capgrid rv" style="grid-template-columns:repeat(3,1fr);max-width:1080px;margin:0 auto;">
+      <div class="capcol">
+        <div class="capnum">/01</div><h4 data-i18n="sec_1">Access</h4>
+        <ul><li data-i18n="sec_1a">Role-based, per facility and per information type</li><li data-i18n="sec_1b">Individual credentials with a second factor</li></ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/02</div><h4 data-i18n="sec_2">Data</h4>
+        <ul><li data-i18n="sec_2a">Encryption in transit and at rest</li><li data-i18n="sec_2b">Per-client segregation — no cross-owner aggregation</li></ul>
+      </div>
+      <div class="capcol">
+        <div class="capnum">/03</div><h4 data-i18n="sec_3">Accountability</h4>
+        <ul><li data-i18n="sec_3a">Access logs consultable by the owner</li><li data-i18n="sec_3b">Incident notification within 72 hours</li></ul>
+      </div>
+    </div>
+    <p class="src rv" style="margin-top:26px;text-align:center;" data-i18n="sec_n">Full commitments in our <a href="terminos.html" style="text-decoration:underline;">Terms</a> and on the <a href="gobierno.html" style="text-decoration:underline;">Government</a> page.</p>
+  </div>
+</section>
+
+<!-- ══════════ MANTRA ══════════ -->
+<section class="dark">
+  <div class="wrap" style="text-align:center;">
+    <p class="tag g rv" data-i18n="mn_t">Quorelia</p>
+    <h2 class="big rv" style="margin:16px auto 0;max-width:26ch;" data-i18n="mn_h">See the system. Understand the signal. Predict the risk. <span style="color:var(--teal-lt);">Act before the failure.</span> Optimize the asset.</h2>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO / CTA ══════════ -->
+<section id="contact">
+  <div class="wrap">
+    <p class="tag g rv" data-i18n="ct_eyebrow">Get started</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="ct_h">Interested in optimizing your asset with Quorelia?</h2>
+    <p class="lede rv" style="margin-bottom:52px;" data-i18n="ct_s">Tell us what you operate and we will show you the same reports on your own data. We reply within one business day.</p>
+
+    <div class="form-wrap rv">
+      <form id="demo-form" novalidate>
+        <!-- trampa antispam: invisible para personas, tentadora para bots -->
+        <div class="hp" aria-hidden="true">
+          <label for="q-website">Website</label>
+          <input type="text" id="q-website" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="fgrid">
+          <div class="fld">
+            <label for="q-first" data-i18n="ct_first">First name<span class="req">*</span></label>
+            <input type="text" id="q-first" name="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="fld">
+            <label for="q-last" data-i18n="ct_last">Last name<span class="req">*</span></label>
+            <input type="text" id="q-last" name="last_name" autocomplete="family-name" required>
+          </div>
+          <div class="fld">
+            <label for="q-email" data-i18n="ct_email">Work email<span class="req">*</span></label>
+            <input type="email" id="q-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="fld">
+            <label for="q-phone" data-i18n="ct_phone">Phone number</label>
+            <input type="tel" id="q-phone" name="phone" autocomplete="tel" placeholder="+56">
+          </div>
+          <div class="fld">
+            <label for="q-title" data-i18n="ct_title">Job title</label>
+            <input type="text" id="q-title" name="job_title" autocomplete="organization-title">
+          </div>
+          <div class="fld">
+            <label for="q-company" data-i18n="ct_company">Company<span class="req">*</span></label>
+            <input type="text" id="q-company" name="company" autocomplete="organization" required>
+          </div>
+          <div class="fld full">
+            <label for="q-country" data-i18n="ct_country">Country<span class="req">*</span></label>
+            <select id="q-country" name="country" required>
+              <option value="" data-i18n="ct_select">Select a country</option>
+              <option value="Chile">Chile</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Perú">Perú</option>
+              <option value="Colombia">Colombia</option>
+              <option value="México">México</option>
+              <option value="Brasil">Brasil</option>
+              <option value="España">España</option>
+              <option value="United States">United States</option>
+              <option value="__other" data-i18n="ct_other">Other</option>
+            </select>
+          </div>
+          <div class="fld full">
+            <label for="q-details" data-i18n="ct_details">Details</label>
+            <textarea id="q-details" name="details" data-i18n-ph="ct_ph" placeholder="Technology, installed capacity, number of plants, what you need reported…"></textarea>
+            <span class="hint" data-i18n="ct_hint">Tell us about your project. A bit of context lets us connect you to the right team faster.</span>
+          </div>
+        </div>
+
+        <div class="fsub">
+          <button type="submit" class="btn-send" id="q-send">
+            <span data-i18n="ct_send">Send request</span><span class="ar">→</span>
+          </button>
+          <p class="fnote" data-i18n="ct_priv">Your details go to Jay Kim at Quorelia and are used only to answer you. We do not share them.</p>
+        </div>
+
+        <div class="fmsg" id="q-msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <div class="split rv" style="margin-top:64px;">
+      <a class="s-grey" href="informe.html#original">
+        <span data-i18n="sample">Read the full sample report</span><span class="ar">→</span>
+      </a>
+      <a class="s-black" href="gobierno.html">
+        <span data-i18n="cta_gov">For Public Authorities</span><span class="ar">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand" style="display:inline-block;margin-bottom:14px;"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+      </div>
+      <div>
+        <h5 data-i18n="f_prod">Platform</h5>
+        <a href="#software" data-i18n="nav_sw">Our Software</a>
+    <a href="#platform" data-i18n="nav_plat">Control Center</a>
+        <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
+      <a href="#service" data-i18n="nav_svc">Service</a>
+        <a href="informe.html#original" data-i18n="f_sample">Sample report</a>
+        <a href="demos.html" data-i18n="f_dash">Live demos</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_co">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_ct">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+
+    <div class="f-logo">
+      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
+      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
+      <span data-i18n="f_tag">Intelligence for Critical Energy Infrastructure</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Sample reports and the Control Center on this site contain illustrative data and do not represent real facilities or clients. Capacity under monitoring refers to assets connected to the platform. Regulatory analysis of the national registry is published separately on the Government page.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  cta_gov:"For Public Authorities",
+  rp_lv1:"Open the live BESS dashboard", rp_lv2:"Open the Control Center demo",
+  rp_lvp:"We build customized Control Centers for each client \u2014 modules, thresholds and views shaped to your fleet. What you see here is a demo sample with illustrative data.",
+  hero_c1:"Explore the Control Center", hero_c2:"See how it works", hero_c3:"Government &amp; infrastructure",
+  sw_e:"How it works",
+  m1n:"See", m2n:"Understand", m3n:"Predict", m4n:"Act", m5n:"Verify",
+  m4l:"Findings are prioritised and routed \u2014 dispatch is always confirmed by a person",
+  m5l:"The loop closes only when the result is confirmed \u2014 an alert is not a resolution",
+  om_t:"Operations &amp; maintenance", om_h:"Less reactive. More predictive.",
+  om_s:"The traditional loop starts when something already failed. Quorelia's loop starts while everything still looks fine \u2014 and ends only when the fix is verified.",
+  om_1t:"Traditional",
+  om_1a:"Alarm fires", om_1b:"Operator reacts", om_1c:"Inspection dispatched", om_1d:"Diagnosis on site", om_1e:"Repair \u2014 downtime already counted",
+  om_2a:"Continuous data, validated first", om_2b:"Pattern detected before the alarm", om_2c:"Risk prioritised, not just flagged", om_2d:"Investigation recommended to the right team", om_2e:"Maintenance in a planned window \u2014 then verified",
+  bs_t:"Storage \u00b7 BESS", bs_h:"Maintenance before failure",
+  bs_s:"Storage is the fastest-growing \u2014 and least documented \u2014 technology in the Chilean fleet. Quorelia reads what a battery actually says: state of charge, cell dispersion, thermal behaviour, cycle closure and communication health.",
+  bs_1t:"Example \u00b7 demo fleet",
+  bs_1a:"Cell dispersion rising: 131 \u2192 470 mV", bs_1b:"Threshold in force: 500 mV", bs_1c:"Trend: degrading, not yet critical",
+  bs_2t:"What Quorelia does",
+  bs_2a:"Classifies it as emerging risk, with its evidence chain", bs_2b:"Recommends thermal-management inspection in the next planned window", bs_2c:"Withholds any figure the data cannot support",
+  bs_3t:"What Quorelia does not do",
+  bs_3a:"No remaining-useful-life forecasts without asset-specific validation", bs_3b:"No dispatch \u2014 a person always confirms the action", bs_3c:"Model outputs require engineering validation",
+  sec_t:"Security", sec_h:"Critical data deserves critical security",
+  sec_s:"Designed for critical infrastructure: read-only by architecture, segregated by owner, encrypted end to end. We claim no certification that has not been audited and issued by a competent body.",
+  sec_1:"Access", sec_1a:"Role-based, per facility and per information type", sec_1b:"Individual credentials with a second factor",
+  sec_2:"Data", sec_2a:"Encryption in transit and at rest", sec_2b:"Per-client segregation \u2014 no cross-owner aggregation",
+  sec_3:"Accountability", sec_3a:"Access logs consultable by the owner", sec_3b:"Incident notification within 72 hours",
+  sec_n:"Full commitments in our <a href=\"terminos.html\" style=\"text-decoration:underline;\">Terms</a> and on the <a href=\"gobierno.html\" style=\"text-decoration:underline;\">Government</a> page.",
+  mn_t:"Quorelia",
+  mn_h:"See the system. Understand the signal. Predict the risk. <span style=\"color:var(--teal-lt);\">Act before the failure.</span> Optimize the asset.",
+  f_terms:"Terms", f_priv:"Privacy",
+  nav_demos:"Demos",
+  rp_t:"Sample reports",
+  rp_hint:"Click a report to open it",
+  rp4t:"Fleet &amp; portfolio", rp4h:"The whole fleet in one document",
+  rp_c1:"Portfolio oversight report", rp_c2:"National fleet diagnostic", rp_c3:"Independent verification &amp; O&amp;M report \u2014 the original sample",
+  rp_h:"Read exactly what you would receive",
+  rp_s:"Real report structure, illustrative data. Every figure inside carries its coverage, its formula and its reason when withheld \u2014 open one and check.",
+  rp1t:"Solar PV", rp1h:"Tracking, inverters and irradiance",
+  rp2t:"Wind", rp2h:"Turbines, wind resource and availability",
+  rp3t:"Storage \u00b7 BESS", rp3h:"Cycles, state of charge and efficiency",
+  rp_d:"Daily operation report", rp_m:"Monthly report", rp_x:"Extended sample report",
+  rp_d2:"Daily operation report", rp_m2:"Monthly report", rp_x2:"Extended sample report",
+  rp_d3:"Daily operation report", rp_m3:"Monthly report", rp_x3:"Extended sample report",
+  rp_note:"Reports are shown in Spanish \u2014 the working language of the fleet they model. Deliverables are issued in your language: the template is separate from the data, so translation never touches a figure.",
+  nav_svc:"Service",
+  hero_tag:"Intelligence for critical energy infrastructure",
+  hero_sub:"Quorelia transforms real-time operational data, equipment condition and environmental context into actionable intelligence for critical energy infrastructure. <b>See the system. Understand the signal. Predict the risk. Act with confidence.</b>",
+  sv_eyebrow:"The service",
+  sv_h:"What you actually receive",
+  sv_s:"Not a dashboard licence. A finished, signed document that lands where your team already works \u2014 built by agents that read the plant, and cleared by an engine that refuses to publish what it cannot substantiate.",
+  sv_gw:"of generation and storage capacity under monitoring today, across solar, wind and BESS",
+  sv1h:"Data &amp; KPI",
+  sv1p:"Your existing SCADA, PPC, meters and BMS. Ingested at one cadence, validated, and turned into the metrics that actually govern a contract.",
+  sv1a:"Availability &amp; capacity factor", sv1b:"Round-trip efficiency on closed cycles", sv1c:"Curtailment and event accounting",
+  sv2h:"Agents",
+  sv2p:"Automated readers that work the fleet continuously: they classify events, attribute a shortfall to resource or to asset, and route each finding to the right specialty.",
+  sv2a:"Continuous, not on request", sv2b:"Findings with a named owner", sv2c:"Preventive / corrective triage",
+  sv3h:"Quorelia",
+  sv3p:"The verification engine. Every figure an agent produces is checked against coverage, sample count and cycle closure before it is allowed into a document.",
+  sv3a:"90% minimum data coverage", sv3b:"A figure that fails is withheld", sv3c:"The reason is published instead",
+  sv4h:"Deliverable",
+  sv4p:"A daily and monthly report, identical in structure across technologies and sites, issued without manual assembly \u2014 in the language your team and your investors read.",
+  sv4a:"Word, PDF, Excel or email", sv4b:"Same format across the whole fleet", sv4c:"Every figure traceable to its measurement",
+  lg_t:"The same report, in your language",
+  lg_h:"One verified dataset, issued in the language of whoever has to read it",
+  lg_s:"Chilean operations, an Asian owner and a European lender rarely share a working language. The figures do not change between versions \u2014 only the words around them. Nothing is re-keyed, so nothing drifts.",
+  lg_249:"249",
+  lg_249k:"languages available on request \u2014 the full coverage of Google\u2019s AI translation stack. Spanish, English and Chinese are maintained natively.",
+  lg_note:"The report template is separated from the data layer, so any new language is a translation task \u2014 never a recalculation. Machine-translated versions are always reviewed before issuance.",
+  nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_gov:"Government",
+  nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
+  hero:"See the risk <span class=\"dim\">before it becomes the incident.</span>",
+  hm1:"1 GW under monitoring", hm2:"Solar · Wind · BESS", hm3:"Daily & monthly reporting", hm4:"ES · EN · 中文",
+  sw_t:"From data to decision",
+  m1l:"Real-time visibility across every asset, on the systems already installed",
+  m2l:"Analytics explain abnormal behaviour \u2014 validated data only, silence never reported as zero",
+  m3l:"Sustained deviations surface as emerging risk, before they become failures",
+  g1:"Verification", g1a:"Contractual availability", g1b:"Data coverage &amp; traceability", g1c:"Independent opinion format",
+  g2:"Operations", g2a:"Asset and unit status", g2b:"Plant performance", g2c:"Curtailment accounting",
+  g3:"Maintenance", g3a:"Preventive / corrective classification", g3b:"Routing to the right specialty", g3c:"Findings with named owners",
+  g4:"Analytics", g4a:"Resource vs. asset attribution", g4b:"Cell dispersion &amp; state of health", g4c:"Round-trip efficiency on closed cycles",
+  sample:"Read the full sample report",
+  band1_t:"Field",
+  band1_h:"Every asset, always under watch",
+  band1_p:"Trackers, inverters, strings and meters — read continuously, at native resolution, on the systems already installed. No new hardware, no parallel network, nothing for the field team to maintain.",
+  band2_t:"Boardroom",
+  band2_h:"One version of operational reality",
+  band2_p:"Readable by an engineer and by a board in the same document. Each technology defines «operation» differently — a turbine idle for lack of wind is not unavailable — but what makes a figure valid can be identical across all of them.",
+  cap_eyebrow:"Capabilities",
+  cap_h:"Four domains, one chain of evidence",
+  cap_s:"Every capability below reads from the same validated manifest. Nothing is calculated on data that has not passed quality control first.",
+  ar_eyebrow:"How it works",
+  ar_h:"One path from the sensor to the signed figure",
+  ar_s:"The architecture is deliberately simple. Data enters once, is validated once, and no result reaches a report without passing the verification engine first.",
+  ar_lin:"Input", ar_lout:"Output",
+  ar_n1:"SCADA · plant data",
+  ar_d1:"Inverters, meters, weather stations, BMS. The asset owner's own systems — nothing is replaced.",
+  ar_n2:"Quorelia ingestion",
+  ar_d2:"One 300-second cadence, one timestamp convention, one unit system — regardless of the source.",
+  ar_n3:"Data validation",
+  ar_d3:"Gaps, frozen channels, out-of-range values and clock drift are flagged before anything is computed.",
+  ar_n4:"KPI calculation",
+  ar_d4:"Availability, capacity factor, round-trip efficiency, curtailment — each with its formula recorded.",
+  ar_n5:"Data quality engine",
+  ar_d5:"Coverage, sample count and cycle closure, measured against the thresholds in force.",
+  ar_n6:"Verification engine",
+  ar_d6:"The gate. A figure that fails coverage or cycle closure is not published — the reason is published instead.",
+  ar_n7:"Dashboard", ar_n8:"Reporting",
+  ar_n9:"Client portal", ar_n10:"PDF · Excel · email",
+  ar_p1:"The raw measurement, stored unmodified",
+  ar_p2:"The calculated result and the formula used",
+  ar_p3:"The provenance chain linking one to the other",
+  ar_note:"All three are kept, which is the whole point: every number on the screen can be walked back to the measurement that produced it.",
+  cc_t:"The Control Center",
+  cc_h:"Fourteen modules over one verified dataset",
+  cc_s:"Operations, regulator, intelligence and management views \u2014 all reading from the same validated manifest. No module can publish a figure the verification engine has not cleared.",
+  cc_g1:"Operations", cc_g1a:"Executive view", cc_g1b:"Energy flow", cc_g1c:"Environment \u00b7 weather stations",
+  cc_g1d:"Plant detail", cc_g1e:"Rack room 4D", cc_g1f:"Alert centre", cc_g1g:"Operational timeline",
+  cc_g2:"Regulator", cc_g2a:"Regulatory view", cc_g2b:"Data infrastructure",
+  cc_g3:"Intelligence", cc_g3a:"Guided questions",
+  cc_g4:"Management", cc_g4a:"Predictive maintenance", cc_g4b:"Asset depreciation", cc_g4c:"Reports", cc_g4d:"Engine configuration",
+  cc_cta:"Request a Control Center demo",
+  ct_eyebrow:"Get started",
+  ct_h:"Interested in optimizing your asset with Quorelia?",
+  ct_s:"Tell us what you operate and we will show you the same reports on your own data. We reply within one business day.",
+  ct_first:"First name<span class=\"req\">*</span>", ct_last:"Last name<span class=\"req\">*</span>",
+  ct_email:"Work email<span class=\"req\">*</span>", ct_phone:"Phone number",
+  ct_title:"Job title", ct_company:"Company<span class=\"req\">*</span>",
+  ct_country:"Country<span class=\"req\">*</span>", ct_select:"Select a country", ct_other:"Other",
+  ct_details:"Details",
+  ct_ph:"Technology, installed capacity, number of plants, what you need reported\u2026",
+  ct_hint:"Tell us about your project. A bit of context lets us connect you to the right team faster.",
+  ct_send:"Send request", ct_sending:"Sending\u2026",
+  ct_seed_cc:"I would like a demo of the Control Center.",
+  ct_priv:"Your details go to Jay Kim at Quorelia and are used only to answer you. We do not share them.",
+  ct_err_req:"Please complete the required fields marked with an asterisk.",
+  ct_ok:"Thank you \u2014 your request has arrived. Jay will reply within one business day.",
+  ct_fail:"The request could not be sent. Please write to {mail} directly \u2014 your details are already in the message.",
+  ct_mailto:"Your email application should have opened with the details filled in. Press Send to finish, or write to jay@quorelia.org directly.",
+  cc_p:"Verification engine \u00b7 thresholds in force",
+  cc_p1:"Minimum data coverage before a figure may be published",
+  cc_p2:"Samples per channel per day \u2014 300-second cadence",
+  cc_p3:"SOC tolerance for a cycle to count as closed",
+  cc_p4:"Cell dispersion threshold before drill-down",
+  cc_n:"A withheld figure, live in the demo",
+  cc_nb:"On 17 August the round-trip efficiency of one plant is not published. The engine writes the reason instead: <b>\u201copen cycle: SOC drifted +16.43 pp over the window (tolerance 2.0 pp); round-trip efficiency is not defined.\u201d</b> Anyone can show a panel of green numbers. This one blocks itself when it cannot substantiate what it says.",
+  cap_t:"Quorelia today",
+  cp1:"Of generation and storage capacity under monitoring",
+  cp2:"Technologies covered — solar PV, wind and BESS",
+  cp3:"Languages the same report is issued in",
+  cp4:"Report turnaround, fully automated",
+  cap_src:"Capacity under monitoring covers the assets connected to the platform. Sample reports on this site carry illustrative data and do not represent real facilities or clients.",
+  pr_t:"The rule that governs every figure",
+  pr_h:'If the data cannot support a defensible number, we do not estimate it. <span class="dim">We flag it.</span>',
+  pr_p:"A withheld figure with its reason stated is verifiable. An estimated figure that looks confident is not. A channel that returns nothing is reported as not observed and excluded from the denominator — never as zero.",
+  f_desc:"Intelligence for critical energy infrastructure. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_dash:"Live demos",
+  f_co:"Company", f_ct:"Contact", f_tag:"Intelligence for Critical Energy Infrastructure",
+  f_fine:"Sample reports and the Control Center on this site contain illustrative data and do not represent real facilities or clients. Capacity under monitoring refers to assets connected to the platform. Regulatory analysis of the national registry is published separately on the Government page.",
+ },
+ zh:{
+  cta_gov:"面向公共机构",
+  nav_svc:"服务",
+  hero_tag:"关键能源基础设施智能",
+  hero_sub:"Quorelia 将实时运行数据、设备状态与环境背景转化为关键能源基础设施的可执行情报。<b>看见系统。理解信号。预判风险。从容行动。</b>",
+  sv_eyebrow:"服务内容",
+  sv_h:"您实际得到的是什么",
+  sv_s:"不是一份仪表盘许可，而是一份完成并署名的文件，直接送达您团队的工作场景——由持续读取电站的智能体生成，并经过一个拒绝发布无法证实数据的引擎审核。",
+  sv_gw:"当前监测中的发电与储能容量，覆盖光伏、风电与储能",
+  sv1h:"数据与 KPI",
+  sv1p:"您已有的 SCADA、PPC、电表与 BMS。以统一节奏接入、完成校验，并转化为真正约束合同的关键指标。",
+  sv1a:"可用率与容量因子", sv1b:"闭合循环上的往返效率", sv1c:"弃电与事件核算",
+  sv2h:"智能体",
+  sv2p:"持续巡读整个电站群的自动化读取器：对事件进行分类，将偏差归因于资源或资产，并将每项发现派发给正确的专业方向。",
+  sv2a:"持续运行，而非按需触发", sv2b:"每项发现都有指定负责人", sv2c:"预防性 / 纠正性分诊",
+  sv3h:"Quorelia",
+  sv3p:"验证引擎。智能体产出的每个数字，都要先通过覆盖率、样本数与循环闭合校验，才被允许进入文件。",
+  sv3a:"90% 最低数据覆盖率", sv3b:"未达标的数字将被扣留", sv3c:"取而代之公布原因",
+  sv4h:"交付物",
+  sv4p:"日报与月报，跨技术、跨站点结构完全一致，无需人工拼装——以您的团队和投资方阅读的语言签发。",
+  sv4a:"Word、PDF、Excel 或邮件", sv4b:"全电站群同一格式", sv4c:"每个数字可追溯至其测量值",
+  lg_t:"同一份报告，用您的语言",
+  lg_h:"同一套经验证的数据，以读者的语言签发",
+  lg_s:"智利的运营团队、亚洲的业主与欧洲的贷款方很少共用一种工作语言。数字在各版本之间不会改变——变的只是围绕数字的文字。没有任何内容被重新录入，因此没有任何数据会漂移。",
+  lg_249:"249",
+  lg_249k:"种语言可按需提供——即 Google AI 翻译体系的全部覆盖范围。西班牙语、英语与中文为原生维护。",
+  lg_note:"报告模板与数据层分离：新增语言只是翻译工作，绝不涉及重新计算。所有机器翻译版本在签发前均经人工复核。",
+  nav_sw:"软件平台", nav_plat:"控制中心", nav_cap:"能力", nav_gov:"政府事务",
+  nav_story:"我们的故事", nav_contact:"联系我们", cta_demo:"预约演示",
+  hero:"在风险酿成事故之前，<span class=\"dim\">先看见它。</span>",
+  hm1:"1 GW 监测容量", hm2:"光伏 · 风电 · 储能", hm3:"日报与月报", hm4:"ES · EN · 中文",
+  sw_t:"从数据到决策",
+  m1l:"在已装设的系统之上，对每项资产保持实时可见",
+  m2l:"分析解释异常行为——只用经校验的数据，静默绝不报为零",
+  m3l:"持续性偏差以新兴风险的形式浮出水面，抢在故障之前",
+  g1:"验证", g1a:"合同可用率", g1b:"数据覆盖与可追溯性", g1c:"独立意见格式",
+  g2:"运营", g2a:"资产与机组状态", g2b:"电站绩效", g2c:"弃电核算",
+  g3:"运维", g3a:"预防性 / 纠正性分类", g3b:"派发至正确专业", g3c:"发现项均有负责人",
+  g4:"分析", g4a:"资源与资产归因", g4b:"电芯离散度与健康状态", g4c:"闭合循环上的往返效率",
+  sample:"阅读完整样例报告",
+  band1_t:"现场",
+  band1_h:"每项资产，时刻在观测之下",
+  band1_p:"跟踪支架、逆变器、组串与电表——在已安装的系统上以原生分辨率持续读取。无需新硬件，无需并行网络，现场团队没有任何额外维护负担。",
+  band2_t:"董事会",
+  band2_h:"运行现实只有一个版本",
+  band2_p:"同一份文件，工程师能读，董事会也能读。每种技术对「运行」的定义各不相同——因无风而停机的风机并非不可用——但判定一个数字是否有效的标准，可以在所有技术之间完全一致。",
+  cap_eyebrow:"能力",
+  cap_h:"四个领域，一条证据链",
+  cap_s:"以下每项能力都读取同一份经校验的数据清单。任何未通过质量控制的数据，都不会参与计算。",
+  ar_eyebrow:"工作原理",
+  ar_h:"从传感器到署名数字，只有一条路径",
+  ar_s:"架构刻意保持简单。数据只进入一次、只校验一次，任何结果在通过验证引擎之前都不会进入报告。",
+  ar_lin:"输入", ar_lout:"输出",
+  ar_n1:"SCADA · 电站数据",
+  ar_d1:"逆变器、电表、气象站、BMS。业主自己的系统——一切保持原样，不做替换。",
+  ar_n2:"Quorelia 接入",
+  ar_d2:"统一的 300 秒节奏、统一的时间戳规范、统一的单位制——无论数据来自何处。",
+  ar_n3:"数据校验",
+  ar_d3:"缺口、冻结通道、越限值与时钟漂移，在任何计算之前即被标记。",
+  ar_n4:"KPI 计算",
+  ar_d4:"可用率、容量因子、往返效率、弃电——每项指标的公式均有记录。",
+  ar_n5:"数据质量引擎",
+  ar_d5:"覆盖率、样本数与循环闭合，逐项对照现行阈值进行度量。",
+  ar_n6:"验证引擎",
+  ar_d6:"闸门。覆盖率或循环闭合不达标的数字不予发布——取而代之发布原因。",
+  ar_n7:"仪表盘", ar_n8:"报告",
+  ar_n9:"客户门户", ar_n10:"PDF · Excel · 邮件",
+  ar_p1:"原始测量值，未经修改地保存",
+  ar_p2:"计算结果及所用公式",
+  ar_p3:"连接两者的溯源链",
+  ar_note:"三者全部保留——这正是关键所在：屏幕上的每个数字，都能一路回溯到产生它的那次测量。",
+  cc_t:"控制中心",
+  cc_h:"十四个模块，一套经验证的数据",
+  cc_s:"运营、监管、情报与管理视图——全部读取同一份经校验的数据清单。任何模块都无法发布未经验证引擎放行的数字。",
+  cc_g1:"运营", cc_g1a:"高管视图", cc_g1b:"能量流", cc_g1c:"环境 · 气象站",
+  cc_g1d:"电站详情", cc_g1e:"电池室 4D", cc_g1f:"告警中心", cc_g1g:"运行时间线",
+  cc_g2:"监管", cc_g2a:"监管视图", cc_g2b:"数据基础设施",
+  cc_g3:"情报", cc_g3a:"引导式提问",
+  cc_g4:"管理", cc_g4a:"预测性维护", cc_g4b:"资产折旧", cc_g4c:"报告", cc_g4d:"引擎配置",
+  cc_cta:"预约控制中心演示",
+  rp_lv1:"打开实时 BESS 仪表盘", rp_lv2:"打开控制中心演示",
+  rp_lvp:"我们为每位客户构建定制化的控制中心——模块、阈值与视图均按您的电站群量身打造。此处所见为示意数据的演示样例。",
+  hero_c1:"探索控制中心", hero_c2:"了解工作原理", hero_c3:"政府与基础设施",
+  sw_e:"工作原理",
+  m1n:"看见", m2n:"理解", m3n:"预判", m4n:"行动", m5n:"核实",
+  m4l:"发现项经排序后派发——人员调度始终由人来确认",
+  m5l:"只有结果得到确认，闭环才算完成——告警不等于解决",
+  om_t:"运营与运维", om_h:"少一分被动，多一分预判。",
+  om_s:"传统闭环在故障发生后才开始。Quorelia 的闭环在一切看似正常时就已开始——并且只在修复得到核实后才结束。",
+  om_1t:"传统方式",
+  om_1a:"告警响起", om_1b:"操作员被动响应", om_1c:"派出巡检", om_1d:"现场诊断", om_1e:"维修——停机损失已经发生",
+  om_2a:"持续数据，先经校验", om_2b:"告警之前即检出模式", om_2c:"风险经排序，而非仅仅标记", om_2d:"向正确的团队推荐排查方向", om_2e:"在计划窗口内检修——随后核实",
+  bs_t:"储能 · BESS", bs_h:"故障之前完成检修",
+  bs_s:"储能是智利电站群中增长最快、文档最少的技术。Quorelia 读懂电池真正在说什么：荷电状态、电芯离散度、热行为、循环闭合与通信健康。",
+  bs_1t:"示例 · 演示电站群",
+  bs_1a:"电芯离散度上升：131 → 470 mV", bs_1b:"现行阈值：500 mV", bs_1c:"趋势：劣化中，尚未临界",
+  bs_2t:"Quorelia 做什么",
+  bs_2a:"归类为新兴风险，附完整证据链", bs_2b:"建议在下一个计划窗口检查热管理系统", bs_2c:"扣留任何数据无法支撑的数字",
+  bs_3t:"Quorelia 不做什么",
+  bs_3a:"未经逐资产验证，不出具剩余寿命预测", bs_3b:"不做调度——行动始终由人确认", bs_3c:"模型输出需经工程验证",
+  sec_t:"安全", sec_h:"关键数据，配得上关键级安全",
+  sec_s:"为关键基础设施而设计：架构层面只读、按业主隔离、端到端加密。凡未经有资质机构审计颁发的认证，我们一概不予宣称。",
+  sec_1:"访问", sec_1a:"基于角色，按电站与信息类型授权", sec_1b:"个人凭据，配二次验证",
+  sec_2:"数据", sec_2a:"传输与存储全程加密", sec_2b:"按客户隔离——业主之间绝不聚合",
+  sec_3:"问责", sec_3a:"访问日志，业主可查", sec_3b:"72 小时内通报安全事件",
+  sec_n:"完整承诺见<a href=\"terminos.html\" style=\"text-decoration:underline;\">条款</a>与<a href=\"gobierno.html\" style=\"text-decoration:underline;\">政府事务</a>页面。",
+  mn_t:"Quorelia",
+  mn_h:"看见系统。理解信号。预判风险。<span style=\"color:var(--teal-lt);\">在故障之前行动。</span>优化资产。",
+  f_terms:"条款", f_priv:"隐私",
+  nav_demos:"演示",
+  rp_t:"样例报告",
+  rp_hint:"点击任一报告即可打开",
+  rp4t:"电站群与投资组合", rp4h:"整个电站群，一份文件",
+  rp_c1:"投资组合监督报告", rp_c2:"国家电站群诊断报告", rp_c3:"独立验证与运维报告——最初的样例",
+  rp_h:"亲自阅读您将收到的东西",
+  rp_s:"真实的报告结构，示意性的数据。其中每个数字都带有覆盖率、公式，以及被扣留时的原因——打开一份，亲自核对。",
+  rp1t:"光伏", rp1h:"跟踪支架、逆变器与辐照",
+  rp2t:"风电", rp2h:"风机、风资源与可用率",
+  rp3t:"储能 · BESS", rp3h:"循环、荷电状态与效率",
+  rp_d:"运行日报", rp_m:"月度报告", rp_x:"扩展样例报告",
+  rp_d2:"运行日报", rp_m2:"月度报告", rp_x2:"扩展样例报告",
+  rp_d3:"运行日报", rp_m3:"月度报告", rp_x3:"扩展样例报告",
+  rp_note:"样例报告以西班牙语展示——那是其所模拟电站群的工作语言。正式交付物以您的语言签发：模板与数据分离，翻译绝不触及任何数字。",
+  ct_eyebrow:"开始合作",
+  ct_h:"想用 Quorelia 优化您的资产吗？",
+  ct_s:"告诉我们您运营什么，我们将用您自己的数据展示同样的报告。一个工作日内回复。",
+  ct_first:"名字<span class=\"req\">*</span>", ct_last:"姓氏<span class=\"req\">*</span>",
+  ct_email:"工作邮箱<span class=\"req\">*</span>", ct_phone:"电话",
+  ct_title:"职位", ct_company:"公司<span class=\"req\">*</span>",
+  ct_country:"国家<span class=\"req\">*</span>", ct_select:"请选择国家", ct_other:"其他",
+  ct_details:"详情",
+  ct_ph:"技术类型、装机容量、电站数量、需要报告的内容……",
+  ct_hint:"介绍一下您的项目。一点背景信息能让我们更快为您对接正确的团队。",
+  ct_send:"提交请求", ct_sending:"发送中……",
+  ct_seed_cc:"我想预约一次控制中心演示。",
+  ct_priv:"您的信息将送达 Quorelia 的 Jay Kim，仅用于回复您。我们不会共享这些信息。",
+  ct_err_req:"请填写带星号的必填项。",
+  ct_ok:"谢谢——您的请求已送达。Jay 将在一个工作日内回复。",
+  ct_fail:"请求未能发送。请直接写信至 {mail}——您的信息已包含在邮件中。",
+  ct_mailto:"您的邮件应用应已打开并填好内容。点击发送即可完成，或直接写信至 jay@quorelia.org。",
+  cc_p:"验证引擎 · 现行阈值",
+  cc_p1:"数字获准发布前的最低数据覆盖率",
+  cc_p2:"每通道每日样本数——300 秒节奏",
+  cc_p3:"循环计为闭合的 SOC 容差",
+  cc_p4:"触发下钻的电芯离散度阈值",
+  cc_n:"一个被扣留的数字，正在演示中运行",
+  cc_nb:"8 月 17 日，一座电站的往返效率没有发布。引擎写下了原因：<b>「开路循环：SOC 在窗口期内漂移 +16.43 个百分点（容差 2.0 个百分点）；往返效率无定义。」</b>谁都能展示一屏绿色的数字。而这个系统在无法证实自己所言时，会主动把自己拦下。",
+  cap_t:"Quorelia 现状",
+  cp1:"监测中的发电与储能容量",
+  cp2:"覆盖的技术类型——光伏、风电与储能",
+  cp3:"同一份报告签发的语言数",
+  cp4:"报告出具时长，全自动",
+  cap_src:"监测容量指已接入平台的资产。本站样例报告为示意数据，不代表真实电站或客户。",
+  pr_t:"约束每个数字的规则",
+  pr_h:"数据撑不起一个站得住的数字时，我们不去估算它。<span class=\"dim\">我们把它标记出来。</span>",
+  pr_p:"一个被扣留、且注明原因的数字是可验证的；一个看似确定的估算数字则不是。没有返回数据的通道会报为「未观测」并从分母中剔除——绝不报为零。",
+  f_desc:"面向关键能源基础设施的智能。光伏、风电与储能。",
+  f_prod:"平台", f_sample:"样例报告", f_dash:"实时演示",
+  f_co:"公司", f_ct:"联系", f_tag:"关键能源基础设施智能",
+  f_fine:"本站的样例报告与控制中心均为示意数据，不代表真实电站或客户。监测容量指已接入平台的资产。针对国家注册库的监管分析另行发布于政府事务页面。"
+ },
+ es:{
+  cta_gov:"Para autoridades p\u00fablicas",
+  rp_lv1:"Abrir el tablero BESS en vivo", rp_lv2:"Abrir la demo del Control Center",
+  rp_lvp:"Construimos Control Centers personalizados para cada cliente \u2014 m\u00f3dulos, umbrales y vistas a la medida de su parque. Lo que ve aqu\u00ed es una muestra demo con datos ilustrativos.",
+  hero_c1:"Explorar el Control Center", hero_c2:"C\u00f3mo funciona", hero_c3:"Gobierno e infraestructura",
+  sw_e:"C\u00f3mo funciona",
+  m1n:"Ver", m2n:"Entender", m3n:"Predecir", m4n:"Actuar", m5n:"Verificar",
+  m4l:"Los hallazgos se priorizan y derivan \u2014 el despacho siempre lo confirma una persona",
+  m5l:"El ciclo se cierra s\u00f3lo cuando el resultado se confirma \u2014 una alerta no es una resoluci\u00f3n",
+  om_t:"Operaci\u00f3n y mantenimiento", om_h:"Menos reactivo. M\u00e1s predictivo.",
+  om_s:"El ciclo tradicional parte cuando algo ya fall\u00f3. El de Quorelia parte cuando todo a\u00fan se ve bien \u2014 y termina s\u00f3lo cuando la soluci\u00f3n est\u00e1 verificada.",
+  om_1t:"Tradicional",
+  om_1a:"Suena la alarma", om_1b:"El operador reacciona", om_1c:"Se despacha inspecci\u00f3n", om_1d:"Diagn\u00f3stico en terreno", om_1e:"Reparaci\u00f3n \u2014 la indisponibilidad ya corri\u00f3",
+  om_2a:"Datos continuos, validados primero", om_2b:"Patr\u00f3n detectado antes de la alarma", om_2c:"Riesgo priorizado, no s\u00f3lo marcado", om_2d:"Investigaci\u00f3n recomendada al equipo correcto", om_2e:"Mantenimiento en ventana planificada \u2014 y luego verificado",
+  bs_t:"Almacenamiento \u00b7 BESS", bs_h:"Mantenimiento antes de la falla",
+  bs_s:"El almacenamiento es la tecnolog\u00eda que m\u00e1s crece \u2014 y la peor documentada \u2014 del parque chileno. Quorelia lee lo que una bater\u00eda realmente dice: estado de carga, dispersi\u00f3n de celdas, comportamiento t\u00e9rmico, cierre de ciclo y salud de comunicaciones.",
+  bs_1t:"Ejemplo \u00b7 flota demo",
+  bs_1a:"Dispersi\u00f3n de celdas al alza: 131 \u2192 470 mV", bs_1b:"Umbral vigente: 500 mV", bs_1c:"Tendencia: degradando, a\u00fan no cr\u00edtica",
+  bs_2t:"Lo que Quorelia hace",
+  bs_2a:"La clasifica como riesgo emergente, con su cadena de evidencia", bs_2b:"Recomienda inspecci\u00f3n de gesti\u00f3n t\u00e9rmica en la pr\u00f3xima ventana planificada", bs_2c:"Retiene toda cifra que los datos no puedan respaldar",
+  bs_3t:"Lo que Quorelia no hace",
+  bs_3a:"Sin pron\u00f3sticos de vida \u00fatil remanente sin validaci\u00f3n por activo", bs_3b:"Sin despacho \u2014 la acci\u00f3n siempre la confirma una persona", bs_3c:"Las salidas del modelo requieren validaci\u00f3n de ingenier\u00eda",
+  sec_t:"Seguridad", sec_h:"Datos cr\u00edticos merecen seguridad cr\u00edtica",
+  sec_s:"Dise\u00f1ado para infraestructura cr\u00edtica: s\u00f3lo lectura por arquitectura, segregado por titular, cifrado de extremo a extremo. No declaramos ninguna certificaci\u00f3n que no haya sido auditada y emitida por un organismo competente.",
+  sec_1:"Acceso", sec_1a:"Por rol, por instalaci\u00f3n y por tipo de informaci\u00f3n", sec_1b:"Credenciales individuales con segundo factor",
+  sec_2:"Datos", sec_2a:"Cifrado en tr\u00e1nsito y en reposo", sec_2b:"Segregaci\u00f3n por cliente \u2014 sin agregaci\u00f3n entre titulares",
+  sec_3:"Rendici\u00f3n", sec_3a:"Registro de accesos consultable por el titular", sec_3b:"Notificaci\u00f3n de incidentes dentro de 72 horas",
+  sec_n:"Compromisos completos en nuestros <a href=\"terminos.html\" style=\"text-decoration:underline;\">T\u00e9rminos</a> y en la p\u00e1gina de <a href=\"gobierno.html\" style=\"text-decoration:underline;\">Gobierno</a>.",
+  mn_t:"Quorelia",
+  mn_h:"Ver el sistema. Entender la se\u00f1al. Predecir el riesgo. <span style=\"color:var(--teal-lt);\">Actuar antes de la falla.</span> Optimizar el activo.",
+  f_terms:"Términos", f_priv:"Privacidad",
+  nav_demos:"Demos",
+  rp_t:"Informes de muestra",
+  rp_hint:"Haga clic en un informe para abrirlo",
+  rp4t:"Cartera y flota", rp4h:"Todo el parque en un solo documento",
+  rp_c1:"Informe de supervisi\u00f3n de cartera", rp_c2:"Diagn\u00f3stico del parque nacional", rp_c3:"Informe de verificaci\u00f3n independiente y O&amp;M \u2014 la muestra original",
+  rp_h:"Lea exactamente lo que recibir\u00eda",
+  rp_s:"Estructura real de informe, datos ilustrativos. Cada cifra lleva su cobertura, su f\u00f3rmula y su raz\u00f3n cuando se retiene \u2014 abra uno y compru\u00e9belo.",
+  rp1t:"Solar FV", rp1h:"Seguimiento, inversores e irradiancia",
+  rp2t:"E\u00f3lica", rp2h:"Turbinas, recurso e\u00f3lico y disponibilidad",
+  rp3t:"Almacenamiento \u00b7 BESS", rp3h:"Ciclos, estado de carga y eficiencia",
+  rp_d:"Informe diario de operaci\u00f3n", rp_m:"Informe mensual", rp_x:"Informe de muestra extendido",
+  rp_d2:"Informe diario de operaci\u00f3n", rp_m2:"Informe mensual", rp_x2:"Informe de muestra extendido",
+  rp_d3:"Informe diario de operaci\u00f3n", rp_m3:"Informe mensual", rp_x3:"Informe de muestra extendido",
+  rp_note:"Los informes se muestran en espa\u00f1ol \u2014 el idioma de trabajo del parque que modelan. Los entregables se emiten en su idioma: la plantilla est\u00e1 separada de los datos, as\u00ed que la traducci\u00f3n nunca toca una cifra.",
+  nav_svc:"Servicio",
+  hero_tag:"Inteligencia para infraestructura energ\u00e9tica cr\u00edtica",
+  hero_sub:"Quorelia transforma datos operacionales en tiempo real, condici\u00f3n de equipos y contexto ambiental en inteligencia accionable para infraestructura energ\u00e9tica cr\u00edtica. <b>Vea el sistema. Entienda la se\u00f1al. Prediga el riesgo. Act\u00fae con confianza.</b>",
+  sv_eyebrow:"El servicio",
+  sv_h:"Lo que usted efectivamente recibe",
+  sv_s:"No una licencia de tablero. Un documento terminado y firmado que llega donde su equipo ya trabaja \u2014 construido por agentes que leen la planta, y autorizado por un motor que se niega a publicar lo que no puede respaldar.",
+  sv_gw:"de capacidad de generaci\u00f3n y almacenamiento bajo monitoreo hoy, entre solar, e\u00f3lico y BESS",
+  sv1h:"Datos y KPI",
+  sv1p:"Su SCADA, PPC, medidores y BMS ya instalados. Ingeridos a una sola cadencia, validados, y convertidos en las m\u00e9tricas que efectivamente gobiernan un contrato.",
+  sv1a:"Disponibilidad y factor de planta", sv1b:"Eficiencia de ciclo sobre ciclos cerrados", sv1c:"Contabilidad de vertimiento y eventos",
+  sv2h:"Agentes",
+  sv2p:"Lectores automatizados que recorren el parque de forma continua: clasifican eventos, atribuyen una merma al recurso o al activo, y derivan cada hallazgo a la especialidad correcta.",
+  sv2a:"Continuo, no a pedido", sv2b:"Hallazgos con responsable asignado", sv2c:"Triaje preventivo / correctivo",
+  sv3h:"Quorelia",
+  sv3p:"El motor de verificaci\u00f3n. Cada cifra que produce un agente se contrasta contra cobertura, n\u00famero de muestras y cierre de ciclo antes de que se le permita entrar a un documento.",
+  sv3a:"90% de cobertura m\u00ednima de datos", sv3b:"La cifra que no cumple se retiene", sv3c:"Se publica la raz\u00f3n en su lugar",
+  sv4h:"Entregable",
+  sv4p:"Un informe diario y mensual, id\u00e9ntico en estructura entre tecnolog\u00edas e instalaciones, emitido sin armado manual \u2014 en el idioma que leen su equipo y sus inversionistas.",
+  sv4a:"Word, PDF, Excel o correo", sv4b:"Mismo formato en todo el parque", sv4c:"Cada cifra trazable hasta su medici\u00f3n",
+  lg_t:"El mismo informe, en su idioma",
+  lg_h:"Un solo conjunto de datos verificado, emitido en el idioma de quien deba leerlo",
+  lg_s:"Una operaci\u00f3n chilena, un propietario asi\u00e1tico y un financista europeo rara vez comparten idioma de trabajo. Las cifras no cambian entre versiones \u2014 s\u00f3lo las palabras alrededor. Nada se vuelve a digitar, as\u00ed que nada se desv\u00eda.",
+  lg_249:"249",
+  lg_249k:"idiomas disponibles a solicitud \u2014 la cobertura completa de la traducci\u00f3n con IA de Google. Espa\u00f1ol, ingl\u00e9s y chino se mantienen de forma nativa.",
+  lg_note:"La plantilla del informe est\u00e1 separada de la capa de datos: un idioma nuevo es una tarea de traducci\u00f3n, nunca un rec\u00e1lculo. Toda versi\u00f3n traducida autom\u00e1ticamente se revisa antes de emitirse.",
+  nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_gov:"Gobierno",
+  nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
+  hero:"Vea el riesgo <span class=\"dim\">antes de que se convierta en incidente.</span>",
+  hm1:"1 GW bajo monitoreo", hm2:"Solar · Eólica · BESS", hm3:"Informes diarios y mensuales", hm4:"ES · EN · 中文",
+  sw_t:"Del dato a la decisi\u00f3n",
+  m1l:"Visibilidad en tiempo real sobre cada activo, en los sistemas ya instalados",
+  m2l:"La anal\u00edtica explica el comportamiento an\u00f3malo \u2014 s\u00f3lo datos validados, el silencio nunca se reporta como cero",
+  m3l:"Las desviaciones sostenidas emergen como riesgo, antes de convertirse en falla",
+  g1:"Verificación", g1a:"Disponibilidad contractual", g1b:"Cobertura de datos y trazabilidad", g1c:"Formato de opinión independiente",
+  g2:"Operación", g2a:"Estado de activos y unidades", g2b:"Desempeño de planta", g2c:"Registro de vertimiento",
+  g3:"Mantenimiento", g3a:"Clasificación preventiva / correctiva", g3b:"Derivación a la especialidad correcta", g3c:"Hallazgos con responsable asignado",
+  g4:"Analítica", g4a:"Atribución recurso vs. activo", g4b:"Dispersión de celdas y estado de salud", g4c:"Eficiencia de ciclo sobre ciclos cerrados",
+  sample:"Ver el informe de muestra completo",
+  band1_t:"Terreno",
+  band1_h:"Cada activo, siempre bajo observación",
+  band1_p:"Seguidores, inversores, strings y medidores — leídos de forma continua, a resolución nativa, sobre los sistemas ya instalados. Sin hardware nuevo, sin red paralela, sin nada que el equipo de terreno deba mantener.",
+  band2_t:"Directorio",
+  band2_h:"Una sola versión de la realidad operacional",
+  band2_p:"Legible para un ingeniero y para un directorio en el mismo documento. Cada tecnología define «operación» de forma distinta — un aerogenerador detenido por falta de viento no está indisponible — pero lo que hace válida a una cifra sí puede ser idéntico entre todas.",
+  cap_eyebrow:"Capacidades",
+  cap_h:"Cuatro dominios, una sola cadena de evidencia",
+  cap_s:"Cada capacidad lee del mismo manifiesto validado. Nada se calcula sobre datos que no hayan superado antes el control de calidad.",
+  ar_eyebrow:"Cómo funciona",
+  ar_h:"Un solo camino desde el sensor hasta la cifra firmada",
+  ar_s:"La arquitectura es deliberadamente simple. El dato entra una vez, se valida una vez, y ningún resultado llega a un informe sin pasar antes por el motor de verificación.",
+  ar_lin:"Entrada", ar_lout:"Salida",
+  ar_n1:"SCADA · datos de planta",
+  ar_d1:"Inversores, medidores, estaciones meteorológicas, BMS. Los sistemas propios del titular — no se reemplaza nada.",
+  ar_n2:"Ingesta Quorelia",
+  ar_d2:"Una sola cadencia de 300 segundos, una convención de marca de tiempo, un sistema de unidades — sea cual sea el origen.",
+  ar_n3:"Validación de datos",
+  ar_d3:"Vacíos, canales congelados, valores fuera de rango y deriva de reloj se marcan antes de calcular nada.",
+  ar_n4:"Cálculo de KPI",
+  ar_d4:"Disponibilidad, factor de planta, eficiencia de ciclo, vertimiento — cada uno con su fórmula registrada.",
+  ar_n5:"Motor de calidad de datos",
+  ar_d5:"Cobertura, número de muestras y cierre de ciclo, medidos contra los umbrales vigentes.",
+  ar_n6:"Motor de verificación",
+  ar_d6:"La compuerta. Una cifra que no cumple cobertura o cierre de ciclo no se publica — se publica la razón en su lugar.",
+  ar_n7:"Tablero", ar_n8:"Reportería",
+  ar_n9:"Portal del cliente", ar_n10:"PDF · Excel · correo",
+  ar_p1:"La medición cruda, almacenada sin modificar",
+  ar_p2:"El resultado calculado y la fórmula utilizada",
+  ar_p3:"La cadena de procedencia que une una con el otro",
+  ar_note:"Se conservan las tres, y ese es todo el punto: cada número en pantalla puede recorrerse hacia atrás hasta la medición que lo produjo.",
+  cc_t:"El Control Center",
+  cc_h:"Catorce m\u00f3dulos sobre un mismo dato verificado",
+  cc_s:"Vistas de operaci\u00f3n, regulador, inteligencia y gesti\u00f3n \u2014 todas leen del mismo manifiesto validado. Ning\u00fan m\u00f3dulo puede publicar una cifra que el motor de verificaci\u00f3n no haya aprobado.",
+  cc_g1:"Operaci\u00f3n", cc_g1a:"Vista ejecutiva", cc_g1b:"Flujo de energ\u00eda", cc_g1c:"Entorno \u00b7 estaciones meteorol\u00f3gicas",
+  cc_g1d:"Detalle de planta", cc_g1e:"Sala de racks 4D", cc_g1f:"Centro de alertas", cc_g1g:"L\u00ednea de tiempo operacional",
+  cc_g2:"Regulador", cc_g2a:"Vista regulatoria", cc_g2b:"Infraestructura de datos",
+  cc_g3:"Inteligencia", cc_g3a:"Preguntas guiadas",
+  cc_g4:"Gesti\u00f3n", cc_g4a:"Mantenimiento predictivo", cc_g4b:"Depreciaci\u00f3n de activos", cc_g4c:"Reportes", cc_g4d:"Configuraci\u00f3n del motor",
+  cc_cta:"Solicitar una demo del Control Center",
+  ct_eyebrow:"Comenzar",
+  ct_h:"\u00bfLe interesa optimizar su activo con Quorelia?",
+  ct_s:"Cu\u00e9ntenos qu\u00e9 opera y le mostramos los mismos informes sobre sus propios datos. Respondemos dentro de un d\u00eda h\u00e1bil.",
+  ct_first:"Nombre<span class=\"req\">*</span>", ct_last:"Apellido<span class=\"req\">*</span>",
+  ct_email:"Correo corporativo<span class=\"req\">*</span>", ct_phone:"Tel\u00e9fono",
+  ct_title:"Cargo", ct_company:"Empresa<span class=\"req\">*</span>",
+  ct_country:"Pa\u00eds<span class=\"req\">*</span>", ct_select:"Seleccione un pa\u00eds", ct_other:"Otro",
+  ct_details:"Detalles",
+  ct_ph:"Tecnolog\u00eda, capacidad instalada, n\u00famero de plantas, qu\u00e9 necesita informar\u2026",
+  ct_hint:"Cu\u00e9ntenos sobre su proyecto. Un poco de contexto nos permite conectarlo m\u00e1s r\u00e1pido con el equipo correcto.",
+  ct_send:"Enviar solicitud", ct_sending:"Enviando\u2026",
+  ct_seed_cc:"Me gustar\u00eda ver una demo del Control Center.",
+  ct_priv:"Sus datos llegan a Jay Kim en Quorelia y se usan s\u00f3lo para responderle. No los compartimos.",
+  ct_err_req:"Complete los campos obligatorios marcados con asterisco.",
+  ct_ok:"Gracias \u2014 su solicitud lleg\u00f3. Jay responder\u00e1 dentro de un d\u00eda h\u00e1bil.",
+  ct_fail:"No se pudo enviar la solicitud. Escriba directamente a {mail} \u2014 sus datos ya vienen en el mensaje.",
+  ct_mailto:"Deber\u00eda haberse abierto su aplicaci\u00f3n de correo con los datos ya escritos. Pulse Enviar para terminar, o escriba directamente a jay@quorelia.org.",
+  cc_p:"Motor de verificaci\u00f3n \u00b7 umbrales vigentes",
+  cc_p1:"Cobertura m\u00ednima de datos para poder publicar una cifra",
+  cc_p2:"Muestras por canal y por d\u00eda \u2014 cadencia de 300 segundos",
+  cc_p3:"Tolerancia de SOC para que un ciclo cuente como cerrado",
+  cc_p4:"Umbral de dispersi\u00f3n de celdas antes de bajar al detalle",
+  cc_n:"Una cifra retenida, viva en la demostraci\u00f3n",
+  cc_nb:"El 17 de agosto la eficiencia de ciclo completo de una planta no se publica. El motor escribe la raz\u00f3n en su lugar: <b>\u00abciclo abierto: el SOC deriv\u00f3 +16,43 pp en la ventana (tolerancia 2,0 pp); la eficiencia de ciclo no est\u00e1 definida\u00bb.</b> Cualquiera puede mostrar un panel con n\u00fameros verdes. Este se bloquea a s\u00ed mismo cuando no puede respaldar lo que dice.",
+  cap_t:"Quorelia hoy",
+  cp1:"De capacidad de generación y almacenamiento bajo monitoreo",
+  cp2:"Tecnologías cubiertas — solar FV, eólica y BESS",
+  cp3:"Idiomas en que se emite el mismo informe",
+  cp4:"De demora del informe, totalmente automatizado",
+  cap_src:"La capacidad bajo monitoreo corresponde a los activos conectados a la plataforma. Los informes de muestra de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales.",
+  pr_t:"La regla que gobierna cada cifra",
+  pr_h:'Si los datos no sostienen una cifra defendible, no la estimamos. <span class="dim">La declaramos.</span>',
+  pr_p:"Una cifra retenida con su razón declarada es verificable; una cifra estimada que aparenta certeza no lo es. Un canal que no responde se informa como no observado y se excluye del denominador — nunca como cero.",
+  f_desc:"Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_dash:"Demos en vivo",
+  f_co:"Empresa", f_ct:"Contacto", f_tag:"Inteligencia para Infraestructura Energética Crítica",
+  f_fine:"Los informes de muestra y el Control Center de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales. La capacidad bajo monitoreo se refiere a los activos conectados a la plataforma. El análisis regulatorio del registro nacional se publica por separado en la página de Gobierno.",
+ }
+};
+
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var btn=document.getElementById(p+'-'+k);
+      if(btn) btn.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  document.querySelectorAll('[data-i18n-href]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-href');
+    if(d[k]!==undefined) el.setAttribute('href', d[k]);
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-ph');
+    if(d[k]!==undefined) el.setAttribute('placeholder', d[k]);
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
+})();
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FORMULARIO "SOLICITAR DEMO"
+   ─────────────────────────────────────────────────────────────────────────
+   Los envíos van a Formspree, que los reenvía a jay@quorelia.org.
+   Endpoint: https://formspree.io/f/mljraopz
+
+   Si alguna vez hay que cambiarlo, basta con reemplazar FORM_ID abajo.
+   Poniéndolo en null el botón vuelve a abrir el cliente de correo del
+   visitante con todos los campos escritos — sirve de respaldo, pero el
+   visitante tiene que pulsar Enviar él mismo.
+
+   Pendiente en el panel de Formspree:
+     · Confirmar el correo de verificación enviado a jay@quorelia.org.
+       Sin eso Formspree acepta el envío pero no lo reenvía.
+     · Settings → Restrict to Domain → quorelia.org (sin https://),
+       para que nadie más pueda publicar contra este endpoint.
+   ══════════════════════════════════════════════════════════════════════════ */
+var FORM_ID = 'mljraopz';   /* Formspree · proyecto Quorelia → jay@quorelia.org */
+
+(function(){
+  var f = document.getElementById('demo-form');
+  if(!f) return;
+  var btn = document.getElementById('q-send'),
+      msg = document.getElementById('q-msg'),
+      lbl = btn.querySelector('span:first-child');
+
+  function t(k){ var d=i18n[document.getElementById('html-root').getAttribute('lang')]||i18n.en; return d[k]||''; }
+  function show(kind, html){ msg.className='fmsg '+kind; msg.innerHTML=html; }
+
+  /* Etiquetas legibles para el cuerpo del correo, en el idioma activo */
+  var CAMPOS=[['first_name','ct_first'],['last_name','ct_last'],['email','ct_email'],
+              ['phone','ct_phone'],['job_title','ct_title'],['company','ct_company'],
+              ['country','ct_country'],['details','ct_details']];
+
+  function limpiar(s){ return String(s||'').replace(/<[^>]*>/g,'').replace(/\s+$/,''); }
+
+  /* Las etiquetas traen <span class="req">*</span>; hay que quitarlo del correo */
+  function rotulo(k){ return limpiar(t(k)).replace('*','').trim(); }
+
+  function cuerpo(datos){
+    var out=[];
+    CAMPOS.forEach(function(c){
+      var v=limpiar(datos[c[0]]);
+      if(v) out.push(rotulo(c[1])+': '+v);
+    });
+    return out.join('\n');
+  }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f.querySelector('[name="_gotcha"]').value) return;   /* bot */
+
+    if(!f.checkValidity()){
+      show('bad', t('ct_err_req'));
+      var malo=f.querySelector(':invalid');
+      if(malo){ malo.focus(); }
+      return;
+    }
+
+    var datos={};
+    new FormData(f).forEach(function(v,k){ if(k!=='_gotcha') datos[k]=v; });
+    var nombre=(limpiar(datos.first_name)+' '+limpiar(datos.last_name)).trim();
+    var asunto='Quorelia · '+nombre+(datos.company?' · '+limpiar(datos.company):'');
+
+    /* Sin endpoint configurado todavía → abrir el cliente de correo */
+    if(!FORM_ID){
+      window.location.href='mailto:jay@quorelia.org?subject='+encodeURIComponent(asunto)+
+                           '&body='+encodeURIComponent(cuerpo(datos));
+      show('ok', t('ct_mailto'));
+      return;
+    }
+
+    btn.disabled=true; lbl.textContent=t('ct_sending');
+    datos._subject=asunto;
+    fetch('https://formspree.io/f/'+FORM_ID,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(datos)
+    }).then(function(r){
+      if(r.ok){ f.reset(); show('ok', t('ct_ok')); }
+      else { return r.json().then(function(j){ throw new Error((j.errors&&j.errors[0]&&j.errors[0].message)||'error'); }); }
+    }).catch(function(){
+      show('bad', t('ct_fail').replace('{mail}',
+        '<a href="mailto:jay@quorelia.org?subject='+encodeURIComponent(asunto)+
+        '&body='+encodeURIComponent(cuerpo(datos))+'">jay@quorelia.org</a>'));
+    }).then(function(){
+      btn.disabled=false; lbl.textContent=t('ct_send');
+    });
+  });
+
+  /* Si cambia el idioma con el formulario ya en pantalla, repintar el botón */
+  window.addEventListener('quorelia:lang', function(){
+    if(!btn.disabled) lbl.textContent=t('ct_send');
+  });
+
+  /* Los CTA del Control Center bajan al formulario. Sembramos el motivo en
+     Detalles —sólo si está vacío— para saber de qué botón vino cada lead,
+     y dejamos el cursor en el primer campo. */
+  document.querySelectorAll('a[data-demo]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var det=document.getElementById('q-details');
+      setTimeout(function(){
+        if(det && !det.value.trim()) det.value=t('ct_seed_cc');
+        var pri=document.getElementById('q-first');
+        if(pri && window.matchMedia('(min-width:760px)').matches) pri.focus({preventScroll:true});
+      }, 520);
+    });
+  });
+})();
+
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
