@@ -20,7 +20,7 @@ Because somewhere in that decade of trying, a pattern started to emerge that nei
 
 ## Two backgrounds, one obsession
 
-Diego is Spanish, German, and Chilean — an MBA in Finance from the University of Chile, a marketing degree from Universidad Comercial, and an instinct for the question that matters most in any business: will someone actually pay for this, and why. He is the one who turns a good idea into something that survives a boardroom.
+Diego is Spanish and Chilean — an MBA in Finance from the University of Chile, a marketing degree from Universidad Comercial, and an instinct for the question that matters most in any business: will someone actually pay for this, and why. He is the one who turns a good idea into something that survives a boardroom.
 
 Jay grew up shuttling between Korea and Chile, a Bachelor's in Economics, and five years spent inside the actual machinery of renewable energy — developing and operating solar power plants, learning firsthand what the numbers on a performance report do and don't tell you. He has since spent years leading work in biotechnology, where automated systems, big data, and AI run at industrial scale. He is the one who has stood inside a control room and felt the specific frustration of knowing a plant is telling you something important, and not being able to hear it clearly.
 
