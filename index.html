@@ -55,8 +55,14 @@
   html[data-theme="sand"]{--pg:var(--sand);}
   html[data-theme="deep"]{--pg:var(--navy);}
   html[data-theme="green"]{--pg:var(--green-d);}
-  body{background:var(--pg);transition:background-color .9s var(--ease);}
-  section{background:transparent;}
+  body{background:var(--pg);transition:background-color 1.15s var(--ease);}
+  /* Cada sección lleva su fondo sólido: la legibilidad no depende del morphing
+     del body, que queda como acompañamiento (cabecera y rebote del scroll). */
+  section[data-theme="paper"]{background:var(--paper);}
+  section[data-theme="sand"]{background:var(--sand);}
+  section[data-theme="deep"]{background:var(--navy);}
+  section[data-theme="green"]{background:var(--green-d);}
+  .relato{background:transparent;} /* el escenario pinta el suyo */
 
   /* Desplazamiento suave (solo si el usuario no pide menos movimiento) */
   @media(prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth;} }
@@ -90,7 +96,7 @@
 
   /* Cabecera adaptativa: tinte translúcido + inversión sobre fondos oscuros */
   .head{background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.2);
-    -webkit-backdrop-filter:blur(14px) saturate(1.2);transition:background .5s var(--ease);}
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);transition:background .8s var(--ease),border-color .8s var(--ease);}
   html[data-theme="deep"] .head, html[data-theme="green"] .head{
     background:rgba(10,24,38,.42);border-bottom-color:rgba(255,255,255,.14);}
   html[data-theme="deep"] .head .nav-links a, html[data-theme="green"] .head .nav-links a,
@@ -130,7 +136,7 @@
   /* 02–04 · Relato pegajoso: puntos → red → orden → Eagle Eye */
   .relato{position:relative;height:360vh;}
   .rl-stage{position:sticky;top:0;height:100vh;overflow:hidden;
-    background:var(--sand);transition:background-color .8s var(--ease);}
+    background:var(--sand);transition:background-color 1.15s var(--ease);}
   .rl-stage.oscuro{background:var(--navy);}
   .rl-stage svg{position:absolute;inset:0;width:100%;height:100%;}
   .rl-nodo{fill:var(--ink);transition:fill .8s;}
@@ -145,7 +151,7 @@
   .rl-eagle{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.42em;
     fill:#fff;}
   .rl-txt{position:absolute;left:0;right:0;text-align:center;padding:0 24px;
-    opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;
+    opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);
     pointer-events:none;}
   .rl-txt.on{opacity:1;transform:none;}
   .rl-txt .tag{margin-bottom:14px;}
@@ -154,8 +160,8 @@
   .rl-txt p{font-family:var(--mono);font-size:12px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--ink-2);margin-top:16px;}
   #rt-1{top:12%;} #rt-2{bottom:11%;} #rt-3{bottom:12%;}
-  #rt-2 h2,#rt-3 h2{color:#f2f3f4;} #rt-2 p,#rt-3 p{color:#8fa3b0;}
-  #rt-3 .lede{color:#b9c9d1;margin:14px auto 0;}
+  #rt-2 h2,#rt-3 h2{color:#fff;} #rt-2 p,#rt-3 p{color:#a5b8c4;}
+  #rt-3 .lede{color:#cdd9e0;margin:14px auto 0;}
   /* sin movimiento: el relato se apila y muestra el estado final */
   .relato.static{height:auto;}
   .relato.static .rl-stage{position:static;height:auto;padding:90px 0 60px;}
@@ -173,24 +179,24 @@
   .linklist a:hover{color:var(--teal);}
 
   /* 05 · Ciclo */
-  .ciclo{padding:140px 0;color:#f2f3f4;}
+  .ciclo{padding:140px 0;color:#fff;}
   .ciclo .steps{display:flex;flex-direction:column;gap:6px;max-width:900px;margin:40px auto 0;}
-  .ciclo .step{display:flex;align-items:baseline;gap:26px;border-top:1px solid rgba(255,255,255,.14);
+  .ciclo .step{display:flex;align-items:baseline;gap:26px;border-top:1px solid rgba(255,255,255,.2);
     padding:22px 0;opacity:0;transform:translateY(14px);
     transition:opacity .6s var(--ease),transform .6s var(--ease);}
   .ciclo .step.in{opacity:1;transform:none;}
-  .ciclo .step .n{font-family:var(--mono);font-size:11px;color:#8fa3b0;flex:none;width:36px;}
+  .ciclo .step .n{font-family:var(--mono);font-size:11px;color:#a5b8c4;flex:none;width:36px;}
   .ciclo .step .w{font-family:var(--mono);font-size:clamp(1.6rem,1.1rem+2.4vw,3.2rem);
     letter-spacing:.12em;text-transform:uppercase;color:#fff;}
-  .ciclo .step .d{margin-left:auto;font-size:13.5px;color:#b9c9d1;max-width:34ch;text-align:right;}
+  .ciclo .step .d{margin-left:auto;font-size:13.5px;color:#cdd9e0;max-width:34ch;text-align:right;}
   @media(max-width:700px){.ciclo .step{flex-wrap:wrap;} .ciclo .step .d{margin-left:52px;text-align:left;}}
 
   /* 06 · Protección */
   .prot{padding:150px 0;color:#fff;text-align:center;}
   .prot h2{font-size:var(--fs-mega);font-weight:300;letter-spacing:-.024em;max-width:18ch;margin:18px auto 0;}
-  .prot .tag{color:#bfe6df;}
+  .prot .tag{color:#d2efe9;}
   .prot p{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
-    color:#bfe6df;margin-top:26px;}
+    color:#d2efe9;margin-top:26px;}
 
   /* 07 · Principios editoriales */
   .prin{padding:60px 0 40px;}
@@ -238,7 +244,7 @@
   .plat .caps a:hover .g{color:var(--teal);}
 
   /* 10 · Contacto */
-  .fin{padding:150px 0;color:#f2f3f4;text-align:center;}
+  .fin{padding:150px 0;color:#fff;text-align:center;}
   .fin h2{font-size:var(--fs-big);font-weight:300;letter-spacing:-.022em;max-width:22ch;margin:16px auto 0;}
   .fin .btn-sm{border-color:rgba(255,255,255,.46);color:#fff;}
   .fin .btn-sm:hover{background:#fff;color:var(--ink);}
@@ -351,7 +357,7 @@
 <!-- ══ 05 · CICLO ══ -->
 <section class="ciclo" id="s-ciclo" data-theme="deep">
   <div class="wrap">
-    <p class="tag t rv" data-i18n="cy_k">03 · The cycle</p>
+    <p class="tag t rv" style="color:var(--teal-lt);" data-i18n="cy_k">03 · The cycle</p>
     <div class="steps" id="ciclo-steps">
       <div class="step"><span class="n">/01</span><span class="w" data-i18n="cy1">See</span><span class="d" data-i18n="cy1d">The whole asset, in one place.</span></div>
       <div class="step"><span class="n">/02</span><span class="w" data-i18n="cy2">Understand</span><span class="d" data-i18n="cy2d">What matters, and what changed.</span></div>
