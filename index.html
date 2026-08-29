@@ -112,8 +112,8 @@
   html[data-theme="deep"] .head .brand .b-light, html[data-theme="green"] .head .brand .b-light{display:inline-flex;align-items:center;gap:10px;}
 
   /* 01 · Héroe */
-  .hero{padding:136px 0 110px;position:relative;overflow:hidden;}
-  .hero .mega{max-width:none;line-height:1.04;letter-spacing:-.026em;}
+  .hero{padding:156px 0 128px;position:relative;overflow:hidden;}
+  .hero .mega{max-width:none;line-height:1.02;letter-spacing:-.026em;}
   .hero-line{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;
     text-transform:uppercase;color:var(--teal);margin-top:26px;}
   :lang(zh) .hero-line{letter-spacing:.3em;}
@@ -134,7 +134,7 @@
   @media(max-width:760px){.pulse{display:none;}}
 
   /* 02–04 · Relato pegajoso: puntos → red → orden → Eagle Eye */
-  .relato{position:relative;height:360vh;}
+  .relato{position:relative;height:420vh;}
   .rl-stage{position:sticky;top:0;height:100vh;overflow:hidden;
     background:var(--sand);transition:background-color 1.15s var(--ease);}
   .rl-stage.oscuro{background:var(--navy);}
@@ -177,6 +177,11 @@
     padding-left:20px;transition:color .2s;}
   .linklist a::before{content:'↳';position:absolute;left:0;color:var(--teal);}
   .linklist a:hover{color:var(--teal);}
+
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 40px;margin-top:42px;padding-top:22px;
+    border-top:1px solid var(--line);}
+  .hero-meta div{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--grey);}
 
   /* 05 · Ciclo */
   .ciclo{padding:140px 0;color:#fff;}
@@ -241,6 +246,8 @@
   .plat .caps .t{font-size:16.5px;font-weight:400;letter-spacing:-.014em;}
   .plat .caps .g{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--grey);flex:none;}
+  .plat .caps .dd{display:block;font-size:13px;color:var(--ink-2);margin-top:4px;
+    font-weight:400;letter-spacing:0;max-width:52ch;}
   .plat .caps a:hover .g{color:var(--teal);}
 
   /* 10 · Contacto */
@@ -314,7 +321,7 @@
   <a href="#s-hero" data-i18n-lbl="r1" data-lbl="Intro" aria-label="Intro"></a>
   <a href="#eagle-eye" data-i18n-lbl="r2" data-lbl="Eagle Eye" aria-label="Eagle Eye"></a>
   <a href="#s-ciclo" data-i18n-lbl="r3" data-lbl="Cycle" aria-label="Cycle"></a>
-  <a href="#s-prot" data-i18n-lbl="r4" data-lbl="Protection" aria-label="Protection"></a>
+  <a href="#s-prot" data-i18n-lbl="r4" data-lbl="The rule" aria-label="The rule"></a>
   <a href="#s-prin" data-i18n-lbl="r5" data-lbl="Principles" aria-label="Principles"></a>
   <a href="#s-fund" data-i18n-lbl="r6" data-lbl="Founders" aria-label="Founders"></a>
   <a href="#s-plat" data-i18n-lbl="r7" data-lbl="Platform" aria-label="Platform"></a>
@@ -324,12 +331,10 @@
 <!-- ══ 01 · HÉROE ══ -->
 <section class="hero" id="s-hero" data-theme="paper">
   <div class="wrap">
-    <p class="tag g rv" style="margin-bottom:24px;" data-i18n="hero_tag">Solar · Wind · Storage</p>
     <h1 class="mega rv in" data-i18n="hero">Operational<br>intelligence<br><span class="dim">for renewable energy.</span></h1>
     <p class="hero-line rv" data-i18n="hero_line">See more. Know earlier. Operate better.</p>
-    <div class="hero-acts rv" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:38px;">
-      <a href="#eagle-eye" class="btn-sm" style="background:var(--ink);color:#fff;" data-i18n="h_a1">Explore Eagle Eye</a>
-      <a href="plataforma.html#contact" class="hero-sec" data-i18n="h_a2">Request a demo</a>
+    <div class="hero-acts rv" style="margin-top:40px;">
+      <a href="#eagle-eye" class="btn-sm" style="background:var(--ink);color:#fff;" data-i18n="h_a1">Explore Eagle Eye →</a>
     </div>
   </div>
   <div class="pulse" aria-hidden="true"><i></i><span></span><span></span><span></span></div>
@@ -341,7 +346,7 @@
     <svg id="rl-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
     <div class="rl-txt" id="rt-1">
       <p class="tag g" data-i18n="rl1_k">02 · The problem</p>
-      <h2 data-i18n="rl1_h">Your assets are generating thousands of signals.</h2>
+      <h2 data-i18n="rl1_h">See the risk before it becomes the incident.</h2>
     </div>
     <div class="rl-txt" id="rt-2">
       <h2 data-i18n="rl2_h">SCADA. Weather. Equipment. Alarms. Maintenance. Performance.</h2>
@@ -349,7 +354,8 @@
     </div>
     <div class="rl-txt" id="rt-3">
       <h2 style="font-family:var(--mono);letter-spacing:.3em;text-transform:uppercase;font-size:clamp(1.4rem,1rem+2vw,2.6rem);">Eagle Eye</h2>
-      <p class="lede" style="max-width:44ch;" data-i18n="rl3_p">The operational intelligence layer for renewable energy.</p>
+      <p data-i18n="rl3_s">The intelligent operational layer for renewable energy.</p>
+      <p class="lede" style="max-width:52ch;" data-i18n="rl3_p">Eagle Eye connects the signals that matter across your assets, helping teams see what is happening, understand what matters and act earlier.</p>
     </div>
   </div>
 </div>
@@ -370,9 +376,9 @@
 <!-- ══ 06 · PROTECCIÓN ══ -->
 <section class="prot" id="s-prot" data-theme="green">
   <div class="wrap">
-    <p class="tag rv" data-i18n="pt_k">04 · Protection</p>
-    <h2 class="rv" data-i18n="pt_h">See the risk before it becomes the incident.</h2>
-    <p class="rv" data-i18n="pt_p">Protection is the product.</p>
+    <p class="tag rv" data-i18n="pt_k">04 · The rule</p>
+    <h2 class="rv" data-i18n="pt_h">If data coverage is insufficient, the figure is not published.</h2>
+    <p class="rv" data-i18n="pt_p">The gap is declared — never filled with zeros.</p>
   </div>
 </section>
 
@@ -416,12 +422,13 @@
       <span class="c" data-i18n="pl_c4">Action</span>
     </div>
     <div class="caps rv">
-      <a href="plataforma.html#software"><span class="t" data-i18n="cap1">Monitoring</span><span class="g" data-i18n="cap_go">Open</span></a>
-      <a href="plataforma.html#capabilities"><span class="t" data-i18n="cap2">Analysis</span><span class="g" data-i18n="cap_go">Open</span></a>
-      <a href="plataforma.html#platform"><span class="t" data-i18n="cap3">Alerts</span><span class="g" data-i18n="cap_go">Open</span></a>
-      <a href="informe.html"><span class="t" data-i18n="cap4">Reporting</span><span class="g" data-i18n="cap_go">Open</span></a>
-      <a href="demos.html"><span class="t" data-i18n="cap5">Maintenance intelligence</span><span class="g" data-i18n="cap_go">Open</span></a>
-      <a href="plataforma.html#service"><span class="t" data-i18n="cap6">Performance optimization</span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="plataforma.html#software"><span class="t" data-i18n="cap1">Monitoring<small class="dd" data-i18n="capd1">Continuous visibility over the SCADA, PPC and BMS you already run.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="plataforma.html#capabilities"><span class="t" data-i18n="cap2">Analysis<small class="dd" data-i18n="capd2">KPIs computed only on data that passed quality control.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="demos.html"><span class="t" data-i18n="cap3">Alerts<small class="dd" data-i18n="capd3">Sustained deviations flagged before they become failures.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="informe.html"><span class="t" data-i18n="cap4">Reporting<small class="dd" data-i18n="capd4">Daily, monthly and portfolio. Open a sample report and check it.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="plataforma.html#om"><span class="t" data-i18n="cap5">Maintenance intelligence<small class="dd" data-i18n="capd5">Findings routed with evidence. A person confirms every dispatch.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="plataforma.html#service"><span class="t" data-i18n="cap6">Performance optimization<small class="dd" data-i18n="capd6">Maintenance effort prioritized by evidence, not rotation.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
+      <a href="plataforma.html#platform"><span class="t" data-i18n="cap7">Asset intelligence<small class="dd" data-i18n="capd7">The Control Center: fourteen modules over one verified dataset.</small></span><span class="g" data-i18n="cap_go">Open</span></a>
     </div>
   </div>
 </section>
@@ -430,7 +437,7 @@
 <section class="fin" id="s-fin" data-theme="deep">
   <div class="wrap">
     <p class="tag t rv" data-i18n="ct_e">Contact</p>
-    <h2 class="rv" data-i18n="ct_h">Let's make your assets more intelligent.</h2>
+    <h2 class="rv" data-i18n="ct_h">Let’s make your assets more intelligent.</h2>
     <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;">
       <a href="plataforma.html#contact" class="btn-sm pri" data-i18n="cta_demo">Request a Demo</a>
       <a href="mailto:jay@quorelia.org" class="btn-sm">jay@quorelia.org</a>
@@ -482,40 +489,48 @@ const i18n = {
  en:{
   nav_sw:"Platform", nav_plat:"Control Center", nav_demos:"Demos", nav_ins:"Insights",
   nav_gov:"Government", nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
-  hero_tag:"Solar · Wind · Storage",
   hero:"Operational<br>intelligence<br><span class=\"dim\">for renewable energy.</span>",
   hero_line:"See more. Know earlier. Operate better.",
-  h_a1:"Explore Eagle Eye", h_a2:"Request a demo",
-  rl1_k:"02 · The problem", rl1_h:"Your assets are generating thousands of signals.",
+  h_a1:"Explore Eagle Eye →",
+  rl1_k:"02 · The problem",
+  rl1_h:"See the risk before it becomes the incident.",
   rl2_h:"SCADA. Weather. Equipment. Alarms. Maintenance. Performance.",
   rl2_p:"Data is not intelligence.",
-  rl3_p:"The operational intelligence layer for renewable energy.",
+  rl3_s:"The intelligent operational layer for renewable energy.",
+  rl3_p:"Eagle Eye connects the signals that matter across your assets, helping teams see what is happening, understand what matters and act earlier.",
   lb1:"SCADA", lb2:"WEATHER", lb3:"EQUIPMENT", lb4:"ALARMS", lb5:"MAINTENANCE", lb6:"PERFORMANCE",
   cy_k:"03 · The cycle",
   cy1:"See", cy1d:"The whole asset, in one place.",
   cy2:"Understand", cy2d:"What matters, and what changed.",
   cy3:"Act", cy3d:"Earlier, with the evidence attached.",
   cy4:"Optimize", cy4d:"Every figure traceable to its measurement.",
-  pt_k:"04 · Protection", pt_h:"See the risk before it becomes the incident.",
-  pt_p:"Protection is the product.",
+  pt_k:"04 · The rule",
+  pt_h:"If data coverage is insufficient, the figure is not published.",
+  pt_p:"The gap is declared — never filled with zeros.",
   pr_n:"05 · Principles",
   pr_intro:"Four words on the first page of the founders' notebook. They are still the specification.",
   pr1:"Quality", pr1p:"Reliable information for reliable decisions.",
   pr2:"Security", pr2p:"Continuous awareness across the asset.",
-  pr3:"Trust", pr3p:"Intelligence people can act on.",
-  pr4:"Protection", pr4p:"Risks identified before they become losses.",
+  pr3:"Trust", pr3p:"Operational intelligence people can act on.",
+  pr4:"Protection", pr4p:"Identify risks before they become costly problems.",
   why_n:"06 · Why Quorelia",
   why_h:"Built from the energy floor<br>to the boardroom.",
   why_d:"Finance · Strategy · Asset value",
   why_j:"Operations · Technology · Data",
   why_dos:"Two perspectives. One problem.",
-  why_gap:"Renewable assets generate enormous amounts of information. Quorelia exists to turn it into better decisions.",
+  why_gap:"Renewable-energy assets generate enormous amounts of information. Quorelia exists to turn that information into better decisions.",
   pl_k:"07 · The platform",
   pl_c1:"Data", pl_c3:"Intelligence", pl_c4:"Action",
-  cap1:"Monitoring", cap2:"Analysis", cap3:"Alerts", cap4:"Reporting",
-  cap5:"Maintenance intelligence", cap6:"Performance optimization", cap_go:"Open",
-  ct_e:"Contact", ct_h:"Let's make your assets more intelligent.",
-  r1:"Intro", r2:"Eagle Eye", r3:"Cycle", r4:"Protection",
+  cap1:"Monitoring", capd1:"Continuous visibility over the SCADA, PPC and BMS you already run.",
+  cap2:"Analysis", capd2:"KPIs computed only on data that passed quality control.",
+  cap3:"Alerts", capd3:"Sustained deviations flagged before they become failures.",
+  cap4:"Reporting", capd4:"Daily, monthly and portfolio. Open a sample report and check it.",
+  cap5:"Maintenance intelligence", capd5:"Findings routed with evidence. A person confirms every dispatch.",
+  cap6:"Performance optimization", capd6:"Maintenance effort prioritized by evidence, not rotation.",
+  cap7:"Asset intelligence", capd7:"The Control Center: fourteen modules over one verified dataset.",
+  cap_go:"Open",
+  ct_e:"Contact", ct_h:"Let’s make your assets more intelligent.",
+  r1:"Intro", r2:"Eagle Eye", r3:"Cycle", r4:"The rule",
   r5:"Principles", r6:"Founders", r7:"Platform", r8:"Contact",
   f_desc:"Operational intelligence for renewable energy. Solar, wind and storage.",
   f_prod:"Platform", f_sample:"Sample reports", f_dash:"Live demos",
@@ -526,28 +541,30 @@ const i18n = {
  es:{
   nav_sw:"Plataforma", nav_plat:"Control Center", nav_demos:"Demos", nav_ins:"Insights",
   nav_gov:"Gobierno", nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
-  hero_tag:"Solar · Eólica · Almacenamiento",
   hero:"Inteligencia<br>operacional<br><span class=\"dim\">para energías renovables.</span>",
   hero_line:"Ver más. Saber antes. Operar mejor.",
-  h_a1:"Conozca Eagle Eye", h_a2:"Solicitar demo",
-  rl1_k:"02 · El problema", rl1_h:"Sus activos están generando miles de señales.",
+  h_a1:"Conozca Eagle Eye →",
+  rl1_k:"02 · El problema",
+  rl1_h:"Vea el riesgo antes de que se convierta en incidente.",
   rl2_h:"SCADA. Meteorología. Equipos. Alarmas. Mantenimiento. Desempeño.",
   rl2_p:"El dato no es inteligencia.",
-  rl3_p:"La capa de inteligencia operacional para energías renovables.",
+  rl3_s:"La capa operacional inteligente para energías renovables.",
+  rl3_p:"Eagle Eye conecta las señales que importan en sus activos: ver lo que ocurre, entender lo que importa y actuar antes.",
   lb1:"SCADA", lb2:"METEOROLOGÍA", lb3:"EQUIPOS", lb4:"ALARMAS", lb5:"MANTENIMIENTO", lb6:"DESEMPEÑO",
   cy_k:"03 · El ciclo",
   cy1:"Ver", cy1d:"El activo completo, en un solo lugar.",
   cy2:"Entender", cy2d:"Qué importa y qué cambió.",
   cy3:"Actuar", cy3d:"Antes, con la evidencia adjunta.",
   cy4:"Optimizar", cy4d:"Cada cifra trazable hasta su medición.",
-  pt_k:"04 · Protección", pt_h:"Vea el riesgo antes de que se convierta en incidente.",
-  pt_p:"La protección es el producto.",
+  pt_k:"04 · La regla",
+  pt_h:"Si la cobertura de datos no alcanza, la cifra no se publica.",
+  pt_p:"La brecha se declara — nunca se rellena con ceros.",
   pr_n:"05 · Principios",
   pr_intro:"Cuatro palabras en la primera página del cuaderno de los fundadores. Siguen siendo la especificación.",
   pr1:"Calidad", pr1p:"Información confiable para decisiones confiables.",
   pr2:"Seguridad", pr2p:"Conciencia continua sobre el activo.",
-  pr3:"Confianza", pr3p:"Inteligencia sobre la que se puede actuar.",
-  pr4:"Protección", pr4p:"Riesgos identificados antes de convertirse en pérdidas.",
+  pr3:"Confianza", pr3p:"Inteligencia operacional sobre la que se puede actuar.",
+  pr4:"Protección", pr4p:"Identificar riesgos antes de que se conviertan en problemas costosos.",
   why_n:"06 · Por qué Quorelia",
   why_h:"Del piso de planta<br>al directorio.",
   why_d:"Finanzas · Estrategia · Valor del activo",
@@ -556,10 +573,16 @@ const i18n = {
   why_gap:"Los activos renovables generan enormes cantidades de información. Quorelia existe para convertirla en mejores decisiones.",
   pl_k:"07 · La plataforma",
   pl_c1:"Dato", pl_c3:"Inteligencia", pl_c4:"Acción",
-  cap1:"Monitoreo", cap2:"Análisis", cap3:"Alertas", cap4:"Reportería",
-  cap5:"Inteligencia de mantenimiento", cap6:"Optimización de desempeño", cap_go:"Abrir",
+  cap1:"Monitoreo", capd1:"Visibilidad continua sobre el SCADA, PPC y BMS que usted ya opera.",
+  cap2:"Análisis", capd2:"KPIs calculados solo sobre datos que pasaron control de calidad.",
+  cap3:"Alertas", capd3:"Desviaciones sostenidas detectadas antes de convertirse en falla.",
+  cap4:"Reportería", capd4:"Diarios, mensuales y de cartera. Abra un informe de muestra y revíselo.",
+  cap5:"Inteligencia de mantenimiento", capd5:"Hallazgos derivados con evidencia. Una persona confirma cada despacho.",
+  cap6:"Optimización de desempeño", capd6:"Esfuerzo de mantenimiento priorizado por evidencia, no por rotación.",
+  cap7:"Inteligencia del activo", capd7:"El Control Center: catorce módulos sobre un mismo dato verificado.",
+  cap_go:"Abrir",
   ct_e:"Contacto", ct_h:"Hagamos más inteligentes sus activos.",
-  r1:"Inicio", r2:"Eagle Eye", r3:"Ciclo", r4:"Protección",
+  r1:"Inicio", r2:"Eagle Eye", r3:"Ciclo", r4:"La regla",
   r5:"Principios", r6:"Fundadores", r7:"Plataforma", r8:"Contacto",
   f_desc:"Inteligencia operacional para energías renovables. Solar, eólica y almacenamiento.",
   f_prod:"Plataforma", f_sample:"Informes de muestra", f_dash:"Demos en vivo",
@@ -570,28 +593,30 @@ const i18n = {
  zh:{
   nav_sw:"平台", nav_plat:"控制中心", nav_demos:"演示", nav_ins:"洞察",
   nav_gov:"政府事务", nav_story:"我们的故事", nav_contact:"联系我们", cta_demo:"预约演示",
-  hero_tag:"光伏 · 风电 · 储能",
   hero:"运营智能<br><span class=\"dim\">为可再生能源而生。</span>",
   hero_line:"看得更全。知得更早。运营更优。",
-  h_a1:"了解 Eagle Eye", h_a2:"预约演示",
-  rl1_k:"02 · 问题", rl1_h:"您的资产正在产生成千上万个信号。",
+  h_a1:"了解 Eagle Eye →",
+  rl1_k:"02 · 问题",
+  rl1_h:"在风险酿成事故之前，先看见它。",
   rl2_h:"SCADA。气象。设备。告警。维护。性能。",
   rl2_p:"数据不等于智能。",
-  rl3_p:"可再生能源的运营智能层。",
+  rl3_s:"可再生能源的智能运营层。",
+  rl3_p:"Eagle Eye 连接资产中真正重要的信号：看清正在发生什么，理解什么最重要，并更早行动。",
   lb1:"SCADA", lb2:"气象", lb3:"设备", lb4:"告警", lb5:"维护", lb6:"性能",
   cy_k:"03 · 循环",
   cy1:"看见", cy1d:"整个资产，尽在一处。",
   cy2:"理解", cy2d:"什么最重要，什么变了。",
   cy3:"行动", cy3d:"更早行动，证据随行。",
   cy4:"优化", cy4d:"每个数字都可追溯到测量。",
-  pt_k:"04 · 保护", pt_h:"在风险酿成事故之前，先看见它。",
-  pt_p:"保护，就是产品本身。",
+  pt_k:"04 · 规则",
+  pt_h:"数据覆盖不足时，数字不予发布。",
+  pt_p:"缺口被声明——绝不用零填补。",
   pr_n:"05 · 原则",
   pr_intro:"创始人笔记本第一页写下的四个词。至今仍是这家公司的规格书。",
   pr1:"质量", pr1p:"可靠的信息，支撑可靠的决策。",
   pr2:"安全", pr2p:"对资产的持续感知。",
-  pr3:"信任", pr3p:"可以据此行动的智能。",
-  pr4:"保护", pr4p:"在风险成为损失之前识别它。",
+  pr3:"信任", pr3p:"可以据此行动的运营智能。",
+  pr4:"保护", pr4p:"在风险变成代价高昂的问题之前识别它。",
   why_n:"06 · 为什么是 Quorelia",
   why_h:"从电站现场<br>到董事会。",
   why_d:"金融 · 战略 · 资产价值",
@@ -600,10 +625,16 @@ const i18n = {
   why_gap:"可再生资产产生海量信息。Quorelia 的存在，就是把它变成更好的决策。",
   pl_k:"07 · 平台",
   pl_c1:"数据", pl_c3:"智能", pl_c4:"行动",
-  cap1:"监测", cap2:"分析", cap3:"告警", cap4:"报告",
-  cap5:"维护智能", cap6:"性能优化", cap_go:"打开",
+  cap1:"监测", capd1:"对您现有 SCADA、PPC 与 BMS 的持续可见。",
+  cap2:"分析", capd2:"仅在通过质量控制的数据上计算 KPI。",
+  cap3:"告警", capd3:"在演变为故障之前发现持续性偏差。",
+  cap4:"报告", capd4:"日报、月报与组合报告。打开样例逐条核对。",
+  cap5:"维护智能", capd5:"发现连同证据派发，每次调度由人确认。",
+  cap6:"性能优化", capd6:"按证据而非轮换排序维护投入。",
+  cap7:"资产智能", capd7:"控制中心：十四个模块建立在同一套经验证的数据之上。",
+  cap_go:"打开",
   ct_e:"联系", ct_h:"让您的资产更智能。",
-  r1:"首页", r2:"Eagle Eye", r3:"循环", r4:"保护",
+  r1:"首页", r2:"Eagle Eye", r3:"循环", r4:"规则",
   r5:"原则", r6:"创始人", r7:"平台", r8:"联系",
   f_desc:"面向可再生能源的运营智能。光伏、风电与储能。",
   f_prod:"平台", f_sample:"样例报告", f_dash:"实时演示",
@@ -775,21 +806,28 @@ function setLang(l){
     if(t1)t1.classList.add('on'); if(t2)t2.classList.add('on'); if(t3)t3.classList.add('on');
     stage.classList.add('oscuro');
   } else {
-    var activo=false, pend=false;
-    function paso(){
-      pend=false;
+    /* Inercia: el objetivo lo fija el scroll; el render lo persigue con
+       amortiguación, así el relato se desliza en vez de saltar. */
+    var activo=false, animando=false, objetivo=0, actual=0;
+    function medir(){
       var r=relato.getBoundingClientRect(), vh=window.innerHeight;
-      var p=Math.min(1,Math.max(0,-r.top/(r.height-vh)));
-      render(p);
+      objetivo=Math.min(1,Math.max(0,-r.top/(r.height-vh)));
     }
-    function onScroll(){ if(activo && !pend){ pend=true; requestAnimationFrame(paso); } }
+    function bucle(){
+      if(!activo && Math.abs(objetivo-actual)<0.002){ animando=false; return; }
+      actual += (objetivo-actual)*0.13;
+      if(Math.abs(objetivo-actual)<0.0015) actual=objetivo;
+      render(actual);
+      requestAnimationFrame(bucle);
+    }
+    function arrancar(){ medir(); if(!animando){ animando=true; requestAnimationFrame(bucle); } }
     var vio=new IntersectionObserver(function(es){
-      es.forEach(function(e){ activo=e.isIntersecting; if(activo) onScroll(); });
+      es.forEach(function(e){ activo=e.isIntersecting; if(activo) arrancar(); });
     });
     vio.observe(relato);
-    window.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',onScroll);
-    paso();
+    window.addEventListener('scroll',function(){ if(activo) arrancar(); },{passive:true});
+    window.addEventListener('resize',function(){ if(activo) arrancar(); });
+    medir(); actual=objetivo; render(actual);
   }
 
   /* — Ciclo: las cuatro palabras entran en secuencia — */
