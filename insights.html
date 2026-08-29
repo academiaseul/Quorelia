@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Insights — Quorelia</title>
+<meta name="description" content="Short, technical and honest notes on renewable-energy operations: verified figures, contractual availability, BESS and operational intelligence.">
+<link rel="canonical" href="https://quorelia.org/insights.html">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quorelia.org/insights.html">
+<meta property="og:title" content="Insights — Quorelia">
+<meta property="og:description" content="Notes from the operational floor: figures, risk and verification in renewable energy.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Insights — Quorelia",
+ "url":"https://quorelia.org/insights.html","inLanguage":["en","es","zh"],
+ "publisher":{"@type":"Organization","name":"Quorelia SpA","url":"https://quorelia.org/"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Página editorial: tipografía grande, filetes, cero tarjetas. */
+  .only-en,.only-es,.only-zh{display:none;}
+  :lang(en) .only-en{display:block;} :lang(es) .only-es{display:block;} :lang(zh) .only-zh{display:block;}
+  span.only-en,span.only-es,span.only-zh{display:none;}
+  :lang(en) span.only-en{display:inline;} :lang(es) span.only-es{display:inline;} :lang(zh) span.only-zh{display:inline;}
+
+  .ins-hero{padding:120px 0 40px;}
+  .ins-hero h1{font-size:var(--fs-mega);font-weight:300;letter-spacing:-.024em;max-width:20ch;}
+  .ins-hero .lede{margin-top:18px;}
+
+  .ins-list{margin:40px 0 20px;}
+  .ins-row{display:grid;grid-template-columns:150px 1fr auto;gap:26px;align-items:baseline;
+    border-top:1px solid var(--line);padding:30px 4px;transition:background .2s,padding .2s;}
+  .ins-row:last-child{border-bottom:1px solid var(--line);}
+  .ins-row:hover{background:var(--paper-2);padding-left:14px;}
+  .ins-row .meta{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--grey);line-height:2;}
+  .ins-row .ttl{font-size:clamp(1.3rem,1rem+1.4vw,1.9rem);font-weight:300;letter-spacing:-.02em;color:var(--ink);}
+  .ins-row .dek{font-size:14px;color:var(--ink-2);margin-top:8px;max-width:60ch;}
+  .ins-row .go{font-family:var(--mono);font-size:11px;color:var(--grey);transition:color .2s;}
+  .ins-row:hover .go{color:var(--teal);}
+  @media(max-width:760px){.ins-row{grid-template-columns:1fr;gap:8px;}}
+
+  .art{border-top:1px solid var(--line);padding:90px 0 70px;}
+  .art .wrapt{max-width:720px;margin:0 auto;text-align:left;}
+  .art .meta{font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--grey);margin-bottom:18px;display:flex;gap:18px;flex-wrap:wrap;}
+  .art .meta .c{color:var(--teal);}
+  .art h2{font-size:clamp(1.7rem,1.3rem+2vw,2.7rem);font-weight:300;letter-spacing:-.022em;line-height:1.14;}
+  .art .cuerpo{margin-top:26px;}
+  .art .cuerpo p{font-size:15.5px;line-height:1.78;color:var(--ink-2);margin-bottom:16px;}
+  .art .cuerpo b{color:var(--ink);font-weight:600;}
+  .art .cuerpo .destacado{border-left:2px solid var(--teal);padding:4px 0 4px 20px;
+    font-size:17px;color:var(--ink);margin:24px 0;}
+  .art .nota{font-family:var(--mono);font-size:10.5px;color:var(--grey);
+    border-top:1px solid var(--line);padding-top:14px;margin-top:30px;line-height:1.8;}
+  .art .volver{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-2);position:relative;padding-left:20px;}
+  .art .volver::before{content:'↳';position:absolute;left:0;color:var(--teal);}
+  .art .volver:hover{color:var(--teal);}
+</style>
+</head>
+<body>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="plataforma.html" data-i18n="nav_sw">Platform</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+    <a href="insights.html" data-i18n="nav_ins">Insights</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+    <a href="plataforma.html#contact" data-i18n="nav_contact">Contact</a>
+  </nav>
+  <div class="d-foot">
+    <a href="plataforma.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+    <nav class="nav-links">
+      <a href="plataforma.html" data-i18n="nav_sw">Platform</a>
+      <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="insights.html" class="on" data-i18n="nav_ins">Insights</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="plataforma.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══ PORTADA EDITORIAL ══ -->
+<section class="ins-hero">
+  <div class="wrap" style="text-align:left;">
+    <p class="tag g rv left" data-i18n="ins_k">Insights</p>
+    <h1 class="rv" data-i18n="ins_h" style="margin-top:14px;">Notes from the operational floor.</h1>
+    <p class="lede rv left" style="margin-left:0;" data-i18n="ins_s">Short, technical and honest: how we think about figures, risk and verification in renewable energy.</p>
+
+    <div class="ins-list rv">
+      <a class="ins-row" href="#cifra-retenida">
+        <span class="meta"><span data-i18n="a1_cat">BESS · Verification</span><br>26·08·2026</span>
+        <span>
+          <span class="ttl only-en">The withheld figure</span>
+          <span class="ttl only-es">La cifra retenida</span>
+          <span class="ttl only-zh">被扣下的数字</span>
+          <span class="dek only-en">Why an honest system sometimes refuses to publish a number — and why that refusal is the product working.</span>
+          <span class="dek only-es">Por qué un sistema honesto a veces se niega a publicar un número — y por qué esa negativa es el producto funcionando.</span>
+          <span class="dek only-zh">为什么一个诚实的系统有时会拒绝发布某个数字——而这种拒绝恰恰是产品在正常工作。</span>
+        </span>
+        <span class="go">↳</span>
+      </a>
+      <a class="ins-row" href="#disponibilidad">
+        <span class="meta"><span data-i18n="a2_cat">O&amp;M · Asset performance</span><br>19·08·2026</span>
+        <span>
+          <span class="ttl only-en">The availability figure that decides payments</span>
+          <span class="ttl only-es">La disponibilidad que decide pagos</span>
+          <span class="ttl only-zh">决定付款的可用率</span>
+          <span class="dek only-en">Contractual availability is a legal quantity, not a dashboard decoration. Coverage must be published next to it.</span>
+          <span class="dek only-es">La disponibilidad contractual es una cantidad legal, no un adorno de dashboard. La cobertura debe publicarse a su lado.</span>
+          <span class="dek only-zh">合同可用率是一个法律量，不是仪表盘上的装饰。数据覆盖率必须与它并列发布。</span>
+        </span>
+        <span class="go">↳</span>
+      </a>
+      <a class="ins-row" href="#dato-inteligencia">
+        <span class="meta"><span data-i18n="a3_cat">Energy intelligence</span><br>12·08·2026</span>
+        <span>
+          <span class="ttl only-en">Data is not intelligence</span>
+          <span class="ttl only-es">El dato no es inteligencia</span>
+          <span class="ttl only-zh">数据不等于智能</span>
+          <span class="dek only-en">The founding thesis of Quorelia: renewable assets do not lack information. They lack understanding.</span>
+          <span class="dek only-es">La tesis fundacional de Quorelia: a los activos renovables no les falta información. Les falta comprensión.</span>
+          <span class="dek only-zh">Quorelia 的创立命题：可再生资产不缺信息，缺的是理解。</span>
+        </span>
+        <span class="go">↳</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARTÍCULO 1 ══ -->
+<article class="art" id="cifra-retenida">
+  <div class="wrap"><div class="wrapt">
+    <div class="meta"><span class="c" data-i18n="a1_cat">BESS · Verification</span><span>26·08·2026</span><span>Quorelia</span></div>
+    <h2 class="only-en">The withheld figure</h2>
+    <h2 class="only-es">La cifra retenida</h2>
+    <h2 class="only-zh">被扣下的数字</h2>
+
+    <div class="cuerpo only-en">
+      <p>Round-trip efficiency is the number everyone asks of a battery. It is also the easiest number to get wrong. The definition requires a <b>closed cycle</b>: energy out over energy in, measured between two moments with the same state of charge. If the cycle is open, the figure is not imprecise — it is undefined.</p>
+      <p>Most reporting pipelines publish it anyway. The spreadsheet has a cell, the dashboard has a widget, and an undefined number gets averaged into a monthly KPI that later appears in a board deck, an availability claim, or a regulatory filing.</p>
+      <div class="destacado">A system that cannot say "no figure today" will eventually say a wrong figure on the day it matters most.</div>
+      <p>Our engine takes the other path. When the cycle is open, the RTE is <b>withheld</b>, and the system writes the reason next to the empty space: cycle not closed, state of charge derived rather than measured, deviation beyond threshold. In our demo fleet, the illustrative case shows a derived SOC drifting +16,43 percentage points — publishing an efficiency on top of that would be fiction with decimals.</p>
+      <p>A withheld figure with a written motive is not a gap in the service. It is the service. It tells the reader the one thing a dashboard rarely admits: where the data ends.</p>
+      <p class="nota">Figures cited are from the Quorelia demo fleet and are illustrative. They do not represent real facilities or clients.</p>
+    </div>
+    <div class="cuerpo only-es">
+      <p>La eficiencia round-trip es el número que todos le piden a una batería. Es también el más fácil de calcular mal. La definición exige un <b>ciclo cerrado</b>: energía entregada sobre energía recibida, medida entre dos instantes con el mismo estado de carga. Si el ciclo está abierto, la cifra no es imprecisa — es indefinida.</p>
+      <p>La mayoría de las cadenas de reportería la publica igual. La planilla tiene una celda, el dashboard tiene un widget, y un número indefinido termina promediado en un KPI mensual que después aparece en un directorio, en una declaración de disponibilidad o en un envío regulatorio.</p>
+      <div class="destacado">Un sistema que no sabe decir «hoy no hay cifra» terminará diciendo una cifra equivocada el día en que más importa.</div>
+      <p>Nuestro motor toma el otro camino. Cuando el ciclo está abierto, la RTE se <b>retiene</b>, y el sistema escribe el motivo junto al espacio vacío: ciclo no cerrado, estado de carga derivado en lugar de medido, desviación sobre el umbral. En nuestra flota de demostración, el caso ilustrativo muestra un SOC derivado con una deriva de +16,43 puntos porcentuales — publicar una eficiencia encima de eso sería ficción con decimales.</p>
+      <p>Una cifra retenida con su motivo escrito no es un hueco en el servicio. Es el servicio. Le dice al lector lo único que un dashboard rara vez admite: dónde termina el dato.</p>
+      <p class="nota">Las cifras citadas provienen de la flota de demostración de Quorelia y son ilustrativas. No representan instalaciones ni clientes reales.</p>
+    </div>
+    <div class="cuerpo only-zh">
+      <p>循环效率（RTE）是所有人都会向电池要的数字，也是最容易算错的数字。它的定义要求一个<b>闭合循环</b>：在荷电状态相同的两个时刻之间，放出的能量除以充入的能量。循环若未闭合，这个数字不是"不够准"——而是没有定义。</p>
+      <p>多数报告流程照发不误。表格里有那个单元格，仪表盘上有那个组件，于是一个没有定义的数字被平均进月度 KPI，随后出现在董事会材料、可用率声明或监管申报中。</p>
+      <div class="destacado">一个不会说"今天没有数字"的系统，终将在最要紧的那天说出一个错误的数字。</div>
+      <p>我们的引擎走另一条路。循环未闭合时，RTE 会被<b>扣下</b>，系统在空位旁写明原因：循环未闭合、荷电状态是推算而非实测、偏差超过阈值。在我们的演示机组中，示意案例显示推算 SOC 漂移了 +16,43 个百分点——在这之上发布一个效率值，等于带小数点的虚构。</p>
+      <p>一个写明原因的被扣数字，不是服务的缺口，它就是服务本身。它告诉读者仪表盘极少承认的一件事：数据到哪里为止。</p>
+      <p class="nota">文中数字来自 Quorelia 演示机组，仅作示意，不代表真实电站或客户。</p>
+    </div>
+    <a class="volver" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-i18n="ins_back">All insights</a>
+  </div></div>
+</article>
+
+<!-- ══ ARTÍCULO 2 ══ -->
+<article class="art" id="disponibilidad" style="background:var(--paper-2);">
+  <div class="wrap"><div class="wrapt">
+    <div class="meta"><span class="c" data-i18n="a2_cat">O&amp;M · Asset performance</span><span>19·08·2026</span><span>Quorelia</span></div>
+    <h2 class="only-en">The availability figure that decides payments</h2>
+    <h2 class="only-es">La disponibilidad que decide pagos</h2>
+    <h2 class="only-zh">决定付款的可用率</h2>
+
+    <div class="cuerpo only-en">
+      <p>Contractual availability looks like a percentage on a dashboard. It is not. It is the quantity that settles liquidated damages, bonuses and warranty claims between owner, operator and vendor. When the figure moves one decimal, money moves with it.</p>
+      <p>That is why how it is computed matters more than where it is displayed. Weighting must follow the contract — guaranteed racks or guaranteed power, not whatever the SCADA happens to export. Exclusions must be applied as written, and each excluded hour must keep its justification attached.</p>
+      <div class="destacado">An availability figure without its data coverage is not a figure. It is a guess wearing a percentage sign.</div>
+      <p>The habit that corrupts most availability reporting is silent gap-filling: a day without data enters the average as a day of perfect health. Our rule is the opposite — gaps are never filled with zeros or with hundreds; they are declared. The KPI is published together with its <b>coverage</b>, and when coverage falls below the threshold the verdict is withheld rather than asserted.</p>
+      <p>The test we suggest for any monitoring vendor is one question: can every published percentage be traced back to the individual measurements that produced it, exclusions included? If the answer is no, the number is an opinion.</p>
+      <p class="nota">Methodology note. Demo-fleet values on this site are illustrative; contractual formulas follow each project's own annexes.</p>
+    </div>
+    <div class="cuerpo only-es">
+      <p>La disponibilidad contractual parece un porcentaje en un dashboard. No lo es. Es la cantidad que liquida multas, bonos y garantías entre dueño, operador y proveedor. Cuando la cifra se mueve un decimal, se mueve plata con ella.</p>
+      <p>Por eso importa más cómo se calcula que dónde se exhibe. La ponderación debe seguir al contrato — racks garantizados o potencia garantizada, no lo que el SCADA exporte por defecto. Las exclusiones deben aplicarse como están escritas, y cada hora excluida debe conservar su justificación adjunta.</p>
+      <div class="destacado">Una disponibilidad sin su cobertura de datos no es una cifra. Es una suposición con signo de porcentaje.</div>
+      <p>El hábito que corrompe la mayoría de la reportería de disponibilidad es el relleno silencioso: un día sin datos entra al promedio como un día de salud perfecta. Nuestra regla es la contraria — los huecos nunca se rellenan con ceros ni con cienes; se declaran. El KPI se publica junto a su <b>cobertura</b>, y cuando la cobertura cae bajo el umbral, el veredicto se retiene en lugar de afirmarse.</p>
+      <p>La prueba que sugerimos para cualquier proveedor de monitoreo es una sola pregunta: ¿puede cada porcentaje publicado trazarse hasta las mediciones individuales que lo produjeron, exclusiones incluidas? Si la respuesta es no, el número es una opinión.</p>
+      <p class="nota">Nota metodológica. Los valores de la flota demo de este sitio son ilustrativos; las fórmulas contractuales siguen los anexos de cada proyecto.</p>
+    </div>
+    <div class="cuerpo only-zh">
+      <p>合同可用率看上去是仪表盘上的一个百分比。它不是。它是在业主、运营方与设备商之间结算违约金、奖金与质保索赔的那个量。数字动一个小数位，钱就跟着动。</p>
+      <p>因此，怎么算比在哪里展示更重要。加权必须跟着合同走——按保证机架数或保证功率，而不是 SCADA 恰好导出的口径。豁免条款必须按原文执行，每一个被豁免的小时都要附带它的理由。</p>
+      <div class="destacado">没有数据覆盖率的可用率不是数字，是戴着百分号的猜测。</div>
+      <p>败坏可用率报告的习惯是无声补齐：没有数据的一天，被当作完美健康的一天计入平均。我们的规则相反——缺口从不用零或一百来填，而是被声明。KPI 与其<b>覆盖率</b>一起发布；覆盖率低于阈值时，结论被扣下而非断言。</p>
+      <p>我们建议对任何监测供应商只问一个问题：每一个发布的百分比，能否追溯到产生它的每一次测量，包括豁免？答案若是否，那个数字只是一个观点。</p>
+      <p class="nota">方法说明：本站演示机组数值仅作示意；合同公式以各项目附件为准。</p>
+    </div>
+    <a class="volver" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-i18n="ins_back">All insights</a>
+  </div></div>
+</article>
+
+<!-- ══ ARTÍCULO 3 ══ -->
+<article class="art" id="dato-inteligencia">
+  <div class="wrap"><div class="wrapt">
+    <div class="meta"><span class="c" data-i18n="a3_cat">Energy intelligence</span><span>12·08·2026</span><span>Quorelia</span></div>
+    <h2 class="only-en">Data is not intelligence</h2>
+    <h2 class="only-es">El dato no es inteligencia</h2>
+    <h2 class="only-zh">数据不等于智能</h2>
+
+    <div class="cuerpo only-en">
+      <p>A modern renewable plant does not have an information problem. A single BESS site streams hundreds of thousands of cell-level signals; a solar portfolio adds inverters, trackers, weather stations, alarms and maintenance logs. The signals exist. What is scarce is the answer to five short questions: what is happening, what matters, what changed, what is at risk, and what should we do.</p>
+      <p>Quorelia was founded on the distance between those two things. One founder spent his career looking at assets from the boardroom — finance, risk, the value a megawatt-hour either protects or loses. The other spent it on the energy floor — SCADA, automation, the physical reality behind every tag name. Both kept meeting the same gap from opposite sides.</p>
+      <div class="destacado">More data does not close the gap. Understanding does.</div>
+      <p>That is what an operational intelligence layer is for. It sits above the systems a plant already runs — replacing none of them — and does the unglamorous work: validating signals, connecting the ones that matter, refusing the figures that are not defined, and turning the rest into findings a person can act on, with the evidence attached.</p>
+      <p>The sequence we build for is short: data, observation, intelligence, decision, action, optimization. Every stage that gets skipped shows up later as an incident, a dispute or a lost megawatt-hour. The product exists so none of them are skipped.</p>
+    </div>
+    <div class="cuerpo only-es">
+      <p>Una planta renovable moderna no tiene un problema de información. Un solo sitio BESS transmite cientos de miles de señales a nivel de celda; una cartera solar suma inversores, trackers, estaciones meteorológicas, alarmas y bitácoras de mantenimiento. Las señales existen. Lo escaso es la respuesta a cinco preguntas cortas: qué está pasando, qué importa, qué cambió, qué está en riesgo y qué deberíamos hacer.</p>
+      <p>Quorelia se fundó sobre la distancia entre esas dos cosas. Un fundador pasó su carrera mirando los activos desde el directorio — finanzas, riesgo, el valor que un megavatio-hora protege o pierde. El otro la pasó en el piso de planta — SCADA, automatización, la realidad física detrás de cada tag. Ambos se topaban con la misma brecha desde lados opuestos.</p>
+      <div class="destacado">Más datos no cierran la brecha. La comprensión, sí.</div>
+      <p>Para eso existe una capa de inteligencia operacional. Se sitúa sobre los sistemas que la planta ya opera — sin reemplazar ninguno — y hace el trabajo sin gloria: validar señales, conectar las que importan, negarse a las cifras que no están definidas, y convertir el resto en hallazgos sobre los que una persona puede actuar, con la evidencia adjunta.</p>
+      <p>La secuencia para la que construimos es corta: dato, observación, inteligencia, decisión, acción, optimización. Cada etapa que se salta reaparece después como un incidente, una disputa o un megavatio-hora perdido. El producto existe para que ninguna se salte.</p>
+    </div>
+    <div class="cuerpo only-zh">
+      <p>一座现代可再生能源电站并不缺信息。单个储能站点就在传输数十万个电芯级信号；一个光伏组合还要加上逆变器、跟踪器、气象站、告警与维护记录。信号是有的。稀缺的是五个短问题的答案：正在发生什么，什么最重要，什么变了，什么有风险，我们该怎么做。</p>
+      <p>Quorelia 就建立在这两者的距离之上。一位创始人的职业生涯是从董事会看资产——金融、风险、每兆瓦时守住或流失的价值。另一位在电站现场——SCADA、自动化、每个测点背后的物理现实。两人从相反的方向，一再撞上同一道缺口。</p>
+      <div class="destacado">更多数据无法合上缺口。理解可以。</div>
+      <p>运营智能层就是为此而存在。它位于电站已有系统之上——不替换其中任何一个——去做那些不耀眼的工作：校验信号，连接真正重要的信号，拒绝没有定义的数字，并把其余的转化为一个人可以据此行动的发现，证据随行。</p>
+      <p>我们为之构建的序列很短：数据、观测、智能、决策、行动、优化。每跳过一环，日后都会以事故、争议或损失的兆瓦时重新出现。产品的存在，就是为了一环都不被跳过。</p>
+    </div>
+    <a class="volver" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-i18n="ins_back">All insights</a>
+  </div></div>
+</article>
+
+<!-- ══ CIERRE ══ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="tag t rv" data-i18n="ct_e">Contact</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:24ch;" data-i18n="ct_h">Let's make your assets more intelligent.</h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px;">
+      <a href="plataforma.html#contact" class="btn-sm" style="background:var(--teal);border-color:var(--teal);color:#fff;" data-i18n="cta_demo">Request a Demo</a>
+      <a href="mailto:jay@quorelia.org" class="btn-sm" style="border-color:rgba(255,255,255,.46);color:#fff;">jay@quorelia.org</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-logo">
+      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
+      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+    </div>
+    <div class="f-bot" style="border-top:0;padding-top:18px;">
+      <span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
+      <span data-i18n="f_tag">Intelligence for Critical Energy Infrastructure</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Opinions and methodology notes; illustrative figures come from the demo fleet and represent no real facility or client.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Platform", nav_demos:"Demos", nav_ins:"Insights", nav_gov:"Government",
+  nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
+  ins_k:"Insights", ins_h:"Notes from the operational floor.",
+  ins_s:"Short, technical and honest: how we think about figures, risk and verification in renewable energy.",
+  a1_cat:"BESS · Verification", a2_cat:"O&amp;M · Asset performance", a3_cat:"Energy intelligence",
+  ins_back:"All insights",
+  ct_e:"Contact", ct_h:"Let's make your assets more intelligent.",
+  f_terms:"Terms", f_priv:"Privacy",
+  f_tag:"Intelligence for Critical Energy Infrastructure",
+  f_fine:"Opinions and methodology notes; illustrative figures come from the demo fleet and represent no real facility or client."
+ },
+ es:{
+  nav_sw:"Plataforma", nav_demos:"Demos", nav_ins:"Insights", nav_gov:"Gobierno",
+  nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
+  ins_k:"Insights", ins_h:"Notas desde el piso de operación.",
+  ins_s:"Cortas, técnicas y honestas: cómo pensamos las cifras, el riesgo y la verificación en energía renovable.",
+  a1_cat:"BESS · Verificación", a2_cat:"O&amp;M · Desempeño de activos", a3_cat:"Inteligencia energética",
+  ins_back:"Todos los insights",
+  ct_e:"Contacto", ct_h:"Hagamos más inteligentes sus activos.",
+  f_terms:"Términos", f_priv:"Privacidad",
+  f_tag:"Inteligencia para Infraestructura Energética Crítica",
+  f_fine:"Opiniones y notas metodológicas; las cifras ilustrativas provienen de la flota demo y no representan instalaciones ni clientes reales."
+ },
+ zh:{
+  nav_sw:"平台", nav_demos:"演示", nav_ins:"洞察", nav_gov:"政府事务",
+  nav_story:"我们的故事", nav_contact:"联系我们", cta_demo:"预约演示",
+  ins_k:"洞察", ins_h:"来自运营现场的笔记。",
+  ins_s:"简短、技术、诚实——我们如何思考可再生能源中的数字、风险与核验。",
+  a1_cat:"储能 · 核验", a2_cat:"运维 · 资产表现", a3_cat:"能源智能",
+  ins_back:"全部洞察",
+  ct_e:"联系", ct_h:"让您的资产更智能。",
+  f_terms:"条款", f_priv:"隐私",
+  f_tag:"关键能源基础设施智能",
+  f_fine:"观点与方法说明；示意数字来自演示机组，不代表真实电站或客户。"
+ }
+};
+
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var btn=document.getElementById(p+'-'+k);
+      if(btn) btn.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
+})();
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
