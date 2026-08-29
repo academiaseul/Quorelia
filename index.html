@@ -22,7 +22,10 @@
 </script>
 <title>Quorelia — Operational Intelligence for Renewable Energy</title>
 <meta name="description" content="Operational intelligence for renewable energy. Eagle Eye connects SCADA, BESS, inverter and field data so teams see more, know earlier and operate better. Solar, wind and storage.">
+<<<<<<< HEAD
 <link rel="canonical" href="https://quorelia.org/">
+=======
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -45,6 +48,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="quorelia.css">
 <style>
+<<<<<<< HEAD
   /* ══ Portada v2 — relato continuo ══════════════════════════════════════
      Diez momentos, un solo sistema geométrico (punto → red → orden) y un
      fondo que acompaña la historia. El desarrollo vive en las páginas de
@@ -134,6 +138,58 @@
   .relato.static .rl-txt h2{color:#f2f3f4;}
   .relato.static .rl-txt .tag{color:#8fa3b0;}
   .relato.static .rl-txt p,.relato.static .rl-txt .lede{color:#b9c9d1;}
+=======
+  /* ── Portada mínima ───────────────────────────────────────────────────
+     Cinco momentos, en orden: qué es Quorelia, qué es Eagle Eye, en qué
+     cree, de dónde viene, y a dónde escribir. El desarrollo largo vive en
+     plataforma.html y en las páginas de sección. */
+  .hero{padding:128px 0 96px;}
+  .hero .mega{max-width:17ch;}
+  .hero-line{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--teal);margin-top:22px;}
+  :lang(zh) .hero-line{letter-spacing:.3em;}
+  .hero .lede{margin-top:22px;max-width:54ch;}
+
+  /* Eagle Eye: entradas → capa → salidas. Tipografía y filetes, sin adornos. */
+  .ee-diagram{max-width:820px;margin:52px auto 0;}
+  .ee-tier{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+  .ee-chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);
+    padding:9px 15px;background:var(--paper);}
+  .ee-tier.out .ee-chip{color:var(--ink);border-color:#aebbc1;}
+  .ee-link{width:1px;height:36px;background:#c8ced3;margin:0 auto;}
+  .ee-core{display:inline-flex;align-items:center;gap:13px;background:var(--ink);
+    color:#fff;font-family:var(--mono);font-size:14px;letter-spacing:.3em;
+    text-transform:uppercase;padding:15px 34px 15px 30px;
+    clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
+  .ee-core .dot{width:7px;height:7px;background:var(--teal);border-radius:50%;flex:none;
+    animation:latido 2.6s ease-in-out infinite;}
+  @keyframes latido{50%{opacity:.35;}}
+  @media(prefers-reduced-motion:reduce){.ee-core .dot{animation:none;}}
+
+  /* Ciclo conceptual: cuatro palabras, efecto de tipeo vía .m-name */
+  .cycle{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;
+    gap:10px 20px;margin:56px auto 0;}
+  .cycle .m-name{font-family:var(--mono);font-weight:400;text-transform:uppercase;
+    font-size:clamp(1.05rem,.85rem+1.3vw,1.75rem);letter-spacing:.12em;color:var(--ink);}
+  .cycle .sep{font-family:var(--mono);color:var(--teal);
+    font-size:clamp(1rem,.8rem+1.2vw,1.6rem);}
+
+  /* Principios: filas tipográficas .mod (la palabra grande escribe sola) */
+  .principles .lede{margin-bottom:14px;}
+  .principles .mod:last-of-type{border-bottom:1px solid var(--line);}
+
+  /* Fundadores */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;
+    margin:38px auto 0;text-align:left;}
+  .duo > div{border-top:1px solid var(--ink);padding-top:16px;}
+  .duo .who{font-family:var(--mono);font-size:12px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px;}
+  .duo p{font-size:14px;line-height:1.55;color:var(--ink-2);}
+  @media(max-width:640px){ .duo{grid-template-columns:1fr;} }
+  .gap-line{max-width:56ch;margin:38px auto 0;}
+  .close-line{font-size:17px;font-weight:500;color:var(--ink);margin-top:18px;}
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
 
   /* Enlace suelto con ↳, centrado */
   .linklist a{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
@@ -142,6 +198,7 @@
   .linklist a::before{content:'↳';position:absolute;left:0;color:var(--teal);}
   .linklist a:hover{color:var(--teal);}
 
+<<<<<<< HEAD
   /* 05 · Ciclo */
   .ciclo{padding:140px 0;color:#f2f3f4;}
   .ciclo .steps{display:flex;flex-direction:column;gap:6px;max-width:900px;margin:40px auto 0;}
@@ -216,6 +273,13 @@
   .fin .btn-sm.pri:hover{background:var(--teal-lt);border-color:var(--teal-lt);}
 
   footer{background:var(--paper);}
+=======
+  /* Botones sobre navy */
+  .dark .btn-sm{border-color:rgba(255,255,255,.46);color:#fff;}
+  .dark .btn-sm:hover{background:#fff;color:var(--ink);}
+  .dark .btn-sm.pri{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .dark .btn-sm.pri:hover{background:var(--teal-lt);border-color:var(--teal-lt);color:#fff;}
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
 </style>
 </head>
 <body>
@@ -277,6 +341,7 @@
 <!-- ══ 01 · HÉROE ══ -->
 <section class="hero" data-theme="paper">
   <div class="wrap">
+<<<<<<< HEAD
     <p class="tag g rv" style="margin-bottom:24px;" data-i18n="hero_tag">Solar · Wind · Storage</p>
     <h1 class="mega rv in" data-i18n="hero">Operational<br>intelligence<br><span class="dim">for renewable energy.</span></h1>
     <p class="hero-line rv" data-i18n="hero_line">See more. Know earlier. Operate better.</p>
@@ -316,10 +381,20 @@
       <div class="step"><span class="n">/02</span><span class="w" data-i18n="cy2">Understand</span><span class="d" data-i18n="cy2d">What matters, and what changed.</span></div>
       <div class="step"><span class="n">/03</span><span class="w" data-i18n="cy3">Act</span><span class="d" data-i18n="cy3d">Earlier, with the evidence attached.</span></div>
       <div class="step"><span class="n">/04</span><span class="w" data-i18n="cy4">Optimize</span><span class="d" data-i18n="cy4d">Every figure traceable to its measurement.</span></div>
+=======
+    <p class="tag g rv" style="margin-bottom:22px;" data-i18n="hero_tag">Solar · Wind · Storage</p>
+    <h1 class="mega rv in" data-i18n="hero">Operational intelligence <span class="dim">for renewable energy.</span></h1>
+    <p class="hero-line rv" data-i18n="hero_line">See more. Know earlier. Operate better.</p>
+    <p class="lede rv" data-i18n="hero_sub">Quorelia turns operational data into intelligence that helps renewable-energy teams understand their assets, identify risks and improve performance.</p>
+    <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;">
+      <a href="#eagle-eye" class="btn-sm" style="background:var(--ink);color:#fff;" data-i18n="h_a1">Explore Eagle Eye</a>
+      <a href="plataforma.html#contact" class="btn-sm" data-i18n="h_a2">Contact us</a>
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- ══ 06 · PROTECCIÓN ══ -->
 <section class="prot" data-theme="green">
   <div class="wrap">
@@ -354,10 +429,78 @@
     <p class="cierre rv" data-i18n="why_gap">Renewable assets generate enormous amounts of information. Quorelia exists to turn it into better decisions.</p>
     <div class="linklist rv" style="margin-top:40px;">
       <a href="story.html"><span data-i18n="nav_story">Our Story</span></a>
+=======
+<!-- ══════════ 01 · EAGLE EYE ══════════ -->
+<section id="eagle-eye" style="border-top:1px solid var(--line);">
+  <div class="wrap" style="text-align:center;">
+    <p class="tag g rv" data-i18n="ee_n">01 · The system</p>
+    <h2 class="big rv" style="margin:14px auto 10px;" data-i18n="ee_h">Eagle Eye</h2>
+    <p class="lede rv" style="margin:0 auto;" data-i18n="ee_sub">The operational intelligence layer for renewable energy.</p>
+    <p class="lede rv" style="margin:18px auto 0;max-width:60ch;font-size:15.5px;" data-i18n="ee_p">Eagle Eye sits above the systems you already run. It observes continuously — 24/7 — connects the signals that matter, and helps teams see what is happening, understand what matters and act earlier. It replaces nothing, and every figure is traceable to the measurement that produced it.</p>
+
+    <div class="ee-diagram rv">
+      <div class="ee-tier">
+        <span class="ee-chip">SCADA</span>
+        <span class="ee-chip" data-i18n="ee_i2">BESS</span>
+        <span class="ee-chip" data-i18n="ee_i3">Inverters</span>
+        <span class="ee-chip" data-i18n="ee_i4">Weather</span>
+        <span class="ee-chip" data-i18n="ee_i5">Maintenance</span>
+      </div>
+      <div class="ee-link"></div>
+      <div><span class="ee-core"><span class="dot"></span>Eagle Eye</span></div>
+      <div class="ee-link"></div>
+      <div class="ee-tier out">
+        <span class="ee-chip" data-i18n="ee_o1">Insight</span>
+        <span class="ee-chip" data-i18n="ee_o2">Risk</span>
+        <span class="ee-chip" data-i18n="ee_o3">Action</span>
+        <span class="ee-chip" data-i18n="ee_o4">Optimization</span>
+      </div>
+    </div>
+
+    <div class="cycle rv" aria-label="See, understand, act, optimize">
+      <span class="m-name" data-i18n="cy1">See</span><span class="sep">→</span>
+      <span class="m-name" data-i18n="cy2">Understand</span><span class="sep">→</span>
+      <span class="m-name" data-i18n="cy3">Act</span><span class="sep">→</span>
+      <span class="m-name" data-i18n="cy4">Optimize</span>
+    </div>
+
+    <div class="linklist rv" style="margin-top:44px;">
+      <a href="plataforma.html#software"><span data-i18n="ee_link">Inside the platform</span></a>
     </div>
   </div>
 </section>
 
+<!-- ══════════ 02 · PRINCIPIOS ══════════ -->
+<section class="principles" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="tag g rv left" data-i18n="pr_n">02 · Principles</p>
+    <p class="lede rv" style="margin:16px 0 34px;text-align:left;max-width:52ch;" data-i18n="pr_intro">Four words on the first page of the founders' notebook. They are still the specification.</p>
+
+    <div class="mod rv">
+      <h3 class="m-name" data-i18n="pr1">Quality</h3>
+      <p class="m-lead" data-i18n="pr1p">Reliable information for reliable decisions.</p>
+      <span class="m-n">/01</span>
+    </div>
+    <div class="mod rv">
+      <h3 class="m-name" data-i18n="pr2">Security</h3>
+      <p class="m-lead" data-i18n="pr2p">Continuous awareness across the asset.</p>
+      <span class="m-n">/02</span>
+    </div>
+    <div class="mod rv">
+      <h3 class="m-name" data-i18n="pr3">Trust</h3>
+      <p class="m-lead" data-i18n="pr3p">Intelligence people can act on.</p>
+      <span class="m-n">/03</span>
+    </div>
+    <div class="mod rv">
+      <h3 class="m-name" data-i18n="pr4">Protection</h3>
+      <p class="m-lead" data-i18n="pr4p">Risks identified before they become losses.</p>
+      <span class="m-n">/04</span>
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
+    </div>
+  </div>
+</section>
+
+<<<<<<< HEAD
 <!-- ══ 09 · PLATAFORMA ══ -->
 <section class="plat" data-theme="paper">
   <div class="wrap" style="text-align:center;">
@@ -375,16 +518,50 @@
       <a href="informe.html"><span class="t" data-i18n="cap4">Reporting</span><span class="g" data-i18n="cap_go">Open</span></a>
       <a href="demos.html"><span class="t" data-i18n="cap5">Maintenance intelligence</span><span class="g" data-i18n="cap_go">Open</span></a>
       <a href="plataforma.html#service"><span class="t" data-i18n="cap6">Performance optimization</span><span class="g" data-i18n="cap_go">Open</span></a>
+=======
+<!-- ══════════ 03 · POR QUÉ QUORELIA ══════════ -->
+<section>
+  <div class="wrap" style="text-align:center;">
+    <p class="tag g rv" data-i18n="why_n">03 · Why Quorelia</p>
+    <h2 class="big rv" style="margin:14px auto 12px;max-width:22ch;" data-i18n="why_h">Built from the energy floor to the boardroom.</h2>
+    <p class="lede rv" style="margin:0 auto;" data-i18n="why_sub">Quorelia was born from two perspectives of the same problem.</p>
+
+    <div class="duo rv">
+      <div>
+        <span class="who">Diego</span>
+        <p data-i18n="why_d">Finance, strategy, risk and asset value.</p>
+      </div>
+      <div>
+        <span class="who">Jay</span>
+        <p data-i18n="why_j">Renewable operations, SCADA, automation and data.</p>
+      </div>
+    </div>
+
+    <p class="lede gap-line rv" data-i18n="why_gap">Both saw the same gap: renewable assets generate enormous amounts of information, but information alone does not create better decisions.</p>
+    <p class="close-line rv" data-i18n="why_close">Quorelia exists to close that gap.</p>
+
+    <div class="linklist rv" style="margin-top:40px;">
+      <a href="story.html"><span data-i18n="nav_story">Our Story</span></a>
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- ══ 10 · CONTACTO ══ -->
 <section class="fin" data-theme="deep">
   <div class="wrap">
     <p class="tag t rv" data-i18n="ct_e">Contact</p>
     <h2 class="rv" data-i18n="ct_h">Let's make your assets more intelligent.</h2>
     <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;">
+=======
+<!-- ══════════ CIERRE ══════════ -->
+<section class="dark">
+  <div class="wrap">
+    <p class="tag t rv" data-i18n="ct_e">Quorelia</p>
+    <h2 class="big rv" style="margin:14px auto 18px;max-width:26ch;" data-i18n="ct_h">See the system. Understand the signal. Predict the risk. Act with confidence.</h2>
+    <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px;">
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
       <a href="plataforma.html#contact" class="btn-sm pri" data-i18n="cta_demo">Request a Demo</a>
       <a href="mailto:jay@quorelia.org" class="btn-sm">jay@quorelia.org</a>
     </div>
@@ -433,6 +610,7 @@
 <script>
 const i18n = {
  en:{
+<<<<<<< HEAD
   nav_sw:"Platform", nav_plat:"Control Center", nav_demos:"Demos", nav_ins:"Insights",
   nav_gov:"Government", nav_story:"Our Story", nav_contact:"Contact", cta_demo:"Request a Demo",
   hero_tag:"Solar · Wind · Storage",
@@ -452,11 +630,30 @@ const i18n = {
   pt_k:"04 · Protection", pt_h:"See the risk before it becomes the incident.",
   pt_p:"Protection is the product.",
   pr_n:"05 · Principles",
+=======
+  nav_sw:"Our Software", nav_plat:"Control Center", nav_cap:"Capabilities", nav_svc:"Service",
+  nav_demos:"Demos", nav_rep:"Reports", nav_gov:"Government", nav_story:"Our Story",
+  nav_contact:"Contact", cta_demo:"Request a Demo",
+  hero_tag:"Solar · Wind · Storage",
+  hero:"Operational intelligence <span class=\"dim\">for renewable energy.</span>",
+  hero_line:"See more. Know earlier. Operate better.",
+  hero_sub:"Quorelia turns operational data into intelligence that helps renewable-energy teams understand their assets, identify risks and improve performance.",
+  h_a1:"Explore Eagle Eye", h_a2:"Contact us",
+  ee_n:"01 · The system", ee_h:"Eagle Eye",
+  ee_sub:"The operational intelligence layer for renewable energy.",
+  ee_p:"Eagle Eye sits above the systems you already run. It observes continuously — 24/7 — connects the signals that matter, and helps teams see what is happening, understand what matters and act earlier. It replaces nothing, and every figure is traceable to the measurement that produced it.",
+  ee_i2:"BESS", ee_i3:"Inverters", ee_i4:"Weather", ee_i5:"Maintenance",
+  ee_o1:"Insight", ee_o2:"Risk", ee_o3:"Action", ee_o4:"Optimization",
+  cy1:"See", cy2:"Understand", cy3:"Act", cy4:"Optimize",
+  ee_link:"Inside the platform",
+  pr_n:"02 · Principles",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   pr_intro:"Four words on the first page of the founders' notebook. They are still the specification.",
   pr1:"Quality", pr1p:"Reliable information for reliable decisions.",
   pr2:"Security", pr2p:"Continuous awareness across the asset.",
   pr3:"Trust", pr3p:"Intelligence people can act on.",
   pr4:"Protection", pr4p:"Risks identified before they become losses.",
+<<<<<<< HEAD
   why_n:"06 · Why Quorelia",
   why_h:"Built from the energy floor<br>to the boardroom.",
   why_d:"Finance · Strategy · Asset value",
@@ -470,11 +667,24 @@ const i18n = {
   ct_e:"Contact", ct_h:"Let's make your assets more intelligent.",
   f_desc:"Operational intelligence for renewable energy. Solar, wind and storage.",
   f_prod:"Platform", f_sample:"Sample reports", f_dash:"Live demos",
+=======
+  why_n:"03 · Why Quorelia", why_h:"Built from the energy floor to the boardroom.",
+  why_sub:"Quorelia was born from two perspectives of the same problem.",
+  why_d:"Finance, strategy, risk and asset value.",
+  why_j:"Renewable operations, SCADA, automation and data.",
+  why_gap:"Both saw the same gap: renewable assets generate enormous amounts of information, but information alone does not create better decisions.",
+  why_close:"Quorelia exists to close that gap.",
+  ct_e:"Quorelia",
+  ct_h:"See the system. Understand the signal. Predict the risk. Act with confidence.",
+  f_desc:"Operational intelligence for renewable energy. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_dash:"Live demos",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   f_co:"Company", f_sec:"Security", f_ct:"Contact", f_terms:"Terms", f_priv:"Privacy",
   f_tag:"Intelligence for Critical Energy Infrastructure",
   f_fine:"Sample reports and the Control Center on this site contain illustrative data and do not represent real facilities or clients."
  },
  es:{
+<<<<<<< HEAD
   nav_sw:"Plataforma", nav_plat:"Control Center", nav_demos:"Demos", nav_ins:"Insights",
   nav_gov:"Gobierno", nav_story:"Nuestra historia", nav_contact:"Contacto", cta_demo:"Solicitar demo",
   hero_tag:"Solar · Eólica · Almacenamiento",
@@ -494,11 +704,30 @@ const i18n = {
   pt_k:"04 · Protección", pt_h:"Vea el riesgo antes de que se convierta en incidente.",
   pt_p:"La protección es el producto.",
   pr_n:"05 · Principios",
+=======
+  nav_sw:"Plataforma", nav_plat:"Control Center", nav_cap:"Capacidades", nav_svc:"Servicio",
+  nav_demos:"Demos", nav_rep:"Informes", nav_gov:"Gobierno", nav_story:"Nuestra historia",
+  nav_contact:"Contacto", cta_demo:"Solicitar demo",
+  hero_tag:"Solar · Eólica · Almacenamiento",
+  hero:"Inteligencia operacional <span class=\"dim\">para energías renovables.</span>",
+  hero_line:"Ver más. Saber antes. Operar mejor.",
+  hero_sub:"Quorelia convierte los datos operacionales en inteligencia que ayuda a los equipos de energía renovable a entender sus activos, identificar riesgos y mejorar el desempeño.",
+  h_a1:"Conozca Eagle Eye", h_a2:"Contáctenos",
+  ee_n:"01 · El sistema", ee_h:"Eagle Eye",
+  ee_sub:"La capa de inteligencia operacional para energías renovables.",
+  ee_p:"Eagle Eye se sitúa sobre los sistemas que usted ya opera. Observa de forma continua —24/7—, conecta las señales que importan y ayuda a ver lo que ocurre, entender lo que importa y actuar antes. No reemplaza nada, y cada cifra es trazable hasta la medición que la produjo.",
+  ee_i2:"BESS", ee_i3:"Inversores", ee_i4:"Meteorología", ee_i5:"Mantenimiento",
+  ee_o1:"Hallazgo", ee_o2:"Riesgo", ee_o3:"Acción", ee_o4:"Optimización",
+  cy1:"Ver", cy2:"Entender", cy3:"Actuar", cy4:"Optimizar",
+  ee_link:"Conocer la plataforma",
+  pr_n:"02 · Principios",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   pr_intro:"Cuatro palabras en la primera página del cuaderno de los fundadores. Siguen siendo la especificación.",
   pr1:"Calidad", pr1p:"Información confiable para decisiones confiables.",
   pr2:"Seguridad", pr2p:"Conciencia continua sobre el activo.",
   pr3:"Confianza", pr3p:"Inteligencia sobre la que se puede actuar.",
   pr4:"Protección", pr4p:"Riesgos identificados antes de convertirse en pérdidas.",
+<<<<<<< HEAD
   why_n:"06 · Por qué Quorelia",
   why_h:"Del piso de planta<br>al directorio.",
   why_d:"Finanzas · Estrategia · Valor del activo",
@@ -512,11 +741,24 @@ const i18n = {
   ct_e:"Contacto", ct_h:"Hagamos más inteligentes sus activos.",
   f_desc:"Inteligencia operacional para energías renovables. Solar, eólica y almacenamiento.",
   f_prod:"Plataforma", f_sample:"Informes de muestra", f_dash:"Demos en vivo",
+=======
+  why_n:"03 · Por qué Quorelia", why_h:"Del piso de planta al directorio.",
+  why_sub:"Quorelia nació de dos perspectivas del mismo problema.",
+  why_d:"Finanzas, estrategia, riesgo y valor del activo.",
+  why_j:"Operación renovable, SCADA, automatización y datos.",
+  why_gap:"Ambos veían la misma brecha: los activos renovables generan enormes cantidades de información, pero la información por sí sola no produce mejores decisiones.",
+  why_close:"Quorelia existe para cerrar esa brecha.",
+  ct_e:"Quorelia",
+  ct_h:"Vea el sistema. Entienda la señal. Anticipe el riesgo. Actúe con confianza.",
+  f_desc:"Inteligencia operacional para energías renovables. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_dash:"Demos en vivo",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   f_co:"Empresa", f_sec:"Seguridad", f_ct:"Contacto", f_terms:"Términos", f_priv:"Privacidad",
   f_tag:"Inteligencia para Infraestructura Energética Crítica",
   f_fine:"Los informes de muestra y el Control Center de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales."
  },
  zh:{
+<<<<<<< HEAD
   nav_sw:"平台", nav_plat:"控制中心", nav_demos:"演示", nav_ins:"洞察",
   nav_gov:"政府事务", nav_story:"我们的故事", nav_contact:"联系我们", cta_demo:"预约演示",
   hero_tag:"光伏 · 风电 · 储能",
@@ -536,11 +778,30 @@ const i18n = {
   pt_k:"04 · 保护", pt_h:"在风险酿成事故之前，先看见它。",
   pt_p:"保护，就是产品本身。",
   pr_n:"05 · 原则",
+=======
+  nav_sw:"软件平台", nav_plat:"控制中心", nav_cap:"能力", nav_svc:"服务",
+  nav_demos:"演示", nav_rep:"报告", nav_gov:"政府事务", nav_story:"我们的故事",
+  nav_contact:"联系我们", cta_demo:"预约演示",
+  hero_tag:"光伏 · 风电 · 储能",
+  hero:"面向可再生能源的<span class=\"dim\">运营智能。</span>",
+  hero_line:"看得更全。知得更早。运营更优。",
+  hero_sub:"Quorelia 将运营数据转化为智能，帮助可再生能源团队理解资产、识别风险、提升表现。",
+  h_a1:"了解 Eagle Eye", h_a2:"联系我们",
+  ee_n:"01 · 系统", ee_h:"Eagle Eye",
+  ee_sub:"可再生能源的运营智能层。",
+  ee_p:"Eagle Eye 位于您现有系统之上：全天候持续观测，连接真正重要的信号，帮助团队看清正在发生什么、理解什么最关键、并更早采取行动。它不替换任何东西，且每一个数字都可追溯到产生它的那次测量。",
+  ee_i2:"储能", ee_i3:"逆变器", ee_i4:"气象", ee_i5:"维护",
+  ee_o1:"洞察", ee_o2:"风险", ee_o3:"行动", ee_o4:"优化",
+  cy1:"看见", cy2:"理解", cy3:"行动", cy4:"优化",
+  ee_link:"深入了解平台",
+  pr_n:"02 · 原则",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   pr_intro:"创始人笔记本第一页写下的四个词。至今仍是这家公司的规格书。",
   pr1:"质量", pr1p:"可靠的信息，支撑可靠的决策。",
   pr2:"安全", pr2p:"对资产的持续感知。",
   pr3:"信任", pr3p:"可以据此行动的智能。",
   pr4:"保护", pr4p:"在风险成为损失之前识别它。",
+<<<<<<< HEAD
   why_n:"06 · 为什么是 Quorelia",
   why_h:"从电站现场<br>到董事会。",
   why_d:"金融 · 战略 · 资产价值",
@@ -552,6 +813,16 @@ const i18n = {
   cap1:"监测", cap2:"分析", cap3:"告警", cap4:"报告",
   cap5:"维护智能", cap6:"性能优化", cap_go:"打开",
   ct_e:"联系", ct_h:"让您的资产更智能。",
+=======
+  why_n:"03 · 为什么是 Quorelia", why_h:"从电站现场到董事会。",
+  why_sub:"Quorelia 源于对同一问题的两种视角。",
+  why_d:"金融、战略、风险与资产价值。",
+  why_j:"可再生能源运营、SCADA、自动化与数据。",
+  why_gap:"两人看到的是同一道缺口：可再生资产产生海量信息，但信息本身并不会带来更好的决策。",
+  why_close:"Quorelia 的存在，就是为了合上这道缺口。",
+  ct_e:"Quorelia",
+  ct_h:"看见系统。读懂信号。预见风险。从容行动。",
+>>>>>>> 345fa029a1183e8efd4653a050c92c34f92629d0
   f_desc:"面向可再生能源的运营智能。光伏、风电与储能。",
   f_prod:"平台", f_sample:"样例报告", f_dash:"实时演示",
   f_co:"公司", f_sec:"安全", f_ct:"联系", f_terms:"条款", f_priv:"隐私",
