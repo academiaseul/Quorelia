@@ -35,8 +35,34 @@
     --amber:#d97706;
     --red:#e05252;
     --purple:#8f9dd8;
+    /* secundarios que cambian con el tema */
+    --head-ink:#c7d0dd; --num:#7ee0d6; --num-2:#a1d8e6;
+    --dim:#78716c; --foot-ink:#6b7f8e; --zoom-ink:#5c7080;
+    --row-line:#132c44; --row-hover:#0e2233; --bar-track:#173350;
+    --hold-border:rgba(255,255,255,.18);
+    --lsep-ink:#b7c4d2; --lsep-line:rgba(255,255,255,.22);
+    --t-red:#ff8b8b; --t-red-bg:rgba(255,101,104,.15);
+    --t-amb:#ffc978; --t-amb-bg:rgba(245,166,35,.15);
+    --t-teal:#6ec6db; --t-teal-bg:rgba(31,182,168,.15);
+    --t-purp:#c3cdf0; --t-purp-bg:rgba(143,157,216,.15);
     --sans:'Inter','PingFang SC','Microsoft YaHei',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
     --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+  }
+  html[data-mode="light"]{
+    --bg:#f2f3f4; --panel:#ffffff; --panel-2:#f2f3f4;
+    --border:#e2e5e8; --border-hi:#149487;
+    --text:#101418; --muted:#5c666e;
+    --blue:#149487; --blue-soft:rgba(20,148,135,.10);
+    --green:#1d8a5f; --amber:#b45309; --red:#c62f2f; --purple:#6070c0;
+    --head-ink:#3d474f; --num:#0e8074; --num-2:#0e8074;
+    --dim:#8a949c; --foot-ink:#8a949c; --zoom-ink:#9aa3ab;
+    --row-line:#e2e5e8; --row-hover:#f2f3f4; --bar-track:#e9eaec;
+    --hold-border:rgba(16,20,24,.22);
+    --lsep-ink:#3d474f; --lsep-line:rgba(16,20,24,.22);
+    --t-red:#b3261e; --t-red-bg:rgba(198,47,47,.10);
+    --t-amb:#8a5a00; --t-amb-bg:rgba(217,119,6,.12);
+    --t-teal:#0e8074; --t-teal-bg:rgba(20,148,135,.12);
+    --t-purp:#4c5db0; --t-purp-bg:rgba(96,112,192,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html,body{overflow-x:hidden;}
@@ -55,8 +81,16 @@
   }
   .topbar-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;row-gap:8px;}
   .logo{display:flex;align-items:center;gap:10px;flex:none;white-space:nowrap;}
+  .logo .lk{display:flex;align-items:center;gap:8px;}
+  .logo .lk-l{display:none;}
+  html[data-mode="light"] .logo .lk-d{display:none;}
+  html[data-mode="light"] .logo .lk-l{display:flex;}
+  .modebtn{background:none;border:1px solid var(--border);color:var(--muted);
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    padding:6px 12px;cursor:pointer;flex:none;}
+  .modebtn:hover{border-color:var(--blue);color:var(--blue);}
   .logo .lsep{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-    color:#b7c4d2;border-left:1px solid rgba(255,255,255,.22);padding-left:11px;}
+    color:var(--lsep-ink);border-left:1px solid var(--lsep-line);padding-left:11px;}
   
   .plant-select{
     background:var(--panel);border:1px solid var(--border);color:var(--text);
@@ -96,7 +130,7 @@
   .verdict.retenido .badge{background:var(--amber);color:#3a2600;}
   .verdict.aprobado .badge{background:var(--green);color:#052e12;}
   .verdict .txt b{color:var(--text);}
-  .verdict .txt{color:#c7d0dd;line-height:1.55;font-size:12.5px;}
+  .verdict .txt{color:var(--head-ink);line-height:1.55;font-size:12.5px;}
 
   /* Layout grid */
   .grid{display:grid;gap:12px;padding:14px 20px;grid-template-columns:repeat(12,1fr);}
@@ -108,7 +142,7 @@
   }
   .panel-head{
     display:flex;align-items:center;justify-content:space-between;
-    padding:11px 14px;border-bottom:1px solid var(--border);font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#c7d0dd;
+    padding:11px 14px;border-bottom:1px solid var(--border);font-family:var(--mono);font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--head-ink);
   }
   .panel-head .sub{font-weight:500;color:var(--muted);font-size:11px;}
   .panel-body{padding:14px;}
@@ -120,9 +154,9 @@
   .kpi .value.green{color:var(--green);}
   .kpi .value.amber{color:var(--amber);}
   .kpi .value.red{color:var(--red);}
-  .kpi .value.blue{color:#a1d8e6;}
+  .kpi .value.blue{color:var(--num-2);}
   .kpi .meta{font-size:11px;color:var(--muted);margin-top:8px;}
-  .kpi .bar{height:5px;border-radius:0;background:#173350;margin-top:10px;overflow:hidden;}
+  .kpi .bar{height:5px;border-radius:0;background:var(--bar-track);margin-top:10px;overflow:hidden;}
   .kpi .bar-fill{height:100%;border-radius:0;}
 
   .col-8{grid-column:span 8;}
@@ -145,9 +179,9 @@
     content:"›";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
     color:var(--muted);font-size:18px;
   }
-  .tree .node .n{font-family:var(--mono);font-size:19px;font-weight:500;color:#7ee0d6;}
+  .tree .node .n{font-family:var(--mono);font-size:19px;font-weight:500;color:var(--num);}
   .tree .node .l{font-size:11px;color:var(--muted);margin-top:3px;}
-  .tree .node .s{font-size:10px;color:#78716c;margin-top:1px;}
+  .tree .node .s{font-size:10px;color:var(--dim);margin-top:1px;}
 
   /* Heatmap */
   .heatmap-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
@@ -164,28 +198,28 @@
     text-align:left;color:var(--muted);font-family:var(--mono);font-weight:500;font-size:9.5px;text-transform:uppercase;
     letter-spacing:.13em;padding:8px 10px;border-bottom:1px solid var(--border);
   }
-  tbody td{padding:9px 10px;border-bottom:1px solid #132c44;vertical-align:middle;}
-  tbody tr:hover{background:#0e2233;}
+  tbody td{padding:9px 10px;border-bottom:1px solid var(--row-line);vertical-align:middle;}
+  tbody tr:hover{background:var(--row-hover);}
   .prio{padding:3px 8px;border-radius:0;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
-  .prio.urgente{background:rgba(255,101,104,.15);color:#ff8b8b;}
-  .prio.alta{background:rgba(245,166,35,.15);color:#ffc978;}
-  .prio.media{background:rgba(31,182,168,.15);color:#6ec6db;}
+  .prio.urgente{background:var(--t-red-bg);color:var(--t-red);}
+  .prio.alta{background:var(--t-amb-bg);color:var(--t-amb);}
+  .prio.media{background:var(--t-teal-bg);color:var(--t-teal);}
   .prio.baja{background:#173350;color:var(--muted);}
   .owner{padding:3px 9px;border-radius:0;font-size:10.5px;font-weight:500;}
-  .owner.operacion{background:rgba(31,182,168,.15);color:#6ec6db;}
-  .owner.scada{background:rgba(143,157,216,.15);color:#c3cdf0;}
-  .owner.cliente{background:rgba(245,166,35,.15);color:#ffc978;}
+  .owner.operacion{background:var(--t-teal-bg);color:var(--t-teal);}
+  .owner.scada{background:var(--t-purp-bg);color:var(--t-purp);}
+  .owner.cliente{background:var(--t-amb-bg);color:var(--t-amb);}
   .estado{font-size:11px;font-weight:600;}
   .estado.abierto{color:var(--amber);}
   .estado.resuelto{color:var(--green);}
   .estado.pendiente{color:var(--muted);}
-  .estado.informativo{color:#6ec6db;}
+  .estado.informativo{color:var(--t-teal);}
 
   /* Trazabilidad pipeline */
   .pipeline{display:flex;align-items:center;gap:0;flex-wrap:wrap;}
   .pipeline .stage{
     background:var(--panel-2);border:1px solid var(--border);border-radius:0;
-    padding:10px 14px;font-size:11px;font-weight:700;color:#c7d0dd;text-align:center;flex:1;min-width:110px;
+    padding:10px 14px;font-size:11px;font-weight:600;color:var(--head-ink);text-align:center;flex:1;min-width:110px;
   }
   .pipeline .stage .d{font-size:9.5px;font-weight:500;color:var(--muted);margin-top:3px;}
   .pipeline .arrow{color:var(--muted);padding:0 8px;font-size:16px;}
@@ -200,29 +234,29 @@
   .impact-strip .box{
     background:var(--panel-2);border:1px solid var(--border);border-radius:0;padding:14px;text-align:center;
   }
-  .impact-strip .box .big{font-size:22px;font-weight:800;color:#a1d8e6;}
+  .impact-strip .box .big{font-family:var(--mono);font-size:21px;font-weight:500;color:var(--num-2);}
   .impact-strip .box .lbl{font-size:10.5px;color:var(--muted);margin-top:4px;}
 
-  .foot{padding:16px 20px 30px;color:#78716c;font-size:11px;text-align:center;}
+  .foot{padding:16px 20px 30px;color:var(--dim);font-size:11px;text-align:center;}
 
   /* ── Sistema de Visualización Científica Quorelia (QSV) ── */
   .fig-foot{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px 10px;
     border-top:1px solid var(--border);font-family:var(--mono);font-size:8.5px;
-    letter-spacing:.08em;color:#6b7f8e;text-transform:uppercase;}
-  .fig-foot b{color:#8fa3b0;font-weight:500;}
+    letter-spacing:.08em;color:var(--foot-ink);text-transform:uppercase;}
+  .fig-foot b{color:var(--muted);font-weight:500;}
   .fig-foot .warn{color:var(--amber);}
   .fig-dev{padding:7px 14px;border-top:1px solid var(--border);font-family:var(--mono);
-    font-size:10px;color:#b7c4d2;letter-spacing:.04em;}
-  .fig-dev b{color:#7ee0d6;font-weight:500;}
+    font-size:10px;color:var(--head-ink);letter-spacing:.04em;}
+  .fig-dev b{color:var(--num);font-weight:500;}
   .sync-stack .panel-body{padding:8px 14px 2px;}
   .sync-row{height:104px;position:relative;margin-bottom:2px;}
   .sync-row.small{height:88px;}
-  .rte-hold{height:104px;border:1px dashed rgba(255,255,255,.18);display:flex;
+  .rte-hold{height:104px;border:1px dashed var(--hold-border);display:flex;
     flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:0 0 2px;}
   .rte-hold .t{font-family:var(--mono);font-size:10px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--amber);}
   .rte-hold .r{font-size:11px;color:var(--muted);max-width:56ch;text-align:center;}
-  .zoomhint{font-family:var(--mono);font-size:8.5px;color:#5c7080;letter-spacing:.08em;
+  .zoomhint{font-family:var(--mono);font-size:8.5px;color:var(--zoom-ink);letter-spacing:.08em;
     text-transform:uppercase;padding:4px 14px 0;}
 
   /* ── Alineación Palantir: esquinas rectas, mono para cifras ── */
@@ -235,7 +269,10 @@
 
 <div class="topbar">
   <div class="topbar-left">
-    <div class="logo"><img src="quorelia-mark-white.png" alt="" style="width:18px;height:18px;display:block;"><img src="quorelia-wordmark-white.png" alt="Quorelia" style="height:9px;width:auto;display:block;"><span class="lsep">BESS · SCADA</span></div>
+    <div class="logo">
+      <span class="lk lk-d"><img src="quorelia-mark-white.png" alt="" style="width:18px;height:18px;display:block;"><img src="quorelia-wordmark-white.png" alt="Quorelia" style="height:9px;width:auto;display:block;"></span>
+      <span class="lk lk-l"><img src="quorelia-mark-64.png" alt="" style="width:18px;height:18px;display:block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="height:9px;width:auto;display:block;"></span>
+      <span class="lsep">BESS · SCADA</span></div>
     <select class="plant-select">
       <option>BESS Cerro Aurora — 126 MW / 780 MWh · Antofagasta</option>
       <option disabled>BESS Valle Luna — 101 MW / 624 MWh · Atacama</option>
@@ -255,7 +292,8 @@
       <option value="today">2026-08-06 · informe diario</option>
       <option value="good">2026-07-28 · corrida de referencia</option>
     </select>
-    <div class="live-pill"><span class="blip"></span> Datos SCADA SCADA de planta</div>
+    <button class="modebtn" id="modeBtn" title="Cambiar tema">Oscuro</button>
+    <div class="live-pill"><span class="blip"></span> Datos SCADA de planta</div>
   </div>
 </div>
 
@@ -517,12 +555,29 @@ let charts = {};
    El dato es el diseño: ejes finos, unidades en el título del eje, rejilla
    horizontal mínima, líneas delgadas con jerarquía, bandas de operación
    sutiles, eventos anotados y pie técnico. Sin brillos, sin 3D, sin azar. */
-const QSV = {
-  ink:"#f2f5f7", muted:"#8fa3b0", axis:"rgba(255,255,255,.30)",
-  grid:"rgba(255,255,255,.05)",
-  teal:"#1fb6a8", tealSoft:"rgba(31,182,168,.05)",
-  neutral:"#7f93a3", amber:"#d97706", red:"#e05252", green:"#2f9e6e"
+const PALETAS = {
+  dark:{ ink:"#f2f5f7", muted:"#8fa3b0", axis:"rgba(255,255,255,.30)",
+    grid:"rgba(255,255,255,.05)", teal:"#1fb6a8", tealSoft:"rgba(31,182,168,.05)",
+    neutral:"#7f93a3", amber:"#d97706", red:"#e05252", green:"#2f9e6e",
+    cross:"rgba(255,255,255,.28)", zero:"rgba(255,255,255,.25)",
+    bandSoft:"rgba(255,255,255,.03)", headInk:"#b7c4d2",
+    tipBg:"#0e2333", tipBorder:"rgba(255,255,255,.16)", tipInk:"#f2f5f7" },
+  light:{ ink:"#101418", muted:"#5c666e", axis:"rgba(16,20,24,.35)",
+    grid:"rgba(16,20,24,.06)", teal:"#149487", tealSoft:"rgba(20,148,135,.06)",
+    neutral:"#8a949c", amber:"#b45309", red:"#c62f2f", green:"#1d8a5f",
+    cross:"rgba(16,20,24,.30)", zero:"rgba(16,20,24,.25)",
+    bandSoft:"rgba(16,20,24,.03)", headInk:"#3d474f",
+    tipBg:"#ffffff", tipBorder:"rgba(16,20,24,.18)", tipInk:"#101418" }
 };
+const QSV = Object.assign({}, PALETAS.dark);
+function aplicarPaleta(m){
+  Object.assign(QSV, PALETAS[m]);
+  Chart.defaults.color = QSV.muted;
+  Chart.defaults.plugins.tooltip.backgroundColor = QSV.tipBg;
+  Chart.defaults.plugins.tooltip.borderColor = QSV.tipBorder;
+  Chart.defaults.plugins.tooltip.titleColor = QSV.tipInk;
+  Chart.defaults.plugins.tooltip.bodyColor = QSV.tipInk;
+}
 Chart.defaults.font.family = "'Inter','Segoe UI',Arial,sans-serif";
 Chart.defaults.font.size = 9.5;
 Chart.defaults.color = QSV.muted;
@@ -543,13 +598,13 @@ Chart.defaults.plugins.legend.labels.font = {size:9.5};
 function ejeX(titulo){ return {
   grid:{display:false}, border:{color:QSV.axis, width:1},
   ticks:{color:QSV.muted, font:{size:9.5}, maxRotation:0, autoSkipPadding:14},
-  title: titulo ? {display:true, text:titulo, color:"#b7c4d2", font:{size:10.5}} : undefined
+  title: titulo ? {display:true, text:titulo, color:QSV.headInk, font:{size:10.5}} : undefined
 };}
 function ejeY(titulo, extra){ return Object.assign({
   grid:{color:QSV.grid, drawTicks:true, tickLength:4, tickColor:QSV.axis},
   border:{color:QSV.axis, width:1, dash:[0,0]},
   ticks:{color:QSV.muted, font:{size:9.5}, padding:5},
-  title:{display:true, text:titulo, color:"#b7c4d2", font:{size:10.5}}
+  title:{display:true, text:titulo, color:QSV.headInk, font:{size:10.5}}
 }, extra||{});}
 
 /* Bandas de operación y umbrales — plugin propio, sombreado mínimo */
@@ -603,7 +658,7 @@ const qsvCross = { id:"qsvCross",
     if(!c.options.plugins.qsvCross || sincro.x==null) return;
     const ar=c.chartArea; if(!ar || sincro.x<ar.left || sincro.x>ar.right) return;
     const ctx=c.ctx; ctx.save();
-    ctx.strokeStyle="rgba(255,255,255,.28)"; ctx.lineWidth=1; ctx.setLineDash([2,3]);
+    ctx.strokeStyle=QSV.cross; ctx.lineWidth=1; ctx.setLineDash([2,3]);
     ctx.beginPath(); ctx.moveTo(sincro.x,ar.top); ctx.lineTo(sincro.x,ar.bottom); ctx.stroke();
     ctx.restore();
   }};
@@ -655,7 +710,7 @@ function render(key){
       <div class="label">${k.label}</div>
       <div class="value ${k.cls}">${k.value}</div>
       <div class="meta">${k.meta}</div>
-      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#2f9e6e':k.cls==='amber'?'#d97706':k.cls==='red'?'#e05252':'#1fb6a8'}"></div></div>
+      <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?QSV.green:k.cls==='amber'?QSV.amber:k.cls==='red'?QSV.red:QSV.teal}"></div></div>
     </div>`).join('');
 
   document.getElementById('energySub').textContent = `descarga ${d.energy.descarga} MWh · medición DC`;
@@ -743,7 +798,7 @@ function render(key){
   });
   let o = comunes(false);
   o.scales.y = ejeY('Potencia activa (MW)', {suggestedMin:-140, suggestedMax:140});
-  o.plugins.qsvBands = {lines:[{y:0,color:'rgba(255,255,255,.25)',dash:[2,2]},
+  o.plugins.qsvBands = {lines:[{y:0,color:QSV.zero,dash:[2,2]},
     {y:126,color:QSV.neutral,dash:[5,4],label:'P máx 126 MW'},
     {y:-126,color:QSV.neutral,dash:[5,4]}]};
   charts.syncP = new Chart(document.getElementById('syncP'), {
@@ -752,7 +807,7 @@ function render(key){
 
   o = comunes(false);
   o.scales.y = ejeY('SOC (%)', {min:0, max:100});
-  o.plugins.qsvBands = {bands:[{from:10,to:90,color:'rgba(255,255,255,.03)'}],
+  o.plugins.qsvBands = {bands:[{from:10,to:90,color:QSV.bandSoft}],
     lines:[{y:90,color:QSV.neutral,dash:[5,4],label:'límite 90%'},
            {y:10,color:QSV.neutral,dash:[5,4],label:'límite 10%'}]};
   charts.syncS = new Chart(document.getElementById('syncS'), {
@@ -833,8 +888,28 @@ function render(key){
     </tr>`).join('');
 }
 
+let claveActual = 'today';
+const _render = render;
+render = function(k){ claveActual = k; _render(k); };
+
+function aplicarModo(m){
+  document.documentElement.setAttribute('data-mode', m);
+  aplicarPaleta(m);
+  const b=document.getElementById('modeBtn');
+  if(b) b.textContent = (m==='light') ? 'Oscuro' : 'Claro';
+  try{ localStorage.setItem('q-scada-mode', m); }catch(e){}
+  render(claveActual);
+}
+document.getElementById('modeBtn').addEventListener('click', ()=>{
+  aplicarModo(document.documentElement.getAttribute('data-mode')==='light' ? 'dark' : 'light');
+});
+
 document.getElementById('dateSelect').addEventListener('change', e => render(e.target.value));
-render('today');
+(function(){
+  let m='light';
+  try{ m = localStorage.getItem('q-scada-mode') || 'light'; }catch(e){}
+  aplicarModo(m);
+})();
 document.querySelectorAll('.sync-row canvas').forEach(cv=>{
   cv.addEventListener('dblclick', resetSync);
 });
