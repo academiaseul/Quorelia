@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <style>
   :root{
     /* paleta Palantir oscura: azul marino profundo, acento teal */
@@ -204,6 +205,26 @@
 
   .foot{padding:16px 20px 30px;color:#78716c;font-size:11px;text-align:center;}
 
+  /* ── Sistema de Visualización Científica Quorelia (QSV) ── */
+  .fig-foot{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px 10px;
+    border-top:1px solid var(--border);font-family:var(--mono);font-size:8.5px;
+    letter-spacing:.08em;color:#6b7f8e;text-transform:uppercase;}
+  .fig-foot b{color:#8fa3b0;font-weight:500;}
+  .fig-foot .warn{color:var(--amber);}
+  .fig-dev{padding:7px 14px;border-top:1px solid var(--border);font-family:var(--mono);
+    font-size:10px;color:#b7c4d2;letter-spacing:.04em;}
+  .fig-dev b{color:#7ee0d6;font-weight:500;}
+  .sync-stack .panel-body{padding:8px 14px 2px;}
+  .sync-row{height:104px;position:relative;margin-bottom:2px;}
+  .sync-row.small{height:88px;}
+  .rte-hold{height:104px;border:1px dashed rgba(255,255,255,.18);display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:0 0 2px;}
+  .rte-hold .t{font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--amber);}
+  .rte-hold .r{font-size:11px;color:var(--muted);max-width:56ch;text-align:center;}
+  .zoomhint{font-family:var(--mono);font-size:8.5px;color:#5c7080;letter-spacing:.08em;
+    text-transform:uppercase;padding:4px 14px 0;}
+
   /* ── Alineación Palantir: esquinas rectas, mono para cifras ── */
   *:not(.dot):not(circle){border-radius:0 !important;}
   .logo{font-family:var(--mono);font-weight:500;letter-spacing:.24em;text-transform:uppercase;}
@@ -249,6 +270,7 @@
   <div class="panel col-12">
     <div class="panel-head">Disponibilidad contractual — objetivo 98% vs. real<span class="sub" id="availSub"></span></div>
     <div class="panel-body"><canvas id="chartAvailability" height="70"></canvas></div>
+    <div class="fig-foot" id="availFoot"></div>
   </div>
 
   <!-- Impact strip -->
@@ -268,20 +290,36 @@
 
 <div class="grid view" data-view="energia" style="display:none;">
 
-  <!-- Energy + SOC -->
+  <!-- Real vs esperado -->
   <div class="panel col-7">
-    <div class="panel-head">Carga / Descarga — tendencia<span class="sub" id="energySub"></span></div>
+    <div class="panel-head">Energía descargada — real vs. esperada (MWh)<span class="sub" id="energySub"></span></div>
     <div class="panel-body"><canvas id="chartEnergy" height="110"></canvas></div>
+    <div class="fig-dev" id="energyDev"></div>
+    <div class="fig-foot" id="energyFoot"></div>
   </div>
   <div class="panel col-5">
-    <div class="panel-head">SOC — inicio → fin del período</div>
-    <div class="panel-body"><canvas id="chartSOC" height="110"></canvas></div>
+    <div class="panel-head">Eficiencia round-trip (%)</div>
+    <div class="panel-body"><div class="rte-hold" id="rteHold"></div></div>
+    <div class="fig-foot" id="rteFoot"></div>
+  </div>
+
+  <!-- Paneles sincronizados -->
+  <div class="panel col-12 sync-stack">
+    <div class="panel-head">Operación del día — paneles sincronizados<span class="sub" id="syncSub"></span></div>
+    <div class="panel-body">
+      <div class="sync-row"><canvas id="syncP"></canvas></div>
+      <div class="sync-row"><canvas id="syncS"></canvas></div>
+      <div class="sync-row small"><canvas id="syncT"></canvas></div>
+    </div>
+    <div class="zoomhint">Ctrl + rueda: zoom · arrastrar: pan · doble clic: restablecer · ejes X enlazados</div>
+    <div class="fig-foot" id="syncFoot"></div>
   </div>
 
   <!-- Variance / tendencia -->
   <div class="panel col-12">
     <div class="panel-head">Tendencia de descarga — 5 días hábiles<span class="sub">excluye días sin datos</span></div>
     <div class="panel-body"><canvas id="chartTrend" height="90"></canvas></div>
+    <div class="fig-foot" id="trendFoot"></div>
   </div>
 
 </div>
@@ -406,6 +444,13 @@ const DATA = {
     availTarget:98.0,
     energy:{carga:1267.02, descarga:1108.88, series:[880,910,860,905,895,538.68,1108.88]},
     soc:{inicial:71.17, final:80.23},
+    sync:{
+      gap:[9,14], gapLabel:"Pérdida de comunicación · 09:00–14:00",
+      p:[-92,-96,-98,-95,-88,-52,-18,0,6,null,null,null,null,null,4,14,52,96,118,124,112,84,42,8],
+      s:[71.2,76.1,81.2,86.3,91.0,93.8,94.7,94.7,94.4,null,null,null,null,null,93.9,93.2,90.4,85.3,79.1,72.6,66.8,62.4,60.2,80.2],
+      t:[21.4,21.0,20.7,20.5,20.4,20.6,21.2,22.4,23.9,null,null,null,null,null,28.9,29.8,30.9,31.8,32.3,31.9,30.6,28.7,26.4,24.3],
+      cobertura:"54.8%", res:"1 h", ventana:"00:00–23:00 CLT"
+    },
     trendLabels:["Base 5d","T-4","T-3","T-2","T-1","Hoy"],
     trendVals:[538.68,610,545,700,690,1108.88],
     trendBands:{good:900,warn:600},
@@ -442,6 +487,13 @@ const DATA = {
     availTarget:98.0,
     energy:{carga:420.08, descarga:805.63, series:[610,640,700,690,780,538.68,805.63]},
     soc:{inicial:50.32, final:21.50},
+    sync:{
+      gap:null, gapLabel:null,
+      p:[-64,-70,-72,-68,-55,-30,-8,0,4,8,10,10,8,6,10,22,64,102,118,112,92,58,24,6],
+      s:[50.3,53.9,57.8,61.8,65.6,68.6,70.1,70.4,70.2,69.7,69.1,68.5,68.0,67.6,67.0,65.6,61.4,54.7,47.0,39.7,33.7,29.9,27.0,21.5],
+      t:[19.6,19.2,19.0,18.9,19.0,19.4,20.2,21.6,23.2,24.8,26.3,27.6,28.6,29.4,30.1,30.8,31.4,31.7,31.2,30.1,28.4,26.3,24.2,22.4],
+      cobertura:"94.9%", res:"1 h", ventana:"00:00–23:00 CLT"
+    },
     trendLabels:["Base 5d","T-4","T-3","T-2","T-1","Hoy"],
     trendVals:[538.68,690,720,760,780,805.63],
     trendBands:{good:900,warn:600},
@@ -461,6 +513,122 @@ const DATA = {
 
 let charts = {};
 
+/* ══ QSV — Sistema de Visualización Científica Quorelia ═══════════════════
+   El dato es el diseño: ejes finos, unidades en el título del eje, rejilla
+   horizontal mínima, líneas delgadas con jerarquía, bandas de operación
+   sutiles, eventos anotados y pie técnico. Sin brillos, sin 3D, sin azar. */
+const QSV = {
+  ink:"#f2f5f7", muted:"#8fa3b0", axis:"rgba(255,255,255,.30)",
+  grid:"rgba(255,255,255,.05)",
+  teal:"#1fb6a8", tealSoft:"rgba(31,182,168,.05)",
+  neutral:"#7f93a3", amber:"#d97706", red:"#e05252", green:"#2f9e6e"
+};
+Chart.defaults.font.family = "'Inter','Segoe UI',Arial,sans-serif";
+Chart.defaults.font.size = 9.5;
+Chart.defaults.color = QSV.muted;
+Chart.defaults.animation = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {duration:300};
+Chart.defaults.plugins.tooltip.backgroundColor = "#0e2333";
+Chart.defaults.plugins.tooltip.borderColor = "rgba(255,255,255,.16)";
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.cornerRadius = 0;
+Chart.defaults.plugins.tooltip.titleFont = {family:"'IBM Plex Mono',monospace", size:9.5, weight:"500"};
+Chart.defaults.plugins.tooltip.bodyFont = {family:"'IBM Plex Mono',monospace", size:9.5};
+Chart.defaults.plugins.tooltip.padding = 8;
+Chart.defaults.plugins.tooltip.boxWidth = 8;
+Chart.defaults.plugins.tooltip.boxHeight = 8;
+Chart.defaults.plugins.legend.labels.boxWidth = 9;
+Chart.defaults.plugins.legend.labels.boxHeight = 2;
+Chart.defaults.plugins.legend.labels.font = {size:9.5};
+
+function ejeX(titulo){ return {
+  grid:{display:false}, border:{color:QSV.axis, width:1},
+  ticks:{color:QSV.muted, font:{size:9.5}, maxRotation:0, autoSkipPadding:14},
+  title: titulo ? {display:true, text:titulo, color:"#b7c4d2", font:{size:10.5}} : undefined
+};}
+function ejeY(titulo, extra){ return Object.assign({
+  grid:{color:QSV.grid, drawTicks:true, tickLength:4, tickColor:QSV.axis},
+  border:{color:QSV.axis, width:1, dash:[0,0]},
+  ticks:{color:QSV.muted, font:{size:9.5}, padding:5},
+  title:{display:true, text:titulo, color:"#b7c4d2", font:{size:10.5}}
+}, extra||{});}
+
+/* Bandas de operación y umbrales — plugin propio, sombreado mínimo */
+const qsvBands = { id:"qsvBands",
+  beforeDatasetsDraw(c){
+    const cfg=c.options.plugins.qsvBands; if(!cfg) return;
+    const {ctx, chartArea:ar, scales:{y}}=c; if(!ar) return;
+    ctx.save();
+    (cfg.bands||[]).forEach(b=>{
+      const y1=y.getPixelForValue(Math.min(b.to, y.max)), y2=y.getPixelForValue(Math.max(b.from, y.min));
+      ctx.fillStyle=b.color; ctx.fillRect(ar.left, y1, ar.right-ar.left, y2-y1);
+    });
+    (cfg.lines||[]).forEach(l=>{
+      const yy=y.getPixelForValue(l.y);
+      if(yy<ar.top||yy>ar.bottom) return;
+      ctx.strokeStyle=l.color; ctx.lineWidth=1; ctx.setLineDash(l.dash||[5,4]);
+      ctx.beginPath(); ctx.moveTo(ar.left,yy); ctx.lineTo(ar.right,yy); ctx.stroke();
+      if(l.label){ ctx.setLineDash([]); ctx.fillStyle=l.color;
+        ctx.font="8.5px 'IBM Plex Mono',monospace"; ctx.textAlign="right";
+        ctx.fillText(l.label, ar.right-4, yy-4); }
+    });
+    ctx.restore();
+  }};
+/* Eventos operacionales: marcador vertical discreto + etiqueta */
+const qsvEvents = { id:"qsvEvents",
+  afterDatasetsDraw(c){
+    const evs=c.options.plugins.qsvEvents; if(!evs||!evs.length) return;
+    const {ctx, chartArea:ar, scales:{x}}=c; if(!ar) return;
+    ctx.save();
+    evs.forEach(e=>{
+      const xx=x.getPixelForValue(e.i); if(xx<ar.left||xx>ar.right) return;
+      ctx.strokeStyle=e.color||QSV.amber; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(xx,ar.top); ctx.lineTo(xx,ar.bottom); ctx.stroke();
+      ctx.setLineDash([]); ctx.fillStyle=e.color||QSV.amber;
+      ctx.font="8.5px 'IBM Plex Mono',monospace";
+      ctx.textAlign = xx > (ar.left+ar.right)/2 ? "right" : "left";
+      ctx.fillText(e.label, xx + (ctx.textAlign==="left"?5:-5), ar.top+9);
+    });
+    ctx.restore();
+  }};
+/* Retícula sincronizada entre paneles del mismo grupo */
+const sincro = { charts:[], x:null };
+const qsvCross = { id:"qsvCross",
+  afterEvent(c, args){
+    if(!c.options.plugins.qsvCross) return;
+    const e=args.event;
+    sincro.x = (e.type==="mousemove") ? e.x : null;
+    sincro.charts.forEach(o=>{ if(o!==c) o.draw(); });
+  },
+  afterDraw(c){
+    if(!c.options.plugins.qsvCross || sincro.x==null) return;
+    const ar=c.chartArea; if(!ar || sincro.x<ar.left || sincro.x>ar.right) return;
+    const ctx=c.ctx; ctx.save();
+    ctx.strokeStyle="rgba(255,255,255,.28)"; ctx.lineWidth=1; ctx.setLineDash([2,3]);
+    ctx.beginPath(); ctx.moveTo(sincro.x,ar.top); ctx.lineTo(sincro.x,ar.bottom); ctx.stroke();
+    ctx.restore();
+  }};
+Chart.register(qsvBands, qsvEvents, qsvCross);
+
+const HORAS = Array.from({length:24},(_,i)=>String(i).padStart(2,"0")+":00");
+const zoomX = {
+  zoom:{wheel:{enabled:true, modifierKey:"ctrl"}, pinch:{enabled:false}, mode:"x",
+    onZoomComplete:({chart})=>enlazarX(chart)},
+  pan:{enabled:true, mode:"x", onPanComplete:({chart})=>enlazarX(chart)}
+};
+function enlazarX(origen){
+  const {min,max}=origen.scales.x;
+  sincro.charts.forEach(c=>{
+    if(c===origen) return;
+    c.options.scales.x.min=min; c.options.scales.x.max=max; c.update("none");
+  });
+}
+function resetSync(){ sincro.charts.forEach(c=>c.resetZoom && c.resetZoom()); }
+
+/* Azar sembrado: el heatmap muestra los mismos valores en cada carga */
+function sembrado(a){ return function(){ a|=0; a=a+0x6D2B79F5|0;
+  let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t;
+  return ((t^t>>>14)>>>0)/4294967296; }; }
+
 function colorForMv(mv){
   if(mv >= 500) return '#e05252';
   if(mv >= 350) return '#d97706';
@@ -468,16 +636,19 @@ function colorForMv(mv){
   if(mv >= 80) return '#1fb6a8';
   return 'rgba(31,182,168,0.16)';
 }
+function pie(el, partes){
+  document.getElementById(el).innerHTML =
+    partes.map(p=>p[1]?`<span class="${p[2]||''}"><b>${p[0]}:</b> ${p[1]}</span>`:'').join('');
+}
 
 function render(key){
   const d = DATA[key];
+  sincro.charts = []; sincro.x = null;
 
-  // Verdict banner
   const vb = document.getElementById('verdictBanner');
   vb.className = 'verdict ' + d.verdict;
   vb.innerHTML = `<div class="badge">${d.verdict === 'retenido' ? 'Veredicto: Retenido' : 'Veredicto: Aprobado'}</div><div class="txt">${d.verdictText}</div>`;
 
-  // KPI row
   const kr = document.getElementById('kpiRow');
   kr.innerHTML = d.kpis.map(k => `
     <div class="panel kpi">
@@ -487,132 +658,171 @@ function render(key){
       <div class="bar"><div class="bar-fill" style="width:${k.pct}%;background:${k.cls==='green'?'#2f9e6e':k.cls==='amber'?'#d97706':k.cls==='red'?'#e05252':'#1fb6a8'}"></div></div>
     </div>`).join('');
 
-  document.getElementById('energySub').textContent = `carga ${d.energy.carga} MWh · descarga ${d.energy.descarga} MWh`;
+  document.getElementById('energySub').textContent = `descarga ${d.energy.descarga} MWh · medición DC`;
   document.getElementById('alarmSub').textContent = `${d.alarms.reduce((a,b)=>a+b.n,0)} eventos totales`;
   document.getElementById('heatmapSub').textContent = d.heatmapSub;
   const lastAvail = d.availSeries[d.availSeries.length-1];
   const daysAbove = d.availSeries.filter(v=>v>=d.availTarget).length;
-  document.getElementById('availSub').textContent = `hoy: ${lastAvail}% · ${daysAbove} de ${d.availSeries.length} días sobre el objetivo de ${d.availTarget}%`;
+  document.getElementById('availSub').textContent = `hoy: ${lastAvail}% · ${daysAbove} de ${d.availSeries.length} días sobre el objetivo`;
 
-  // Availability vs target chart
+  /* ── Figura 1 · Disponibilidad contractual (GAA) ── */
   if(charts.avail) charts.avail.destroy();
+  const bajoObjetivo = d.availSeries.map((v,i)=>v<d.availTarget?i:null).filter(v=>v!==null);
   charts.avail = new Chart(document.getElementById('chartAvailability'), {
     data:{
       labels:d.availDates,
       datasets:[
-        {
-          type:'line', label:'Disponibilidad real (%)', data:d.availSeries,
-          borderColor:'#1fb6a8', backgroundColor:'rgba(31,182,168,0.12)', fill:true,
-          tension:0.3, pointRadius:3,
-          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?'#2f9e6e':'#e05252'),
-          pointBorderColor:d.availSeries.map(v=>v>=d.availTarget?'#2f9e6e':'#e05252'),
-        },
-        {
-          type:'line', label:`Objetivo (${d.availTarget}%)`, data:d.availDates.map(()=>d.availTarget),
-          borderColor:'#d97706', borderDash:[6,4], pointRadius:0, fill:false,
-        }
+        { type:'line', label:'GAA diaria', data:d.availSeries,
+          borderColor:QSV.teal, borderWidth:2, fill:false, tension:0,
+          pointRadius:2.5, pointBorderWidth:0,
+          pointBackgroundColor:d.availSeries.map(v=>v>=d.availTarget?QSV.teal:QSV.red) },
+        { type:'line', label:`Objetivo contractual (${d.availTarget.toFixed(1)}%)`,
+          data:d.availDates.map(()=>d.availTarget),
+          borderColor:QSV.neutral, borderWidth:1.2, borderDash:[6,4], pointRadius:0 }
       ]
     },
     options:{
-      plugins:{legend:{labels:{color:'#8fa3b0',font:{size:10}}}},
-      scales:{
-        x:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}},
-        y:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}, suggestedMin:96, suggestedMax:100,
-           title:{display:true,text:'% disponibilidad',color:'#8fa3b0',font:{size:10}}}
-      }
+      plugins:{
+        legend:{labels:{color:QSV.muted}},
+        qsvBands:{bands:[{from:d.availTarget,to:100,color:QSV.tealSoft}]},
+        qsvEvents:bajoObjetivo.map(i=>({i, label:`Bajo objetivo · ${d.availDates[i]}`, color:QSV.red})),
+        zoom:zoomX
+      },
+      scales:{ x:ejeX('Fecha (MM-DD, 2026)'),
+               y:ejeY('Disponibilidad (%)', {suggestedMin:96, suggestedMax:100}) }
     }
   });
+  pie('availFoot', [
+    ['Fuente','SCADA historian'],['Resolución','1 día'],['Ventana','14 días'],
+    ['Estado', d.verdict==='retenido' ? 'GAA retenida — cobertura insuficiente' : 'Validado',
+     d.verdict==='retenido' ? 'warn' : '']
+  ]);
 
-  // Energy chart
+  /* ── Figura 2 · Energía real vs. esperada ── */
   if(charts.energy) charts.energy.destroy();
+  const previos = d.energy.series.slice(1,5);
+  const esperado = previos.reduce((a,b)=>a+b,0)/previos.length;
+  const hoyMWh = d.energy.series[d.energy.series.length-1];
+  const desv = (hoyMWh-esperado)/esperado*100;
   charts.energy = new Chart(document.getElementById('chartEnergy'), {
-    type:'bar',
     data:{
       labels:['D-6','D-5','D-4','D-3','D-2','D-1','Hoy'],
       datasets:[
-        {label:'Descarga (MWh)', data:d.energy.series, backgroundColor:'#1fb6a8', borderRadius:3},
+        { type:'bar', label:'Descarga medida', data:d.energy.series,
+          backgroundColor:QSV.teal, borderRadius:0, barPercentage:.62 },
+        { type:'line', label:`Esperada (media D-4…D-1)`,
+          data:d.energy.series.map(()=>esperado),
+          borderColor:QSV.neutral, borderWidth:1.2, borderDash:[6,4], pointRadius:0 }
       ]
     },
     options:{
-      plugins:{legend:{labels:{color:'#8fa3b0',font:{size:10}}}},
-      scales:{
-        x:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}},
-        y:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}}
-      }
+      plugins:{ legend:{labels:{color:QSV.muted}} },
+      scales:{ x:ejeX(null), y:ejeY('Energía descargada (MWh)') }
     }
   });
+  document.getElementById('energyDev').innerHTML =
+    `Desviación vs. esperada: <b>${desv>=0?'+':''}${desv.toFixed(1)}%</b> · impacto: <b>${desv>=0?'+':''}${(hoyMWh-esperado).toFixed(1)} MWh</b>`;
+  pie('energyFoot', [['Fuente','SCADA historian'],['Resolución','1 día'],['Medición','DC'],['Estado','Validado']]);
 
-  // SOC chart (gauge-like doughnut)
-  if(charts.soc) charts.soc.destroy();
-  charts.soc = new Chart(document.getElementById('chartSOC'), {
-    type:'doughnut',
-    data:{
-      labels:['SOC inicial','SOC final','Restante'],
-      datasets:[{
-        data:[d.soc.inicial, Math.max(d.soc.final-d.soc.inicial,0), 100-Math.max(d.soc.final,d.soc.inicial)],
-        backgroundColor:['#1fb6a8','#2f9e6e','#173350'],
-        borderWidth:0
-      }]
-    },
-    options:{
-      cutout:'70%',
-      plugins:{legend:{position:'bottom',labels:{color:'#8fa3b0',font:{size:10},boxWidth:10}}}
-    }
+  /* ── Figura 3 · RTE — la cifra que se niega a publicarse ── */
+  const rte = d.kpis.find(k=>k.label.indexOf('round-trip')>=0);
+  document.getElementById('rteHold').innerHTML =
+    `<div class="t">No publicada</div><div class="r">${rte.meta}. Una eficiencia sobre un ciclo abierto no está definida; la cifra se retiene y se declara el motivo.</div>`;
+  pie('rteFoot', [['Regla','ciclo cerrado requerido'],['Estado','Retenida','warn']]);
+
+  /* ── Figura 4 · Paneles sincronizados P / SOC / T ── */
+  ['syncP','syncS','syncT'].forEach(id=>{ if(charts[id]) charts[id].destroy(); });
+  const gapEv = d.sync.gap ? [{i:d.sync.gap[0], label:d.sync.gapLabel, color:QSV.amber}] : [];
+  const comunes = t => ({
+    responsive:true, maintainAspectRatio:false, interaction:{mode:'index', intersect:false},
+    plugins:{ legend:{display:false}, qsvCross:true, qsvEvents:gapEv, zoom:zoomX,
+              tooltip:{callbacks:{title:items=>items[0]?`${items[0].label} CLT`:''}} },
+    spanGaps:false,
+    scales:{ x:Object.assign(ejeX(t?'Hora local (CLT)':null), t?{}:{ticks:{display:false}}),
+             y:{} }
   });
+  let o = comunes(false);
+  o.scales.y = ejeY('Potencia activa (MW)', {suggestedMin:-140, suggestedMax:140});
+  o.plugins.qsvBands = {lines:[{y:0,color:'rgba(255,255,255,.25)',dash:[2,2]},
+    {y:126,color:QSV.neutral,dash:[5,4],label:'P máx 126 MW'},
+    {y:-126,color:QSV.neutral,dash:[5,4]}]};
+  charts.syncP = new Chart(document.getElementById('syncP'), {
+    type:'line', data:{labels:HORAS, datasets:[{label:'P (MW)', data:d.sync.p,
+      borderColor:QSV.teal, borderWidth:2, pointRadius:0, tension:0}]}, options:o });
 
-  // Trend chart
+  o = comunes(false);
+  o.scales.y = ejeY('SOC (%)', {min:0, max:100});
+  o.plugins.qsvBands = {bands:[{from:10,to:90,color:'rgba(255,255,255,.03)'}],
+    lines:[{y:90,color:QSV.neutral,dash:[5,4],label:'límite 90%'},
+           {y:10,color:QSV.neutral,dash:[5,4],label:'límite 10%'}]};
+  charts.syncS = new Chart(document.getElementById('syncS'), {
+    type:'line', data:{labels:HORAS, datasets:[{label:'SOC (%)', data:d.sync.s,
+      borderColor:QSV.neutral, borderWidth:1.6, pointRadius:0, tension:0}]}, options:o });
+
+  o = comunes(true);
+  o.scales.y = ejeY('T celda (°C)', {suggestedMin:15, suggestedMax:50});
+  o.plugins.qsvBands = {lines:[{y:45,color:QSV.amber,dash:[5,4],label:'alerta 45 °C'}]};
+  charts.syncT = new Chart(document.getElementById('syncT'), {
+    type:'line', data:{labels:HORAS, datasets:[{label:'T (°C)', data:d.sync.t,
+      borderColor:QSV.amber, borderWidth:1.4, pointRadius:0, tension:0}]}, options:o });
+
+  sincro.charts = [charts.syncP, charts.syncS, charts.syncT];
+  document.getElementById('syncSub').textContent =
+    `P · SOC · T de celda — ${d.label.split(' ')[0]}`;
+  pie('syncFoot', [
+    ['Fuente','SCADA historian'],['Resolución',d.sync.res],['Ventana',d.sync.ventana],
+    ['Cobertura', d.sync.cobertura + (d.sync.gap?' — brecha 09–14 h declarada, no rellenada':''), d.sync.gap?'warn':''],
+    ['Estado', d.sync.gap?'Parcial — huecos visibles':'Validado', d.sync.gap?'warn':'']
+  ]);
+
+  /* ── Figura 5 · Tendencia de descarga con envolvente ── */
   if(charts.trend) charts.trend.destroy();
   charts.trend = new Chart(document.getElementById('chartTrend'), {
     type:'bar',
-    data:{
-      labels:d.trendLabels,
-      datasets:[{
-        data:d.trendVals,
-        backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?'#2f9e6e':v>=d.trendBands.warn?'#d97706':'#e05252'),
-        borderRadius:3
-      }]
-    },
+    data:{ labels:d.trendLabels, datasets:[{ label:'Descarga (MWh)', data:d.trendVals,
+      backgroundColor:d.trendVals.map(v=>v>=d.trendBands.good?QSV.teal:v>=d.trendBands.warn?QSV.amber:QSV.red),
+      borderRadius:0, barPercentage:.58 }]},
     options:{
-      plugins:{legend:{display:false}},
-      scales:{
-        x:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}},
-        y:{ticks:{color:'#8fa3b0',font:{size:10}}, grid:{color:'#132c44'}, title:{display:true,text:'MWh',color:'#8fa3b0',font:{size:10}}}
-      }
+      plugins:{ legend:{display:false},
+        qsvBands:{lines:[
+          {y:d.trendBands.good,color:QSV.neutral,dash:[5,4],label:`esperado ≥ ${d.trendBands.good} MWh`},
+          {y:d.trendBands.warn,color:QSV.amber,dash:[5,4],label:`alerta < ${d.trendBands.warn} MWh`}]} },
+      scales:{ x:ejeX(null), y:ejeY('Energía descargada (MWh)') }
     }
   });
+  pie('trendFoot', [['Resolución','1 día'],['Criterio','excluye días sin datos'],['Estado','Validado']]);
 
-  // Alarms doughnut
+  /* ── Figura 6 · Alarmas por familia ── */
   if(charts.alarms) charts.alarms.destroy();
+  const colAl = f => f==='fire_safety'?QSV.red : f==='communication'?QSV.amber : QSV.neutral;
   charts.alarms = new Chart(document.getElementById('chartAlarms'), {
-    type:'doughnut',
-    data:{
-      labels:d.alarms.map(a=>a.f),
-      datasets:[{
-        data:d.alarms.map(a=>a.n),
-        backgroundColor:['#1fb6a8','#8f9dd8','#2f9e6e','#e05252','#d97706'],
-        borderWidth:0
-      }]
-    },
+    type:'bar',
+    data:{ labels:d.alarms.map(a=>a.f),
+      datasets:[{ data:d.alarms.map(a=>a.n),
+        backgroundColor:d.alarms.map(a=>colAl(a.f)), borderRadius:0, barPercentage:.55 }]},
     options:{
-      plugins:{legend:{position:'bottom',labels:{color:'#8fa3b0',font:{size:10},boxWidth:10}}}
+      indexAxis:'y',
+      plugins:{legend:{display:false}},
+      scales:{ x:ejeY('Eventos (n)'), y:{grid:{display:false}, border:{color:QSV.axis},
+        ticks:{color:QSV.muted, font:{family:"'IBM Plex Mono',monospace", size:9.5}}} }
     }
   });
 
-  // Heatmap
+  /* ── Heatmap determinista (mismos valores en cada carga) ── */
   const hours = ['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'];
-  let hm = '<div class="rowlabel"></div>' + hours.map(h=>`<div class="collabel">${h}</div>`).join('');
-  d.heatmapUnits.forEach(u => {
+  let hm = '<div class="rowlabel"></div>' + hours.map(hr=>`<div class="collabel">${hr}</div>`).join('');
+  d.heatmapUnits.forEach((u,ui) => {
     const flagged = d.heatmapFlag.includes(u);
+    const rnd = sembrado(20260806 + ui*97 + (key==='good'?7:0));
     hm += `<div class="rowlabel">${u}</div>`;
     for(let i=0;i<16;i++){
-      let base = flagged ? 420 + Math.random()*300 : 60 + Math.random()*260;
+      let base = flagged ? 420 + rnd()*300 : 60 + rnd()*260;
       if (base > 900) base = 900;
       hm += `<div class="cell" style="background:${colorForMv(base)}" title="${u} ${hours[i]}: ${Math.round(base)} mV"></div>`;
     }
   });
   document.getElementById('heatmap').innerHTML = hm;
 
-  // Findings
   document.getElementById('findingsBody').innerHTML = d.findings.map(f => `
     <tr>
       <td><span class="prio ${f.p}">${f.p}</span></td>
@@ -625,6 +835,12 @@ function render(key){
 
 document.getElementById('dateSelect').addEventListener('change', e => render(e.target.value));
 render('today');
+document.querySelectorAll('.sync-row canvas').forEach(cv=>{
+  cv.addEventListener('dblclick', resetSync);
+});
+document.getElementById('chartAvailability').addEventListener('dblclick', ()=>{
+  if(charts.avail && charts.avail.resetZoom) charts.avail.resetZoom();
+});
 
 // --- SPA tab navigation ---
 function setView(view){
