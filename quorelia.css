@@ -53,6 +53,21 @@ body{
 a{color:inherit;text-decoration:none;}
 img,svg{display:block;max-width:100%;}
 
+/* ── Barra de desplazamiento · "Pulse" ──────────────────────────────────
+   Un haz teal fino y luminoso sobre pista transparente — la marca en el
+   borde de la página. Chrome/Edge pintan el diseño completo; Firefox
+   recibe la versión fina simplificada; los teléfonos lo ignoran. El rail
+   de tarjetas conserva su barra discreta propia (selector más específico). */
+html{scrollbar-width:thin;scrollbar-color:var(--teal) transparent;}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--teal-lt),var(--teal));
+  box-shadow:0 0 10px rgba(31,182,168,.55);}
+::-webkit-scrollbar-thumb:hover{
+  background:var(--teal-lt);
+  box-shadow:0 0 16px rgba(31,182,168,.85);}
+
 .wrap{max-width:1360px;margin:0 auto;padding:0 var(--gut);}
 section{padding:96px 0;}
 hr.rule{border:0;border-top:1px solid var(--line);margin:0;}
