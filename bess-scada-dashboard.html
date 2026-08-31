@@ -102,7 +102,10 @@
     background:transparent;border:none;color:var(--muted);padding:8px 12px;font-size:12px;
     border-radius:0;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:500;white-space:nowrap;flex:none;
   }
-  .tabs button.active{background:var(--blue-soft);color:#a1d8e6;}
+  .tabs button:hover{color:var(--blue);}
+  .tabs button.active{background:var(--blue);color:#ffffff;
+    clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));}
+  .tabs button.active:hover{color:#ffffff;}
   .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   .date-select{
     background:var(--panel);border:1px solid var(--border);color:var(--text);
