@@ -24,23 +24,23 @@
 </script>
 <title>Quorelia — Operational Intelligence for Renewable Energy</title>
 <meta name="description" content="Operational intelligence for renewable energy. Eagle Eye connects SCADA, BESS, inverter and field data so teams see more, know earlier and operate better. Solar, wind and storage.">
-<link rel="canonical" href="https://quorelia.org/">
+<link rel="canonical" href="https://www.quorelia.org/">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://quorelia.org/">
+<meta property="og:url" content="https://www.quorelia.org/">
 <meta property="og:title" content="Quorelia — Operational intelligence for renewable energy">
 <meta property="og:description" content="See more. Know earlier. Operate better.">
-<meta property="og:image" content="https://quorelia.org/quorelia-banner.jpg">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"https://quorelia.org/#org","name":"Quorelia SpA",
-  "url":"https://quorelia.org/","logo":"https://quorelia.org/quorelia-mark.png",
+ {"@type":"Organization","@id":"https://www.quorelia.org/#org","name":"Quorelia SpA",
+  "url":"https://www.quorelia.org/","logo":"https://www.quorelia.org/quorelia-mark.png",
   "email":"jay@quorelia.org","description":"Operational intelligence for renewable energy. Solar, wind and storage.",
   "address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"}},
- {"@type":"WebSite","@id":"https://quorelia.org/#site","url":"https://quorelia.org/",
-  "name":"Quorelia","publisher":{"@id":"https://quorelia.org/#org"},"inLanguage":["en","es","zh"]}]}
+ {"@type":"WebSite","@id":"https://www.quorelia.org/#site","url":"https://www.quorelia.org/",
+  "name":"Quorelia","publisher":{"@id":"https://www.quorelia.org/#org"},"inLanguage":["en","es","zh"]}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +114,20 @@
     padding-left:20px;transition:color .2s;}
   .linklist a::before{content:'↳';position:absolute;left:0;color:var(--teal);}
   .linklist a:hover{color:var(--teal);}
+
+  /* Teléfonos: el hero baja de 128px a algo que no exige un scroll en vacío,
+     y el diagrama de Eagle Eye aprieta filas y conectores. */
+  @media(max-width:660px){
+    .hero{padding:64px 0 56px;}
+    .hero-line{margin-top:16px;letter-spacing:.14em;}
+    .hero .lede{margin-top:18px;}
+    .ee-diagram{margin-top:36px;}
+    .ee-link{height:24px;}
+    .ee-chip{padding:8px 11px;letter-spacing:.09em;}
+    .ee-core{padding:13px 26px 13px 23px;letter-spacing:.24em;}
+    .cycle{gap:6px 12px;margin-top:40px;}
+    .linklist.rv{margin-top:34px !important;}
+  }
 
   /* Botones sobre navy */
   .dark .btn-sm{border-color:rgba(255,255,255,.46);color:#fff;}
@@ -321,7 +335,7 @@
       <div>
         <h5 data-i18n="f_ct">Contact</h5>
         <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
-        <a href="https://quorelia.org">quorelia.org</a>
+        <a href="https://www.quorelia.org">quorelia.org</a>
       </div>
     </div>
 

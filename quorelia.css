@@ -105,7 +105,9 @@ section > .wrap > h2{max-width:24ch;}
 .head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
   -webkit-backdrop-filter:saturate(180%) blur(12px);
   backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
+/* El padding vertical no puede pisar el lateral del .wrap: en pantallas
+   angostas el margen auto desaparece y el logo quedaba pegado al borde. */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gut);}
 .brand{font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.24em;text-transform:uppercase;
   display:inline-flex;align-items:center;gap:10px;}
 .brand img{flex:none;}
@@ -616,4 +618,29 @@ body.locked{overflow:hidden;}
   .mod:hover{padding-left:0;}
   .mod:hover .m-name{letter-spacing:.08em;}
   .cards .card:hover{transform:none;box-shadow:none;}
+}
+
+/* ── Teléfonos: ritmo vertical ───────────────────────────────────────────
+   Los quiebres por componente ya colapsan las columnas; lo que faltaba era
+   el aire. 96px de padding por sección está pensado para escritorio — en un
+   teléfono deja pantallas casi vacías entre sección y sección, y el pulgar
+   pierde el hilo. Aquí se aprieta el ritmo completo sin tocar el layout. */
+@media(max-width:660px){
+  :root{--gut:20px;}
+  section{padding:56px 0;}
+  .mod{padding:20px 0;gap:8px;}
+  .band{min-height:260px;}
+  .band .wrap{padding-top:52px;padding-bottom:52px;}
+  .f-logo{margin:48px 0 30px;gap:22px;}
+  .lang-blk{margin-top:52px;padding-top:40px;}
+  .arch-prov{margin-top:34px;}
+  .scale{margin-bottom:44px;}
+  .fgrid{gap:20px 18px;}
+  .cards{gap:12px;}
+  .reps{gap:12px;}
+  .rail .card{flex-basis:260px;min-height:300px;}
+  footer{padding:44px 0 26px;}
+}
+@media(max-width:620px){
+  .capcol{padding:18px 0 20px;}
 }

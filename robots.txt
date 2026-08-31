@@ -1,0 +1,15 @@
+# Quorelia — quorelia.org
+# Las páginas públicas son las nueve del sitemap. Los archivos del software
+# (Control Center, dashboards, informes crudos) llevan meta noindex y se
+# dejan rastreables a propósito: así Google ve el noindex, y los iframes de
+# demos.html e informe.html siguen renderizando. Lo que va en Disallow es
+# material que no forma parte del sitio público.
+
+User-agent: *
+Disallow: /demo-privado/
+Disallow: /presentacion-sec/
+Disallow: /teaser/
+Disallow: /social/
+Disallow: /tarjetas/
+
+Sitemap: https://www.quorelia.org/sitemap.xml
