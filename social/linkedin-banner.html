@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Quorelia — LinkedIn banner</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Banner de LinkedIn con el logo nuevo. Dos variantes:
+       (sin parámetro)  portada de página de empresa · 1128×191
+       ?p               banner de perfil personal    · 1584×396
+     El avatar de LinkedIn tapa la esquina inferior izquierda de la
+     portada, así que la composición va centrada y el tercio izquierdo
+     queda sin contenido crítico. Captura con Chrome headless a @2x —
+     comando al pie. */
+  :root{
+    --navy:#081522; --line:rgba(255,255,255,.14);
+    --txt:#f2f5f7; --dim:#8fa3b0; --dim-2:#5b6d7a;
+    --teal:#1fb6a8;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    --mono:'IBM Plex Mono','SF Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:100%;height:100%;}
+  body{font-family:var(--sans);background:var(--navy);color:var(--txt);
+    -webkit-font-smoothing:antialiased;overflow:hidden;}
+  .card{width:100vw;height:100vh;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(60% 130% at 50% 50%, rgba(31,182,168,.14), transparent 62%),
+      linear-gradient(160deg,#081522,#0c1e2e 58%,#081522);}
+  /* filete de horizonte, como el pie de las tarjetas */
+  .card::before,.card::after{content:'';position:absolute;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.10) 30%,rgba(31,182,168,.35) 50%,rgba(255,255,255,.10) 70%,transparent);}
+  .card::before{top:16%;}
+  .card::after{bottom:16%;}
+
+  .stack{position:relative;z-index:1;display:flex;flex-direction:column;
+    align-items:center;gap:10px;}
+  .lockup{display:flex;align-items:center;gap:20px;}
+  .lockup img.mk{height:48px;width:auto;display:block;}
+  .lockup img.wm{height:22px;width:auto;display:block;}
+  .motto{font-size:12.5px;color:var(--dim);letter-spacing:.06em;}
+  .motto b{color:#dbe6ec;font-weight:500;}
+  .strip{font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--teal);}
+  .strip span{color:var(--dim-2);padding:0 9px;}
+
+  /* variante personal: más alta, todo respira y entra el ciclo */
+  body.p .lockup img.mk{height:96px;}
+  body.p .lockup img.wm{height:44px;}
+  body.p .lockup{gap:30px;}
+  body.p .stack{gap:22px;}
+  body.p .motto{font-size:19px;}
+  body.p .strip{font-size:13px;}
+  body.p .card::before{top:20%;}
+  body.p .card::after{bottom:20%;}
+</style></head>
+<body>
+<div class="card">
+  <div class="stack">
+    <div class="lockup">
+      <img class="mk" src="quorelia-mark-white.png" alt="">
+      <img class="wm" src="quorelia-wordmark-white.png" alt="Quorelia">
+    </div>
+    <div class="motto"><b>Ever watching.</b> In service of the planet's energy.</div>
+    <div class="strip">Solar <span>·</span> Wind <span>·</span> BESS <span>·</span> quorelia.org</div>
+  </div>
+</div>
+<script>if(location.search.indexOf('p')>=0)document.body.classList.add('p');</script>
+<!--
+Captura:
+  chrome --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2
+    --window-size=1128,191 --screenshot=linkedin-banner-company.png  linkedin-banner.html
+    --window-size=1584,396 --screenshot=linkedin-banner-personal.png linkedin-banner.html?p
+-->
+</body></html>
