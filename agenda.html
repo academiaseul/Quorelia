@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Book a demo — Quorelia</title>
+<meta name="description" content="Schedule a 30-minute Quorelia demo on your own operation — solar, wind or BESS. Pick a time that works for you; we bring the platform running on a case like yours.">
+<link rel="canonical" href="https://www.quorelia.org/agenda.html">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.quorelia.org/agenda.html">
+<meta property="og:title" content="Book a demo — Quorelia">
+<meta property="og:description" content="Thirty minutes on your own case. Pick a time.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Específico de la agenda */
+  .s-hero{padding:104px 0 46px;}
+  @media(max-width:660px){ .s-hero{padding:60px 0 36px;} }
+  .ag-pts{display:flex;justify-content:center;gap:12px 36px;flex-wrap:wrap;
+    margin:26px auto 0;max-width:900px;}
+  .ag-pts span{font-size:13.5px;color:var(--ink-2);position:relative;padding-left:20px;text-align:left;}
+  .ag-pts span::before{content:'↳';position:absolute;left:0;color:var(--teal);}
+
+  .cal-wrap{max-width:1080px;margin:0 auto;}
+  #cal-agenda{width:100%;min-height:640px;}
+  .cal-fallback{text-align:center;padding:26px 0 0;}
+  .cal-fallback a{text-decoration:underline;color:var(--teal);}
+
+  .alt{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  .alt a{border:1px solid var(--line);padding:9px 18px;font-size:13.5px;color:var(--ink-2);
+    transition:border-color .18s,color .18s;}
+  .alt a:hover{border-color:var(--teal);color:var(--ink);}
+  .alt a b{color:var(--ink);font-weight:600;}
+</style>
+</head>
+<body>
+
+<!-- menú móvil -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+    <a href="insights.html" data-i18n="nav_ins">Insights</a>
+    <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+  </nav>
+  <div class="d-foot">
+    <a href="agenda.html" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+    <nav class="nav-links">
+      <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+      <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="insights.html" data-i18n="nav_ins">Insights</a>
+      <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="agenda.html" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ ENCABEZADO ══════════ -->
+<section class="s-hero" style="padding-bottom:38px;">
+  <div class="wrap">
+    <p class="tag g" data-i18n="ag_t">Book a demo</p>
+    <h1 class="big" style="margin:12px auto 14px;" data-i18n="ag_h">Thirty minutes, on your own case</h1>
+    <p class="lede" data-i18n="ag_s">Pick a time below and it lands on both calendars with a video link — no back-and-forth. Tell us your technology and what you need reported, and we arrive with the platform running on a case like yours.</p>
+    <div class="ag-pts">
+      <span data-i18n="ag_b1">We review your systems — SCADA, PPC, BMS — and what you have to report today</span>
+      <span data-i18n="ag_b2">We show the Control Center and a report on a fleet like yours</span>
+      <span data-i18n="ag_b3">We define together whether a pilot makes sense — no commitment</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CALENDARIO ══════════ -->
+<section style="padding-top:0;">
+  <div class="wrap cal-wrap">
+    <div id="cal-agenda"></div>
+    <p class="fine cal-fallback" data-i18n="ag_fb">If the calendar does not load, book directly at <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener">cal.com/quorelia/30min</a>.</p>
+    <hr class="rule" style="margin:44px 0 34px;">
+    <p class="tag g" style="text-align:center;" data-i18n="ag_alt">Prefer another channel?</p>
+    <div class="alt" style="margin-top:18px;">
+      <a href="https://cal.com/quorelia/15min" target="_blank" rel="noopener"><b data-i18n="ag_a15a">15 min</b> · <span data-i18n="ag_a15b">quick intro call</span></a>
+      <a href="https://wa.me/56942115562" target="_blank" rel="noopener"><b>WhatsApp</b> · +56 9 4211 5562</a>
+      <a href="mailto:jay@quorelia.org"><b>Email</b> · jay@quorelia.org</a>
+      <a href="plataforma.html#contact"><b data-i18n="ag_afa">Written form</b> · <span data-i18n="ag_afb">tell us your case</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand" style="display:inline-block;margin-bottom:14px;"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+      </div>
+      <div>
+        <h5 data-i18n="f_prod">Platform</h5>
+        <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+        <a href="demos.html" data-i18n="nav_demos">Demos</a>
+        <a href="insights.html" data-i18n="nav_ins">Insights</a>
+        <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+        <a href="informe.html#original" data-i18n="f_sample">Sample report</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_co">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_ct">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://www.quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+    <div class="f-logo">
+      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
+      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
+      <span data-i18n="f_tag">Intelligence for Critical Energy Infrastructure</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</footer>
+
+<!-- Cal.com — incrustado en línea, marca teal -->
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin:"https://app.cal.com"});
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "#cal-agenda",
+  config: { layout: "month_view" },
+  calLink: "quorelia/30min"
+});
+Cal.ns["30min"]("ui", {"styles":{"branding":{"brandColor":"#149487"}},"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Platform", nav_demos:"Demos", nav_ins:"Insights", nav_rep:"Reports",
+  nav_gov:"Government", nav_story:"Our Story", cta_demo:"Request a Demo",
+  ag_t:"Book a demo",
+  ag_h:"Thirty minutes, on your own case",
+  ag_s:"Pick a time below and it lands on both calendars with a video link — no back-and-forth. Tell us your technology and what you need reported, and we arrive with the platform running on a case like yours.",
+  ag_b1:"We review your systems — SCADA, PPC, BMS — and what you have to report today",
+  ag_b2:"We show the Control Center and a report on a fleet like yours",
+  ag_b3:"We define together whether a pilot makes sense — no commitment",
+  ag_fb:"If the calendar does not load, book directly at <a href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a>.",
+  ag_alt:"Prefer another channel?",
+  ag_a15a:"15 min", ag_a15b:"quick intro call",
+  ag_afa:"Written form", ag_afb:"tell us your case",
+  f_desc:"Intelligence for critical energy infrastructure. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_co:"Company", f_ct:"Contact",
+  f_terms:"Terms", f_priv:"Privacy",
+  f_tag:"Intelligence for Critical Energy Infrastructure",
+  f_fine:"Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients."
+ },
+ es:{
+  nav_sw:"Plataforma", nav_demos:"Demos", nav_ins:"Insights", nav_rep:"Informes",
+  nav_gov:"Gobierno", nav_story:"Nuestra historia", cta_demo:"Solicitar demo",
+  ag_t:"Agende una demo",
+  ag_h:"Treinta minutos, sobre su propio caso",
+  ag_s:"Elija un horario abajo y queda en ambos calendarios con enlace de video — sin ida y vuelta de correos. Cuéntenos su tecnología y qué necesita reportar, y llegamos con la plataforma corriendo sobre un caso como el suyo.",
+  ag_b1:"Revisamos sus sistemas — SCADA, PPC, BMS — y lo que hoy tiene que reportar",
+  ag_b2:"Mostramos el Control Center y un informe sobre un parque como el suyo",
+  ag_b3:"Definimos juntos si un piloto tiene sentido — sin compromiso",
+  ag_fb:"Si el calendario no carga, agende directo en <a href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a>.",
+  ag_alt:"¿Prefiere otro canal?",
+  ag_a15a:"15 min", ag_a15b:"llamada breve de introducción",
+  ag_afa:"Formulario", ag_afb:"cuéntenos su caso por escrito",
+  f_desc:"Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_co:"Empresa", f_ct:"Contacto",
+  f_terms:"Términos", f_priv:"Privacidad",
+  f_tag:"Inteligencia para Infraestructura Energética Crítica",
+  f_fine:"Las demos y los informes de muestra de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales."
+ },
+ zh:{
+  nav_sw:"平台", nav_demos:"演示", nav_ins:"洞察", nav_rep:"报告",
+  nav_gov:"政府事务", nav_story:"我们的故事", cta_demo:"预约演示",
+  ag_t:"预约演示",
+  ag_h:"三十分钟，围绕您自己的案例",
+  ag_s:"在下方选择时间，会自动写入双方日历并附视频链接——无需往返邮件。告诉我们您的技术类型与报告需求，我们将带着运行在类似案例上的平台赴会。",
+  ag_b1:"我们了解您的系统——SCADA、PPC、BMS——以及您当前需要报告的内容",
+  ag_b2:"我们演示控制中心，以及一份类似电站的报告",
+  ag_b3:"我们一起判断试点是否有意义——没有任何义务",
+  ag_fb:"如日历未能加载，请直接访问 <a href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a> 预约。",
+  ag_alt:"偏好其他方式？",
+  ag_a15a:"15 分钟", ag_a15b:"简短介绍通话",
+  ag_afa:"表单", ag_afb:"书面告诉我们您的情况",
+  f_desc:"面向关键能源基础设施的智能。光伏、风电与储能。",
+  f_prod:"平台", f_sample:"样例报告", f_co:"公司", f_ct:"联系",
+  f_terms:"条款", f_priv:"隐私",
+  f_tag:"关键能源基础设施智能",
+  f_fine:"本站的演示与样例报告均为示意数据，不代表真实电站或客户。"
+ }
+};
+
+function setLang(l){
+  document.getElementById('html-root').setAttribute('lang', l);
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var btn=document.getElementById(p+'-'+k);
+      if(btn) btn.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'en').toLowerCase();
+  setLang(s || (nav.indexOf('es')===0 ? 'es' : nav.indexOf('zh')===0 ? 'zh' : 'en'));
+})();
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
