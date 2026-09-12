@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H1F1ZXMMT2');
+</script>
+<title>Normativa eléctrica en Chile: guía de cumplimiento para generadoras ante el CEN, la SEC y la CNE — Quorelia</title>
+<meta name="description" content="Guía práctica 2026 de las obligaciones regulatorias de plantas solares, eólicas, BESS y PMGD en Chile: LGSE, NTSyCS, Coordinador Eléctrico (SITR, pronósticos, fallas, Infotécnica), SEC (declaraciones, fiscalización, multas), DS 88, Ley 21.505 y Ley 21.721.">
+<link rel="canonical" href="https://www.quorelia.org/normativa-electrica-chile.html">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.quorelia.org/normativa-electrica-chile.html">
+<meta property="og:title" content="Normativa eléctrica en Chile: guía de cumplimiento para generadoras (CEN · SEC · CNE)">
+<meta property="og:description" content="Qué exige la ley a una planta solar, eólica, BESS o PMGD en Chile — y qué datos hay que tener para demostrarlo.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","@id":"https://www.quorelia.org/normativa-electrica-chile.html#article",
+  "headline":"Normativa eléctrica en Chile: guía de cumplimiento para generadoras ante el CEN, la SEC y la CNE",
+  "inLanguage":"es-CL","datePublished":"2026-09-12","dateModified":"2026-09-12",
+  "author":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "publisher":{"@id":"https://www.quorelia.org/#org"},
+  "mainEntityOfPage":"https://www.quorelia.org/normativa-electrica-chile.html",
+  "about":["Coordinador Eléctrico Nacional","Superintendencia de Electricidad y Combustibles","NTSyCS","PMGD","Almacenamiento de energía"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Quién fiscaliza a las empresas generadoras en Chile?","acceptedAnswer":{"@type":"Answer","text":"La Superintendencia de Electricidad y Combustibles (SEC), creada por la Ley 18.410, fiscaliza y sanciona. El Coordinador Eléctrico Nacional coordina la operación y está obligado a informar a la SEC cualquier hecho que pueda constituir infracción. La Comisión Nacional de Energía (CNE) dicta las normas técnicas, como la NTSyCS."}},
+  {"@type":"Question","name":"¿Qué es la NTSyCS?","acceptedAnswer":{"@type":"Answer","text":"La Norma Técnica de Seguridad y Calidad de Servicio, dictada por la CNE, fija las exigencias técnicas y de información para todas las instalaciones sujetas a coordinación: generación, transmisión, almacenamiento y servicios complementarios. Su versión vigente es la de enero de 2026 (Resolución Exenta N° 45)."}},
+  {"@type":"Question","name":"¿Cuál es la multa máxima que puede aplicar la SEC?","acceptedAnswer":{"@type":"Answer","text":"Según la Ley 18.410, las infracciones gravísimas pueden sancionarse con multas de hasta 10.000 UTA; las graves, hasta 5.000 UTA; y las leves, hasta 500 UTA, además de otras medidas."}},
+  {"@type":"Question","name":"¿Los sistemas de almacenamiento (BESS) son coordinados?","acceptedAnswer":{"@type":"Answer","text":"Sí. La Ley 21.505 de 2022 incorporó los sistemas de almacenamiento como coordinados, sujetos a la NTSyCS y a la coordinación del Coordinador Eléctrico Nacional, y les reconoce potencia de suficiencia."}},
+  {"@type":"Question","name":"¿Qué obligaciones tiene un PMGD?","acceptedAnswer":{"@type":"Answer","text":"Un PMGD (hasta 9 MW conectado en distribución) se rige por el DS 88 y la Norma Técnica de Conexión y Operación de PMGD (NTCO, versión febrero 2026): requisitos de conexión, operación, comunicación con la distribuidora y el Coordinador, y el régimen de precio estabilizado por bloques horarios si opta a él."}}
+ ]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quorelia.css">
+<style>
+  /* Guía normativa: página de lectura larga, en español nativo (es lo que
+     busca quien tiene que cumplir). La cabecera trilingüe sigue funcionando;
+     el cuerpo no se traduce. */
+  .s-hero{padding:96px 0 40px;}
+  @media(max-width:660px){ .s-hero{padding:58px 0 30px;} }
+  .s-hero .wrap{text-align:left;}
+  .s-hero h1{margin:14px 0 18px;max-width:22ch;margin-left:0;}
+  .s-hero .lede{margin-left:0;}
+  .byline{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--grey);margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;}
+
+  .guia{max-width:820px;margin:0 auto;}
+  .guia section{padding:46px 0 0;}
+  .guia section > .wrap > h2{text-align:left;margin-left:0;max-width:none;}
+  .guia h2{font-size:clamp(1.45rem,1.2rem+1vw,2rem);font-weight:300;letter-spacing:-.02em;margin:8px 0 18px;}
+  .guia h3{font-size:17px;font-weight:600;letter-spacing:-.012em;margin:30px 0 10px;}
+  .guia p{font-size:15.5px;line-height:1.65;color:var(--ink-2);margin-bottom:14px;text-align:left;max-width:none;}
+  .guia p b{color:var(--ink);font-weight:600;}
+  .guia ul{list-style:none;margin:0 0 16px;padding:0;}
+  .guia li{font-size:15px;line-height:1.6;color:var(--ink-2);padding:5px 0 5px 24px;position:relative;}
+  .guia li::before{content:'↳';position:absolute;left:0;color:var(--teal);}
+  .guia a{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--line);}
+  .guia a:hover{border-bottom-color:var(--teal);}
+  .guia .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);}
+
+  .tbl{overflow-x:auto;margin:20px 0 10px;}
+  .tbl table{min-width:640px;}
+  .tbl th{padding:8px 14px 8px 0;border-bottom:1px solid var(--ink);text-align:left;}
+  .tbl td{font-size:13.5px;line-height:1.5;}
+  .tbl td:first-child{color:var(--ink);font-weight:500;}
+  .tbl td .m{font-family:var(--mono);font-size:11.5px;color:var(--ink);}
+
+  .toc{border:1px solid var(--line);padding:20px 24px;margin:34px 0 8px;}
+  .toc .n{margin-bottom:10px;display:block;}
+  .toc ol{margin:0;padding:0;list-style:none;counter-reset:t;columns:2;column-gap:28px;}
+  .toc li{counter-increment:t;padding:4px 0 4px 30px;font-size:14px;break-inside:avoid;}
+  .toc li::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:var(--teal);position:absolute;left:0;top:7px;}
+  .toc a{border:0;color:var(--ink-2);}
+  .toc a:hover{color:var(--teal);}
+  @media(max-width:560px){ .toc ol{columns:1;} }
+
+  .nota{border-left:3px solid var(--teal);background:rgba(20,148,135,.06);padding:16px 20px;margin:22px 0;}
+  .nota.a{border-left-color:var(--amber);background:rgba(180,83,9,.055);}
+  .nota p{font-size:14px;margin:0;}
+  .nota p + p{margin-top:8px;}
+
+  .faq details{border-top:1px solid var(--line);padding:14px 0;}
+  .faq details:last-of-type{border-bottom:1px solid var(--line);}
+  .faq summary{cursor:pointer;font-size:16px;font-weight:500;color:var(--ink);list-style:none;position:relative;padding-right:28px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:'+';position:absolute;right:0;top:0;font-family:var(--mono);color:var(--teal);}
+  .faq details[open] summary::after{content:'–';}
+  .faq details p{margin:10px 0 0;}
+
+  .fuentes{font-size:13px;line-height:1.75;color:var(--grey);}
+  .fuentes a{color:var(--grey);}
+  .cierre{background:var(--paper-2);padding:52px 0;margin-top:56px;text-align:center;}
+  .cierre .btn-sm.pri{background:var(--teal);border-color:var(--teal);color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- menú móvil -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
+    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+    <a href="demos.html" data-i18n="nav_demos">Demos</a>
+    <a href="insights.html" data-i18n="nav_ins">Insights</a>
+    <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+    <a href="story.html" data-i18n="nav_story">Our Story</a>
+  </nav>
+  <div class="d-foot">
+    <a href="plataforma.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+    <nav class="nav-links">
+      <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+      <a href="demos.html" data-i18n="nav_demos">Demos</a>
+      <a href="insights.html" class="on" data-i18n="nav_ins">Insights</a>
+      <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      <a href="story.html" data-i18n="nav_story">Our Story</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="plataforma.html#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<article class="guia">
+
+<section class="s-hero" style="padding-bottom:30px;">
+  <div class="wrap">
+    <p class="tag g">Recursos · Regulación</p>
+    <h1 class="big">Normativa eléctrica en Chile: guía de cumplimiento para generadoras</h1>
+    <p class="lede">Qué exige la ley a una planta solar, eólica, de almacenamiento o PMGD ante el Coordinador Eléctrico Nacional, la SEC y la CNE — y qué datos hay que tener a mano para demostrarlo. Escrito para quien firma el cumplimiento, no para abogados.</p>
+    <div class="byline"><span>Última revisión: septiembre 2026</span><span>Lectura: 14 min</span><span>Español · Chile</span></div>
+    <div class="toc">
+      <span class="n">Contenido</span>
+      <ol>
+        <li><a href="#mapa">Quién regula qué</a></li>
+        <li><a href="#leyes">El marco legal en siete leyes</a></li>
+        <li><a href="#cen">Obligaciones ante el Coordinador (CEN)</a></li>
+        <li><a href="#sec">Obligaciones ante la SEC</a></li>
+        <li><a href="#pmgd">PMGD: el régimen especial</a></li>
+        <li><a href="#bess">Almacenamiento (BESS)</a></li>
+        <li><a href="#otros">Otras obligaciones que alcanzan a la planta</a></li>
+        <li><a href="#practica">Cómo se ve el incumplimiento en la práctica</a></li>
+        <li><a href="#datos">Cumplir es un problema de datos</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="mapa">
+  <div class="wrap">
+    <span class="n">01</span>
+    <h2>Quién regula qué</h2>
+    <p>La confusión más común en una planta nueva es tratar al Coordinador, la SEC y la CNE como si fueran la misma ventanilla. No lo son, y cada uno espera cosas distintas:</p>
+    <div class="tbl"><table>
+      <tr><th>Organismo</th><th>Naturaleza</th><th>Qué hace con su planta</th></tr>
+      <tr><td>Ministerio de Energía</td><td>Gobierno</td><td>Define la política y dicta los reglamentos (DS 88 de PMGD, DS 70 de almacenamiento, reglamento de potencia). Identifica anualmente a los grandes consumidores obligados a reportar bajo la Ley 21.305.</td></tr>
+      <tr><td>Comisión Nacional de Energía (CNE)</td><td>Organismo técnico</td><td>Dicta y actualiza las normas técnicas que gobiernan la operación diaria: la <b>NTSyCS</b>, la <b>NTCO de PMGD</b>, sus anexos técnicos. Fija precios regulados y el precio estabilizado.</td></tr>
+      <tr><td>Coordinador Eléctrico Nacional (CEN)</td><td>Corporación autónoma, sin fines de lucro, creada por la Ley 20.936</td><td>Coordina la operación del sistema. Es a quien usted reporta a diario: señales en tiempo real, pronósticos, mantenimientos, fallas, información de instalaciones. Evalúa su cumplimiento y <b>está obligado por ley a informar a la SEC</b> cualquier hecho que pueda constituir infracción.</td></tr>
+      <tr><td>Superintendencia de Electricidad y Combustibles (SEC)</td><td>Fiscalizador y sancionador (Ley 18.410)</td><td>Recibe las comunicaciones de puesta en servicio y las declaraciones de instalaciones, fiscaliza, instruye procedimientos y aplica multas. El único de la lista que puede sancionarlo.</td></tr>
+      <tr><td>Superintendencia del Medio Ambiente (SMA)</td><td>Fiscalizador ambiental</td><td>Fiscaliza el cumplimiento de la Resolución de Calificación Ambiental (RCA) del proyecto y sus compromisos de seguimiento.</td></tr>
+      <tr><td>Panel de Expertos</td><td>Órgano resolutivo</td><td>Resuelve discrepancias técnicas y económicas entre coordinados y con el Coordinador.</td></tr>
+    </table></div>
+    <p>La regla práctica: <b>la CNE escribe la norma, el Coordinador la aplica en la operación, la SEC la hace cumplir.</b> Un incumplimiento nace casi siempre como una observación del Coordinador y termina como un expediente en la SEC.</p>
+  </div>
+</section>
+
+<section id="leyes">
+  <div class="wrap">
+    <span class="n">02</span>
+    <h2>El marco legal en siete leyes</h2>
+    <div class="tbl"><table>
+      <tr><th>Norma</th><th>Qué establece</th><th>Por qué le importa</th></tr>
+      <tr><td>LGSE — DFL N° 4/2006</td><td>La Ley General de Servicios Eléctricos: el marco de todo el sector (generación, transmisión, distribución, mercado, coordinación).</td><td>Es la ley madre. Todo lo demás la modifica o la reglamenta.</td></tr>
+      <tr><td>Ley 20.936 (2016)</td><td>Creó el Coordinador Independiente del Sistema Eléctrico Nacional y el nuevo sistema de transmisión.</td><td>Define su condición de <i>coordinado</i> y el deber de entregar información oportuna, completa y consistente.</td></tr>
+      <tr><td>Ley 18.410 (1985)</td><td>Crea la SEC y fija sus facultades de fiscalización y sanción.</td><td>De aquí salen las multas: hasta 10.000 UTA por infracciones gravísimas, 5.000 por graves, 500 por leves.</td></tr>
+      <tr><td>Leyes 20.257 (2008) y 20.698 (2013)</td><td>Cuotas de energía renovable no convencional (ERNC) en los retiros: 20% al año 2025.</td><td>Su generación ERNC se <b>acredita anualmente</b> ante el Coordinador; la trazabilidad de la inyección vale dinero.</td></tr>
+      <tr><td>Ley 21.505 (2022)</td><td>Promueve el almacenamiento y la electromovilidad; incorpora los sistemas de almacenamiento como coordinados y les reconoce potencia de suficiencia. Reglamentada por el DS 70/2023.</td><td>Si opera un BESS, es coordinado con todas las obligaciones de la NTSyCS.</td></tr>
+      <tr><td>Ley 21.721 (2024)</td><td>Ley de Transición Energética: agiliza la expansión de transmisión, aborda el vertimiento y la energía no inyectada, y facilita el almacenamiento.</td><td>Cambia las reglas de la congestión y del vertimiento que hoy explican buena parte de la energía perdida en el norte.</td></tr>
+      <tr><td>Ley 21.305 (2021)</td><td>Ley de Eficiencia Energética: los Consumidores con Capacidad de Gestión de Energía reportan consumo e intensidad energética cada año.</td><td>Alcanza a sus clientes industriales y a las propias empresas generadoras que califiquen.</td></tr>
+    </table></div>
+    <p>Debajo de las leyes están los reglamentos (decretos supremos del Ministerio) y, debajo de éstos, las normas técnicas de la CNE. En la operación diaria, <b>la norma técnica es la que manda</b>: la NTSyCS y sus anexos son el documento que el Coordinador usa para medir su cumplimiento.</p>
+  </div>
+</section>
+
+<section id="cen">
+  <div class="wrap">
+    <span class="n">03</span>
+    <h2>Obligaciones ante el Coordinador Eléctrico Nacional</h2>
+    <p>La <b>Norma Técnica de Seguridad y Calidad de Servicio (NTSyCS)</b> — versión vigente de enero de 2026, aprobada por Resolución Exenta N° 45 de la CNE — aplica a toda instalación sujeta a coordinación: centrales generadoras, líneas de transmisión nacional y zonal, enlaces HVDC, equipos de compensación, <b>sistemas de almacenamiento</b>, instalaciones que prestan servicios complementarios y subestaciones. Estas son las obligaciones que, en la práctica, generan la mayoría de las observaciones:</p>
+    <div class="tbl"><table>
+      <tr><th>Obligación</th><th>Instrumento</th><th>Cadencia</th><th>Lo que hay que tener</th></tr>
+      <tr><td>Inscripción como coordinado e información de instalaciones</td><td>LGSE · Ley 20.936 · plataforma Infotécnica del CEN</td><td>Al conectar y ante cada cambio</td><td>Parámetros técnicos de cada unidad actualizados y consistentes con lo instalado. Una discrepancia entre Infotécnica y terreno es una observación segura.</td></tr>
+      <tr><td>Señales en tiempo real (SITR)</td><td>NTSyCS · Anexo Técnico de intercambio de información en tiempo real</td><td>Continua, 24/7</td><td>Telemetría de potencia activa, reactiva, tensión, estado de unidades y <b>potencia disponible</b>, con la calidad y disponibilidad exigidas. En 2025 el Coordinador informó a la SEC a 12 empresas por deficiencias en esta señal.</td></tr>
+      <tr><td>Pronósticos de generación variable</td><td>NTSyCS · anexo de pronósticos (ERV)</td><td>Diaria y horaria, con actualizaciones intradiarias</td><td>Pronósticos de generación solar y eólica por planta, con el desempeño medido contra lo real. Un pronóstico sistemáticamente sesgado es incumplimiento.</td></tr>
+      <tr><td>Programación de mantenimientos</td><td>NTSyCS · procedimientos de programación</td><td>Anual, mensual y semanal, más cambios</td><td>Calendario de indisponibilidades programadas informado con la anticipación exigida; las indisponibilidades no informadas son <i>forzadas</i> y afectan su potencia de suficiencia.</td></tr>
+      <tr><td>Informes de falla y análisis de fallas</td><td>NTSyCS · Anexo Técnico de análisis de fallas (EAF)</td><td>Dentro de los plazos del anexo tras cada evento</td><td>Informe con secuencia de eventos, registros oscilográficos, causas y medidas correctivas. Sin registros de calidad no hay informe defendible.</td></tr>
+      <tr><td>Cumplimiento de instrucciones de operación</td><td>LGSE · NTSyCS · control de generación</td><td>Continua</td><td>Ejecución verificable de las instrucciones de despacho, limitaciones y vertimiento; la desviación se mide contra la señal y contra la instrucción.</td></tr>
+      <tr><td>Pruebas y verificación de parámetros</td><td>NTSyCS · anexos de requisitos técnicos y de parámetros de generadores</td><td>A la conexión y ante cambios relevantes</td><td>Ensayos de capacidad, respuesta de frecuencia y tensión, protecciones; la evidencia de cada prueba archivada.</td></tr>
+      <tr><td>Medidas para transferencias económicas</td><td>Sistema de medidas del CEN</td><td>Continua, con balances mensuales</td><td>Medidores de facturación certificados y comunicados; los balances de energía y potencia se liquidan con estos datos.</td></tr>
+      <tr><td>Acreditación ERNC</td><td>Leyes 20.257 / 20.698</td><td>Anual</td><td>Inyecciones trazables por planta para acreditar cumplimiento de cuota o para vender atributos ERNC.</td></tr>
+      <tr><td>Evaluación anual de cumplimiento</td><td>NTSyCS, art. 1-14</td><td>Anual</td><td>El Coordinador remite a la SEC un informe del grado de cumplimiento de cada coordinado. Su planta aparece ahí, con nombre.</td></tr>
+    </table></div>
+    <div class="nota">
+      <p><b>El punto que más cuesta internalizar:</b> el Coordinador no solo coordina; por ley debe comunicar a la SEC cualquier hecho que pueda constituir infracción. Cada observación no resuelta a tiempo es material para ese informe. Y el informe anual del artículo 1-14 no es un resumen agregado — evalúa empresa por empresa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sec">
+  <div class="wrap">
+    <span class="n">04</span>
+    <h2>Obligaciones ante la SEC</h2>
+    <p>La SEC no coordina la operación; fiscaliza y sanciona. Su relación con una planta pasa por tres momentos:</p>
+    <h3>Antes de operar</h3>
+    <ul>
+      <li><b>Comunicación previa de puesta en servicio.</b> La Ley 18.410 encarga a la SEC conocer, mediante comunicación previa, la puesta en servicio de las obras de generación, transporte, almacenamiento y distribución.</li>
+      <li><b>Declaración de instalaciones.</b> Las instalaciones eléctricas se declaran ante la SEC por instaladores autorizados a través del sistema e-Declarador (formularios TE); para generación distribuida y autoconsumo rige la Instrucción Técnica RGR N° 01/2024 y el trámite TE-4.</li>
+    </ul>
+    <h3>Durante la operación</h3>
+    <ul>
+      <li><b>Fiscalizaciones y requerimientos de información.</b> La SEC puede fiscalizar en terreno o requerir antecedentes; responder tarde o incompleto es, por sí mismo, una infracción.</li>
+      <li><b>Comunicación de accidentes e incidentes.</b> Los accidentes graves y las interrupciones relevantes deben comunicarse en los plazos y formatos que instruye la Superintendencia.</li>
+      <li><b>Cumplimiento de la norma técnica.</b> Lo que el Coordinador observa, la SEC lo puede sancionar: señales, pronósticos, fallas, parámetros.</li>
+    </ul>
+    <h3>Cuando algo salió mal</h3>
+    <ul>
+      <li><b>Procedimiento sancionatorio.</b> Formulación de cargos, descargos, resolución y recursos. La calidad de los <i>descargos</i> depende casi enteramente de los registros que la planta conservó: qué medía el SCADA, qué instrucción se recibió, a qué hora, qué se hizo.</li>
+      <li><b>Multas.</b> Ley 18.410: hasta 10.000 UTA por infracciones gravísimas, hasta 5.000 UTA por graves, hasta 500 UTA por leves — además de otras sanciones y, en distribución, compensaciones a clientes.</li>
+    </ul>
+    <div class="nota a">
+      <p><b>Un dato reciente para dimensionar el riesgo:</b> por el apagón del 25 de febrero de 2025, la SEC sancionó en 2026 a distintos actores del sistema — incluyendo multas de 300 UTM a cada consejero del Coordinador, con cargo a su patrimonio personal, por falta de supervisión. La fiscalización ya no es un trámite documental.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pmgd">
+  <div class="wrap">
+    <span class="n">05</span>
+    <h2>PMGD: el régimen especial</h2>
+    <p>Un <b>Pequeño Medio de Generación Distribuida</b> — hasta 9 MW conectado a redes de distribución — tiene su propio cuerpo normativo, además de la NTSyCS:</p>
+    <ul>
+      <li><b>DS 88 (Ministerio de Energía).</b> El reglamento de PMGD: procedimiento de conexión, derechos y obligaciones frente a la distribuidora, y el <b>régimen de precio estabilizado</b>, que hoy se paga por bloques horarios que difieren según la barra de referencia. Optar al precio estabilizado es una decisión económica que exige medir y reportar la inyección por bloque.</li>
+      <li><b>NTCO de PMGD (CNE, versión febrero 2026).</b> La Norma Técnica de Conexión y Operación: requisitos técnicos, protecciones, calidad de producto, intercambio de información y coordinación con la distribuidora y el Coordinador. La distribuidora no puede imponer condiciones distintas a las de la NTCO.</li>
+      <li><b>Net Billing (Leyes 20.571 y 21.118).</b> Para autoconsumo con excedentes hasta 300 kW: declaración TE-4 ante la SEC y conexión con medidor bidireccional. Es un régimen distinto al PMGD, aunque a menudo se confunden.</li>
+    </ul>
+    <p>Lo que cambia en la práctica para un portafolio PMGD: muchas plantas pequeñas, muchas barras, muchos bloques — y un dueño que suele ser un fondo sin ingenieros. <b>El reporte de ingresos por bloque horario y la conciliación con la liquidación del Coordinador</b> se vuelven la obligación mensual que más tiempo consume.</p>
+  </div>
+</section>
+
+<section id="bess">
+  <div class="wrap">
+    <span class="n">06</span>
+    <h2>Almacenamiento (BESS)</h2>
+    <p>Desde la Ley 21.505 los sistemas de almacenamiento son <b>coordinados</b>: se les aplica la NTSyCS, entregan señales al SITR, informan mantenimientos y fallas, y participan en las transferencias de potencia con potencia de suficiencia reconocida. El DS 70/2023 reglamenta su despacho, coordinación y la estabilización de precios de la energía inyectada.</p>
+    <p>Tres particularidades que un operador de baterías debe tener resueltas desde el primer día:</p>
+    <ul>
+      <li><b>Estado de carga como dato regulatorio.</b> La disponibilidad de un BESS depende de su estado de carga; la señal debe ser consistente con lo que el sistema puede efectivamente entregar.</li>
+      <li><b>Ciclos cerrados y eficiencia.</b> La eficiencia de ida y vuelta solo es un número defendible sobre ciclos completos; los balances parciales no sirven ni para el Coordinador ni para la garantía del fabricante.</li>
+      <li><b>Evidencia de envolvente operativa.</b> Temperaturas, dispersión de celdas y límites de corriente: los mismos registros que exige la garantía son los que sostienen un informe de falla.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="otros">
+  <div class="wrap">
+    <span class="n">07</span>
+    <h2>Otras obligaciones que alcanzan a la planta</h2>
+    <ul>
+      <li><b>Ambiental (SMA).</b> La RCA del proyecto fija compromisos de seguimiento — ruido, fauna, agua, residuos — con reportes periódicos a la Superintendencia del Medio Ambiente. El incumplimiento ambiental tiene su propio régimen sancionatorio, independiente de la SEC.</li>
+      <li><b>Eficiencia energética (Ley 21.305).</b> Los Consumidores con Capacidad de Gestión de Energía — identificados cada año por el Ministerio por su consumo (50 teracalorías o más) o su tamaño, según el DS 340/2025 — deben reportar consumo e intensidad energética dentro de los primeros 90 días de cada año e implementar un sistema de gestión de la energía.</li>
+      <li><b>Seguridad eléctrica y laboral.</b> Normas de instalaciones (RIC, RPTD), trabajo con tensión y coordinación con contratistas: la SEC fiscaliza la instalación; la Dirección del Trabajo y las mutualidades, el trabajo.</li>
+      <li><b>Contratos y financiamiento.</b> No son ley, pero se cumplen como si lo fueran: disponibilidad contractual en PPA y O&amp;M, covenants de deuda y reportes a inversionistas exigen las mismas cifras que el regulador — con coberturas y fórmulas declaradas.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="practica">
+  <div class="wrap">
+    <span class="n">08</span>
+    <h2>Cómo se ve el incumplimiento en la práctica</h2>
+    <p>Tres casos públicos recientes muestran dónde se producen las brechas reales:</p>
+    <ul>
+      <li><b>Señales de potencia disponible.</b> El Coordinador comunicó a la SEC el eventual incumplimiento de 12 empresas coordinadas, vinculadas a 13 parques renovables, por deficiencias en el envío de la señal de potencia disponible al SITR. No fue un problema de generación; fue un problema de <i>dato</i>.</li>
+      <li><b>Brechas de cumplimiento normativo.</b> El Coordinador informa a la SEC, de forma periódica, brechas que podrían afectar la seguridad del sistema — pruebas no realizadas, parámetros no verificados, información no actualizada.</li>
+      <li><b>El informe anual del artículo 1-14.</b> La evaluación de 2025 fue remitida a la SEC empresa por empresa. Es un documento que sus contrapartes — bancos, compradores, aseguradoras — pueden solicitar.</li>
+    </ul>
+    <p>El patrón se repite: <b>la sanción rara vez nace de una falla física; nace de no poder demostrar, con registros, qué pasó y qué se hizo.</b></p>
+  </div>
+</section>
+
+<section id="datos">
+  <div class="wrap">
+    <span class="n">09</span>
+    <h2>Cumplir es un problema de datos</h2>
+    <p>Cada fila de las tablas anteriores termina en la misma pregunta: ¿tiene la planta el registro, con su hora, su fuente y su cobertura, para sostener lo que declara? Una lista de verificación mínima:</p>
+    <ul>
+      <li>Telemetría archivada con marca de tiempo y calidad de la señal, no solo el valor.</li>
+      <li>Pronósticos guardados junto con la generación real, para medir el sesgo antes de que lo mida el Coordinador.</li>
+      <li>Instrucciones de operación recibidas y su ejecución, en la misma línea de tiempo que la medición.</li>
+      <li>Indisponibilidades clasificadas — programada, forzada, por instrucción, por recurso — porque cada una tiene un efecto distinto en potencia de suficiencia y en contratos.</li>
+      <li>Cobertura de datos declarada en cada cifra publicada. Una disponibilidad calculada con el 60% de los datos no es una disponibilidad; es una estimación, y debe decirlo.</li>
+      <li>Un archivo de informes — diarios, mensuales, de falla — que se pueda entregar a la SEC, al banco o al comprador sin reconstrucción manual.</li>
+    </ul>
+    <p>Ese es el trabajo que hace Quorelia: vigilar los sistemas que la planta ya tiene, mantener la cadena de evidencia y emitir informes donde cada cifra es trazable hasta la medición que la produjo — y donde, si los datos no alcanzan para una cifra defendible, la cifra se retiene y se explica. No reemplaza a su SCADA ni a su asesor legal; les da algo que firmar.</p>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <span class="n">10</span>
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Quién fiscaliza a las empresas generadoras en Chile?</summary><p>La SEC, creada por la Ley 18.410, fiscaliza y sanciona. El Coordinador Eléctrico Nacional coordina la operación y está obligado a informar a la SEC cualquier hecho que pueda constituir infracción. La CNE dicta las normas técnicas.</p></details>
+    <details><summary>¿Qué es la NTSyCS y cuál es la versión vigente?</summary><p>La Norma Técnica de Seguridad y Calidad de Servicio de la CNE fija las exigencias técnicas y de información para toda instalación coordinada. La versión vigente es la de enero de 2026, aprobada por Resolución Exenta N° 45.</p></details>
+    <details><summary>¿Cuál es la multa máxima que puede aplicar la SEC?</summary><p>Hasta 10.000 UTA por infracciones gravísimas, 5.000 UTA por graves y 500 UTA por leves, según la Ley 18.410, además de otras medidas.</p></details>
+    <details><summary>¿Los sistemas de almacenamiento son coordinados?</summary><p>Sí. La Ley 21.505 los incorporó como coordinados, sujetos a la NTSyCS y a la coordinación del CEN, con potencia de suficiencia reconocida. El DS 70/2023 reglamenta su operación.</p></details>
+    <details><summary>¿Qué obligaciones tiene un PMGD?</summary><p>Se rige por el DS 88 y la NTCO de PMGD (febrero 2026): conexión, operación, intercambio de información con la distribuidora y el Coordinador, y el régimen de precio estabilizado por bloques horarios si opta a él. Sigue sujeto a la NTSyCS en lo que le aplica.</p></details>
+    <details><summary>¿Qué pasa si el Coordinador observa mi planta?</summary><p>La observación debe resolverse en plazo; si no, puede ser comunicada a la SEC y aparecer en el informe anual de cumplimiento del artículo 1-14 de la NTSyCS. La SEC decide si abre un procedimiento sancionatorio.</p></details>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="wrap">
+    <span class="n">Fuentes</span>
+    <p class="fuentes">
+      <a href="https://www.cne.cl/wp-content/uploads/2026/02/2026.01.28_NTSyCS_RES45.pdf" target="_blank" rel="noopener">NTSyCS enero 2026 (CNE, Res. Ex. 45)</a> ·
+      <a href="https://www.cne.cl/en/normativas/electrica/normas-tecnicas/" target="_blank" rel="noopener">Normas técnicas — CNE</a> ·
+      <a href="https://www.cne.cl/wp-content/uploads/2026/02/2026.02.19_NTCO-PMGD-2026.pdf" target="_blank" rel="noopener">NTCO de PMGD febrero 2026 (CNE)</a> ·
+      <a href="https://www.coordinador.cl/wp-content/uploads/2024/12/Pequenos-Medios-de-Generacion-Distribuida-PMGD.pdf" target="_blank" rel="noopener">Proceso PMGD — Coordinador</a> ·
+      <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209692" target="_blank" rel="noopener">Ley 21.721 (BCN)</a> ·
+      <a href="https://www.dlapiper.com/es-la/insights/publications/2024/12/chile-publishes-its-energy-transition-law" target="_blank" rel="noopener">Ley de Transición Energética — DLA Piper</a> ·
+      <a href="https://www.carey.cl/publican-ley-n-21-505-sobre-almacenamiento-de-energia-electrica-y-electromovilidad" target="_blank" rel="noopener">Ley 21.505 — Carey</a> ·
+      <a href="https://energia.gob.cl/sites/default/files/dec_70_2023.pdf" target="_blank" rel="noopener">DS 70/2023 (Ministerio de Energía)</a> ·
+      <a href="https://electromineria.cl/coordinador-informa-sec-eventual-incumplimiento-12-empresas-renovables-senales-operacionales/" target="_blank" rel="noopener">Coordinador informa a la SEC eventual incumplimiento de 12 empresas — Electrominería</a> ·
+      <a href="https://www.coordinador.cl/novedades/coordinador-electrico-informa-a-la-sec-brechas-de-cumplimiento-normativo-que-podrian-afectar-la-seguridad-del-sistema-electrico/" target="_blank" rel="noopener">Brechas de cumplimiento normativo — Coordinador</a> ·
+      <a href="https://www.revistaei.cl/sec-aplica-sanciones-por-mega-apagon-de-febrero-2025/" target="_blank" rel="noopener">SEC aplica sanciones por apagón de febrero 2025 — Revista Electricidad</a> ·
+      <a href="https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/02/24/coordinador-electrico-rechaza-las-multas-que-le-impone-la-sec-y-defiende-actuar-durante-apagon-de-2025.shtml" target="_blank" rel="noopener">Multas a consejeros del Coordinador — BioBioChile</a> ·
+      <a href="https://www.chileatiende.gob.cl/fichas/48597-declaracion-de-puesta-en-servicio-de-generadoras-residenciales-te4" target="_blank" rel="noopener">TE-4 — ChileAtiende</a> ·
+      <a href="https://www.sec.cl/sitio-web/wp-content/uploads/2025/01/RGR-N-01-2024_v8-Destacada.pdf" target="_blank" rel="noopener">Instrucción Técnica RGR N° 01/2024 — SEC</a> ·
+      <a href="https://energia.gob.cl/panel/ley-21305" target="_blank" rel="noopener">Ley 21.305 — Ministerio de Energía</a> ·
+      <a href="https://better.cl/reporte-energetico-ley-21305/" target="_blank" rel="noopener">Reporte energético Ley 21.305 — Better</a>.
+    </p>
+    <div class="nota a" style="margin-top:22px;">
+      <p><b>Alcance de esta guía.</b> Es material informativo elaborado por Quorelia a partir de fuentes públicas; no constituye asesoría legal ni reemplaza la lectura de las normas vigentes, que cambian con frecuencia. Verifique cada obligación contra el texto actual en cne.cl, coordinador.cl y sec.cl antes de tomar decisiones. Si detecta un error o un cambio normativo, escríbanos a <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>.</p>
+    </div>
+  </div>
+</section>
+
+</article>
+
+<section class="cierre">
+  <div class="wrap">
+    <p class="tag g">Quorelia</p>
+    <h2 class="big" style="margin:14px auto 14px;max-width:24ch;">¿Qué informe entregaría hoy si el Coordinador se lo pidiera?</h2>
+    <p class="lede" style="margin:0 auto 26px;">Vea el Control Center y un informe real sobre datos de muestra — o cuéntenos su parque y lo revisamos juntos.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="informe.html" class="btn-sm">Ver un informe de muestra</a>
+      <a href="plataforma.html#contact" class="btn-sm pri">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="brand" style="display:inline-block;margin-bottom:14px;"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
+        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+      </div>
+      <div>
+        <h5 data-i18n="f_prod">Platform</h5>
+        <a href="plataforma.html#software" data-i18n="nav_sw">Platform</a>
+        <a href="demos.html" data-i18n="nav_demos">Demos</a>
+        <a href="insights.html" data-i18n="nav_ins">Insights</a>
+        <a href="plataforma.html#reports" data-i18n="nav_rep">Reports</a>
+        <a href="informe.html#original" data-i18n="f_sample">Sample report</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_co">Company</h5>
+        <a href="story.html" data-i18n="nav_story">Our Story</a>
+        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+      </div>
+      <div>
+        <h5 data-i18n="f_ct">Contact</h5>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://www.quorelia.org">quorelia.org</a>
+      </div>
+    </div>
+    <div class="f-logo">
+      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
+      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
+      <span data-i18n="f_tag">Intelligence for Critical Energy Infrastructure</span>
+    </div>
+    <p class="fine" data-i18n="f_fine">Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients.</p>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+ en:{
+  nav_sw:"Platform", nav_demos:"Demos", nav_ins:"Insights", nav_rep:"Reports",
+  nav_gov:"Government", nav_story:"Our Story", cta_demo:"Request a Demo",
+  f_desc:"Intelligence for critical energy infrastructure. Solar, wind and storage.",
+  f_prod:"Platform", f_sample:"Sample report", f_co:"Company", f_ct:"Contact",
+  f_terms:"Terms", f_priv:"Privacy",
+  f_tag:"Intelligence for Critical Energy Infrastructure",
+  f_fine:"Demos and sample reports on this site contain illustrative data and do not represent real facilities or clients."
+ },
+ es:{
+  nav_sw:"Plataforma", nav_demos:"Demos", nav_ins:"Insights", nav_rep:"Informes",
+  nav_gov:"Gobierno", nav_story:"Nuestra historia", cta_demo:"Solicitar demo",
+  f_desc:"Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.",
+  f_prod:"Plataforma", f_sample:"Informe de muestra", f_co:"Empresa", f_ct:"Contacto",
+  f_terms:"Términos", f_priv:"Privacidad",
+  f_tag:"Inteligencia para Infraestructura Energética Crítica",
+  f_fine:"Las demos y los informes de muestra de este sitio contienen datos ilustrativos y no representan instalaciones ni clientes reales."
+ },
+ zh:{
+  nav_sw:"平台", nav_demos:"演示", nav_ins:"洞察", nav_rep:"报告",
+  nav_gov:"政府事务", nav_story:"我们的故事", cta_demo:"预约演示",
+  f_desc:"面向关键能源基础设施的智能。光伏、风电与储能。",
+  f_prod:"平台", f_sample:"样例报告", f_co:"公司", f_ct:"联系",
+  f_terms:"条款", f_priv:"隐私",
+  f_tag:"关键能源基础设施智能",
+  f_fine:"本站的演示与样例报告均为示意数据，不代表真实电站或客户。"
+ }
+};
+/* La cabecera y el pie se traducen; el artículo es en español por diseño,
+   así que el atributo lang del documento se mantiene en "es" para que el
+   índice y los lectores de pantalla lo traten como tal. */
+function setLang(l){
+  ['btn','mb'].forEach(function(p){
+    ['en','es','zh'].forEach(function(k){
+      var btn=document.getElementById(p+'-'+k);
+      if(btn) btn.classList.toggle('on', l===k);
+    });
+  });
+  var d=i18n[l];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');
+    if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  try{ localStorage.setItem('q-lang', l); }catch(e){}
+  window.dispatchEvent(new Event('quorelia:lang'));
+}
+(function(){
+  var s=null; try{ s=localStorage.getItem('q-lang'); }catch(e){}
+  var nav=(navigator.language||'es').toLowerCase();
+  setLang(s || (nav.indexOf('en')===0 ? 'en' : nav.indexOf('zh')===0 ? 'zh' : 'es'));
+})();
+</script>
+<script src="quorelia.js"></script>
+</body>
+</html>
