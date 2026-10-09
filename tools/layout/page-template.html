@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<!--
+  PLANTILLA DE PÁGINA — copie este archivo para cada página nueva.
+  1. Español en el HTML (lang="es", título, meta y og en español). EN y 中文 van en window.Q_PAGE al final.
+  2. Rutas absolutas siempre: /quorelia.css, /servicios/..., /contacto/#activos.
+  3. data-i18n sólo en elementos hoja (nunca un data-i18n dentro de otro): setLang reemplaza innerHTML.
+  4. Dentro de section > .wrap nunca va un h1/h2/p suelto: siempre dentro de un bloque q- (q-head, q-hero…).
+  5. Encabezado y pie: deje los marcadores vacíos; los llena `node tools/stamp-layout.js`.
+  6. Un solo botón primario (.btn--primary, navy) por pantalla. El teal no es color de botón.
+-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Gestión de activos PMGD y baterías en Chile · Quorelia</title>
+<meta name="description" content="Una frase de 140–160 caracteres en español, con el término de búsqueda de la página.">
+<link rel="canonical" href="https://www.quorelia.org/servicios/ejemplo/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/servicios/ejemplo/">
+<meta property="og:title" content="Título para compartir">
+<meta property="og:description" content="Descripción para compartir.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Gestión de activos","serviceType":"Energy asset management","areaServed":"CL",
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/servicios/ejemplo/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
+  {"@type":"ListItem","position":3,"name":"Ejemplo","item":"https://www.quorelia.org/servicios/ejemplo/"}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER --><!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO partido: texto a la izquierda, instrumento a la derecha ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><a href="/servicios/" data-i18n="cr_svc">Servicios</a><span aria-hidden="true">/</span><span data-i18n="cr_here">Ejemplo</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Gestión de activos · Chile</span>
+        <h1 class="q-h1" data-i18n="hero_h">Un representante para su planta: desempeño, dinero y cumplimiento.</h1>
+        <p class="q-lede" data-i18n="hero_p">Una o dos frases: qué recibe el dueño, quién hace el trabajo y por qué puede confiar en las cifras.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=gestion-activos#activos"><span data-i18n="cta1">Solicitar evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="/informe.html" data-i18n="cta2">Ver un informe de muestra</a>
+        </div>
+      </div>
+      <!-- Instrumento: maqueta en HTML de la plataforma (datos ilustrativos, siempre rotulados) -->
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye con datos ilustrativos" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span>Eagle Eye · Cartera demo · 6 plantas PMGD</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Disponibilidad contractual</span><span class="q-kpi__v">98,7 %</span><span class="q-kpi__s" data-i18n="k1s">calculada sobre 96 % de los intervalos</span><span class="q-kpi__bar"><i style="width:96%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Energía del mes</span><span class="q-kpi__v">4.812 MWh</span><span class="q-kpi__s" data-i18n="k2s">conciliada con la liquidación del CEN</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k3k">PR planta 4</span><span class="q-kpi__v" data-i18n="k3v">Retenida</span><span class="q-kpi__s" data-i18n="k3s">cobertura 71 % · bajo el umbral de 90 %</span><span class="q-kpi__bar"><i style="width:71%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k4k">Saldo MEP</span><span class="q-kpi__v">CLP 18,4 M</span><span class="q-kpi__s" data-i18n="k4s">por conciliar en 12 cuotas</span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Riesgo</span><span data-i18n="r1">Inversor 3 · deriva de temperatura desde el día 12</span><span class="t">06:40</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r2c">Cerrada</span><span data-i18n="r2">OT 118 · limpieza verificada con datos</span><span class="t">ayer</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Flota demo · datos ilustrativos</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <!-- Franja de prueba: sólo cifras respaldadas. "1 GW+" es dato de la empresa; los 10 PMGD son experiencia del equipo -->
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">PMGD operados · experiencia del equipo</span></li>
+      <li><b>CEN · SEC</b><span class="q-proof__k" data-i18n="p3">cumplimiento incluido</span></li>
+      <li><b>ES · EN · 中文</b><span class="q-proof__k" data-i18n="p4">informes en tres idiomas</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · Sección con encabezado partido + checklist ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s2_eb">01 · Qué hacemos</span><h2 class="q-h2" data-i18n="s2_h">El alcance, listo para pegar en una licitación.</h2></div>
+      <p class="q-lede" data-i18n="s2_p">Párrafo breve, alineado a la izquierda.</p>
+    </div>
+    <ul class="q-check q-check--2col">
+      <li data-i18n="c1">Gestión de KPI y desempeño</li>
+      <li data-i18n="c2">Conciliación de liquidaciones del CEN y facturas</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 3 · Tarjetas (enlazables) ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s3_eb">02 · Lo que recibe</span><h2 class="q-h2" data-i18n="s3_h">Entregables y niveles de servicio.</h2></div>
+    <div class="q-grid q-grid--3">
+      <a class="q-card" href="/informe.html"><span class="q-card__k" data-i18n="cd1k">Mensual</span><h3 data-i18n="cd1h">Informe del activo</h3><p data-i18n="cd1p">Técnico, comercial y de cumplimiento.</p><span class="q-card__link" data-i18n="cd1l">Ver muestra</span></a>
+      <div class="q-card"><span class="q-card__k">Anual</span><h3>Presupuesto</h3><p>…</p></div>
+      <div class="q-card"><span class="q-card__k">Continuo</span><h3>Registro de incidentes</h3><p>…</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Ciclo de vida (pasos con quién los hace) ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow">03</span><h2 class="q-h2">Ciclo de vida</h2></div>
+    <ol class="q-life" style="--steps:6">
+      <li><span class="q-life__t">Factibilidad e ingeniería</span><span class="q-life__d">Estudio de carga, diseño y caso de negocio.</span><span class="q-life__who q-chip q-chip--neutral">Quorelia</span><a href="/servicios/ingenieria/">Ingeniería</a></li>
+      <li><span class="q-life__t">Construcción</span><span class="q-life__d">…</span><span class="q-life__who q-chip q-chip--neutral">Socio EPC · supervisa Quorelia</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 5 · Pasos numerados (cómo funciona) ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow">04</span><h2 class="q-h2">Cómo funciona</h2></div>
+    <ol class="q-steps" style="--steps:4">
+      <li><h3>Evaluar</h3><p>Alcance fijo, unos 30 días.</p></li>
+      <li><h3>Conectar</h3><p>…</p></li>
+      <li><h3>Gestionar</h3><p>…</p></li>
+      <li><h3>Reportar</h3><p>…</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 6 · Quién hace el trabajo ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow">05</span><h2 class="q-h2">Quién hace el trabajo</h2></div>
+    <div class="q-who">
+      <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3>Equipo de Quorelia</h3></div><ul class="q-arrow"><li>Gestor de activos asignado</li></ul></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral">Socios</span><h3>Socios certificados</h3></div><ul class="q-arrow"><li>Instalador eléctrico Clase A para trabajos en MT</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Cifras con fuente ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v">3.868 MW</span><span class="q-fig__k">de PMGD en operación en Chile</span><span class="q-fig__src">Fuente: <a href="https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf" target="_blank" rel="noopener">ACERA, ago. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v">71 %</span><span class="q-fig__k">…</span><span class="q-fig__src">…</span></div>
+      <div class="q-fig"><span class="q-fig__v">…</span><span class="q-fig__k">…</span></div>
+    </div>
+    <div class="note a" style="margin-top:28px;"><h4>Aviso en ámbar: límites o cifras retenidas</h4><p>…</p></div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Preguntas frecuentes (también en JSON-LD FAQPage si aplica) ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow">06</span><h2 class="q-h2">Preguntas que hacen los dueños</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Quién es responsable ante el CEN?</summary><div><p data-i18n="fa1">El dueño sigue siendo el coordinado; Quorelia actúa bajo su mandato.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Cierre: una sola solicitud + agenda ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación</span>
+    <h2 class="q-h2" data-i18n="ct_h">Alcance fijo. El informe queda con usted, nos contrate o no.</h2>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=gestion-activos#activos"><span data-i18n="cta1b">Solicitar evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER --><!-- /Q:FOOTER -->
+
+<script>
+/* Inglés y chino. El español se toma del HTML automáticamente.
+   Cada clave data-i18n / data-i18n-aria / data-i18n-ph de la página debe existir en en y zh.
+   __title y __desc traducen <title> y la meta description. */
+window.Q_PAGE = {
+ en:{ __title:"Asset management for PMGD and battery portfolios in Chile · Quorelia", __desc:"…",
+      cr_home:"Home", cr_svc:"Services", cr_here:"Example", hero_eb:"Asset management · Chile" /* … */ },
+ zh:{ __title:"智利 PMGD 与储能资产管理 · Quorelia", __desc:"…",
+      cr_home:"首页", cr_svc:"服务", cr_here:"示例", hero_eb:"资产管理 · 智利" /* … */ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+</body>
+</html>

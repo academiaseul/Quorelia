@@ -1,0 +1,9 @@
+# Material de trabajo interno: queda en el repositorio, pero no se publica en quorelia.org.
+comercial/
+tools/
+*.md
+*.py
+*.pyc
+__pycache__/
+*.xlsx
+*.zip

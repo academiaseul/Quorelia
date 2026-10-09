@@ -2,6 +2,7 @@
 <html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
@@ -40,71 +41,138 @@
 </head>
 <body>
 
-<!-- menú móvil -->
-<div class="scrim" id="scrim" hidden></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
   <div class="d-head">
-    <span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
-    <button class="burger" id="d-close" style="display:block" aria-label="Close">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
     </button>
   </div>
-  <nav>
-    <a href="#software" data-i18n="nav_sw">Platform</a>
-    <a href="#platform" data-i18n="nav_plat">Control Center</a>
-    <a href="demos.html" data-i18n="nav_demos">Demos</a>
-      <a href="insights.html" data-i18n="nav_ins">Insights</a>
-      <a href="#service" data-i18n="nav_svc">Service</a>
-    <a href="gobierno.html" data-i18n="nav_gov">Government</a>
-    <a href="story.html" data-i18n="nav_story">Our Story</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
   </nav>
   <div class="d-foot">
-    <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
     <div class="d-lang"><div class="lang">
-      <button id="mb-en" class="on" onclick="setLang('en')">EN</button>
-      <button id="mb-es" onclick="setLang('es')">ES</button>
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
       <button id="mb-zh" onclick="setLang('zh')">中文</button>
     </div></div>
   </div>
 </aside>
 
 <header class="head">
-  <div class="wrap nav">
-    <a href="index.html" class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
-    <nav class="nav-links">
-      <a href="#software" data-i18n="nav_sw">Platform</a>
-    <a href="#platform" data-i18n="nav_plat">Control Center</a>
-      <a href="demos.html" data-i18n="nav_demos">Demos</a>
-      <a href="insights.html" data-i18n="nav_ins">Insights</a>
-      <a href="#service" data-i18n="nav_svc">Service</a>
-      <a href="gobierno.html" data-i18n="nav_gov">Government</a>
-      <a href="story.html" data-i18n="nav_story">Our Story</a>
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
     </nav>
     <div class="nav-right">
       <div class="lang">
-        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
-        <button id="btn-es" onclick="setLang('es')">ES</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
         <button id="btn-zh" onclick="setLang('zh')">中文</button>
       </div>
-      <a href="#contact" class="btn-sm" data-i18n="cta_demo">Request a Demo</a>
-      <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
 </header>
+<!-- /Q:HEADER -->
 
 <!-- ══════════ HERO ══════════ -->
+<span id="main" tabindex="-1"></span>
 <section class="hero">
   <div class="wrap">
     <p class="tag g rv" style="margin-bottom:20px;" data-i18n="hero_tag">Intelligence for critical energy infrastructure</p>
     <h1 class="mega rv in" data-i18n="hero">See the risk <span class="dim">before it becomes the incident.</span></h1>
     <p class="lede rv" style="margin-top:26px;" data-i18n="hero_sub">Quorelia transforms real-time operational data, equipment condition and environmental context into actionable intelligence for critical energy infrastructure. <b>See the system. Understand the signal. Predict the risk. Act with confidence.</b></p>
     <div class="hero-acts rv" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;">
-      <a href="demos.html#cc" class="btn-sm" style="background:var(--ink);color:#fff;" data-i18n="hero_c1">Explore the Control Center</a>
-      <a href="#software" class="btn-sm" data-i18n="hero_c2">See how it works</a>
-      <a href="gobierno.html" class="btn-sm" style="border-color:var(--line);color:var(--ink-2);" data-i18n="hero_c3">Government &amp; infrastructure</a>
+      <a href="/demos.html" class="btn btn--primary" data-i18n="hero_c1">See the live demo</a>
+      <a href="/contacto/?interes=gestion-activos#activos" class="btn btn--secondary" data-i18n="hero_c2">Request an asset assessment</a>
     </div>
     <div class="hero-meta">
       <div data-i18n="hm1">1 GW+ under monitoring</div>
@@ -742,45 +810,60 @@
   </div>
 </section>
 
-<footer>
+<!-- Q:FOOTER -->
+<footer class="q-foot">
   <div class="wrap">
-    <div class="f-grid">
-      <div>
-        <a href="index.html" class="brand" style="display:inline-block;margin-bottom:14px;"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
-        <p style="font-size:13.5px;color:var(--ink-2);max-width:34ch;" data-i18n="f_desc">Intelligence for critical energy infrastructure. Solar, wind and storage.</p>
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
       </div>
       <div>
-        <h5 data-i18n="f_prod">Platform</h5>
-        <a href="#software" data-i18n="nav_sw">Platform</a>
-    <a href="#platform" data-i18n="nav_plat">Control Center</a>
-        <a href="#capabilities" data-i18n="nav_cap">Capabilities</a>
-      <a href="#service" data-i18n="nav_svc">Service</a>
-        <a href="informe.html#original" data-i18n="f_sample">Sample report</a>
-        <a href="demos.html" data-i18n="f_dash">Live demos</a>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
       <div>
-        <h5 data-i18n="f_co">Company</h5>
-        <a href="story.html" data-i18n="nav_story">Our Story</a>
-        <a href="gobierno.html" data-i18n="nav_gov">Government</a>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
       </div>
       <div>
-        <h5 data-i18n="f_ct">Contact</h5>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
         <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
-        <a href="https://www.quorelia.org">quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
       </div>
     </div>
-
-    <div class="f-logo">
-      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
-      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
     </div>
-    <div class="f-bot">
-      <span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
-      <span data-i18n="f_tag">Intelligence for Critical Energy Infrastructure</span>
-    </div>
-    <p class="fine" data-i18n="f_fine">Sample reports and the Control Center on this site contain illustrative data and do not represent real facilities or clients. Capacity under monitoring refers to assets connected to the platform. Regulatory analysis of the national registry is published separately on the Government page.</p>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
   </div>
 </footer>
+<!-- /Q:FOOTER -->
 
 <script>
 const i18n = {
@@ -788,7 +871,7 @@ const i18n = {
   cta_gov:"For Public Authorities",
   rp_lv1:"Open the live BESS dashboard", rp_lv2:"Open the Control Center demo",
   rp_lvp:"We build customized Control Centers for each client \u2014 modules, thresholds and views shaped to your fleet. What you see here is a demo sample with illustrative data.",
-  hero_c1:"Explore the Control Center", hero_c2:"See how it works", hero_c3:"Government &amp; infrastructure",
+  hero_c1:"See the live demo", hero_c2:"Request an asset assessment",
   sw_e:"How it works",
   m1n:"See", m2n:"Understand", m3n:"Predict", m4n:"Act", m5n:"Verify",
   m4l:"Findings are prioritised and routed \u2014 dispatch is always confirmed by a person",
@@ -1029,7 +1112,7 @@ const i18n = {
   cc_cta:"预约控制中心演示",
   rp_lv1:"打开实时 BESS 仪表盘", rp_lv2:"打开控制中心演示",
   rp_lvp:"我们为每位客户构建定制化的控制中心——模块、阈值与视图均按您的电站群量身打造。此处所见为示意数据的演示样例。",
-  hero_c1:"探索控制中心", hero_c2:"了解工作原理", hero_c3:"政府与基础设施",
+  hero_c1:"查看在线演示", hero_c2:"申请资产评估",
   sw_e:"工作原理",
   m1n:"看见", m2n:"理解", m3n:"预判", m4n:"行动", m5n:"核实",
   m4l:"发现项经排序后派发——人员调度始终由人来确认",
@@ -1114,7 +1197,7 @@ const i18n = {
   cta_gov:"Para autoridades p\u00fablicas",
   rp_lv1:"Abrir el tablero BESS en vivo", rp_lv2:"Abrir la demo del Control Center",
   rp_lvp:"Construimos Control Centers personalizados para cada cliente \u2014 m\u00f3dulos, umbrales y vistas a la medida de su parque. Lo que ve aqu\u00ed es una muestra demo con datos ilustrativos.",
-  hero_c1:"Explorar el Control Center", hero_c2:"C\u00f3mo funciona", hero_c3:"Gobierno e infraestructura",
+  hero_c1:"Ver la demo en vivo", hero_c2:"Solicitar evaluaci\u00f3n de activos",
   sw_e:"C\u00f3mo funciona",
   m1n:"Ver", m2n:"Entender", m3n:"Predecir", m4n:"Actuar", m5n:"Verificar",
   m4l:"Los hallazgos se priorizan y derivan \u2014 el despacho siempre lo confirma una persona",
@@ -1417,5 +1500,6 @@ var FORM_ID = 'mljraopz';   /* Formspree · proyecto Quorelia → jay@quorelia.o
 
 </script>
 <script src="quorelia.js"></script>
+<script src="/quorelia-common.js"></script><!--q:common-->
 </body>
 </html>

@@ -3,6 +3,7 @@
 <html lang="es" id="html-root">
 <head>
 <meta charset="utf-8"/>
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
@@ -51,59 +52,129 @@
 </style>
 </head>
 <body>
-<div class="scrim" hidden="" id="scrim"></div>
-<aside aria-label="Menú" aria-modal="true" class="drawer" hidden="" id="drawer" role="dialog">
-<div class="d-head">
-<span class="brand"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></span>
-<button aria-label="Cerrar" class="burger" id="d-close" style="display:block">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"></path></svg>
-</button>
-</div>
-<nav>
-<a data-i18n="nav_sw" href="plataforma.html#software">Plataforma</a>
-<a data-i18n="nav_plat" href="plataforma.html#platform">Control Center</a>
-<a href="demos.html" data-i18n="nav_demos">Demos</a>
-      <a href="insights.html" data-i18n="nav_ins">Insights</a>
-<a data-i18n="nav_rep" href="plataforma.html#reports">Informes</a>
-<a data-i18n="nav_gov" href="gobierno.html">Gobierno</a>
-<a data-i18n="nav_story" href="story.html">Nuestra historia</a>
-<a data-i18n="nav_contact" href="#contacto">Contacto</a>
-</nav>
-<div class="d-foot">
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
     <div class="d-lang"><div class="lang">
-      <button class="on" id="mb-es" onclick="setLang('es')">ES</button>
       <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
       <button id="mb-zh" onclick="setLang('zh')">中文</button>
     </div></div>
-<a data-i18n="cta_ses" class="btn-sm" href="#contacto">Solicitar sesión técnica</a>
-</div>
+  </div>
 </aside>
+
 <header class="head">
-<div class="wrap nav">
-<a class="brand" href="index.html">Quorelia</a>
-<nav class="nav-links">
-<a data-i18n="nav_sw" href="plataforma.html#software">Plataforma</a>
-<a data-i18n="nav_plat" href="plataforma.html#platform">Control Center</a>
-<a href="demos.html" data-i18n="nav_demos">Demos</a>
-      <a href="insights.html" data-i18n="nav_ins">Insights</a>
-<a data-i18n="nav_rep" href="plataforma.html#reports">Informes</a>
-<a data-i18n="nav_gov" class="on" href="gobierno.html">Gobierno</a>
-<a data-i18n="nav_story" href="story.html">Nuestra historia</a>
-</nav>
-<div class="nav-right">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
       <div class="lang">
-        <button class="on" id="btn-es" onclick="setLang('es')">ES</button>
         <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
         <button id="btn-zh" onclick="setLang('zh')">中文</button>
       </div>
-<a data-i18n="cta_ses" class="btn-sm" href="#contacto">Solicitar sesión técnica</a>
-<button aria-controls="drawer" aria-expanded="false" aria-label="Menú" class="burger" id="burger">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
-</button>
-</div>
-</div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
 </header>
+<!-- /Q:HEADER -->
 <!-- ═══ HERO ═══ -->
+<span id="main" tabindex="-1"></span>
 <section class="hero">
 <div class="wrap">
 <p class="tag g" data-i18n="g001">Sector público · Autoridad fiscalizadora</p>
@@ -295,41 +366,60 @@
 </div>
 </div>
 </section>
-<footer>
-<div class="wrap">
-<div class="f-grid">
-<div>
-<a href="index.html" class="brand" style="display:inline-block;margin-bottom:14px;"><img src="quorelia-mark-64.png" alt="" width="22" height="22" style="display:inline-block;"><img src="quorelia-wordmark.png" alt="Quorelia" style="display:inline-block;height:11px;width:auto;"></a>
-<p data-i18n="g146" style="font-size:13.5px;max-width:34ch;">Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.</p>
-</div>
-<div>
-<h5>Plataforma</h5>
-<a data-i18n="g147" href="plataforma.html#software">Nuestra plataforma</a>
-<a data-i18n="g148" href="plataforma.html#capabilities">Capacidades</a>
-<a data-i18n="g149" href="informe.html#original">Informe de muestra</a>
-</div>
-<div>
-<h5>Empresa</h5>
-<a data-i18n="g150" href="story.html">Nuestra historia</a>
-<a data-i18n="g151" href="gobierno.html">Gobierno</a>
-</div>
-<div>
-<h5>Contacto</h5>
-<a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
-<a data-i18n="g152" href="https://www.quorelia.org">quorelia.org</a>
-</div>
-</div>
-<div class="f-logo">
-      <img class="fq" src="quorelia-mark.png" alt="" loading="lazy">
-      <img class="fw" src="quorelia-wordmark.png" alt="Quorelia" loading="lazy">
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
     </div>
-<div class="f-bot">
-<span>© 2026 Quorelia SpA · <a href="terminos.html" style="text-decoration:underline;" data-i18n="f_terms">Terms</a> · <a href="privacidad.html" style="text-decoration:underline;" data-i18n="f_priv">Privacy</a></span>
-<span>Inteligencia en Energía Renovable</span>
-</div>
-<p class="fine" data-i18n="g153"><b>Declaración de alcance y fuentes.</b> Quorelia es una empresa privada de tecnología y no forma parte de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado. Las cifras de fiscalización citadas provienen de la Cuenta Pública 2026 de la SEC. El análisis del parque generador se basa en el registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y es reproducible sobre los archivos de origen. Los informes de muestra referidos contienen datos ilustrativos y no representan instalaciones ni clientes reales.</p>
-</div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
 </footer>
+<!-- /Q:FOOTER -->
 <script>
 const i18n = {
  es: {"g001": "Sector público · Autoridad fiscalizadora", "g002": "Inteligencia para un sistema eléctrico más <span style=\"color:var(--grey);\">transparente</span>", "g003": "Quorelia es una capa tecnológica de monitoreo y verificación de datos operacionales sobre infraestructura energética. Su propósito en el ámbito público es que la información sobre el desempeño de una instalación sea <b>comparable entre activos</b>, <b>trazable hasta la medición que la sustenta</b> y <b>reproducible ante un requerimiento</b>.", "g004": "Qué permite ver", "g005": "Propuesta de piloto", "g006": "<b>Declaración de alcance.</b> Quorelia es una empresa privada de tecnología. <b>No es un sistema oficial de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado</b>, no ejerce funciones fiscalizadoras, no emite certificaciones con efecto regulatorio y no sustituye ningún procedimiento vigente. Lo que ofrece es tecnología capaz de <b>respaldar</b> una mayor visibilidad, trazabilidad y toma de decisiones basada en evidencia.", "g007": "01 · El punto de partida", "g008": "El cuello de botella no está en terreno. Está en la revisión documental.", "g009": "Según la Cuenta Pública 2026 de la SEC, correspondiente a la gestión 2025, en generación distribuida se ejecutaron 2.341 fiscalizaciones. De ellas, 2.100 fueron revisiones documentales y 241 en terreno.", "g010": "Cada uno de esos documentos llega en un formato definido por el titular, con definiciones propias de disponibilidad y sin una cadena que permita reproducir la cifra informada hasta la medición que la respalda.", "g011": "Consecuencia 01", "g012": "No se puede comparar", "g013": "Dos centrales equivalentes informan disponibilidad con denominadores distintos. La cifra parece comparable y no lo es.", "g014": "Consecuencia 02", "g015": "No se puede verificar", "g016": "Un informe sin cadena de trazabilidad no permite distinguir si una cifra proviene de una medición, de una estimación o de una interpolación sobre datos faltantes.", "g017": "Consecuencia 03", "g018": "No se puede priorizar", "g019": "Sin una señal homogénea de calidad de dato, el criterio para decidir qué instalación amerita visita queda sujeto a denuncia o a rotación, no a riesgo objetivo.", "g020": "02 · Capacidad analítica demostrada", "g021": "Cuatro hallazgos sobre el registro público nacional", "g022": "Análisis ejecutado sobre la totalidad del registro de Infotécnica del Coordinador Eléctrico Nacional — 2.618 unidades generadoras en 2.029 centrales, extracción del 16 de agosto de 2026. Sin datos simulados. Reproducible ejecutando el mismo procedimiento sobre los archivos de origen.", "g023": "Estructura", "g024": "de los titulares opera una sola central. De 1.614 titulares registrados, solo 37 operan cuatro o más instalaciones. Exigir un formato de reporte más estricto a un parque monoactivo no produce mejor información: produce incumplimiento.", "g025": "Documentación", "g026": "de completitud en la ficha técnica solar coordinada — la más baja del registro. La fotovoltaica concentra 1.375 de las 2.029 centrales del país (67,8%).", "g027": "Almacenamiento", "g028": "unidades PMGD declaran un sistema de almacenamiento. Las 975 restantes consignan «no aplica» en los 31 campos de la ficha, justo cuando el nuevo marco lo incorpora con exigencias de monitoreo y control.", "g029": "Con solo dos fichas de almacenamiento ya aparecen tres problemas estructurales", "g030": "Vocabulario no normalizado para la misma familia química, un rango operativo de estado de carga declarado como [0%–100%] que ningún sistema de gestión de baterías permite, y la palabra «En Pruebas» escrita dentro de un campo de fecha. Ninguno es detectable por inspección visual a escala de cartera; los tres se detectan automáticamente al momento de la carga. <b>Definir el formato de reporte de almacenamiento es trivial con dos registros; con trescientos, y vocabularios ya consolidados, deja de serlo.</b>", "g031": "Salvedad metodológica: parte de los campos vacíos puede corresponder a atributos legítimamente no aplicables a una instalación concreta. Esta medida no debe leerse como incumplimiento de los titulares, sino como una medida de cuánta información estructurada está disponible hoy para análisis automatizado de cartera. Que el registro no permita distinguir «no aplica» de «no informado» es, en sí mismo, parte del hallazgo.", "g032": "03 · Alcance funcional", "g033": "Qué podría observar una autoridad debidamente autorizada", "g034": "El acceso a información de una instalación depende siempre de la autorización expresa de su titular y del marco legal aplicable. Lo que sigue describe capacidades técnicas, no atribuciones.", "g035": "Dimensión", "g036": "Qué entrega la tecnología", "g037": "Naturaleza del dato", "g038": "<b>Visibilidad operacional</b>", "g039": "Estado de la instalación y de sus unidades, con marca de tiempo y resolución nativa del sistema de origen.", "g040": "Medición", "g041": "<b>Indicadores de desempeño</b>", "g042": "Disponibilidad técnica, energía, factor de planta y horas de operación, calculados solo sobre datos validados.", "g043": "Cálculo sobre medición", "g044": "<b>Alertas críticas</b>", "g045": "Eventos que superan umbrales definidos, clasificados y con su cadena de origen.", "g046": "Medición + regla", "g047": "<b>Eventos históricos</b>", "g048": "Registro cronológico de fallas, ventanas de mantenimiento y limitaciones de inyección, diferenciando lo sistémico de lo atribuible al activo.", "g049": "Registro", "g050": "<b>Información de equipos</b>", "g051": "Inventario y estado de unidades monitoreadas, con deduplicación previa de catálogo.", "g052": "Registro", "g053": "<b>Condiciones ambientales</b>", "g054": "Irradiancia, viento, temperatura y densidad de aire, vinculadas al desempeño del período.", "g055": "Medición", "g056": "<b>Trazabilidad</b>", "g057": "Cada cifra publicada conserva su canal de origen, su transformación y su porcentaje de cobertura, reproducible hasta la medición cruda.", "g058": "Metadato de auditoría", "g059": "<b>Informes</b>", "g060": "Emisión diaria y mensual automática, con estructura idéntica entre tecnologías y entre instalaciones.", "g061": "Documento", "g062": "Existe una vista regulatoria dedicada", "g063": "El Control Center incluye un módulo <b>Vista Regulatoria</b> — transparencia, trazabilidad y seguridad — junto a uno de <b>Infraestructura de datos</b> que expone escala, deduplicación de catálogo y las reglas de honestidad del cálculo. Ambos leen del mismo manifiesto verificado que alimenta los informes, no de una capa de presentación aparte.", "g064": "<a href=\"mailto:jay@quorelia.org?subject=Quorelia%20%C2%B7%20Demostraci%C3%B3n%20del%20Control%20Center&amp;body=Hola%20Jay%2C%0A%0AMe%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n%20del%20Control%20Center.%0A%0ANombre%3A%0AInstituci%C3%B3n%3A%0A%0AGracias.\" style=\"text-decoration:underline;\">Solicitar una demostración del Control Center →</a>  <span class=\"src\">Prototipo con datos ilustrativos, etiquetado como Modo Demo en cada pantalla. Se muestra en sesión guiada, no de forma pública.</span>", "g066": "El principio que gobierna todo lo anterior", "g067": "Si la cobertura de datos de un activo no alcanza el umbral definido, <b>la cifra no se publica</b>. Se declara la brecha, su causa raíz y la acción requerida. Una cifra retenida con su razón declarada es verificable; una cifra estimada que aparenta certeza no lo es. El silencio de un canal se informa como <b>no observado</b> y se excluye del denominador — nunca se reporta como cero.", "g068": "04 · Cómo opera", "g069": "Quorelia ve, entiende, anticipa, actúa y optimiza — sin intervenir la operación.", "g070": "Cinco capacidades encadenadas. Las tres primeras están operativas hoy; las dos últimas se describen con el alcance que efectivamente tienen.", "g071": "Ver", "g072": "Visibilidad operacional continua sobre los sistemas SCADA, PPC y BMS ya instalados. Sin equipamiento adicional.", "g073": "Entender", "g074": "Validación, reconciliación y cálculo de indicadores exclusivamente sobre datos que superaron control de calidad.", "g075": "Anticipar", "g076": "Detección de desviaciones sostenidas respecto del comportamiento esperado, antes de que se conviertan en falla.", "g077": "Actuar", "g078": "Cada evento se clasifica como preventivo o correctivo y se dirige al equipo competente. El despacho de personal lo confirma siempre una persona.", "g079": "Optimizar", "g080": "Priorización del esfuerzo de mantenimiento según evidencia, en lugar de rotación o denuncia.", "g081": "Precisión sobre el alcance de «anticipar»", "g082": "Quorelia detecta <b>desviaciones sostenidas respecto del comportamiento esperado</b> y las levanta con su evidencia. No emite pronósticos de vida útil remanente ni probabilidades de falla, porque ese tipo de afirmación exige series históricas largas y validación estadística que deben construirse activo por activo. Preferimos declarar el alcance real antes que ofrecer una capacidad que después no pueda sostenerse ante una revisión técnica.", "g083": "05 · Idiomas del entregable", "g084": "El mismo informe verificado, en el idioma de quien deba leerlo", "g085": "Una parte relevante del parque nacional pertenece a titulares extranjeros. El mismo conjunto de datos verificado puede emitirse en español para la operación y la autoridad, y en el idioma del propietario o del financista — hoy español, inglés y chino de forma nativa, y a solicitud cualquiera de los 249 idiomas que cubre la traducción con IA, siempre con revisión antes de emitir. Las cifras no cambian entre versiones: la plantilla está separada de la capa de datos, de modo que la traducción nunca toca un número.", "g086": "Para la autoridad, esto significa que el informe que revisa la SEC y el que recibe un directorio en el extranjero provienen de la misma cadena de evidencia — no de dos preparaciones distintas.", "g087": "06 · Gobernanza de datos", "g088": "Construido para infraestructura crítica", "g089": "La información operacional de una central es sensible y en muchos casos estratégica. Estos son los principios de arquitectura que aplicamos.", "g090": "Acceso", "g091": "Control por rol", "g092": "Cada perfil accede únicamente a lo que su función requiere. El acceso se otorga por instalación y por tipo de información, nunca de forma global.", "g093": "Identidad", "g094": "Autenticación robusta", "g095": "Credenciales individuales y no compartidas, con segundo factor y expiración de sesión.", "g096": "Confidencialidad", "g097": "Cifrado en tránsito y reposo", "g098": "Los datos viajan y se almacenan cifrados. Nada se comparte, vende ni sublicencia más allá del servicio contratado.", "g099": "Auditoría", "g100": "Registro de accesos", "g101": "Quién consultó qué información y cuándo queda registrado y es consultable por el titular.", "g102": "Aislamiento", "g103": "Segregación por cliente", "g104": "La información de cada titular permanece separada. No existe agregación entre clientes sin autorización expresa.", "g105": "Continuidad", "g106": "Respaldo y recuperación", "g107": "Respaldos periódicos y procedimiento documentado, con exportación de datos y manifiestos de auditoría al término del contrato.", "g108": "Sobre certificaciones", "g109": "Los principios anteriores describen decisiones de arquitectura, no acreditaciones de terceros. <b>Quorelia no declara certificaciones ni cumplimiento normativo que no hayan sido auditados y emitidos por un organismo competente.</b> Cuando una certificación específica sea requisito de una contratación, se indicará su estado real de avance.", "g110": "07 · Propuesta concreta", "g111": "Un piloto acotado, medible y sin riesgo institucional", "g112": "No requiere modificación normativa, ni instalación de equipamiento, ni acceso a sistemas de la autoridad. Se ejecuta sobre datos que las centrales ya generan y ya están obligadas a conservar.", "g113": "Elemento", "g114": "Definición", "g115": "<b>Alcance</b>", "g116": "10 a 15 centrales voluntarias, cubriendo fotovoltaica coordinada, PMGD y al menos una instalación con almacenamiento.", "g117": "<b>Duración</b>", "g118": "Tres meses, en paralelo al reporte habitual. No reemplaza ningún proceso vigente.", "g119": "<b>Insumo</b>", "g120": "Datos SCADA que las centrales ya producen, con autorización expresa de cada titular.", "g121": "<b>Producto</b>", "g122": "Informe estandarizado por central y vista consolidada de cartera, con trazabilidad por cifra.", "g123": "<b>Métrica de éxito</b>", "g124": "Tiempo de revisión documental, medido con cronómetro por el propio equipo revisor de la autoridad: formato actual contra formato estandarizado.", "g125": "<b>Definición de fracaso</b>", "g126": "Si el tiempo de revisión no disminuye de forma medible, el piloto se declara sin éxito y termina.", "g127": "<b>Deliberadamente no proyectamos un ahorro de horas.</b> Sería fácil presentar una cifra optimista de reducción de tiempo. Preferimos que ese número lo produzca el piloto y lo mida quien va a usar el sistema.", "g128": "08 · Límites explícitos", "g129": "Lo que Quorelia no hace", "g130": "No reemplaza la fiscalización en terreno", "g131": "La inspección presencial resuelve preguntas que ningún dato remoto puede responder. El objetivo es dirigir mejor ese esfuerzo, no sustituirlo.", "g132": "No sustituye el juicio del fiscalizador", "g133": "El sistema entrega evidencia ordenada y trazable. La interpretación, la calificación y la decisión son siempre humanas.", "g134": "No accede a sistemas de la autoridad", "g135": "El piloto corre sobre datos de titulares privados que lo autorizan voluntariamente. No requiere integración con plataformas del Estado.", "g136": "No emite certificaciones con efecto regulatorio", "g137": "Los informes son un insumo documental verificable. No tienen ni pretenden tener valor de acto administrativo.", "g138": "No opera ni controla instalaciones", "g139": "Quorelia observa y reporta. No ejecuta maniobras, no despacha, no interviene en la operación de ningún activo.", "g140": "No agrega datos entre titulares sin autorización", "g141": "Cualquier vista consolidada de cartera requiere el consentimiento expreso de cada titular involucrado.", "g142": "Una sesión técnica de 45 minutos", "g143": "Podemos mostrar el análisis completo del registro de Infotécnica, los informes estandarizados por tecnología y la trazabilidad de una cifra hasta su medición de origen. Sin presentación comercial.", "g144": "<span>Escribir a Quorelia</span><span class=\"ar\">→</span>", "g145": "<span>Ver informe de muestra</span><span class=\"ar\">→</span>", "g146": "Inteligencia para infraestructura energética crítica. Solar, eólica y almacenamiento.", "g147": "Nuestra plataforma", "g148": "Capacidades", "g149": "Informe de muestra", "g150": "Nuestra historia", "g151": "Gobierno", "g152": "quorelia.org", "g153": "<b>Declaración de alcance y fuentes.</b> Quorelia es una empresa privada de tecnología y no forma parte de la Superintendencia de Electricidad y Combustibles ni de ningún organismo del Estado. Las cifras de fiscalización citadas provienen de la Cuenta Pública 2026 de la SEC. El análisis del parque generador se basa en el registro público de Infotécnica del Coordinador Eléctrico Nacional, extracción del 16 de agosto de 2026, y es reproducible sobre los archivos de origen. Los informes de muestra referidos contienen datos ilustrativos y no representan instalaciones ni clientes reales.", "g154": "Fiscalizaciones 2025 · sector eléctrico y combustibles", "g155": "Fiscalizaciones en generación distribuida", "g156": "Revisiones documentales — cerca del 90% del esfuerzo del segmento", "g157": "Revisiones en terreno", "f_terms": "Términos", "f_priv": "Privacidad", "nav_demos": "Demos", "nav_ins": "Insights", "nav_sw": "Plataforma", "nav_plat": "Control Center", "nav_cap": "Capacidades", "nav_rep": "Informes", "nav_gov": "Gobierno", "nav_story": "Nuestra historia", "nav_contact": "Contacto", "cta_ses": "Solicitar sesión técnica"},
@@ -359,5 +449,6 @@ function setLang(l){
 })();
 </script>
 <script src="quorelia.js"></script>
+<script src="/quorelia-common.js"></script><!--q:common-->
 </body>
 </html>
