@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Gestión de activos PMGD y baterías en Chile · Quorelia</title>
+<meta name="description" content="Gestión de activos PMGD y BESS en Chile: desempeño, liquidaciones del CEN, Saldo MEP, contratistas y cumplimiento, en un informe mensual. Eagle Eye incluido.">
+<link rel="canonical" href="https://www.quorelia.org/servicios/gestion-de-activos/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/servicios/gestion-de-activos/">
+<meta property="og:title" content="Gestión de activos PMGD y BESS · Quorelia">
+<meta property="og:description" content="Un representante para su planta: desempeño, dinero y cumplimiento. Eagle Eye incluido; cada cifra con su cobertura y su fórmula.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Gestión de activos PMGD y BESS","serviceType":"Energy asset management",
+  "description":"Gestión de activos por cuenta del dueño para plantas PMGD, solares y de almacenamiento en Chile: desempeño, liquidaciones del CEN y Saldo MEP, contratistas, cumplimiento e informes para financistas. Eagle Eye incluido.",
+  "areaServed":"CL",
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/servicios/gestion-de-activos/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
+  {"@type":"ListItem","position":3,"name":"Gestión de activos","item":"https://www.quorelia.org/servicios/gestion-de-activos/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Quién es responsable ante el CEN?","acceptedAnswer":{"@type":"Answer","text":"El dueño sigue siendo el coordinado. Quorelia actúa bajo su mandato, nunca firma como operador y accede a los datos en modo solo lectura: Eagle Eye no escribe consignas en la planta."}},
+  {"@type":"Question","name":"¿Qué responsabilidad asume Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Responsabilidad profesional por nuestro trabajo, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&M, que nosotros hacemos cumplir."}},
+  {"@type":"Question","name":"¿Qué seguros respaldan el servicio?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados vigentes de Quorelia y de cada socio que trabaje en su planta: responsabilidad civil y profesional, afiliación a mutualidad y sistema de gestión DS 44."}},
+  {"@type":"Question","name":"¿Qué licencias se necesitan y quién las tiene?","acceptedAnswer":{"@type":"Answer","text":"Nuestro trabajo es de gestión, análisis y supervisión, sin intervenir equipos. Todo trabajo en media tensión, protecciones y declaraciones TE7 lo firma un instalador eléctrico Clase A con licencia SEC, contratado como socio (DS 92)."}},
+  {"@type":"Question","name":"¿Cuánto dura el contrato y cómo se sale?","acceptedAnswer":{"@type":"Answer","text":"Tres años con opción de dos más, firmado con la SPV. Desde el mes 18 puede terminarlo por conveniencia con seis meses de aviso. Sus datos y paquetes de evidencia se exportan en formatos abiertos."}},
+  {"@type":"Question","name":"¿Tengo que cambiar mi SCADA o mi contratista?","acceptedAnswer":{"@type":"Answer","text":"No. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, clima y órdenes de trabajo en modo solo lectura, y no reemplaza nada. Su contratista de O&M sigue en terreno; nosotros lo supervisamos con datos."}},
+  {"@type":"Question","name":"¿De quién son los datos?","acceptedAnswer":{"@type":"Answer","text":"Suyos. Quorelia los trata como encargado bajo la Ley 21.719 y solo según sus instrucciones. Sus financistas pueden recibir acceso de lectura, incluido en el honorario."}},
+  {"@type":"Question","name":"¿Quién está detrás de Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Jay Kim (CEO) dirige la gestión técnica de activos y Eagle Eye; Diego Ostertag (CFO) dirige finanzas, liquidaciones, financistas y alianzas. Experiencia del equipo en cargos anteriores: 10 plantas PMGD (≈50 MW) operadas y 70 MW en contratos EPC y O&M negociados."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas" data-i18n-aria="cr_aria"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><a href="/servicios/" data-i18n="cr_svc">Servicios</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="cr_here">Gestión de activos</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Gestión de activos PMGD · Solar y BESS · Chile</span>
+        <h1 class="q-h1" data-i18n="hero_h">Un representante para su planta: desempeño, dinero y cumplimiento.</h1>
+        <p class="q-lede" data-i18n="hero_p">Gestionamos su planta o cartera PMGD por cuenta del dueño: liquidaciones del CEN, contratistas y cumplimiento, en un informe mensual que usted puede firmar. Eagle Eye incluido.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=gestion-activos#activos"><span data-i18n="cta1">Solicitar evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="/informe.html#cartera" data-i18n="cta2">Ver un informe de muestra</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye con datos ilustrativos de una cartera PMGD" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_t">Eagle Eye · Cartera demo · 6 plantas PMGD</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Disponibilidad contractual</span><span class="q-kpi__v" data-i18n="k1v">98,7 %</span><span class="q-kpi__s" data-i18n="k1s">calculada sobre 96 % de los intervalos</span><span class="q-kpi__bar"><i style="width:96%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Energía de septiembre</span><span class="q-kpi__v" data-i18n="k2v">4.812 MWh</span><span class="q-kpi__s" data-i18n="k2s">medida, en conciliación con el CEN</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k3k">PR planta 4</span><span class="q-kpi__v" data-i18n="k3v">Retenida</span><span class="q-kpi__s" data-i18n="k3s">cobertura 71 % · bajo el umbral de 90 %</span><span class="q-kpi__bar"><i style="width:71%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k4k">Saldo MEP</span><span class="q-kpi__v" data-i18n="k4v">CLP 18,4 M</span><span class="q-kpi__s" data-i18n="k4s">a liquidar en 12 cuotas reajustables</span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Reclamo</span><span data-i18n="r1">Liquidación sept. · 41 MWh por observar ante el CEN</span><span class="t" data-i18n="r1t">hoy</span></li>
+          <li><span class="q-chip q-chip--warn" data-i18n="r2c">Riesgo</span><span data-i18n="r2">Inversor 3 · deriva de temperatura desde el día 12</span><span class="t">06:40</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r3c">Cerrada</span><span data-i18n="r3">OT 118 · limpieza verificada con datos</span><span class="t" data-i18n="r3t">ayer</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Flota demo · datos ilustrativos</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 plantas PMGD operadas · experiencia del equipo</span></li>
+      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">en contratos EPC y O&amp;M negociados · experiencia del equipo</span></li>
+      <li><b>ES · EN · 中文</b><span class="q-proof__k" data-i18n="p4">informes en tres idiomas</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Contexto: cifras con fuente ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="ctx_eb">Por qué ahora</span><h2 class="q-h2" data-i18n="ctx_h"><span class="dim">Las reglas del PMGD cambiaron en 2026.</span> El flujo de caja también.</h2></div>
+      <p class="q-lede" data-i18n="ctx_p">Con el DS 1/2026, cada intervalo se valoriza por separado y el Saldo MEP se paga al año siguiente. Alguien tiene que conciliarlo, planta por planta.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f1v">3.868 MW</span><span class="q-fig__k" data-i18n="f1k">de PMGD en operación en Chile.</span><span class="q-fig__src" data-i18n="f1s">Fuente: <a href="https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf" target="_blank" rel="noopener">ACERA, boletín ago. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f2v">12 cuotas</span><span class="q-fig__k" data-i18n="f2k">reajustables por IPC en que se paga, al año siguiente, cada Saldo MEP mensual. Las inyecciones se valorizan por intervalo de liquidación.</span><span class="q-fig__src" data-i18n="f2s">Fuente: <a href="https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/" target="_blank" rel="noopener">JDF, sobre el DS 1/2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f3v">71 %</span><span class="q-fig__k" data-i18n="f3k">de las plantas PMGD vende al precio heredado del DS 244. Agregar baterías hace perder ese precio.</span><span class="q-fig__src" data-i18n="f3s">Fuentes: <a href="https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf" target="_blank" rel="noopener">CEN, informe UMC dic. 2025</a> · <a href="https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026" target="_blank" rel="noopener">Cuatrecasas</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2 · Qué hacemos ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · Qué hacemos</span><h2 class="q-h2" data-i18n="s1_h">El alcance, listo para pegar en una licitación.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">Cuatro frentes y un solo responsable. Cada obligación regulatoria está explicada en nuestra <a class="q-link" href="/normativa-electrica-chile.html">guía de la normativa eléctrica</a>.</p>
+    </div>
+    <div class="q-grid q-grid--4">
+      <div class="q-card"><span class="q-card__k" data-i18n="g1k">Técnico</span><h3 data-i18n="g1h">Desempeño del activo</h3>
+        <ul class="q-check">
+          <li data-i18n="g1a">Disponibilidad y PR recalculados desde datos brutos</li>
+          <li data-i18n="g1b">Cascada de pérdidas corregida por clima: suciedad, recorte, vertimiento y fallas</li>
+          <li data-i18n="g1c">Vertimiento atribuido a red, recurso o activo</li>
+          <li data-i18n="g1d">Reclamos de garantía y de seguros</li>
+          <li data-i18n="g1e">BESS: capacidad entregada, eficiencia y estado de salud</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g2k">Comercial</span><h3 data-i18n="g2h">Ingresos y liquidaciones</h3>
+        <ul class="q-check">
+          <li data-i18n="g2a">Liquidación mensual del CEN, conciliada planta por planta</li>
+          <li data-i18n="g2b">Valorización por intervalo según el DS 1/2026</li>
+          <li data-i18n="g2c">Libro del Saldo MEP y de sus 12 cuotas</li>
+          <li data-i18n="g2d">Control de bloques de precio estabilizado</li>
+          <li data-i18n="g2e">Facturas a la distribuidora y conciliación de PPA</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g3k">Contratistas</span><h3 data-i18n="g3h">Contratos y garantías</h3>
+        <ul class="q-check">
+          <li data-i18n="g3a">KPI del contrato de O&amp;M frente a lo firmado</li>
+          <li data-i18n="g3b">Cálculo y cobro de multas (LD) al contratista</li>
+          <li data-i18n="g3c">Órdenes de trabajo cerradas solo cuando los datos confirman la recuperación</li>
+          <li data-i18n="g3d">Gestión de garantías de equipos</li>
+          <li data-i18n="g3e">Licitación y traspaso del O&amp;M</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g4k">Cumplimiento</span><h3 data-i18n="g4h">Regulación y financistas</h3>
+        <ul class="q-check">
+          <li data-i18n="g4a">Calendario NTSyCS, NTCO PMGD, SEC y SMA (RCA, donde aplica)</li>
+          <li data-i18n="g4b">Evidencia para la Ley 21.663 (ciberseguridad) y la Ley 21.719 (datos)</li>
+          <li data-i18n="g4c">SGIIE solo en activos conectados a transmisión</li>
+          <li data-i18n="g4d">Presupuesto anual y control de opex</li>
+          <li data-i18n="g4e">Informes para financistas e inversionistas</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Qué recibe ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s2_eb">02 · Qué recibe</span><h2 class="q-h2" data-i18n="s2_h">Entregables con fecha y niveles de servicio por escrito.</h2></div>
+    <div class="q-grid q-grid--3">
+      <a class="q-card" href="/informe.html#cartera"><span class="q-card__k" data-i18n="d1k">Mensual</span><h3 data-i18n="d1h">Informe del activo</h3><p data-i18n="d1p">Técnico, comercial y de cumplimiento, en fecha fija. Cada cifra con su cobertura, su fórmula y el registro de cifras retenidas.</p><span class="q-card__link" data-i18n="d1l">Ver muestra</span></a>
+      <div class="q-card"><span class="q-card__k" data-i18n="d2k">Mensual</span><h3 data-i18n="d2h">Conciliación de la liquidación</h3><p data-i18n="d2p">Diferencia en MWh y CLP por planta frente al CEN, observaciones presentadas y dinero recuperado.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d3k">Anual</span><h3 data-i18n="d3h">Presupuesto y control de opex</h3><p data-i18n="d3p">Presupuesto del activo, seguimiento de desviaciones y renovación de seguros.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d4k">Continuo</span><h3 data-i18n="d4h">Registro de incidentes y temas abiertos</h3><p data-i18n="d4p">Cada tema con responsable y fecha comprometida. Ninguna orden de trabajo se cierra sin evidencia.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d5k">Trimestral</span><h3 data-i18n="d5h">Visita a planta y revisión con el dueño</h3><p data-i18n="d5p">Recorrido sin intervenir equipos y reunión de resultados con el dueño o el comité del fondo.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d6k">Por covenant</span><h3 data-i18n="d6h">Paquete para financistas</h3><p data-i18n="d6p">Insumos del DSCR e informes para inversionistas, con firma electrónica avanzada y sello de tiempo.</p></div>
+    </div>
+    <div style="margin-top:64px">
+      <span class="q-eyebrow" data-i18n="sl_eb">Niveles de servicio</span>
+      <div class="q-figs" style="--cols:4;margin-top:16px">
+        <div class="q-fig"><span class="q-fig__v">24/7</span><span class="q-fig__k" data-i18n="sl1k">alarmas críticas notificadas; revisión de alarmas cada día hábil</span><span class="q-fig__src" data-i18n="sl_src">Nivel de servicio del contrato</span></div>
+        <div class="q-fig"><span class="q-fig__v">4 h</span><span class="q-fig__k" data-i18n="sl2k">hábiles para diagnosticar a distancia una falla crítica, con aviso al dueño y al contratista</span><span class="q-fig__src" data-i18n="sl_src">Nivel de servicio del contrato</span></div>
+        <div class="q-fig"><span class="q-fig__v">3 h</span><span class="q-fig__k" data-i18n="sl3k">para la alerta temprana al cliente de un incidente de ciberseguridad</span><span class="q-fig__src" data-i18n="sl3s">Plazo de la <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434" target="_blank" rel="noopener">Ley 21.663</a></span></div>
+        <div class="q-fig"><span class="q-fig__v">24 h</span><span class="q-fig__k" data-i18n="sl4k">para apoyar el aviso de accidente del dueño a la SEC</span><span class="q-fig__src" data-i18n="sl4s">Plazo del <a href="https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/" target="_blank" rel="noopener">DS 109</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Cómo lo cambia Eagle Eye ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s3_eb">03 · Cómo lo cambia Eagle Eye</span><h2 class="q-h2" data-i18n="s3_h">Una diferencia en la liquidación, observada en días y no en la auditoría anual.</h2></div>
+      <p class="q-lede" data-i18n="s3_p">Eagle Eye lee SCADA, PPC, inversores, medidores, clima y órdenes de trabajo en modo solo lectura, y nunca escribe consignas. Lo que cambia es la velocidad con que una diferencia se convierte en dinero.</p>
+    </div>
+    <div class="q-grid q-grid--2">
+      <div class="q-card"><span class="q-card__k" data-i18n="ba1k">Antes</span><h3 data-i18n="ba1h">La liquidación llega, se factura y se paga.</h3>
+        <ul class="q-check q-check--no">
+          <li data-i18n="ba1a">Nadie cruza la energía medida de cada intervalo con la valorización del CEN.</li>
+          <li data-i18n="ba1b">El Saldo MEP vive en una planilla, sin calendario de cuotas.</li>
+          <li data-i18n="ba1c">Las diferencias aparecen, si aparecen, en la auditoría anual.</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="ba2k">Con Quorelia y Eagle Eye</span><h3 data-i18n="ba2h">Cada intervalo, conciliado antes de facturar.</h3>
+        <ul class="q-check">
+          <li data-i18n="ba2a">Eagle Eye cruza la energía medida con la valorización del CEN, intervalo por intervalo y planta por planta.</li>
+          <li data-i18n="ba2b">La diferencia aparece en MWh y CLP, con la cobertura de datos que la respalda.</li>
+          <li data-i18n="ba2c">Presentamos la observación con un paquete de evidencia firmado y seguimos el cobro.</li>
+          <li data-i18n="ba2d">Cada cuota del Saldo MEP queda en un libro, con fecha y monto.</li>
+        </ul></div>
+    </div>
+    <div class="q-figs" style="--cols:3;margin-top:48px">
+      <div class="q-fig"><span class="q-fig__v">41 MWh</span><span class="q-fig__k" data-i18n="ex1k">de diferencia entre la energía medida y la valorizada por el CEN en septiembre</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="ex2v">CLP 3,1 M</span><span class="q-fig__k" data-i18n="ex2k">observados ante el CEN, con paquete de evidencia firmado</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="ex3v">6 días</span><span class="q-fig__k" data-i18n="ex3k">desde la publicación de la liquidación hasta la observación</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Quién hace el trabajo (ciclo completo) ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s4_eb">04 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="s4_h">Un solo responsable, de la ingeniería a la operación.</h2></div>
+      <p class="q-lede" data-i18n="s4_p">Quorelia gestiona, verifica y supervisa. El trabajo en terreno lo hacen socios certificados bajo nuestra gestión, y cada contrato dice quién hace qué.</p>
+    </div>
+    <ol class="q-life" style="--steps:6">
+      <li><span class="q-life__t" data-i18n="l1t">Factibilidad e ingeniería</span><span class="q-life__d" data-i18n="l1d">Estudio, diseño y caso de negocio; ingeniero del propietario.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span><a href="/servicios/ingenieria/" data-i18n="l1a">Ingeniería</a></li>
+      <li><span class="q-life__t" data-i18n="l2t">Construcción</span><span class="q-life__d" data-i18n="l2d">Obra a precio fijo por un socio EPC, supervisada por Quorelia contra la especificación.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l2w">Socio EPC</span><a href="/servicios/solar-y-baterias/" data-i18n="l2a">Solar y baterías</a></li>
+      <li><span class="q-life__t" data-i18n="l3t">Puesta en marcha</span><span class="q-life__d" data-i18n="l3d">Pruebas y declaración TE7 firmadas por un instalador Clase A; Quorelia atestigua y fija la línea base.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l3w">Socio Clase A</span></li>
+      <li><span class="q-life__t" data-i18n="l4t">Operación y mantenimiento</span><span class="q-life__d" data-i18n="l4d">Preventivo, correctivo y limpieza, despachados por datos y supervisados por Quorelia.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l4w">Socio certificado</span><a href="/servicios/operacion-y-mantenimiento/" data-i18n="l4a">O&amp;M</a></li>
+      <li><span class="q-life__t" data-i18n="l5t">Gestión de activos</span><span class="q-life__d" data-i18n="l5d">Desempeño, liquidaciones, contratistas y cumplimiento, en un informe mensual.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span></li>
+      <li><span class="q-life__t" data-i18n="l6t">Informes y evidencia</span><span class="q-life__d" data-i18n="l6d">Cifras firmadas para dueños, financistas y compradores.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span><a href="/servicios/verificacion/" data-i18n="l6a">Verificación</a></li>
+    </ol>
+    <div class="q-who" style="margin-top:56px">
+      <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w1h">Equipo de Quorelia</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w1a">Gestor de activos asignado a su cartera</li>
+          <li data-i18n="w1b">Análisis de desempeño y pérdidas con Eagle Eye</li>
+          <li data-i18n="w1c">Liquidaciones del CEN, Saldo MEP, facturas y paquetes para financistas</li>
+          <li data-i18n="w1d">Supervisión del O&amp;M, auditorías documentales y recorridos sin intervenir equipos</li>
+          <li data-i18n="w1e">Integración de datos y soporte de Eagle Eye</li>
+          <li data-i18n="w1f">Responsables: Jay Kim (CEO) y Diego Ostertag (CFO)</li>
+        </ul></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios certificados, bajo nuestra gestión</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w2a">O&amp;M en terreno, limpieza y seguridad: su contratista actual o un socio certificado</li>
+          <li data-i18n="w2b">Media tensión, protecciones y declaraciones TE7: instalador eléctrico Clase A con licencia SEC</li>
+          <li data-i18n="w2d">Termografía, curvas IV y vuelos con dron: subcontratista de inspección certificado</li>
+          <li data-i18n="w2e">Seguridad con sistema DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w2f">Pronósticos de generación: proveedor especializado, con control de calidad de Quorelia</li>
+        </ul></div>
+    </div>
+    <div class="note" style="margin-top:32px">
+      <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n1h">El dueño sigue siendo el coordinado.</h3>
+      <p data-i18n="n1p">Quorelia actúa bajo el mandato del dueño (<a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171" target="_blank" rel="noopener">LGSE</a>) y no firma como operador. No somos contratista EPC, no vendemos equipos, no somos dueños de plantas ni vendemos energía, y no financiamos proyectos: el financiamiento lo aportan socios.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Cómo se cobra ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s5_eb">05 · Cómo se cobra</span><h2 class="q-h2" data-i18n="s5_h">Un modelo de precio simple, sin sorpresas en el presupuesto.</h2></div>
+      <p class="q-lede" data-i18n="s5_p">Aquí explicamos el modelo; la cifra exacta va en la propuesta, cuando conocemos su cartera.</p>
+    </div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="pr1k">Base</span><h3 data-i18n="pr1h">Honorario por MWp-año</h3><p data-i18n="pr1p">Por tramos según el tamaño de la cartera del grupo dueño, con un mínimo mensual por planta.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr2k">Incluido</span><h3>Eagle Eye</h3><p data-i18n="pr2p">Viene con el contrato. Su valor de lista aparece en la propuesta, para que sepa lo que recibe.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr3k">Una vez</span><h3 data-i18n="pr3h">Integración</h3><p data-i18n="pr3p">Cargo único por planta para conectar sus sistemas; exento en contratos de 3 años o más.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr4k">Opcional</span><h3 data-i18n="pr4h">Parte de lo recuperado</h3><p data-i18n="pr4p">Un porcentaje con tope del ingreso recuperado y documentado: correcciones de liquidación pagadas, multas y garantías cobradas. Solo sobre dinero recibido.</p></div>
+      <a class="q-card" href="/servicios/verificacion/"><span class="q-card__k" data-i18n="pr5k">Entrada</span><h3 data-i18n="pr5h">Línea Base Verificada</h3><p data-i18n="pr5p">Precio fijo, 30–45 días; el informe queda con usted. El 50 % se abona a un contrato del primer año firmado dentro de 90 días.</p><span class="q-card__link" data-i18n="pr5l">Ver la Línea Base</span></a>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr6k">Plazo</span><h3 data-i18n="pr6h">Contrato de 3 años</h3><p data-i18n="pr6p">Con opción de 2 años más y firmado con la SPV, para que siga vigente si se venden las acciones. Salida por conveniencia desde el mes 18.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Prueba ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s6_eb">06 · Prueba</span><h2 class="q-h2" data-i18n="s6_h">Vea el trabajo antes de firmar.</h2></div>
+      <p class="q-lede" data-i18n="s6_p">Estructura real de los informes y del Control Center, con datos ilustrativos de una flota demo.</p>
+    </div>
+    <div class="q-grid q-grid--4">
+      <a class="q-card" href="/informe.html#cartera"><span class="q-card__k" data-i18n="pc_rep">Informe de muestra</span><h3 data-i18n="pc1h">Informe consolidado de cartera</h3><p data-i18n="pc1p">La vista mensual de una cartera completa, con la cobertura de cada cifra.</p><span class="q-card__link" data-i18n="pc_open">Abrir</span></a>
+      <a class="q-card" href="/informe.html#fv-m"><span class="q-card__k" data-i18n="pc_rep">Informe de muestra</span><h3 data-i18n="pc2h">Informe mensual de planta solar</h3><p data-i18n="pc2p">Disponibilidad, PR y pérdidas de una planta FV demo.</p><span class="q-card__link" data-i18n="pc_open">Abrir</span></a>
+      <a class="q-card" href="/demos.html"><span class="q-card__k" data-i18n="pc3k">Demo en vivo</span><h3 data-i18n="pc3h">Control Center y tablero BESS</h3><p data-i18n="pc3p">La plataforma funcionando sobre la flota demo.</p><span class="q-card__link" data-i18n="pc3l">Ver la demo</span></a>
+      <a class="q-card" href="/plataforma.html"><span class="q-card__k" data-i18n="pc4k">Plataforma</span><h3>Eagle Eye</h3><p data-i18n="pc4p">Qué lee, qué calcula y por qué nunca escribe consignas.</p><span class="q-card__link" data-i18n="pc4l">Conocer Eagle Eye</span></a>
+    </div>
+    <div style="margin-top:22px"><p class="q-small" data-i18n="pr_note">Datos ilustrativos · flota demo. No representan plantas ni clientes reales.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Preguntas ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s7_eb">07 · Preguntas</span><h2 class="q-h2" data-i18n="s7_h">Lo que preguntan los dueños y sus abogados.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Quién es responsable ante el CEN?</summary><div><p data-i18n="fa1">El dueño sigue siendo el coordinado. Quorelia actúa bajo su mandato, nunca firma como operador y accede a los datos en modo solo lectura: Eagle Eye no escribe consignas en la planta.</p></div></details>
+      <details><summary data-i18n="fq2">¿Qué responsabilidad asume Quorelia?</summary><div><p data-i18n="fa2">Responsabilidad profesional por nuestro trabajo, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&amp;M, que nosotros hacemos cumplir.</p></div></details>
+      <details><summary data-i18n="fq3">¿Qué seguros respaldan el servicio?</summary><div><p data-i18n="fa3">Antes de firmar le entregamos los certificados vigentes de Quorelia y de cada socio que trabaje en su planta: responsabilidad civil y profesional, afiliación a mutualidad y sistema de gestión DS 44.</p></div></details>
+      <details><summary data-i18n="fq4">¿Qué licencias se necesitan y quién las tiene?</summary><div><p data-i18n="fa4">Nuestro trabajo es de gestión, análisis y supervisión, sin intervenir equipos. Todo trabajo en media tensión, protecciones y declaraciones TE7 lo firma un instalador eléctrico Clase A con licencia SEC, contratado como socio (DS 92).</p></div></details>
+      <details><summary data-i18n="fq5">¿Cuánto dura el contrato y cómo se sale?</summary><div><p data-i18n="fa5">Tres años con opción de dos más, firmado con la SPV. Desde el mes 18 puede terminarlo por conveniencia con seis meses de aviso. Sus datos y paquetes de evidencia se exportan en formatos abiertos.</p></div></details>
+      <details><summary data-i18n="fq6">¿Tengo que cambiar mi SCADA o mi contratista?</summary><div><p data-i18n="fa6">No. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, clima y órdenes de trabajo en modo solo lectura, y no reemplaza nada. Su contratista de O&amp;M sigue en terreno; nosotros lo supervisamos con datos.</p></div></details>
+      <details><summary data-i18n="fq7">¿De quién son los datos?</summary><div><p data-i18n="fa7">Suyos. Quorelia los trata como encargado bajo la Ley 21.719 y solo según sus instrucciones. Sus financistas pueden recibir acceso de lectura, incluido en el honorario.</p></div></details>
+      <details><summary data-i18n="fq8">¿Quién está detrás de Quorelia?</summary><div><p data-i18n="fa8">Jay Kim (CEO) dirige la gestión técnica de activos y Eagle Eye; Diego Ostertag (CFO) dirige finanzas, liquidaciones, financistas y alianzas. Experiencia del equipo en cargos anteriores: 10 plantas PMGD (≈50 MW) operadas y 70 MW en contratos EPC y O&amp;M negociados. <a class="q-link" href="/story.html">Nuestra historia</a></p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div class="q-head" style="margin-bottom:0">
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación</span>
+      <h2 class="q-h2" data-i18n="ct_h">Alcance fijo. El informe queda con usted, nos contrate o no.</h2>
+      <p class="q-lede" data-i18n="ct_p">Cuéntenos su cartera en cinco minutos. Una persona del equipo le responde en un día hábil.</p>
+      <div class="q-actions">
+        <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=gestion-activos#activos"><span data-i18n="cta1">Solicitar evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+      </div>
+      <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+window.Q_PAGE = {
+ en:{
+  __title:"PMGD and battery asset management in Chile · Quorelia",
+  __desc:"PMGD and BESS asset management in Chile: performance, CEN settlements, Saldo MEP, contractors and compliance in one monthly report. Eagle Eye included.",
+  cr_aria:"Breadcrumb", cr_home:"Home", cr_svc:"Services", cr_here:"Asset management",
+  hero_eb:"PMGD asset management · Solar and BESS · Chile",
+  hero_h:"One representative for your plant: performance, money and compliance.",
+  hero_p:"We manage your plant or PMGD portfolio on the owner’s behalf — CEN settlements, contractors and compliance — in one monthly report you can sign. Eagle Eye included.",
+  cta1:"Request an asset assessment", cta2:"See a sample report",
+  inst_aria:"Sample Eagle Eye view with illustrative data from a PMGD portfolio",
+  inst_t:"Eagle Eye · Demo portfolio · 6 PMGD plants", inst_live:"Live",
+  k1k:"Contractual availability", k1v:"98.7%", k1s:"computed on 96% of intervals",
+  k2k:"September energy", k2v:"4,812 MWh", k2s:"metered, being reconciled with the CEN",
+  k3k:"PR, plant 4", k3v:"Withheld", k3s:"coverage 71% · below the 90% threshold",
+  k4k:"Saldo MEP", k4v:"CLP 18.4M", k4s:"settled in 12 indexed instalments",
+  r1c:"Claim", r1:"Sept. settlement · 41 MWh to dispute with the CEN", r1t:"today",
+  r2c:"Risk", r2:"Inverter 3 · temperature drift since day 12",
+  r3c:"Closed", r3:"WO 118 · cleaning verified with data", r3t:"yesterday",
+  inst_foot:"Demo fleet · illustrative data",
+  p1:"under monitoring", p2:"10 PMGD plants operated · team experience",
+  p3:"of EPC and O&amp;M contracts negotiated · team experience", p4:"reports in three languages",
+  ctx_eb:"Why now",
+  ctx_h:"<span class=\"dim\">The PMGD rules changed in 2026.</span> So did the cash flow.",
+  ctx_p:"Under DS 1/2026 every settlement interval is valued separately and the Saldo MEP is paid the following year. Someone has to reconcile it, plant by plant.",
+  f1v:"3,868 MW", f1k:"of PMGD in operation in Chile.",
+  f1s:"Source: <a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA, Aug. 2026 bulletin</a>",
+  f2v:"12 instalments", f2k:"indexed to CPI, in which each monthly Saldo MEP is paid the following year. Injections are valued per settlement interval.",
+  f2s:"Source: <a href='https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/' target='_blank' rel='noopener'>JDF, on DS 1/2026</a>",
+  f3v:"71%", f3k:"of PMGD plants sell at the legacy DS 244 price. Adding storage forfeits it.",
+  f3s:"Sources: <a href='https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf' target='_blank' rel='noopener'>CEN, UMC report, Dec. 2025</a> · <a href='https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026' target='_blank' rel='noopener'>Cuatrecasas</a>",
+  s1_eb:"01 · What we do", s1_h:"The scope, ready to paste into a tender.",
+  s1_p:"Four fronts, one accountable manager. Every regulatory obligation is explained in our <a class='q-link' href='/normativa-electrica-chile.html'>guide to Chile’s electricity rules</a>.",
+  g1k:"Technical", g1h:"Asset performance",
+  g1a:"Availability and PR recomputed from raw data",
+  g1b:"Weather-corrected loss waterfall: soiling, clipping, curtailment and faults",
+  g1c:"Curtailment attributed to grid, resource or asset",
+  g1d:"Warranty and insurance claims",
+  g1e:"BESS: delivered capacity, efficiency and state of health",
+  g2k:"Commercial", g2h:"Revenue and settlements",
+  g2a:"Monthly CEN settlement, reconciled plant by plant",
+  g2b:"Per-interval valuation under DS 1/2026",
+  g2c:"Saldo MEP ledger and its 12 instalments",
+  g2d:"Stabilized-price block checks",
+  g2e:"Invoices to the distribution company and PPA reconciliation",
+  g3k:"Contractors", g3h:"Contracts and warranties",
+  g3a:"O&amp;M contract KPIs checked against what was signed",
+  g3b:"Liquidated damages calculated and enforced",
+  g3c:"Work orders closed only when data confirm the recovery",
+  g3d:"Equipment warranty management",
+  g3e:"O&amp;M tender and handover",
+  g4k:"Compliance", g4h:"Regulators and lenders",
+  g4a:"NTSyCS, NTCO PMGD, SEC and SMA (RCA, where applicable) calendar",
+  g4b:"Evidence for Ley 21.663 (cybersecurity) and Ley 21.719 (personal data)",
+  g4c:"SGIIE only for transmission-connected assets",
+  g4d:"Annual budget and opex control",
+  g4e:"Lender and investor reporting",
+  s2_eb:"02 · What you receive", s2_h:"Dated deliverables and written service levels.",
+  d1k:"Monthly", d1h:"Asset report", d1p:"Technical, commercial and compliance, on a fixed date. Every figure with its coverage, its formula and the log of withheld figures.", d1l:"See a sample",
+  d2k:"Monthly", d2h:"Settlement reconciliation", d2p:"MWh and CLP variance per plant against the CEN, disputes filed and cash recovered.",
+  d3k:"Annual", d3h:"Budget and opex control", d3p:"The asset budget, variance tracking and insurance renewals.",
+  d4k:"Ongoing", d4h:"Incident and open-issue log", d4p:"Every issue with an owner and a due date. No work order closes without evidence.",
+  d5k:"Quarterly", d5h:"Site visit and owner review", d5p:"A walk-down without touching equipment, and a results meeting with the owner or the fund’s committee.",
+  d6k:"Per covenant date", d6h:"Lender pack", d6p:"DSCR inputs and investor reports, with an advanced electronic signature and a time-stamp.",
+  sl_eb:"Service levels",
+  sl1k:"critical alarms pushed; alarm review every business day",
+  sl_src:"Contractual service level",
+  sl2k:"business hours to diagnose a critical fault remotely, with the owner and the contractor notified",
+  sl3k:"for an early alert to the client of a cybersecurity incident",
+  sl3s:"Deadline under <a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>Ley 21.663</a>",
+  sl4k:"to support the owner’s accident report to the SEC",
+  sl4s:"Deadline under <a href='https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/' target='_blank' rel='noopener'>DS 109</a>",
+  s3_eb:"03 · How Eagle Eye changes it",
+  s3_h:"A settlement error, disputed within days — not found at the annual audit.",
+  s3_p:"Eagle Eye reads SCADA, PPC, inverters, meters, weather and work orders read-only, and never writes a setpoint. What changes is how fast a discrepancy turns into cash.",
+  ba1k:"Before", ba1h:"The settlement arrives, gets invoiced and gets paid.",
+  ba1a:"Nobody matches each interval’s metered energy against the CEN valuation.",
+  ba1b:"The Saldo MEP lives in a spreadsheet, with no instalment calendar.",
+  ba1c:"Discrepancies surface, if at all, at the annual audit.",
+  ba2k:"With Quorelia and Eagle Eye", ba2h:"Every interval reconciled before invoicing.",
+  ba2a:"Eagle Eye matches metered energy against the CEN valuation, interval by interval and plant by plant.",
+  ba2b:"The variance shows in MWh and CLP, with the data coverage behind it.",
+  ba2c:"We file the dispute with a signed evidence pack and follow it until it is paid.",
+  ba2d:"Every Saldo MEP instalment sits in a ledger, with its date and amount.",
+  ex1k:"of variance between metered energy and the CEN valuation in September",
+  ex_src:"Illustrative example · demo fleet",
+  ex2v:"CLP 3.1M", ex2k:"disputed with the CEN, backed by a signed evidence pack",
+  ex3v:"6 days", ex3k:"from publication of the settlement to the dispute",
+  s4_eb:"04 · Who does the work", s4_h:"One accountable manager, from engineering to operations.",
+  s4_p:"Quorelia manages, verifies and supervises. Field work is done by certified partners under our management, and every contract says who does what.",
+  l1t:"Feasibility and engineering", l1d:"Study, design and business case; owner’s engineer.", l1a:"Engineering",
+  l2t:"Construction", l2d:"Built at a fixed price by an EPC partner, supervised by Quorelia against the specification.", l2w:"EPC partner", l2a:"Solar + BESS",
+  l3t:"Commissioning", l3d:"Tests and TE7 declaration signed by a Class A installer; Quorelia witnesses and sets the baseline.", l3w:"Class A partner",
+  l4t:"Operations and maintenance", l4d:"Preventive, corrective and cleaning work, dispatched by data and supervised by Quorelia.", l4w:"Certified partner", l4a:"O&amp;M",
+  l5t:"Asset management", l5d:"Performance, settlements, contractors and compliance, in one monthly report.",
+  l6t:"Reporting and evidence", l6d:"Signed figures for owners, lenders and buyers.", l6a:"Verification",
+  w1h:"Quorelia team",
+  w1a:"A named asset manager for your portfolio",
+  w1b:"Performance and loss analysis with Eagle Eye",
+  w1c:"CEN settlements, Saldo MEP, invoices and lender packs",
+  w1d:"O&amp;M supervision, desk audits and walk-downs without touching equipment",
+  w1e:"Data integration and Eagle Eye support",
+  w1f:"Accountable: Jay Kim (CEO) and Diego Ostertag (CFO)",
+  w2c:"Partners", w2h:"Certified partners, under our management",
+  w2a:"Field O&amp;M, cleaning and security: your current contractor or a certified partner",
+  w2b:"Medium voltage, protection and TE7 declarations: an SEC-licensed Class A electrical installer",
+  w2d:"Thermography, IV curves and drone surveys: a certified inspection subcontractor",
+  w2e:"Safety under a DS 44 system, and contractor controls under Ley 20.123",
+  w2f:"Generation forecasts: a specialist provider, quality-checked by Quorelia",
+  n1h:"The owner remains the coordinado.",
+  n1p:"Quorelia acts under the owner’s mandate (<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a>) and never signs as operator. We are not an EPC prime contractor, we sell no equipment, we own no plants and sell no power, and we do not finance projects: financing comes from partners.",
+  s5_eb:"05 · How it is priced", s5_h:"A simple pricing model, with no surprises in the budget.",
+  s5_p:"The model is explained here; the exact figure goes in the proposal, once we know your portfolio.",
+  pr1k:"Base fee", pr1h:"Fee per MWp-year", pr1p:"Tiered by the size of the owner group’s portfolio, with a monthly minimum per plant.",
+  pr2k:"Included", pr2p:"It comes with the contract. Its list value appears in the proposal, so you know what you receive.",
+  pr3k:"One-off", pr3h:"Integration", pr3p:"A one-off fee per plant to connect your systems; waived on terms of 3 years or more.",
+  pr4k:"Optional", pr4h:"A share of what we recover", pr4p:"A capped percentage of documented recovered revenue: settlement corrections paid, damages and warranty claims collected. Only on cash received.",
+  pr5k:"Entry offer", pr5h:"Verified Baseline", pr5p:"Fixed price, 30–45 days; you keep the report. 50% is credited to a first-year contract signed within 90 days.", pr5l:"See the Verified Baseline",
+  pr6k:"Term", pr6h:"3-year contract", pr6p:"With a 2-year option, signed with the SPV so it stays in force if the shares are sold. Exit for convenience from month 18.",
+  s6_eb:"06 · Proof", s6_h:"See the work before you sign.",
+  s6_p:"Real report and Control Center structure, with illustrative data from a demo fleet.",
+  pc_rep:"Sample report", pc_open:"Open",
+  pc1h:"Consolidated portfolio report", pc1p:"A whole portfolio’s monthly view, with the coverage of every figure.",
+  pc2h:"Monthly solar plant report", pc2p:"Availability, PR and losses of a demo PV plant.",
+  pc3k:"Live demo", pc3h:"Control Center and BESS dashboard", pc3p:"The platform running on the demo fleet.", pc3l:"See the demo",
+  pc4k:"Platform", pc4p:"What it reads, what it computes and why it never writes a setpoint.", pc4l:"Discover Eagle Eye",
+  pr_note:"Illustrative data · demo fleet. They do not represent real plants or clients.",
+  s7_eb:"07 · Questions", s7_h:"What owners and their lawyers ask.",
+  fq1:"Who is accountable to the CEN?",
+  fa1:"The owner remains the coordinado. Quorelia acts under its mandate, never signs as operator and accesses data read-only: Eagle Eye writes no setpoints to the plant.",
+  fq2:"What liability does Quorelia take on?",
+  fa2:"Professional liability for our work, with a cap agreed in the contract. Asset management carries no availability guarantee or damages: those stay in the O&amp;M contract, which we enforce.",
+  fq3:"What insurance backs the service?",
+  fa3:"Before signing, we give you the current certificates of Quorelia and of every partner working on your plant: general and professional liability, membership of a workplace-accident mutual and a DS 44 management system.",
+  fq4:"Which licences are needed, and who holds them?",
+  fa4:"Our work is management, analysis and supervision, without touching equipment. All medium-voltage work, protection testing and TE7 declarations are signed by an SEC-licensed Class A electrical installer engaged as a partner (DS 92).",
+  fq5:"How long is the contract, and how do I exit?",
+  fa5:"Three years with a two-year option, signed with the SPV. From month 18 you may terminate for convenience on six months’ notice. Your data and evidence packs are exported in open formats.",
+  fq6:"Do I have to change my SCADA or my contractor?",
+  fa6:"No. Eagle Eye reads SCADA, PPC, BMS/EMS, inverters, meters, weather and work orders read-only, and replaces nothing. Your O&amp;M contractor stays on site; we supervise it with data.",
+  fq7:"Who owns the data?",
+  fa7:"You do. Quorelia processes it as a data processor under Ley 21.719, only on your instructions. Your lenders can have read-only access, included in the fee.",
+  fq8:"Who stands behind Quorelia?",
+  fa8:"Jay Kim (CEO) leads technical asset management and Eagle Eye; Diego Ostertag (CFO) leads finance, settlements, lenders and partnerships. Team experience in previous roles: 10 PMGD plants (≈50 MW) operated and 70 MW of EPC and O&amp;M contracts negotiated. <a class='q-link' href='/story.html'>Our story</a>",
+  ct_eb:"Start with an assessment", ct_h:"Fixed scope. You keep the report, whether or not you hire us.",
+  ct_p:"Tell us about your portfolio in five minutes. A person from our team replies within one business day.",
+  cta_cal:"Book 30 minutes", ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"智利 PMGD 与储能资产管理 · Quorelia",
+  __desc:"智利 PMGD 与储能资产管理：性能、CEN 结算、Saldo MEP、承包商与合规，汇总为一份月度报告。含 Eagle Eye 平台。",
+  cr_aria:"面包屑导航", cr_home:"首页", cr_svc:"服务", cr_here:"资产管理",
+  hero_eb:"PMGD 资产管理 · 光伏与储能 · 智利",
+  hero_h:"您电站的专属代表：性能、收入与合规。",
+  hero_p:"我们代表业主管理您的电站或 PMGD 资产组合：CEN 结算、承包商与合规，汇总为一份您可以签署的月度报告。含 Eagle Eye 平台。",
+  cta1:"申请资产评估", cta2:"查看样本报告",
+  inst_aria:"Eagle Eye 示例界面，PMGD 资产组合的示意数据",
+  inst_t:"Eagle Eye · 演示组合 · 6 座 PMGD 电站", inst_live:"实时",
+  k1k:"合同可用率", k1v:"98.7%", k1s:"基于 96% 的时段计算",
+  k2k:"9 月发电量", k2v:"4,812 MWh", k2s:"计量值，正与 CEN 对账",
+  k3k:"4 号电站 PR", k3v:"暂缓发布", k3s:"覆盖率 71% · 低于 90% 阈值",
+  k4k:"Saldo MEP", k4v:"CLP 18.4M", k4s:"分 12 期按通胀调整结算",
+  r1c:"申诉", r1:"9 月结算 · 41 MWh 待向 CEN 提出异议", r1t:"今天",
+  r2c:"风险", r2:"3 号逆变器 · 自 12 日起温度漂移",
+  r3c:"已关闭", r3:"工单 118 · 清洗效果经数据验证", r3t:"昨天",
+  inst_foot:"演示机组 · 示意数据",
+  p1:"监测容量", p2:"运营过 10 座 PMGD 电站 · 团队经验",
+  p3:"EPC 与运维合同谈判 · 团队经验", p4:"三种语言的报告",
+  ctx_eb:"为何是现在",
+  ctx_h:"<span class=\"dim\">PMGD 规则在 2026 年已经改变，</span>现金流也随之改变。",
+  ctx_p:"根据 DS 1/2026，每个结算时段单独计价，Saldo MEP 在次年支付。必须有人逐站核对。",
+  f1v:"3,868 MW", f1k:"智利在运 PMGD 装机容量。",
+  f1s:"来源：<a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA，2026 年 8 月统计公报</a>",
+  f2v:"12 期", f2k:"每月的 Saldo MEP 于次年按 CPI 调整分期支付；注入电量按结算时段计价。",
+  f2s:"来源：<a href='https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/' target='_blank' rel='noopener'>JDF，关于 DS 1/2026</a>",
+  f3v:"71%", f3k:"的 PMGD 电站按 DS 244 旧有价格售电。加装储能将失去该价格。",
+  f3s:"来源：<a href='https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf' target='_blank' rel='noopener'>CEN，2025 年 12 月 UMC 报告</a> · <a href='https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026' target='_blank' rel='noopener'>Cuatrecasas</a>",
+  s1_eb:"01 · 我们做什么", s1_h:"服务范围，可直接写入招标文件。",
+  s1_p:"四个方面，一个责任方。各项监管义务详见我们的<a class='q-link' href='/normativa-electrica-chile.html'>智利电力法规指南</a>。",
+  g1k:"技术", g1h:"资产性能",
+  g1a:"基于原始数据重新计算可用率与 PR",
+  g1b:"经气象修正的损失瀑布：积灰、削峰、弃电与故障",
+  g1c:"弃电归因于电网、资源或资产",
+  g1d:"质保与保险索赔",
+  g1e:"储能：实际放电容量、效率与健康状态",
+  g2k:"商务", g2h:"收入与结算",
+  g2a:"CEN 月度结算，逐站核对",
+  g2b:"按 DS 1/2026 逐时段计价",
+  g2c:"Saldo MEP 台账及其 12 期分期",
+  g2d:"稳定价格时段核查",
+  g2e:"向配电公司开票及 PPA 对账",
+  g3k:"承包商", g3h:"合同与质保",
+  g3a:"对照合同条款核查运维 KPI",
+  g3b:"计算并追讨承包商违约金（LD）",
+  g3c:"仅在数据确认恢复后才关闭工单",
+  g3d:"设备质保管理",
+  g3e:"运维招标与交接",
+  g4k:"合规", g4h:"监管与融资方",
+  g4a:"NTSyCS、NTCO PMGD、SEC 与 SMA（适用时含 RCA）合规日历",
+  g4b:"《第 21.663 号法》（网络安全）与《第 21.719 号法》（个人数据）合规证据",
+  g4c:"SGIIE 仅适用于接入输电网的资产",
+  g4d:"年度预算与运营成本控制",
+  g4e:"面向融资方与投资者的报告",
+  s2_eb:"02 · 您将获得", s2_h:"有明确日期的交付成果与书面服务水平。",
+  d1k:"每月", d1h:"资产报告", d1p:"涵盖技术、商务与合规，按固定日期提交。每个数值都附有覆盖率、计算公式及暂缓发布数值记录。", d1l:"查看样本",
+  d2k:"每月", d2h:"结算对账", d2p:"逐站列出与 CEN 结算的 MWh 及比索差额、已提交的异议和已追回的款项。",
+  d3k:"每年", d3h:"预算与运营成本控制", d3p:"资产预算、偏差跟踪及保险续保。",
+  d4k:"持续", d4h:"事件与待办事项记录", d4p:"每个事项都有负责人和承诺日期。没有证据，工单不会关闭。",
+  d5k:"每季度", d5h:"现场巡视与业主评审", d5p:"不接触设备的现场巡查，并与业主或基金委员会召开结果评审会。",
+  d6k:"按贷款契约日期", d6h:"融资方报告包", d6p:"DSCR 输入数据与投资者报告，附高级电子签名和时间戳。",
+  sl_eb:"服务水平",
+  sl1k:"关键告警实时推送；每个工作日审查告警",
+  sl_src:"合同服务水平",
+  sl2k:"工作时间内完成关键故障远程诊断，并通知业主和承包商",
+  sl3k:"内向客户发出网络安全事件预警",
+  sl3s:"<a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>第 21.663 号法</a>规定时限",
+  sl4k:"内协助业主向 SEC 报告事故",
+  sl4s:"<a href='https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/' target='_blank' rel='noopener'>DS 109</a> 规定时限",
+  s3_eb:"03 · Eagle Eye 带来的改变",
+  s3_h:"结算差错在数日内提出异议，而不是等到年度审计才发现。",
+  s3_p:"Eagle Eye 以只读方式读取 SCADA、PPC、逆变器、电表、气象和工单数据，从不写入设定值。改变的是差额转化为现金的速度。",
+  ba1k:"之前", ba1h:"结算单到达、开票、付款，仅此而已。",
+  ba1a:"没有人将每个时段的计量电量与 CEN 的计价逐一比对。",
+  ba1b:"Saldo MEP 只存在于电子表格里，没有分期日历。",
+  ba1c:"差额即使被发现，也要等到年度审计。",
+  ba2k:"有了 Quorelia 和 Eagle Eye", ba2h:"开票前，每个时段都已核对。",
+  ba2a:"Eagle Eye 逐时段、逐站将计量电量与 CEN 计价进行比对。",
+  ba2b:"差额以 MWh 和比索列示，并附有支撑数据的覆盖率。",
+  ba2c:"我们附上已签名的证据包提出异议，并跟进直至款项到账。",
+  ba2d:"Saldo MEP 每一期都记入台账，注明日期和金额。",
+  ex1k:"9 月计量电量与 CEN 计价之间的差额",
+  ex_src:"示意案例 · 演示机组",
+  ex2v:"CLP 3.1M", ex2k:"已附签名证据包向 CEN 提出异议",
+  ex3v:"6 天", ex3k:"从结算公布到提出异议",
+  s4_eb:"04 · 由谁执行", s4_h:"从工程到运营，只有一个责任方。",
+  s4_p:"Quorelia 负责管理、验证与监督。现场工作由经认证的合作伙伴在我们的管理下完成，每份合同都写明分工。",
+  l1t:"可行性与工程", l1d:"研究、设计与商业论证；业主工程师。", l1a:"工程服务",
+  l2t:"建设", l2d:"由 EPC 合作伙伴按固定价格建设，Quorelia 对照技术规范进行监督。", l2w:"EPC 合作伙伴", l2a:"光伏与储能",
+  l3t:"调试投运", l3d:"测试和 TE7 申报由 A 级电气安装师签署；Quorelia 现场见证并建立基线。", l3w:"A 级合作伙伴",
+  l4t:"运行与维护", l4d:"预防性维护、故障维修与清洗，依据数据派单，由 Quorelia 监督。", l4w:"认证合作伙伴", l4a:"运维服务",
+  l5t:"资产管理", l5d:"性能、结算、承包商与合规，汇总为一份月度报告。",
+  l6t:"报告与证据", l6d:"为业主、融资方和买方提供签名数据。", l6a:"验证服务",
+  w1h:"Quorelia 团队",
+  w1a:"为您的资产组合指定专属资产经理",
+  w1b:"借助 Eagle Eye 进行性能与损失分析",
+  w1c:"CEN 结算、Saldo MEP、发票及融资方报告包",
+  w1d:"运维监督、文件审计及不接触设备的现场巡查",
+  w1e:"数据集成与 Eagle Eye 支持",
+  w1f:"负责人：Jay Kim（首席执行官）与 Diego Ostertag（首席财务官）",
+  w2c:"合作伙伴", w2h:"经认证的合作伙伴，由我们管理",
+  w2a:"现场运维、清洗与安保：您现有的承包商或经认证的合作伙伴",
+  w2b:"中压作业、保护测试及 TE7 申报：持 SEC 执照的 A 级电气安装师",
+  w2d:"红外热成像、IV 曲线与无人机巡检：经认证的检测分包商",
+  w2e:"现场安全执行 DS 44 管理体系，并按《第 20.123 号法》管控分包商",
+  w2f:"发电预测：由专业供应商提供，Quorelia 负责质量核查",
+  n1h:"业主仍是协调成员（coordinado）。",
+  n1p:"Quorelia 依据业主授权行事（<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a>），从不以运营方身份签约。我们不是 EPC 总承包商，不销售设备，不拥有电站也不售电，也不为项目融资：资金由合作伙伴提供。",
+  s5_eb:"05 · 收费方式", s5_h:"简单的收费模式，预算中没有意外。",
+  s5_p:"此处说明收费模式；具体金额在了解您的资产组合后写入报价。",
+  pr1k:"基本费用", pr1h:"按 MWp·年收费", pr1p:"按业主集团资产组合规模分档，并设每座电站的月度最低收费。",
+  pr2k:"已包含", pr2p:"随合同提供。报价中列明其标价，让您清楚所获价值。",
+  pr3k:"一次性", pr3h:"系统接入", pr3p:"每座电站一次性收取接入费用；合同期 3 年及以上可免除。",
+  pr4k:"可选", pr4h:"追回款项分成", pr4p:"对已记录的追回收入收取有上限的比例分成：已支付的结算更正、已收取的违约金与质保赔付。仅针对实际到账款项。",
+  pr5k:"入门服务", pr5h:"经验证基线", pr5p:"固定价格，30–45 天；报告归您所有。若在 90 天内签订首年合同，费用的 50% 可抵扣。", pr5l:"了解经验证基线",
+  pr6k:"期限", pr6h:"3 年合同", pr6p:"附 2 年续约选择权，与项目公司（SPV）签署，股权出售后合同依然有效。自第 18 个月起可无因退出。",
+  s6_eb:"06 · 实证", s6_h:"签约之前，先看成果。",
+  s6_p:"真实的报告与 Control Center 结构，使用演示机组的示意数据。",
+  pc_rep:"样本报告", pc_open:"打开",
+  pc1h:"资产组合综合报告", pc1p:"整个资产组合的月度视图，每个数值均标注覆盖率。",
+  pc2h:"光伏电站月度报告", pc2p:"演示光伏电站的可用率、PR 与损失。",
+  pc3k:"在线演示", pc3h:"Control Center 与储能看板", pc3p:"平台在演示机组上实际运行。", pc3l:"查看演示",
+  pc4k:"平台", pc4p:"它读取什么、计算什么，以及为何从不写入设定值。", pc4l:"了解 Eagle Eye",
+  pr_note:"示意数据 · 演示机组。不代表真实电站或客户。",
+  s7_eb:"07 · 常见问题", s7_h:"业主及其律师常问的问题。",
+  fq1:"谁对 CEN 负责？",
+  fa1:"业主仍是协调成员（coordinado）。Quorelia 依据其授权行事，从不以运营方身份签约，并以只读方式访问数据：Eagle Eye 不会向电站写入任何设定值。",
+  fq2:"Quorelia 承担哪些责任？",
+  fa2:"对我们的工作承担专业责任，上限在合同中约定。资产管理不包含可用率担保或违约金：这些仍保留在运维合同中，由我们督促执行。",
+  fq3:"服务有哪些保险保障？",
+  fa3:"签约前，我们会向您提供 Quorelia 及每一家在您电站作业的合作伙伴的有效证书：公众责任险与职业责任险、工伤互助保险机构参保证明，以及 DS 44 管理体系。",
+  fq4:"需要哪些执照，由谁持有？",
+  fa4:"我们的工作是管理、分析与监督，不接触设备。所有中压作业、保护测试及 TE7 申报均由作为合作伙伴聘用、持 SEC 执照的 A 级电气安装师签署（DS 92）。",
+  fq5:"合同期多长？如何退出？",
+  fa5:"合同期三年，可再续两年，与 SPV 签署。自第 18 个月起，您可提前六个月通知无因终止。您的数据和证据包以开放格式导出。",
+  fq6:"需要更换 SCADA 或承包商吗？",
+  fa6:"不需要。Eagle Eye 以只读方式读取 SCADA、PPC、BMS/EMS、逆变器、电表、气象和工单数据，不替换任何系统。您的运维承包商继续在现场工作，我们用数据对其进行监督。",
+  fq7:"数据归谁所有？",
+  fa7:"归您所有。Quorelia 依据《第 21.719 号法》作为受托处理方，仅按您的指示处理数据。您的融资方可获得只读访问权限，已包含在服务费中。",
+  fq8:"Quorelia 的团队是谁？",
+  fa8:"Jay Kim（首席执行官）负责技术资产管理与 Eagle Eye；Diego Ostertag（首席财务官）负责财务、结算、融资方与合作伙伴。团队在以往任职中的经验：运营过 10 座 PMGD 电站（约 50 MW），谈判过 70 MW 的 EPC 与运维合同。<a class='q-link' href='/story.html'>我们的故事</a>",
+  ct_eb:"从评估开始", ct_h:"固定范围。无论是否聘用我们，报告都归您所有。",
+  ct_p:"用五分钟介绍您的资产组合。我们的团队成员会在一个工作日内回复。",
+  cta_cal:"预约 30 分钟", ct_alt:"或联系我们："
+ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>

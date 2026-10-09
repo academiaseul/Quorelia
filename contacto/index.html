@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Contacto: evaluación de activos o energética · Quorelia</title>
+<meta name="description" content="Solicite una evaluación de alcance fijo para su planta solar, eólica o de baterías, o para el consumo energético de su empresa. Respuesta en un día hábil.">
+<link rel="canonical" href="https://www.quorelia.org/contacto/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/contacto/">
+<meta property="og:title" content="Empiece con una evaluación · Quorelia">
+<meta property="og:description" content="Alcance y precio fijos. El informe queda con usted, nos contrate o no. Una persona le responde dentro de un día hábil.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ContactPage","@id":"https://www.quorelia.org/contacto/#page","name":"Contacto · Quorelia",
+  "url":"https://www.quorelia.org/contacto/","inLanguage":"es-CL",
+  "description":"Solicite una evaluación de activos (plantas solares, eólicas, de baterías o híbridas) o una evaluación energética (usuarios industriales). Respuesta en un día hábil.",
+  "about":{"@id":"https://www.quorelia.org/#org"},"breadcrumb":{"@id":"https://www.quorelia.org/contacto/#crumbs"}},
+ {"@type":"Organization","@id":"https://www.quorelia.org/#org","name":"Quorelia SpA","url":"https://www.quorelia.org/",
+  "logo":"https://www.quorelia.org/quorelia-mark.png","email":"jay@quorelia.org","telephone":"+56 9 4211 5562",
+  "address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"},
+  "contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+56 9 4211 5562","email":"jay@quorelia.org",
+   "areaServed":"CL","availableLanguage":["es","en"]}]},
+ {"@type":"BreadcrumbList","@id":"https://www.quorelia.org/contacto/#crumbs","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Contacto","item":"https://www.quorelia.org/contacto/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Cuánto cuesta una evaluación?","acceptedAnswer":{"@type":"Answer","text":"Tiene precio fijo según el tamaño y la complejidad del activo o del sitio, y se lo confirmamos por escrito antes de empezar. Si dentro de 90 días firma un contrato del primer año, abonamos el 50 % de la Línea Base Verificada; en la evaluación energética, el 50 % se abona a los honorarios de ingeniería del dueño."}},
+  {"@type":"Question","name":"¿Qué información necesitan?","acceptedAnswer":{"@type":"Answer","text":"Para una planta: acceso de lectura a SCADA, inversores o medidores, las liquidaciones del CEN y el contrato de O&M. Para un sitio industrial: 12 boletas eléctricas, los datos de 15 minutos del medidor si existen y los registros de horas o litros de los generadores."}},
+  {"@type":"Question","name":"¿Tienen que intervenir mis sistemas?","acceptedAnswer":{"@type":"Answer","text":"No. Trabajamos con exportaciones de datos o con acceso de solo lectura. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, meteorología y órdenes de trabajo, y nunca escribe consignas. No se reemplaza ningún equipo."}},
+  {"@type":"Question","name":"Ya tengo un contratista de O&M. ¿Hay que cambiarlo?","acceptedAnswer":{"@type":"Answer","text":"No. La evaluación revisa su contrato y su desempeño con datos. Si después gestionamos el activo, supervisamos a su contratista bajo el contrato que usted ya tiene, y usted sigue siendo el coordinado ante el CEN."}},
+  {"@type":"Question","name":"¿Qué hacen con mis datos?","acceptedAnswer":{"@type":"Answer","text":"Los usamos solo para responderle y preparar la evaluación, bajo sus instrucciones. Aplicamos desde ya los deberes de encargado de tratamiento de la Ley 21.719, vigente desde el 1 de diciembre de 2026."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+<style>
+/* Contacto · ajustes locales (sólo esta página) */
+.contacto-split{align-items:start;}
+.contacto-box{background:var(--paper);border:1px solid var(--line);padding:6px 34px 34px;}
+.contacto-box .q-tabs{margin-bottom:26px;}
+.contacto-box .fld input,.contacto-box .fld select{min-height:46px;}
+.contacto-intro{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 24px;margin-bottom:28px;}
+.contacto-intro .q-small{max-width:54ch;}
+.contacto-aside{display:grid;gap:20px;}
+.contacto-aside .q-card p{margin-bottom:2px;}
+.contacto-cal{min-height:640px;background:var(--paper);border:1px solid var(--line);}
+.contacto-after{margin-top:22px;}
+@media(min-width:901px) and (min-height:880px){ .contacto-aside{position:sticky;top:88px;} }
+@media(max-width:660px){ .contacto-box{padding:2px 18px 26px;} .contacto-box .q-tab{margin-right:14px;padding-right:6px;} }
+</style>
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas" data-i18n-aria="cr_aria"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><span data-i18n="cr_here">Contacto</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Contacto · Evaluación de alcance fijo</span>
+        <h1 class="q-h1" data-i18n="hero_h">Empiece con una evaluación.</h1>
+        <p class="q-lede" data-i18n="hero_p">Alcance y precio fijos, acordados por escrito antes de empezar. El informe queda con usted, nos contrate o no, y una persona del equipo le responde dentro de un día hábil.</p>
+        <div class="q-actions">
+          <a class="btn btn--secondary btn--lg" href="#activos"><span data-i18n="hero_a">Evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="#energia"><span data-i18n="hero_e">Evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+        </div>
+        <p class="q-small contacto-after" data-i18n="hero_alt">¿Prefiere conversar primero? <a class="q-link" href="#agenda">Agende 30 minutos</a> o escríbanos por <a class="q-link" href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp</a>.</p>
+      </div>
+      <!-- Instrumento: resumen de una Línea Base Verificada (datos ilustrativos, flota demo) -->
+      <div class="q-inst" role="img" aria-label="Resumen de muestra de una Línea Base Verificada, con datos ilustrativos de una flota demo" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_bl">Línea Base Verificada · PMGD demo 9 MWp</span><span data-i18n="inst_br">Entregado · día 41</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Disponibilidad recalculada</span><span class="q-kpi__v" data-i18n="k1v">97,9 %</span><span class="q-kpi__s" data-i18n="k1s">sobre 98 % de los intervalos de 15 min</span><span class="q-kpi__bar"><i style="width:98%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Reportada por el O&amp;M</span><span class="q-kpi__v" data-i18n="k2v">99,4 %</span><span class="q-kpi__s" data-i18n="k2s">diferencia de −1,5 pp por explicar</span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k3k">Liquidación CEN conciliada</span><span class="q-kpi__v" data-i18n="k3v">11 de 12</span><span class="q-kpi__s" data-i18n="k3s">meses · 1 diferencia en revisión</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k4k">PR anual</span><span class="q-kpi__v" data-i18n="k4v">Retenida</span><span class="q-kpi__s" data-i18n="k4s">cobertura 74 % · piranómetro sin calibrar</span><span class="q-kpi__bar"><i style="width:74%"></i></span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Hallazgo</span><span data-i18n="r1">Saldo MEP: CLP 6,1 M sin conciliar en 4 cuotas</span><span class="t">§ 3.2</span></li>
+          <li><span class="q-chip q-chip--warn" data-i18n="r2c">Contrato</span><span data-i18n="r2">O&amp;M: 3 correctivos fuera del plazo contractual</span><span class="t">§ 4.1</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r3c">Firmado</span><span data-i18n="r3">Firma electrónica avanzada y sello de tiempo</span><span class="t">Ley 19.799</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_f1">Flota demo · datos ilustrativos</span><span data-i18n="inst_f2">El informe queda con usted</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b data-i18n="p1v">1 día hábil</b><span class="q-proof__k" data-i18n="p1">plazo de respuesta</span></li>
+      <li><b data-i18n="p2v">30–45 días</b><span class="q-proof__k" data-i18n="p2">Línea Base Verificada</span></li>
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p3">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p4">PMGD operados · experiencia del equipo</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · Formularios en pestañas ═══ -->
+<section class="q-sec--alt" id="solicitud">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · Solicitud</span><h2 class="q-h2" data-i18n="s1_h">Dos evaluaciones. Elija la de su caso.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">Dueños de plantas, fondos y financistas: evaluación de activos. Empresas que consumen energía: evaluación energética. Si duda, elija cualquiera; lo ordenamos en la llamada.</p>
+    </div>
+    <div class="q-split contacto-split">
+      <div class="contacto-box">
+        <div class="q-tabs" role="tablist" id="contacto-tabs" aria-label="Tipo de evaluación" data-i18n-aria="tl_aria">
+          <button type="button" role="tab" class="q-tab" id="tab-activos" aria-controls="activos" aria-selected="true"><span data-i18n="tab1">Evaluación de activos</span><small data-i18n="tab1s">Dueños de plantas, fondos y financistas</small></button>
+          <button type="button" role="tab" class="q-tab" id="tab-energia" aria-controls="energia" aria-selected="false"><span data-i18n="tab2">Evaluación energética</span><small data-i18n="tab2s">Minería, agro, alimentos, acuicultura e industria</small></button>
+        </div>
+
+        <!-- Pestaña 1 · Evaluación de activos -->
+        <div class="q-panel" id="activos" role="tabpanel" aria-labelledby="tab-activos">
+          <div class="contacto-intro">
+            <p class="q-small" data-i18n="a_intro">Para plantas PMGD y de gran escala, eólicas, de baterías o híbridas. Responda lo que sepa; lo demás lo vemos en la llamada. Los campos con * son obligatorios.</p>
+            <a class="btn btn--link" href="#energia"><span data-i18n="a_sw">¿Busca la evaluación energética?</span><span class="ar" aria-hidden="true">→</span></a>
+          </div>
+          <form class="q-form" data-endpoint="mljraopz" data-subject="Evaluación de activos" novalidate>
+            <div class="hp" aria-hidden="true"><label for="a-gotcha">No completar</label><input type="text" id="a-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+            <input type="hidden" name="formulario" value="Evaluación de activos">
+            <div class="fgrid">
+              <div class="fld"><label for="a-name"><span data-i18n="f_name">Nombre</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="a-name" name="name" autocomplete="name" required></div>
+              <div class="fld"><label for="a-company"><span data-i18n="f_company">Empresa</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="a-company" name="company" autocomplete="organization" required></div>
+              <div class="fld"><label for="a-role" data-i18n="f_role">Cargo</label><input type="text" id="a-role" name="role" autocomplete="organization-title"></div>
+              <div class="fld"><label for="a-email"><span data-i18n="f_email">Correo electrónico</span><span class="req" aria-hidden="true">*</span></label><input type="email" id="a-email" name="email" autocomplete="email" inputmode="email" required placeholder="nombre@empresa.cl" data-i18n-ph="ph_email"></div>
+              <div class="fld"><label for="a-phone" data-i18n="f_phone">Teléfono o WhatsApp</label><input type="tel" id="a-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+56 9"></div>
+              <div class="fld"><label for="a-svc" data-i18n="f_svc">Servicio de interés</label>
+                <select id="a-svc" name="servicio">
+                  <option value="" data-i18n="sv_0">Seleccione</option>
+                  <option value="gestion-activos" data-i18n="sv_am">Gestión de activos</option>
+                  <option value="linea-base" data-i18n="sv_lb">Línea Base Verificada</option>
+                  <option value="verificacion" data-i18n="sv_ver">Verificación</option>
+                  <option value="om" data-i18n="sv_om">Operación y mantenimiento</option>
+                  <option value="bess" data-i18n="sv_bess">Evaluación de baterías (BESS)</option>
+                  <option value="servicio-integral" data-i18n="sv_all">Servicio integral para activos solares</option>
+                  <option value="ingenieria" data-i18n="sv_eng">Ingeniería del dueño</option>
+                  <option value="factibilidad" data-i18n="sv_fac">Estudio de factibilidad</option>
+                  <option value="solar-baterias" data-i18n="sv_sb">Solar + baterías</option>
+                  <option value="diesel" data-i18n="sv_dsl">Reemplazo de diésel</option>
+                  <option value="mv-acuicultura" data-i18n="sv_mv">Medición de ahorro de diésel en acuicultura</option>
+                  <option value="evaluacion-energetica" data-i18n="sv_ee">Evaluación energética</option>
+                  <option value="otro" data-i18n="sv_otro">Otro / no estoy seguro</option>
+                </select>
+              </div>
+              <fieldset>
+                <legend data-i18n="a_tech">Tecnología</legend>
+                <div class="q-opts">
+                  <label><input type="checkbox" name="tecnologia" value="Solar FV"><span data-i18n="t_pv">Solar FV</span></label>
+                  <label><input type="checkbox" name="tecnologia" value="Eólica"><span data-i18n="t_wind">Eólica</span></label>
+                  <label><input type="checkbox" name="tecnologia" value="Baterías (BESS)"><span data-i18n="t_bess">Baterías (BESS)</span></label>
+                  <label><input type="checkbox" name="tecnologia" value="Híbrida"><span data-i18n="t_hyb">Híbrida</span></label>
+                </div>
+              </fieldset>
+              <div class="fld"><label for="a-mw" data-i18n="a_mw">Capacidad total (MW)</label><input type="text" id="a-mw" name="mw_total" inputmode="decimal" placeholder="p. ej. 27,5" data-i18n-ph="ph_mw"></div>
+              <div class="fld"><label for="a-np" data-i18n="a_np">Número de plantas</label><input type="text" id="a-np" name="plantas" inputmode="numeric" placeholder="p. ej. 4" data-i18n-ph="ph_np"></div>
+              <fieldset>
+                <legend data-i18n="a_type">Tipo de activo</legend>
+                <div class="q-opts">
+                  <label><input type="radio" name="tipo_activo" value="PMGD"><span data-i18n="ty_pmgd">PMGD (distribución)</span></label>
+                  <label><input type="radio" name="tipo_activo" value="Gran escala"><span data-i18n="ty_utl">Gran escala (transmisión)</span></label>
+                  <label><input type="radio" name="tipo_activo" value="Ambos"><span data-i18n="ty_both">Ambos</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="a_om">O&amp;M actual</legend>
+                <div class="q-opts">
+                  <label><input type="radio" name="om_actual" value="Equipo propio"><span data-i18n="om_own">Equipo propio</span></label>
+                  <label><input type="radio" name="om_actual" value="Contratista"><span data-i18n="om_ctr">Contratista</span></label>
+                  <label><input type="radio" name="om_actual" value="Sin O&amp;M"><span data-i18n="om_none">Sin O&amp;M</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="a_pain">Lo que más le preocupa</legend>
+                <div class="q-opts">
+                  <label><input type="checkbox" name="preocupacion" value="Disponibilidad"><span data-i18n="pn_av">Disponibilidad</span></label>
+                  <label><input type="checkbox" name="preocupacion" value="Vertimiento"><span data-i18n="pn_cur">Vertimiento</span></label>
+                  <label><input type="checkbox" name="preocupacion" value="Reportes"><span data-i18n="pn_rep">Reportes</span></label>
+                  <label><input type="checkbox" name="preocupacion" value="Cumplimiento CEN"><span data-i18n="pn_cen">Cumplimiento ante el CEN</span></label>
+                  <label><input type="checkbox" name="preocupacion" value="Costos"><span data-i18n="pn_cost">Costos</span></label>
+                  <label><input type="checkbox" name="preocupacion" value="Desempeño del contratista"><span data-i18n="pn_ctr">Desempeño del contratista</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="f_tf">Plazo</legend>
+                <div class="q-opts">
+                  <label><input type="radio" name="plazo" value="Este trimestre"><span data-i18n="tf_1">Este trimestre</span></label>
+                  <label><input type="radio" name="plazo" value="3 a 6 meses"><span data-i18n="tf_2">En 3 a 6 meses</span></label>
+                  <label><input type="radio" name="plazo" value="6 a 12 meses"><span data-i18n="tf_3">En 6 a 12 meses</span></label>
+                  <label><input type="radio" name="plazo" value="Explorando"><span data-i18n="tf_4">Estoy explorando</span></label>
+                </div>
+              </fieldset>
+              <div class="fld full"><label for="a-msg" data-i18n="f_msg">Mensaje</label><textarea id="a-msg" name="mensaje" rows="4" placeholder="¿Qué necesita demostrar o resolver? Por ejemplo: una venta, un cambio de contratista o una diferencia en la liquidación." data-i18n-ph="ph_amsg"></textarea></div>
+            </div>
+            <div class="fsub">
+              <button type="submit" class="btn btn--primary btn--lg" data-send><span data-label data-i18n="f_send">Enviar solicitud</span><span class="ar" aria-hidden="true">→</span></button>
+              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 21.719). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
+            </div>
+            <div class="fmsg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Pestaña 2 · Evaluación energética -->
+        <div class="q-panel" id="energia" role="tabpanel" aria-labelledby="tab-energia">
+          <div class="contacto-intro">
+            <p class="q-small" data-i18n="e_intro">Para empresas que consumen energía: minería, agro, alimentos, acuicultura e industria. Responda lo que sepa; lo demás lo vemos en la llamada. Los campos con * son obligatorios.</p>
+            <a class="btn btn--link" href="#activos"><span data-i18n="e_sw">¿Es dueño de una planta?</span><span class="ar" aria-hidden="true">→</span></a>
+          </div>
+          <form class="q-form" data-endpoint="mljraopz" data-subject="Evaluación energética" novalidate>
+            <div class="hp" aria-hidden="true"><label for="e-gotcha">No completar</label><input type="text" id="e-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+            <input type="hidden" name="formulario" value="Evaluación energética">
+            <div class="fgrid">
+              <div class="fld"><label for="e-name"><span data-i18n="f_name">Nombre</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="e-name" name="name" autocomplete="name" required></div>
+              <div class="fld"><label for="e-company"><span data-i18n="f_company">Empresa</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="e-company" name="company" autocomplete="organization" required></div>
+              <div class="fld"><label for="e-role" data-i18n="f_role">Cargo</label><input type="text" id="e-role" name="role" autocomplete="organization-title"></div>
+              <div class="fld"><label for="e-email"><span data-i18n="f_email">Correo electrónico</span><span class="req" aria-hidden="true">*</span></label><input type="email" id="e-email" name="email" autocomplete="email" inputmode="email" required placeholder="nombre@empresa.cl" data-i18n-ph="ph_email"></div>
+              <div class="fld"><label for="e-phone" data-i18n="f_phone">Teléfono o WhatsApp</label><input type="tel" id="e-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+56 9"></div>
+              <div class="fld"><label for="e-region" data-i18n="e_region">Región del sitio</label>
+                <select id="e-region" name="region">
+                  <option value="" data-i18n="sv_0">Seleccione</option>
+                  <option value="Arica y Parinacota">Arica y Parinacota</option>
+                  <option value="Tarapacá">Tarapacá</option>
+                  <option value="Antofagasta">Antofagasta</option>
+                  <option value="Atacama">Atacama</option>
+                  <option value="Coquimbo">Coquimbo</option>
+                  <option value="Valparaíso">Valparaíso</option>
+                  <option value="Metropolitana" data-i18n="rg_rm">Metropolitana de Santiago</option>
+                  <option value="O'Higgins">O'Higgins</option>
+                  <option value="Maule">Maule</option>
+                  <option value="Ñuble">Ñuble</option>
+                  <option value="Biobío">Biobío</option>
+                  <option value="La Araucanía">La Araucanía</option>
+                  <option value="Los Ríos">Los Ríos</option>
+                  <option value="Los Lagos">Los Lagos</option>
+                  <option value="Aysén">Aysén</option>
+                  <option value="Magallanes">Magallanes</option>
+                  <option value="Varias regiones" data-i18n="rg_multi">Varias regiones</option>
+                </select>
+              </div>
+              <div class="fld"><label for="e-ind" data-i18n="e_ind">Industria</label>
+                <select id="e-ind" name="industria">
+                  <option value="" data-i18n="sv_0">Seleccione</option>
+                  <option value="Minería" data-i18n="in_min">Minería</option>
+                  <option value="Agricultura y packing" data-i18n="in_agr">Agricultura y packing</option>
+                  <option value="Alimentos y cadena de frío" data-i18n="in_food">Alimentos y cadena de frío</option>
+                  <option value="Acuicultura y pesca" data-i18n="in_aqua">Acuicultura y pesca</option>
+                  <option value="Industria y manufactura" data-i18n="in_ind">Industria y manufactura</option>
+                  <option value="Otra" data-i18n="in_other">Otra</option>
+                </select>
+              </div>
+              <div class="fld"><label for="e-bill" data-i18n="e_bill">Cuenta eléctrica mensual</label>
+                <select id="e-bill" name="cuenta_mensual">
+                  <option value="" data-i18n="sv_0">Seleccione</option>
+                  <option value="Menos de CLP 2 M" data-i18n="bl_1">Menos de CLP 2 millones</option>
+                  <option value="CLP 2-5 M" data-i18n="bl_2">CLP 2 a 5 millones</option>
+                  <option value="CLP 5-20 M" data-i18n="bl_3">CLP 5 a 20 millones</option>
+                  <option value="CLP 20-50 M" data-i18n="bl_4">CLP 20 a 50 millones</option>
+                  <option value="Más de CLP 50 M" data-i18n="bl_5">Más de CLP 50 millones</option>
+                  <option value="No lo sé" data-i18n="bl_6">No lo sé</option>
+                </select>
+              </div>
+              <div class="fld"><label for="e-kva" data-i18n="e_kva">Generadores: potencia (kVA)</label><input type="text" id="e-kva" name="generador_kva" inputmode="numeric" placeholder="p. ej. 500" data-i18n-ph="ph_kva"><span class="hint" data-i18n="e_kva_h">Deje en blanco si no usa generadores.</span></div>
+              <div class="fld"><label for="e-use" data-i18n="e_use">Generadores: uso mensual</label><input type="text" id="e-use" name="generador_uso" placeholder="p. ej. 300 h/mes u 8.000 L/mes" data-i18n-ph="ph_use"><span class="hint" data-i18n="e_use_h">Horas o litros al mes, lo que tenga a mano.</span></div>
+              <div class="fld"><label for="e-crit" data-i18n="e_crit">Cargas críticas</label><input type="text" id="e-crit" name="cargas_criticas" placeholder="p. ej. cámaras de frío, bombas, aireación" data-i18n-ph="ph_crit"></div>
+              <div class="fld"><label for="e-svc" data-i18n="f_svc">Servicio de interés</label>
+                <select id="e-svc" name="servicio">
+                  <option value="" data-i18n="sv_0">Seleccione</option>
+                  <option value="evaluacion-energetica" data-i18n="sv_ee">Evaluación energética</option>
+                  <option value="solar-baterias" data-i18n="sv_sb">Solar + baterías</option>
+                  <option value="diesel" data-i18n="sv_dsl">Reemplazo de diésel</option>
+                  <option value="mv-acuicultura" data-i18n="sv_mv">Medición de ahorro de diésel en acuicultura</option>
+                  <option value="factibilidad" data-i18n="sv_fac">Estudio de factibilidad</option>
+                  <option value="ingenieria" data-i18n="sv_eng">Ingeniería del dueño</option>
+                  <option value="verificacion" data-i18n="sv_ver">Verificación</option>
+                  <option value="servicio-integral" data-i18n="sv_all">Servicio integral para activos solares</option>
+                  <option value="gestion-activos" data-i18n="sv_am">Gestión de activos</option>
+                  <option value="linea-base" data-i18n="sv_lb">Línea Base Verificada</option>
+                  <option value="om" data-i18n="sv_om">Operación y mantenimiento</option>
+                  <option value="bess" data-i18n="sv_bess">Evaluación de baterías (BESS)</option>
+                  <option value="otro" data-i18n="sv_otro">Otro / no estoy seguro</option>
+                </select>
+              </div>
+              <fieldset>
+                <legend data-i18n="e_grid">Conexión a la red</legend>
+                <div class="q-opts">
+                  <label><input type="radio" name="conexion_red" value="Sin red"><span data-i18n="gr_none">Sin red</span></label>
+                  <label><input type="radio" name="conexion_red" value="Red débil"><span data-i18n="gr_weak">Red débil (cortes o límites)</span></label>
+                  <label><input type="radio" name="conexion_red" value="Red normal"><span data-i18n="gr_ok">Red normal</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="e_goal">Objetivo</legend>
+                <div class="q-opts">
+                  <label><input type="checkbox" name="objetivo" value="Bajar costos"><span data-i18n="gl_cost">Bajar costos</span></label>
+                  <label><input type="checkbox" name="objetivo" value="Respaldo"><span data-i18n="gl_bk">Respaldo y continuidad</span></label>
+                  <label><input type="checkbox" name="objetivo" value="Descarbonización"><span data-i18n="gl_dc">Descarbonización</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="f_tf">Plazo</legend>
+                <div class="q-opts">
+                  <label><input type="radio" name="plazo" value="Este trimestre"><span data-i18n="tf_1">Este trimestre</span></label>
+                  <label><input type="radio" name="plazo" value="3 a 6 meses"><span data-i18n="tf_2">En 3 a 6 meses</span></label>
+                  <label><input type="radio" name="plazo" value="6 a 12 meses"><span data-i18n="tf_3">En 6 a 12 meses</span></label>
+                  <label><input type="radio" name="plazo" value="Explorando"><span data-i18n="tf_4">Estoy explorando</span></label>
+                </div>
+              </fieldset>
+              <div class="fld full"><label for="e-msg" data-i18n="f_msg">Mensaje</label><textarea id="e-msg" name="mensaje" rows="4" placeholder="¿Qué quiere lograr? Por ejemplo: bajar la cuenta, reducir horas de generador o asegurar respaldo." data-i18n-ph="ph_emsg"></textarea></div>
+            </div>
+            <div class="fsub">
+              <button type="submit" class="btn btn--primary btn--lg" data-send><span data-label data-i18n="f_send">Enviar solicitud</span><span class="ar" aria-hidden="true">→</span></button>
+              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 21.719). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
+            </div>
+            <div class="fmsg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Lo que recibe -->
+      <aside class="contacto-aside" aria-label="Lo que recibe" data-i18n-aria="as_aria">
+        <div class="q-card">
+          <span class="q-card__k" data-i18n="as_k">Dueños · fondos · financistas</span>
+          <h3 data-i18n="as_h">Línea Base Verificada</h3>
+          <p data-i18n="as_p">Precio fijo · 30 a 45 días</p>
+          <ul class="q-check">
+            <li data-i18n="as1">Disponibilidad y PR recalculados desde sus datos, con cobertura y fórmula</li>
+            <li data-i18n="as2">Liquidaciones del CEN y Saldo MEP conciliados</li>
+            <li data-i18n="as3">Cumplimiento del contrato de O&amp;M revisado con datos</li>
+            <li data-i18n="as4">El informe es suyo; el 50 % se abona a un contrato del primer año firmado dentro de 90 días</li>
+          </ul>
+          <a class="q-card__link" href="/informe.html" data-i18n="as_l">Ver un informe de muestra</a>
+        </div>
+        <div class="q-card">
+          <span class="q-card__k" data-i18n="ae_k">Usuarios industriales</span>
+          <h3 data-i18n="ae_h">Evaluación energética o de diésel</h3>
+          <p data-i18n="ae_p">Precio fijo · unos 30 días</p>
+          <ul class="q-check">
+            <li data-i18n="ae1">Línea base de consumo, demanda y diésel, con 12 boletas y datos de 15 minutos</li>
+            <li data-i18n="ae2">Dimensionamiento de solar + baterías y caso de negocio</li>
+            <li data-i18n="ae3">Opciones de compra, leasing o energía como servicio, con socios financieros</li>
+            <li data-i18n="ae4">El informe es suyo; el 50 % se abona a los honorarios de ingeniería del dueño</li>
+          </ul>
+          <a class="q-card__link" href="/servicios/solar-y-baterias/" data-i18n="ae_l">Ver solar + baterías</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Qué pasa después ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head">
+      <span class="q-eyebrow" data-i18n="st_eb">02 · Qué pasa después</span>
+      <h2 class="q-h2"><span class="dim" data-i18n="st_h1">Del formulario al informe:</span> <span data-i18n="st_h2">usted decide en cada paso.</span></h2>
+    </div>
+    <ol class="q-steps" style="--steps:4">
+      <li><h3 data-i18n="st1h">Respuesta en un día hábil</h3><p data-i18n="st1p">Uno de los fundadores lee su solicitud y le escribe o llama. Si falta un dato, se lo pedimos ahí.</p></li>
+      <li><h3 data-i18n="st2h">Llamada de 30 minutos</h3><p data-i18n="st2p">Revisamos qué datos existen —SCADA, medidores, liquidaciones, boletas o registros de diésel— y qué necesita demostrar.</p></li>
+      <li><h3 data-i18n="st3h">Propuesta de alcance fijo</h3><p data-i18n="st3p">Alcance, entregables, plazo y precio fijos, por escrito. Nada empieza hasta que usted la acepte.</p></li>
+      <li><h3 data-i18n="st4h">Evaluación e informe</h3><p data-i18n="st4p">30 a 45 días para una Línea Base Verificada; unos 30 días para una evaluación energética. El informe queda con usted, nos contrate o no.</p></li>
+    </ol>
+    <div class="note" style="margin-top:44px;max-width:880px;">
+      <p><b data-i18n="nt_h">Si su caso no calza, se lo decimos.</b> <span data-i18n="nt_p">Las evaluaciones rinden más en carteras desde unos 3 MW, cuentas eléctricas sobre CLP 5 millones al mes o generadores de uso diario. Si su caso es más pequeño, se lo decimos en la primera respuesta y le sugerimos el camino más económico.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Agenda ═══ -->
+<section class="q-sec--alt" id="agenda">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="ag_eb">03 · Agenda</span><h2 class="q-h2" data-i18n="ag_h">¿Prefiere conversar? Reserve 30 minutos.</h2></div>
+      <p class="q-lede" data-i18n="ag_p">Elija un horario y le llega la invitación con enlace de video. Llegamos con Eagle Eye abierto sobre la flota demo, en un caso parecido al suyo.</p>
+    </div>
+    <div class="contacto-cal" id="cal-agenda"></div>
+    <div class="contacto-after"><p class="q-small" data-i18n="cal_fb">Si el calendario no carga, agende directo en <a class="q-link" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener">cal.com/quorelia/30min</a>.</p></div>
+    <div class="q-grid q-grid--3" style="margin-top:40px;">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pj_k">CEO · le responde</span>
+        <h3>Jay Kim</h3>
+        <ul class="q-arrow">
+          <li data-i18n="pj1">Operación y gestión técnica de activos</li>
+          <li data-i18n="pj2">Eagle Eye e integración de datos</li>
+          <li data-i18n="pj3">Contratistas de O&amp;M y socios de campo</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pd_k">CFO · le responde</span>
+        <h3>Diego Ostertag</h3>
+        <ul class="q-arrow">
+          <li data-i18n="pd1">Finanzas y presupuesto del activo</li>
+          <li data-i18n="pd2">Liquidaciones del CEN y Saldo MEP</li>
+          <li data-i18n="pd3">Financistas, fondos y socios</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="ch_k">Canales directos</span>
+        <h3 data-i18n="ch_h">Escríbanos</h3>
+        <ul class="q-arrow">
+          <li><a class="q-link" href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a></li>
+          <li><a class="q-link" href="mailto:jay@quorelia.org">jay@quorelia.org</a></li>
+          <li data-i18n="ch_loc">Santiago, Chile · reuniones presenciales o por video</li>
+        </ul>
+      </div>
+    </div>
+    <div class="contacto-after"><p class="q-small" data-i18n="team_exp">Experiencia del equipo en cargos anteriores: 10 plantas PMGD (≈50 MW) operadas y 70 MW en contratos EPC y O&amp;M negociados.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Preguntas frecuentes ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="fq_eb">04 · Preguntas</span><h2 class="q-h2" data-i18n="fq_h">Antes de enviar el formulario</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Cuánto cuesta una evaluación?</summary><div><p data-i18n="fa1">Tiene precio fijo según el tamaño y la complejidad del activo o del sitio, y se lo confirmamos por escrito antes de empezar. Si dentro de 90 días firma un contrato del primer año, abonamos el 50 % de la Línea Base Verificada; en la evaluación energética, el 50 % se abona a los honorarios de ingeniería del dueño.</p></div></details>
+      <details><summary data-i18n="fq2">¿Qué información necesitan?</summary><div><p data-i18n="fa2">Para una planta: acceso de lectura a SCADA, inversores o medidores, las liquidaciones del CEN y el contrato de O&amp;M. Para un sitio industrial: 12 boletas eléctricas, los datos de 15 minutos del medidor si existen y los registros de horas o litros de los generadores.</p></div></details>
+      <details><summary data-i18n="fq3">¿Tienen que intervenir mis sistemas?</summary><div><p data-i18n="fa3">No. Trabajamos con exportaciones de datos o con acceso de solo lectura. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, meteorología y órdenes de trabajo, y nunca escribe consignas. No se reemplaza ningún equipo.</p></div></details>
+      <details><summary data-i18n="fq4">Ya tengo un contratista de O&amp;M. ¿Hay que cambiarlo?</summary><div><p data-i18n="fa4">No. La evaluación revisa su contrato y su desempeño con datos. Si después gestionamos el activo, supervisamos a su contratista bajo el contrato que usted ya tiene, y usted sigue siendo el coordinado ante el CEN.</p></div></details>
+      <details><summary data-i18n="fq5">¿Qué hacen con mis datos?</summary><div><p data-i18n="fa5">Los usamos solo para responderle y preparar la evaluación, bajo sus instrucciones. Aplicamos desde ya los deberes de encargado de tratamiento de la <a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=141599&amp;idVersion=2026-12-01" target="_blank" rel="noopener">Ley 21.719</a>, vigente desde el 1 de diciembre de 2026.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div>
+    <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación</span>
+    <h2 class="q-h2" data-i18n="ct_h">Una persona le responde dentro de un día hábil.</h2>
+    <p class="q-lede" data-i18n="ct_p">Alcance fijo. El informe queda con usted, nos contrate o no.</p>
+    </div>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="#activos"><span data-i18n="cta1b">Solicitar evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<!-- Cal.com — incrustado en línea (mismo espacio de nombres e init que agenda.html), color de marca navy.
+     Se inicia cuando la sección de agenda se acerca a la pantalla. -->
+<script type="text/javascript">
+(function(){
+  function calInit(){
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min", {origin:"https://app.cal.com"});
+    Cal.ns["30min"]("inline", {
+      elementOrSelector: "#cal-agenda",
+      config: { layout: "month_view" },
+      calLink: "quorelia/30min"
+    });
+    Cal.ns["30min"]("ui", {"styles":{"branding":{"brandColor":"#0b1c2c"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  }
+  var el=document.getElementById('cal-agenda'), done=false;
+  function go(){ if(done) return; done=true; calInit(); }
+  if(!el || !('IntersectionObserver' in window)){ go(); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); go(); } }); }, {rootMargin:'800px 0px'});
+  io.observe(el);
+})();
+</script>
+
+<script>
+/* Preselección desde ?interes= y pestaña inicial. Corre antes de quorelia-common.js,
+   que enlaza las pestañas y los formularios (Q.bindForm). */
+(function(){
+  var ENERGIA=['diesel','solar-baterias','factibilidad','evaluacion-energetica','mv-acuicultura'];
+  var v='';
+  try{ v=(new URLSearchParams(location.search).get('interes')||'').toLowerCase().trim(); }catch(e){}
+  if(v){
+    document.querySelectorAll('select[name="servicio"]').forEach(function(s){
+      for(var i=0;i<s.options.length;i++){ if(s.options[i].value===v){ s.value=v; break; } }
+    });
+  }
+  var h=(location.hash||'').slice(1);
+  if(h!=='activos' && h!=='energia' && ENERGIA.indexOf(v)>-1){
+    h='energia';
+    if(history.replaceState) history.replaceState(null,'',location.pathname+location.search+'#energia');
+  }
+  /* Ocultar de inmediato el panel no elegido, para que el salto al ancla caiga en su lugar */
+  var sel=(h==='energia')?'energia':'activos';
+  ['activos','energia'].forEach(function(id){ var p=document.getElementById(id); if(p) p.hidden=(id!==sel); });
+
+  /* Enlaces internos a las pestañas: seleccionan la pestaña y llevan al formulario */
+  function abrir(id){
+    var t=document.getElementById('tab-'+id), box=document.getElementById('contacto-tabs');
+    if(!t) return;
+    t.click();
+    if(box) box.scrollIntoView({block:'start'});
+    try{ t.focus({preventScroll:true}); }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a=e.target && e.target.closest ? e.target.closest('a[href="#activos"],a[href="#energia"]') : null;
+    if(!a) return;
+    e.preventDefault(); abrir(a.getAttribute('href').slice(1));
+  });
+  window.addEventListener('hashchange', function(){
+    var x=(location.hash||'').slice(1); if(x==='activos'||x==='energia') abrir(x);
+  });
+})();
+</script>
+
+<script>
+window.Q_PAGE = {
+ en:{
+  __title:"Contact: asset or energy assessment · Quorelia",
+  __desc:"Request a fixed-scope assessment for your solar, wind or battery plant, or for your company’s energy use in Chile. A reply within one business day.",
+  cr_aria:"Breadcrumb", cr_home:"Home", cr_here:"Contact",
+  hero_eb:"Contact · Fixed-scope assessment",
+  hero_h:"Start with an assessment.",
+  hero_p:"Fixed scope and fixed price, agreed in writing before we start. You keep the report whether or not you hire us, and a person on our team replies within one business day.",
+  hero_a:"Asset assessment", hero_e:"Energy assessment",
+  hero_alt:"Prefer to talk first? <a class=\"q-link\" href=\"#agenda\">Book 30 minutes</a> or write to us on <a class=\"q-link\" href=\"https://wa.me/56942115562\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
+  inst_aria:"Sample summary of a Verified Baseline, with illustrative data from a demo fleet",
+  inst_bl:"Verified Baseline · demo PMGD 9 MWp", inst_br:"Delivered · day 41",
+  k1k:"Recomputed availability", k1v:"97.9%", k1s:"on 98% of 15-min intervals",
+  k2k:"Reported by the O&amp;M", k2v:"99.4%", k2s:"−1.5 pp gap to explain",
+  k3k:"CEN settlement reconciled", k3v:"11 of 12", k3s:"months · 1 discrepancy under review",
+  k4k:"Annual PR", k4v:"Withheld", k4s:"coverage 74% · uncalibrated pyranometer",
+  r1c:"Finding", r1:"Saldo MEP: CLP 6.1 M unreconciled across 4 instalments",
+  r2c:"Contract", r2:"O&amp;M: 3 corrective jobs outside the contractual deadline",
+  r3c:"Signed", r3:"Advanced electronic signature and timestamp",
+  inst_f1:"Demo fleet · illustrative data", inst_f2:"You keep the report",
+  p1v:"1 business day", p1:"response time", p2v:"30–45 days", p2:"Verified Baseline",
+  p3:"under monitoring", p4:"PMGD operated · team experience",
+  s1_eb:"01 · Request",
+  s1_h:"Two assessments. Choose the one that fits.",
+  s1_p:"Plant owners, funds and lenders: the asset assessment. Companies that consume energy: the energy assessment. If unsure, pick either one; we sort it out on the call.",
+  tl_aria:"Assessment type",
+  tab1:"Asset assessment", tab1s:"Plant owners, funds and lenders",
+  tab2:"Energy assessment", tab2s:"Mining, agriculture, food, aquaculture and industry",
+  a_intro:"For PMGD and utility-scale plants: solar, wind, battery or hybrid. Answer what you know; the rest we cover on the call. Fields marked * are required.",
+  a_sw:"Looking for the energy assessment?",
+  e_intro:"For companies that consume energy: mining, agriculture, food, aquaculture and industry. Answer what you know; the rest we cover on the call. Fields marked * are required.",
+  e_sw:"Do you own a plant?",
+  f_name:"Name", f_company:"Company", f_role:"Role", f_email:"Email", f_phone:"Phone or WhatsApp",
+  f_svc:"Service of interest", f_tf:"Timeframe", f_msg:"Message", f_send:"Send request",
+  f_priv:"We use your data only to answer this request (Ley 21.719). <a class=\"q-link\" href=\"/privacidad.html\">Privacy policy</a>.",
+  ph_email:"name@company.com",
+  sv_0:"Select", sv_am:"Asset management", sv_lb:"Verified Baseline", sv_ver:"Verification",
+  sv_om:"Operations &amp; maintenance", sv_bess:"Battery (BESS) assessment", sv_all:"Complete service for solar assets",
+  sv_eng:"Owner’s engineering", sv_fac:"Feasibility study", sv_sb:"Solar + batteries", sv_dsl:"Diesel replacement",
+  sv_mv:"Diesel-savings measurement for aquaculture", sv_ee:"Energy assessment", sv_otro:"Other / not sure",
+  a_tech:"Technology", t_pv:"Solar PV", t_wind:"Wind", t_bess:"Batteries (BESS)", t_hyb:"Hybrid",
+  a_mw:"Total capacity (MW)", ph_mw:"e.g. 27.5", a_np:"Number of plants", ph_np:"e.g. 4",
+  a_type:"Asset type", ty_pmgd:"PMGD (distribution)", ty_utl:"Utility-scale (transmission)", ty_both:"Both",
+  a_om:"Current O&amp;M", om_own:"In-house team", om_ctr:"Contractor", om_none:"No O&amp;M",
+  a_pain:"What worries you most", pn_av:"Availability", pn_cur:"Curtailment", pn_rep:"Reporting",
+  pn_cen:"CEN compliance", pn_cost:"Cost", pn_ctr:"Contractor performance",
+  tf_1:"This quarter", tf_2:"In 3 to 6 months", tf_3:"In 6 to 12 months", tf_4:"Just exploring",
+  ph_amsg:"What do you need to prove or fix? For example: a sale, a change of contractor or a settlement discrepancy.",
+  e_region:"Site region", rg_rm:"Santiago Metropolitan Region", rg_multi:"Several regions",
+  e_ind:"Industry", in_min:"Mining", in_agr:"Agriculture and packing", in_food:"Food and cold chain",
+  in_aqua:"Aquaculture and fisheries", in_ind:"Industry and manufacturing", in_other:"Other",
+  e_bill:"Monthly power bill", bl_1:"Under CLP 2 million", bl_2:"CLP 2 to 5 million", bl_3:"CLP 5 to 20 million",
+  bl_4:"CLP 20 to 50 million", bl_5:"Over CLP 50 million", bl_6:"I don’t know",
+  e_kva:"Generators: rating (kVA)", ph_kva:"e.g. 500", e_kva_h:"Leave blank if you do not use generators.",
+  e_use:"Generators: monthly use", ph_use:"e.g. 300 h/month or 8,000 L/month", e_use_h:"Hours or litres a month, whichever you have to hand.",
+  e_crit:"Critical loads", ph_crit:"e.g. cold rooms, pumps, aeration",
+  e_grid:"Grid connection", gr_none:"No grid", gr_weak:"Weak grid (outages or limits)", gr_ok:"Normal grid",
+  e_goal:"Goal", gl_cost:"Lower costs", gl_bk:"Backup and continuity", gl_dc:"Decarbonization",
+  ph_emsg:"What do you want to achieve? For example: a lower bill, fewer generator hours or reliable backup.",
+  as_aria:"What you receive",
+  as_k:"Owners · funds · lenders", as_h:"Verified Baseline", as_p:"Fixed price · 30 to 45 days",
+  as1:"Availability and PR recomputed from your data, with coverage and formula",
+  as2:"CEN settlements and Saldo MEP reconciled",
+  as3:"O&amp;M contract compliance checked against the data",
+  as4:"The report is yours; 50% is credited to a first-year contract signed within 90 days",
+  as_l:"See a sample report",
+  ae_k:"Industrial energy users", ae_h:"Energy or diesel assessment", ae_p:"Fixed price · about 30 days",
+  ae1:"Baseline of consumption, demand and diesel, from 12 bills and 15-minute data",
+  ae2:"Solar + battery sizing and business case",
+  ae3:"Purchase, leasing or energy-as-a-service options from financing partners",
+  ae4:"The report is yours; 50% is credited to the owner’s-engineer fee",
+  ae_l:"See solar + batteries",
+  st_eb:"02 · What happens next",
+  st_h1:"From form to report:", st_h2:"you decide at every step.",
+  st1h:"A reply within one business day", st1p:"One of the founders reads your request and writes or calls. If something is missing, we ask then.",
+  st2h:"A 30-minute call", st2p:"We review what data exists — SCADA, meters, settlements, bills or diesel logs — and what you need to prove.",
+  st3h:"A fixed-scope proposal", st3p:"Scope, deliverables, timeline and price fixed in writing. Nothing starts until you accept it.",
+  st4h:"Assessment and report", st4p:"30 to 45 days for a Verified Baseline; about 30 days for an energy assessment. You keep the report whether or not you hire us.",
+  nt_h:"If your case is not a fit, we will tell you.",
+  nt_p:"Assessments pay off best for portfolios from about 3 MW, power bills above CLP 5 million a month or generators in daily use. If yours is smaller, we say so in our first reply and suggest the most economical path.",
+  ag_eb:"03 · Calendar",
+  ag_h:"Prefer to talk first? Book 30 minutes.",
+  ag_p:"Pick a time and the invitation arrives with a video link. We come with Eagle Eye open on the demo fleet, on a case like yours.",
+  cal_fb:"If the calendar does not load, book directly at <a class=\"q-link\" href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a>.",
+  pj_k:"CEO · replies to you", pj_p:"Operations, technical asset management and Eagle Eye.",
+  pd_k:"CFO · replies to you", pd_p:"Finance, settlements, lenders and partnerships.",
+  ch_k:"Direct channels", ch_h:"Write to us", ch_loc:"Santiago, Chile · meetings in person or by video",
+  team_exp:"Team experience from previous roles: 10 PMGD plants (≈50 MW) operated and 70 MW of EPC and O&amp;M contracts negotiated.",
+  fq_eb:"04 · Questions", fq_h:"Before you send the form",
+  fq1:"How much does an assessment cost?",
+  fa1:"It has a fixed price set by the size and complexity of the asset or site, and we confirm it in writing before we start. If you sign a first-year contract within 90 days, we credit 50% of the Verified Baseline; for the energy assessment, 50% is credited to the owner’s-engineer fee.",
+  fq2:"What information do you need?",
+  fa2:"For a plant: read access to SCADA, inverters or meters, the CEN settlements and the O&amp;M contract. For an industrial site: 12 power bills, the meter’s 15-minute data if it exists and the generators’ hour or litre logs.",
+  fq3:"Do you need to touch my systems?",
+  fa3:"No. We work from data exports or read-only access. Eagle Eye reads SCADA, PPC, BMS/EMS, inverters, meters, weather and work orders, and never writes setpoints. No equipment is replaced.",
+  fq4:"I already have an O&amp;M contractor. Do I need to replace them?",
+  fa4:"No. The assessment reviews their contract and performance against the data. If we later manage the asset, we supervise your contractor under the contract you already have, and you remain the coordinado before the CEN.",
+  fq5:"What do you do with my data?",
+  fa5:"We use it only to reply and to prepare the assessment, under your instructions. We already apply the data-processor duties of <a class=\"q-link\" href=\"https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=141599&amp;idVersion=2026-12-01\" target=\"_blank\" rel=\"noopener\">Ley 21.719</a>, in force from 1 December 2026.",
+  ct_eb:"Start with an assessment",
+  ct_h:"A person replies within one business day.",
+  ct_p:"Fixed scope. You keep the report whether or not you hire us.",
+  cta1b:"Request an asset assessment", cta_cal:"Book 30 minutes", ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"联系我们：资产评估或能源评估 · Quorelia",
+  __desc:"为您在智利的光伏、风电或储能电站，或企业用能，申请固定范围的评估。一个工作日内回复。",
+  cr_aria:"面包屑导航", cr_home:"首页", cr_here:"联系我们",
+  hero_eb:"联系我们 · 固定范围评估",
+  hero_h:"从一次评估开始。",
+  hero_p:"范围与价格固定，开工前书面确认。无论是否与我们签约，报告都归您所有；我们的团队成员会在一个工作日内回复您。",
+  hero_a:"资产评估", hero_e:"能源评估",
+  hero_alt:"想先聊聊？<a class=\"q-link\" href=\"#agenda\">预约 30 分钟</a>，或通过 <a class=\"q-link\" href=\"https://wa.me/56942115562\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> 联系我们。",
+  inst_aria:"核验基线样例摘要，使用演示电站组合的示意数据",
+  inst_bl:"核验基线 · 演示 PMGD 9 MWp", inst_br:"已交付 · 第 41 天",
+  k1k:"重新计算的可用率", k1v:"97.9%", k1s:"基于 98% 的 15 分钟时段",
+  k2k:"运维方报告值", k2v:"99.4%", k2s:"相差 −1.5 个百分点，待解释",
+  k3k:"CEN 结算核对", k3v:"11 / 12", k3s:"个月已核对 · 1 项差异待复核",
+  k4k:"年度 PR", k4v:"暂不发布", k4s:"覆盖率 74% · 辐照计未校准",
+  r1c:"发现", r1:"Saldo MEP：4 期共 610 万智利比索未核对",
+  r2c:"合同", r2:"运维：3 次故障维修超出合同时限",
+  r3c:"已签署", r3:"高级电子签名与时间戳",
+  inst_f1:"演示电站组合 · 示意数据", inst_f2:"报告归您所有",
+  p1v:"1 个工作日", p1:"回复时限", p2v:"30–45 天", p2:"核验基线",
+  p3:"监测容量", p4:"PMGD 运营 · 团队经验",
+  s1_eb:"01 · 申请",
+  s1_h:"两种评估，按您的情况选择。",
+  s1_p:"电站业主、基金与贷款方：请选资产评估。用能企业：请选能源评估。如不确定，任选其一即可，我们会在通话中理清。",
+  tl_aria:"评估类型",
+  tab1:"资产评估", tab1s:"电站业主、基金与贷款方",
+  tab2:"能源评估", tab2s:"矿业、农业、食品、水产养殖与工业",
+  a_intro:"适用于 PMGD 及大型电站：光伏、风电、储能或混合电站。请填写您了解的信息，其余在通话中补充。带 * 的为必填项。",
+  a_sw:"需要能源评估？",
+  e_intro:"适用于用能企业：矿业、农业、食品、水产养殖与工业。请填写您了解的信息，其余在通话中补充。带 * 的为必填项。",
+  e_sw:"您是电站业主？",
+  f_name:"姓名", f_company:"公司", f_role:"职位", f_email:"电子邮箱", f_phone:"电话或 WhatsApp",
+  f_svc:"感兴趣的服务", f_tf:"时间安排", f_msg:"留言", f_send:"提交申请",
+  f_priv:"您的资料仅用于回复本次申请（第 21.719 号法律）。<a class=\"q-link\" href=\"/privacidad.html\">隐私政策</a>。",
+  ph_email:"name@company.com",
+  sv_0:"请选择", sv_am:"资产管理", sv_lb:"核验基线", sv_ver:"核验服务",
+  sv_om:"运维", sv_bess:"储能（BESS）评估", sv_all:"光伏资产一体化服务",
+  sv_eng:"业主工程师服务", sv_fac:"可行性研究", sv_sb:"光伏 + 储能", sv_dsl:"柴油替代",
+  sv_mv:"水产养殖柴油节省量测", sv_ee:"能源评估", sv_otro:"其他 / 不确定",
+  a_tech:"技术类型", t_pv:"光伏", t_wind:"风电", t_bess:"储能（BESS）", t_hyb:"混合",
+  a_mw:"总装机容量（MW）", ph_mw:"例如 27.5", a_np:"电站数量", ph_np:"例如 4",
+  a_type:"资产类型", ty_pmgd:"PMGD（配电网）", ty_utl:"大型（输电网）", ty_both:"两者都有",
+  a_om:"现有运维", om_own:"自有团队", om_ctr:"外包承包商", om_none:"暂无运维",
+  a_pain:"最困扰您的问题", pn_av:"可用率", pn_cur:"限电弃光", pn_rep:"报告",
+  pn_cen:"CEN 合规", pn_cost:"成本", pn_ctr:"承包商表现",
+  tf_1:"本季度", tf_2:"3 至 6 个月内", tf_3:"6 至 12 个月内", tf_4:"仅作了解",
+  ph_amsg:"您需要证明或解决什么？例如：资产出售、更换承包商或结算差异。",
+  e_region:"场址所在大区", rg_rm:"圣地亚哥首都大区", rg_multi:"多个大区",
+  e_ind:"行业", in_min:"矿业", in_agr:"农业与包装厂", in_food:"食品与冷链",
+  in_aqua:"水产养殖与渔业", in_ind:"工业与制造业", in_other:"其他",
+  e_bill:"每月电费", bl_1:"低于 200 万智利比索", bl_2:"200 万至 500 万智利比索", bl_3:"500 万至 2,000 万智利比索",
+  bl_4:"2,000 万至 5,000 万智利比索", bl_5:"超过 5,000 万智利比索", bl_6:"不确定",
+  e_kva:"发电机：额定功率（kVA）", ph_kva:"例如 500", e_kva_h:"如未使用发电机，请留空。",
+  e_use:"发电机：月使用量", ph_use:"例如 每月 300 小时或 8,000 升", e_use_h:"每月小时数或升数，填写您手头有的即可。",
+  e_crit:"关键负荷", ph_crit:"例如 冷库、水泵、增氧设备",
+  e_grid:"电网接入", gr_none:"无电网", gr_weak:"弱电网（停电或容量受限）", gr_ok:"正常电网",
+  e_goal:"目标", gl_cost:"降低成本", gl_bk:"备用电源与连续供电", gl_dc:"脱碳",
+  ph_emsg:"您希望达成什么？例如：降低电费、减少发电机运行时数或确保备用电源。",
+  as_aria:"您将获得",
+  as_k:"业主 · 基金 · 贷款方", as_h:"核验基线", as_p:"固定价格 · 30 至 45 天",
+  as1:"基于您的数据重新计算可用率与 PR，并注明覆盖率与公式",
+  as2:"核对 CEN 结算与 Saldo MEP",
+  as3:"以数据核查运维合同履约情况",
+  as4:"报告归您所有；若在 90 天内签订首年合同，费用的 50% 可抵扣",
+  as_l:"查看样例报告",
+  ae_k:"工业用能企业", ae_h:"能源或柴油评估", ae_p:"固定价格 · 约 30 天",
+  ae1:"依据 12 期电费单与 15 分钟数据，建立用电、需量与柴油基线",
+  ae2:"光伏 + 储能容量配置与商业论证",
+  ae3:"由金融合作伙伴提供购买、租赁或能源即服务方案",
+  ae4:"报告归您所有；费用的 50% 可抵扣业主工程师服务费",
+  ae_l:"了解光伏 + 储能",
+  st_eb:"02 · 后续流程",
+  st_h1:"从表单到报告：", st_h2:"每一步都由您决定。",
+  st1h:"一个工作日内回复", st1p:"由一位创始人阅读您的申请，并通过邮件或电话联系您。如缺少信息，届时向您索取。",
+  st2h:"30 分钟通话", st2p:"我们了解现有数据——SCADA、电表、结算、电费单或柴油记录——以及您需要证明什么。",
+  st3h:"固定范围的方案", st3p:"范围、交付物、工期与价格均书面固定。经您接受后才开始工作。",
+  st4h:"评估与报告", st4p:"核验基线需 30 至 45 天；能源评估约 30 天。无论是否与我们签约，报告都归您所有。",
+  nt_h:"如果您的情况不适合，我们会直说。",
+  nt_p:"评估最适合约 3 MW 以上的电站组合、每月电费超过 500 万智利比索或每天使用发电机的场址。如果您的规模较小，我们会在首次回复中说明，并建议最经济的做法。",
+  ag_eb:"03 · 预约",
+  ag_h:"想先聊聊？预约 30 分钟。",
+  ag_p:"选择时间后，您会收到带视频链接的邀请。届时我们会在 Eagle Eye 的演示电站组合上，展示与您类似的场景。",
+  cal_fb:"如日历未能加载，请直接访问 <a class=\"q-link\" href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a> 预约。",
+  pj_k:"CEO · 亲自回复", pj_p:"运营、资产技术管理与 Eagle Eye。",
+  pd_k:"CFO · 亲自回复", pd_p:"财务、结算、贷款方与合作伙伴。",
+  ch_k:"直接联系", ch_h:"联系我们", ch_loc:"智利圣地亚哥 · 可面谈或视频会议",
+  team_exp:"团队以往任职经验：运营 10 座 PMGD 电站（约 50 MW），谈判 70 MW 的 EPC 与运维合同。",
+  fq_eb:"04 · 常见问题", fq_h:"提交表单之前",
+  fq1:"评估费用是多少？",
+  fa1:"评估为固定价格，取决于资产或场址的规模与复杂度，开工前书面确认。若您在 90 天内签订首年合同，核验基线费用的 50% 可抵扣；能源评估费用的 50% 可抵扣业主工程师服务费。",
+  fq2:"需要提供哪些信息？",
+  fa2:"电站：SCADA、逆变器或电表的只读权限、CEN 结算单以及运维合同。工业场址：12 期电费单、电表的 15 分钟数据（如有），以及发电机的运行小时或耗油记录。",
+  fq3:"需要改动我的系统吗？",
+  fa3:"不需要。我们使用数据导出文件或只读权限。Eagle Eye 读取 SCADA、PPC、BMS/EMS、逆变器、电表、气象数据与工单，从不写入设定值，也不替换任何设备。",
+  fq4:"我已有运维承包商，需要更换吗？",
+  fa4:"不需要。评估会依据数据审查其合同与表现。若之后由我们管理该资产，我们将依据您现有的合同监督承包商，您仍是 CEN 的协调主体（coordinado）。",
+  fq5:"你们如何处理我的数据？",
+  fa5:"仅用于回复您和准备评估，并遵照您的指示处理。我们已开始履行 <a class=\"q-link\" href=\"https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=141599&amp;idVersion=2026-12-01\" target=\"_blank\" rel=\"noopener\">第 21.719 号法律</a> 对数据处理者的义务，该法自 2026 年 12 月 1 日起施行。",
+  ct_eb:"从一次评估开始",
+  ct_h:"一个工作日内，由专人回复您。",
+  ct_p:"范围固定。无论是否与我们签约，报告都归您所有。",
+  cta1b:"申请资产评估", cta_cal:"预约 30 分钟", ct_alt:"或直接联系："
+ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>
