@@ -150,6 +150,8 @@ if (typeof window.setLang !== 'function') {
       var k=el.getAttribute('data-i18n'); if(es[k]===undefined) es[k]=el.innerHTML; });
     document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
       var k=el.getAttribute('data-i18n-ph'); if(es[k]===undefined) es[k]=el.getAttribute('placeholder')||''; });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-aria'); if(es[k]===undefined) es[k]=el.getAttribute('aria-label')||''; });
     if(es.__title===undefined) es.__title=document.title;
     var md=document.querySelector('meta[name="description"]'); if(md && es.__desc===undefined) es.__desc=md.getAttribute('content');
   })();

@@ -155,7 +155,7 @@
         <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
         <button id="btn-zh" onclick="setLang('zh')">中文</button>
       </div>
-      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <a href="/contacto/" class="btn btn--secondary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
       <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -181,7 +181,7 @@
         </div>
       </div>
       <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye para una planta industrial, con datos ilustrativos" data-i18n-aria="inst_aria">
-        <div class="q-inst__bar"><span data-i18n="inst_bar">Eagle Eye · Planta industrial demo</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__bar"><span data-i18n="inst_bar">Eagle Eye · Planta demo</span><span class="live" data-i18n="inst_live">En vivo</span></div>
         <div class="q-inst__kpis">
           <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Consumo cubierto por el SGE</span><span class="q-kpi__v" data-i18n="k1v">86 %</span><span class="q-kpi__s" data-i18n="k1s">exigencia legal: 80 % o más · 14 medidores</span><span class="q-kpi__bar"><i style="width:86%"></i></span></div>
           <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Intensidad energética</span><span class="q-kpi__v" data-i18n="k2v">1,42 MWh/t</span><span class="q-kpi__s" data-i18n="k2s">septiembre · 2.910 t producidas</span></div>
@@ -358,7 +358,7 @@
         <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
       </div>
       <div>
-        <h5 data-i18n-c="f_services">Servicios</h5>
+        <p class="q-foot__h" data-i18n-c="f_services">Servicios</p>
         <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
         <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
@@ -368,7 +368,7 @@
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
       <div>
-        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <p class="q-foot__h" data-i18n-c="f_industries">Industrias</p>
         <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
         <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
         <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
@@ -377,7 +377,7 @@
         <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
       </div>
       <div>
-        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <p class="q-foot__h" data-i18n-c="f_ee">Eagle Eye y recursos</p>
         <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
         <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
         <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
@@ -385,7 +385,7 @@
         <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
       </div>
       <div class="q-foot__contact">
-        <h5 data-i18n-c="f_company">Empresa</h5>
+        <p class="q-foot__h" data-i18n-c="f_company">Empresa</p>
         <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
         <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
         <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
@@ -409,11 +409,11 @@ window.Q_PAGE = {
   __desc:"Verified energy data for Chile's Ley 21.305, battery peak shaving and independent review of supply contracts for industry in Chile. We sell no equipment or energy.",
   cr_home:"Home", cr_ind:"Industries", cr_here:"Industry",
   hero_eb:"Industry · large energy consumers",
-  hero_h:"Ley 21.305 energy management, with figures that stand up to an audit.",
+  hero_h:"Ley 21.305 energy management that stands up to an audit.",
   hero_p:"The law requires large consumers to run an energy-management system, report every year and be audited periodically. We deliver the data with its coverage and formula, and help you decide on batteries and contracts without selling either.",
   cta1:"Request an energy assessment", cta_cal:"Book 30 minutes",
   inst_aria:"Sample Eagle Eye view for an industrial plant, with illustrative data",
-  inst_bar:"Eagle Eye · Demo industrial plant", inst_live:"Live",
+  inst_bar:"Eagle Eye · Demo plant", inst_live:"Live",
   k1k:"Consumption covered by the EnMS", k1v:"86%", k1s:"legal requirement: 80% or more · 14 meters",
   k2k:"Energy intensity", k2v:"1.42 MWh/t", k2s:"September · 2,910 t produced",
   k3k:"Efficiency-plan savings", k3v:"Withheld", k3s:"area 4 meter out of calibration · coverage 72%",
@@ -469,7 +469,7 @@ window.Q_PAGE = {
   pr3:"<b>Owner's engineer:</b> a percentage of capex, fixed as a lump sum at notice to proceed.",
   pr4:"<b>Ongoing data and M&amp;V:</b> a fee per kW-year, never a share of the savings we measure.",
   pr5:"A fixed-price proposal within 5 working days of the first meeting.",
-  s5_eb:"05 · Frequently asked questions", s5_h:"What industrial plants ask before they start.",
+  s5_eb:"05 · Frequently asked questions", s5_h:"What industrial plants ask before they&nbsp;start.",
   fq1:"Is my company covered by Ley 21.305?",
   fa1:"The duty applies to designated large consumers using 50 Tcal or more of energy a year. If you are close to the threshold, the assessment shows your consolidated consumption and your meter coverage; you confirm the designation with the authority.",
   fq2:"How much does it cost?",
@@ -491,7 +491,7 @@ window.Q_PAGE = {
   hero_p:"法律要求大型能源用户建立能源管理体系、每年报告并定期接受审计。我们交付附有覆盖率和公式的数据，并帮助您就储能和合同做出决定，而不向您销售其中任何一样。",
   cta1:"申请能源评估", cta_cal:"预约 30 分钟通话",
   inst_aria:"Eagle Eye 工业工厂示例视图（示意数据）",
-  inst_bar:"Eagle Eye · 演示工业工厂", inst_live:"实时",
+  inst_bar:"Eagle Eye · 演示工厂", inst_live:"实时",
   k1k:"能源管理体系覆盖的用能", k1v:"86%", k1s:"法定要求：80% 及以上 · 14 块电表",
   k2k:"能耗强度", k2v:"1.42 MWh/t", k2s:"9 月 · 产量 2,910 吨",
   k3k:"能效计划节省", k3v:"暂不发布", k3s:"4 区电表校准过期 · 覆盖率 72%",

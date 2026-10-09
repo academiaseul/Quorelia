@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Reemplazo de generador diésel: híbrido solar y batería · Quorelia</title>
+<meta name="description" content="Reemplazo de generador diésel en Chile: auditoría de horas, litros y carga, sistema híbrido solar con batería y un ahorro medido de forma independiente.">
+<link rel="canonical" href="https://www.quorelia.org/servicios/reemplazo-diesel/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/servicios/reemplazo-diesel/">
+<meta property="og:title" content="Reemplazo de diésel · Quorelia">
+<meta property="og:description" content="Menos horas de generador y un ahorro medido, no estimado: auditoría de generadores, diseño híbrido solar y batería, socios certificados y medición independiente.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Reemplazo de diésel","serviceType":"Diesel generator replacement: generator audit, hybrid solar and battery design, owner's engineering and measurement and verification","areaServed":"CL",
+  "description":"Auditoría de generadores (horas, litros y perfil de carga), diseño de sistemas híbridos solar y batería, opciones de compra, leasing o energía como servicio a través de socios, supervisión de la instalación y medición y verificación independiente del ahorro.",
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/servicios/reemplazo-diesel/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
+  {"@type":"ListItem","position":3,"name":"Reemplazo de diésel","item":"https://www.quorelia.org/servicios/reemplazo-diesel/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Garantizan el ahorro?","acceptedAnswer":{"@type":"Answer","text":"No. Medimos el ahorro contra una línea base tomada antes del cambio. Si su proveedor ofrece una garantía, la verificamos con datos y documentamos cualquier diferencia."}},
+  {"@type":"Question","name":"¿Y si baja el precio del diésel?","acceptedAnswer":{"@type":"Answer","text":"Cada caso se prueba al precio actual, a CLP 1.000/L y a CLP 800/L. Si sólo funciona al precio de hoy, se lo decimos y no lo presentamos."}},
+  {"@type":"Question","name":"¿Tengo que retirar el generador?","acceptedAnswer":{"@type":"Answer","text":"No. En un híbrido, la batería y el solar toman la carga base y el generador queda como respaldo: funciona menos horas y mejor cargado."}},
+  {"@type":"Question","name":"¿Necesita evaluación ambiental?","acceptedAnswer":{"@type":"Answer","text":"Las centrales de generación de más de 3 MW deben ingresar al SEIA (Ley 19.300, art. 10 c). La LGSE clasifica además los sistemas aislados (hasta 1.500 kW), medianos y de procesos productivos. Revisamos ambos puntos antes de comprometer un plazo."}},
+  {"@type":"Question","name":"Ya tengo un proveedor híbrido. ¿Pueden medirlo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Medimos cualquier marca, con acceso de lectura a los datos del BMS, del generador y del combustible. Ese acceso debe quedar escrito en su contrato con el proveedor."}},
+  {"@type":"Question","name":"¿De quién son los datos?","acceptedAnswer":{"@type":"Answer","text":"Suyos. Eagle Eye los lee en modo solo lectura, y usted puede exportarlos junto con sus paquetes de evidencia en formatos abiertos al terminar el contrato."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--secondary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><a href="/servicios/" data-i18n="cr_svc">Servicios</a><span aria-hidden="true">/</span><span data-i18n="cr_here">Reemplazo de diésel</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Reemplazo de diésel · Sitios aislados y respaldo</span>
+        <h1 class="q-h1" data-i18n="hero_h">Menos horas de generador. Un ahorro medido, no estimado.</h1>
+        <p class="q-lede" data-i18n="hero_p">Auditamos sus generadores, diseñamos el híbrido solar y batería y comparamos compra, leasing o energía como servicio. Construye un socio certificado; Quorelia mide el ahorro.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=diesel#energia"><span data-i18n="cta1">Solicitar evaluación de diésel</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de una auditoría de generadores en Eagle Eye, con datos ilustrativos" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_t">Eagle Eye · Auditoría diésel · Faena demo</span><span class="live" data-i18n="inst_live">Midiendo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k1k">Diésel del mes</span><span class="q-kpi__v" data-i18n="k1v">58.400 L</span><span class="q-kpi__s" data-i18n="k1s">conciliado con 4 guías de despacho</span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Carga media de los grupos</span><span class="q-kpi__v" data-i18n="k2v">31 %</span><span class="q-kpi__s" data-i18n="k2s">2 × 500 kVA · bajo su zona eficiente</span></div>
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k3k">Cobertura de datos</span><span class="q-kpi__v" data-i18n="k3v">92,4 %</span><span class="q-kpi__s" data-i18n="k3s">registro cada 15 min · 21 días</span><span class="q-kpi__bar"><i style="width:92%"></i></span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k4k">Costo por kWh</span><span class="q-kpi__v" data-i18n="k4v">Retenida</span><span class="q-kpi__s" data-i18n="k4s">faltan precios de 2 entregas · cobertura 78 %</span><span class="q-kpi__bar"><i style="width:78%"></i></span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Hallazgo</span><span data-i18n="r1">Grupo 2 · bajo 30 % de carga durante 11 h al día</span><span class="t">06:10</span></li>
+          <li><span class="q-chip q-chip--neutral" data-i18n="r2c">Opción</span><span data-i18n="r2">Híbrido con batería · un solo grupo en horario nocturno</span><span class="t" data-i18n="r2t">sem. 3</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Flota demo · datos ilustrativos</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 PMGD operados · experiencia del equipo</span></li>
+      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">en contratos EPC y O&amp;M · experiencia del equipo</span></li>
+      <li><b data-i18n="p4v">3 precios</b><span class="q-proof__k" data-i18n="p4">del diésel en cada caso de negocio</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · Lo que cuesta hoy ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="d_eb">01 · Lo que cuesta hoy</span><h2 class="q-h2" data-i18n="d_h">El diésel subió, y puede volver a cambiar.</h2></div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="d1v">CLP 1.222/L</span><span class="q-fig__k" data-i18n="d1k">Precio promedio nacional del diésel en agosto de 2026.</span><span class="q-fig__src" data-i18n="d1s">Fuente: <a href="https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf" target="_blank" rel="noopener">CNE, reporte mensual, sept. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="d2v">+CLP 309,9/L</span><span class="q-fig__k" data-i18n="d2k">Alza acumulada del diésel desde fines de julio hasta el 30 de septiembre de 2026.</span><span class="q-fig__src" data-i18n="d2s">Fuente: <a href="https://www.emol.com/noticias/Economia/2026/09/30/1212882/alza-precios-combustibles-diesel-enap.html" target="_blank" rel="noopener">Emol, 30-09-2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="d3v">0,6 %</span><span class="q-fig__k" data-i18n="d3k">Participación del diésel en la generación del sistema eléctrico nacional en 2026, a agosto. El diésel que se puede reemplazar está en sitios aislados y en respaldo.</span><span class="q-fig__src" data-i18n="d3s">Fuente: <a href="https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf" target="_blank" rel="noopener">ACERA, ago. 2026</a></span></div>
+    </div>
+    <div class="note a" style="margin-top:28px;"><h4 data-i18n="d_nh">Cada caso se prueba a tres precios</h4><p data-i18n="d_np">La política del MEPCO cambió dos veces en 2026 (<a class="q-link" href="https://eldesconcierto.cl/actualidad/valor-los-combustibles-el-jueves-1-octubre-95-el-diesel-y-parafina-descongela-precios-n5462705" target="_blank" rel="noopener">El Desconcierto</a>). Mostramos el retorno al precio actual, a CLP 1.000/L y a CLP 800/L; un caso que sólo funciona al precio de hoy no se presenta.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Qué hacemos ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s_eb">02 · Qué hacemos</span><h2 class="q-h2" data-i18n="s_h">El alcance, listo para pegar en su licitación.</h2></div>
+      <p class="q-lede" data-i18n="s_p">Medimos antes de diseñar y seguimos midiendo después de construir, con un solo responsable.</p>
+    </div>
+    <ul class="q-check q-check--2col">
+      <li data-i18n="c1">Auditoría de generadores: horas de motor, litros y perfil de carga cada 15 minutos</li>
+      <li data-i18n="c2">Conciliación de facturas de combustible, litros entregados y kWh generados</li>
+      <li data-i18n="c3">Modelo de carga y consumo específico de cada grupo</li>
+      <li data-i18n="c4">Opciones comparadas: híbrido sólo con batería, solar y batería, GLP, cable o conexión a la red</li>
+      <li data-i18n="c5">Diseño del sistema híbrido, con el generador como respaldo</li>
+      <li data-i18n="c6">Ofertas de compra, leasing o energía como servicio, con al menos dos cotizaciones</li>
+      <li data-i18n="c7">Revisión de la categoría del sistema (LGSE) y del umbral de 3 MW del SEIA</li>
+      <li data-i18n="c8">Supervisión de la instalación y prueba de puesta en marcha presenciada</li>
+      <li data-i18n="c9">Medición y verificación (M&amp;V) independiente, con una línea base que queda con usted</li>
+      <li data-i18n="c10">Monitoreo con Eagle Eye y, si lo pide, gestión del O&amp;M del socio</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 4 · Los primeros 30 días ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="h_eb">03 · Los primeros 30 días</span><h2 class="q-h2" data-i18n="h_h">De la primera llamada a una decisión con números.</h2></div>
+    <ol class="q-steps" style="--steps:5">
+      <li><h3 data-i18n="st1h">Calificar</h3><p data-i18n="st1p">Día 0–1. Uso diario de generador o una boleta sobre CLP 5 millones al mes. Le llamamos dentro de un día hábil.</p></li>
+      <li><h3 data-i18n="st2h">Medir</h3><p data-i18n="st2p">Semanas 1–3. Registro de los generadores cada 15 minutos; facturas, litros y kWh conciliados.</p></li>
+      <li><h3 data-i18n="st3h">Modelar</h3><p data-i18n="st3p">Semana 3. Carga y consumo específico; opciones con batería, solar, GLP, cable o red.</p></li>
+      <li><h3 data-i18n="st4h">Valorizar</h3><p data-i18n="st4p">Semana 4. Retorno a tres precios del diésel; inversión con al menos dos cotizaciones.</p></li>
+      <li><h3 data-i18n="st5h">Entregar</h3><p data-i18n="st5p">Unos 30 días. Lista corta de 2 a 3 proveedores o financistas y un plan de M&amp;V con su línea base.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 5 · Lo que recibe ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="r_eb">04 · Lo que recibe</span><h2 class="q-h2" data-i18n="r_h">Entregables que quedan con usted.</h2></div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="d1ck">Unos 30 días</span><h3 data-i18n="d1ch">Evaluación de diésel</h3><p data-i18n="d1cp">Costo por kWh del diésel actual frente a cada opción híbrida, con sus supuestos a la vista.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d2ck">Suya</span><h3 data-i18n="d2ch">Línea base de consumo</h3><p data-i18n="d2cp">Litros, horas y kWh medidos antes del cambio. Sirve para verificar a cualquier proveedor.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d3ck">Antes de firmar</span><h3 data-i18n="d3ch">Lista corta de proveedores</h3><p data-i18n="d3cp">2 a 3 proveedores o financistas, comparados en precio por kWh, plazo, garantías y riesgos.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d4ck">Puesta en marcha</span><h3 data-i18n="d4ch">Acta de pruebas presenciadas</h3><p data-i18n="d4cp">Batería, inversores y control del generador verificados antes de aceptar la obra.</p></div>
+      <a class="q-card" href="/informe.html"><span class="q-card__k" data-i18n="d5ck">Mensual</span><h3 data-i18n="d5ch">Informe de M&amp;V</h3><p data-i18n="d5cp">Litros y horas de motor evitados contra la línea base, con cobertura y fórmula por cifra.</p><span class="q-card__link" data-i18n="d5cl">Ver un informe de muestra</span></a>
+      <div class="q-card"><span class="q-card__k" data-i18n="d6ck">Anual</span><h3 data-i18n="d6ch">Paquete de evidencia firmado</h3><p data-i18n="d6cp">Firma electrónica avanzada y sello de tiempo (Ley 19.799), para su área de sostenibilidad o su financista.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Dónde aplica ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="a_eb">05 · Dónde aplica</span><h2 class="q-h2" data-i18n="a_h">Donde el generador trabaja todos los días.</h2></div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v">386</span><span class="q-fig__k" data-i18n="a1k">centros marinos de salmón activos en el peak de agosto de 2025, en su mayoría fuera de la red y con diésel.</span><span class="q-fig__src" data-i18n="a1s">Fuentes: <a href="https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf" target="_blank" rel="noopener">Sernapesca</a> · <a href="https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile" target="_blank" rel="noopener">We Are Aquaculture</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="a2v">30–70 %</span><span class="q-fig__k" data-i18n="a2k">ahorros de diésel que publican los proveedores de la salmonicultura, de «hasta 30 %» a 70 %. Todos autodeclarados: ninguno medido por un tercero.</span><span class="q-fig__src" data-i18n="a2s">Fuentes: <a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">Salmonexpert (Saesa Innova)</a> · <a href="https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156" target="_blank" rel="noopener">Salmonexpert (Voltify)</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="a3v">≈2.300</span><span class="q-fig__k" data-i18n="a3k">millones de litros de diésel al año en la minería chilena. Probablemente la mayor parte mueve camiones, que una batería fija no reemplaza.</span><span class="q-fig__src" data-i18n="a3s">Fuente: <a href="https://www.df.cl/empresas/mineria/bofa-costos-de-produccion-del-cobre-suben-18-por-alza-del-diesel-y-minas" target="_blank" rel="noopener">DF</a></span></div>
+    </div>
+    <div class="q-grid q-grid--3" style="margin-top:40px;">
+      <a class="q-card" href="/industrias/acuicultura-pesca/"><span class="q-card__k" data-i18n="ac1k">Acuicultura y pesca</span><h3 data-i18n="ac1h">Pontones híbridos</h3><p data-i18n="ac1p">Medición antes y después por pontón, sea cual sea el proveedor, y un medidor neutral en contratos de energía como servicio.</p><span class="q-card__link" data-i18n="ac1l">Ver acuicultura y pesca</span></a>
+      <a class="q-card" href="/industrias/mineria/"><span class="q-card__k" data-i18n="ac2k">Minería</span><h3 data-i18n="ac2h">Faenas medianas, contratistas y campamentos</h3><p data-i18n="ac2p">Evaluación y M&amp;V de híbridos financiados por terceros. Verificamos a su proveedor de energía; no lo reemplazamos.</p><span class="q-card__link" data-i18n="ac2l">Ver minería</span></a>
+      <a class="q-card" href="/industrias/alimentos-cadena-de-frio/"><span class="q-card__k" data-i18n="ac3k">Alimentos, agro e industria</span><h3 data-i18n="ac3h">Generadores de respaldo</h3><p data-i18n="ac3p">Batería primero y generador después: menos horas de motor en cada corte, con las cargas críticas cubiertas.</p><span class="q-card__link" data-i18n="ac3l">Ver alimentos y cadena de frío</span></a>
+    </div>
+    <div class="q-actions"><a class="btn btn--secondary" href="/contacto/?interes=mv-acuicultura#energia" data-i18n="a_btn">Solicitar medición en pontones</a></div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Cómo cambia con Eagle Eye ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="e_eb">06 · Cómo cambia con Eagle Eye</span><h2 class="q-h2" data-i18n="e_h"><span class="dim">El mismo generador,</span> medido por quien no vende la batería.</h2></div>
+      <p class="q-lede" data-i18n="e_p">Eagle Eye lee datos de generadores y combustible, BMS/EMS, inversores, medidores, meteorología y órdenes de trabajo en modo solo lectura. Nunca escribe consignas.</p>
+    </div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><h3 data-i18n="e1a">Cuántos litros quema realmente</h3><ul class="q-check q-check--no"><li data-i18n="e1b"><b>Hoy.</b> Se estima con las guías de despacho.</li></ul><ul class="q-check"><li data-i18n="e1c"><b>Con Eagle Eye.</b> Litros, horas de motor y kWh conciliados cada 15 minutos.</li></ul></div>
+      <div class="q-card"><h3 data-i18n="e2a">El ahorro que declara el proveedor</h3><ul class="q-check q-check--no"><li data-i18n="e2b"><b>Hoy.</b> Lo calcula el mismo proveedor, con su propia línea base.</li></ul><ul class="q-check"><li data-i18n="e2c"><b>Con Eagle Eye.</b> Se mide contra la línea base tomada antes del cambio; si faltan datos, la cifra se retiene.</li></ul></div>
+      <div class="q-card"><h3 data-i18n="e3a">Un generador que arranca de más</h3><ul class="q-check q-check--no"><li data-i18n="e3b"><b>Hoy.</b> Se nota en la factura de combustible del mes.</li></ul><ul class="q-check"><li data-i18n="e3c"><b>Con Eagle Eye.</b> Aparece en el informe y el socio O&amp;M recibe una orden de trabajo que se cierra con evidencia.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Quién hace el trabajo ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="w_eb">07 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="w_h">Lo que hace Quorelia y lo que hacen los socios, por escrito.</h2></div>
+    <div class="q-who">
+      <div>
+        <div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w_q">Equipo de Quorelia</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w1">Auditoría de generadores, modelo de carga y caso de negocio</li>
+          <li data-i18n="w2">Diseño del híbrido e ingeniería del dueño: especificación, licitación y contratos</li>
+          <li data-i18n="w3">Supervisión de la instalación y prueba de puesta en marcha presenciada</li>
+          <li data-i18n="w4">Medición y verificación del ahorro, con Eagle Eye incluido</li>
+          <li data-i18n="w5">Gestión del O&amp;M del socio, si usted lo pide</li>
+        </ul>
+      </div>
+      <div>
+        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w_pc">Socios</span><h3 data-i18n="w_ph">Socios certificados</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w6">Socio EPC o integrador: suministro, instalación y declaraciones ante la SEC</li>
+          <li data-i18n="w7">Instalador eléctrico autorizado SEC Clase A para trabajos en media tensión y declaraciones TE7</li>
+          <li data-i18n="w8">Sistema de seguridad DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w9">Servicio técnico de baterías certificado por el fabricante, que mantiene la garantía</li>
+          <li data-i18n="w10">Socio financista: compra, leasing o energía como servicio</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:28px;"><h4 data-i18n="w_nh">Lo que Quorelia no hace</h4><p data-i18n="w_np">No es contratista EPC principal, no vende equipos ni combustible, no es dueña de plantas ni vende energía, y no financia proyectos. Cualquier comisión de un socio se declara por escrito. Si además gestionamos el O&amp;M del sistema, esos informes se rotulan «reportado por el operador, verificable por terceros».</p></div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Cómo se cobra ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="p_eb">08 · Cómo se cobra</span><h2 class="q-h2" data-i18n="p_h">Honorarios fijos. Nunca un porcentaje del ahorro.</h2></div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="pr1k">Precio fijo · unos 30 días</span><h3 data-i18n="pr1h">Evaluación de diésel</h3><p data-i18n="pr1p">El informe y la línea base quedan con usted. El 50 % se abona a los honorarios de ingeniería del dueño si sigue adelante con nosotros.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr2k">% del capex · suma alzada</span><h3 data-i18n="pr2h">Ingeniería del dueño</h3><p data-i18n="pr2p">Se fija como suma alzada al dar la orden de proceder: no ganamos más si la obra sube de precio.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr3k">Por kW-año o por centro-año</span><h3 data-i18n="pr3h">M&amp;V independiente</h3><p data-i18n="pr3p">Por kW-año en faenas e industria; por centro-año más la instalación de medidores en salmonicultura.</p></div>
+    </div>
+    <div class="note" style="margin-top:28px;"><h4 data-i18n="p_nh">Por qué la M&amp;V tiene tarifa fija</h4><p data-i18n="p_np">Un verificador pagado según el resultado que mide no es independiente. La obra y los equipos los paga usted al socio, o los financia un socio financista; la propuesta llega dentro de 5 días hábiles después de la evaluación.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 10 · Prueba ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="v_eb">09 · Vea el trabajo antes de firmar</span><h2 class="q-h2" data-i18n="v_h">Muestras que puede abrir hoy.</h2></div>
+    <div class="q-grid q-grid--3">
+      <a class="q-card" href="/informe.html"><span class="q-card__k" data-i18n="v1k">Datos ilustrativos · flota demo</span><h3 data-i18n="v1h">Informes de muestra</h3><p data-i18n="v1p">Diario, mensual y de cartera: la estructura real, con cobertura y fórmula por cifra.</p><span class="q-card__link" data-i18n="v1l">Ver informes</span></a>
+      <a class="q-card" href="/demos.html"><span class="q-card__k" data-i18n="v1k">Datos ilustrativos · flota demo</span><h3 data-i18n="v2h">Tablero de baterías en vivo</h3><p data-i18n="v2p">El tablero BESS y el Control Center funcionando sobre una flota de demostración.</p><span class="q-card__link" data-i18n="v2l">Abrir la demo</span></a>
+      <a class="q-card" href="/normativa-electrica-chile.html"><span class="q-card__k" data-i18n="v3k">Guía</span><h3 data-i18n="v3h">Normativa eléctrica de Chile</h3><p data-i18n="v3p">Qué exigen el CEN, la SEC y la CNE a quien genera o almacena energía.</p><span class="q-card__link" data-i18n="v3l">Leer la guía</span></a>
+    </div>
+    <div style="margin-top:22px;"><p class="q-small" data-i18n="v_note">Aún no publicamos referencias de clientes. Lo haremos cuando un cliente autorice su nombre y sus cifras.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 11 · Preguntas ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="q_eb">10 · Preguntas frecuentes</span><h2 class="q-h2" data-i18n="q_h">Lo que preguntan antes de apagar un generador.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Garantizan el ahorro?</summary><div><p data-i18n="fa1">No. Medimos el ahorro contra una línea base tomada antes del cambio. Si su proveedor ofrece una garantía, la verificamos con datos y documentamos cualquier diferencia.</p></div></details>
+      <details><summary data-i18n="fq2">¿Y si baja el precio del diésel?</summary><div><p data-i18n="fa2">Cada caso se prueba al precio actual, a CLP 1.000/L y a CLP 800/L. Si sólo funciona al precio de hoy, se lo decimos y no lo presentamos.</p></div></details>
+      <details><summary data-i18n="fq3">¿Tengo que retirar el generador?</summary><div><p data-i18n="fa3">No. En un híbrido, la batería y el solar toman la carga base y el generador queda como respaldo: funciona menos horas y mejor cargado.</p></div></details>
+      <details><summary data-i18n="fq4">¿Necesita evaluación ambiental?</summary><div><p data-i18n="fa4">Las centrales de generación de más de 3 MW deben ingresar al SEIA (<a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=19300" target="_blank" rel="noopener">Ley 19.300, art. 10 c</a>). La <a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171" target="_blank" rel="noopener">LGSE</a> clasifica además los sistemas aislados (hasta 1.500 kW), medianos y de procesos productivos. Revisamos ambos puntos antes de comprometer un plazo.</p></div></details>
+      <details><summary data-i18n="fq5">Ya tengo un proveedor híbrido. ¿Pueden medirlo?</summary><div><p data-i18n="fa5">Sí. Medimos cualquier marca, con acceso de lectura a los datos del BMS, del generador y del combustible. Ese acceso debe quedar escrito en su contrato con el proveedor.</p></div></details>
+      <details><summary data-i18n="fq6">¿De quién son los datos?</summary><div><p data-i18n="fa6">Suyos. Eagle Eye los lee en modo solo lectura, y usted puede exportarlos junto con sus paquetes de evidencia en formatos abiertos al terminar el contrato.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 12 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div class="q-head" style="margin-bottom:0;">
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación de diésel</span>
+      <h2 class="q-h2" data-i18n="ct_h">Precio fijo, unos 30 días. La línea base queda con usted, nos contrate o no.</h2>
+    </div>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=diesel#energia"><span data-i18n="cta1">Solicitar evaluación de diésel</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_services">Servicios</p>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_industries">Industrias</p>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_ee">Eagle Eye y recursos</p>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <p class="q-foot__h" data-i18n-c="f_company">Empresa</p>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+/* Inglés y chino. El español se toma del HTML automáticamente. */
+window.Q_PAGE = {
+ en:{
+  __title:"Diesel generator replacement: hybrid solar and battery · Quorelia",
+  __desc:"Diesel generator replacement in Chile: an audit of hours, litres and load, a hybrid solar and battery system, and savings measured independently.",
+  cr_home:"Home", cr_svc:"Services", cr_here:"Diesel replacement",
+  hero_eb:"Diesel replacement · Remote sites and backup",
+  hero_h:"Fewer generator hours. Savings measured, not estimated.",
+  hero_p:"We audit your generators, design the hybrid solar and battery system, and compare purchase, leasing or energy-as-a-service. A certified partner builds it; Quorelia measures the savings.",
+  cta1:"Request a diesel assessment", cta_cal:"Book 30 minutes",
+  inst_aria:"Sample view of a generator audit in Eagle Eye, with illustrative data",
+  inst_t:"Eagle Eye · Diesel audit · Demo site", inst_live:"Measuring",
+  k1k:"Diesel this month", k1v:"58,400 L", k1s:"reconciled with 4 delivery notes",
+  k2k:"Average genset load", k2v:"31%", k2s:"2 × 500 kVA · below their efficient range",
+  k3k:"Data coverage", k3v:"92.4%", k3s:"15-minute logging · 21 days",
+  k4k:"Cost per kWh", k4v:"Withheld", k4s:"prices missing for 2 deliveries · coverage 78%",
+  r1c:"Finding", r1:"Genset 2 · below 30% load for 11 h a day",
+  r2c:"Option", r2:"Battery hybrid · a single genset at night", r2t:"wk 3",
+  inst_foot:"Demo fleet · illustrative data",
+  p1:"under monitoring", p2:"10 PMGD plants operated · team experience", p3:"in EPC and O&amp;M contracts · team experience",
+  p4v:"3 prices", p4:"of diesel tested in every business case",
+  d_eb:"01 · What it costs today", d_h:"Diesel has gone up, and it can change again.",
+  d1v:"CLP 1,222/L", d1k:"National average diesel pump price in August 2026.",
+  d1s:"Source: <a href='https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf' target='_blank' rel='noopener'>CNE, monthly report, Sep 2026</a>",
+  d2v:"+CLP 309.9/L", d2k:"Cumulative diesel price rise from late July to 30 September 2026.",
+  d2s:"Source: <a href='https://www.emol.com/noticias/Economia/2026/09/30/1212882/alza-precios-combustibles-diesel-enap.html' target='_blank' rel='noopener'>Emol, 30 Sep 2026</a>",
+  d3v:"0.6%", d3k:"Diesel’s share of national grid generation in 2026, to August. The diesel that can be replaced sits at remote sites and in backup.",
+  d3s:"Source: <a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA, Aug 2026</a>",
+  d_nh:"Every case is tested at three prices",
+  d_np:"Chile’s fuel-price stabilisation policy (MEPCO) changed twice in 2026 (<a class='q-link' href='https://eldesconcierto.cl/actualidad/valor-los-combustibles-el-jueves-1-octubre-95-el-diesel-y-parafina-descongela-precios-n5462705' target='_blank' rel='noopener'>El Desconcierto</a>). We show the return at today’s price, at CLP 1,000/L and at CLP 800/L; a case that only works at today’s price is not presented.",
+  s_eb:"02 · What we do", s_h:"The scope, ready to paste into your tender.",
+  s_p:"We measure before we design and keep measuring after it is built, with one accountable manager.",
+  c1:"Generator audit: engine hours, litres and load profile every 15 minutes",
+  c2:"Reconciliation of fuel invoices, litres delivered and kWh generated",
+  c3:"Load model and specific consumption of each genset",
+  c4:"Options compared: battery-only hybrid, solar plus battery, LPG, cable or grid connection",
+  c5:"Hybrid system design, with the generator kept as backup",
+  c6:"Purchase, leasing or energy-as-a-service offers, with at least two quotes",
+  c7:"Review of the system category (LGSE) and the 3 MW SEIA threshold",
+  c8:"Installation oversight and a witnessed commissioning test",
+  c9:"Independent measurement and verification (M&amp;V), with a baseline that stays with you",
+  c10:"Monitoring with Eagle Eye and, on request, management of the partner’s O&amp;M",
+  h_eb:"03 · The first 30 days", h_h:"From the first call to a decision backed by numbers.",
+  st1h:"Qualify", st1p:"Day 0–1. Daily generator use or a power bill above CLP 5 million a month. We call you within one working day.",
+  st2h:"Measure", st2p:"Weeks 1–3. Generator logging every 15 minutes; invoices, litres and kWh reconciled.",
+  st3h:"Model", st3p:"Week 3. Load and specific consumption; options with battery, solar, LPG, cable or grid.",
+  st4h:"Price", st4p:"Week 4. Return at three diesel prices; capex from at least two quotes.",
+  st5h:"Deliver", st5p:"About 30 days. A shortlist of 2 to 3 suppliers or financiers, and an M&amp;V plan with your baseline.",
+  r_eb:"04 · What you receive", r_h:"Deliverables that stay with you.",
+  d1ck:"About 30 days", d1ch:"Diesel assessment", d1cp:"Cost per kWh of today’s diesel against each hybrid option, with its assumptions in view.",
+  d2ck:"Yours", d2ch:"Consumption baseline", d2cp:"Litres, hours and kWh measured before the change. It can be used to verify any supplier.",
+  d3ck:"Before you sign", d3ch:"Supplier shortlist", d3cp:"2 to 3 suppliers or financiers, compared on price per kWh, term, warranties and risks.",
+  d4ck:"Commissioning", d4ch:"Witnessed test record", d4cp:"Battery, inverters and generator control verified before the works are accepted.",
+  d5ck:"Monthly", d5ch:"M&amp;V report", d5cp:"Litres and engine hours avoided against the baseline, with coverage and formula per figure.", d5cl:"See a sample report",
+  d6ck:"Yearly", d6ch:"Signed evidence pack", d6cp:"Advanced electronic signature and time-stamp (Ley 19.799), for your sustainability team or your lender.",
+  a_eb:"05 · Where it applies", a_h:"Where the generator runs every day.",
+  a1k:"active marine salmon sites at the August 2025 peak, most of them off-grid and running on diesel.",
+  a1s:"Sources: <a href='https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf' target='_blank' rel='noopener'>Sernapesca</a> · <a href='https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile' target='_blank' rel='noopener'>We Are Aquaculture</a>",
+  a2v:"30–70%", a2k:"diesel savings published by salmon-farming suppliers, from “up to 30%” to 70%. All self-reported: none measured by a third party.",
+  a2s:"Sources: <a href='https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964' target='_blank' rel='noopener'>Salmonexpert (Saesa Innova)</a> · <a href='https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156' target='_blank' rel='noopener'>Salmonexpert (Voltify)</a>",
+  a3v:"≈2,300", a3k:"million litres of diesel a year burned by Chilean mining. Most of it probably moves haul trucks, which a stationary battery does not replace.",
+  a3s:"Source: <a href='https://www.df.cl/empresas/mineria/bofa-costos-de-produccion-del-cobre-suben-18-por-alza-del-diesel-y-minas' target='_blank' rel='noopener'>DF</a>",
+  ac1k:"Aquaculture &amp; fisheries", ac1h:"Hybrid feed barges", ac1p:"Before-and-after measurement per barge, whatever the supplier, and a neutral meter in energy-as-a-service contracts.", ac1l:"See aquaculture &amp; fisheries",
+  ac2k:"Mining", ac2h:"Mid-size mines, contractors and camps", ac2p:"Assessment and M&amp;V of third-party-financed hybrids. We verify your energy supplier; we do not replace it.", ac2l:"See mining",
+  ac3k:"Food, agriculture and industry", ac3h:"Backup generators", ac3p:"Battery first, generator second: fewer engine hours at every outage, with critical loads covered.", ac3l:"See food &amp; cold chain",
+  a_btn:"Request barge measurement",
+  e_eb:"06 · How Eagle Eye changes it", e_h:"<span class='dim'>The same generator,</span> measured by someone who does not sell the battery.",
+  e_p:"Eagle Eye reads generator and fuel data, BMS/EMS, inverters, meters, weather data and work orders, read-only. It never writes a setpoint.",
+  e1a:"How many litres it really burns", e1b:"<b>Today.</b> Estimated from fuel delivery notes.", e1c:"<b>With Eagle Eye.</b> Litres, engine hours and kWh reconciled every 15 minutes.",
+  e2a:"The saving the supplier reports", e2b:"<b>Today.</b> The supplier computes it, against its own baseline.", e2c:"<b>With Eagle Eye.</b> It is measured against the baseline taken before the change; if data are missing, the figure is withheld.",
+  e3a:"A generator that starts too often", e3b:"<b>Today.</b> It shows up in the month’s fuel invoice.", e3c:"<b>With Eagle Eye.</b> It appears in the report, and the O&amp;M partner receives a work order that closes only with evidence.",
+  w_eb:"07 · Who does the work", w_h:"What Quorelia does and what partners do, in writing.",
+  w_q:"Quorelia team", w_pc:"Partners", w_ph:"Certified partners",
+  w1:"Generator audit, load model and business case",
+  w2:"Hybrid design and owner’s engineering: specification, tender and contracts",
+  w3:"Installation oversight and a witnessed commissioning test",
+  w4:"Measurement and verification of savings, with Eagle Eye included",
+  w5:"Management of the partner’s O&amp;M, if you request it",
+  w6:"EPC partner or integrator: supply, installation and SEC declarations",
+  w7:"SEC-licensed Class A electrical installer for medium-voltage work and TE7 declarations",
+  w8:"DS 44 safety management system and contractor controls under Ley 20.123",
+  w9:"Manufacturer-certified battery service that keeps the warranty intact",
+  w10:"Financing partner: purchase, leasing or energy-as-a-service",
+  w_nh:"What Quorelia does not do",
+  w_np:"Quorelia is not the EPC prime contractor, does not sell equipment or fuel, does not own plants or sell power, and does not finance projects. Any partner commission is disclosed in writing. If we also manage the system’s O&amp;M, those reports are labelled “reported by the operator, verifiable by third parties”.",
+  p_eb:"08 · How it is priced", p_h:"Fixed fees. Never a share of the savings.",
+  pr1k:"Fixed price · about 30 days", pr1h:"Diesel assessment", pr1p:"The report and the baseline are yours. 50% is credited to the owner’s-engineer fee if you go ahead with us.",
+  pr2k:"% of capex · lump sum", pr2h:"Owner’s engineering", pr2p:"Fixed as a lump sum at notice to proceed, so we earn nothing more if the works cost more.",
+  pr3k:"Per kW-year or per site-year", pr3h:"Independent M&amp;V", pr3p:"Per kW-year at mines and industrial sites; per site-year plus meter installation in salmon farming.",
+  p_nh:"Why M&amp;V has a fixed fee",
+  p_np:"A verifier paid on the result it measures is not independent. You pay the partner for the works and equipment, or a financing partner funds them; the proposal arrives within 5 working days of the assessment.",
+  v_eb:"09 · See the work before you sign", v_h:"Samples you can open today.",
+  v1k:"Illustrative data · demo fleet", v1h:"Sample reports", v1p:"Daily, monthly and portfolio reports: the real structure, with coverage and formula per figure.", v1l:"See reports",
+  v2h:"Live battery dashboard", v2p:"The BESS dashboard and the Control Center running on a demonstration fleet.", v2l:"Open the demo",
+  v3k:"Guide", v3h:"Chile’s electricity rules", v3p:"What the CEN, the SEC and the CNE require of anyone who generates or stores energy.", v3l:"Read the guide",
+  v_note:"We do not yet publish client references. We will when a client authorises its name and figures.",
+  q_eb:"10 · Questions", q_h:"What owners ask before switching a generator off.",
+  fq1:"Do you guarantee the savings?",
+  fa1:"No. We measure the savings against a baseline taken before the change. If your supplier offers a guarantee, we check it against data and document any gap.",
+  fq2:"What if the diesel price falls?",
+  fa2:"Every case is tested at today’s price, at CLP 1,000/L and at CLP 800/L. If it only works at today’s price, we tell you so and do not present it.",
+  fq3:"Do I have to remove the generator?",
+  fa3:"No. In a hybrid, the battery and the solar take the base load and the generator stays as backup: it runs fewer hours, better loaded.",
+  fq4:"Does it need an environmental assessment?",
+  fa4:"Generating plants above 3 MW must enter the SEIA (<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=19300' target='_blank' rel='noopener'>Ley 19.300, art. 10 c</a>). The <a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a> also classifies isolated systems (up to 1,500 kW), medium systems and productive-process systems. We check both before committing to a timeline.",
+  fq5:"I already have a hybrid supplier. Can you measure it?",
+  fa5:"Yes. We measure any brand, with read access to the BMS, generator and fuel data. That access must be written into your contract with the supplier.",
+  fq6:"Who owns the data?",
+  fa6:"You do. Eagle Eye accesses it read-only, and you can export it with your evidence packs in open formats when the contract ends.",
+  ct_eb:"Start with a diesel assessment", ct_h:"Fixed price, about 30 days. The baseline is yours, whether or not you hire us.", ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"柴油发电机替代：光伏 + 储能混合系统 · Quorelia",
+  __desc:"智利柴油发电机替代：审计运行时数、油耗与负荷，设计光伏加储能混合系统，并独立计量节省。",
+  cr_home:"首页", cr_svc:"服务", cr_here:"柴油替代",
+  hero_eb:"柴油替代 · 偏远站点与备用电源",
+  hero_h:"更少的发电机运行时数。节省经实测，而非估算。",
+  hero_p:"我们审计您的发电机，设计光伏加储能混合系统，并比较购买、融资租赁或能源即服务方案。由认证合作伙伴建设；Quorelia 负责计量节省。",
+  cta1:"申请柴油评估", cta_cal:"预约 30 分钟",
+  inst_aria:"Eagle Eye 发电机审计示例视图（示意数据）",
+  inst_t:"Eagle Eye · 柴油审计 · 演示站点", inst_live:"计量中",
+  k1k:"本月柴油", k1v:"58,400 L", k1s:"已与 4 张送货单核对",
+  k2k:"机组平均负载", k2v:"31%", k2s:"2 × 500 kVA · 低于高效区间",
+  k3k:"数据覆盖率", k3v:"92.4%", k3s:"每 15 分钟记录 · 21 天",
+  k4k:"每 kWh 成本", k4v:"已扣留", k4s:"缺 2 次送油的价格 · 覆盖率 78%",
+  r1c:"发现", r1:"2 号机组 · 每天 11 小时负载低于 30%",
+  r2c:"方案", r2:"储能混合 · 夜间只运行一台机组", r2t:"第 3 周",
+  inst_foot:"演示电站组合 · 示意数据",
+  p1:"监测容量", p2:"运营过 10 座 PMGD · 团队经验", p3:"EPC 与运维合同 · 团队经验",
+  p4v:"3 种油价", p4:"每个商业论证都会测试",
+  d_eb:"01 · 当前成本", d_h:"柴油价格已经上涨，而且还可能再变。",
+  d1v:"CLP 1,222/L", d1k:"2026 年 8 月全国柴油平均零售价。",
+  d1s:"来源：<a href='https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf' target='_blank' rel='noopener'>CNE 月报，2026 年 9 月</a>",
+  d2v:"+CLP 309.9/L", d2k:"自 7 月下旬至 2026 年 9 月 30 日柴油价格累计涨幅。",
+  d2s:"来源：<a href='https://www.emol.com/noticias/Economia/2026/09/30/1212882/alza-precios-combustibles-diesel-enap.html' target='_blank' rel='noopener'>Emol，2026 年 9 月 30 日</a>",
+  d3v:"0.6%", d3k:"2026 年（截至 8 月）柴油在全国电力系统发电量中的占比。可替代的柴油集中在偏远站点和备用电源。",
+  d3s:"来源：<a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA，2026 年 8 月</a>",
+  d_nh:"每个方案都在三种油价下测试",
+  d_np:"智利燃油价格稳定机制（MEPCO）在 2026 年两次调整（<a class='q-link' href='https://eldesconcierto.cl/actualidad/valor-los-combustibles-el-jueves-1-octubre-95-el-diesel-y-parafina-descongela-precios-n5462705' target='_blank' rel='noopener'>El Desconcierto</a>）。我们分别按当前价格、CLP 1,000/L 和 CLP 800/L 展示回报；只在今天的价格下才成立的方案不予提交。",
+  s_eb:"02 · 服务内容", s_h:"可直接放入招标文件的服务范围。",
+  s_p:"设计之前先计量，建成之后继续计量，全程由同一个负责方完成。",
+  c1:"发电机审计：每 15 分钟记录发动机运行时数、油耗和负荷曲线",
+  c2:"核对燃油发票、送达升数与发电量（kWh）",
+  c3:"每台机组的负荷模型与单位油耗",
+  c4:"方案比较：纯储能混合、光伏加储能、液化石油气、电缆或并网",
+  c5:"混合系统设计，保留发电机作为备用",
+  c6:"购买、融资租赁或能源即服务报价，至少两份",
+  c7:"审查系统类别（LGSE）以及 SEIA 的 3 MW 门槛",
+  c8:"安装监督与现场见证的调试测试",
+  c9:"独立的计量与核验（M&amp;V），基准线归您所有",
+  c10:"以 Eagle Eye 监测，并可按需管理合作伙伴的运维",
+  h_eb:"03 · 最初 30 天", h_h:"从第一通电话到有数据支撑的决策。",
+  st1h:"资格确认", st1p:"第 0–1 天。每天使用发电机，或每月电费超过 500 万智利比索。我们在一个工作日内致电。",
+  st2h:"计量", st2p:"第 1–3 周。每 15 分钟记录发电机数据；核对发票、升数与 kWh。",
+  st3h:"建模", st3p:"第 3 周。负荷与单位油耗；比较储能、光伏、液化石油气、电缆或电网方案。",
+  st4h:"估值", st4p:"第 4 周。按三种柴油价格计算回报；投资额依据至少两份报价。",
+  st5h:"交付", st5p:"约 30 天。2 至 3 家供应商或融资方的短名单，以及附基准线的 M&amp;V 计划。",
+  r_eb:"04 · 您将获得", r_h:"归您所有的交付成果。",
+  d1ck:"约 30 天", d1ch:"柴油评估", d1cp:"当前柴油每 kWh 成本与各混合方案的对比，所有假设一目了然。",
+  d2ck:"归您所有", d2ch:"油耗基准线", d2cp:"改造前实测的升数、运行时数与 kWh，可用于核验任何供应商。",
+  d3ck:"签约之前", d3ch:"供应商短名单", d3cp:"2 至 3 家供应商或融资方，按每 kWh 价格、期限、质保与风险进行比较。",
+  d4ck:"调试", d4ch:"见证测试记录", d4cp:"验收工程前，核验储能、逆变器与发电机控制。",
+  d5ck:"每月", d5ch:"M&amp;V 报告", d5cp:"对照基准线计算避免的升数与发动机运行时数，每个数字附覆盖率与公式。", d5cl:"查看样例报告",
+  d6ck:"每年", d6ch:"签名证据包", d6cp:"高级电子签名与时间戳（第 19.799 号法律），供您的可持续发展部门或贷款方使用。",
+  a_eb:"05 · 适用场景", a_h:"发电机天天运转的地方。",
+  a1k:"2025 年 8 月高峰期在运的海上三文鱼养殖场数量，多数离网并依赖柴油。",
+  a1s:"来源：<a href='https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf' target='_blank' rel='noopener'>Sernapesca</a> · <a href='https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile' target='_blank' rel='noopener'>We Are Aquaculture</a>",
+  a2v:"30–70%", a2k:"三文鱼养殖供应商公布的柴油节省比例，从“最高 30%”到 70%。全部为自行申报，没有一项经第三方计量。",
+  a2s:"来源：<a href='https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964' target='_blank' rel='noopener'>Salmonexpert（Saesa Innova）</a> · <a href='https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156' target='_blank' rel='noopener'>Salmonexpert（Voltify）</a>",
+  a3v:"≈2,300", a3k:"百万升：智利矿业每年消耗的柴油。其中大部分可能用于矿用卡车，固定式储能无法替代。",
+  a3s:"来源：<a href='https://www.df.cl/empresas/mineria/bofa-costos-de-produccion-del-cobre-suben-18-por-alza-del-diesel-y-minas' target='_blank' rel='noopener'>DF</a>",
+  ac1k:"水产养殖与渔业", ac1h:"混合动力饲料平台", ac1p:"无论供应商是谁，逐个平台进行改造前后计量，并在能源即服务合同中担任中立计量方。", ac1l:"查看水产养殖与渔业",
+  ac2k:"矿业", ac2h:"中型矿山、承包商与营地", ac2p:"对第三方融资的混合系统进行评估与 M&amp;V。我们核验您的能源供应商，而不是取代它。", ac2l:"查看矿业",
+  ac3k:"食品、农业与工业", ac3h:"备用发电机", ac3p:"储能优先、发电机其次：每次停电都减少发动机运行时数，同时保障关键负荷。", ac3l:"查看食品与冷链",
+  a_btn:"申请饲料平台计量",
+  e_eb:"06 · Eagle Eye 带来的改变", e_h:"<span class='dim'>同一台发电机，</span>由不卖储能的人来计量。",
+  e_p:"Eagle Eye 以只读方式读取发电机与燃油数据、BMS/EMS、逆变器、电表、气象数据和工单，从不写入任何设定值。",
+  e1a:"实际烧了多少升", e1b:"<b>现状：</b>根据送油单估算。", e1c:"<b>使用 Eagle Eye：</b>每 15 分钟核对升数、发动机运行时数与 kWh。",
+  e2a:"供应商申报的节省", e2b:"<b>现状：</b>由供应商自己按其基准线计算。", e2c:"<b>使用 Eagle Eye：</b>对照改造前的基准线计量；数据缺失时，该数字予以扣留。",
+  e3a:"发电机启动过于频繁", e3b:"<b>现状：</b>月底在燃油发票上才看出来。", e3c:"<b>使用 Eagle Eye：</b>报告中即时呈现，运维合作伙伴收到工单，凭证据才能关闭。",
+  w_eb:"07 · 由谁执行", w_h:"Quorelia 做什么、合作伙伴做什么，白纸黑字。",
+  w_q:"Quorelia 团队", w_pc:"合作伙伴", w_ph:"认证合作伙伴",
+  w1:"发电机审计、负荷模型与商业论证",
+  w2:"混合系统设计与业主工程师：技术规范、招标与合同",
+  w3:"安装监督与现场见证的调试测试",
+  w4:"节省的计量与核验，含 Eagle Eye",
+  w5:"按您的要求管理合作伙伴的运维",
+  w6:"EPC 合作伙伴或集成商：供货、安装与 SEC 申报",
+  w7:"持 SEC A 类执照的电气安装商，负责中压作业与 TE7 申报",
+  w8:"DS 44 安全管理体系，以及第 20.123 号法律规定的承包商管控",
+  w9:"经制造商认证的储能技术服务，确保质保有效",
+  w10:"融资合作伙伴：购买、融资租赁或能源即服务",
+  w_nh:"Quorelia 不做的事",
+  w_np:"Quorelia 不担任 EPC 总承包商，不销售设备或燃油，不拥有电站也不售电，不为项目提供融资。合作伙伴支付的任何佣金都会书面披露。若我们同时管理该系统的运维，相关报告将标注为“由运营方报告，可由第三方核验”。",
+  p_eb:"08 · 计费方式", p_h:"固定费用，从不按节省比例收费。",
+  pr1k:"固定价格 · 约 30 天", pr1h:"柴油评估", pr1p:"报告与基准线归您所有。若继续合作，50% 抵扣业主工程师费用。",
+  pr2k:"资本支出百分比 · 总价包干", pr2h:"业主工程师", pr2p:"在下达开工令时固定为总价：工程造价上涨，我们也不会多收。",
+  pr3k:"按 kW·年或按站点·年", pr3h:"独立 M&amp;V", pr3p:"矿山与工业站点按 kW·年计费；三文鱼养殖按站点·年计费，另加计量表安装费。",
+  p_nh:"为什么 M&amp;V 采用固定费用",
+  p_np:"按计量结果收费的核验方不是独立的。工程与设备由您支付给合作伙伴，或由融资合作伙伴出资；评估完成后 5 个工作日内提交方案。",
+  v_eb:"09 · 签约前先看成果", v_h:"今天就能打开的样例。",
+  v1k:"示意数据 · 演示电站组合", v1h:"样例报告", v1p:"日报、月报与组合报告：真实结构，每个数字附覆盖率与公式。", v1l:"查看报告",
+  v2h:"储能实时看板", v2p:"储能看板与控制中心在演示电站组合上运行。", v2l:"打开演示",
+  v3k:"指南", v3h:"智利电力法规", v3p:"CEN、SEC 与 CNE 对发电或储能主体的要求。", v3l:"阅读指南",
+  v_note:"我们尚未发布客户参考。待客户授权公开其名称与数据后再发布。",
+  q_eb:"10 · 常见问题", q_h:"关停发电机之前，业主常问的问题。",
+  fq1:"你们保证节省吗？",
+  fa1:"不保证。我们对照改造前采集的基准线计量节省。若供应商提供保证，我们用数据核验，并记录任何差异。",
+  fq2:"如果柴油价格下跌怎么办？",
+  fa2:"每个方案都按当前价格、CLP 1,000/L 和 CLP 800/L 测试。如果只在今天的价格下成立，我们会如实告知，并且不提交该方案。",
+  fq3:"我必须拆除发电机吗？",
+  fa3:"不必。在混合系统中，储能和光伏承担基础负荷，发电机保留为备用：运行时数更少，负载率更高。",
+  fq4:"需要环境评估吗？",
+  fa4:"装机超过 3 MW 的发电站须进入 SEIA 环评（<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=19300' target='_blank' rel='noopener'>第 19.300 号法律第 10 条 c 款</a>）。此外，<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a> 将系统分为孤立系统（不超过 1,500 kW）、中型系统和生产过程系统。承诺工期之前，我们会核查这两点。",
+  fq5:"我已有混合系统供应商，你们能计量吗？",
+  fa5:"可以。任何品牌我们都能计量，前提是能以只读方式访问 BMS、发电机和燃油数据。该访问权限须写入您与供应商的合同。",
+  fq6:"数据归谁所有？",
+  fa6:"归您所有。Eagle Eye 以只读方式访问数据；合同结束时，您可将数据连同证据包以开放格式导出。",
+  ct_eb:"从柴油评估开始", ct_h:"固定价格，约 30 天。无论是否聘用我们，基准线都归您所有。", ct_alt:"或联系我们："
+ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>
