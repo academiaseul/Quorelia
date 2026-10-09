@@ -56,8 +56,14 @@
 .contacto-aside .q-card p{margin-bottom:2px;}
 .contacto-cal{min-height:640px;background:var(--paper);border:1px solid var(--line);}
 .contacto-after{margin-top:22px;}
+/* La tarjeta de la pestaña activa va primero */
+.contacto-split:has(#activos[hidden]) .contacto-card-e{order:-1;}
 @media(min-width:901px) and (min-height:880px){ .contacto-aside{position:sticky;top:88px;} }
-@media(max-width:660px){ .contacto-box{padding:2px 18px 26px;} .contacto-box .q-tab{margin-right:14px;padding-right:6px;} }
+@media(max-width:660px){ .contacto-box{padding:2px 18px 26px;}
+  .contacto-box .q-tabs{display:grid;grid-template-columns:1fr 1fr;}
+  .contacto-box .q-tab{margin-right:0;padding:16px 10px 14px 0;font-size:15.5px;line-height:1.3;}
+  .contacto-box .q-tab + .q-tab{padding-left:12px;} .contacto-box .q-tab small{display:none;}
+  .contacto-hero-acts .btn{width:100%;justify-content:space-between;} .contacto-cal{min-height:560px;} }
 </style>
 </head>
 <body>
@@ -195,7 +201,7 @@
         <span class="q-eyebrow" data-i18n="hero_eb">Contacto · Evaluación de alcance fijo</span>
         <h1 class="q-h1" data-i18n="hero_h">Empiece con una evaluación.</h1>
         <p class="q-lede" data-i18n="hero_p">Alcance y precio fijos, acordados por escrito antes de empezar. El informe queda con usted, nos contrate o no, y una persona del equipo le responde dentro de un día hábil.</p>
-        <div class="q-actions">
+        <div class="q-actions contacto-hero-acts">
           <a class="btn btn--secondary btn--lg" href="#activos"><span data-i18n="hero_a">Evaluación de activos</span><span class="ar" aria-hidden="true">→</span></a>
           <a class="btn btn--secondary btn--lg" href="#energia"><span data-i18n="hero_e">Evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
         </div>
@@ -461,7 +467,7 @@
           </ul>
           <a class="q-card__link" href="/informe.html" data-i18n="as_l">Ver un informe de muestra</a>
         </div>
-        <div class="q-card">
+        <div class="q-card contacto-card-e">
           <span class="q-card__k" data-i18n="ae_k">Usuarios industriales</span>
           <h3 data-i18n="ae_h">Evaluación energética o de diésel</h3>
           <p data-i18n="ae_p">Precio fijo · unos 30 días</p>
@@ -685,6 +691,15 @@
   window.addEventListener('hashchange', function(){
     var x=(location.hash||'').slice(1); if(x==='activos'||x==='energia') abrir(x);
   });
+  /* Al llegar con #activos o #energia, mostrar también las pestañas sobre el formulario */
+  window.addEventListener('load', function(){
+    var x=(location.hash||'').slice(1), box=document.getElementById('contacto-tabs');
+    if((x!=='activos' && x!=='energia') || !box) return;
+    var top=box.getBoundingClientRect().top;
+    if(top<0 || top>window.innerHeight*0.5){
+      try{ box.scrollIntoView({block:'start', behavior:'instant'}); }catch(e){ box.scrollIntoView(true); }
+    }
+  });
 })();
 </script>
 
@@ -770,11 +785,11 @@ window.Q_PAGE = {
   nt_h:"If your case is not a fit, we will tell you.",
   nt_p:"Assessments pay off best for portfolios from about 3 MW, power bills above CLP 5 million a month or generators in daily use. If yours is smaller, we say so in our first reply and suggest the most economical path.",
   ag_eb:"03 · Calendar",
-  ag_h:"Prefer to talk first? Book 30 minutes.",
+  ag_h:"Prefer to talk? Book 30 minutes.",
   ag_p:"Pick a time and the invitation arrives with a video link. We come with Eagle Eye open on the demo fleet, on a case like yours.",
   cal_fb:"If the calendar does not load, book directly at <a class=\"q-link\" href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a>.",
-  pj_k:"CEO · replies to you", pj_p:"Operations, technical asset management and Eagle Eye.",
-  pd_k:"CFO · replies to you", pd_p:"Finance, settlements, lenders and partnerships.",
+  pj_k:"CEO · replies to you", pj1:"Operations and technical asset management", pj2:"Eagle Eye and data integration", pj3:"O&amp;M contractors and field partners",
+  pd_k:"CFO · replies to you", pd1:"Finance and the asset budget", pd2:"CEN settlements and Saldo MEP", pd3:"Lenders, funds and partners",
   ch_k:"Direct channels", ch_h:"Write to us", ch_loc:"Santiago, Chile · meetings in person or by video",
   team_exp:"Team experience from previous roles: 10 PMGD plants (≈50 MW) operated and 70 MW of EPC and O&amp;M contracts negotiated.",
   fq_eb:"04 · Questions", fq_h:"Before you send the form",
@@ -876,8 +891,8 @@ window.Q_PAGE = {
   ag_h:"想先聊聊？预约 30 分钟。",
   ag_p:"选择时间后，您会收到带视频链接的邀请。届时我们会在 Eagle Eye 的演示电站组合上，展示与您类似的场景。",
   cal_fb:"如日历未能加载，请直接访问 <a class=\"q-link\" href=\"https://cal.com/quorelia/30min\" target=\"_blank\" rel=\"noopener\">cal.com/quorelia/30min</a> 预约。",
-  pj_k:"CEO · 亲自回复", pj_p:"运营、资产技术管理与 Eagle Eye。",
-  pd_k:"CFO · 亲自回复", pd_p:"财务、结算、贷款方与合作伙伴。",
+  pj_k:"CEO · 亲自回复", pj1:"运营与资产技术管理", pj2:"Eagle Eye 与数据集成", pj3:"运维承包商与现场合作伙伴",
+  pd_k:"CFO · 亲自回复", pd1:"财务与资产预算", pd2:"CEN 结算与 Saldo MEP", pd3:"贷款方、基金与合作伙伴",
   ch_k:"直接联系", ch_h:"联系我们", ch_loc:"智利圣地亚哥 · 可面谈或视频会议",
   team_exp:"团队以往任职经验：运营 10 座 PMGD 电站（约 50 MW），谈判 70 MW 的 EPC 与运维合同。",
   fq_eb:"04 · 常见问题", fq_h:"提交表单之前",

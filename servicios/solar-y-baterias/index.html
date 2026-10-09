@@ -41,6 +41,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/quorelia.css">
+<style>
+/* Ajustes locales de .q-life (pendientes de corregir en quorelia.css):
+   el enlace va en su propia línea y, en teléfono, los pasos 1 y 4 conservan su sangría. */
+.sb-life a{display:flex;width:fit-content;}
+@media(max-width:640px){ .sb-life li:nth-child(3n+1){padding-left:22px;} }
+</style>
 </head>
 <body>
 
@@ -176,7 +182,7 @@
       <div>
         <span class="q-eyebrow" data-i18n="hero_eb">Solar + baterías · Empresas en Chile</span>
         <h1 class="q-h1" data-i18n="hero_h">Energía que cuesta menos y no se corta.</h1>
-        <p class="q-lede" data-i18n="hero_p">Paneles solares con baterías para empresas, dimensionados con su carga medida. Construyen y financian socios certificados; Quorelia es su ingeniero del dueño y mide el resultado de forma independiente durante toda la vida del sistema.</p>
+        <p class="q-lede" data-i18n="hero_p">Paneles solares con baterías para empresas, dimensionados con su carga medida. Construyen y financian socios certificados; Quorelia es su ingeniero del dueño y su medidor independiente.</p>
         <div class="q-actions">
           <a class="btn btn--primary btn--lg" href="/contacto/?interes=solar-baterias#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
           <a class="btn btn--secondary btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
@@ -199,9 +205,9 @@
     </div>
     <ul class="q-proof">
       <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
-      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 plantas PMGD operadas · experiencia del equipo</span></li>
-      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">contratos EPC y O&amp;M negociados · experiencia del equipo</span></li>
-      <li><b data-i18n="p4v">0 %</b><span class="q-proof__k" data-i18n="p4">margen sobre los equipos que especificamos</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 PMGD operados · experiencia del equipo</span></li>
+      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">en contratos EPC y O&amp;M · experiencia del equipo</span></li>
+      <li><b data-i18n="p4v">0 %</b><span class="q-proof__k" data-i18n="p4">margen sobre equipos</span></li>
     </ul>
   </div>
 </section>
@@ -262,7 +268,7 @@
 <section>
   <div class="wrap">
     <div class="q-head"><span class="q-eyebrow" data-i18n="l_eb">04 · Un solo responsable</span><h2 class="q-h2" data-i18n="l_h">De la evaluación a la operación, con quién hace cada paso.</h2></div>
-    <ol class="q-life" style="--steps:6">
+    <ol class="q-life sb-life" style="--steps:6">
       <li><span class="q-life__t" data-i18n="l1t">Evaluación energética</span><span class="q-life__d" data-i18n="l1d">Carga medida, dimensionamiento y caso de negocio. Unos 30 días.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span></li>
       <li><span class="q-life__t" data-i18n="l2t">Ingeniería del dueño</span><span class="q-life__d" data-i18n="l2d">Especificación, licitación y revisión de contratos.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span><a href="/servicios/ingenieria/" data-i18n="l2a">Ingeniería</a></li>
       <li><span class="q-life__t" data-i18n="l3t">Financiamiento</span><span class="q-life__d" data-i18n="l3d">Compra, leasing o energía como servicio, comparados en una misma base.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l3w">Socio financista</span></li>
@@ -295,16 +301,11 @@
       <div><span class="q-eyebrow" data-i18n="e_eb">06 · Cómo cambia con Eagle Eye</span><h2 class="q-h2" data-i18n="e_h"><span class="dim">El mismo sistema,</span> medido por quien no lo vendió.</h2></div>
       <p class="q-lede" data-i18n="e_p">Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, meteorología y órdenes de trabajo en modo solo lectura. Nunca escribe consignas.</p>
     </div>
-    <div class="q-table">
-      <table>
-        <thead><tr><th data-i18n="e_th1">Situación</th><th data-i18n="e_th2">Hoy</th><th data-i18n="e_th3">Con Eagle Eye</th></tr></thead>
-        <tbody>
-          <tr><td data-i18n="e1a">La batería no recortó la punta del mes</td><td data-i18n="e1b">Se descubre en la boleta, 30 días después.</td><td data-i18n="e1c">La falla de despacho aparece el mismo día y el socio O&amp;M recibe una orden de trabajo.</td></tr>
-          <tr><td data-i18n="e2a">Un inversor detenido durante un fin de semana</td><td data-i18n="e2b">Aparece en el informe mensual del instalador.</td><td data-i18n="e2c">La alarma se revisa a distancia y la energía perdida se atribuye a la red, al recurso o al equipo.</td></tr>
-          <tr><td data-i18n="e3a">El proveedor informa el ahorro</td><td data-i18n="e3b">Lo calcula contra su propia línea base.</td><td data-i18n="e3c">Se mide contra la línea base acordada; si faltan datos, la cifra se retiene y se explica.</td></tr>
-          <tr><td data-i18n="e4a">La batería pierde capacidad</td><td data-i18n="e4b">Se discute al final de la garantía.</td><td data-i18n="e4c">La capacidad entregada se mide contra la garantía y queda documentada para el reclamo.</td></tr>
-        </tbody>
-      </table>
+    <div class="q-grid q-grid--2">
+      <div class="q-card"><h3 data-i18n="e1a">La batería no recortó la punta del mes</h3><ul class="q-check q-check--no"><li data-i18n="e1b"><b>Hoy.</b> Se descubre en la boleta, 30 días después.</li></ul><ul class="q-check"><li data-i18n="e1c"><b>Con Eagle Eye.</b> La falla de despacho aparece el mismo día y el socio O&amp;M recibe una orden de trabajo.</li></ul></div>
+      <div class="q-card"><h3 data-i18n="e2a">Un inversor detenido durante un fin de semana</h3><ul class="q-check q-check--no"><li data-i18n="e2b"><b>Hoy.</b> Aparece en el informe mensual del instalador.</li></ul><ul class="q-check"><li data-i18n="e2c"><b>Con Eagle Eye.</b> La alarma se revisa a distancia y la energía perdida se atribuye a la red, al recurso o al equipo.</li></ul></div>
+      <div class="q-card"><h3 data-i18n="e3a">El proveedor informa el ahorro</h3><ul class="q-check q-check--no"><li data-i18n="e3b"><b>Hoy.</b> Lo calcula contra su propia línea base.</li></ul><ul class="q-check"><li data-i18n="e3c"><b>Con Eagle Eye.</b> Se mide contra la línea base acordada; si faltan datos, la cifra se retiene y se explica.</li></ul></div>
+      <div class="q-card"><h3 data-i18n="e4a">La batería pierde capacidad</h3><ul class="q-check q-check--no"><li data-i18n="e4b"><b>Hoy.</b> Se discute al final de la garantía.</li></ul><ul class="q-check"><li data-i18n="e4c"><b>Con Eagle Eye.</b> La capacidad entregada se mide contra la garantía y queda documentada para el reclamo.</li></ul></div>
     </div>
   </div>
 </section>
@@ -356,20 +357,15 @@
 <section class="q-sec--alt" id="pmgd">
   <div class="wrap">
     <div class="q-head q-head--split">
-      <div><span class="q-eyebrow" data-i18n="b_eb">09 · Baterías para dueños de PMGD</span><h2 class="q-h2" data-i18n="b_h">Antes de agregar baterías a un PMGD, haga el cálculo planta por planta.</h2></div>
+      <div><span class="q-eyebrow" data-i18n="b_eb">09 · Baterías para dueños de PMGD</span><h2 class="q-h2" data-i18n="b_h">Baterías en un PMGD: primero el cálculo, planta por planta.</h2></div>
       <p class="q-lede" data-i18n="b_p">Bajo el DS 1/2026, agregar almacenamiento a un PMGD existente es un cambio relevante que termina la protección del precio heredado. En las plantas con ese precio, un retrofit suele destruir valor antes de 2034.</p>
     </div>
-    <div class="q-table">
-      <table>
-        <thead><tr><th data-i18n="b_th1">Régimen de precio</th><th data-i18n="b_th2">Plantas (oct. 2025)</th><th data-i18n="b_th3">Efecto de agregar almacenamiento</th><th data-i18n="b_th4">Nuestra recomendación</th></tr></thead>
-        <tbody>
-          <tr><td data-i18n="b1a">Precio de nudo de corto plazo heredado (DS 244)</td><td data-i18n="b1b">71 %</td><td data-i18n="b1c">Renuncia a un precio protegido hasta julio de 2034</td><td data-i18n="b1d">Por defecto, no. Sólo si el modelo de la planta muestra que el arbitraje supera la protección perdida.</td></tr>
-          <tr><td data-i18n="b2a">Costo marginal</td><td data-i18n="b2b">27 %</td><td data-i18n="b2c">No hay precio heredado que perder</td><td data-i18n="b2d">Candidata: estudio de retrofit</td></tr>
-          <tr><td data-i18n="b3a">Precio estabilizado por bloques horarios (DS 88)</td><td data-i18n="b3b">18 plantas</td><td data-i18n="b3c">Ya opera en el régimen nuevo</td><td data-i18n="b3d">Candidata: estudio de retrofit</td></tr>
-        </tbody>
-      </table>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="b_k">Plantas PMGD · oct. 2025</span><span class="q-fig__v" data-i18n="b1b">71 %</span><h3 style="margin-top:14px;" data-i18n="b1a">Precio de nudo heredado (DS 244)</h3><p data-i18n="b1c">Agregar almacenamiento renuncia a un precio protegido hasta julio de 2034.</p><ul class="q-check q-check--no"><li data-i18n="b1d"><b>Por defecto, no.</b> Sólo si el modelo de la planta muestra que el arbitraje supera la protección perdida.</li></ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="b_k">Plantas PMGD · oct. 2025</span><span class="q-fig__v" data-i18n="b2b">27 %</span><h3 style="margin-top:14px;" data-i18n="b2a">Costo marginal</h3><p data-i18n="b2c">No hay un precio heredado que perder.</p><ul class="q-check"><li data-i18n="b2d"><b>Candidata</b> a un estudio de retrofit.</li></ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="b_k">Plantas PMGD · oct. 2025</span><span class="q-fig__v" data-i18n="b3b">18</span><h3 style="margin-top:14px;" data-i18n="b3a">Precio estabilizado por bloques horarios (DS 88)</h3><p data-i18n="b3c">Plantas que ya operan en el régimen nuevo.</p><ul class="q-check"><li data-i18n="b3d"><b>Candidatas</b> a un estudio de retrofit.</li></ul></div>
     </div>
-    <p class="q-small" style="margin-top:14px;" data-i18n="b_src">Fuentes: <a class="q-link" href="https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf" target="_blank" rel="noopener">CEN, informe PMGD</a> (participación por régimen) · <a class="q-link" href="https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026" target="_blank" rel="noopener">Cuatrecasas</a> (cambio relevante) · <a class="q-link" href="https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/" target="_blank" rel="noopener">JDF</a> (el CEN puede recortar la carga del almacenamiento en congestión; cada modelo lo incluye).</p>
+    <div style="margin-top:16px;"><p class="q-small" data-i18n="b_src">Fuentes: <a class="q-link" href="https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf" target="_blank" rel="noopener">CEN, informe PMGD</a> (participación por régimen) · <a class="q-link" href="https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026" target="_blank" rel="noopener">Cuatrecasas</a> (cambio relevante) · <a class="q-link" href="https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/" target="_blank" rel="noopener">JDF</a> (el CEN puede recortar la carga del almacenamiento en congestión; cada modelo lo incluye).</p></div>
     <div class="q-grid q-grid--2" style="margin-top:36px;">
       <div class="q-card">
         <h3 data-i18n="b_ch">Lo que entregamos a dueños de PMGD y baterías</h3>
@@ -402,7 +398,7 @@
       <a class="q-card" href="/demos.html"><span class="q-card__k" data-i18n="v1k">Datos ilustrativos · flota demo</span><h3 data-i18n="v2h">Tablero de baterías en vivo</h3><p data-i18n="v2p">El tablero BESS y el Control Center funcionando sobre una flota de demostración.</p><span class="q-card__link" data-i18n="v2l">Abrir la demo</span></a>
       <a class="q-card" href="/normativa-electrica-chile.html"><span class="q-card__k" data-i18n="v3k">Guía</span><h3 data-i18n="v3h">Normativa eléctrica de Chile</h3><p data-i18n="v3p">Qué exigen el CEN, la SEC y la CNE, incluidos el net billing y el DS 1/2026.</p><span class="q-card__link" data-i18n="v3l">Leer la guía</span></a>
     </div>
-    <p class="q-small" style="margin-top:22px;" data-i18n="v_note">Aún no publicamos referencias de clientes. Lo haremos cuando un cliente autorice su nombre y sus cifras.</p>
+    <div style="margin-top:22px;"><p class="q-small" data-i18n="v_note">Aún no publicamos referencias de clientes. Lo haremos cuando un cliente autorice su nombre y sus cifras.</p></div>
   </div>
 </section>
 
@@ -424,8 +420,10 @@
 <!-- ═══ 13 · Cierre ═══ -->
 <section class="q-cta">
   <div class="wrap">
-    <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación energética</span>
-    <h2 class="q-h2" data-i18n="ct_h">Precio fijo, unos 30 días. El informe queda con usted, nos contrate o no.</h2>
+    <div class="q-head" style="margin-bottom:0;">
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación energética</span>
+      <h2 class="q-h2" data-i18n="ct_h">Precio fijo, unos 30 días. El informe queda con usted, nos contrate o no.</h2>
+    </div>
     <div class="q-actions">
       <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=solar-baterias#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
       <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
@@ -497,39 +495,69 @@ window.Q_PAGE = {
  en:{
   __title:"Solar panels with batteries for businesses in Chile · Quorelia",
   __desc:"Solar and battery systems for businesses in Chile: self-consumption, peak shaving and backup sized from your measured load. Certified partners build; Quorelia measures.",
-  cr_home:"Home", cr_svc:"Services", cr_here:"Solar + batteries",
+  cr_home:"Home",
+  cr_svc:"Services",
+  cr_here:"Solar + batteries",
   hero_eb:"Solar + batteries · Businesses in Chile",
   hero_h:"Power that costs less and stays on.",
-  hero_p:"Solar panels with batteries for businesses, sized from your measured load. Certified partners build and finance the system; Quorelia is your owner’s engineer and measures the result independently for the life of the system.",
-  cta1:"Request an energy assessment", cta_cal:"Book 30 minutes",
+  hero_p:"Solar panels with batteries for businesses, sized from your measured load. Certified partners build and finance the system; Quorelia is your owner’s engineer and your independent meter.",
+  cta1:"Request an energy assessment",
+  cta_cal:"Book 30 minutes",
   inst_aria:"Sample view of an energy assessment in Eagle Eye, with illustrative data",
-  inst_t:"Eagle Eye · Assessment · Demo cold store", inst_live:"Measuring",
-  k1k:"Peak-hour maximum demand", k1v:"1,240 kW", k1s:"measured every 15 min · 12 months",
-  k2k:"Data coverage", k2v:"97.8%", k2s:"valid intervals in the period",
-  k3k:"Proposed solar", k3s:"rooftop · preliminary design",
-  k4k:"Annual saving", k4v:"Withheld", k4s:"3 of 12 bills missing · coverage 75%",
-  r1c:"Finding", r1:"Peak-hour demand charges are 38% of the bill", r1t:"wk 2",
-  r2c:"Design", r2:"500 kW / 1 MWh battery · 2 h backup for critical loads", r2t:"wk 3",
+  inst_t:"Eagle Eye · Assessment · Demo cold store",
+  inst_live:"Measuring",
+  k1k:"Peak-hour maximum demand",
+  k1v:"1,240 kW",
+  k1s:"measured every 15 min · 12 months",
+  k2k:"Data coverage",
+  k2v:"97.8%",
+  k2s:"valid intervals in the period",
+  k3k:"Proposed solar",
+  k3s:"rooftop · preliminary design",
+  k4k:"Annual saving",
+  k4v:"Withheld",
+  k4s:"3 of 12 bills missing · coverage 75%",
+  r1c:"Finding",
+  r1:"Peak-hour demand charges are 38% of the bill",
+  r1t:"wk 2",
+  r2c:"Design",
+  r2:"500 kW / 1 MWh battery · 2 h backup for critical loads",
+  r2t:"wk 3",
   inst_foot:"Demo fleet · illustrative data",
-  p1:"under monitoring", p2:"10 PMGD plants operated · team experience", p3:"EPC and O&amp;M contracts negotiated · team experience",
-  p4v:"0%", p4:"markup on the equipment we specify",
-  u_eb:"01 · What it is for", u_h:"Four uses, one method: measure first.",
+  p1:"under monitoring",
+  p2:"10 PMGD plants operated · team experience",
+  p3:"in EPC and O&amp;M contracts · team experience",
+  p4v:"0%",
+  p4:"markup on equipment",
+  u_eb:"01 · What it is for",
+  u_h:"Four uses, one method: measure first.",
   u_p:"Every system is sized from 12 bills and your meter’s 15-minute data, never from rules of thumb.",
-  u1k:"Energy cost", u1h:"Solar self-consumption", u1p:"Rooftop or ground-mounted panels that replace purchased energy during daylight hours. Under net billing, up to 300 kW per installation.",
-  u2k:"Demand charges", u2h:"Peak shaving", u2p:"A battery that discharges during peak hours to lower the maximum demand you are billed for.",
-  u3k:"Continuity", u3h:"Backup", u3p:"A battery for critical loads (cold rooms, process lines, pumping) that cuts generator hours at every outage.",
-  u4k:"Remote sites or weak grid", u4h:"Microgrids", u4p:"Solar, battery and generator coordinated as one system, grid-connected or isolated.",
-  f_eb:"02 · What the rules and the market set", f_h:"Three facts that change the design.",
+  u1k:"Energy cost",
+  u1h:"Solar self-consumption",
+  u1p:"Rooftop or ground-mounted panels that replace purchased energy during daylight hours. Under net billing, up to 300 kW per installation.",
+  u2k:"Demand charges",
+  u2h:"Peak shaving",
+  u2p:"A battery that discharges during peak hours to lower the maximum demand you are billed for.",
+  u3k:"Continuity",
+  u3h:"Backup",
+  u3p:"A battery for critical loads (cold rooms, process lines, pumping) that cuts generator hours at every outage.",
+  u4k:"Remote sites or weak grid",
+  u4h:"Microgrids",
+  u4p:"Solar, battery and generator coordinated as one system, grid-connected or isolated.",
+  f_eb:"02 · What the rules and the market set",
+  f_h:"Three facts that change the design.",
   f1k:"Net-billing cap per installation, with storage counted inside it.",
   f1s:"Source: <a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE, art. 149 bis</a>",
-  f2v:"3,116 MW", f2k:"of batteries operating on Chile’s power system in August 2026, double the December 2025 figure.",
+  f2v:"3,116 MW",
+  f2k:"of batteries operating on Chile’s power system in August 2026, double the December 2025 figure.",
   f2s:"Source: <a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA, Aug 2026</a>",
   f3k:"Lets storage earn capacity (sufficiency) payments. The 2026 parameters were still unpublished in August 2026.",
   f3s:"Sources: <a href='https://www.df.cl/empresas/energia/contraloria-toma-razon-de-modificacion-al-reglamento-de-transferencias' target='_blank' rel='noopener'>DF</a> · <a href='https://energysage.cl/analisis/potencia-suficiencia-parametros-sin-publicar/' target='_blank' rel='noopener'>EnergySage</a>",
   f_nh:"What we do not publish",
   f_np:"We do not estimate a saving without 12 bills and 15-minute data, and we do not project capacity revenue before the DS 70 parameters are published. If the data cannot support a figure, we withhold it and tell you why.",
   f_link:"Read the Chile electricity rules guide",
-  s_eb:"03 · What we do", s_h:"The scope, ready to paste into your tender.",
+  s_eb:"03 · What we do",
+  s_h:"The scope, ready to paste into your tender.",
   s_p:"Assessment, design and measurement under the same accountable manager, from the first bill to operation.",
   c1:"Load study: 12 bills and 15-minute meter data",
   c2:"Solar and battery sizing for self-consumption, peak shaving, backup or a microgrid",
@@ -541,29 +569,68 @@ window.Q_PAGE = {
   c8:"Construction oversight and a witnessed commissioning test",
   c9:"Measurement and verification (M&amp;V) of savings against an agreed baseline",
   c10:"Monitoring with Eagle Eye and, on request, management of the partner’s O&amp;M",
-  l_eb:"04 · One accountable manager", l_h:"From assessment to operation, with who does each step.",
-  l1t:"Energy assessment", l1d:"Measured load, sizing and business case. About 30 days.",
-  l2t:"Owner’s engineering", l2d:"Specification, tender and contract review.", l2a:"Engineering",
-  l3t:"Financing", l3d:"Purchase, leasing or energy-as-a-service, compared on the same basis.", l3w:"Financing partner",
-  l4t:"Construction", l4d:"Works, safety and SEC declarations, supervised by Quorelia.", l4w:"EPC partner",
-  l5t:"Commissioning", l5d:"Capacity, efficiency and protection tests before the works are accepted.", l5w:"EPC partner + Quorelia",
-  l6t:"Operation", l6d:"M&amp;V and monitoring for the life of the system; O&amp;M on request.", l6w:"Quorelia + O&amp;M partner", l6a:"O&amp;M",
-  r_eb:"05 · What you receive", r_h:"Deliverables that stay with you.",
-  d1k:"About 30 days", d1h:"Energy assessment", d1p:"Load profile, solar and battery sizing, and a business case with explicit assumptions.",
-  d2k:"Before you sign", d2h:"Offer comparison", d2p:"At least three offers on the same basis: price per kWh, term, warranties and who carries each risk.",
-  d3k:"Commissioning", d3h:"Witnessed test record", d3p:"Capacity, efficiency and protections verified before the works are accepted and payments released.",
-  d4k:"Monthly", d4h:"Performance and savings report", d4p:"Savings measured against the baseline, with the coverage and formula of every figure.", d4l:"See a sample report",
-  d5k:"Yearly", d5h:"Signed evidence pack", d5p:"Advanced electronic signature and time-stamp (Ley 19.799). Anyone can re-check it.",
-  d6k:"Ongoing", d6h:"Eagle Eye included", d6p:"Alarms triaged remotely before a crew is sent, and work orders that close only with evidence.", d6l:"About Eagle Eye",
-  e_eb:"06 · How Eagle Eye changes it", e_h:"<span class='dim'>The same system,</span> measured by someone who did not sell it.",
+  l_eb:"04 · One accountable manager",
+  l_h:"From assessment to operation, with who does each step.",
+  l1t:"Energy assessment",
+  l1d:"Measured load, sizing and business case. About 30 days.",
+  l2t:"Owner’s engineering",
+  l2d:"Specification, tender and contract review.",
+  l2a:"Engineering",
+  l3t:"Financing",
+  l3d:"Purchase, leasing or energy-as-a-service, compared on the same basis.",
+  l3w:"Financing partner",
+  l4t:"Construction",
+  l4d:"Works, safety and SEC declarations, supervised by Quorelia.",
+  l4w:"EPC partner",
+  l5t:"Commissioning",
+  l5d:"Capacity, efficiency and protection tests before the works are accepted.",
+  l5w:"EPC partner + Quorelia",
+  l6t:"Operation",
+  l6d:"M&amp;V and monitoring for the life of the system; O&amp;M on request.",
+  l6w:"Quorelia + O&amp;M partner",
+  l6a:"O&amp;M",
+  r_eb:"05 · What you receive",
+  r_h:"Deliverables that stay with you.",
+  d1k:"About 30 days",
+  d1h:"Energy assessment",
+  d1p:"Load profile, solar and battery sizing, and a business case with explicit assumptions.",
+  d2k:"Before you sign",
+  d2h:"Offer comparison",
+  d2p:"At least three offers on the same basis: price per kWh, term, warranties and who carries each risk.",
+  d3k:"Commissioning",
+  d3h:"Witnessed test record",
+  d3p:"Capacity, efficiency and protections verified before the works are accepted and payments released.",
+  d4k:"Monthly",
+  d4h:"Performance and savings report",
+  d4p:"Savings measured against the baseline, with the coverage and formula of every figure.",
+  d4l:"See a sample report",
+  d5k:"Yearly",
+  d5h:"Signed evidence pack",
+  d5p:"Advanced electronic signature and time-stamp (Ley 19.799). Anyone can re-check it.",
+  d6k:"Ongoing",
+  d6h:"Eagle Eye included",
+  d6p:"Alarms triaged remotely before a crew is sent, and work orders that close only with evidence.",
+  d6l:"About Eagle Eye",
+  e_eb:"06 · How Eagle Eye changes it",
+  e_h:"<span class='dim'>The same system,</span> measured by someone who did not sell it.",
   e_p:"Eagle Eye reads SCADA, PPC, BMS/EMS, inverters, meters, weather data and work orders, read-only. It never writes a setpoint.",
-  e_th1:"Situation", e_th2:"Today", e_th3:"With Eagle Eye",
-  e1a:"The battery did not shave the month’s peak", e1b:"You find out from the bill, 30 days later.", e1c:"The dispatch failure shows up the same day, and the O&amp;M partner receives a work order.",
-  e2a:"An inverter stopped over a weekend", e2b:"It shows up in the installer’s monthly report.", e2c:"The alarm is triaged remotely, and the lost energy is attributed to the grid, the resource or the equipment.",
-  e3a:"The supplier reports the saving", e3b:"It is computed against the supplier’s own baseline.", e3c:"It is measured against the agreed baseline; if data are missing, the figure is withheld and explained.",
-  e4a:"The battery loses capacity", e4b:"It is argued over at the end of the warranty.", e4c:"Delivered capacity is measured against the warranty and documented for the claim.",
-  w_eb:"07 · Who does the work", w_h:"What Quorelia does and what partners do, in writing.",
-  w_q:"Quorelia team", w_pc:"Partners", w_ph:"Certified partners",
+  e1a:"The battery did not shave the month’s peak",
+  e1b:"<b>Today.</b> You find out from the bill, 30 days later.",
+  e1c:"<b>With Eagle Eye.</b> The dispatch failure shows up the same day, and the O&amp;M partner receives a work order.",
+  e2a:"An inverter stopped over a weekend",
+  e2b:"<b>Today.</b> It shows up in the installer’s monthly report.",
+  e2c:"<b>With Eagle Eye.</b> The alarm is triaged remotely, and the lost energy is attributed to the grid, the resource or the equipment.",
+  e3a:"The supplier reports the saving",
+  e3b:"<b>Today.</b> The supplier computes it against its own baseline.",
+  e3c:"<b>With Eagle Eye.</b> It is measured against the agreed baseline; if data are missing, the figure is withheld and explained.",
+  e4a:"The battery loses capacity",
+  e4b:"<b>Today.</b> It is argued over at the end of the warranty.",
+  e4c:"<b>With Eagle Eye.</b> Delivered capacity is measured against the warranty and documented for the claim.",
+  w_eb:"07 · Who does the work",
+  w_h:"What Quorelia does and what partners do, in writing.",
+  w_q:"Quorelia team",
+  w_pc:"Partners",
+  w_ph:"Certified partners",
   w1:"Energy assessment, sizing and business case",
   w2:"Owner’s engineering: specification, tender and contracts",
   w3:"Construction oversight and a witnessed commissioning test",
@@ -576,32 +643,61 @@ window.Q_PAGE = {
   w10:"Financing partner: purchase, leasing or energy-as-a-service",
   w_nh:"What Quorelia does not do",
   w_np:"Quorelia is not the EPC prime contractor, does not sell equipment, does not own plants or sell power, and does not finance projects. Any partner commission is disclosed in writing. If we also manage your system’s O&amp;M, those reports are labelled “reported by the operator, verifiable by third parties”.",
-  p_eb:"08 · How it is priced", p_h:"Fees known in advance, no markup on equipment.",
-  pr1k:"Fixed price · about 30 days", pr1h:"Energy assessment", pr1p:"The report is yours. 50% is credited to the owner’s-engineer fee if you go ahead with us.",
-  pr2k:"% of capex · lump sum", pr2h:"Owner’s engineering", pr2p:"Fixed as a lump sum at notice to proceed, so we earn nothing more if the works cost more.",
-  pr3k:"Per kW-year", pr3h:"M&amp;V and monitoring", pr3p:"Savings measurement, with Eagle Eye included, for the term of your energy or financing contract.",
-  p_nh:"Works and equipment", p_np:"You pay the EPC partner directly, or a financing partner funds them. Quorelia charges only its fees, and the proposal arrives within 5 working days of the assessment.",
-  b_eb:"09 · Batteries for PMGD owners", b_h:"Before adding batteries to a PMGD, run the numbers plant by plant.",
+  p_eb:"08 · How it is priced",
+  p_h:"Fees known in advance, no markup on equipment.",
+  pr1k:"Fixed price · about 30 days",
+  pr1h:"Energy assessment",
+  pr1p:"The report is yours. 50% is credited to the owner’s-engineer fee if you go ahead with us.",
+  pr2k:"% of capex · lump sum",
+  pr2h:"Owner’s engineering",
+  pr2p:"Fixed as a lump sum at notice to proceed, so we earn nothing more if the works cost more.",
+  pr3k:"Per kW-year",
+  pr3h:"M&amp;V and monitoring",
+  pr3p:"Savings measurement, with Eagle Eye included, for the term of your energy or financing contract.",
+  p_nh:"Works and equipment",
+  p_np:"You pay the EPC partner directly, or a financing partner funds them. Quorelia charges only its fees, and the proposal arrives within 5 working days of the assessment.",
+  b_eb:"09 · Batteries for PMGD owners",
+  b_h:"Batteries on a PMGD: run the numbers first, plant by plant.",
   b_p:"Under DS 1/2026, adding storage to an existing PMGD is a significant change that ends legacy price protection. On plants with that price, a retrofit usually destroys value before 2034.",
-  b_th1:"Price regime", b_th2:"Plants (Oct 2025)", b_th3:"Effect of adding storage", b_th4:"Our advice",
-  b1a:"Legacy short-term node price (DS 244)", b1b:"71%", b1c:"Gives up a price protected until July 2034", b1d:"Default no. Only if the plant’s model shows that arbitrage beats the lost protection.",
-  b2a:"Marginal cost", b2b:"27%", b2c:"Nothing legacy to lose", b2d:"Candidate: retrofit study",
-  b3a:"Hourly-block stabilized price (DS 88)", b3b:"18 plants", b3c:"Already on the new regime", b3d:"Candidate: retrofit study",
+  b1a:"Legacy node price (DS 244)",
+  b1b:"71%",
+  b1c:"Adding storage gives up a price protected until July 2034.",
+  b1d:"<b>Default no.</b> Only if the plant’s model shows that arbitrage beats the lost protection.",
+  b2a:"Marginal cost",
+  b2b:"27%",
+  b2c:"There is no legacy price to lose.",
+  b2d:"<b>Candidate</b> for a retrofit study.",
+  b3a:"Hourly-block stabilized price (DS 88)",
+  b3b:"18",
+  b3c:"Plants already on the new regime.",
+  b3d:"<b>Candidates</b> for a retrofit study.",
   b_src:"Sources: <a class='q-link' href='https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf' target='_blank' rel='noopener'>CEN, PMGD report</a> (share by regime) · <a class='q-link' href='https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026' target='_blank' rel='noopener'>Cuatrecasas</a> (significant change) · <a class='q-link' href='https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/' target='_blank' rel='noopener'>JDF</a> (the CEN may curtail storage charging during congestion; every model includes it).",
   b_ch:"What we deliver to PMGD and battery owners",
   b_c1:"Plant-by-plant retrofit decision study, including the charging curtailment the CEN may order",
   b_c2:"Battery performance evidence: availability, delivered capacity, round-trip efficiency and state-of-charge drift against the warranty",
   b_c3:"DS 70 capacity evidence: availability, state of charge and delivered duration at peak hours",
   b_c4:"A signed evidence pack your lender can re-check",
-  b_ok:"Entry offer", b_oh:"Verified Baseline",
+  b_ok:"Entry offer",
+  b_oh:"Verified Baseline",
   b_op:"Fixed price, 30 to 45 days. The report is yours, and 50% is credited to a first-year contract signed within 90 days.",
-  b_btn:"Request a study for my PMGD", b_link:"See verification",
-  v_eb:"10 · See the work before you sign", v_h:"Samples you can open today.",
-  v1k:"Illustrative data · demo fleet", v1h:"Sample reports", v1p:"Daily, monthly and portfolio reports: the real structure, with coverage and formula per figure.", v1l:"See reports",
-  v2h:"Live battery dashboard", v2p:"The BESS dashboard and the Control Center running on a demonstration fleet.", v2l:"Open the demo",
-  v3k:"Guide", v3h:"Chile’s electricity rules", v3p:"What the CEN, the SEC and the CNE require, including net billing and DS 1/2026.", v3l:"Read the guide",
+  b_btn:"Request a study for my PMGD",
+  b_link:"See verification",
+  v_eb:"10 · See the work before you sign",
+  v_h:"Samples you can open today.",
+  v1k:"Illustrative data · demo fleet",
+  v1h:"Sample reports",
+  v1p:"Daily, monthly and portfolio reports: the real structure, with coverage and formula per figure.",
+  v1l:"See reports",
+  v2h:"Live battery dashboard",
+  v2p:"The BESS dashboard and the Control Center running on a demonstration fleet.",
+  v2l:"Open the demo",
+  v3k:"Guide",
+  v3h:"Chile’s electricity rules",
+  v3p:"What the CEN, the SEC and the CNE require, including net billing and DS 1/2026.",
+  v3l:"Read the guide",
   v_note:"We do not yet publish client references. We will when a client authorises its name and figures.",
-  q_eb:"11 · Questions", q_h:"What businesses ask before they invest.",
+  q_eb:"11 · Questions",
+  q_h:"What businesses ask before they invest.",
   fq1:"Who owns the system, and who finances it?",
   fa1:"You do, if you buy or lease it; the partner does, under an energy-as-a-service contract or a PPA. Quorelia never owns or finances the system: it compares the options on the same basis and recommends one in writing.",
   fq2:"Do you guarantee the savings?",
@@ -614,44 +710,77 @@ window.Q_PAGE = {
   fa5:"You do. Eagle Eye accesses it read-only, and you can export it with your evidence packs in open formats when the contract ends.",
   fq6:"How long does each stage take?",
   fa6:"The assessment takes about 30 days. Owner’s engineering runs until commissioning, typically 6 to 12 months. Measurement lasts as long as your energy or financing contract, usually 5 to 15 years.",
-  ct_eb:"Start with an energy assessment", ct_h:"Fixed price, about 30 days. The report is yours, whether or not you hire us.", ct_alt:"Or write to us:"
+  ct_eb:"Start with an energy assessment",
+  ct_h:"Fixed price, about 30 days. The report is yours, whether or not you hire us.",
+  ct_alt:"Or write to us:",
+  b_k:"PMGD plants · Oct 2025"
  },
  zh:{
   __title:"智利企业光伏 + 储能系统 · Quorelia",
   __desc:"面向智利企业的光伏加储能系统：自发自用、削峰与备用电源，按实测负荷设计。由认证合作伙伴建设，Quorelia 负责计量成果。",
-  cr_home:"首页", cr_svc:"服务", cr_here:"光伏 + 储能",
+  cr_home:"首页",
+  cr_svc:"服务",
+  cr_here:"光伏 + 储能",
   hero_eb:"光伏 + 储能 · 智利企业",
   hero_h:"更便宜、不断电的能源。",
-  hero_p:"面向企业的光伏加储能系统，按实测负荷设计。由认证合作伙伴建设和融资；Quorelia 担任您的业主工程师，并在系统全生命周期内独立计量成果。",
-  cta1:"申请能源评估", cta_cal:"预约 30 分钟",
+  hero_p:"面向企业的光伏加储能系统，按实测负荷设计。由认证合作伙伴建设和融资；Quorelia 是您的业主工程师和独立计量方。",
+  cta1:"申请能源评估",
+  cta_cal:"预约 30 分钟",
   inst_aria:"Eagle Eye 能源评估示例视图（示意数据）",
-  inst_t:"Eagle Eye · 能源评估 · 演示冷库", inst_live:"计量中",
-  k1k:"高峰时段最大需量", k1v:"1,240 kW", k1s:"每 15 分钟计量 · 12 个月",
-  k2k:"数据覆盖率", k2v:"97.8%", k2s:"期间内的有效区间",
-  k3k:"拟建光伏", k3s:"屋顶 · 初步设计",
-  k4k:"年度节省", k4v:"已扣留", k4s:"缺 12 张账单中的 3 张 · 覆盖率 75%",
-  r1c:"发现", r1:"高峰需量电费占账单的 38%", r1t:"第 2 周",
-  r2c:"设计", r2:"500 kW / 1 MWh 储能 · 为关键负荷提供 2 小时备用", r2t:"第 3 周",
+  inst_t:"Eagle Eye · 能源评估 · 演示冷库",
+  inst_live:"计量中",
+  k1k:"高峰时段最大需量",
+  k1v:"1,240 kW",
+  k1s:"每 15 分钟计量 · 12 个月",
+  k2k:"数据覆盖率",
+  k2v:"97.8%",
+  k2s:"期间内的有效区间",
+  k3k:"拟建光伏",
+  k3s:"屋顶 · 初步设计",
+  k4k:"年度节省",
+  k4v:"已扣留",
+  k4s:"缺 12 张账单中的 3 张 · 覆盖率 75%",
+  r1c:"发现",
+  r1:"高峰需量电费占账单的 38%",
+  r1t:"第 2 周",
+  r2c:"设计",
+  r2:"500 kW / 1 MWh 储能 · 为关键负荷提供 2 小时备用",
+  r2t:"第 3 周",
   inst_foot:"演示电站组合 · 示意数据",
-  p1:"监测容量", p2:"运营过 10 座 PMGD 电站 · 团队经验", p3:"谈判的 EPC 与运维合同 · 团队经验",
-  p4v:"0%", p4:"对我们所选设备的加价",
-  u_eb:"01 · 用途", u_h:"四种用途，一个方法：先计量。",
+  p1:"监测容量",
+  p2:"运营过 10 座 PMGD · 团队经验",
+  p3:"EPC 与运维合同 · 团队经验",
+  p4v:"0%",
+  p4:"设备加价",
+  u_eb:"01 · 用途",
+  u_h:"四种用途，一个方法：先计量。",
   u_p:"每个系统都依据 12 个月的电费账单和电表每 15 分钟的数据来设计，从不凭经验估算。",
-  u1k:"能源成本", u1h:"光伏自发自用", u1p:"屋顶或地面光伏，在日照时段替代外购电量。在净计费（net billing）制度下，每个装置上限为 300 kW。",
-  u2k:"需量电费", u2h:"削峰", u2p:"储能在高峰时段放电，降低计费的最大需量。",
-  u3k:"供电连续性", u3h:"备用电源", u3p:"为关键负荷（冷库、生产线、泵站）配置储能，每次停电时减少发电机运行时数。",
-  u4k:"偏远站点或弱电网", u4h:"微电网", u4p:"光伏、储能与发电机协调为一个系统，可并网或离网运行。",
-  f_eb:"02 · 法规与市场的约束", f_h:"改变设计的三个事实。",
+  u1k:"能源成本",
+  u1h:"光伏自发自用",
+  u1p:"屋顶或地面光伏，在日照时段替代外购电量。在净计费（net billing）制度下，每个装置上限为 300 kW。",
+  u2k:"需量电费",
+  u2h:"削峰",
+  u2p:"储能在高峰时段放电，降低计费的最大需量。",
+  u3k:"供电连续性",
+  u3h:"备用电源",
+  u3p:"为关键负荷（冷库、生产线、泵站）配置储能，每次停电时减少发电机运行时数。",
+  u4k:"偏远站点或弱电网",
+  u4h:"微电网",
+  u4p:"光伏、储能与发电机协调为一个系统，可并网或离网运行。",
+  f_eb:"02 · 法规与市场的约束",
+  f_h:"改变设计的三个事实。",
   f1k:"每个装置的净计费上限，储能容量计入其中。",
   f1s:"来源：<a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE 第 149 bis 条</a>",
-  f2v:"3,116 MW", f2k:"2026 年 8 月智利电力系统在运储能容量，是 2025 年 12 月的两倍。",
+  f2v:"3,116 MW",
+  f2k:"2026 年 8 月智利电力系统在运储能容量，是 2025 年 12 月的两倍。",
   f2s:"来源：<a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA，2026 年 8 月</a>",
   f3k:"允许储能获得容量（充裕度）补偿。截至 2026 年 8 月，2026 年参数仍未公布。",
   f3s:"来源：<a href='https://www.df.cl/empresas/energia/contraloria-toma-razon-de-modificacion-al-reglamento-de-transferencias' target='_blank' rel='noopener'>DF</a> · <a href='https://energysage.cl/analisis/potencia-suficiencia-parametros-sin-publicar/' target='_blank' rel='noopener'>EnergySage</a>",
   f_nh:"我们不发布的数字",
   f_np:"没有 12 个月账单和 15 分钟数据，我们不估算节省；DS 70 参数公布之前，我们不预测容量收入。数据不足以支撑的数字，我们予以扣留并说明原因。",
   f_link:"阅读智利电力法规指南",
-  s_eb:"03 · 服务内容", s_h:"可直接放入招标文件的服务范围。",
+  s_eb:"03 · 服务内容",
+  s_h:"可直接放入招标文件的服务范围。",
   s_p:"评估、设计与计量由同一个负责方完成，从第一张账单直到运营。",
   c1:"负荷研究：12 个月账单和 15 分钟电表数据",
   c2:"为自发自用、削峰、备用或微电网确定光伏与储能规模",
@@ -663,29 +792,68 @@ window.Q_PAGE = {
   c8:"施工监督与现场见证的调试测试",
   c9:"依据约定基准线对节省进行计量与核验（M&amp;V）",
   c10:"以 Eagle Eye 监测，并可按需管理合作伙伴的运维",
-  l_eb:"04 · 一个负责方", l_h:"从评估到运营，每一步由谁负责一目了然。",
-  l1t:"能源评估", l1d:"实测负荷、系统规模与商业论证。约 30 天。",
-  l2t:"业主工程师", l2d:"技术规范、招标与合同审查。", l2a:"工程",
-  l3t:"融资", l3d:"购买、融资租赁或能源即服务，在同一基础上比较。", l3w:"融资合作伙伴",
-  l4t:"建设", l4d:"施工、安全与 SEC 申报，由 Quorelia 监督。", l4w:"EPC 合作伙伴",
-  l5t:"调试", l5d:"验收前进行容量、效率与保护测试。", l5w:"EPC 合作伙伴 + Quorelia",
-  l6t:"运营", l6d:"系统全生命周期的 M&amp;V 与监测；运维可按需提供。", l6w:"Quorelia + 运维合作伙伴", l6a:"运维",
-  r_eb:"05 · 您将获得", r_h:"归您所有的交付成果。",
-  d1k:"约 30 天", d1h:"能源评估", d1p:"负荷曲线、光伏与储能规模，以及假设明确的商业论证。",
-  d2k:"签约之前", d2h:"报价比较表", d2p:"至少三份报价在同一基础上比较：每 kWh 价格、期限、质保以及各项风险由谁承担。",
-  d3k:"调试", d3h:"见证测试记录", d3p:"在验收工程、释放付款之前，核验容量、效率与保护。",
-  d4k:"每月", d4h:"性能与节省报告", d4p:"对照基准线计量节省，每个数字附覆盖率与公式。", d4l:"查看样例报告",
-  d5k:"每年", d5h:"签名证据包", d5p:"高级电子签名与时间戳（第 19.799 号法律）。任何人都可复核。",
-  d6k:"持续", d6h:"含 Eagle Eye", d6p:"派人到场之前先远程研判告警；工单只有在证据齐全时才关闭。", d6l:"了解 Eagle Eye",
-  e_eb:"06 · Eagle Eye 带来的改变", e_h:"<span class='dim'>同一个系统，</span>由不卖设备的人来计量。",
+  l_eb:"04 · 一个负责方",
+  l_h:"从评估到运营，每一步由谁负责一目了然。",
+  l1t:"能源评估",
+  l1d:"实测负荷、系统规模与商业论证。约 30 天。",
+  l2t:"业主工程师",
+  l2d:"技术规范、招标与合同审查。",
+  l2a:"工程",
+  l3t:"融资",
+  l3d:"购买、融资租赁或能源即服务，在同一基础上比较。",
+  l3w:"融资合作伙伴",
+  l4t:"建设",
+  l4d:"施工、安全与 SEC 申报，由 Quorelia 监督。",
+  l4w:"EPC 合作伙伴",
+  l5t:"调试",
+  l5d:"验收前进行容量、效率与保护测试。",
+  l5w:"EPC 合作伙伴 + Quorelia",
+  l6t:"运营",
+  l6d:"系统全生命周期的 M&amp;V 与监测；运维可按需提供。",
+  l6w:"Quorelia + 运维合作伙伴",
+  l6a:"运维",
+  r_eb:"05 · 您将获得",
+  r_h:"归您所有的交付成果。",
+  d1k:"约 30 天",
+  d1h:"能源评估",
+  d1p:"负荷曲线、光伏与储能规模，以及假设明确的商业论证。",
+  d2k:"签约之前",
+  d2h:"报价比较表",
+  d2p:"至少三份报价在同一基础上比较：每 kWh 价格、期限、质保以及各项风险由谁承担。",
+  d3k:"调试",
+  d3h:"见证测试记录",
+  d3p:"在验收工程、释放付款之前，核验容量、效率与保护。",
+  d4k:"每月",
+  d4h:"性能与节省报告",
+  d4p:"对照基准线计量节省，每个数字附覆盖率与公式。",
+  d4l:"查看样例报告",
+  d5k:"每年",
+  d5h:"签名证据包",
+  d5p:"高级电子签名与时间戳（第 19.799 号法律）。任何人都可复核。",
+  d6k:"持续",
+  d6h:"含 Eagle Eye",
+  d6p:"派人到场之前先远程研判告警；工单只有在证据齐全时才关闭。",
+  d6l:"了解 Eagle Eye",
+  e_eb:"06 · Eagle Eye 带来的改变",
+  e_h:"<span class='dim'>同一个系统，</span>由不卖设备的人来计量。",
   e_p:"Eagle Eye 以只读方式读取 SCADA、PPC、BMS/EMS、逆变器、电表、气象数据和工单，从不写入任何设定值。",
-  e_th1:"情形", e_th2:"现状", e_th3:"使用 Eagle Eye",
-  e1a:"储能没有削减当月峰值", e1b:"30 天后从电费账单上才发现。", e1c:"调度故障当天即可发现，运维合作伙伴随即收到工单。",
-  e2a:"逆变器在周末停机", e2b:"出现在安装商的月度报告里。", e2c:"远程研判告警，并将损失电量归因于电网、资源或设备。",
-  e3a:"供应商报告节省", e3b:"按供应商自己的基准线计算。", e3c:"对照约定基准线计量；数据缺失时，该数字予以扣留并说明原因。",
-  e4a:"储能容量衰减", e4b:"到质保期末才开始争议。", e4c:"对照质保计量实际放电容量，并为索赔留存记录。",
-  w_eb:"07 · 由谁执行", w_h:"Quorelia 做什么、合作伙伴做什么，白纸黑字。",
-  w_q:"Quorelia 团队", w_pc:"合作伙伴", w_ph:"认证合作伙伴",
+  e1a:"储能没有削减当月峰值",
+  e1b:"<b>现状：</b>30 天后从电费账单上才发现。",
+  e1c:"<b>使用 Eagle Eye：</b>调度故障当天即可发现，运维合作伙伴随即收到工单。",
+  e2a:"逆变器在周末停机",
+  e2b:"<b>现状：</b>出现在安装商的月度报告里。",
+  e2c:"<b>使用 Eagle Eye：</b>远程研判告警，并将损失电量归因于电网、资源或设备。",
+  e3a:"供应商报告节省",
+  e3b:"<b>现状：</b>供应商按自己的基准线计算。",
+  e3c:"<b>使用 Eagle Eye：</b>对照约定基准线计量；数据缺失时，该数字予以扣留并说明原因。",
+  e4a:"储能容量衰减",
+  e4b:"<b>现状：</b>到质保期末才开始争议。",
+  e4c:"<b>使用 Eagle Eye：</b>对照质保计量实际放电容量，并为索赔留存记录。",
+  w_eb:"07 · 由谁执行",
+  w_h:"Quorelia 做什么、合作伙伴做什么，白纸黑字。",
+  w_q:"Quorelia 团队",
+  w_pc:"合作伙伴",
+  w_ph:"认证合作伙伴",
   w1:"能源评估、系统规模与商业论证",
   w2:"业主工程师：技术规范、招标与合同",
   w3:"施工监督与现场见证的调试测试",
@@ -698,32 +866,61 @@ window.Q_PAGE = {
   w10:"融资合作伙伴：购买、融资租赁或能源即服务",
   w_nh:"Quorelia 不做的事",
   w_np:"Quorelia 不担任 EPC 总承包商，不销售设备，不拥有电站也不售电，不为项目提供融资。合作伙伴支付的任何佣金都会书面披露。若我们同时管理您系统的运维，相关报告将标注为“由运营方报告，可由第三方核验”。",
-  p_eb:"08 · 计费方式", p_h:"费用事先明确，不对设备加价。",
-  pr1k:"固定价格 · 约 30 天", pr1h:"能源评估", pr1p:"报告归您所有。若继续合作，50% 抵扣业主工程师费用。",
-  pr2k:"资本支出百分比 · 总价包干", pr2h:"业主工程师", pr2p:"在下达开工令时固定为总价：工程造价上涨，我们也不会多收。",
-  pr3k:"按 kW·年", pr3h:"M&amp;V 与监测", pr3p:"节省计量，含 Eagle Eye，期限与您的能源或融资合同一致。",
-  p_nh:"工程与设备", p_np:"由您直接支付给 EPC 合作伙伴，或由融资合作伙伴出资。Quorelia 只收取服务费，评估完成后 5 个工作日内提交方案。",
-  b_eb:"09 · 面向 PMGD 业主的储能", b_h:"为 PMGD 加装储能之前，逐个电站算清账。",
+  p_eb:"08 · 计费方式",
+  p_h:"费用事先明确，不对设备加价。",
+  pr1k:"固定价格 · 约 30 天",
+  pr1h:"能源评估",
+  pr1p:"报告归您所有。若继续合作，50% 抵扣业主工程师费用。",
+  pr2k:"资本支出百分比 · 总价包干",
+  pr2h:"业主工程师",
+  pr2p:"在下达开工令时固定为总价：工程造价上涨，我们也不会多收。",
+  pr3k:"按 kW·年",
+  pr3h:"M&amp;V 与监测",
+  pr3p:"节省计量，含 Eagle Eye，期限与您的能源或融资合同一致。",
+  p_nh:"工程与设备",
+  p_np:"由您直接支付给 EPC 合作伙伴，或由融资合作伙伴出资。Quorelia 只收取服务费，评估完成后 5 个工作日内提交方案。",
+  b_eb:"09 · 面向 PMGD 业主的储能",
+  b_h:"PMGD 加装储能：先逐站算清账。",
   b_p:"根据 DS 1/2026，为现有 PMGD 加装储能属于重大变更，将终止原有电价保护。对于执行原有电价的电站，改造通常会在 2034 年前损害价值。",
-  b_th1:"电价制度", b_th2:"电站占比（2025 年 10 月）", b_th3:"加装储能的影响", b_th4:"我们的建议",
-  b1a:"原有短期节点电价（DS 244）", b1b:"71%", b1c:"放弃受保护至 2034 年 7 月的电价", b1d:"默认不建议。仅当电站模型显示套利收益高于失去的保护时才考虑。",
-  b2a:"边际成本", b2b:"27%", b2c:"没有可失去的原有电价", b2d:"可考虑：开展改造研究",
-  b3a:"分时段稳定电价（DS 88）", b3b:"18 座电站", b3c:"已执行新制度", b3d:"可考虑：开展改造研究",
+  b1a:"原有节点电价（DS 244）",
+  b1b:"71%",
+  b1c:"加装储能将放弃受保护至 2034 年 7 月的电价。",
+  b1d:"<b>默认不建议。</b>仅当电站模型显示套利收益高于失去的保护时才考虑。",
+  b2a:"边际成本",
+  b2b:"27%",
+  b2c:"没有可失去的原有电价。",
+  b2d:"<b>可考虑</b>开展改造研究。",
+  b3a:"分时段稳定电价（DS 88）",
+  b3b:"18",
+  b3c:"已执行新制度的电站。",
+  b3d:"<b>可考虑</b>开展改造研究。",
   b_src:"来源：<a class='q-link' href='https://www.coordinador.cl/wp-content/uploads/2026/01/20260108-UMC-Informe-PMGD-dic25.pdf' target='_blank' rel='noopener'>CEN PMGD 报告</a>（按制度划分的占比）· <a class='q-link' href='https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026' target='_blank' rel='noopener'>Cuatrecasas</a>（重大变更）· <a class='q-link' href='https://jdf.cl/en/toma-de-razon-del-decreto-supremo-n1-que-modifica-el-reglamento-pmgd-ds-n88/' target='_blank' rel='noopener'>JDF</a>（拥堵时 CEN 可限制储能充电；每个模型均已计入）。",
   b_ch:"我们为 PMGD 与储能业主提供",
   b_c1:"逐站改造决策研究，计入 CEN 可能下令的充电限制",
   b_c2:"储能性能证据：可用率、实际放电容量、往返效率及荷电状态漂移，均对照质保",
   b_c3:"DS 70 容量证据：高峰时段的可用率、荷电状态与实际持续时长",
   b_c4:"贷款方可以复核的签名证据包",
-  b_ok:"入门服务", b_oh:"核验基准线",
+  b_ok:"入门服务",
+  b_oh:"核验基准线",
   b_op:"固定价格，30 至 45 天。报告归您所有；若 90 天内签订首年合同，50% 予以抵扣。",
-  b_btn:"为我的 PMGD 申请研究", b_link:"查看独立核验",
-  v_eb:"10 · 签约前先看成果", v_h:"今天就能打开的样例。",
-  v1k:"示意数据 · 演示电站组合", v1h:"样例报告", v1p:"日报、月报与组合报告：真实结构，每个数字附覆盖率与公式。", v1l:"查看报告",
-  v2h:"储能实时看板", v2p:"储能看板与控制中心在演示电站组合上运行。", v2l:"打开演示",
-  v3k:"指南", v3h:"智利电力法规", v3p:"CEN、SEC 与 CNE 的要求，包括净计费与 DS 1/2026。", v3l:"阅读指南",
+  b_btn:"为我的 PMGD 申请研究",
+  b_link:"查看独立核验",
+  v_eb:"10 · 签约前先看成果",
+  v_h:"今天就能打开的样例。",
+  v1k:"示意数据 · 演示电站组合",
+  v1h:"样例报告",
+  v1p:"日报、月报与组合报告：真实结构，每个数字附覆盖率与公式。",
+  v1l:"查看报告",
+  v2h:"储能实时看板",
+  v2p:"储能看板与控制中心在演示电站组合上运行。",
+  v2l:"打开演示",
+  v3k:"指南",
+  v3h:"智利电力法规",
+  v3p:"CEN、SEC 与 CNE 的要求，包括净计费与 DS 1/2026。",
+  v3l:"阅读指南",
   v_note:"我们尚未发布客户参考。待客户授权公开其名称与数据后再发布。",
-  q_eb:"11 · 常见问题", q_h:"企业在投资前常问的问题。",
+  q_eb:"11 · 常见问题",
+  q_h:"企业在投资前常问的问题。",
   fq1:"系统归谁所有，由谁融资？",
   fa1:"若购买或融资租赁，系统归您所有；若采用能源即服务或 PPA，则归合作伙伴所有。Quorelia 从不拥有系统，也不为其融资：我们在同一基础上比较各方案，并书面推荐其一。",
   fq2:"你们保证节省吗？",
@@ -736,7 +933,10 @@ window.Q_PAGE = {
   fa5:"归您所有。Eagle Eye 以只读方式访问数据；合同结束时，您可将数据连同证据包以开放格式导出。",
   fq6:"每个阶段需要多长时间？",
   fa6:"评估约 30 天。业主工程师服务持续到调试完成，通常 6 至 12 个月。计量期限与您的能源或融资合同一致，通常为 5 至 15 年。",
-  ct_eb:"从能源评估开始", ct_h:"固定价格，约 30 天。无论是否聘用我们，报告都归您所有。", ct_alt:"或联系我们："
+  ct_eb:"从能源评估开始",
+  ct_h:"固定价格，约 30 天。无论是否聘用我们，报告都归您所有。",
+  ct_alt:"或联系我们：",
+  b_k:"PMGD 电站 · 2025 年 10 月"
  }
 };
 </script>

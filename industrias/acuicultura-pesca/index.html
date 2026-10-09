@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Ahorro de diésel en pontones: medición independiente · Quorelia</title>
+<meta name="description" content="Medición y verificación independiente del ahorro de diésel en pontones híbridos de salmonicultura: línea base, medidor neutral en contratos y Alcance 1.">
+<link rel="canonical" href="https://www.quorelia.org/industrias/acuicultura-pesca/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/industrias/acuicultura-pesca/">
+<meta property="og:title" content="Ahorro de diésel en pontones, medido y verificado · Quorelia">
+<meta property="og:description" content="Medición neutral del ahorro de diésel en pontones híbridos, con el mismo método para cualquier proveedor. No vendemos equipos. Piloto en 3 a 5 pontones.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Medición y verificación del ahorro de diésel en pontones","serviceType":"Energy measurement and verification","areaServed":"CL",
+  "audience":{"@type":"BusinessAudience","name":"Productores acuícolas, salmonicultores y proveedores de pontones híbridos"},
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/industrias/acuicultura-pesca/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Acuicultura y pesca","item":"https://www.quorelia.org/industrias/acuicultura-pesca/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Cuánto cuesta un piloto de medición?","acceptedAnswer":{"@type":"Answer","text":"Una puesta en marcha a precio fijo por centro y una tarifa anual por centro, con un mínimo de 3 centros. Cotizamos con la lista de pontones y los datos que ya existen. Nunca cobramos un porcentaje del ahorro."}},
+  {"@type":"Question","name":"¿Necesitan acceso al sistema de mi proveedor?","acceptedAnswer":{"@type":"Answer","text":"Leemos en modo de solo lectura el BMS/EMS, el controlador de los generadores y los caudalímetros; nunca escribimos consignas. Si el proveedor no entrega acceso, un socio instala medidores independientes. El acceso a los datos queda por escrito en el contrato."}},
+  {"@type":"Question","name":"¿Qué pasa si el centro tiene mala conectividad?","acceptedAnswer":{"@type":"Answer","text":"Usamos el enlace que ya tenga el centro. Donde no alcanza, los datos se guardan en un registrador local y se descargan en la visita. El informe marca el período sin datos en línea y no publica cifras que esos datos no sostengan."}},
+  {"@type":"Question","name":"¿Ustedes venden pontones híbridos, baterías o paneles?","acceptedAnswer":{"@type":"Answer","text":"No. No vendemos equipos, energía ni financiamiento. Por eso podemos medir a cualquier proveedor con el mismo método."}},
+  {"@type":"Question","name":"¿De quién son los datos y los informes?","acceptedAnswer":{"@type":"Answer","text":"Del productor. Quorelia trata los datos sólo bajo contrato y según sus instrucciones. Los paquetes de evidencia llevan firma electrónica avanzada y sello de tiempo (Ley 19.799), y cualquiera puede comprobarlos sin depender de nosotros."}},
+  {"@type":"Question","name":"¿Cuánto demora?","acceptedAnswer":{"@type":"Answer","text":"La evaluación de diésel toma unos 30 días. En un piloto, el primer informe mensual sale el mes siguiente a la conexión de los datos de cada pontón."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+<style>
+/* Página: acuicultura-pesca · sólo cifras en tablas */
+.acuicultura-num{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.acuicultura-tbl td:first-child,.acuicultura-tbl td:nth-child(2){white-space:nowrap;}
+.acuicultura-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas" data-i18n-aria="cr_aria"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><span data-i18n="cr_ind">Industrias</span><span aria-hidden="true">/</span><span data-i18n="cr_here">Acuicultura y pesca</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Acuicultura y pesca · Medición y verificación</span>
+        <h1 class="q-h1" data-i18n="hero_h">Ahorro de diésel en pontones, medido y verificado</h1>
+        <p class="q-lede" data-i18n="hero_p">Chile llegó a 386 centros marinos de salmón activos en agosto de 2025, la mayoría fuera de la red y a diésel. Los proveedores de sistemas híbridos declaran ahorros de 30&nbsp;% a 70&nbsp;%. Quorelia mide el suyo de forma independiente, con el mismo método para cualquier proveedor.</p>
+        <p class="q-small" style="margin-top:12px;" data-i18n="hero_src">Fuentes: <a href="https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf" target="_blank" rel="noopener">Sernapesca, 2025</a> · <a href="https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile" target="_blank" rel="noopener">We Are Aquaculture</a> · <a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">Salmonexpert</a></p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=mv-acuicultura#energia"><span data-i18n="cta1">Solicitar medición independiente</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta2">Agendar 30 minutos</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye con datos ilustrativos de medición en un pontón híbrido" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_bar">Eagle Eye · Pontón demo P-1</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Diésel del mes</span><span class="q-kpi__v" data-i18n="k1v">8.090 L</span><span class="q-kpi__s" data-i18n="k1s">línea base ajustada 12.480 L · cobertura 96&nbsp;%</span><span class="q-kpi__bar"><i style="width:96%"></i></span></div>
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k2k">Ahorro medido</span><span class="q-kpi__v" data-i18n="k2v">−35&nbsp;%</span><span class="q-kpi__s" data-i18n="k2s">normalizado por energía entregada</span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k3k">Horas de generador</span><span class="q-kpi__v">489 h</span><span class="q-kpi__s" data-i18n="k3s">línea base 712 h en el mismo período</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k4k">Ahorro pontón P-5</span><span class="q-kpi__v" data-i18n="k4v">Retenida</span><span class="q-kpi__s" data-i18n="k4s">caudalímetro sin datos 9 días · cobertura 70&nbsp;%</span><span class="q-kpi__bar"><i style="width:70%"></i></span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Riesgo</span><span data-i18n="r1">Generador 2 · 14 arranques por SoC bajo de la batería</span><span class="t">05:10</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r2c">Conciliada</span><span data-i18n="r2">Factura de combustible frente a caudalímetro · diferencia 0,8&nbsp;%</span><span class="t" data-i18n="r2t">ayer</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Flota demo · datos ilustrativos</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b data-i18n="pb1">Neutral</b><span class="q-proof__k" data-i18n="p1">no vendemos equipos</span></li>
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p2">bajo monitoreo</span></li>
+      <li><b data-i18n="pb3">Tarifa fija</b><span class="q-proof__k" data-i18n="p3">nunca un % del ahorro medido</span></li>
+      <li><b>Ley 19.799</b><span class="q-proof__k" data-i18n="p4">firma electrónica avanzada y sello de tiempo</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · El problema en cifras ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · El problema en cifras</span><h2 class="q-h2" data-i18n="s1_h"><span class="dim">Los ahorros se declaran.</span> Nadie neutral los mide.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">Tres cifras públicas, y por qué un contrato de ahorro necesita una medición que el productor y el proveedor acepten.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f1v">≈150.000 L</span><span class="q-fig__k" data-i18n="f1k">de diésel al año por pontón antes de la hibridación. Estimación de Quorelia a partir de cifras publicadas por AquaChile.</span><span class="q-fig__src" data-i18n="f1src">Fuente: <a href="https://g5noticias.cl/2026/09/29/del-diesel-a-las-baterias-la-transformacion-energetica-que-avanza-en-los-centros-de-cultivo-del-sur-de-chile/" target="_blank" rel="noopener">G5 Noticias, sep. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f2v">CLP 1.222/L</span><span class="q-fig__k" data-i18n="f2k">precio medio nacional del diésel en agosto de 2026, cerca de 22&nbsp;% más que un año antes en Puerto Montt.</span><span class="q-fig__src" data-i18n="f2src">Fuente: <a href="https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf" target="_blank" rel="noopener">CNE, reporte mensual sep. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f3v">30–70&nbsp;%</span><span class="q-fig__k" data-i18n="f3k">de ahorro de diésel declarado por actores del sector. En las fuentes que revisamos, todas las cifras son autodeclaradas.</span><span class="q-fig__src" data-i18n="f3src">Fuentes: Saesa Innova y Voltify, vía Salmonexpert (<a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">1</a>, <a href="https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156" target="_blank" rel="noopener">2</a>)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Tres casos de uso ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s2_eb">02 · Tres casos de uso</span><h2 class="q-h2" data-i18n="s2_h">Medición neutral donde hoy cada proveedor se mide a sí mismo.</h2></div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u1k">Caso 01 · Flota híbrida</span>
+        <h3 data-i18n="u1h">M&amp;V antes y después de pontones híbridos, entre proveedores</h3>
+        <ul class="q-arrow">
+          <li data-i18n="u1a"><b>Problema.</b> Cada proveedor muestra su ahorro en su propio tablero y con su propio método. Comparar la flota es imposible.</li>
+          <li data-i18n="u1b"><b>Qué hace Quorelia.</b> Fija la línea base antes de la conversión (litros, horas de generador, perfil de carga) y mide después con el mismo método en cada pontón.</li>
+          <li data-i18n="u1c"><b>Qué recibe.</b> Ahorro por pontón con su cobertura y su fórmula, comparable entre proveedores, y un paquete de evidencia firmado.</li>
+        </ul>
+        <a class="q-card__link" href="/servicios/verificacion/" data-i18n="u1l">Verificación</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u2k">Caso 02 · Contratos</span>
+        <h3 data-i18n="u2h">Medidor neutral en contratos de energía como servicio y PPA</h3>
+        <ul class="q-arrow">
+          <li data-i18n="u2a"><b>Problema.</b> Hay contratos de energía como servicio <a class="q-link" href="https://www.salmonesaustral.cl/trusal-y-alotta-energy-sellan-acuerdo-de-15-anos-para-incorporar-energia-solar-flotante-en-salmonicultura/" target="_blank" rel="noopener">a 15 años</a> que se facturan por kWh. Si sólo mide el proveedor, el productor no puede revisar la factura.</li>
+          <li data-i18n="u2b"><b>Qué hace Quorelia.</b> Acuerda con ambas partes el protocolo de medición, instala medidores independientes a través de un socio y concilia kWh, litros y horas.</li>
+          <li data-i18n="u2c"><b>Qué recibe.</b> Un registro mensual de entregas con firma electrónica avanzada y sello de tiempo, que productor y proveedor pueden comprobar.</li>
+        </ul>
+        <a class="q-card__link" href="/servicios/reemplazo-diesel/" data-i18n="u2l">Reemplazo de diésel</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u3k">Caso 03 · Reporte</span>
+        <h3 data-i18n="u3h">Diésel y Alcance 1 de toda la flota</h3>
+        <ul class="q-arrow">
+          <li data-i18n="u3a"><b>Problema.</b> Los socios del <a class="q-link" href="https://www.aqua.cl/centros-de-cultivo-sin-diesel-la-transicion-hacia-nuevas-energias/" target="_blank" rel="noopener">Consejo del Salmón</a> miden Alcance 1 y 2, pero los litros están repartidos entre facturas, bitácoras y caudalímetros.</li>
+          <li data-i18n="u3b"><b>Qué hace Quorelia.</b> Concilia facturas, caudalímetros y horas de generador por centro, y calcula las emisiones con un factor declarado.</li>
+          <li data-i18n="u3c"><b>Qué recibe.</b> Un inventario mensual de diésel y de Alcance 1 por centro, con cada brecha marcada y explicada.</li>
+        </ul>
+        <a class="q-card__link" href="/informe.html" data-i18n="u3l">Ver un informe de muestra</a>
+      </div>
+    </div>
+    <div class="note" style="margin-top:32px;max-width:880px;"><p data-i18n="route"><b>¿Planta de proceso, de harina de pescado o frigorífico conectado a la red?</b> Su caso está en <a class="q-link" href="/industrias/alimentos-cadena-de-frio/">Alimentos y cadena de frío</a>.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Cómo funciona ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s3_eb">03 · Cómo funciona</span><h2 class="q-h2" data-i18n="s3_h">Un piloto en 3 a 5 pontones, con el mismo método para todos.</h2></div>
+    <ol class="q-steps" style="--steps:4">
+      <li><h3 data-i18n="st1h">Evaluación</h3><p data-i18n="st1p">Revisamos qué datos existen por centro: BMS/EMS, controlador de generadores, caudalímetros, facturas y el contrato con el proveedor.</p></li>
+      <li><h3 data-i18n="st2h">Línea base</h3><p data-i18n="st2p">Historial de facturas y horas, ajustado con registro de carga a 15 minutos antes de la conversión, o con datos históricos.</p></li>
+      <li><h3 data-i18n="st3h">Plan con socios</h3><p data-i18n="st3p">Un socio local instala medidores y enlaces donde faltan. El acceso a los datos del proveedor queda por escrito.</p></li>
+      <li><h3 data-i18n="st4h">Verificar</h3><p data-i18n="st4p">Informe mensual por pontón y paquete de evidencia firmado, comparable entre proveedores.</p></li>
+    </ol>
+    <div class="note" style="margin-top:44px;max-width:880px;"><p data-i18n="how_role"><b>Quién hace qué.</b> Quorelia define el protocolo, analiza, informa y firma. Socios certificados instalan medidores, enlaces de datos y hacen cualquier trabajo eléctrico a bordo, bajo gestión de Quorelia.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Entregable de muestra ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s4_eb">04 · Entregable de muestra</span><h2 class="q-h2" data-i18n="s4_h">Ahorro por pontón, con su cobertura.</h2></div>
+      <p class="q-lede" data-i18n="s4_p">Extracto de un informe mensual de flota. El ahorro se normaliza por la energía entregada; si faltan datos, la cifra se retiene y se explica.</p>
+    </div>
+    <div>
+      <p class="acuicultura-cap" data-i18n="tb_cap">Informe M&amp;V · septiembre 2026 · 5 pontones · datos ilustrativos · flota demo</p>
+      <div class="q-table">
+        <table class="acuicultura-tbl">
+          <thead>
+            <tr><th data-i18n="th1">Pontón</th><th data-i18n="th2">Sistema</th><th data-i18n="th3">Línea base ajustada (L)</th><th data-i18n="th4">Medido (L)</th><th data-i18n="th5">Ahorro (%)</th><th data-i18n="th6">Cobertura (%)</th><th data-i18n="th7">Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>P-1</b></td><td data-i18n="sy_a">Baterías · proveedor A</td><td class="acuicultura-num" data-i18n="v11">12.480</td><td class="acuicultura-num" data-i18n="v12">8.090</td><td class="acuicultura-num">−35</td><td class="acuicultura-num">96</td><td><span class="q-chip q-chip--ok" data-i18n="t_ok">Verificado</span></td></tr>
+            <tr><td><b>P-2</b></td><td data-i18n="sy_b">Baterías · proveedor B</td><td class="acuicultura-num" data-i18n="v21">11.950</td><td class="acuicultura-num" data-i18n="v22">8.250</td><td class="acuicultura-num">−31</td><td class="acuicultura-num">94</td><td><span class="q-chip q-chip--ok" data-i18n="t_ok">Verificado</span></td></tr>
+            <tr><td><b>P-3</b></td><td data-i18n="sy_c">Solar flotante y baterías · proveedor C</td><td class="acuicultura-num" data-i18n="v31">13.100</td><td class="acuicultura-num" data-i18n="v32">7.600</td><td class="acuicultura-num">−42</td><td class="acuicultura-num">91</td><td><span class="q-chip q-chip--ok" data-i18n="t_ok">Verificado</span></td></tr>
+            <tr><td><b>P-4</b></td><td data-i18n="sy_a">Baterías · proveedor A</td><td class="acuicultura-num" data-i18n="v41">12.020</td><td class="acuicultura-num" data-i18n="v42">9.380</td><td class="acuicultura-num">−22</td><td class="acuicultura-num">95</td><td><span class="q-chip q-chip--warn" data-i18n="t_rev">En revisión</span></td></tr>
+            <tr><td><b>P-5</b></td><td data-i18n="sy_b">Baterías · proveedor B</td><td class="acuicultura-num" data-i18n="v51">12.640</td><td class="acuicultura-num">—</td><td class="acuicultura-num">—</td><td class="acuicultura-num">70</td><td><span class="q-chip q-chip--held" data-i18n="t_held">Retenida</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="q-small" style="margin-top:16px;max-width:880px;" data-i18n="tb_f">Fórmula: ahorro = 1 − (litros medidos ÷ línea base ajustada). Línea base ajustada = consumo específico previo a la conversión (L/kWh) × energía entregada en el período. Umbral de publicación: 90&nbsp;% de horas con datos válidos.</p>
+      <div class="note a" style="margin-top:22px;max-width:880px;"><p data-i18n="tb_held"><b>Cifra retenida · P-5.</b> El caudalímetro del generador 1 no entregó datos válidos durante 9 días (cobertura 70&nbsp;%). El ahorro no se publica hasta conciliarlo con la factura de combustible. <b>P-4</b> queda en revisión: ahorra menos que los otros pontones del mismo sistema, y el informe entrega el detalle por hora a productor y proveedor.</p></div>
+      <div class="q-actions">
+        <a class="btn btn--secondary" href="/informe.html" data-i18n="s4_l1">Ver un informe de muestra</a>
+        <a class="btn btn--link" href="/plataforma.html"><span data-i18n="s4_l2">Cómo funciona Eagle Eye</span><span class="ar" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Prueba hoy y en curso ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s5_eb">05 · Prueba</span><h2 class="q-h2" data-i18n="s5_h">Lo que podemos mostrar hoy, y lo que aún no.</h2></div>
+    <div class="q-grid q-grid--2">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pf1k">Hoy</span>
+        <h3 data-i18n="pf1h">Lo que puede revisar antes de firmar</h3>
+        <ul class="q-check">
+          <li data-i18n="pf1a">Un método de M&amp;V documentado y un informe de muestra con datos ilustrativos.</li>
+          <li data-i18n="pf1b"><b>1 GW+ bajo monitoreo</b> en Eagle Eye.</li>
+          <li data-i18n="pf1c"><b>Experiencia del equipo:</b> 10 plantas PMGD (≈50 MW) operadas y 70 MW en contratos EPC y O&amp;M negociados, en cargos anteriores.</li>
+          <li data-i18n="pf1d">Paquetes de evidencia con firma electrónica avanzada y sello de tiempo (<a class="q-link" href="https://iura.cl/19799/2" target="_blank" rel="noopener">Ley 19.799</a>), que cualquiera puede comprobar.</li>
+        </ul>
+        <a class="q-card__link" href="/story.html" data-i18n="pf1l">Conocer al equipo</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pf2k">En curso</span>
+        <h3 data-i18n="pf2h">Lo que todavía no tenemos</h3>
+        <ul class="q-arrow">
+          <li data-i18n="pf2a">Una referencia en un centro marino. Nuestra experiencia viene de plantas solares en tierra, y lo decimos de frente.</li>
+          <li data-i18n="pf2b">Un socio en Puerto Montt para instalación y respuesta local: lo nombraremos cuando lo autorice por escrito.</li>
+          <li data-i18n="pf2c">Un primer piloto con acceso a datos de BMS/EMS y una carta de acceso a datos de un proveedor.</li>
+          <li data-i18n="pf2d">Referencias con nombre: sólo cuando un productor autorice por escrito su nombre y sus cifras.</li>
+        </ul>
+        <a class="q-card__link" href="/demos.html" data-i18n="pf2l">Ver la demo en vivo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Independencia y socios ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s6_eb">06 · Independencia y socios</span><h2 class="q-h2" data-i18n="s6_h">No vendemos equipos. Medimos los de todos.</h2></div>
+      <p class="q-lede" data-i18n="s6_p">Medimos baterías, solar flotante, GLP o cable submarino con el mismo método. Nuestro honorario es fijo y nunca depende del ahorro que medimos. Eagle Eye lee en modo de solo lectura y nunca escribe consignas.</p>
+    </div>
+    <div class="q-who">
+      <div>
+        <div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="who1h">Equipo de Quorelia</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w1a">Protocolo de medición y línea base por pontón</li>
+          <li data-i18n="w1b">Conciliación de litros, horas de generador y kWh</li>
+          <li data-i18n="w1c">Informes mensuales y paquetes de evidencia firmados</li>
+          <li data-i18n="w1d">Coordinación y supervisión de los socios en terreno</li>
+        </ul>
+      </div>
+      <div>
+        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="who2c">Socios</span><h3 data-i18n="who2h">Socios certificados, bajo gestión de Quorelia</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w2a">Instalación de medidores, caudalímetros y enlaces de datos a bordo</li>
+          <li data-i18n="w2b">Trabajo eléctrico por personal con licencia SEC; instalador Clase A cuando corresponde</li>
+          <li data-i18n="w2c">Sistema de seguridad DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w2d">El financiamiento de un sistema híbrido, cuando lo hay, viene de socios financieros, no de Quorelia</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:48px;max-width:880px;">
+      <h3 class="q-h4" data-i18n="no_h">Lo que no hacemos</h3>
+      <ul class="q-check q-check--no" style="margin-top:12px;">
+        <li data-i18n="no1">No vendemos pontones, baterías, paneles ni generadores.</li>
+        <li data-i18n="no2">No vendemos energía, no financiamos sistemas y no somos contratista EPC.</li>
+        <li data-i18n="no3">No cobramos un porcentaje del ahorro: un verificador pagado por el resultado que mide no es independiente.</li>
+        <li data-i18n="no4">No llamamos independiente una medición sobre un equipo que nosotros mismos mantenemos. Ahí el informe dice «reportado por el operador, verificable por terceros».</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Oferta de entrada ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s7_eb">07 · Oferta de entrada</span><h2 class="q-h2" data-i18n="s7_h">Piloto de medición en 3 a 5 pontones.</h2></div>
+      <p class="q-lede" data-i18n="s7_p">Para pontones ya híbridos, un piloto de M&amp;V. Para los que aún funcionan sólo con diésel, una evaluación a precio fijo. Ninguno se cobra como porcentaje del ahorro.</p>
+    </div>
+    <div class="q-grid q-grid--2">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="of1k">Piloto de M&amp;V</span>
+        <h3 data-i18n="of1h">Pontones ya híbridos o en conversión</h3>
+        <ul class="q-check">
+          <li data-i18n="of1a">Línea base por pontón: litros, horas de generador y perfil de carga</li>
+          <li data-i18n="of1b">Conexión de solo lectura a BMS/EMS, controladores y caudalímetros</li>
+          <li data-i18n="of1c">Informe mensual por pontón, con cobertura y fórmula</li>
+          <li data-i18n="of1d">Paquete de evidencia firmado, comprobable por el proveedor y su auditor</li>
+        </ul>
+        <p style="margin-top:16px;" data-i18n="of1p"><b>Cómo se cobra:</b> una puesta en marcha a precio fijo por centro, más una tarifa por centro-año; mínimo 3 centros. Si faltan medidores independientes, se cotizan aparte a través del socio.</p>
+        <a class="q-card__link" href="/contacto/?interes=mv-acuicultura#energia" data-i18n="of1l">Solicitar el piloto</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="of2k">Evaluación de diésel</span>
+        <h3 data-i18n="of2h">Pontones que aún funcionan sólo con diésel</h3>
+        <ul class="q-check">
+          <li data-i18n="of2a">Registro de generadores a 15 minutos y conciliación de facturas, litros y kWh</li>
+          <li data-i18n="of2b">Opciones comparadas: baterías, solar flotante con baterías, GLP o cable</li>
+          <li data-i18n="of2c">Retorno al precio actual del diésel, a CLP 1.000/L y a CLP 800/L</li>
+          <li data-i18n="of2d">Lista corta de 2 a 3 proveedores o financistas, y un plan de M&amp;V que usted conserva</li>
+        </ul>
+        <p style="margin-top:16px;" data-i18n="of2p"><b>Cómo se cobra:</b> precio fijo, unos 30 días. El 50&nbsp;% se abona a los honorarios de ingeniería del propietario si nos encarga la compra del sistema.</p>
+        <a class="q-card__link" href="/contacto/?interes=diesel#energia" data-i18n="of2l">Solicitar la evaluación</a>
+      </div>
+    </div>
+    <div class="note a" style="margin-top:28px;max-width:880px;"><p data-i18n="of_no"><b>No incluye:</b> compra, instalación ni financiamiento de equipos; garantía de ahorro; trabajos a bordo fuera del alcance de la medición.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Preguntas frecuentes ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s8_eb">08 · Preguntas frecuentes</span><h2 class="q-h2" data-i18n="s8_h">Lo que preguntan productores y proveedores.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Cuánto cuesta un piloto de medición?</summary><div><p data-i18n="fa1">Una puesta en marcha a precio fijo por centro y una tarifa anual por centro, con un mínimo de 3 centros. Cotizamos con la lista de pontones y los datos que ya existen. Nunca cobramos un porcentaje del ahorro.</p></div></details>
+      <details><summary data-i18n="fq2">¿Necesitan acceso al sistema de mi proveedor?</summary><div><p data-i18n="fa2">Leemos en modo de solo lectura el BMS/EMS, el controlador de los generadores y los caudalímetros; nunca escribimos consignas. Si el proveedor no entrega acceso, un socio instala medidores independientes. El acceso a los datos queda por escrito en el contrato.</p></div></details>
+      <details><summary data-i18n="fq3">¿Qué pasa si el centro tiene mala conectividad?</summary><div><p data-i18n="fa3">Usamos el enlace que ya tenga el centro. Donde no alcanza, los datos se guardan en un registrador local y se descargan en la visita. El informe marca el período sin datos en línea y no publica cifras que esos datos no sostengan.</p></div></details>
+      <details><summary data-i18n="fq4">¿Ustedes venden pontones híbridos, baterías o paneles?</summary><div><p data-i18n="fa4">No. No vendemos equipos, energía ni financiamiento. Por eso podemos medir a cualquier proveedor con el mismo método.</p></div></details>
+      <details><summary data-i18n="fq5">¿De quién son los datos y los informes?</summary><div><p data-i18n="fa5">Del productor. Quorelia trata los datos sólo bajo contrato y según sus instrucciones. Los paquetes de evidencia llevan firma electrónica avanzada y sello de tiempo (Ley 19.799), y cualquiera puede comprobarlos sin depender de nosotros.</p></div></details>
+      <details><summary data-i18n="fq6">¿Cuánto demora?</summary><div><p data-i18n="fa6">La evaluación de diésel toma unos 30 días. En un piloto, el primer informe mensual sale el mes siguiente a la conexión de los datos de cada pontón.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+   <div>
+    <span class="q-eyebrow" data-i18n="ct_eb">Empiece por un piloto</span>
+    <h2 class="q-h2" data-i18n="ct_h">Solicite una medición independiente de su ahorro de diésel.</h2>
+    <p class="q-lede" data-i18n="ct_p">Precio fijo por centro y el mismo método para cualquier proveedor.</p>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=mv-acuicultura#energia"><span data-i18n="cta1b">Solicitar medición independiente</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+   </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+window.Q_PAGE = {
+ en:{
+  __title:"Diesel savings on salmon pontoons, independently measured · Quorelia",
+  __desc:"Independent measurement and verification of diesel savings on hybrid salmon-farm pontoons: baselines, a neutral meter in energy contracts and Scope 1 reporting.",
+  cr_aria:"Breadcrumb", cr_home:"Home", cr_ind:"Industries", cr_here:"Aquaculture and fisheries",
+  hero_eb:"Aquaculture and fisheries · Measurement and verification",
+  hero_h:"Diesel savings on pontoons, measured and verified",
+  hero_p:"Chile reached 386 active marine salmon sites in August 2025, most of them off-grid and running on diesel. Hybrid-system suppliers claim savings of 30% to 70%. Quorelia measures yours independently, with the same method for any supplier.",
+  hero_src:'Sources: <a href="https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf" target="_blank" rel="noopener">Sernapesca, 2025</a> · <a href="https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile" target="_blank" rel="noopener">We Are Aquaculture</a> · <a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">Salmonexpert</a>',
+  cta1:"Request independent measurement", cta2:"Book 30 minutes",
+  inst_aria:"Sample Eagle Eye view with illustrative measurement data from a hybrid pontoon",
+  inst_bar:"Eagle Eye · Demo pontoon P-1", inst_live:"Live",
+  k1k:"Diesel this month", k1v:"8,090 L", k1s:"adjusted baseline 12,480 L · coverage 96%",
+  k2k:"Measured saving", k2v:"−35%", k2s:"normalized for energy delivered",
+  k3k:"Generator hours", k3s:"baseline 712 h for the same period",
+  k4k:"Pontoon P-5 saving", k4v:"Withheld", k4s:"flow meter without data for 9 days · coverage 70%",
+  r1c:"Risk", r1:"Generator 2 · 14 starts on low battery SoC",
+  r2c:"Reconciled", r2:"Fuel invoice against flow meter · 0.8% difference", r2t:"yesterday",
+  inst_foot:"Demo fleet · illustrative data",
+  pb1:"Neutral", p1:"we sell no equipment", p2:"under monitoring", pb3:"Fixed fee", p3:"never a % of the savings measured", p4:"advanced electronic signature and time-stamp",
+  s1_eb:"01 · The problem in numbers",
+  s1_h:'<span class="dim">Savings are claimed.</span> Nobody neutral measures them.',
+  s1_p:"Three public figures, and why a savings contract needs a measurement that both the producer and the supplier accept.",
+  f1v:"≈150,000 L", f1k:"of diesel a year per pontoon before hybridization. Quorelia estimate based on figures published by AquaChile.",
+  f1src:'Source: <a href="https://g5noticias.cl/2026/09/29/del-diesel-a-las-baterias-la-transformacion-energetica-que-avanza-en-los-centros-de-cultivo-del-sur-de-chile/" target="_blank" rel="noopener">G5 Noticias, Sep 2026</a>',
+  f2v:"CLP 1,222/L", f2k:"national average diesel price in August 2026, about 22% higher than a year earlier in Puerto Montt.",
+  f2src:'Source: <a href="https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf" target="_blank" rel="noopener">CNE, monthly report Sep 2026</a>',
+  f3v:"30–70%", f3k:"diesel savings claimed by players in the sector. In the sources we reviewed, every figure is self-reported.",
+  f3src:'Sources: Saesa Innova and Voltify, via Salmonexpert (<a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">1</a>, <a href="https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156" target="_blank" rel="noopener">2</a>)',
+  s2_eb:"02 · Three use cases", s2_h:"Neutral measurement where today every supplier measures itself.",
+  u1k:"Case 01 · Hybrid fleet", u1h:"Before-and-after M&V of hybrid pontoons, across suppliers",
+  u1a:"<b>Problem.</b> Each supplier shows its savings on its own dashboard, with its own method. Comparing the fleet is impossible.",
+  u1b:"<b>What Quorelia does.</b> Sets the baseline before conversion (litres, generator hours, load profile) and measures afterwards with the same method on every pontoon.",
+  u1c:"<b>What you receive.</b> Savings per pontoon with their coverage and formula, comparable across suppliers, and a signed evidence pack.",
+  u1l:"Verification",
+  u2k:"Case 02 · Contracts", u2h:"A neutral meter in energy-as-a-service and PPA contracts",
+  u2a:'<b>Problem.</b> Some energy-as-a-service contracts run <a class="q-link" href="https://www.salmonesaustral.cl/trusal-y-alotta-energy-sellan-acuerdo-de-15-anos-para-incorporar-energia-solar-flotante-en-salmonicultura/" target="_blank" rel="noopener">for 15 years</a> and are billed per kWh. If only the supplier measures, the producer cannot check the invoice.',
+  u2b:"<b>What Quorelia does.</b> Agrees the measurement protocol with both parties, installs independent meters through a partner and reconciles kWh, litres and hours.",
+  u2c:"<b>What you receive.</b> A monthly delivery record with an advanced electronic signature and time-stamp that both producer and supplier can check.",
+  u2l:"Diesel replacement",
+  u3k:"Case 03 · Reporting", u3h:"Diesel and Scope 1 across the fleet",
+  u3a:'<b>Problem.</b> Members of the <a class="q-link" href="https://www.aqua.cl/centros-de-cultivo-sin-diesel-la-transicion-hacia-nuevas-energias/" target="_blank" rel="noopener">Consejo del Salmón</a> measure Scope 1 and 2, but the litres are scattered across invoices, logbooks and flow meters.',
+  u3b:"<b>What Quorelia does.</b> Reconciles invoices, flow meters and generator hours per site, and calculates emissions with a stated factor.",
+  u3c:"<b>What you receive.</b> A monthly diesel and Scope 1 inventory per site, with every gap flagged and explained.",
+  u3l:"See a sample report",
+  route:'<b>A grid-connected processing plant, fishmeal plant or cold store?</b> Your case is under <a class="q-link" href="/industrias/alimentos-cadena-de-frio/">Food and cold chain</a>.',
+  s3_eb:"03 · How it works", s3_h:"A pilot on 3 to 5 pontoons, with the same method for all.",
+  st1h:"Assessment", st1p:"We review what data exists per site: BMS/EMS, generator controllers, flow meters, invoices and the supplier contract.",
+  st2h:"Baseline", st2p:"Invoice and run-hour history, adjusted with 15-minute load logging before conversion, or with historical data.",
+  st3h:"Plan with partners", st3p:"A local partner installs meters and data links where they are missing. Access to the supplier's data is agreed in writing.",
+  st4h:"Verify", st4p:"A monthly report per pontoon and a signed evidence pack, comparable across suppliers.",
+  how_role:"<b>Who does what.</b> Quorelia defines the protocol, analyses, reports and signs. Certified partners install meters and data links and carry out any electrical work on board, managed by Quorelia.",
+  s4_eb:"04 · Sample deliverable", s4_h:"Savings per pontoon, with their coverage.",
+  s4_p:"An excerpt from a monthly fleet report. Savings are normalized for energy delivered; where data is missing, the figure is withheld and explained.",
+  tb_cap:"M&V report · September 2026 · 5 pontoons · illustrative data · demo fleet",
+  th1:"Pontoon", th2:"System", th3:"Adjusted baseline (L)", th4:"Measured (L)", th5:"Saving (%)", th6:"Coverage (%)", th7:"Status",
+  sy_a:"Batteries · supplier A", sy_b:"Batteries · supplier B", sy_c:"Floating solar and batteries · supplier C",
+  v11:"12,480", v12:"8,090", v21:"11,950", v22:"8,250", v31:"13,100", v32:"7,600", v41:"12,020", v42:"9,380", v51:"12,640",
+  t_ok:"Verified", t_rev:"Under review", t_held:"Withheld",
+  tb_f:"Formula: saving = 1 − (litres measured ÷ adjusted baseline). Adjusted baseline = pre-conversion specific consumption (L/kWh) × energy delivered in the period. Publication threshold: 90% of hours with valid data.",
+  tb_held:"<b>Withheld figure · P-5.</b> The generator 1 flow meter delivered no valid data for 9 days (coverage 70%). The saving is not published until it is reconciled with the fuel invoice. <b>P-4</b> is under review: it saves less than the other pontoons on the same system, and the report gives producer and supplier the hourly detail.",
+  s4_l1:"See a sample report", s4_l2:"How Eagle Eye works",
+  s5_eb:"05 · Proof", s5_h:"What we can show today, and what we cannot yet.",
+  pf1k:"Today", pf1h:"What you can check before you sign",
+  pf1a:"A documented M&V method and a sample report with illustrative data.",
+  pf1b:"<b>1 GW+ under monitoring</b> in Eagle Eye.",
+  pf1c:"<b>Team experience:</b> 10 PMGD plants (≈50 MW) operated and 70 MW of EPC and O&M contracts negotiated, in previous roles.",
+  pf1d:'Evidence packs with an advanced electronic signature and time-stamp (<a class="q-link" href="https://iura.cl/19799/2" target="_blank" rel="noopener">Ley 19.799</a>) that anyone can check.',
+  pf1l:"Meet the team",
+  pf2k:"In progress", pf2h:"What we do not have yet",
+  pf2a:"A reference at a marine site. Our experience comes from solar plants on land, and we say so plainly.",
+  pf2b:"A partner in Puerto Montt for installation and local response: we will name it once it consents in writing.",
+  pf2c:"A first pilot with access to BMS/EMS data, and a data-access letter from a supplier.",
+  pf2d:"Named references: only once a producer authorizes its name and figures in writing.",
+  pf2l:"See the live demo",
+  s6_eb:"06 · Independence and partners", s6_h:"We sell no equipment. We measure everyone's.",
+  s6_p:"We measure batteries, floating solar, LPG or subsea cable with the same method. Our fee is fixed and never depends on the savings we measure. Eagle Eye reads data read-only and never writes setpoints.",
+  who1h:"Quorelia team",
+  w1a:"Measurement protocol and baseline per pontoon",
+  w1b:"Reconciliation of litres, generator hours and kWh",
+  w1c:"Monthly reports and signed evidence packs",
+  w1d:"Coordination and supervision of field partners",
+  who2c:"Partners", who2h:"Certified partners, managed by Quorelia",
+  w2a:"Installation of meters, flow meters and data links on board",
+  w2b:"Electrical work by SEC-licensed staff; a Class A installer where required",
+  w2c:"DS 44 safety management system and contractor controls under Ley 20.123",
+  w2d:"Financing for a hybrid system, where there is any, comes from financing partners, not from Quorelia",
+  no_h:"What we do not do",
+  no1:"We do not sell pontoons, batteries, panels or generators.",
+  no2:"We sell no power, finance no systems and are not an EPC contractor.",
+  no3:"We never charge a percentage of the savings: a verifier paid on the result it measures is not independent.",
+  no4:"We never call a measurement independent on equipment we maintain ourselves. There, the report reads “operator-reported, verifiable by third parties”.",
+  s7_eb:"07 · Entry offer", s7_h:"A measurement pilot on 3 to 5 pontoons.",
+  s7_p:"For pontoons already hybrid, an M&V pilot. For those still running on diesel only, a fixed-price assessment. Neither is charged as a percentage of savings.",
+  of1k:"M&V pilot", of1h:"Pontoons already hybrid or being converted",
+  of1a:"Baseline per pontoon: litres, generator hours and load profile",
+  of1b:"Read-only connection to BMS/EMS, controllers and flow meters",
+  of1c:"A monthly report per pontoon, with coverage and formula",
+  of1d:"A signed evidence pack the supplier and its auditor can check",
+  of1p:"<b>How it is priced:</b> a fixed-price setup per site plus a fee per site-year; minimum 3 sites. If independent meters are missing, they are quoted separately through the partner.",
+  of1l:"Request the pilot",
+  of2k:"Diesel assessment", of2h:"Pontoons still running on diesel only",
+  of2a:"15-minute generator logging and reconciliation of invoices, litres and kWh",
+  of2b:"Options compared: batteries, floating solar with batteries, LPG or cable",
+  of2c:"Payback at today's diesel price, at CLP 1,000/L and at CLP 800/L",
+  of2d:"A shortlist of 2 to 3 suppliers or financiers, and an M&V plan you keep",
+  of2p:"<b>How it is priced:</b> a fixed price, about 30 days. 50% is credited to the owner's-engineer fee if you hire us for the system purchase.",
+  of2l:"Request the assessment",
+  of_no:"<b>Not included:</b> buying, installing or financing equipment; any guarantee of savings; work on board outside the measurement scope.",
+  s8_eb:"08 · Frequently asked questions", s8_h:"What producers and suppliers ask.",
+  fq1:"What does a measurement pilot cost?",
+  fa1:"A fixed-price setup per site and an annual fee per site, with a minimum of 3 sites. We quote from the list of pontoons and the data that already exists. We never charge a percentage of the savings.",
+  fq2:"Do you need access to my supplier's system?",
+  fa2:"We read the BMS/EMS, generator controllers and flow meters read-only; we never write setpoints. If the supplier does not grant access, a partner installs independent meters. Data access is written into the contract.",
+  fq3:"What if the site has poor connectivity?",
+  fa3:"We use whatever link the site already has. Where it falls short, data is stored on a local logger and downloaded at the visit. The report flags the period without live data and publishes no figure that the data cannot support.",
+  fq4:"Do you sell hybrid pontoons, batteries or panels?",
+  fa4:"No. We sell no equipment, power or financing. That is why we can measure any supplier with the same method.",
+  fq5:"Who owns the data and the reports?",
+  fa5:"The producer does. Quorelia processes the data only under contract and on your instructions. Evidence packs carry an advanced electronic signature and time-stamp (Ley 19.799), and anyone can check them without relying on us.",
+  fq6:"How long does it take?",
+  fa6:"The diesel assessment takes about 30 days. In a pilot, the first monthly report is issued the month after each pontoon's data is connected.",
+  ct_eb:"Start with a pilot", ct_h:"Request an independent measurement of your diesel savings.",
+  ct_p:"A fixed price per site, and the same method for any supplier.",
+  cta1b:"Request independent measurement", cta_cal:"Book 30 minutes", ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"饲料驳船柴油节省的独立测量 · Quorelia",
+  __desc:"对三文鱼养殖混合动力饲料驳船的柴油节省进行独立测量与验证：基线、能源合同中的中立计量以及范围一排放报告。",
+  cr_aria:"导航路径", cr_home:"首页", cr_ind:"行业", cr_here:"水产养殖与渔业",
+  hero_eb:"水产养殖与渔业 · 测量与验证",
+  hero_h:"饲料驳船的柴油节省，经测量并核验",
+  hero_p:"2025 年 8 月，智利活跃的海上三文鱼养殖场达到 386 个，其中大多数不接入电网、依靠柴油发电。混合动力系统供应商宣称可节省 30% 至 70% 的柴油。Quorelia 以同一方法、对任何供应商独立测量您的实际节省。",
+  hero_src:'来源：<a href="https://www.sernapesca.cl/app/uploads/2026/03/Informe-Situacion-Sanitaria-Salmonicultura-Ano-2025.pdf" target="_blank" rel="noopener">Sernapesca，2025 年</a> · <a href="https://weareaquaculture.com/news/technology/norwegian-alotta-to-supply-renewable-energy-to-mowi-chile" target="_blank" rel="noopener">We Are Aquaculture</a> · <a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">Salmonexpert</a>',
+  cta1:"申请独立测量", cta2:"预约 30 分钟",
+  inst_aria:"Eagle Eye 示例界面，展示一艘混合动力饲料驳船的示意测量数据",
+  inst_bar:"Eagle Eye · 演示驳船 P-1", inst_live:"实时",
+  k1k:"本月柴油用量", k1v:"8,090 L", k1s:"调整后基线 12,480 L · 覆盖率 96%",
+  k2k:"实测节省", k2v:"−35%", k2s:"按供电量归一化",
+  k3k:"发电机运行小时", k3s:"同期基线 712 小时",
+  k4k:"驳船 P-5 节省", k4v:"暂不发布", k4s:"流量计 9 天无数据 · 覆盖率 70%",
+  r1c:"风险", r1:"发电机 2 · 因电池 SoC 过低启动 14 次",
+  r2c:"已核对", r2:"燃料发票与流量计对比 · 差异 0.8%", r2t:"昨天",
+  inst_foot:"演示机队 · 示意数据",
+  pb1:"中立", p1:"我们不销售设备", p2:"监测容量", pb3:"固定费用", p3:"绝不按实测节省比例收费", p4:"高级电子签名和时间戳",
+  s1_eb:"01 · 用数字看问题",
+  s1_h:'<span class="dim">节省都是自行宣称的。</span>没有中立方去测量。',
+  s1_p:"三个公开数据，以及为什么节能合同需要一种养殖企业和供应商都认可的测量。",
+  f1v:"≈150,000 L", f1k:"为每艘驳船混合动力改造前的年柴油用量。这是 Quorelia 根据 AquaChile 公布数据所作的估算。",
+  f1src:'来源：<a href="https://g5noticias.cl/2026/09/29/del-diesel-a-las-baterias-la-transformacion-energetica-que-avanza-en-los-centros-de-cultivo-del-sur-de-chile/" target="_blank" rel="noopener">G5 Noticias，2026 年 9 月</a>',
+  f2v:"CLP 1,222/L", f2k:"为 2026 年 8 月全国柴油平均价格，在蒙特港比一年前高出约 22%。",
+  f2src:'来源：<a href="https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf" target="_blank" rel="noopener">CNE，2026 年 9 月月度报告</a>',
+  f3v:"30–70%", f3k:"为行业参与者宣称的柴油节省幅度。在我们查阅的资料中，所有数字均为自行申报。",
+  f3src:'来源：Saesa Innova 与 Voltify，经 Salmonexpert 报道（<a href="https://www.salmonexpert.cl/energia-energias-renovables-saesa/conexiones-electricas-submarinas-reducen-100-consumo-de-diesel-en-salmonicultura/1865964" target="_blank" rel="noopener">1</a>，<a href="https://www.salmonexpert.cl/eficiencia-energetica-energias-renovables-huella-de-carbono/plantean-hoja-de-ruta-energetica-y-ambiental-para-la-salmonicultura-en-innaqua-2025/1989156" target="_blank" rel="noopener">2</a>）',
+  s2_eb:"02 · 三个应用场景", s2_h:"在如今每家供应商都自我测量的地方，提供中立测量。",
+  u1k:"场景 01 · 混合动力船队", u1h:"跨供应商的混合动力驳船改造前后测量与验证",
+  u1a:"<b>问题。</b>每家供应商都在自己的仪表盘上、用自己的方法展示节省效果，整个船队无法比较。",
+  u1b:"<b>Quorelia 做什么。</b>在改造前确定基线（升数、发电机运行小时、负荷曲线），改造后在每艘驳船上用同一方法测量。",
+  u1c:"<b>您得到什么。</b>每艘驳船的节省数据，注明覆盖率和公式，可在供应商之间比较，并附已签名的证据包。",
+  u1l:"核验服务",
+  u2k:"场景 02 · 合同", u2h:"能源即服务与购电协议（PPA）中的中立计量",
+  u2a:'<b>问题。</b>有些能源即服务合同期限<a class="q-link" href="https://www.salmonesaustral.cl/trusal-y-alotta-energy-sellan-acuerdo-de-15-anos-para-incorporar-energia-solar-flotante-en-salmonicultura/" target="_blank" rel="noopener">长达 15 年</a>，按千瓦时计费。如果只有供应商在测量，养殖企业就无法核对账单。',
+  u2b:"<b>Quorelia 做什么。</b>与双方商定测量规程，通过合作伙伴安装独立计量表，并核对千瓦时、升数和运行小时。",
+  u2c:"<b>您得到什么。</b>每月一份带有高级电子签名和时间戳的供电记录，养殖企业和供应商都可以验证。",
+  u2l:"柴油替代",
+  u3k:"场景 03 · 报告", u3h:"整个船队的柴油用量与范围一排放",
+  u3a:'<b>问题。</b><a class="q-link" href="https://www.aqua.cl/centros-de-cultivo-sin-diesel-la-transicion-hacia-nuevas-energias/" target="_blank" rel="noopener">智利三文鱼理事会（Consejo del Salmón）</a>成员都在测量范围一和范围二排放，但柴油升数分散在发票、日志和流量计之中。',
+  u3b:"<b>Quorelia 做什么。</b>按养殖场核对发票、流量计和发电机运行小时，并以申明的排放因子计算排放量。",
+  u3c:"<b>您得到什么。</b>每个养殖场的月度柴油与范围一排放清单，每个数据缺口都有标注和说明。",
+  u3l:"查看报告示例",
+  route:'<b>并网的加工厂、鱼粉厂或冷库？</b>请参阅<a class="q-link" href="/industrias/alimentos-cadena-de-frio/">食品与冷链</a>。',
+  s3_eb:"03 · 工作方式", s3_h:"在 3 至 5 艘驳船上试点，所有驳船采用同一方法。",
+  st1h:"评估", st1p:"我们核查每个养殖场现有的数据：BMS/EMS、发电机控制器、流量计、发票以及与供应商的合同。",
+  st2h:"基线", st2p:"以发票和运行小时记录为基础，并用改造前 15 分钟分辨率的负荷记录或历史数据进行调整。",
+  st3h:"与合作伙伴制定计划", st3p:"由本地合作伙伴在缺少设备处安装计量表和数据链路。供应商数据的访问权以书面形式确定。",
+  st4h:"核验", st4p:"每艘驳船的月度报告和已签名的证据包，可在供应商之间比较。",
+  how_role:"<b>分工。</b>Quorelia 制定规程、进行分析、出具报告并签名。认证合作伙伴在 Quorelia 的管理下安装计量表和数据链路，并执行船上的任何电气作业。",
+  s4_eb:"04 · 交付物示例", s4_h:"每艘驳船的节省，注明覆盖率。",
+  s4_p:"摘自一份船队月度报告。节省按供电量归一化；数据缺失时，暂不发布该数字并说明原因。",
+  tb_cap:"M&V 报告 · 2026 年 9 月 · 5 艘驳船 · 示意数据 · 演示机队",
+  th1:"驳船", th2:"系统", th3:"调整后基线 (L)", th4:"实测 (L)", th5:"节省 (%)", th6:"覆盖率 (%)", th7:"状态",
+  sy_a:"电池 · 供应商 A", sy_b:"电池 · 供应商 B", sy_c:"漂浮光伏与电池 · 供应商 C",
+  v11:"12,480", v12:"8,090", v21:"11,950", v22:"8,250", v31:"13,100", v32:"7,600", v41:"12,020", v42:"9,380", v51:"12,640",
+  t_ok:"已核验", t_rev:"审查中", t_held:"暂不发布",
+  tb_f:"公式：节省 = 1 −（实测升数 ÷ 调整后基线）。调整后基线 = 改造前单位油耗（L/kWh）× 当期供电量。发布门槛：90% 的小时数据有效。",
+  tb_held:"<b>暂不发布的数字 · P-5。</b>1 号发电机的流量计连续 9 天没有提供有效数据（覆盖率 70%）。在与燃料发票核对之前不发布节省数据。<b>P-4</b> 处于审查中：其节省低于采用同一系统的其他驳船，报告向养殖企业和供应商提供逐小时明细。",
+  s4_l1:"查看报告示例", s4_l2:"了解 Eagle Eye 如何运作",
+  s5_eb:"05 · 证明", s5_h:"我们今天能展示的，以及尚未具备的。",
+  pf1k:"现在", pf1h:"签约前您可以核查的内容",
+  pf1a:"一套成文的测量与验证方法，以及一份使用示意数据的报告示例。",
+  pf1b:"Eagle Eye 中 <b>1 GW+ 监测容量</b>。",
+  pf1c:"<b>团队经验：</b>在以往任职中运营过 10 座 PMGD 电站（≈50 MW），并谈判过 70 MW 的 EPC 与运维合同。",
+  pf1d:'带有高级电子签名和时间戳（<a class="q-link" href="https://iura.cl/19799/2" target="_blank" rel="noopener">第 19.799 号法律</a>）的证据包，任何人都可以验证。',
+  pf1l:"认识团队",
+  pf2k:"进行中", pf2h:"我们尚未具备的",
+  pf2a:"海上养殖场的参考案例。我们的经验来自陆上光伏电站，这一点我们坦率说明。",
+  pf2b:"在蒙特港负责安装和本地响应的合作伙伴：在其书面同意后公布名称。",
+  pf2c:"第一个可访问 BMS/EMS 数据的试点项目，以及一家供应商出具的数据访问函。",
+  pf2d:"具名参考案例：仅在养殖企业书面授权使用其名称和数据之后。",
+  pf2l:"观看在线演示",
+  s6_eb:"06 · 独立性与合作伙伴", s6_h:"我们不销售设备，但测量所有人的设备。",
+  s6_p:"无论是电池、漂浮光伏、液化石油气还是海底电缆，我们都用同一方法测量。我们收取固定费用，从不取决于我们测量出的节省。Eagle Eye 以只读方式读取数据，从不写入设定值。",
+  who1h:"Quorelia 团队",
+  w1a:"每艘驳船的测量规程和基线",
+  w1b:"升数、发电机运行小时和千瓦时的核对",
+  w1c:"月度报告和已签名的证据包",
+  w1d:"现场合作伙伴的协调与监督",
+  who2c:"合作伙伴", who2h:"由 Quorelia 管理的认证合作伙伴",
+  w2a:"在船上安装计量表、流量计和数据链路",
+  w2b:"由持 SEC 执照的人员执行电气作业；必要时由 A 类安装商执行",
+  w2c:"DS 44 安全管理体系，以及符合第 20.123 号法律的承包商管控",
+  w2d:"混合动力系统如有融资，来自金融合作伙伴，而非 Quorelia",
+  no_h:"我们不做的事",
+  no1:"我们不销售驳船、电池、光伏板或发电机。",
+  no2:"我们不售电、不为系统提供融资，也不是 EPC 承包商。",
+  no3:"我们绝不按节省比例收费：按所测结果收费的核验方不具备独立性。",
+  no4:"对于我们自己维护的设备，我们绝不称测量为独立测量。在这种情况下，报告注明“由运营方报告，可由第三方核验”。",
+  s7_eb:"07 · 入门服务", s7_h:"在 3 至 5 艘驳船上开展测量试点。",
+  s7_p:"已完成混合动力改造的驳船，提供测量与验证试点；仍只用柴油的驳船，提供固定价格评估。两者都不按节省比例收费。",
+  of1k:"M&V 试点", of1h:"已改造或正在改造的混合动力驳船",
+  of1a:"每艘驳船的基线：升数、发电机运行小时和负荷曲线",
+  of1b:"以只读方式连接 BMS/EMS、控制器和流量计",
+  of1c:"每艘驳船的月度报告，注明覆盖率和公式",
+  of1d:"已签名的证据包，供应商及其审计方均可验证",
+  of1p:"<b>计价方式：</b>每个养殖场一次性固定接入费，另加按养殖场·年计的费用；至少 3 个养殖场。如缺少独立计量表，通过合作伙伴另行报价。",
+  of1l:"申请试点",
+  of2k:"柴油评估", of2h:"仍只使用柴油的驳船",
+  of2a:"以 15 分钟分辨率记录发电机数据，并核对发票、升数和千瓦时",
+  of2b:"方案比较：电池、漂浮光伏加电池、液化石油气或电缆",
+  of2c:"分别按当前柴油价格、CLP 1,000/L 和 CLP 800/L 计算回收期",
+  of2d:"2 至 3 家供应商或融资方的候选名单，以及一份归您保留的测量与验证计划",
+  of2p:"<b>计价方式：</b>固定价格，约 30 天。如果您委托我们负责系统采购，50% 将抵扣业主工程师费用。",
+  of2l:"申请评估",
+  of_no:"<b>不包含：</b>设备的采购、安装或融资；任何节省保证；测量范围以外的船上作业。",
+  s8_eb:"08 · 常见问题", s8_h:"养殖企业和供应商常问的问题。",
+  fq1:"测量试点的费用是多少？",
+  fa1:"每个养殖场一次性固定接入费加年度费用，至少 3 个养殖场。我们根据驳船清单和现有数据报价。我们从不按节省比例收费。",
+  fq2:"你们需要访问我的供应商系统吗？",
+  fa2:"我们以只读方式读取 BMS/EMS、发电机控制器和流量计数据，从不写入设定值。如果供应商不提供访问权限，由合作伙伴安装独立计量表。数据访问权写入合同。",
+  fq3:"如果养殖场的网络连接很差怎么办？",
+  fa3:"我们使用养殖场现有的链路。链路不足时，数据保存在本地记录仪中，并在现场考察时下载。报告会标注没有在线数据的时段，不发布数据无法支撑的数字。",
+  fq4:"你们销售混合动力驳船、电池或光伏板吗？",
+  fa4:"不。我们不销售设备、电力或融资。正因如此，我们才能用同一方法测量任何供应商。",
+  fq5:"数据和报告归谁所有？",
+  fa5:"归养殖企业所有。Quorelia 仅根据合同并按照您的指示处理数据。证据包带有高级电子签名和时间戳（第 19.799 号法律），任何人无需依赖我们即可验证。",
+  fq6:"需要多长时间？",
+  fa6:"柴油评估约需 30 天。在试点中，每艘驳船的数据接通后的下一个月出具第一份月度报告。",
+  ct_eb:"从试点开始", ct_h:"申请对您的柴油节省进行独立测量。",
+  ct_p:"按养殖场固定收费，对任何供应商采用同一方法。",
+  cta1b:"申请独立测量", cta_cal:"预约 30 分钟", ct_alt:"或给我们写信："
+ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>

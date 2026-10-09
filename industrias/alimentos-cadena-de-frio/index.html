@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Peak shaving y respaldo energético para plantas de frío · Quorelia</title>
+<meta name="description" content="Peak shaving con baterías, respaldo para cámaras de frío y verificación de PPA para plantas de alimentos en Chile. Ingeniería del comprador, sin vender equipos.">
+<link rel="canonical" href="https://www.quorelia.org/industrias/alimentos-cadena-de-frio/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/industrias/alimentos-cadena-de-frio/">
+<meta property="og:title" content="Respaldo energético y peak shaving para plantas de frío · Quorelia">
+<meta property="og:description" content="Comparamos ofertas de PPA, leasing y compra entre proveedores, y verificamos que cada uno entregue lo prometido. No vendemos equipos.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Peak shaving, respaldo energético y verificación para plantas de frío","serviceType":"Owner's engineering and energy measurement and verification","areaServed":"CL",
+  "audience":{"@type":"BusinessAudience","name":"Packings, frigoríficos y plantas de proceso de alimentos"},
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/industrias/alimentos-cadena-de-frio/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Alimentos y cadena de frío","item":"https://www.quorelia.org/industrias/alimentos-cadena-de-frio/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Por qué pagar un estudio si el proveedor lo hace sin costo?","acceptedAnswer":{"@type":"Answer","text":"Porque quien vende la energía es quien hace ese estudio. Nosotros no vendemos equipos ni energía: comparamos sus ofertas en igualdad de condiciones y le decimos qué supuestos sostienen cada una."}},
+  {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"La evaluación tiene precio fijo, acordado antes de empezar según el tamaño y el número de sitios. Si decide construir y nos encarga como ingeniero del dueño, el 50 % se abona a ese honorario. La M&V posterior se cobra por kW-año."}},
+  {"@type":"Question","name":"¿Funciona con mi medidor y mis equipos de frío?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con los datos de 15 minutos de su medidor, sus boletas, los registros del grupo electrógeno y, si existen, los datos de compresores y cámaras. Eagle Eye los lee en modo lectura y nunca escribe consignas."}},
+  {"@type":"Question","name":"¿Quién instala y quién responde por la obra?","acceptedAnswer":{"@type":"Answer","text":"Un socio EPC certificado que usted elige en la licitación, con instalador eléctrico Clase A con licencia SEC para media tensión y declaraciones TE7. Nosotros especificamos, supervisamos y presenciamos las pruebas; no somos contratista EPC principal."}},
+  {"@type":"Question","name":"¿Cuándo conviene hacerlo?","acceptedAnswer":{"@type":"Answer","text":"Antes o después del peak de temporada, para que la visita y una eventual obra no choquen con la producción. La evaluación toma unos 30 días con los datos históricos de su medidor."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><span data-i18n="cr_ind">Industrias</span><span aria-hidden="true">/</span><span data-i18n="cr_here">Alimentos y cadena de frío</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Alimentos y cadena de frío · packings y frigoríficos</span>
+        <h1 class="q-h1" data-i18n="hero_h">Respaldo energético y peak shaving para plantas de frío.</h1>
+        <p class="q-lede" data-i18n="hero_p">Actuamos como ingeniero del comprador: comparamos ofertas de PPA, leasing y compra entre proveedores, y después verificamos que cada uno entregue lo prometido. No vendemos equipos ni energía.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye para un frigorífico, con datos ilustrativos" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_bar">Eagle Eye · Frigorífico demo</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k1k">Demanda máxima en punta</span><span class="q-kpi__v" data-i18n="k1v">1.240 kW</span><span class="q-kpi__s" data-i18n="k1s">medidor de la distribuidora, intervalos de 15 min</span></div>
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k2k">Entrega del PPA frente al contrato</span><span class="q-kpi__v" data-i18n="k2v">96,4 %</span><span class="q-kpi__s" data-i18n="k2s">conciliada con su medidor en 98 % de las horas</span><span class="q-kpi__bar"><i style="width:98%"></i></span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k3k">Ahorro por recorte de punta</span><span class="q-kpi__v" data-i18n="k3v">Retenida</span><span class="q-kpi__s" data-i18n="k3s">línea base incompleta: 7 de 12 meses</span><span class="q-kpi__bar"><i style="width:58%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k4k">Horas de grupo electrógeno</span><span class="q-kpi__v" data-i18n="k4v">38 h</span><span class="q-kpi__s" data-i18n="k4s">3 cortes de red en el mes</span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Riesgo</span><span data-i18n="r1">Compresores 2 y 3 arrancan juntos y fijan la punta</span><span class="t">18:15</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r2c">Cerrada</span><span data-i18n="r2">Corte de red 14:20 · grupo en línea en 38 s</span><span class="t" data-i18n="r2t">mar</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Datos ilustrativos · flota demo</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 plantas PMGD operadas · experiencia del equipo</span></li>
+      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">en contratos EPC y O&amp;M negociados · experiencia del equipo</span></li>
+      <li><b>ES · EN · 中文</b><span class="q-proof__k" data-i18n="p4">informes en tres idiomas</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · El problema en cifras ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · El problema en cifras</span><h2 class="q-h2" data-i18n="s1_h">El frío no se apaga, y el respaldo cuesta cada vez más.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">Un corte de red puede echar a perder producto, y el grupo que lo cubre quema diésel a precios en alza.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f1v">CLP 1.222</span><span class="q-fig__k" data-i18n="f1k">por litro: precio promedio nacional del diésel en agosto de 2026</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.cne.cl/wp-content/uploads/2026/09/RMensual_v202609.pdf" target="_blank" rel="noopener">CNE, reporte mensual</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f2v">+CLP 309,9</span><span class="q-fig__k" data-i18n="f2k">por litro subió el diésel entre fines de julio y el 30 de septiembre de 2026</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.emol.com/noticias/Economia/2026/09/30/1212882/alza-precios-combustibles-diesel-enap.html" target="_blank" rel="noopener">Emol</a></span></div>
+      <div class="q-fig"><span class="q-fig__v">201 kWh</span><span class="q-fig__k" data-i18n="f3k">de almacenamiento declarado en todo el net billing: las baterías detrás del medidor recién empiezan</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.pv-magazine.com/2026/07/02/pv-capacity-under-chiles-net-billing-scheme-exceeds-500-mw/" target="_blank" rel="noopener">pv magazine</a></span></div>
+    </div>
+    <div class="note a" style="margin-top:28px;"><h3 class="q-h4" style="margin-bottom:6px;" data-i18n="n1h">Una cifra que no encontramos</h3><p data-i18n="n1p">No hallamos una cifra pública confiable del consumo energético del sector frío en Chile. Por eso cada caso se construye con 12 boletas y datos de 15 minutos de su medidor, nunca con reglas generales.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Tres casos de uso ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s2_eb">02 · Tres casos de uso</span><h2 class="q-h2" data-i18n="s2_h">Punta, respaldo y entregas: tres decisiones con datos.</h2></div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u1k">Caso 01 · Demanda en punta</span>
+        <h3 data-i18n="u1h">Peak shaving con baterías</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u1p">Compresores que arrancan juntos y la temporada alta fijan la demanda en punta que se cobra en su factura.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u1d">Dimensionamos la batería con 12 boletas y datos de 15 minutos, modelando la operación real de sus compresores.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u1r">Factibilidad con rentabilidad y una especificación lista para licitar entre proveedores.</p>
+        <a class="q-card__link" href="/servicios/solar-y-baterias/" data-i18n="u1l">Ver solar y baterías</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u2k">Caso 02 · Respaldo</span>
+        <h3 data-i18n="u2h">Solar y baterías para reducir horas de grupo</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u2p">El grupo electrógeno cubre los cortes de red, pero cada hora cuesta diésel, mantención y ruido.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u2d">Estudiamos cargas críticas y el costo de un corte, y dimensionamos un respaldo con baterías primero y el grupo de apoyo.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u2r">Diseño conceptual del respaldo, horas de grupo evitadas estimadas y un plan de pruebas.</p>
+        <a class="q-card__link" href="/servicios/reemplazo-diesel/" data-i18n="u2l">Ver reemplazo de diésel</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u3k">Caso 03 · PPA y plantas existentes</span>
+        <h3 data-i18n="u3h">Revisión independiente de su PPA o su planta solar</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u3p">Las ofertas sin inversión inicial traen su propio monitoreo: quien vende la energía es quien la mide.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u3d">Comparamos PPA, leasing y compra en igualdad de condiciones y, ya firmado, conciliamos las entregas con su medidor.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u3r">Comparación de ofertas y un reporte mensual de entregas, con cada brecha marcada y explicada.</p>
+        <a class="q-card__link" href="/servicios/verificacion/" data-i18n="u3l">Ver verificación</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Cómo trabajamos ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s3_eb">03 · Cómo trabajamos</span><h2 class="q-h2" data-i18n="s3_h">Licitamos entre proveedores y verificamos la entrega.</h2></div>
+    <ol class="q-steps" style="--steps:4">
+      <li><h3 data-i18n="st1h">Evaluar</h3><p data-i18n="st1p">12 boletas, datos de 15 minutos, cargas críticas y registros del grupo. Precio fijo, unos 30 días.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+      <li><h3 data-i18n="st2h">Licitar</h3><p data-i18n="st2p">Especificamos y comparamos al menos tres ofertas, incluidos PPA sin inversión inicial.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+      <li><h3 data-i18n="st3h">Construir</h3><p data-i18n="st3p">Un socio EPC instala; un PPA, leasing o ESCO financia. Supervisamos y presenciamos las pruebas.</p><span class="q-chip q-chip--neutral" style="margin-top:14px;" data-i18n="chip_p">Socio · supervisa Quorelia</span></li>
+      <li><h3 data-i18n="st4h">Verificar</h3><p data-i18n="st4p">M&amp;V del ahorro y de las entregas, contra la línea base y el contrato.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+    </ol>
+    <div class="q-who" style="margin-top:56px;">
+      <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w1h">Lo que hace nuestro equipo</h3></div>
+        <ul class="q-arrow"><li data-i18n="w1a">Evaluación energética y línea base</li><li data-i18n="w1b">Especificación, licitación y comparación de ofertas</li><li data-i18n="w1c">Supervisión de obra, pruebas de puesta en marcha y M&amp;V</li></ul></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2k">Socios</span><h3 data-i18n="w2h">Lo que hacen socios certificados</h3></div>
+        <ul class="q-arrow"><li data-i18n="w2a">Instalación y trabajos en media tensión: instalador eléctrico Clase A con licencia SEC y declaraciones TE7</li><li data-i18n="w2b">Mantenimiento en terreno bajo un sistema de seguridad DS 44</li><li data-i18n="w2c">Control de contratistas según Ley 20.123, bajo nuestra gestión</li></ul></div>
+    </div>
+    <div class="note" style="margin-top:28px;"><p data-i18n="w_no">No vendemos equipos ni energía, no somos contratista EPC principal y no financiamos proyectos. Si un proveedor o financista nos paga una comisión, se lo informamos por escrito.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Oferta de entrada ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s4_eb">04 · Oferta de entrada</span><h2 class="q-h2" data-i18n="s4_h">Una evaluación a precio fijo, antes de firmar un PPA.</h2></div>
+    <div class="q-grid q-grid--2">
+      <div class="q-door">
+        <span class="q-eyebrow" data-i18n="of_eb">Precio fijo · unos 30 días</span>
+        <h3 data-i18n="of_h">Evaluación energética</h3>
+        <ul class="q-check">
+          <li data-i18n="of1">Perfil de carga a 15 minutos y 12 boletas</li>
+          <li data-i18n="of2">Cargas críticas, cortes de red y horas de grupo</li>
+          <li data-i18n="of3">Dimensionamiento de baterías, con y sin solar</li>
+          <li data-i18n="of4">Qué cifras de cada oferta están respaldadas y cuáles son supuestos del vendedor</li>
+          <li data-i18n="of5">Un informe que queda con usted, nos contrate o no</li>
+        </ul>
+        <div class="q-actions">
+          <a class="btn btn--primary" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pr_k">Modelo de precio</span>
+        <h3 data-i18n="pr_h">Cómo se cobra</h3>
+        <ul class="q-arrow">
+          <li data-i18n="pr1"><b>Evaluación energética:</b> precio fijo, acordado antes de empezar; unos 30 días.</li>
+          <li data-i18n="pr2"><b>Abono:</b> el 50 % se descuenta del honorario de ingeniero del dueño si decide construir.</li>
+          <li data-i18n="pr3"><b>Ingeniero del dueño:</b> un porcentaje del capex, fijado como suma alzada al dar la orden de proceder.</li>
+          <li data-i18n="pr4"><b>M&amp;V y monitoreo posterior:</b> tarifa por kW-año, nunca un porcentaje del ahorro que medimos.</li>
+        </ul>
+        <p class="q-small" style="margin-top:18px;" data-i18n="pr5">Propuesta con precio cerrado dentro de 5 días hábiles desde la primera reunión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Preguntas frecuentes ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s5_eb">05 · Preguntas frecuentes</span><h2 class="q-h2" data-i18n="s5_h">Lo que preguntan las plantas de frío antes de empezar.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Por qué pagar un estudio si el proveedor lo hace sin costo?</summary><div><p data-i18n="fa1">Porque quien vende la energía es quien hace ese estudio. Nosotros no vendemos equipos ni energía: comparamos sus ofertas en igualdad de condiciones y le decimos qué supuestos sostienen cada una.</p></div></details>
+      <details><summary data-i18n="fq2">¿Cuánto cuesta?</summary><div><p data-i18n="fa2">La evaluación tiene precio fijo, acordado antes de empezar según el tamaño y el número de sitios. Si decide construir y nos encarga como ingeniero del dueño, el 50 % se abona a ese honorario. La M&amp;V posterior se cobra por kW-año.</p></div></details>
+      <details><summary data-i18n="fq3">¿Funciona con mi medidor y mis equipos de frío?</summary><div><p data-i18n="fa3">Trabajamos con los datos de 15 minutos de su medidor, sus boletas, los registros del grupo electrógeno y, si existen, los datos de compresores y cámaras. Eagle Eye los lee en modo lectura y nunca escribe consignas.</p></div></details>
+      <details><summary data-i18n="fq4">¿Quién instala y quién responde por la obra?</summary><div><p data-i18n="fa4">Un socio EPC certificado que usted elige en la licitación, con instalador eléctrico Clase A con licencia SEC para media tensión y declaraciones TE7. Nosotros especificamos, supervisamos y presenciamos las pruebas; no somos contratista EPC principal.</p></div></details>
+      <details><summary data-i18n="fq5">¿Cuándo conviene hacerlo?</summary><div><p data-i18n="fa5">Antes o después del peak de temporada, para que la visita y una eventual obra no choquen con la producción. La evaluación toma unos 30 días con los datos históricos de su medidor.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div>
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación</span>
+      <h2 class="q-h2" data-i18n="ct_h">Solicite una evaluación energética de su planta de frío.</h2>
+      <p class="q-lede" data-i18n="ct_p">Precio fijo, unos 30 días. El informe queda con usted, nos contrate o no.</p>
+    </div>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+window.Q_PAGE = {
+ en:{ __title:"Peak shaving and energy backup for cold stores · Quorelia",
+  __desc:"Battery peak shaving, backup for cold rooms and PPA verification for food plants in Chile. Buyer's engineering; we sell no equipment.",
+  cr_home:"Home", cr_ind:"Industries", cr_here:"Food &amp; cold chain",
+  hero_eb:"Food &amp; cold chain · packing houses and cold stores",
+  hero_h:"Energy backup and peak shaving for cold stores.",
+  hero_p:"We act as the buyer's engineer: we compare PPA, leasing and purchase offers across providers, then verify that each one delivers what it promised. We sell no equipment and no energy.",
+  cta1:"Request an energy assessment", cta_cal:"Book 30 minutes",
+  inst_aria:"Sample Eagle Eye view for a cold store, with illustrative data",
+  inst_bar:"Eagle Eye · Demo cold store", inst_live:"Live",
+  k1k:"Peak-hour maximum demand", k1v:"1,240 kW", k1s:"utility meter, 15-min intervals",
+  k2k:"PPA delivery against contract", k2v:"96.4%", k2s:"reconciled with your meter in 98% of hours",
+  k3k:"Savings from peak shaving", k3v:"Withheld", k3s:"baseline incomplete: 7 of 12 months",
+  k4k:"Genset hours", k4v:"38 h", k4s:"3 grid outages this month",
+  r1c:"Risk", r1:"Compressors 2 and 3 start together and set the peak",
+  r2c:"Closed", r2:"Grid outage 14:20 · genset online in 38 s", r2t:"Tue",
+  inst_foot:"Illustrative data · demo fleet",
+  p1:"under monitoring", p2:"10 PMGD plants operated · team experience", p3:"of EPC and O&amp;M contracts negotiated · team experience", p4:"reports in three languages",
+  s1_eb:"01 · The problem in numbers", s1_h:"Refrigeration never switches off, and backup keeps getting dearer.",
+  s1_p:"A grid outage can spoil product, and the genset that covers it burns diesel at rising prices.",
+  f1v:"CLP 1,222", f1k:"per litre: the national average diesel price in August 2026",
+  f2v:"+CLP 309.9", f2k:"per litre: the rise in diesel between late July and 30 September 2026",
+  f3k:"of storage declared across all of net billing: behind-the-meter batteries are just starting",
+  src:"Source:",
+  n1h:"A figure we could not find",
+  n1p:"We found no reliable public figure for the energy use of Chile's cold-chain sector. That is why every case is built from 12 bills and 15-minute data from your meter, never from rules of thumb.",
+  s2_eb:"02 · Three use cases", s2_h:"Peak, backup and deliveries: three decisions made with data.",
+  lbl_p:"The problem", lbl_d:"What we do", lbl_r:"What you receive",
+  u1k:"Case 01 · Peak demand", u1h:"Peak shaving with batteries",
+  u1p:"Compressors starting together and the high season set the peak demand charged on your bill.",
+  u1d:"We size the battery from 12 bills and 15-minute data, modelling how your compressors actually run.",
+  u1r:"Feasibility with returns and a specification ready to tender among providers.",
+  u1l:"See solar and batteries",
+  u2k:"Case 02 · Backup", u2h:"Solar and batteries to cut genset hours",
+  u2p:"The genset covers grid outages, but every hour costs diesel, maintenance and noise.",
+  u2d:"We study critical loads and the cost of an outage, and size a battery-first backup with the genset in support.",
+  u2r:"A conceptual backup design, estimated genset hours avoided and a test plan.",
+  u2l:"See diesel replacement",
+  u3k:"Case 03 · PPAs and existing plants", u3h:"Independent review of your PPA or solar plant",
+  u3p:"Zero-capex offers come with their own monitoring: the party selling the energy is the one measuring it.",
+  u3d:"We compare PPA, leasing and purchase on equal terms and, once signed, reconcile deliveries with your meter.",
+  u3r:"A comparison of offers and a monthly delivery report, with every gap flagged and explained.",
+  u3l:"See verification",
+  s3_eb:"03 · How we work", s3_h:"We tender among providers and verify what they deliver.",
+  st1h:"Assess", st1p:"12 bills, 15-minute data, critical loads and genset logs. Fixed price, about 30 days.",
+  st2h:"Tender", st2p:"We specify and compare at least three offers, zero-capex PPAs included.",
+  st3h:"Build", st3p:"An EPC partner installs; a PPA, lease or ESCO finances. We supervise and witness the tests.",
+  st4h:"Verify", st4p:"M&amp;V of savings and deliveries, against the baseline and the contract.",
+  chip_p:"Partner · supervised by Quorelia",
+  w1h:"What our team does", w1a:"Energy assessment and baseline", w1b:"Specification, tendering and bid comparison", w1c:"Construction supervision, commissioning tests and M&amp;V",
+  w2k:"Partners", w2h:"What certified partners do", w2a:"Installation and medium-voltage work: SEC-licensed Class A electrical installer and TE7 declarations", w2b:"Field maintenance under a DS 44 safety system", w2c:"Contractor controls under Ley 20.123, under our management",
+  w_no:"We sell no equipment or energy, never act as EPC prime contractor and do not finance projects. If a provider or financier pays us a fee, we disclose it to you in writing.",
+  s4_eb:"04 · Entry offer", s4_h:"A fixed-price assessment, before you sign a PPA.",
+  of_eb:"Fixed price · about 30 days", of_h:"Energy assessment",
+  of1:"Load profile at 15 minutes and 12 bills",
+  of2:"Critical loads, grid outages and genset hours",
+  of3:"Battery sizing, with and without solar",
+  of4:"Which figures in each offer are backed by data and which are the seller's assumptions",
+  of5:"A report you keep whether or not you hire us",
+  pr_k:"Pricing model", pr_h:"How it is priced",
+  pr1:"<b>Energy assessment:</b> a fixed price agreed before we start; about 30 days.",
+  pr2:"<b>Credit:</b> 50% is deducted from the owner's-engineer fee if you decide to build.",
+  pr3:"<b>Owner's engineer:</b> a percentage of capex, fixed as a lump sum at notice to proceed.",
+  pr4:"<b>Ongoing M&amp;V and monitoring:</b> a fee per kW-year, never a share of the savings we measure.",
+  pr5:"A fixed-price proposal within 5 working days of the first meeting.",
+  s5_eb:"05 · Frequently asked questions", s5_h:"What cold stores ask before they start.",
+  fq1:"Why pay for a study when the provider does one at no cost?",
+  fa1:"Because the party selling the energy is the one doing that study. We sell neither equipment nor energy: we compare your offers on equal terms and tell you which assumptions hold each one up.",
+  fq2:"How much does it cost?",
+  fa2:"The assessment has a fixed price, agreed before we start according to size and number of sites. If you decide to build and hire us as owner's engineer, 50% is credited to that fee. Ongoing M&amp;V is charged per kW-year.",
+  fq3:"Does it work with my meter and refrigeration equipment?",
+  fa3:"We work with your meter's 15-minute data, your bills, genset logs and, where available, compressor and cold-room data. Eagle Eye reads them in read-only mode and never writes setpoints.",
+  fq4:"Who installs, and who is liable for the works?",
+  fa4:"A certified EPC partner you choose in the tender, with an SEC-licensed Class A electrical installer for medium-voltage work and TE7 declarations. We specify, supervise and witness the tests; we never act as EPC prime contractor.",
+  fq5:"When is the right time?",
+  fa5:"Before or after the seasonal peak, so the visit and any works do not clash with production. The assessment takes about 30 days using your meter's historical data.",
+  ct_eb:"Start with an assessment", ct_h:"Request an energy assessment of your cold store.",
+  ct_p:"Fixed price, about 30 days. You keep the report whether or not you hire us.",
+  ct_alt:"Or write to us:" },
+ zh:{ __title:"冷库削峰与备用电源 · Quorelia",
+  __desc:"为智利食品工厂提供储能削峰、冷库备用电源和购电协议核查。我们担任买方工程师，不销售设备。",
+  cr_home:"首页", cr_ind:"行业", cr_here:"食品与冷链",
+  hero_eb:"食品与冷链 · 包装厂与冷库",
+  hero_h:"为冷库提供备用电源与削峰方案。",
+  hero_p:"我们担任买方工程师：在不同供应商之间比较购电协议（PPA）、租赁和购买方案，然后核查每家是否兑现承诺。我们不销售设备，也不售电。",
+  cta1:"申请能源评估", cta_cal:"预约 30 分钟通话",
+  inst_aria:"Eagle Eye 冷库示例视图（示意数据）",
+  inst_bar:"Eagle Eye · 演示冷库", inst_live:"实时",
+  k1k:"高峰时段最大需量", k1v:"1,240 kW", k1s:"配电公司电表，15 分钟区间",
+  k2k:"PPA 交付对照合同", k2v:"96.4%", k2s:"98% 的小时已与您的电表核对",
+  k3k:"削峰节省", k3v:"暂不发布", k3s:"基线不完整：12 个月中仅有 7 个月",
+  k4k:"发电机组运行小时", k4v:"38 h", k4s:"本月电网停电 3 次",
+  r1c:"风险", r1:"2 号和 3 号压缩机同时启动，形成需量高峰",
+  r2c:"已关闭", r2:"14:20 电网停电 · 机组 38 秒内并网供电", r2t:"周二",
+  inst_foot:"示意数据 · 演示资产",
+  p1:"监测容量", p2:"运营 10 座 PMGD 电站 · 团队经验", p3:"谈判 EPC 与运维合同 · 团队经验", p4:"三种语言的报告",
+  s1_eb:"01 · 用数字看问题", s1_h:"制冷从不停机，而备用电源越来越贵。",
+  s1_p:"一次电网停电就可能让产品报废，而负责顶上的发电机组烧的是不断涨价的柴油。",
+  f1v:"CLP 1,222", f1k:"每升：2026 年 8 月全国柴油平均价格",
+  f2v:"+CLP 309.9", f2k:"每升：2026 年 7 月底至 9 月 30 日柴油价格累计涨幅",
+  f3k:"为整个净计费体系中申报的储能容量：表后储能才刚刚起步",
+  src:"来源：",
+  n1h:"我们没有找到的数字",
+  n1p:"我们没有找到关于智利冷链行业能耗的可靠公开数据。因此每个案例都基于 12 个月电费单和您电表的 15 分钟数据，而不是经验法则。",
+  s2_eb:"02 · 三个应用场景", s2_h:"高峰、备用与交付：三个用数据做出的决定。",
+  lbl_p:"问题", lbl_d:"我们做什么", lbl_r:"您得到什么",
+  u1k:"场景 01 · 高峰需量", u1h:"储能削峰",
+  u1p:"压缩机同时启动加上旺季，决定了电费单上计收的高峰需量。",
+  u1d:"我们根据 12 个月电费单和 15 分钟数据测算储能规模，并按压缩机的实际运行方式建模。",
+  u1r:"含收益分析的可行性研究，以及可直接用于供应商招标的技术规格。",
+  u1l:"查看光伏与储能服务",
+  u2k:"场景 02 · 备用电源", u2h:"用光伏加储能减少机组运行小时",
+  u2p:"发电机组负责应对电网停电，但每运行一小时都要付出柴油、维护和噪音的代价。",
+  u2d:"我们研究关键负荷和停电成本，设计以储能为主、机组为辅的备用方案。",
+  u2r:"备用电源概念设计、预计可减少的机组小时数以及测试计划。",
+  u2l:"查看柴油替代服务",
+  u3k:"场景 03 · PPA 与现有电站", u3h:"对您的 PPA 或光伏电站进行独立核查",
+  u3p:"零资本支出方案自带监测：卖电的一方同时也是计量的一方。",
+  u3d:"我们在同等条件下比较 PPA、租赁和购买方案；签约后将交付电量与您的电表核对。",
+  u3r:"方案比较，以及每月交付报告，每处差异都会标注并解释。",
+  u3l:"查看核查服务",
+  s3_eb:"03 · 我们的工作方式", s3_h:"我们组织供应商招标，并核查其交付。",
+  st1h:"评估", st1p:"12 个月电费单、15 分钟数据、关键负荷和机组记录。固定价格，约 30 天。",
+  st2h:"招标", st2p:"我们编制技术规格并比较至少三份报价，包括零资本支出的 PPA。",
+  st3h:"建设", st3p:"由 EPC 合作方安装，由 PPA、租赁或 ESCO 提供融资。我们负责监督并见证测试。",
+  st4h:"核查", st4p:"对照基线和合同，对节省和交付进行 M&amp;V。",
+  chip_p:"合作方 · Quorelia 监督",
+  w1h:"我们团队的工作", w1a:"能源评估与基线", w1b:"技术规格、招标与报价比较", w1c:"施工监督、调试测试与 M&amp;V",
+  w2k:"合作方", w2h:"认证合作方的工作", w2a:"安装与中压作业：持 SEC 执照的 A 类电气安装商及 TE7 申报", w2b:"在 DS 44 安全体系下开展现场维护", w2c:"依 Ley 20.123 进行承包商管控，由我们统一管理",
+  w_no:"我们不销售设备或电力，不担任 EPC 总承包商，也不为项目融资。如有供应商或融资方向我们支付佣金，我们会书面告知您。",
+  s4_eb:"04 · 入门服务", s4_h:"在签署 PPA 之前，先做一次固定价格的评估。",
+  of_eb:"固定价格 · 约 30 天", of_h:"能源评估",
+  of1:"15 分钟负荷曲线及 12 个月电费单",
+  of2:"关键负荷、电网停电与机组运行小时",
+  of3:"储能规模测算，含配与不配光伏两种方案",
+  of4:"每份报价中哪些数字有数据支撑，哪些只是卖方的假设",
+  of5:"报告归您所有，无论是否继续合作",
+  pr_k:"定价模式", pr_h:"收费方式",
+  pr1:"<b>能源评估：</b>开工前约定的固定价格；约 30 天。",
+  pr2:"<b>抵扣：</b>如决定建设，评估费的 50% 可抵扣业主工程师费用。",
+  pr3:"<b>业主工程师：</b>按资本支出的一定比例计算，在开工通知时锁定为总价。",
+  pr4:"<b>后续 M&amp;V 与监测：</b>按千瓦·年收费，绝不按我们测量的节省分成。",
+  pr5:"首次会议后 5 个工作日内提交固定价格方案。",
+  s5_eb:"05 · 常见问题", s5_h:"冷库在开始前常问的问题。",
+  fq1:"供应商做研究不收费，为什么还要付费请你们做？",
+  fa1:"因为做这份研究的正是卖电的一方。我们既不卖设备也不卖电：我们在同等条件下比较您的各份报价，并告诉您每份报价依赖哪些假设。",
+  fq2:"费用是多少？",
+  fa2:"评估为固定价格，开工前根据规模和场地数量约定。如决定建设并聘请我们担任业主工程师，评估费的 50% 可抵扣该费用。后续 M&amp;V 按千瓦·年收费。",
+  fq3:"能兼容我的电表和制冷设备吗？",
+  fa3:"我们使用您电表的 15 分钟数据、电费单、机组记录，以及已有的压缩机和冷间数据。Eagle Eye 以只读方式读取，从不写入设定值。",
+  fq4:"谁负责安装？谁对工程负责？",
+  fa4:"由您在招标中选定的认证 EPC 合作方负责，配备持 SEC 执照、可承担中压作业和 TE7 申报的 A 类电气安装商。我们负责技术规格、监督和见证测试；我们不担任 EPC 总承包商。",
+  fq5:"什么时候做最合适？",
+  fa5:"在旺季之前或之后，避免现场踏勘和可能的施工与生产冲突。评估利用您电表的历史数据，约需 30 天。",
+  ct_eb:"从一次评估开始", ct_h:"为您的冷库申请一次能源评估。",
+  ct_p:"固定价格，约 30 天。无论是否继续合作，报告都归您所有。",
+  ct_alt:"或联系我们：" }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>

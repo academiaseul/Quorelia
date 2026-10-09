@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Gestión energética Ley 21.305 y peak shaving industrial · Quorelia</title>
+<meta name="description" content="Datos de energía verificados para la Ley 21.305, peak shaving con baterías y revisión independiente de contratos de suministro para la industria en Chile.">
+<link rel="canonical" href="https://www.quorelia.org/industrias/industria/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/industrias/industria/">
+<meta property="og:title" content="Gestión energética Ley 21.305 con cifras que resisten una auditoría · Quorelia">
+<meta property="og:description" content="Datos de energía con cobertura y fórmula por cifra, factibilidad de baterías y licitación entre proveedores, sin vender equipos ni energía.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Gestión energética Ley 21.305 y peak shaving industrial","serviceType":"Energy data verification and owner's engineering","areaServed":"CL",
+  "audience":{"@type":"BusinessAudience","name":"Grandes consumidores industriales de energía"},
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/industrias/industria/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Industria","item":"https://www.quorelia.org/industrias/industria/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Mi empresa está obligada por la Ley 21.305?","acceptedAnswer":{"@type":"Answer","text":"La obligación aplica a los grandes consumidores designados, con 50 Tcal o más de consumo anual de energía. Si está cerca del umbral, la evaluación le muestra su consumo consolidado y la cobertura de sus medidores; la designación la confirma usted con la autoridad."}},
+  {"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"La evaluación tiene precio fijo, acordado antes de empezar según el número de sitios y medidores. Si decide construir y nos encarga como ingeniero del dueño, el 50 % se abona a ese honorario. Los datos y la M&V continuos se cobran por kW-año."}},
+  {"@type":"Question","name":"¿Funciona con mis medidores y sistemas actuales?","acceptedAnswer":{"@type":"Answer","text":"Sí, en modo lectura: Eagle Eye lee medidores, SCADA, EMS, inversores y registros de mantenimiento, y nunca escribe consignas. Si falta un medidor o una calibración, lo marcamos y la cifra afectada se retiene hasta corregirlo."}},
+  {"@type":"Question","name":"Ya me ofrecen auditoría, monitoreo y solar en un solo paquete. ¿Por qué ustedes?","acceptedAnswer":{"@type":"Answer","text":"Porque no vendemos energía ni equipos. Ponemos esas ofertas a competir en igualdad de condiciones y, una vez firmado, verificamos lo que entregan. Si algún proveedor nos paga una comisión, se lo informamos por escrito."}},
+  {"@type":"Question","name":"¿Revisan contratos de cliente libre?","acceptedAnswer":{"@type":"Answer","text":"Sí. Sobre 500 kW de potencia conectada, un cliente puede optar al régimen libre por al menos 4 años (LGSE, art. 147). Comparamos ofertas y, una vez firmado, conciliamos facturas contra su medidor. La revisión legal del contrato la hace su asesor."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--primary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><span data-i18n="cr_ind">Industrias</span><span aria-hidden="true">/</span><span data-i18n="cr_here">Industria</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Industria · grandes consumidores de energía</span>
+        <h1 class="q-h1" data-i18n="hero_h">Gestión energética Ley 21.305 con cifras que resisten una auditoría.</h1>
+        <p class="q-lede" data-i18n="hero_p">La ley exige a los grandes consumidores un sistema de gestión de energía, un reporte anual y auditorías periódicas. Le entregamos los datos con su cobertura y su fórmula, y le ayudamos a decidir baterías y contratos sin vender ninguno.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye para una planta industrial, con datos ilustrativos" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_bar">Eagle Eye · Planta industrial demo</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k1k">Consumo cubierto por el SGE</span><span class="q-kpi__v" data-i18n="k1v">86 %</span><span class="q-kpi__s" data-i18n="k1s">exigencia legal: 80 % o más · 14 medidores</span><span class="q-kpi__bar"><i style="width:86%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k2k">Intensidad energética</span><span class="q-kpi__v" data-i18n="k2v">1,42 MWh/t</span><span class="q-kpi__s" data-i18n="k2s">septiembre · 2.910 t producidas</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k3k">Ahorro del plan de eficiencia</span><span class="q-kpi__v" data-i18n="k3v">Retenida</span><span class="q-kpi__s" data-i18n="k3s">medidor del área 4 sin calibración vigente · cobertura 72 %</span><span class="q-kpi__bar"><i style="width:72%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k4k">Demanda máxima leída</span><span class="q-kpi__v" data-i18n="k4v">3.460 kW</span><span class="q-kpi__s" data-i18n="k4s">medidor de facturación, intervalos de 15 min</span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Revisar</span><span data-i18n="r1">Área 4 · certificado de calibración vencido hace 40 días</span><span class="t">08:00</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r2c">Listo</span><span data-i18n="r2">Reporte anual · borrador con fuentes y fórmulas</span><span class="t" data-i18n="r2t">hoy</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Datos ilustrativos · flota demo</span><span>ES · EN · 中文</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 plantas PMGD operadas · experiencia del equipo</span></li>
+      <li><b>70 MW</b><span class="q-proof__k" data-i18n="p3">en contratos EPC y O&amp;M negociados · experiencia del equipo</span></li>
+      <li><b>ES · EN · 中文</b><span class="q-proof__k" data-i18n="p4">informes en tres idiomas</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 2 · El problema en cifras ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · La exigencia en cifras</span><h2 class="q-h2" data-i18n="s1_h">La ley ya fija el estándar de sus datos de energía.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">Tres exigencias de la Ley 21.305 de eficiencia energética para los grandes consumidores designados.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v">50 Tcal</span><span class="q-fig__k" data-i18n="f1k">de consumo anual de energía o más: desde ese umbral, la empresa debe operar un sistema de gestión de energía</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=21305" target="_blank" rel="noopener">Ley 21.305</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f2v">≥80 %</span><span class="q-fig__k" data-i18n="f2k">del consumo debe quedar cubierto por ese sistema, con un reporte anual a la autoridad</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=21305" target="_blank" rel="noopener">Ley 21.305</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f3v">3 años</span><span class="q-fig__k" data-i18n="f3k">es el ciclo de auditoría del sistema: cada cifra reportada debe poder rastrearse a su medición</span><span class="q-fig__src"><span data-i18n="src">Fuente:</span> <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idLey=21305" target="_blank" rel="noopener">Ley 21.305</a></span></div>
+    </div>
+    <div class="note" style="margin-top:28px;"><h3 class="q-h4" style="margin-bottom:6px;" data-i18n="n1h">Muchos le ofrecen el paquete completo</h3><p data-i18n="n1p">Generadoras y proveedores de soluciones venden auditoría, M&amp;V, monitoreo y solar dentro del mismo contrato de suministro. Nosotros no vendemos energía ni equipos: los invitamos a ofertar y verificamos lo que entregan.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Tres casos de uso ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s2_eb">02 · Tres casos de uso</span><h2 class="q-h2" data-i18n="s2_h">Punta, cumplimiento y contratos, del lado del comprador.</h2></div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u1k">Caso 01 · Demanda y respaldo</span>
+        <h3 data-i18n="u1h">Factibilidad de baterías y peak shaving, luego ingeniero del dueño</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u1p">La demanda en punta pesa en la cuenta, y cada proveedor ofrece baterías con sus propios supuestos.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u1d">Dimensionamos con 12 boletas y datos de 15 minutos, comparamos ofertas y, si decide construir, actuamos como ingeniero del dueño.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u1r">Factibilidad, especificación para licitar y pruebas de puesta en marcha presenciadas.</p>
+        <a class="q-card__link" href="/servicios/ingenieria/" data-i18n="u1l">Ver ingeniería</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u2k">Caso 02 · Ley 21.305</span>
+        <h3 data-i18n="u2h">Datos de energía y reporte verificados</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u2p">El reporte anual se arma con planillas de varias áreas y medidores sin trazabilidad.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u2d">Eagle Eye consolida medidores y producción; cada cifra lleva su cobertura y su fórmula, y lo que no se puede respaldar se retiene.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u2r">Datos del sistema de gestión, borrador del reporte anual y un paquete de evidencia firmado para el auditor.</p>
+        <a class="q-card__link" href="/informe.html" data-i18n="u2l">Ver un informe de muestra</a>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="u3k">Caso 03 · Suministro y solar en sitio</span>
+        <h3 data-i18n="u3h">Contrato de cliente libre y verificación de la planta solar</h3>
+        <span class="q-eyebrow" style="margin:6px 0 6px;" data-i18n="lbl_p">El problema</span>
+        <p data-i18n="u3p">Cláusulas de suministro difíciles de seguir y una planta solar que mide el mismo proveedor.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_d">Qué hacemos</span>
+        <p data-i18n="u3d">Conciliamos facturas contra su medidor y el contrato, y recalculamos el rendimiento de la planta solar en sitio.</p>
+        <span class="q-eyebrow" style="margin:16px 0 6px;" data-i18n="lbl_r">Qué recibe</span>
+        <p data-i18n="u3r">Un reporte mensual con cada brecha marcada, explicada y conciliada.</p>
+        <a class="q-card__link" href="/normativa-electrica-chile.html" data-i18n="u3l">Ver la guía de normativa eléctrica</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Cómo trabajamos ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s3_eb">03 · Cómo trabajamos</span><h2 class="q-h2" data-i18n="s3_h">Ingenieros del comprador: los proveedores pasan a ser oferentes.</h2></div>
+    <ol class="q-steps" style="--steps:4">
+      <li><h3 data-i18n="st1h">Evaluar</h3><p data-i18n="st1p">12 boletas, datos de 15 minutos, mapa de medidores y una visita. Precio fijo, unos 30 días.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+      <li><h3 data-i18n="st2h">Licitar</h3><p data-i18n="st2p">Especificamos y comparamos ofertas de suministro, PPA, leasing o compra en igualdad de condiciones.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+      <li><h3 data-i18n="st3h">Construir</h3><p data-i18n="st3p">Un socio EPC instala y un socio financia. Supervisamos la obra y presenciamos las pruebas.</p><span class="q-chip q-chip--neutral" style="margin-top:14px;" data-i18n="chip_p">Socio · supervisa Quorelia</span></li>
+      <li><h3 data-i18n="st4h">Verificar y reportar</h3><p data-i18n="st4p">M&amp;V del ahorro y datos para el reporte de la Ley 21.305, con cifras retenidas cuando el dato no alcanza.</p><span class="q-chip q-chip--ok" style="margin-top:14px;">Quorelia</span></li>
+    </ol>
+    <div class="q-who" style="margin-top:56px;">
+      <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w1h">Lo que hace nuestro equipo</h3></div>
+        <ul class="q-arrow"><li data-i18n="w1a">Evaluación energética, línea base y datos del sistema de gestión</li><li data-i18n="w1b">Especificación, licitación y comparación de ofertas</li><li data-i18n="w1c">Supervisión de obra, pruebas de puesta en marcha y M&amp;V</li></ul></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2k">Socios</span><h3 data-i18n="w2h">Lo que hacen socios certificados</h3></div>
+        <ul class="q-arrow"><li data-i18n="w2a">Instalación y trabajos en media tensión: instalador eléctrico Clase A con licencia SEC y declaraciones TE7</li><li data-i18n="w2b">Mantenimiento en terreno bajo un sistema de seguridad DS 44</li><li data-i18n="w2c">Control de contratistas según Ley 20.123, bajo nuestra gestión</li></ul></div>
+    </div>
+    <div class="note" style="margin-top:28px;"><p data-i18n="w_no">No vendemos equipos ni energía, no somos contratista EPC principal y no financiamos proyectos. Si un proveedor o financista nos paga una comisión, se lo informamos por escrito.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Oferta de entrada ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s4_eb">04 · Oferta de entrada</span><h2 class="q-h2" data-i18n="s4_h">Una evaluación energética a precio fijo, antes de decidir.</h2></div>
+    <div class="q-grid q-grid--2">
+      <div class="q-door">
+        <span class="q-eyebrow" data-i18n="of_eb">Precio fijo · unos 30 días</span>
+        <h3 data-i18n="of_h">Evaluación energética</h3>
+        <ul class="q-check">
+          <li data-i18n="of1">Perfil de carga a 15 minutos y 12 boletas</li>
+          <li data-i18n="of2">Mapa de medidores y brechas frente al sistema de gestión de energía</li>
+          <li data-i18n="of3">Factibilidad de baterías y peak shaving, con y sin solar</li>
+          <li data-i18n="of4">Comparación independiente de ofertas de suministro, PPA o leasing</li>
+          <li data-i18n="of5">Un informe que queda con usted, nos contrate o no</li>
+        </ul>
+        <div class="q-actions">
+          <a class="btn btn--primary" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="q-card">
+        <span class="q-card__k" data-i18n="pr_k">Modelo de precio</span>
+        <h3 data-i18n="pr_h">Cómo se cobra</h3>
+        <ul class="q-arrow">
+          <li data-i18n="pr1"><b>Evaluación energética:</b> precio fijo, acordado antes de empezar; unos 30 días.</li>
+          <li data-i18n="pr2"><b>Abono:</b> el 50 % se descuenta del honorario de ingeniero del dueño si decide construir.</li>
+          <li data-i18n="pr3"><b>Ingeniero del dueño:</b> un porcentaje del capex, fijado como suma alzada al dar la orden de proceder.</li>
+          <li data-i18n="pr4"><b>Datos y M&amp;V continuos:</b> tarifa por kW-año, nunca un porcentaje del ahorro que medimos.</li>
+        </ul>
+        <p class="q-small" style="margin-top:18px;" data-i18n="pr5">Propuesta con precio cerrado dentro de 5 días hábiles desde la primera reunión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Preguntas frecuentes ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s5_eb">05 · Preguntas frecuentes</span><h2 class="q-h2" data-i18n="s5_h">Lo que preguntan las plantas industriales antes de empezar.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Mi empresa está obligada por la Ley 21.305?</summary><div><p data-i18n="fa1">La obligación aplica a los grandes consumidores designados, con 50 Tcal o más de consumo anual de energía. Si está cerca del umbral, la evaluación le muestra su consumo consolidado y la cobertura de sus medidores; la designación la confirma usted con la autoridad.</p></div></details>
+      <details><summary data-i18n="fq2">¿Cuánto cuesta?</summary><div><p data-i18n="fa2">La evaluación tiene precio fijo, acordado antes de empezar según el número de sitios y medidores. Si decide construir y nos encarga como ingeniero del dueño, el 50 % se abona a ese honorario. Los datos y la M&amp;V continuos se cobran por kW-año.</p></div></details>
+      <details><summary data-i18n="fq3">¿Funciona con mis medidores y sistemas actuales?</summary><div><p data-i18n="fa3">Sí, en modo lectura: Eagle Eye lee medidores, SCADA, EMS, inversores y registros de mantenimiento, y nunca escribe consignas. Si falta un medidor o una calibración, lo marcamos y la cifra afectada se retiene hasta corregirlo.</p></div></details>
+      <details><summary data-i18n="fq4">Ya me ofrecen auditoría, monitoreo y solar en un solo paquete. ¿Por qué ustedes?</summary><div><p data-i18n="fa4">Porque no vendemos energía ni equipos. Ponemos esas ofertas a competir en igualdad de condiciones y, una vez firmado, verificamos lo que entregan. Si algún proveedor nos paga una comisión, se lo informamos por escrito.</p></div></details>
+      <details><summary data-i18n="fq5">¿Revisan contratos de cliente libre?</summary><div><p data-i18n="fa5">Sí. Sobre 500 kW de potencia conectada, un cliente puede optar al régimen libre por al menos 4 años (<a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171" target="_blank" rel="noopener">LGSE, art. 147</a>). Comparamos ofertas y, una vez firmado, conciliamos facturas contra su medidor. La revisión legal del contrato la hace su asesor.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div>
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una evaluación</span>
+      <h2 class="q-h2" data-i18n="ct_h">Solicite una evaluación energética de su planta.</h2>
+      <p class="q-lede" data-i18n="ct_p">Precio fijo, unos 30 días. El informe queda con usted, nos contrate o no.</p>
+    </div>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=evaluacion-energetica#energia"><span data-i18n="cta1">Solicitar evaluación energética</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_services">Servicios</h5>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_industries">Industrias</h5>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <h5 data-i18n-c="f_ee">Eagle Eye y recursos</h5>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <h5 data-i18n-c="f_company">Empresa</h5>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+window.Q_PAGE = {
+ en:{ __title:"Ley 21.305 energy management and industrial peak shaving · Quorelia",
+  __desc:"Verified energy data for Chile's Ley 21.305, battery peak shaving and independent review of supply contracts for industry in Chile. We sell no equipment or energy.",
+  cr_home:"Home", cr_ind:"Industries", cr_here:"Industry",
+  hero_eb:"Industry · large energy consumers",
+  hero_h:"Ley 21.305 energy management, with figures that stand up to an audit.",
+  hero_p:"The law requires large consumers to run an energy-management system, report every year and be audited periodically. We deliver the data with its coverage and formula, and help you decide on batteries and contracts without selling either.",
+  cta1:"Request an energy assessment", cta_cal:"Book 30 minutes",
+  inst_aria:"Sample Eagle Eye view for an industrial plant, with illustrative data",
+  inst_bar:"Eagle Eye · Demo industrial plant", inst_live:"Live",
+  k1k:"Consumption covered by the EnMS", k1v:"86%", k1s:"legal requirement: 80% or more · 14 meters",
+  k2k:"Energy intensity", k2v:"1.42 MWh/t", k2s:"September · 2,910 t produced",
+  k3k:"Efficiency-plan savings", k3v:"Withheld", k3s:"area 4 meter out of calibration · coverage 72%",
+  k4k:"Maximum demand read", k4v:"3,460 kW", k4s:"billing meter, 15-min intervals",
+  r1c:"Review", r1:"Area 4 · calibration certificate expired 40 days ago",
+  r2c:"Ready", r2:"Annual report · draft with sources and formulas", r2t:"today",
+  inst_foot:"Illustrative data · demo fleet",
+  p1:"under monitoring", p2:"10 PMGD plants operated · team experience", p3:"of EPC and O&amp;M contracts negotiated · team experience", p4:"reports in three languages",
+  s1_eb:"01 · The requirement in numbers", s1_h:"The law already sets the standard for your energy data.",
+  s1_p:"Three requirements of Ley 21.305 on energy efficiency for designated large consumers.",
+  f1k:"of annual energy use or more: from that threshold, a company must run an energy-management system",
+  f2v:"≥80%", f2k:"of consumption must be covered by that system, with an annual report to the authority",
+  f3v:"3 years", f3k:"is the audit cycle of the system: every reported figure must trace back to its measurement",
+  src:"Source:",
+  n1h:"Many offer you the full bundle",
+  n1p:"Generators and solution providers sell audits, M&amp;V, monitoring and solar inside the same supply contract. We sell no energy and no equipment: we invite them to bid and verify what they deliver.",
+  s2_eb:"02 · Three use cases", s2_h:"Peak demand, compliance and contracts, on the buyer's side.",
+  lbl_p:"The problem", lbl_d:"What we do", lbl_r:"What you receive",
+  u1k:"Case 01 · Demand and backup", u1h:"Battery and peak-shaving feasibility, then owner's engineer",
+  u1p:"Peak demand weighs on the bill, and every provider offers batteries built on its own assumptions.",
+  u1d:"We size from 12 bills and 15-minute data, compare offers and, if you decide to build, act as owner's engineer.",
+  u1r:"Feasibility, a specification ready to tender and witnessed commissioning tests.",
+  u1l:"See engineering",
+  u2k:"Case 02 · Ley 21.305", u2h:"Verified energy data and reporting",
+  u2p:"The annual report is assembled from spreadsheets across several areas and meters with no traceability.",
+  u2d:"Eagle Eye consolidates meters and production; every figure carries its coverage and formula, and what cannot be supported is withheld.",
+  u2r:"Energy-management system data, a draft annual report and a signed evidence pack for the auditor.",
+  u2l:"See a sample report",
+  u3k:"Case 03 · Supply and on-site solar", u3h:"Unregulated-customer supply contract and solar plant verification",
+  u3p:"Supply clauses that are hard to track, and a solar plant measured by the same provider.",
+  u3d:"We reconcile invoices against your meter and the contract, and recompute the performance of the on-site solar plant.",
+  u3r:"A monthly report with every gap flagged, explained and reconciled.",
+  u3l:"See the electricity rules guide",
+  s3_eb:"03 · How we work", s3_h:"Buyer's engineers: providers become bidders.",
+  st1h:"Assess", st1p:"12 bills, 15-minute data, a meter map and a site visit. Fixed price, about 30 days.",
+  st2h:"Tender", st2p:"We specify and compare supply, PPA, lease or purchase offers on equal terms.",
+  st3h:"Build", st3p:"An EPC partner installs and a partner finances. We supervise the works and witness the tests.",
+  st4h:"Verify and report", st4p:"M&amp;V of savings and data for the Ley 21.305 report, with figures withheld when the data falls short.",
+  chip_p:"Partner · supervised by Quorelia",
+  w1h:"What our team does", w1a:"Energy assessment, baseline and energy-management system data", w1b:"Specification, tendering and bid comparison", w1c:"Construction supervision, commissioning tests and M&amp;V",
+  w2k:"Partners", w2h:"What certified partners do", w2a:"Installation and medium-voltage work: SEC-licensed Class A electrical installer and TE7 declarations", w2b:"Field maintenance under a DS 44 safety system", w2c:"Contractor controls under Ley 20.123, under our management",
+  w_no:"We sell no equipment or energy, never act as EPC prime contractor and do not finance projects. If a provider or financier pays us a fee, we disclose it to you in writing.",
+  s4_eb:"04 · Entry offer", s4_h:"A fixed-price energy assessment, before you decide.",
+  of_eb:"Fixed price · about 30 days", of_h:"Energy assessment",
+  of1:"Load profile at 15 minutes and 12 bills",
+  of2:"Meter map and gaps against the energy-management system",
+  of3:"Battery and peak-shaving feasibility, with and without solar",
+  of4:"An independent comparison of supply, PPA or lease offers",
+  of5:"A report you keep whether or not you hire us",
+  pr_k:"Pricing model", pr_h:"How it is priced",
+  pr1:"<b>Energy assessment:</b> a fixed price agreed before we start; about 30 days.",
+  pr2:"<b>Credit:</b> 50% is deducted from the owner's-engineer fee if you decide to build.",
+  pr3:"<b>Owner's engineer:</b> a percentage of capex, fixed as a lump sum at notice to proceed.",
+  pr4:"<b>Ongoing data and M&amp;V:</b> a fee per kW-year, never a share of the savings we measure.",
+  pr5:"A fixed-price proposal within 5 working days of the first meeting.",
+  s5_eb:"05 · Frequently asked questions", s5_h:"What industrial plants ask before they start.",
+  fq1:"Is my company covered by Ley 21.305?",
+  fa1:"The duty applies to designated large consumers using 50 Tcal or more of energy a year. If you are close to the threshold, the assessment shows your consolidated consumption and your meter coverage; you confirm the designation with the authority.",
+  fq2:"How much does it cost?",
+  fa2:"The assessment has a fixed price, agreed before we start according to the number of sites and meters. If you decide to build and hire us as owner's engineer, 50% is credited to that fee. Ongoing data and M&amp;V are charged per kW-year.",
+  fq3:"Does it work with my current meters and systems?",
+  fa3:"Yes, in read-only mode: Eagle Eye reads meters, SCADA, EMS, inverters and maintenance records, and never writes setpoints. If a meter or a calibration is missing, we flag it and the affected figure is withheld until it is fixed.",
+  fq4:"I am already offered audits, monitoring and solar in one bundle. Why you?",
+  fa4:"Because we sell neither energy nor equipment. We put those offers in competition on equal terms and, once signed, verify what they deliver. If a provider pays us a fee, we disclose it to you in writing.",
+  fq5:"Do you review unregulated-customer supply contracts?",
+  fa5:"Yes. Above 500 kW of connected capacity, a customer may opt into the unregulated regime for at least 4 years (<a class=\"q-link\" href=\"https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171\" target=\"_blank\" rel=\"noopener\">LGSE, art. 147</a>). We compare offers and, once signed, reconcile invoices against your meter. Your counsel handles the legal review of the contract.",
+  ct_eb:"Start with an assessment", ct_h:"Request an energy assessment of your plant.",
+  ct_p:"Fixed price, about 30 days. You keep the report whether or not you hire us.",
+  ct_alt:"Or write to us:" },
+ zh:{ __title:"Ley 21.305 能源管理与工业削峰 · Quorelia",
+  __desc:"为智利工业企业提供符合 Ley 21.305 的经核实能源数据、储能削峰以及供电合同的独立审查。我们不销售设备，也不售电。",
+  cr_home:"首页", cr_ind:"行业", cr_here:"工业",
+  hero_eb:"工业 · 大型能源用户",
+  hero_h:"Ley 21.305 能源管理：经得起审计的数字。",
+  hero_p:"法律要求大型能源用户建立能源管理体系、每年报告并定期接受审计。我们交付附有覆盖率和公式的数据，并帮助您就储能和合同做出决定，而不向您销售其中任何一样。",
+  cta1:"申请能源评估", cta_cal:"预约 30 分钟通话",
+  inst_aria:"Eagle Eye 工业工厂示例视图（示意数据）",
+  inst_bar:"Eagle Eye · 演示工业工厂", inst_live:"实时",
+  k1k:"能源管理体系覆盖的用能", k1v:"86%", k1s:"法定要求：80% 及以上 · 14 块电表",
+  k2k:"能耗强度", k2v:"1.42 MWh/t", k2s:"9 月 · 产量 2,910 吨",
+  k3k:"能效计划节省", k3v:"暂不发布", k3s:"4 区电表校准过期 · 覆盖率 72%",
+  k4k:"读取的最大需量", k4v:"3,460 kW", k4s:"计费电表，15 分钟区间",
+  r1c:"待复核", r1:"4 区 · 校准证书已过期 40 天",
+  r2c:"就绪", r2:"年度报告 · 附来源和公式的草稿", r2t:"今天",
+  inst_foot:"示意数据 · 演示资产",
+  p1:"监测容量", p2:"运营 10 座 PMGD 电站 · 团队经验", p3:"谈判 EPC 与运维合同 · 团队经验", p4:"三种语言的报告",
+  s1_eb:"01 · 用数字看法规要求", s1_h:"法律已经为您的能源数据设定了标准。",
+  s1_p:"Ley 21.305 能效法对指定大型能源用户的三项要求。",
+  f1k:"及以上的年用能：达到该门槛的企业须运行能源管理体系",
+  f2v:"≥80%", f2k:"的用能须纳入该体系，并每年向主管部门报告",
+  f3v:"3 年", f3k:"为该体系的审计周期：每个上报数字都必须能追溯到其测量来源",
+  src:"来源：",
+  n1h:"很多人向您推销一揽子方案",
+  n1p:"发电企业和解决方案供应商把审计、M&amp;V、监测和光伏打包进同一份供电合同。我们既不卖电也不卖设备：我们邀请他们投标，并核查其交付。",
+  s2_eb:"02 · 三个应用场景", s2_h:"站在买方一侧处理高峰需量、合规与合同。",
+  lbl_p:"问题", lbl_d:"我们做什么", lbl_r:"您得到什么",
+  u1k:"场景 01 · 需量与备用", u1h:"储能与削峰可行性研究，随后担任业主工程师",
+  u1p:"高峰需量推高电费，而每家供应商的储能方案都基于自己的假设。",
+  u1d:"我们根据 12 个月电费单和 15 分钟数据测算规模、比较报价；如您决定建设，我们担任业主工程师。",
+  u1r:"可行性研究、可用于招标的技术规格，以及经见证的调试测试。",
+  u1l:"查看工程服务",
+  u2k:"场景 02 · Ley 21.305", u2h:"经核实的能源数据与报告",
+  u2p:"年度报告由多个部门的表格和缺乏可追溯性的电表数据拼凑而成。",
+  u2d:"Eagle Eye 汇总电表与产量数据；每个数字都附覆盖率和公式，无法支撑的数字暂不发布。",
+  u2r:"能源管理体系数据、年度报告草稿，以及交给审计方的签署证据包。",
+  u2l:"查看示例报告",
+  u3k:"场景 03 · 供电与厂内光伏", u3h:"自由用户供电合同与光伏电站核查",
+  u3p:"供电条款难以追踪，而光伏电站又由同一家供应商计量。",
+  u3d:"我们将发票与您的电表和合同核对，并重新计算厂内光伏电站的发电性能。",
+  u3r:"月度报告，每处差异都会标注、解释并完成核对。",
+  u3l:"查看智利电力法规指南",
+  s3_eb:"03 · 我们的工作方式", s3_h:"买方工程师：让供应商成为投标方。",
+  st1h:"评估", st1p:"12 个月电费单、15 分钟数据、电表分布图及现场踏勘。固定价格，约 30 天。",
+  st2h:"招标", st2p:"在同等条件下编制规格并比较供电、PPA、租赁或购买方案。",
+  st3h:"建设", st3p:"由 EPC 合作方安装、合作方提供融资。我们监督施工并见证测试。",
+  st4h:"核查与报告", st4p:"对节省进行 M&amp;V，并为 Ley 21.305 报告提供数据；数据不足时相关数字暂不发布。",
+  chip_p:"合作方 · Quorelia 监督",
+  w1h:"我们团队的工作", w1a:"能源评估、基线与能源管理体系数据", w1b:"技术规格、招标与报价比较", w1c:"施工监督、调试测试与 M&amp;V",
+  w2k:"合作方", w2h:"认证合作方的工作", w2a:"安装与中压作业：持 SEC 执照的 A 类电气安装商及 TE7 申报", w2b:"在 DS 44 安全体系下开展现场维护", w2c:"依 Ley 20.123 进行承包商管控，由我们统一管理",
+  w_no:"我们不销售设备或电力，不担任 EPC 总承包商，也不为项目融资。如有供应商或融资方向我们支付佣金，我们会书面告知您。",
+  s4_eb:"04 · 入门服务", s4_h:"在做决定之前，先做一次固定价格的能源评估。",
+  of_eb:"固定价格 · 约 30 天", of_h:"能源评估",
+  of1:"15 分钟负荷曲线及 12 个月电费单",
+  of2:"电表分布图及其与能源管理体系要求之间的差距",
+  of3:"储能与削峰可行性，含配与不配光伏两种方案",
+  of4:"对供电、PPA 或租赁报价的独立比较",
+  of5:"报告归您所有，无论是否继续合作",
+  pr_k:"定价模式", pr_h:"收费方式",
+  pr1:"<b>能源评估：</b>开工前约定的固定价格；约 30 天。",
+  pr2:"<b>抵扣：</b>如决定建设，评估费的 50% 可抵扣业主工程师费用。",
+  pr3:"<b>业主工程师：</b>按资本支出的一定比例计算，在开工通知时锁定为总价。",
+  pr4:"<b>持续数据与 M&amp;V：</b>按千瓦·年收费，绝不按我们测量的节省分成。",
+  pr5:"首次会议后 5 个工作日内提交固定价格方案。",
+  s5_eb:"05 · 常见问题", s5_h:"工业工厂在开始前常问的问题。",
+  fq1:"我的公司受 Ley 21.305 约束吗？",
+  fa1:"该义务适用于年用能 50 Tcal 及以上的指定大型用户。如果您接近门槛，评估会显示您的合并用能和电表覆盖情况；是否被指定，由您向主管部门确认。",
+  fq2:"费用是多少？",
+  fa2:"评估为固定价格，开工前根据场地和电表数量约定。如决定建设并聘请我们担任业主工程师，评估费的 50% 可抵扣该费用。持续数据与 M&amp;V 按千瓦·年收费。",
+  fq3:"能兼容我现有的电表和系统吗？",
+  fa3:"可以，以只读方式：Eagle Eye 读取电表、SCADA、EMS、逆变器和维护记录，从不写入设定值。如缺少电表或校准，我们会标注，相关数字在整改前暂不发布。",
+  fq4:"已经有人向我打包提供审计、监测和光伏，为什么选你们？",
+  fa4:"因为我们既不卖电也不卖设备。我们让这些报价在同等条件下竞争，签约后核查其交付。如有供应商向我们支付佣金，我们会书面告知您。",
+  fq5:"你们审查自由用户的供电合同吗？",
+  fa5:"审查。接入容量超过 500 kW 的用户可选择自由用户制度，期限至少 4 年（<a class=\"q-link\" href=\"https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171\" target=\"_blank\" rel=\"noopener\">LGSE 第 147 条</a>）。我们比较报价，签约后将发票与您的电表核对。合同的法律审查由您的法律顾问负责。",
+  ct_eb:"从一次评估开始", ct_h:"为您的工厂申请一次能源评估。",
+  ct_p:"固定价格，约 30 天。无论是否继续合作，报告都归您所有。",
+  ct_alt:"或联系我们：" }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>
