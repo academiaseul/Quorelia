@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Verificación de desempeño de plantas solares y BESS · Quorelia</title>
+<meta name="description" content="Verificación del desempeño de plantas solares y baterías en Chile: disponibilidad, PR, liquidación del CEN y ahorro de diésel, con evidencia firmada.">
+<link rel="canonical" href="https://www.quorelia.org/servicios/verificacion/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/servicios/verificacion/">
+<meta property="og:title" content="Verificación de desempeño de plantas solares y BESS · Quorelia">
+<meta property="og:description" content="Cifras que aceptan su financista, su directorio y su contratista: recalculadas desde los datos brutos y firmadas con sello de tiempo.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Verificación de desempeño","serviceType":"Performance, settlement and savings verification",
+  "description":"Verificación del desempeño de plantas solares, baterías y flotas híbridas en Chile: Línea Base Verificada, disponibilidad y PR recalculados, revisión de la liquidación del CEN, cumplimiento del contrato de O&M, evidencia BESS y M&V de ahorro de diésel, con paquetes de evidencia firmados.",
+  "areaServed":"CL",
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/servicios/verificacion/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
+  {"@type":"ListItem","position":3,"name":"Verificación","item":"https://www.quorelia.org/servicios/verificacion/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Es realmente independiente?","acceptedAnswer":{"@type":"Answer","text":"Sí, con reglas escritas: no verificamos un activo donde prestamos O&M, no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos."}},
+  {"@type":"Question","name":"¿Qué pasa si faltan datos?","acceptedAnswer":{"@type":"Answer","text":"La cifra se retiene y el informe dice por qué, con su cobertura. Cada brecha se señala, se explica y se concilia; las cifras que los datos sí sostienen quedan con su traza completa."}},
+  {"@type":"Question","name":"¿Qué responsabilidad asume Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Respondemos por la exactitud de las cifras que informamos, con un tope pactado en el contrato. No asumimos responsabilidad operativa: no damos consignas ni despachamos cuadrillas."}},
+  {"@type":"Question","name":"¿Qué seguros y licencias hay detrás?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados de seguro vigentes de Quorelia y de cada socio. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor certificado por el fabricante."}},
+  {"@type":"Question","name":"¿Cuánto dura y cómo se sale?","acceptedAnswer":{"@type":"Answer","text":"La Línea Base Verificada es un trabajo único de 30 a 45 días. La verificación continua tiene un plazo mínimo de 12 meses y se renueva sola; puede terminarla al vencimiento con aviso previo. Sus datos y paquetes se exportan en formatos abiertos."}},
+  {"@type":"Question","name":"¿Reemplaza al ingeniero independiente del financista?","acceptedAnswer":{"@type":"Answer","text":"No. Le entregamos evidencia que su ingeniero puede revisar por su cuenta, en lugar de pedirle al operador que vuelva a explicar sus cifras."}},
+  {"@type":"Question","name":"¿Cómo comprueba un tercero un paquete de evidencia?","acceptedAnswer":{"@type":"Answer","text":"Recalcula la huella SHA-256 de cada archivo, la compara con el manifiesto y verifica la firma electrónica avanzada y el sello de tiempo con herramientas estándar. No necesita acceso a Eagle Eye."}},
+  {"@type":"Question","name":"¿Pueden además gestionar el activo?","acceptedAnswer":{"@type":"Answer","text":"Sí. La gestión de activos incluye Eagle Eye y los informes verificados. Si además nos encarga el O&M de ese activo, sus informes se rotulan «reportado por el operador, verificable por terceros»."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--secondary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas" data-i18n-aria="cr_aria"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><a href="/servicios/" data-i18n="cr_svc">Servicios</a><span aria-hidden="true">/</span><span aria-current="page" data-i18n="cr_here">Verificación</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Verificación · Plantas solares, BESS y flotas híbridas</span>
+        <h1 class="q-h1" data-i18n="hero_h">Cifras que aceptan su financista, su directorio y su contratista.</h1>
+        <p class="q-lede" data-i18n="hero_p">Recalculamos la disponibilidad, el PR y la liquidación del CEN desde los datos brutos de su planta. Si los datos no sostienen una cifra, la retenemos y le decimos por qué.</p>
+        <div class="q-actions">
+          <a class="btn btn--primary btn--lg" href="/contacto/?interes=linea-base#activos"><span data-i18n="cta1">Solicitar Línea Base Verificada</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="/informe.html#fv-x" data-i18n="cta2">Ver un informe verificado de muestra</a>
+        </div>
+      </div>
+      <div class="q-inst" role="img" aria-label="Vista de muestra de Eagle Eye con datos ilustrativos de una verificación de disponibilidad" data-i18n-aria="inst_aria">
+        <div class="q-inst__bar"><span data-i18n="inst_t">Eagle Eye · Verificación · Planta FV demo 9 MWp</span><span class="live" data-i18n="inst_live">En vivo</span></div>
+        <div class="q-inst__kpis">
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k1k">Disponibilidad informada</span><span class="q-kpi__v" data-i18n="k1v">99,1 %</span><span class="q-kpi__s" data-i18n="k1s">según el informe mensual del contratista</span></div>
+          <div class="q-kpi q-kpi--ok"><span class="q-kpi__k" data-i18n="k2k">Disponibilidad recalculada</span><span class="q-kpi__v" data-i18n="k2v">97,4 %</span><span class="q-kpi__s" data-i18n="k2s">sobre 98 % de los intervalos · 3 exclusiones documentadas</span><span class="q-kpi__bar"><i style="width:98%"></i></span></div>
+          <div class="q-kpi"><span class="q-kpi__k" data-i18n="k3k">Energía no excluida</span><span class="q-kpi__v">38 MWh</span><span class="q-kpi__s" data-i18n="k3s">base del reclamo de multa al contratista</span></div>
+          <div class="q-kpi q-kpi--held"><span class="q-kpi__k" data-i18n="k4k">PR de septiembre</span><span class="q-kpi__v" data-i18n="k4v">Retenida</span><span class="q-kpi__s" data-i18n="k4s">irradiancia válida 71 % · umbral 90 %</span><span class="q-kpi__bar"><i style="width:71%"></i></span></div>
+        </div>
+        <ul class="q-inst__rows">
+          <li><span class="q-chip q-chip--warn" data-i18n="r1c">Observación</span><span data-i18n="r1">Inversor 3 · 24 h de falla sin exclusión documentada</span><span class="t" data-i18n="r1t">sept.</span></li>
+          <li><span class="q-chip q-chip--neutral" data-i18n="r2c">Excluida</span><span data-i18n="r2">Corte de la distribuidora · 3 h · evidencia adjunta</span><span class="t" data-i18n="r2t">14 sept.</span></li>
+          <li><span class="q-chip q-chip--ok" data-i18n="r3c">Firmado</span><span data-i18n="r3">Paquete de septiembre · firmado y sellado</span><span class="t" data-i18n="r3t">1 oct.</span></li>
+        </ul>
+        <div class="q-inst__foot"><span data-i18n="inst_foot">Flota demo · datos ilustrativos</span><span>Ley 19.799</span></div>
+      </div>
+    </div>
+    <ul class="q-proof">
+      <li><b>1 GW+</b><span class="q-proof__k" data-i18n="p1">bajo monitoreo</span></li>
+      <li><b>≈50 MW</b><span class="q-proof__k" data-i18n="p2">10 plantas PMGD operadas · experiencia del equipo</span></li>
+      <li><b data-i18n="p3v">30–45 días</b><span class="q-proof__k" data-i18n="p3">Línea Base Verificada · precio fijo</span></li>
+      <li><b>Ley 19.799</b><span class="q-proof__k" data-i18n="p4">firma electrónica avanzada y sello de tiempo</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Contexto: cifras con fuente ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="ctx_eb">Por qué verificar</span><h2 class="q-h2" data-i18n="ctx_h"><span class="dim">Quien informa su propia disponibilidad</span> se pone su propia nota.</h2></div>
+      <p class="q-lede" data-i18n="ctx_p">Dueños, financistas y compradores necesitan cifras que no dependan de quien opera la planta. Las recalculamos desde los datos brutos.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f1v">3.868 MW</span><span class="q-fig__k" data-i18n="f1k">de PMGD en operación en Chile.</span><span class="q-fig__src" data-i18n="f1s">Fuente: <a href="https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf" target="_blank" rel="noopener">ACERA, boletín ago. 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f2v">3.116 MW</span><span class="q-fig__k" data-i18n="f2k">de baterías en operación en agosto de 2026, el doble que en diciembre de 2025.</span><span class="q-fig__src" data-i18n="f2s">Fuentes: <a href="https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf" target="_blank" rel="noopener">ACERA, boletín ago. 2026</a> · <a href="https://www.acera.cl/acera-presenta-balance-2025-del-sistema-electrico-de-los-records-renovables-al-desafio-de-la-ejecucion/" target="_blank" rel="noopener">balance 2025</a></span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="f3v">1,2–1,4x</span><span class="q-fig__k" data-i18n="f3k">de DSCR mínimo en emisiones PMGD clasificadas por S&amp;P. Su financista necesita cifras que pueda auditar.</span><span class="q-fig__src" data-i18n="f3s">Fuente: <a href="https://www.spglobal.com/ratings/en/research/articles/240404-your-three-minutes-in-chilean-solar-pmgd-projects-capacity-boom-confronts-challenges-13062319" target="_blank" rel="noopener">S&amp;P Global Ratings, 2024</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2 · Qué hacemos ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s1_eb">01 · Qué hacemos</span><h2 class="q-h2" data-i18n="s1_h">Cuatro verificaciones, un mismo método.</h2></div>
+      <p class="q-lede" data-i18n="s1_p">El alcance, listo para pegar en una licitación. Cada cifra lleva su cobertura y su fórmula; cada brecha de datos se señala, se explica y se concilia.</p>
+    </div>
+    <div class="q-grid q-grid--4">
+      <div class="q-card"><span class="q-card__k" data-i18n="g1k">Entrada · 30–45 días</span><h3 data-i18n="g1h">Línea Base Verificada</h3>
+        <ul class="q-check">
+          <li data-i18n="g1a">Datos brutos de SCADA, PPC, inversores y medidores, conciliados con el CEN y la distribuidora</li>
+          <li data-i18n="g1b">Disponibilidad y PR recalculados</li>
+          <li data-i18n="g1c">Revisión de la liquidación: Saldo MEP y bloques de precio estabilizado</li>
+          <li data-i18n="g1d">Cumplimiento del contrato de O&amp;M y multas adeudadas</li>
+          <li data-i18n="g1e">Atribución de vertimiento y una visita a terreno</li>
+          <li data-i18n="g1f">Informe y paquete de evidencia firmado, que usted conserva</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g2k">Continua · mensual</span><h3 data-i18n="g2h">Verificación continua</h3>
+        <ul class="q-check">
+          <li data-i18n="g2a">Conexión de Eagle Eye en solo lectura</li>
+          <li data-i18n="g2b">Informe mensual verificado de desempeño, disponibilidad y liquidación</li>
+          <li data-i18n="g2c">Seguimiento de los niveles de servicio del O&amp;M</li>
+          <li data-i18n="g2d">Cada brecha de datos señalada, explicada y conciliada</li>
+          <li data-i18n="g2e">Paquete para financistas e inversionistas</li>
+          <li data-i18n="g2f">Revisión trimestral</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g3k">Baterías</span><h3 data-i18n="g3h">Evidencia BESS</h3>
+        <ul class="q-check">
+          <li data-i18n="g3a">Disponibilidad y capacidad entregada en horas punta</li>
+          <li data-i18n="g3b">Eficiencia de ida y vuelta (RTE)</li>
+          <li data-i18n="g3c">Deriva del estado de carga (SoC)</li>
+          <li data-i18n="g3d">Degradación frente a la curva de garantía</li>
+          <li data-i18n="g3e">Evidencia de capacidad para el DS 70</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="g4k">Flotas híbridas · desde ene. 2027</span><h3 data-i18n="g4h">M&amp;V de ahorro de diésel</h3>
+        <ul class="q-check">
+          <li data-i18n="g4a">Horas de generador y litros de diésel por sitio</li>
+          <li data-i18n="g4b">Estado de carga de las baterías y producción solar</li>
+          <li data-i18n="g4c">Línea base antes y después, con un método fijo</li>
+          <li data-i18n="g4d">Medidor neutral en contratos de energía como servicio</li>
+        </ul>
+        <a class="q-card__link" href="/industrias/acuicultura-pesca/" data-i18n="g4l">Acuicultura y pesca</a></div>
+    </div>
+    <div class="note a" style="margin-top:32px">
+      <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n0h">DS 70: entregamos evidencia, no estimaciones de ingreso.</h3>
+      <p data-i18n="n0p">Los parámetros 2026 de potencia de suficiencia para almacenamiento seguían sin publicarse en agosto de 2026 (<a class="q-link" href="https://energysage.cl/analisis/potencia-suficiencia-parametros-sin-publicar/" target="_blank" rel="noopener">EnergySage</a>). Documentamos disponibilidad, estado de carga y duración entregada en horas punta; la cifra de ingreso por capacidad queda retenida hasta que se publiquen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Qué recibe ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s2_eb">02 · Qué recibe</span><h2 class="q-h2" data-i18n="s2_h">Lo que recibe, y quién más puede revisarlo.</h2></div>
+    <div class="q-grid q-grid--4">
+      <a class="q-card" href="/informe.html#fv-x"><span class="q-card__k" data-i18n="d1k">Mensual</span><h3 data-i18n="d1h">Informe verificado</h3><p data-i18n="d1p">Desempeño, disponibilidad y liquidación. Cada cifra con su cobertura, su fórmula y, si se retiene, la razón.</p><span class="q-card__link" data-i18n="d1l">Ver muestra</span></a>
+      <div class="q-card"><span class="q-card__k" data-i18n="d2k">Cada período</span><h3 data-i18n="d2h">Paquete de evidencia</h3><p data-i18n="d2p">Datos, cálculos y documentos del período, con firma electrónica avanzada y sello de tiempo.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d3k">Por covenant</span><h3 data-i18n="d3h">Informe para financistas y tenedores de bonos</h3><p data-i18n="d3p">Insumos del DSCR y del covenant, entregados firmados antes de cada fecha de reporte.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="d4k">Trimestral</span><h3 data-i18n="d4h">Revisión con el dueño y el financista</h3><p data-i18n="d4p">Hallazgos, observaciones abiertas y acciones del operador, con responsable y fecha.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Paquetes de evidencia ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s3_eb">03 · Paquetes de evidencia</span><h2 class="q-h2" data-i18n="s3_h">Una cifra que cualquiera puede volver a revisar.</h2></div>
+      <p class="q-lede" data-i18n="s3_p">La confianza no depende de nuestra palabra, sino de una firma y un sello de tiempo que cualquiera puede comprobar (<a class="q-link" href="https://iura.cl/19799/2" target="_blank" rel="noopener">Ley 19.799</a>).</p>
+    </div>
+    <ol class="q-steps" style="--steps:5">
+      <li><h3 data-i18n="st1h">Manifiesto</h3><p data-i18n="st1p">Lista ordenada de cada archivo, sistema de origen, período y brecha de datos.</p></li>
+      <li><h3 data-i18n="st2h">Huella digital</h3><p data-i18n="st2p">Huella SHA-256 de cada archivo y del manifiesto completo.</p></li>
+      <li><h3 data-i18n="st3h">Firma</h3><p data-i18n="st3p">Firma electrónica avanzada de un prestador acreditado; la contraparte puede cofirmar.</p></li>
+      <li><h3 data-i18n="st4h">Sello de tiempo</h3><p data-i18n="st4p">Una autoridad de sellado de tiempo (RFC 3161) fija cuándo existía el paquete.</p></li>
+      <li><h3 data-i18n="st5h">Revisión independiente</h3><p data-i18n="st5p">Quien tenga el paquete recalcula la huella y comprueba la firma, sin confiar en Quorelia.</p></li>
+    </ol>
+    <div class="note" style="margin-top:48px">
+      <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n1h">Para financistas y tenedores de bonos</h3>
+      <p data-i18n="n1p">Reciben el paquete antes de cada fecha de covenant y pueden revisarlo con su propio ingeniero. Normalmente lo paga el prestatario, y el financista puede exigirlo en el contrato de crédito.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Cómo lo cambia Eagle Eye ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s4_eb">04 · Cómo lo cambia Eagle Eye</span><h2 class="q-h2" data-i18n="s4_h">La disponibilidad del contratista, recalculada.</h2></div>
+      <p class="q-lede" data-i18n="s4_p">Eagle Eye lee SCADA, inversores, medidores y órdenes de trabajo en solo lectura. Cada exclusión necesita evidencia; si no la tiene, cuenta como falla.</p>
+    </div>
+    <div class="q-grid q-grid--2">
+      <div class="q-card"><span class="q-card__k" data-i18n="ba1k">Antes</span><h3 data-i18n="ba1h">El contratista informa su propia disponibilidad.</h3>
+        <ul class="q-check q-check--no">
+          <li data-i18n="ba1a">Un PDF mensual con 99,1 % y sin detalle de exclusiones.</li>
+          <li data-i18n="ba1b">Las fallas se excluyen como «fuerza mayor», sin evidencia.</li>
+          <li data-i18n="ba1c">Las multas del contrato nunca se calculan.</li>
+          <li data-i18n="ba1d">El financista recibe la misma cifra, sin poder revisarla.</li>
+        </ul></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="ba2k">Con verificación</span><h3 data-i18n="ba2h">Cada exclusión, con su evidencia o sin ella.</h3>
+        <ul class="q-check">
+          <li data-i18n="ba2a">Eagle Eye recalcula la disponibilidad intervalo por intervalo: 97,4 % sobre 98 % de los intervalos.</li>
+          <li data-i18n="ba2b">Corte de la distribuidora y limitación del CEN: excluidos, con evidencia adjunta.</li>
+          <li data-i18n="ba2c">24 h de falla del inversor 3: sin evidencia, no se excluyen.</li>
+          <li data-i18n="ba2d">La multa se calcula con la fórmula del contrato y va en el paquete firmado.</li>
+        </ul></div>
+    </div>
+    <div class="q-figs" style="--cols:3;margin-top:48px">
+      <div class="q-fig"><span class="q-fig__v" data-i18n="ex1v">99,1 %</span><span class="q-fig__k" data-i18n="ex1k">de disponibilidad informada por el contratista</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+      <div class="q-fig"><span class="q-fig__v" data-i18n="ex2v">97,4 %</span><span class="q-fig__k" data-i18n="ex2k">recalculada sobre 98 % de los intervalos, con cada exclusión documentada</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+      <div class="q-fig"><span class="q-fig__v">38 MWh</span><span class="q-fig__k" data-i18n="ex3k">de energía perdida sin exclusión documentada: la base del reclamo de multa</span><span class="q-fig__src" data-i18n="ex_src">Ejemplo ilustrativo · flota demo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Quién hace el trabajo ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s5_eb">05 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="s5_h">Usted sabe quién firma cada cifra.</h2></div>
+      <p class="q-lede" data-i18n="s5_p">El análisis y la firma son de Quorelia. Las pruebas en terreno las hacen socios certificados, bajo nuestra gestión.</p>
+    </div>
+    <div class="q-who">
+      <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w1h">Equipo de Quorelia</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w1a">Analistas de desempeño: disponibilidad, PR y pérdidas recalculadas con Eagle Eye</li>
+          <li data-i18n="w1b">Conciliación de la liquidación del CEN y del Saldo MEP</li>
+          <li data-i18n="w1c">Revisión del contrato de O&amp;M y cálculo de multas</li>
+          <li data-i18n="w1d">Visita a terreno sin intervenir equipos</li>
+          <li data-i18n="w1e">Emisión y firma de los paquetes de evidencia</li>
+          <li data-i18n="w1f">Responsables: Jay Kim (COO) y Diego Ostertag (CEO)</li>
+        </ul></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios certificados, bajo nuestra gestión</h3></div>
+        <ul class="q-arrow">
+          <li data-i18n="w2a">Termografía, curvas IV y vuelos con dron: subcontratista de inspección certificado</li>
+          <li data-i18n="w2b">Pruebas de media tensión y protecciones: instalador eléctrico Clase A con licencia SEC</li>
+          <li data-i18n="w2d">Ensayos de capacidad BESS en terreno: proveedor certificado por el fabricante, con Quorelia como testigo</li>
+          <li data-i18n="w2e">Medidores independientes en sitios híbridos: instalados por un socio certificado</li>
+          <li data-i18n="w2f">Seguridad con sistema DS 44 y control de contratistas según la Ley 20.123</li>
+        </ul></div>
+    </div>
+    <div class="q-grid q-grid--2" style="margin-top:32px">
+      <div class="note a">
+        <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n2h">Regla de independencia</h3>
+        <p data-i18n="n2p">No vendemos verificación independiente sobre un activo donde Quorelia también presta O&amp;M. En esos activos, los informes se rotulan «reportado por el operador, verificable por terceros». Y nunca cobramos un porcentaje del resultado que medimos.</p>
+      </div>
+      <div class="note">
+        <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n3h">Lo que no hacemos</h3>
+        <p data-i18n="n3p">No somos contratista EPC, no vendemos equipos, no somos dueños de plantas ni vendemos energía, y no financiamos proyectos. Por eso podemos verificar a quien sí lo hace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Cómo se cobra ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s6_eb">06 · Cómo se cobra</span><h2 class="q-h2" data-i18n="s6_h">Precio fijo para empezar, suscripción para seguir.</h2></div>
+      <p class="q-lede" data-i18n="s6_p">Aquí explicamos el modelo; la cifra exacta va en la propuesta, según los MW, MWh o sitios.</p>
+    </div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="pr1k">Entrada</span><h3 data-i18n="pr1h">Línea Base Verificada</h3><p data-i18n="pr1p">Precio fijo según MW o MWh, 30–45 días. El informe queda con usted. El 50 % se abona a un contrato del primer año firmado dentro de 90 días.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr2k">Continua · solar</span><h3 data-i18n="pr2h">Plantas fotovoltaicas</h3><p data-i18n="pr2p">Por MW-año, con un mínimo mensual por cartera. Contrato de 12 meses renovable; preferimos 3 años.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr3k">Continua · BESS</span><h3 data-i18n="pr3h">Sistemas de baterías</h3><p data-i18n="pr3p">Por MW-año, ajustado a la energía instalada (MWh) del sistema.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr4k">Por sitio</span><h3 data-i18n="pr4h">M&amp;V de flotas híbridas</h3><p data-i18n="pr4p">Por sitio-año, más una instalación inicial. Los medidores independientes se cotizan aparte.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr5k">Una vez</span><h3 data-i18n="pr5h">Integración</h3><p data-i18n="pr5p">Cargo único por planta para conectar Eagle Eye; exento en contratos de 3 años o más.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="pr6k">Regla</span><h3 data-i18n="pr6h">Nunca cobramos por resultados</h3><p data-i18n="pr6p">Ni porcentaje del ahorro ni de lo recuperado: un verificador pagado por el resultado que mide deja de ser independiente.</p></div>
+    </div>
+    <div style="margin-top:22px"><p class="q-small" data-i18n="pr_small">Las pruebas en terreno (curvas IV, termografía, media tensión y ensayos de capacidad) se cotizan aparte y las ejecuta un socio certificado.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Prueba ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="s7_eb">07 · Prueba</span><h2 class="q-h2" data-i18n="s7_h">Abra un informe y revise las cifras.</h2></div>
+      <p class="q-lede" data-i18n="s7_p">Estructura real de los informes, con datos ilustrativos de una flota demo. Cada cifra muestra su cobertura y su fórmula.</p>
+    </div>
+    <div class="q-grid q-grid--4">
+      <a class="q-card" href="/informe.html#fv-x"><span class="q-card__k" data-i18n="pc_rep">Informe de muestra</span><h3 data-i18n="pc1h">Informe extendido de planta solar</h3><p data-i18n="pc1p">Cobertura, fórmula y cifras retenidas, en un informe completo.</p><span class="q-card__link" data-i18n="pc_open">Abrir</span></a>
+      <a class="q-card" href="/informe.html#bess-m"><span class="q-card__k" data-i18n="pc_rep">Informe de muestra</span><h3 data-i18n="pc2h">Informe mensual BESS</h3><p data-i18n="pc2p">Ciclos, estado de carga y eficiencia de un sistema demo.</p><span class="q-card__link" data-i18n="pc_open">Abrir</span></a>
+      <a class="q-card" href="/demos.html"><span class="q-card__k" data-i18n="pc3k">Demo en vivo</span><h3 data-i18n="pc3h">Control Center y tablero BESS</h3><p data-i18n="pc3p">La plataforma funcionando sobre la flota demo.</p><span class="q-card__link" data-i18n="pc3l">Ver la demo</span></a>
+      <a class="q-card" href="/plataforma.html"><span class="q-card__k" data-i18n="pc4k">Plataforma</span><h3>Eagle Eye</h3><p data-i18n="pc4p">Qué lee, qué calcula y por qué nunca escribe consignas.</p><span class="q-card__link" data-i18n="pc4l">Conocer Eagle Eye</span></a>
+    </div>
+    <div style="margin-top:22px"><p class="q-small" data-i18n="pr_note">Datos ilustrativos · flota demo. No representan plantas ni clientes reales.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Preguntas ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="s8_eb">08 · Preguntas</span><h2 class="q-h2" data-i18n="s8_h">Lo que preguntan dueños, financistas y sus abogados.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Es realmente independiente?</summary><div><p data-i18n="fa1">Sí, con reglas escritas: no verificamos un activo donde prestamos O&amp;M, no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos.</p></div></details>
+      <details><summary data-i18n="fq2">¿Qué pasa si faltan datos?</summary><div><p data-i18n="fa2">La cifra se retiene y el informe dice por qué, con su cobertura. Cada brecha se señala, se explica y se concilia; las cifras que los datos sí sostienen quedan con su traza completa.</p></div></details>
+      <details><summary data-i18n="fq3">¿Qué responsabilidad asume Quorelia?</summary><div><p data-i18n="fa3">Respondemos por la exactitud de las cifras que informamos, con un tope pactado en el contrato. No asumimos responsabilidad operativa: no damos consignas ni despachamos cuadrillas.</p></div></details>
+      <details><summary data-i18n="fq4">¿Qué seguros y licencias hay detrás?</summary><div><p data-i18n="fa4">Antes de firmar le entregamos los certificados de seguro vigentes de Quorelia y de cada socio. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor certificado por el fabricante.</p></div></details>
+      <details><summary data-i18n="fq5">¿Cuánto dura y cómo se sale?</summary><div><p data-i18n="fa5">La Línea Base Verificada es un trabajo único de 30 a 45 días. La verificación continua tiene un plazo mínimo de 12 meses y se renueva sola; puede terminarla al vencimiento con aviso previo. Sus datos y paquetes se exportan en formatos abiertos.</p></div></details>
+      <details><summary data-i18n="fq6">¿Reemplaza al ingeniero independiente del financista?</summary><div><p data-i18n="fa6">No. Le entregamos evidencia que su ingeniero puede revisar por su cuenta, en lugar de pedirle al operador que vuelva a explicar sus cifras.</p></div></details>
+      <details><summary data-i18n="fq7">¿Cómo comprueba un tercero un paquete de evidencia?</summary><div><p data-i18n="fa7">Recalcula la huella SHA-256 de cada archivo, la compara con el manifiesto y verifica la firma electrónica avanzada y el sello de tiempo con herramientas estándar. No necesita acceso a Eagle Eye.</p></div></details>
+      <details><summary data-i18n="fq8">¿Pueden además gestionar el activo?</summary><div><p data-i18n="fa8">Sí. La <a class="q-link" href="/servicios/gestion-de-activos/">gestión de activos</a> incluye Eagle Eye y los informes verificados. Si además nos encarga el O&amp;M de ese activo, sus informes se rotulan «reportado por el operador, verificable por terceros».</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div class="q-head" style="margin-bottom:0">
+      <span class="q-eyebrow" data-i18n="ct_eb">Empiece con una Línea Base Verificada</span>
+      <h2 class="q-h2" data-i18n="ct_h">Precio fijo, 30 a 45 días. El informe queda con usted.</h2>
+      <p class="q-lede" data-i18n="ct_p">Si firma un contrato del primer año dentro de 90 días, el 50 % se abona. Una persona del equipo le responde en un día hábil.</p>
+      <div class="q-actions">
+        <a class="btn btn--on-dark btn--lg" href="/contacto/?interes=linea-base#activos"><span data-i18n="cta1">Solicitar Línea Base Verificada</span><span class="ar" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n="cta_cal">Agendar 30 minutos</a>
+      </div>
+      <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_services">Servicios</p>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_industries">Industrias</p>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_ee">Eagle Eye y recursos</p>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <p class="q-foot__h" data-i18n-c="f_company">Empresa</p>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+window.Q_PAGE = {
+ en:{
+  __title:"Performance verification for solar and BESS plants · Quorelia",
+  __desc:"Performance verification for solar plants and batteries in Chile: availability, PR, CEN settlement and diesel savings, with signed evidence.",
+  cr_aria:"Breadcrumb", cr_home:"Home", cr_svc:"Services", cr_here:"Verification",
+  hero_eb:"Verification · Solar plants, BESS and hybrid fleets",
+  hero_h:"Figures your lender, board and contractor will all accept.",
+  hero_p:"We recompute availability, PR and the CEN settlement from your plant’s raw data. If the data cannot support a figure, we withhold it and tell you why.",
+  cta1:"Request a Verified Baseline", cta2:"See a sample verified report",
+  inst_aria:"Sample Eagle Eye view with illustrative data from an availability verification",
+  inst_t:"Eagle Eye · Verification · Demo PV plant 9 MWp", inst_live:"Live",
+  k1k:"Reported availability", k1v:"99.1%", k1s:"per the contractor’s monthly report",
+  k2k:"Recomputed availability", k2v:"97.4%", k2s:"on 98% of intervals · 3 documented exclusions",
+  k3k:"Energy not excluded", k3s:"basis for the contractor damages claim",
+  k4k:"September PR", k4v:"Withheld", k4s:"valid irradiance 71% · threshold 90%",
+  r1c:"Finding", r1:"Inverter 3 · 24 h of downtime with no documented exclusion", r1t:"Sept.",
+  r2c:"Excluded", r2:"Distribution outage · 3 h · evidence attached", r2t:"14 Sept.",
+  r3c:"Signed", r3:"September pack · signed and time-stamped", r3t:"1 Oct.",
+  inst_foot:"Demo fleet · illustrative data",
+  p1:"under monitoring", p2:"10 PMGD plants operated · team experience",
+  p3v:"30–45 days", p3:"Verified Baseline · fixed price", p4:"advanced electronic signature and time-stamp",
+  ctx_eb:"Why verify",
+  ctx_h:"<span class=\"dim\">An operator that reports its own availability</span> grades its own exam.",
+  ctx_p:"Owners, lenders and buyers need figures that do not depend on whoever runs the plant. We recompute them from the raw data.",
+  f1v:"3,868 MW", f1k:"of PMGD in operation in Chile.",
+  f1s:"Source: <a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA, Aug. 2026 bulletin</a>",
+  f2v:"3,116 MW", f2k:"of batteries in operation in August 2026, double the December 2025 figure.",
+  f2s:"Sources: <a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA, Aug. 2026 bulletin</a> · <a href='https://www.acera.cl/acera-presenta-balance-2025-del-sistema-electrico-de-los-records-renovables-al-desafio-de-la-ejecucion/' target='_blank' rel='noopener'>2025 review</a>",
+  f3v:"1.2–1.4x", f3k:"minimum DSCR on PMGD issues rated by S&amp;P. Your lender needs figures it can audit.",
+  f3s:"Source: <a href='https://www.spglobal.com/ratings/en/research/articles/240404-your-three-minutes-in-chilean-solar-pmgd-projects-capacity-boom-confronts-challenges-13062319' target='_blank' rel='noopener'>S&amp;P Global Ratings, 2024</a>",
+  s1_eb:"01 · What we do", s1_h:"Four verifications, one method.",
+  s1_p:"The scope, ready to paste into a tender. Every figure carries its coverage and its formula; every data gap is flagged, explained and reconciled.",
+  g1k:"Entry · 30–45 days", g1h:"Verified Baseline",
+  g1a:"Raw SCADA, PPC, inverter and meter data, reconciled with the CEN and the distribution company",
+  g1b:"Availability and PR recomputed",
+  g1c:"Settlement check: Saldo MEP and stabilized-price blocks",
+  g1d:"O&amp;M contract compliance and damages owed",
+  g1e:"Curtailment attribution and one site visit",
+  g1f:"Report and signed evidence pack, which you keep",
+  g2k:"Ongoing · monthly", g2h:"Continuous verification",
+  g2a:"Read-only Eagle Eye connection",
+  g2b:"Monthly verified report on performance, availability and settlement",
+  g2c:"O&amp;M service-level tracking",
+  g2d:"Every data gap flagged, explained and reconciled",
+  g2e:"Lender and investor pack",
+  g2f:"Quarterly review",
+  g3k:"Batteries", g3h:"BESS evidence",
+  g3a:"Availability and capacity delivered at peak hours",
+  g3b:"Round-trip efficiency (RTE)",
+  g3c:"State-of-charge (SoC) drift",
+  g3d:"Degradation against the warranty curve",
+  g3e:"Capacity evidence for DS 70",
+  g4k:"Hybrid fleets · from Jan. 2027", g4h:"Diesel-savings M&amp;V",
+  g4a:"Generator hours and diesel litres per site",
+  g4b:"Battery state of charge and solar output",
+  g4c:"Before-and-after baseline, with a fixed method",
+  g4d:"A neutral meter inside energy-as-a-service contracts",
+  g4l:"Aquaculture and fisheries",
+  n0h:"DS 70: we deliver evidence, not revenue estimates.",
+  n0p:"The 2026 capacity (potencia de suficiencia) parameters for storage were still unpublished in August 2026 (<a class='q-link' href='https://energysage.cl/analisis/potencia-suficiencia-parametros-sin-publicar/' target='_blank' rel='noopener'>EnergySage</a>). We document availability, state of charge and duration delivered at peak hours; any capacity-revenue figure stays withheld until they are published.",
+  s2_eb:"02 · What you receive", s2_h:"What you receive, and who else can check it.",
+  d1k:"Monthly", d1h:"Verified report", d1p:"Performance, availability and settlement. Every figure with its coverage, its formula and, if withheld, the reason.", d1l:"See a sample",
+  d2k:"Every period", d2h:"Evidence pack", d2p:"The period’s data, calculations and documents, with an advanced electronic signature and a time-stamp.",
+  d3k:"Per covenant", d3h:"Report for lenders and noteholders", d3p:"DSCR and covenant inputs, delivered signed before each reporting date.",
+  d4k:"Quarterly", d4h:"Review with the owner and the lender", d4p:"Findings, open disputes and operator actions, each with an owner and a date.",
+  s3_eb:"03 · Evidence packs", s3_h:"A figure anyone can check again.",
+  s3_p:"Trust does not rest on our word but on a signature and a time-stamp that anyone can verify (<a class='q-link' href='https://iura.cl/19799/2' target='_blank' rel='noopener'>Ley 19.799</a>).",
+  st1h:"Manifest", st1p:"An ordered list of every file, source system, period and data gap.",
+  st2h:"Fingerprint", st2p:"A SHA-256 hash of every file and of the full manifest.",
+  st3h:"Signature", st3p:"An advanced electronic signature from an accredited provider; the counterparty can co-sign.",
+  st4h:"Time-stamp", st4p:"A time-stamping authority (RFC 3161) fixes when the pack existed.",
+  st5h:"Independent check", st5p:"Whoever holds the pack recomputes the hash and checks the signature, without trusting Quorelia.",
+  n1h:"For lenders and noteholders",
+  n1p:"They receive the pack before each covenant date and can review it with their own engineer. The borrower usually pays, and the lender can require it in the loan agreement.",
+  s4_eb:"04 · How Eagle Eye changes it", s4_h:"The contractor’s availability, recomputed.",
+  s4_p:"Eagle Eye reads SCADA, inverters, meters and work orders read-only. Every exclusion needs evidence; without it, the hours count as downtime.",
+  ba1k:"Before", ba1h:"The contractor reports its own availability.",
+  ba1a:"A monthly PDF showing 99.1%, with no breakdown of exclusions.",
+  ba1b:"Faults are excluded as “force majeure”, with no evidence.",
+  ba1c:"The contract’s damages are never calculated.",
+  ba1d:"The lender receives the same figure, with no way to check it.",
+  ba2k:"With verification", ba2h:"Every exclusion, with its evidence or without it.",
+  ba2a:"Eagle Eye recomputes availability interval by interval: 97.4% on 98% of intervals.",
+  ba2b:"Distribution outage and CEN curtailment: excluded, with evidence attached.",
+  ba2c:"24 h of downtime on inverter 3: no evidence, so not excluded.",
+  ba2d:"Damages are calculated with the contract formula and go into the signed pack.",
+  ex1v:"99.1%", ex1k:"availability reported by the contractor",
+  ex_src:"Illustrative example · demo fleet",
+  ex2v:"97.4%", ex2k:"recomputed on 98% of intervals, with every exclusion documented",
+  ex3k:"of energy lost with no documented exclusion: the basis of the damages claim",
+  s5_eb:"05 · Who does the work", s5_h:"You know who signs every figure.",
+  s5_p:"The analysis and the signature are Quorelia’s. Field tests are done by certified partners, under our management.",
+  w1h:"Quorelia team",
+  w1a:"Performance analysts: availability, PR and losses recomputed with Eagle Eye",
+  w1b:"CEN settlement and Saldo MEP reconciliation",
+  w1c:"O&amp;M contract review and damages calculation",
+  w1d:"Site visits without touching equipment",
+  w1e:"Issuing and signing the evidence packs",
+  w1f:"Accountable: Jay Kim (COO) and Diego Ostertag (CEO)",
+  w2c:"Partners", w2h:"Certified partners, under our management",
+  w2a:"Thermography, IV curves and drone surveys: a certified inspection subcontractor",
+  w2b:"Medium-voltage and protection testing: an SEC-licensed Class A electrical installer",
+  w2d:"On-site BESS capacity tests: a manufacturer-certified provider, witnessed by Quorelia",
+  w2e:"Independent meters at hybrid sites: installed by a certified partner",
+  w2f:"Safety under a DS 44 system, and contractor controls under Ley 20.123",
+  n2h:"Independence rule",
+  n2p:"We never sell independent verification on an asset where Quorelia also provides O&amp;M. There, reports are labelled “operator-reported, verifiable by third parties”. And we never charge a percentage of the result we measure.",
+  n3h:"What we do not do",
+  n3p:"We are not an EPC prime contractor, we sell no equipment, we own no plants and sell no power, and we do not finance projects. That is why we can verify those who do.",
+  s6_eb:"06 · How it is priced", s6_h:"A fixed price to start, a subscription to continue.",
+  s6_p:"The model is explained here; the exact figure goes in the proposal, based on MW, MWh or sites.",
+  pr1k:"Entry offer", pr1h:"Verified Baseline", pr1p:"Fixed price by MW or MWh, 30–45 days. You keep the report. 50% is credited to a first-year contract signed within 90 days.",
+  pr2k:"Ongoing · solar", pr2h:"PV plants", pr2p:"Per MW-year, with a monthly minimum per portfolio. A 12-month renewable contract; we prefer 3 years.",
+  pr3k:"Ongoing · BESS", pr3h:"Battery systems", pr3p:"Per MW-year, adjusted to the system’s installed energy (MWh).",
+  pr4k:"Per site", pr4h:"Hybrid-fleet M&amp;V", pr4p:"Per site-year, plus an initial set-up. Independent meters are quoted separately.",
+  pr5k:"One-off", pr5h:"Integration", pr5p:"A one-off fee per plant to connect Eagle Eye; waived on terms of 3 years or more.",
+  pr6k:"Rule", pr6h:"We never charge on results", pr6p:"No share of savings or recoveries: a verifier paid on the result it measures stops being independent.",
+  pr_small:"Field tests (IV curves, thermography, medium voltage and capacity tests) are quoted separately and carried out by a certified partner.",
+  s7_eb:"07 · Proof", s7_h:"Open a report and check the figures.",
+  s7_p:"Real report structure, with illustrative data from a demo fleet. Every figure shows its coverage and its formula.",
+  pc_rep:"Sample report", pc_open:"Open",
+  pc1h:"Extended solar plant report", pc1p:"Coverage, formulas and withheld figures, in a complete report.",
+  pc2h:"Monthly BESS report", pc2p:"Cycles, state of charge and efficiency of a demo system.",
+  pc3k:"Live demo", pc3h:"Control Center and BESS dashboard", pc3p:"The platform running on the demo fleet.", pc3l:"See the demo",
+  pc4k:"Platform", pc4p:"What it reads, what it computes and why it never writes a setpoint.", pc4l:"Discover Eagle Eye",
+  pr_note:"Illustrative data · demo fleet. They do not represent real plants or clients.",
+  s8_eb:"08 · Questions", s8_h:"Questions owners and lenders ask.",
+  fq1:"Is it really independent?",
+  fa1:"Yes, under written rules: we do not verify an asset where we provide O&amp;M, we sell no equipment or power, and we never charge a percentage of the result we measure.",
+  fq2:"What happens when data are missing?",
+  fa2:"The figure is withheld and the report says why, with its coverage. Every gap is flagged, explained and reconciled; the figures the data do support keep their full trail.",
+  fq3:"What liability does Quorelia take on?",
+  fa3:"We answer for the accuracy of the figures we report, with a cap agreed in the contract. We take on no operational liability: we give no setpoints and dispatch no crews.",
+  fq4:"What insurance and licences stand behind it?",
+  fa4:"Before signing, we give you the current insurance certificates of Quorelia and of every partner. Field tests are carried out and signed by an SEC-licensed Class A electrical installer or a manufacturer-certified provider.",
+  fq5:"How long does it last, and how do I exit?",
+  fa5:"The Verified Baseline is a one-off engagement of 30 to 45 days. Continuous verification has a 12-month minimum and renews automatically; you may end it at expiry with prior notice. Your data and packs are exported in open formats.",
+  fq6:"Does it replace the lender’s independent engineer?",
+  fa6:"No. It gives that engineer evidence to review independently, instead of asking the operator to explain its figures again.",
+  fq7:"How does a third party check an evidence pack?",
+  fa7:"It recomputes the SHA-256 hash of each file, compares it with the manifest and verifies the advanced electronic signature and the time-stamp with standard tools. No Eagle Eye access is needed.",
+  fq8:"Can you also manage the asset?",
+  fa8:"Yes. <a class='q-link' href='/servicios/gestion-de-activos/'>Asset management</a> includes Eagle Eye and the verified reports. If you also hand us that asset’s O&amp;M, its reports are labelled “operator-reported, verifiable by third parties”.",
+  ct_eb:"Start with a Verified Baseline", ct_h:"Fixed price, 30 to 45 days. You keep the report.",
+  ct_p:"If you sign a first-year contract within 90 days, 50% is credited. A person from our team replies within one business day.",
+  cta_cal:"Book 30 minutes", ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"光伏电站与储能性能验证 · Quorelia",
+  __desc:"智利光伏电站与储能的性能验证：可用率、PR、CEN 结算与柴油节省，并附签名证据。",
+  cr_aria:"面包屑导航", cr_home:"首页", cr_svc:"服务", cr_here:"验证",
+  hero_eb:"验证 · 光伏电站、储能与混合能源机组",
+  hero_h:"让融资方、董事会和承包商都认可的数据。",
+  hero_p:"我们根据电站原始数据重新计算可用率、PR 和 CEN 结算。如果数据不足以支撑某个数值，我们会暂缓发布并说明原因。",
+  cta1:"申请经验证基线", cta2:"查看经验证报告样本",
+  inst_aria:"Eagle Eye 示例界面，可用率验证的示意数据",
+  inst_t:"Eagle Eye · 验证 · 演示光伏电站 9 MWp", inst_live:"实时",
+  k1k:"上报可用率", k1v:"99.1%", k1s:"依据承包商月度报告",
+  k2k:"重新计算的可用率", k2v:"97.4%", k2s:"基于 98% 的时段 · 3 项已记录的剔除",
+  k3k:"未剔除的电量", k3s:"向承包商索赔违约金的依据",
+  k4k:"9 月 PR", k4v:"暂缓发布", k4s:"有效辐照数据 71% · 阈值 90%",
+  r1c:"发现", r1:"3 号逆变器 · 24 小时故障无剔除依据", r1t:"9 月",
+  r2c:"已剔除", r2:"配电网停电 · 3 小时 · 已附证据", r2t:"9 月 14 日",
+  r3c:"已签名", r3:"9 月证据包 · 已签名并加盖时间戳", r3t:"10 月 1 日",
+  inst_foot:"演示机组 · 示意数据",
+  p1:"监测容量", p2:"运营过 10 座 PMGD 电站 · 团队经验",
+  p3v:"30–45 天", p3:"经验证基线 · 固定价格", p4:"高级电子签名与时间戳",
+  ctx_eb:"为何需要验证",
+  ctx_h:"<span class=\"dim\">自报可用率的运营方，</span>等于自己给自己打分。",
+  ctx_p:"业主、融资方和买方需要不依赖电站运营方的数据。我们从原始数据重新计算。",
+  f1v:"3,868 MW", f1k:"智利在运 PMGD 装机容量。",
+  f1s:"来源：<a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA，2026 年 8 月统计公报</a>",
+  f2v:"3,116 MW", f2k:"2026 年 8 月在运储能容量，是 2025 年 12 月的两倍。",
+  f2s:"来源：<a href='https://cdn.acera.cl/wp-content/uploads/2026/09/2026-08-Boletin-Estadisticas-ACERA.pdf' target='_blank' rel='noopener'>ACERA，2026 年 8 月统计公报</a> · <a href='https://www.acera.cl/acera-presenta-balance-2025-del-sistema-electrico-de-los-records-renovables-al-desafio-de-la-ejecucion/' target='_blank' rel='noopener'>2025 年度回顾</a>",
+  f3v:"1.2–1.4x", f3k:"S&amp;P 评级的 PMGD 债券最低偿债覆盖率（DSCR）。您的融资方需要可审计的数据。",
+  f3s:"来源：<a href='https://www.spglobal.com/ratings/en/research/articles/240404-your-three-minutes-in-chilean-solar-pmgd-projects-capacity-boom-confronts-challenges-13062319' target='_blank' rel='noopener'>标普全球评级，2024</a>",
+  s1_eb:"01 · 我们做什么", s1_h:"四类验证，同一套方法。",
+  s1_p:"服务范围可直接写入招标文件。每个数值都附有覆盖率和计算公式；每处数据缺口都会标注、说明并核对。",
+  g1k:"入门 · 30–45 天", g1h:"经验证基线",
+  g1a:"SCADA、PPC、逆变器和电表的原始数据，与 CEN 及配电公司数据核对",
+  g1b:"重新计算可用率与 PR",
+  g1c:"结算核查：Saldo MEP 与稳定价格时段",
+  g1d:"运维合同履约情况及应付违约金",
+  g1e:"弃电归因及一次现场考察",
+  g1f:"报告与签名证据包，归您所有",
+  g2k:"持续 · 每月", g2h:"持续验证",
+  g2a:"Eagle Eye 只读接入",
+  g2b:"月度性能、可用率与结算验证报告",
+  g2c:"跟踪运维服务水平",
+  g2d:"每处数据缺口都标注、说明并核对",
+  g2e:"融资方与投资者报告包",
+  g2f:"季度评审",
+  g3k:"电池", g3h:"储能证据",
+  g3a:"高峰时段的可用率与实际放电容量",
+  g3b:"往返效率（RTE）",
+  g3c:"荷电状态（SoC）漂移",
+  g3d:"对照质保曲线的衰减情况",
+  g3e:"DS 70 容量证据",
+  g4k:"混合能源机组 · 2027 年 1 月起", g4h:"柴油节省的测量与验证（M&amp;V）",
+  g4a:"每个站点的发电机运行小时与柴油用量（升）",
+  g4b:"电池荷电状态与光伏发电量",
+  g4c:"采用固定方法的前后基线对比",
+  g4d:"在能源即服务合同中充当中立计量方",
+  g4l:"水产养殖与渔业",
+  n0h:"DS 70：我们提供证据，而非收入估算。",
+  n0p:"截至 2026 年 8 月，储能 2026 年度容量（potencia de suficiencia）参数仍未公布（<a class='q-link' href='https://energysage.cl/analisis/potencia-suficiencia-parametros-sin-publicar/' target='_blank' rel='noopener'>EnergySage</a>）。我们记录高峰时段的可用率、荷电状态和实际放电时长；容量收入数值在参数公布前暂缓发布。",
+  s2_eb:"02 · 您将获得", s2_h:"您将获得的成果，以及还有谁可以核查。",
+  d1k:"每月", d1h:"经验证报告", d1p:"性能、可用率与结算。每个数值附覆盖率、计算公式；如暂缓发布，则说明原因。", d1l:"查看样本",
+  d2k:"每个周期", d2h:"证据包", d2p:"本周期的数据、计算和文件，附高级电子签名和时间戳。",
+  d3k:"按贷款契约", d3h:"面向融资方与债券持有人的报告", d3p:"DSCR 与契约指标的输入数据，在每个报告日期前签名交付。",
+  d4k:"每季度", d4h:"与业主及融资方的评审", d4p:"发现的问题、未结异议和运营方行动，均有负责人和日期。",
+  s3_eb:"03 · 证据包", s3_h:"任何人都可以再次核查的数值。",
+  s3_p:"信任不取决于我们的承诺，而取决于任何人都能核验的签名和时间戳（<a class='q-link' href='https://iura.cl/19799/2' target='_blank' rel='noopener'>第 19.799 号法</a>）。",
+  st1h:"清单", st1p:"按顺序列出每个文件、来源系统、时段和数据缺口。",
+  st2h:"数字指纹", st2p:"每个文件及完整清单的 SHA-256 哈希值。",
+  st3h:"签名", st3p:"由认证机构提供的高级电子签名；交易对方可联署。",
+  st4h:"时间戳", st4p:"由时间戳机构（RFC 3161）确定证据包的生成时间。",
+  st5h:"独立核查", st5p:"任何持有证据包的人都可重新计算哈希值并核验签名，无需信任 Quorelia。",
+  n1h:"面向融资方与债券持有人",
+  n1p:"他们在每个贷款契约日期前收到证据包，并可交由自己的工程师审核。费用通常由借款人承担，融资方可在贷款合同中将其列为要求。",
+  s4_eb:"04 · Eagle Eye 带来的改变", s4_h:"承包商的可用率，重新计算。",
+  s4_p:"Eagle Eye 以只读方式读取 SCADA、逆变器、电表和工单数据。每项剔除都需要证据；没有证据，就计为故障时间。",
+  ba1k:"之前", ba1h:"承包商自行上报可用率。",
+  ba1a:"每月一份 PDF，显示 99.1%，没有剔除明细。",
+  ba1b:"故障以“不可抗力”为由剔除，没有证据。",
+  ba1c:"合同违约金从未计算。",
+  ba1d:"融资方收到同样的数值，却无从核查。",
+  ba2k:"有了验证", ba2h:"每项剔除，有证据才成立。",
+  ba2a:"Eagle Eye 逐时段重新计算可用率：基于 98% 的时段为 97.4%。",
+  ba2b:"配电网停电与 CEN 限电：已剔除，并附证据。",
+  ba2c:"3 号逆变器 24 小时故障：没有证据，不予剔除。",
+  ba2d:"按合同公式计算违约金，并纳入签名证据包。",
+  ex1v:"99.1%", ex1k:"承包商上报的可用率",
+  ex_src:"示意案例 · 演示机组",
+  ex2v:"97.4%", ex2k:"基于 98% 的时段重新计算，每项剔除均有记录",
+  ex3k:"无剔除依据的损失电量：违约金索赔的依据",
+  s5_eb:"05 · 由谁执行", s5_h:"您清楚每个数值由谁签署。",
+  s5_p:"分析与签名由 Quorelia 负责。现场测试由经认证的合作伙伴在我们的管理下完成。",
+  w1h:"Quorelia 团队",
+  w1a:"性能分析师：借助 Eagle Eye 重新计算可用率、PR 与损失",
+  w1b:"CEN 结算与 Saldo MEP 对账",
+  w1c:"审查运维合同并计算违约金",
+  w1d:"不接触设备的现场考察",
+  w1e:"出具并签署证据包",
+  w1f:"负责人：Jay Kim（首席运营官）与 Diego Ostertag（首席执行官）",
+  w2c:"合作伙伴", w2h:"经认证的合作伙伴，由我们管理",
+  w2a:"红外热成像、IV 曲线与无人机巡检：经认证的检测分包商",
+  w2b:"中压与保护测试：持 SEC 执照的 A 级电气安装师",
+  w2d:"储能现场容量测试：经制造商认证的服务商执行，Quorelia 现场见证",
+  w2e:"混合能源站点的独立电表：由经认证的合作伙伴安装",
+  w2f:"现场安全执行 DS 44 管理体系，并按《第 20.123 号法》管控分包商",
+  n2h:"独立性规则",
+  n2p:"如果 Quorelia 同时为某项资产提供运维，我们绝不在该资产上出售独立验证。这类资产的报告标注为“运营方上报，可由第三方核验”。我们也从不按所测结果收取比例费用。",
+  n3h:"我们不做的事",
+  n3p:"我们不是 EPC 总承包商，不销售设备，不拥有电站也不售电，也不为项目融资。正因如此，我们才能验证从事这些业务的各方。",
+  s6_eb:"06 · 收费方式", s6_h:"固定价格起步，订阅方式持续。",
+  s6_p:"此处说明收费模式；具体金额根据 MW、MWh 或站点数量写入报价。",
+  pr1k:"入门服务", pr1h:"经验证基线", pr1p:"按 MW 或 MWh 确定固定价格，30–45 天。报告归您所有。若在 90 天内签订首年合同，费用的 50% 可抵扣。",
+  pr2k:"持续 · 光伏", pr2h:"光伏电站", pr2p:"按 MW·年收费，每个资产组合设月度最低收费。12 个月可续约合同；我们更倾向 3 年期。",
+  pr3k:"持续 · 储能", pr3h:"储能系统", pr3p:"按 MW·年收费，并根据系统装机能量（MWh）调整。",
+  pr4k:"按站点", pr4h:"混合能源机组的测量与验证", pr4p:"按站点·年收费，另收初始安装费。独立电表单独报价。",
+  pr5k:"一次性", pr5h:"系统接入", pr5p:"每座电站一次性收取 Eagle Eye 接入费用；合同期 3 年及以上可免除。",
+  pr6k:"规则", pr6h:"绝不按结果收费", pr6p:"不按节省额或追回款项收取比例费用：按所测结果收费的验证方就不再独立。",
+  pr_small:"现场测试（IV 曲线、红外热成像、中压及容量测试）单独报价，由经认证的合作伙伴执行。",
+  s7_eb:"07 · 实证", s7_h:"打开报告，核查数据。",
+  s7_p:"真实的报告结构，使用演示机组的示意数据。每个数值都显示覆盖率和计算公式。",
+  pc_rep:"样本报告", pc_open:"打开",
+  pc1h:"光伏电站扩展报告", pc1p:"覆盖率、计算公式与暂缓发布的数值，一份完整报告。",
+  pc2h:"储能月度报告", pc2p:"演示储能系统的循环次数、荷电状态与效率。",
+  pc3k:"在线演示", pc3h:"Control Center 与储能看板", pc3p:"平台在演示机组上实际运行。", pc3l:"查看演示",
+  pc4k:"平台", pc4p:"它读取什么、计算什么，以及为何从不写入设定值。", pc4l:"了解 Eagle Eye",
+  pr_note:"示意数据 · 演示机组。不代表真实电站或客户。",
+  s8_eb:"08 · 常见问题", s8_h:"业主、融资方及其律师常问的问题。",
+  fq1:"真的独立吗？",
+  fa1:"是的，并有书面规则：我们不验证自己提供运维的资产，不销售设备或电力，也从不按所测结果收取比例费用。",
+  fq2:"缺少数据怎么办？",
+  fa2:"该数值暂缓发布，报告会说明原因及覆盖率。每处缺口都会标注、说明并核对；数据足以支撑的数值保留完整的追溯记录。",
+  fq3:"Quorelia 承担哪些责任？",
+  fa3:"我们对所报告数值的准确性负责，责任上限在合同中约定。我们不承担运行责任：不下达设定值，也不派遣作业人员。",
+  fq4:"背后有哪些保险和执照？",
+  fa4:"签约前，我们会向您提供 Quorelia 及每一家合作伙伴的有效保险证书。现场测试由持 SEC 执照的 A 级电气安装师或经制造商认证的服务商执行并签署。",
+  fq5:"服务期多长？如何退出？",
+  fa5:"经验证基线为一次性服务，为期 30 至 45 天。持续验证最短 12 个月并自动续约；您可在到期时提前通知终止。您的数据和证据包以开放格式导出。",
+  fq6:"能否替代融资方的独立工程师？",
+  fa6:"不能。我们为该工程师提供可自行审核的证据，而不必再请运营方解释其数据。",
+  fq7:"第三方如何核验证据包？",
+  fa7:"重新计算每个文件的 SHA-256 哈希值，与清单比对，并使用标准工具核验高级电子签名和时间戳。无需访问 Eagle Eye。",
+  fq8:"你们也能管理资产吗？",
+  fa8:"可以。<a class='q-link' href='/servicios/gestion-de-activos/'>资产管理</a>包含 Eagle Eye 和经验证报告。如果您同时将该资产的运维交给我们，其报告将标注为“运营方上报，可由第三方核验”。",
+  ct_eb:"从经验证基线开始", ct_h:"固定价格，30 至 45 天。报告归您所有。",
+  ct_p:"若在 90 天内签订首年合同，费用的 50% 可抵扣。我们的团队成员会在一个工作日内回复。",
+  cta_cal:"预约 30 分钟", ct_alt:"或联系我们："
+ }
+};
+</script>
+<!-- quorelia-common.js lo agrega tools/stamp-layout.js -->
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>
