@@ -31,10 +31,10 @@
   {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
   {"@type":"ListItem","position":3,"name":"Verificación","item":"https://www.quorelia.org/servicios/verificacion/"}]},
  {"@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"¿Es realmente independiente?","acceptedAnswer":{"@type":"Answer","text":"Sí, con reglas escritas: no verificamos un activo donde prestamos O&M, no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos."}},
+  {"@type":"Question","name":"¿Es realmente independiente?","acceptedAnswer":{"@type":"Answer","text":"Sí, con reglas escritas: no llamamos independiente un informe sobre un activo donde prestamos O&M, coordinamos o supervisamos la obra, o recibimos una comisión; no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos."}},
   {"@type":"Question","name":"¿Qué pasa si faltan datos?","acceptedAnswer":{"@type":"Answer","text":"La cifra se retiene y el informe dice por qué, con su cobertura. Cada brecha se señala, se explica y se concilia; las cifras que los datos sí sostienen quedan con su traza completa."}},
   {"@type":"Question","name":"¿Qué responsabilidad asume Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Respondemos por la exactitud de las cifras que informamos, con un tope pactado en el contrato. No asumimos responsabilidad operativa: no damos consignas ni despachamos cuadrillas."}},
-  {"@type":"Question","name":"¿Qué seguros y licencias hay detrás?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados de seguro vigentes de Quorelia y de cada socio. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor certificado por el fabricante."}},
+  {"@type":"Question","name":"¿Qué seguros y licencias hay detrás?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados de seguro vigentes de cada socio, y acreditamos los seguros que su contrato exija a Quorelia. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor autorizado por el fabricante."}},
   {"@type":"Question","name":"¿Cuánto dura y cómo se sale?","acceptedAnswer":{"@type":"Answer","text":"La Línea Base Verificada es un trabajo único de 30 a 45 días. La verificación continua tiene un plazo mínimo de 12 meses y se renueva sola; puede terminarla al vencimiento con aviso previo. Sus datos y paquetes se exportan en formatos abiertos."}},
   {"@type":"Question","name":"¿Reemplaza al ingeniero independiente del financista?","acceptedAnswer":{"@type":"Answer","text":"No. Le entregamos evidencia que su ingeniero puede revisar por su cuenta, en lugar de pedirle al operador que vuelva a explicar sus cifras."}},
   {"@type":"Question","name":"¿Cómo comprueba un tercero un paquete de evidencia?","acceptedAnswer":{"@type":"Answer","text":"Recalcula la huella SHA-256 de cada archivo, la compara con el manifiesto y verifica la firma electrónica avanzada y el sello de tiempo con herramientas estándar. No necesita acceso a Eagle Eye."}},
@@ -64,6 +64,7 @@
       <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
       <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
       <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
       <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
       <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
     </div></details>
@@ -110,11 +111,12 @@
           <div class="q-nav__panel q-nav__panel--wide">
             <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
             <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
-            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
-            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
             <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
             <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
             <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
           </div>
         </li>
         <li class="q-nav__item">
@@ -345,7 +347,7 @@
   <div class="wrap">
     <div class="q-head q-head--split">
       <div><span class="q-eyebrow" data-i18n="s5_eb">05 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="s5_h">Usted sabe quién firma cada cifra.</h2></div>
-      <p class="q-lede" data-i18n="s5_p">El análisis y la firma son de Quorelia. Las pruebas en terreno las hacen socios certificados, bajo nuestra gestión.</p>
+      <p class="q-lede" data-i18n="s5_p">El análisis y la firma son de Quorelia. Las pruebas en terreno las hacen socios que acreditan licencia SEC, seguros y DS 44, presentados por escrito antes de firmar.</p>
     </div>
     <div class="q-who">
       <div><div class="q-who__h"><span class="q-chip q-chip--ok">Quorelia</span><h3 data-i18n="w1h">Equipo de Quorelia</h3></div>
@@ -357,19 +359,19 @@
           <li data-i18n="w1e">Emisión y firma de los paquetes de evidencia</li>
           <li data-i18n="w1f">Responsables: Jay Kim (COO) y Diego Ostertag (CEO)</li>
         </ul></div>
-      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios certificados, bajo nuestra gestión</h3></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios, confirmados por escrito en cada proyecto</h3></div>
         <ul class="q-arrow">
-          <li data-i18n="w2a">Termografía, curvas IV y vuelos con dron: subcontratista de inspección certificado</li>
+          <li data-i18n="w2a">Termografía, curvas IV y vuelos con dron: un subcontratista de inspección elegido para cada proyecto</li>
           <li data-i18n="w2b">Pruebas de media tensión y protecciones: instalador eléctrico Clase A con licencia SEC</li>
-          <li data-i18n="w2d">Ensayos de capacidad BESS en terreno: proveedor certificado por el fabricante, con Quorelia como testigo</li>
-          <li data-i18n="w2e">Medidores independientes en sitios híbridos: instalados por un socio certificado</li>
-          <li data-i18n="w2f">Seguridad con sistema DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w2d">Ensayos de capacidad BESS en terreno: un proveedor autorizado por el fabricante, con Quorelia como testigo</li>
+          <li data-i18n="w2e">Medidores independientes en sitios híbridos: instalados por un socio con licencia SEC</li>
+          <li data-i18n="w2f">Requisito para cada socio: licencia SEC, seguros vigentes, sistema DS 44 y control de contratistas según la Ley 20.123</li>
         </ul></div>
     </div>
     <div class="q-grid q-grid--2" style="margin-top:32px">
       <div class="note a">
         <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n2h">Regla de independencia</h3>
-        <p data-i18n="n2p">No vendemos verificación independiente sobre un activo donde Quorelia también presta O&amp;M. En esos activos, los informes se rotulan «reportado por el operador, verificable por terceros». Y nunca cobramos un porcentaje del resultado que medimos.</p>
+        <p data-i18n="n2p">No vendemos verificación independiente sobre un activo donde Quorelia también presta O&amp;M, coordinó o supervisó la obra, o recibe una comisión. En esos activos, los informes se rotulan «reportado por el operador, verificable por terceros». Y nunca cobramos un porcentaje del resultado que medimos.</p>
       </div>
       <div class="note">
         <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n3h">Lo que no hacemos</h3>
@@ -394,7 +396,7 @@
       <div class="q-card"><span class="q-card__k" data-i18n="pr5k">Una vez</span><h3 data-i18n="pr5h">Integración</h3><p data-i18n="pr5p">Cargo único por planta para conectar Eagle Eye; exento en contratos de 3 años o más.</p></div>
       <div class="q-card"><span class="q-card__k" data-i18n="pr6k">Regla</span><h3 data-i18n="pr6h">Nunca cobramos por resultados</h3><p data-i18n="pr6p">Ni porcentaje del ahorro ni de lo recuperado: un verificador pagado por el resultado que mide deja de ser independiente.</p></div>
     </div>
-    <div style="margin-top:22px"><p class="q-small" data-i18n="pr_small">Las pruebas en terreno (curvas IV, termografía, media tensión y ensayos de capacidad) se cotizan aparte y las ejecuta un socio certificado.</p></div>
+    <div style="margin-top:22px"><p class="q-small" data-i18n="pr_small">Las pruebas en terreno (curvas IV, termografía, media tensión y ensayos de capacidad) se cotizan aparte y las ejecuta un socio con licencia SEC, presentado por escrito antes de firmar.</p></div>
   </div>
 </section>
 
@@ -420,10 +422,10 @@
   <div class="wrap">
     <div class="q-head"><span class="q-eyebrow" data-i18n="s8_eb">08 · Preguntas</span><h2 class="q-h2" data-i18n="s8_h">Lo que preguntan dueños, financistas y sus abogados.</h2></div>
     <div class="q-faq">
-      <details><summary data-i18n="fq1">¿Es realmente independiente?</summary><div><p data-i18n="fa1">Sí, con reglas escritas: no verificamos un activo donde prestamos O&amp;M, no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos.</p></div></details>
+      <details><summary data-i18n="fq1">¿Es realmente independiente?</summary><div><p data-i18n="fa1">Sí, con reglas escritas: no llamamos independiente un informe sobre un activo donde prestamos O&amp;M, coordinamos o supervisamos la obra, o recibimos una comisión; no vendemos equipos ni energía, y nunca cobramos un porcentaje del resultado que medimos.</p></div></details>
       <details><summary data-i18n="fq2">¿Qué pasa si faltan datos?</summary><div><p data-i18n="fa2">La cifra se retiene y el informe dice por qué, con su cobertura. Cada brecha se señala, se explica y se concilia; las cifras que los datos sí sostienen quedan con su traza completa.</p></div></details>
       <details><summary data-i18n="fq3">¿Qué responsabilidad asume Quorelia?</summary><div><p data-i18n="fa3">Respondemos por la exactitud de las cifras que informamos, con un tope pactado en el contrato. No asumimos responsabilidad operativa: no damos consignas ni despachamos cuadrillas.</p></div></details>
-      <details><summary data-i18n="fq4">¿Qué seguros y licencias hay detrás?</summary><div><p data-i18n="fa4">Antes de firmar le entregamos los certificados de seguro vigentes de Quorelia y de cada socio. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor certificado por el fabricante.</p></div></details>
+      <details><summary data-i18n="fq4">¿Qué seguros y licencias hay detrás?</summary><div><p data-i18n="fa4">Antes de firmar le entregamos los certificados de seguro vigentes de cada socio, y acreditamos los seguros que su contrato exija a Quorelia. Las pruebas en terreno las ejecuta y firma un instalador eléctrico Clase A con licencia SEC o un proveedor autorizado por el fabricante.</p></div></details>
       <details><summary data-i18n="fq5">¿Cuánto dura y cómo se sale?</summary><div><p data-i18n="fa5">La Línea Base Verificada es un trabajo único de 30 a 45 días. La verificación continua tiene un plazo mínimo de 12 meses y se renueva sola; puede terminarla al vencimiento con aviso previo. Sus datos y paquetes se exportan en formatos abiertos.</p></div></details>
       <details><summary data-i18n="fq6">¿Reemplaza al ingeniero independiente del financista?</summary><div><p data-i18n="fa6">No. Le entregamos evidencia que su ingeniero puede revisar por su cuenta, en lugar de pedirle al operador que vuelva a explicar sus cifras.</p></div></details>
       <details><summary data-i18n="fq7">¿Cómo comprueba un tercero un paquete de evidencia?</summary><div><p data-i18n="fa7">Recalcula la huella SHA-256 de cada archivo, la compara con el manifiesto y verifica la firma electrónica avanzada y el sello de tiempo con herramientas estándar. No necesita acceso a Eagle Eye.</p></div></details>
@@ -466,6 +468,7 @@
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
         <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
         <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
         <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
@@ -597,7 +600,7 @@ window.Q_PAGE = {
   ex2v:"97.4%", ex2k:"recomputed on 98% of intervals, with every exclusion documented",
   ex3k:"of energy lost with no documented exclusion: the basis of the damages claim",
   s5_eb:"05 · Who does the work", s5_h:"You know who signs every figure.",
-  s5_p:"The analysis and the signature are Quorelia’s. Field tests are done by certified partners, under our management.",
+  s5_p:"The analysis and the signature are Quorelia’s. Field tests are done by partners who prove their SEC licence, insurance and DS 44 compliance, introduced to you in writing before you sign.",
   w1h:"Quorelia team",
   w1a:"Performance analysts: availability, PR and losses recomputed with Eagle Eye",
   w1b:"CEN settlement and Saldo MEP reconciliation",
@@ -605,14 +608,14 @@ window.Q_PAGE = {
   w1d:"Site visits without touching equipment",
   w1e:"Issuing and signing the evidence packs",
   w1f:"Accountable: Jay Kim (COO) and Diego Ostertag (CEO)",
-  w2c:"Partners", w2h:"Certified partners, under our management",
-  w2a:"Thermography, IV curves and drone surveys: a certified inspection subcontractor",
+  w2c:"Partners", w2h:"Partners, confirmed in writing for each project",
+  w2a:"Thermography, IV curves and drone surveys: an inspection subcontractor chosen for each project",
   w2b:"Medium-voltage and protection testing: an SEC-licensed Class A electrical installer",
-  w2d:"On-site BESS capacity tests: a manufacturer-certified provider, witnessed by Quorelia",
-  w2e:"Independent meters at hybrid sites: installed by a certified partner",
-  w2f:"Safety under a DS 44 system, and contractor controls under Ley 20.123",
+  w2d:"On-site BESS capacity tests: a provider the manufacturer authorises, witnessed by Quorelia",
+  w2e:"Independent meters at hybrid sites: installed by an SEC-licensed partner",
+  w2f:"Required of every partner: SEC licence, current insurance, a DS 44 system and contractor controls under Ley 20.123",
   n2h:"Independence rule",
-  n2p:"We never sell independent verification on an asset where Quorelia also provides O&amp;M. There, reports are labelled “operator-reported, verifiable by third parties”. And we never charge a percentage of the result we measure.",
+  n2p:"We never sell independent verification on an asset where Quorelia also provides O&amp;M, coordinated or supervised the works, or receives a commission. There, reports are labelled “operator-reported, verifiable by third parties”. And we never charge a percentage of the result we measure.",
   n3h:"What we do not do",
   n3p:"We are not an EPC prime contractor, we sell no equipment, we own no plants and sell no power, and we do not finance projects. That is why we can verify those who do.",
   s6_eb:"06 · How it is priced", s6_h:"A fixed price to start, a subscription to continue.",
@@ -623,7 +626,7 @@ window.Q_PAGE = {
   pr4k:"Per site", pr4h:"Hybrid-fleet M&amp;V", pr4p:"Per site-year, plus an initial set-up. Independent meters are quoted separately.",
   pr5k:"One-off", pr5h:"Integration", pr5p:"A one-off fee per plant to connect Eagle Eye; waived on terms of 3 years or more.",
   pr6k:"Rule", pr6h:"We never charge on results", pr6p:"No share of savings or recoveries: a verifier paid on the result it measures stops being independent.",
-  pr_small:"Field tests (IV curves, thermography, medium voltage and capacity tests) are quoted separately and carried out by a certified partner.",
+  pr_small:"Field tests (IV curves, thermography, medium voltage and capacity tests) are quoted separately and carried out by an SEC-licensed partner, introduced to you in writing before you sign.",
   s7_eb:"07 · Proof", s7_h:"Open a report and check the figures.",
   s7_p:"Real report structure, with illustrative data from a demo fleet. Every figure shows its coverage and its formula.",
   pc_rep:"Sample report", pc_open:"Open",
@@ -634,13 +637,13 @@ window.Q_PAGE = {
   pr_note:"Illustrative data · demo fleet. They do not represent real plants or clients.",
   s8_eb:"08 · Questions", s8_h:"Questions owners and lenders ask.",
   fq1:"Is it really independent?",
-  fa1:"Yes, under written rules: we do not verify an asset where we provide O&amp;M, we sell no equipment or power, and we never charge a percentage of the result we measure.",
+  fa1:"Yes, under written rules: we do not call a report independent on an asset where we provide O&amp;M, coordinated or supervised the works, or receive a commission; we sell no equipment or power, and we never charge a percentage of the result we measure.",
   fq2:"What happens when data are missing?",
   fa2:"The figure is withheld and the report says why, with its coverage. Every gap is flagged, explained and reconciled; the figures the data do support keep their full trail.",
   fq3:"What liability does Quorelia take on?",
   fa3:"We answer for the accuracy of the figures we report, with a cap agreed in the contract. We take on no operational liability: we give no setpoints and dispatch no crews.",
   fq4:"What insurance and licences stand behind it?",
-  fa4:"Before signing, we give you the current insurance certificates of Quorelia and of every partner. Field tests are carried out and signed by an SEC-licensed Class A electrical installer or a manufacturer-certified provider.",
+  fa4:"Before signing, we give you the current insurance certificates of every partner, and we evidence any insurance your contract requires from Quorelia. Field tests are carried out and signed by an SEC-licensed Class A electrical installer or a provider the manufacturer authorises.",
   fq5:"How long does it last, and how do I exit?",
   fa5:"The Verified Baseline is a one-off engagement of 30 to 45 days. Continuous verification has a 12-month minimum and renews automatically; you may end it at expiry with prior notice. Your data and packs are exported in open formats.",
   fq6:"Does it replace the lender’s independent engineer?",
@@ -743,7 +746,7 @@ window.Q_PAGE = {
   ex2v:"97.4%", ex2k:"基于 98% 的时段重新计算，每项剔除均有记录",
   ex3k:"无剔除依据的损失电量：违约金索赔的依据",
   s5_eb:"05 · 由谁执行", s5_h:"您清楚每个数值由谁签署。",
-  s5_p:"分析与签名由 Quorelia 负责。现场测试由经认证的合作伙伴在我们的管理下完成。",
+  s5_p:"分析与签名由 Quorelia 负责。现场测试由能证明持有 SEC 执照、有效保险并符合 DS 44 的合作伙伴完成，签约前以书面形式向您介绍。",
   w1h:"Quorelia 团队",
   w1a:"性能分析师：借助 Eagle Eye 重新计算可用率、PR 与损失",
   w1b:"CEN 结算与 Saldo MEP 对账",
@@ -751,14 +754,14 @@ window.Q_PAGE = {
   w1d:"不接触设备的现场考察",
   w1e:"出具并签署证据包",
   w1f:"负责人：Jay Kim（首席运营官）与 Diego Ostertag（首席执行官）",
-  w2c:"合作伙伴", w2h:"经认证的合作伙伴，由我们管理",
-  w2a:"红外热成像、IV 曲线与无人机巡检：经认证的检测分包商",
-  w2b:"中压与保护测试：持 SEC 执照的 A 级电气安装师",
-  w2d:"储能现场容量测试：经制造商认证的服务商执行，Quorelia 现场见证",
-  w2e:"混合能源站点的独立电表：由经认证的合作伙伴安装",
-  w2f:"现场安全执行 DS 44 管理体系，并按《第 20.123 号法》管控分包商",
+  w2c:"合作伙伴", w2h:"合作伙伴，每个项目均书面确认",
+  w2a:"红外热成像、IV 曲线与无人机巡检：按项目选定的检测分包商",
+  w2b:"中压与保护测试：持 SEC 执照的 A 级电气安装商",
+  w2d:"储能现场容量测试：由制造商授权的服务商执行，Quorelia 现场见证",
+  w2e:"混合能源站点的独立电表：由持 SEC 执照的合作伙伴安装",
+  w2f:"每家合作伙伴须具备：SEC 执照、有效保险、DS 44 体系，并按《第 20.123 号法》管控分包商",
   n2h:"独立性规则",
-  n2p:"如果 Quorelia 同时为某项资产提供运维，我们绝不在该资产上出售独立验证。这类资产的报告标注为“运营方上报，可由第三方核验”。我们也从不按所测结果收取比例费用。",
+  n2p:"如果 Quorelia 同时为某项资产提供运维、曾协调或监督其施工，或从中收取佣金，我们绝不在该资产上出售独立验证。这类资产的报告标注为“运营方上报，可由第三方核验”。我们也从不按所测结果收取比例费用。",
   n3h:"我们不做的事",
   n3p:"我们不是 EPC 总承包商，不销售设备，不拥有电站也不售电，也不为项目融资。正因如此，我们才能验证从事这些业务的各方。",
   s6_eb:"06 · 收费方式", s6_h:"固定价格起步，订阅方式持续。",
@@ -769,7 +772,7 @@ window.Q_PAGE = {
   pr4k:"按站点", pr4h:"混合能源机组的测量与验证", pr4p:"按站点·年收费，另收初始安装费。独立电表单独报价。",
   pr5k:"一次性", pr5h:"系统接入", pr5p:"每座电站一次性收取 Eagle Eye 接入费用；合同期 3 年及以上可免除。",
   pr6k:"规则", pr6h:"绝不按结果收费", pr6p:"不按节省额或追回款项收取比例费用：按所测结果收费的验证方就不再独立。",
-  pr_small:"现场测试（IV 曲线、红外热成像、中压及容量测试）单独报价，由经认证的合作伙伴执行。",
+  pr_small:"现场测试（IV 曲线、红外热成像、中压及容量测试）单独报价，由持 SEC 执照的合作伙伴执行，签约前以书面形式向您介绍。",
   s7_eb:"07 · 实证", s7_h:"打开报告，核查数据。",
   s7_p:"真实的报告结构，使用演示机组的示意数据。每个数值都显示覆盖率和计算公式。",
   pc_rep:"样本报告", pc_open:"打开",
@@ -780,13 +783,13 @@ window.Q_PAGE = {
   pr_note:"示意数据 · 演示机组。不代表真实电站或客户。",
   s8_eb:"08 · 常见问题", s8_h:"业主、融资方及其律师常问的问题。",
   fq1:"真的独立吗？",
-  fa1:"是的，并有书面规则：我们不验证自己提供运维的资产，不销售设备或电力，也从不按所测结果收取比例费用。",
+  fa1:"是的，并有书面规则：凡我们提供运维、协调或监督过施工、或收取佣金的资产，其报告不称为独立报告；我们不销售设备或电力，也从不按所测结果收取比例费用。",
   fq2:"缺少数据怎么办？",
   fa2:"该数值暂缓发布，报告会说明原因及覆盖率。每处缺口都会标注、说明并核对；数据足以支撑的数值保留完整的追溯记录。",
   fq3:"Quorelia 承担哪些责任？",
   fa3:"我们对所报告数值的准确性负责，责任上限在合同中约定。我们不承担运行责任：不下达设定值，也不派遣作业人员。",
   fq4:"背后有哪些保险和执照？",
-  fa4:"签约前，我们会向您提供 Quorelia 及每一家合作伙伴的有效保险证书。现场测试由持 SEC 执照的 A 级电气安装师或经制造商认证的服务商执行并签署。",
+  fa4:"签约前，我们会向您提供每一家合作伙伴的有效保险证书，并就合同要求 Quorelia 投保的险种提供证明。现场测试由持 SEC 执照的 A 级电气安装商或制造商授权的服务商执行并签署。",
   fq5:"服务期多长？如何退出？",
   fa5:"经验证基线为一次性服务，为期 30 至 45 天。持续验证最短 12 个月并自动续约；您可在到期时提前通知终止。您的数据和证据包以开放格式导出。",
   fq6:"能否替代融资方的独立工程师？",

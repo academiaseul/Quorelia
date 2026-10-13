@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script><!--q:js-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1F1ZXMMT2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H1F1ZXMMT2');</script>
+<title>Solar para pymes en Santiago · Quorelia</title>
+<meta name="description" content="Solar para pymes en Santiago: pre-chequeo de boleta sin costo, un instalador SEC Clase A o B que usted contrata y que presenta el TE4, y un informe mensual contra su boleta.">
+<link rel="canonical" href="https://www.quorelia.org/pymes/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://www.quorelia.org/pymes/">
+<meta property="og:title" content="Solar para pymes en Santiago · Quorelia">
+<meta property="og:description" content="Un solo coordinador para el solar de su pyme. Instala y declara ante la SEC un instalador Clase A o B que usted contrata; Quorelia coordina y le envía un informe mensual contra su boleta.">
+<meta property="og:image" content="https://www.quorelia.org/quorelia-banner-platform.jpg">
+<meta property="og:image:alt" content="Ilustración de una plataforma de datos en un computador portátil">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Service","name":"Solar para pymes","serviceType":"Bill pre-check, diagnostic, design review, coordination and monthly monitoring of SME solar projects built by SEC-licensed Class A or B installers","areaServed":"CL",
+  "description":"Pre-chequeo de boleta sin costo, diagnóstico con visita, revisión del diseño, coordinación y monitoreo mensual de proyectos solares para pymes en Santiago. La obra la contrata, instala y declara ante la SEC un instalador autorizado Clase A o B; Quorelia no vende equipos, no financia y no garantiza ahorro.",
+  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "url":"https://www.quorelia.org/pymes/"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
+  {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
+  {"@type":"ListItem","position":3,"name":"Solar para pymes","item":"https://www.quorelia.org/pymes/"}]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Garantizan el ahorro?","acceptedAnswer":{"@type":"Answer","text":"No. Le damos un rango con cada supuesto a la vista y medimos cada mes contra su boleta. Si el instalador o el fabricante ofrecen una garantía de desempeño, se la explicamos, pero la garantía es de ellos, no de Quorelia."}},
+  {"@type":"Question","name":"¿Pueden financiar el proyecto?","acceptedAnswer":{"@type":"Answer","text":"No financiamos. Puede pagar con recursos propios, con un crédito de su banco o con una empresa de leasing. En el diagnóstico podemos comparar en una misma base las ofertas que reciba."}},
+  {"@type":"Question","name":"¿Necesito baterías?","acceptedAnswer":{"@type":"Answer","text":"Para bajar la boleta, casi nunca. Las recomendamos sólo cuando un corte de luz tiene un costo real, por ejemplo en una cámara de frío, y las dimensionamos para respaldar esas cargas. Todo proyecto con batería lo debe hacer un instalador Clase A o B."}},
+  {"@type":"Question","name":"¿Incluyen cargadores para autos eléctricos?","acceptedAnswer":{"@type":"Answer","text":"Todavía no. Antes deben cumplirse dos condiciones: contar con un instalador autorizado que pueda declarar cargadores ante la SEC (TE6) y que se publique la versión revisada del pliego técnico RIC N°15, que regula la recarga de vehículos eléctricos."}},
+  {"@type":"Question","name":"¿Quién firma ante la SEC?","acceptedAnswer":{"@type":"Answer","text":"El instalador eléctrico autorizado SEC Clase A o B: diseña, instala y presenta la declaración TE4. Quorelia revisa el diseño, pero no firma. Puede verificar la licencia del instalador en el buscador de instaladores de la SEC."}},
+  {"@type":"Question","name":"¿Ganan una comisión del instalador?","acceptedAnswer":{"@type":"Answer","text":"Si existe una comisión, se la informamos por escrito, con su monto, antes de que usted elija. Nuestros honorarios por el diagnóstico, la coordinación y el monitoreo van en un contrato aparte, con usted."}},
+  {"@type":"Question","name":"¿Qué hacen con mis boletas?","acceptedAnswer":{"@type":"Answer","text":"Las usamos sólo para el pre-chequeo y, si sigue adelante, para la propuesta. Más detalle en nuestra política de privacidad."}},
+  {"@type":"Question","name":"¿Tienen referencias de pymes?","acceptedAnswer":{"@type":"Answer","text":"Todavía no. Estamos empezando con pymes y no le mostraremos instalaciones que no existen. Publicaremos casos sólo con la autorización escrita de cada cliente. Mientras tanto, puede verificar la licencia del instalador en la SEC y cada cifra del informe contra su propia boleta."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/quorelia.css">
+<style>
+/* Pymes · ajustes locales (sólo esta página) */
+/* Tarjeta del pre-chequeo en el hero: proceso, sin cifras */
+.py-pc .q-inst__rows li{grid-template-columns:auto 1fr;}
+.py-pc__k{display:block;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:14px 14px 6px;}
+.py-pc__n{font-family:var(--mono);font-size:10.5px;color:var(--muted);}
+.py-pc__out{display:flex;flex-wrap:wrap;gap:8px;padding:4px 14px 2px;}
+.py-pc__p{font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--ink-2);padding:10px 14px 16px;}
+/* Calza / no calza */
+.py-fit{margin-top:20px;}
+.py-fit h3{margin-bottom:4px;}
+.py-route{margin-top:22px;max-width:880px;}
+/* Tabla quién hace qué: tabla en escritorio, fichas en teléfono */
+.py-tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.py-tbl table{min-width:760px;}
+.py-tbl thead th{vertical-align:bottom;}
+.py-tbl tbody th{font-family:var(--sans);font-size:14.5px;font-weight:600;letter-spacing:-.005em;text-transform:none;color:var(--ink);
+  border-bottom:1px solid var(--line);padding:13px 14px 13px 0;vertical-align:top;width:19%;}
+.py-tbl td{line-height:1.5;width:20%;}
+.py-tbl thead th:last-child,.py-tbl td:last-child{background:var(--paper-2);padding-left:14px;}
+.py-lbl{display:none;}
+.py-after{margin-top:22px;max-width:880px;display:grid;gap:14px;}
+@media(max-width:760px){
+  .py-tbl table{min-width:0;}
+  .py-tbl thead{display:none;}
+  .py-tbl table,.py-tbl tbody,.py-tbl tr,.py-tbl tbody th,.py-tbl td{display:block;width:auto;}
+  .py-tbl tr{border-top:1.5px solid var(--ink);padding:14px 0 12px;}
+  .py-tbl tbody th{border:0;padding:0 0 6px;font-size:16px;}
+  .py-tbl td{border:0;padding:7px 0;display:grid;grid-template-columns:7.5em 1fr;gap:12px;}
+  .py-tbl td:last-child{background:var(--paper-2);padding:9px 10px;margin-top:4px;grid-template-columns:calc(7.5em - 10px) 1fr;}
+  .py-tbl td.py-na{display:none;}
+  .py-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px;line-height:1.4;}
+}
+/* Formulario */
+.py-split{align-items:start;}
+.py-box{background:var(--paper);border:1px solid var(--line);padding:30px 34px 34px;}
+.py-box .fld input,.py-box .fld select{min-height:46px;}
+.py-intro{margin-bottom:26px;max-width:60ch;}
+.py-hint{margin-top:8px;}
+.py-bills{margin-top:30px;}
+.py-aside{display:grid;gap:20px;}
+@media(min-width:901px) and (min-height:880px){ .py-aside{position:sticky;top:88px;} }
+@media(max-width:660px){
+  .py-box{padding:22px 18px 26px;}
+  .py-hero-acts .btn--lg{width:100%;justify-content:space-between;}
+}
+</style>
+</head>
+<body>
+
+<!-- Q:HEADER -->
+<a class="q-skip" href="#main" data-i18n-c="nav_skip">Saltar al contenido</a>
+<div class="scrim" id="q-scrim" hidden></div>
+<aside class="drawer" id="q-drawer" role="dialog" aria-modal="true" aria-label="Menú" data-i18n-c-aria="nav_menu" hidden>
+  <div class="d-head">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <button class="burger" id="q-dclose" style="display:block" aria-label="Cerrar" data-i18n-c-aria="nav_close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="q-dnav" aria-label="Principal">
+    <details><summary data-i18n-c="nav_services">Servicios</summary><div>
+      <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+      <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+      <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+      <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+      <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
+      <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+      <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_industries">Industrias</summary><div>
+      <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+      <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+      <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+      <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+      <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+      <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_ee">Eagle Eye</summary><div>
+      <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+      <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+      <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_resources">Recursos</summary><div>
+      <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+      <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+    </div></details>
+    <details><summary data-i18n-c="nav_company">Empresa</summary><div>
+      <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+      <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+      <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+    </div></details>
+  </nav>
+  <div class="d-foot">
+    <a href="/contacto/" class="btn btn--primary" style="width:100%;" data-i18n-c="nav_cta">Solicitar evaluación</a>
+    <div class="d-lang"><div class="lang">
+      <button id="mb-en" onclick="setLang('en')">EN</button>
+      <button id="mb-es" class="on" onclick="setLang('es')">ES</button>
+      <button id="mb-zh" onclick="setLang('zh')">中文</button>
+    </div></div>
+  </div>
+</aside>
+
+<header class="head">
+  <div class="wrap q-bar">
+    <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;"></a>
+    <nav aria-label="Principal">
+      <ul class="q-nav">
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_services">Servicios</button>
+          <div class="q-nav__panel q-nav__panel--wide">
+            <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
+            <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
+            <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
+            <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
+            <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_industries">Industrias</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/industrias/propietarios-renovables/"><span class="t" data-i18n-c="i_ren_t">Propietarios de renovables</span><span class="d" data-i18n-c="i_ren_d">Carteras PMGD, baterías e híbridos</span></a>
+            <a class="q-nav__link" href="/industrias/mineria/"><span class="t" data-i18n-c="i_min_t">Minería</span><span class="d" data-i18n-c="i_min_d">Faenas medianas, contratistas y campamentos</span></a>
+            <a class="q-nav__link" href="/industrias/agricultura/"><span class="t" data-i18n-c="i_agr_t">Agricultura</span><span class="d" data-i18n-c="i_agr_d">Plantas solares agrícolas y packings</span></a>
+            <a class="q-nav__link" href="/industrias/alimentos-cadena-de-frio/"><span class="t" data-i18n-c="i_food_t">Alimentos y cadena de frío</span><span class="d" data-i18n-c="i_food_d">Plantas de proceso y frigoríficos</span></a>
+            <a class="q-nav__link" href="/industrias/acuicultura-pesca/"><span class="t" data-i18n-c="i_aqua_t">Acuicultura y pesca</span><span class="d" data-i18n-c="i_aqua_d">Pontones híbridos y flotas en el sur</span></a>
+            <a class="q-nav__link" href="/industrias/industria/"><span class="t" data-i18n-c="i_ind_t">Industria</span><span class="d" data-i18n-c="i_ind_d">Grandes consumidores y Ley 21.305</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_ee">Eagle Eye</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/plataforma.html"><span class="t" data-i18n-c="ee_plat_t">La plataforma</span><span class="d" data-i18n-c="ee_plat_d">Cómo Eagle Eye lee, verifica y reporta</span></a>
+            <a class="q-nav__link" href="/demos.html"><span class="t" data-i18n-c="ee_demo_t">Demo en vivo</span><span class="d" data-i18n-c="ee_demo_d">Control Center y tablero BESS con datos de muestra</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_resources">Recursos</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/normativa-electrica-chile.html"><span class="t" data-i18n-c="r_guide_t">Guía de normativa eléctrica</span><span class="d" data-i18n-c="r_guide_d">Qué exigen el CEN, la SEC y la CNE a una planta</span></a>
+            <a class="q-nav__link" href="/insights.html"><span class="t" data-i18n-c="r_ins_t">Insights</span><span class="d" data-i18n-c="r_ins_d">Análisis del mercado eléctrico chileno</span></a>
+            <a class="q-nav__link" href="/informe.html"><span class="t" data-i18n-c="ee_rep_t">Informes de muestra</span><span class="d" data-i18n-c="ee_rep_d">Lo que recibe cada mes, con datos ilustrativos</span></a>
+          </div>
+        </li>
+        <li class="q-nav__item">
+          <button class="q-nav__btn" type="button" aria-expanded="false" data-i18n-c="nav_company">Empresa</button>
+          <div class="q-nav__panel">
+            <a class="q-nav__link" href="/story.html"><span class="t" data-i18n-c="c_about_t">Nosotros</span><span class="d" data-i18n-c="c_about_d">Quiénes firman el contrato</span></a>
+            <a class="q-nav__link" href="/gobierno.html"><span class="t" data-i18n-c="c_pub_t">Sector público</span><span class="d" data-i18n-c="c_pub_d">Trazabilidad para la fiscalización</span></a>
+            <a class="q-nav__link" href="/contacto/"><span class="t" data-i18n-c="c_contact_t">Contacto</span><span class="d" data-i18n-c="c_contact_d">Evaluación de activos, evaluación energética o 30 minutos</span></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" class="on" onclick="setLang('es')">ES</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="/contacto/" class="btn btn--secondary btn--sm" data-i18n-c="nav_cta">Solicitar evaluación</a>
+      <button class="burger" id="q-burger" type="button" aria-expanded="false" aria-controls="q-drawer" aria-label="Menú" data-i18n-c-aria="nav_menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- /Q:HEADER -->
+
+<main id="main">
+
+<!-- ═══ 1 · HERO ═══ -->
+<section class="q-hero">
+  <div class="wrap">
+    <nav class="q-crumbs" aria-label="Migas" data-i18n-aria="cr_aria"><a href="/" data-i18n="cr_home">Inicio</a><span aria-hidden="true">/</span><a href="/servicios/" data-i18n="cr_svc">Servicios</a><span aria-hidden="true">/</span><span data-i18n="cr_here">Solar para pymes</span></nav>
+    <div class="q-split">
+      <div>
+        <span class="q-eyebrow" data-i18n="hero_eb">Solar para pymes · Santiago</span>
+        <h1 class="q-h1" data-i18n="hero_h">Paneles solares para su pyme, con un solo coordinador.</h1>
+        <p class="q-lede" data-i18n="hero_p">Revisamos sus boletas, coordinamos el proyecto y cada mes contrastamos lo que produce el sistema con su boleta. La obra la hace un instalador eléctrico autorizado SEC Clase A o B, que usted contrata directamente y que declara la instalación ante la SEC.</p>
+        <div class="q-actions py-hero-acts">
+          <a class="btn btn--primary btn--lg" href="#pre-chequeo"><span data-i18n="cta_bills">Pedir mi pre-chequeo</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--secondary btn--lg" href="https://wa.me/56942115562" target="_blank" rel="noopener"><span data-i18n="cta_wa">Escribir por WhatsApp</span><span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn--link" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener"><span data-i18n="cta_cal">Agendar 30 minutos</span><span class="ar" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <!-- Tarjeta del pre-chequeo: describe el proceso, sin cifras -->
+      <aside class="q-inst py-pc" aria-label="Pre-chequeo de boleta" data-i18n-aria="pc_aria">
+        <div class="q-inst__bar"><span data-i18n="pc_bar">Pre-chequeo de boleta</span><span data-i18n="pc_bar2">Sin costo</span></div>
+        <span class="py-pc__k" data-i18n="pc_k1">Lo que nos envía</span>
+        <ul class="q-inst__rows">
+          <li><span class="py-pc__n">01</span><span data-i18n="pc1">Sus últimas 12 boletas, o las que tenga</span></li>
+          <li><span class="py-pc__n">02</span><span data-i18n="pc2">La comuna del local</span></li>
+          <li><span class="py-pc__n">03</span><span data-i18n="pc3">Si el techo es propio o arrendado</span></li>
+          <li><span class="py-pc__n">04</span><span data-i18n="pc4">Su horario de operación</span></li>
+        </ul>
+        <span class="py-pc__k" data-i18n="pc_k2">Lo que le respondemos en 2 días hábiles desde que recibimos sus boletas</span>
+        <div class="py-pc__out">
+          <span class="q-chip q-chip--ok" data-i18n="pc_go">Conviene</span>
+          <span class="q-chip q-chip--warn" data-i18n="pc_no">No conviene</span>
+          <span class="q-chip q-chip--neutral" data-i18n="pc_miss">Falta un dato</span>
+        </div>
+        <p class="py-pc__p" data-i18n="pc_p">Si conviene, un tamaño indicativo y un rango de ahorro con cada supuesto a la vista. Si no conviene, se lo decimos y le explicamos por qué.</p>
+        <div class="q-inst__foot"><span data-i18n="pc_foot">Sin compromiso</span><span>ES · EN · 中文</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2 · Para quién ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="w_eb">01 · Para quién</span><h2 class="q-h2" data-i18n="w_h">Para pymes que consumen de día.</h2></div>
+      <p class="q-lede" data-i18n="w_p">Un kWh solar vale más cuando se consume en el mismo lugar y a la misma hora en que se produce. Estos rubros suelen cumplirlo.</p>
+    </div>
+    <div class="q-grid q-grid--3">
+      <div class="q-card"><span class="q-card__k" data-i18n="w1k">Cadena de frío</span><h3 data-i18n="w1h">Frigoríficos, procesadoras de alimentos y distribución refrigerada</h3><p data-i18n="w1p">Cámaras y compresores que funcionan todo el día, incluidas las horas de sol.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="w2k">Turnos de día</span><h3 data-i18n="w2h">Talleres, manufactura liviana y logística pequeña</h3><p data-i18n="w2p">En local propio y con turnos de día, cuando las máquinas, la iluminación y la climatización funcionan con sol.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="w3k">Siete días</span><h3 data-i18n="w3h">Comercio de alimentos abierto todos los días</h3><p data-i18n="w3p">Refrigeración e iluminación que consumen también los fines de semana, cuando una oficina estaría cerrada.</p></div>
+    </div>
+    <div class="q-grid q-grid--2 py-fit">
+      <div class="q-card">
+        <h3 data-i18n="fit_h">Calza si…</h3>
+        <ul class="q-check">
+          <li data-i18n="fit1">El techo es suyo, o lo arrienda con al menos 5 años de contrato por delante y el dueño autoriza la obra por escrito (para declarar el TE4, la autorización del dueño debe ser notarial).</li>
+          <li data-i18n="fit2">La mayor parte de su consumo ocurre de día.</li>
+          <li data-i18n="fit3">Es cliente regulado con tarifa BT2, BT3 o BT4 (aparece en su boleta).</li>
+          <li data-i18n="fit4">Consume unos 4.000 kWh al mes o más.</li>
+        </ul>
+      </div>
+      <div class="q-card">
+        <h3 data-i18n="nofit_h">No calza si…</h3>
+        <ul class="q-check q-check--no">
+          <li data-i18n="nofit1">Consume sobre todo de noche: el sistema inyectaría a la red la mayor parte de lo que produce, a un valor menor.</li>
+          <li data-i18n="nofit2">No controla el techo, o el arriendo vence en menos de 5 años.</li>
+          <li data-i18n="nofit3">Busca un ahorro garantizado o un subsidio: no ofrecemos ninguno de los dos.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="py-route"><p class="q-small" data-i18n="fit_route">¿Su cuenta supera los CLP 5 millones al mes, o administra plantas de generación? Use la <a class="q-link" href="/contacto/?interes=evaluacion-energetica#energia">evaluación energética</a> o la <a class="q-link" href="/contacto/#activos">evaluación de activos</a>.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 3 · Las cuentas ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="ec_eb">02 · Las cuentas, con fuente</span><h2 class="q-h2" data-i18n="ec_h">Cuánto vale un kWh solar con la tarifa de octubre de 2026.</h2></div>
+      <p class="q-lede" data-i18n="ec_p">Valores netos, sin IVA, del pliego de Enel Distribución para las comunas de Santiago (BT_AA), vigente desde el 1 de octubre de 2026. Si su distribuidora es otra, calculamos con su propia boleta.</p>
+    </div>
+    <div class="q-figs" style="--cols:3">
+      <div class="q-fig"><span class="q-fig__v">≈ CLP 154</span><span class="q-fig__k" data-i18n="ec1k">deja de pagar por cada kWh solar que consume en el momento: energía, transporte y servicio público, neto.</span><span class="q-fig__src"><span data-i18n="src_1">Fuente:</span> <a href="https://www.enel.cl/content/dam/enel-cl/es/personas/informacion-de-utilidad/tarifas-y-reglamentos/tarifas/tarifas-reguladas/2026/Enel%20Distribuci%C3%B3n%20Chile%20SA._Tarifas%20Suministro%20El%C3%A9ctrico%208T_%20VAD%205T%20Octubre%20de%202026.pdf" target="_blank" rel="noopener" data-i18n="src_oct">Enel, tarifas de octubre de 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v">≈ CLP 110</span><span class="q-fig__k" data-i18n="ec2k">le abona la distribuidora en su boleta por cada kWh que inyecta a la red bajo net billing, neto.</span><span class="q-fig__src"><span data-i18n="src_1">Fuente:</span> <a href="https://www.enel.cl/content/dam/enel-cl/es/personas/informacion-de-utilidad/tarifas-y-reglamentos/tarifas/tarifas-reguladas/2026/Enel%20Distribuci%C3%B3n%20Chile%20SA._Tarifas%20Suministro%20El%C3%A9ctrico%208T_%20VAD%205T%20Octubre%20de%202026.pdf" target="_blank" rel="noopener" data-i18n="src_oct">Enel, tarifas de octubre de 2026</a></span></div>
+      <div class="q-fig"><span class="q-fig__v">≈ ×2</span><span class="q-fig__k" data-i18n="ec3k">El cargo de energía de la tarifa BT3 de Enel se duplicó, aproximadamente, entre enero de 2024 y octubre de 2026.</span><span class="q-fig__src"><span data-i18n="src_2">Fuentes:</span> <a href="https://www.enel.cl/content/dam/enel-cl/es/personas/informacion-de-utilidad/tarifas-y-reglamentos/tarifas/tarifas-reguladas/2024/Enel%20Distribuci%C3%B3n%20Chile%20SA._Tarifas%20Suministro%20El%C3%A9ctrico%2016T_%20VAD%205T%20Enero%20de%202024%20-%20T1.pdf" target="_blank" rel="noopener" data-i18n="src_jan">Enel, enero de 2024</a> · <a href="https://www.enel.cl/content/dam/enel-cl/es/personas/informacion-de-utilidad/tarifas-y-reglamentos/tarifas/tarifas-reguladas/2026/Enel%20Distribuci%C3%B3n%20Chile%20SA._Tarifas%20Suministro%20El%C3%A9ctrico%208T_%20VAD%205T%20Octubre%20de%202026.pdf" target="_blank" rel="noopener" data-i18n="src_oct2">octubre de 2026</a></span></div>
+    </div>
+    <div class="q-grid q-grid--3" style="margin-top:36px;">
+      <div class="q-card"><span class="q-card__k" data-i18n="ecA_k">Tamaño</span><h3 data-i18n="ecA_h">Dimensione para su consumo de día</h3><p data-i18n="ecA_p">Cada kWh que usa en el momento ahorra unos CLP 154; cada kWh que sobra y se inyecta se abona en su boleta a unos CLP 110. Un sistema más grande que su consumo diurno rinde menos por cada peso invertido.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="ecB_k">Cargo por demanda</span><h3 data-i18n="ecB_h">Los paneles no bajan la demanda en punta</h3><p data-i18n="ecB_p">La punta se mide entre las 18:00 y las 22:00, de abril a septiembre, cuando los paneles producen poco o nada. Por eso no contamos ningún ahorro en el cargo por demanda.</p></div>
+      <div class="q-card"><span class="q-card__k" data-i18n="ecC_k">Respaldo</span><h3 data-i18n="ecC_h">Baterías, sólo para respaldo</h3><p data-i18n="ecC_p">Las recomendamos sólo donde un corte tiene un costo real, como una cámara de frío; nunca para bajar la boleta.</p></div>
+    </div>
+    <div class="note a" style="margin-top:28px;max-width:880px;"><h4 data-i18n="ec_nh">Antes de ver sus boletas, no le damos una cifra de ahorro.</h4><p data-i18n="ec_np">Los valores de arriba corresponden a Enel en Santiago; si su distribuidora es otra, como CGE, usamos los valores de su boleta. El net billing cubre a clientes regulados con instalaciones de hasta 300 kW (<a class="q-link" href="https://www.bcn.cl/leychile/navegar?idNorma=258171" target="_blank" rel="noopener">LGSE, art. 149 bis</a>).</p></div>
+  </div>
+</section>
+
+<!-- ═══ 4 · Cómo funciona ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="st_eb">03 · Cómo funciona</span><h2 class="q-h2" data-i18n="st_h">Cinco pasos, y usted decide en cada uno.</h2></div>
+    <ol class="q-steps" style="--steps:5">
+      <li><h3 data-i18n="st1h">Pre-chequeo de boleta</h3><p data-i18n="st1p">Sin costo. Con sus boletas, le respondemos en 2 días hábiles: conviene, no conviene o falta un dato.</p></li>
+      <li><h3 data-i18n="st2h">Diagnóstico con visita</h3><p data-i18n="st2p">Revisamos en terreno el techo, el tablero y su consumo. Tiene un precio fijo que le informamos por escrito antes de agendar la visita; la mitad se abona a nuestros honorarios si firma el proyecto dentro de 90 días.</p></li>
+      <li><h3 data-i18n="st3h">Propuesta</h3><p data-i18n="st3p">Con la cotización vinculante del instalador, su número de licencia SEC y cada modelo de equipo verificado en el <a class="q-link" href="https://wlhttp.sec.cl/productManager/search" target="_blank" rel="noopener">buscador de productos de la SEC</a> el día en que se emite.</p></li>
+      <li><h3 data-i18n="st4h">Obra y declaración TE4</h3><p data-i18n="st4p">El instalador Clase A o B firma con usted, instala, factura y presenta el TE4 ante la SEC. Quorelia revisa el diseño y presenta por usted, con un poder simple, las solicitudes de net billing a la distribuidora.</p></li>
+      <li><h3 data-i18n="st5h">Monitoreo mensual</h3><p data-i18n="st5p">Un informe cada mes, conciliado con la boleta de la distribuidora y rotulado «reportado por el operador, verificable por terceros».</p></li>
+    </ol>
+    <div class="note" style="margin-top:44px;max-width:880px;"><h4 data-i18n="st_nh">¿Por qué «reportado por el operador»?</h4><p data-i18n="st_np">Porque Quorelia cobra por coordinar su proyecto, y no sería honesto llamar independiente a ese informe. Cada cifra trae su fuente, y usted o un tercero pueden revisarla contra la boleta y el medidor.</p></div>
+  </div>
+</section>
+
+<!-- ═══ 5 · Quién hace qué ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="wh_eb">04 · Quién hace qué</span><h2 class="q-h2" data-i18n="wh_h">Quién hace qué y quién firma qué.</h2></div>
+      <p class="q-lede" data-i18n="wh_p">Usted firma dos contratos: uno de obra y equipos con el instalador, y otro de servicios con Quorelia.</p>
+    </div>
+    <div class="py-tbl">
+      <table>
+        <thead>
+          <tr><th scope="col" data-i18n="th0">Tema</th><th scope="col" data-i18n="th1">Usted (cliente)</th><th scope="col" data-i18n="th2">Instalador SEC Clase A o B</th><th scope="col" data-i18n="th3">Fabricante o distribuidor</th><th scope="col">Quorelia</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" data-i18n="r1">Contrato de obra y equipos</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r1a">Lo firma y paga los hitos al instalador</span></td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r1b">Lo firma, factura y cobra</span></td>
+            <td><span class="py-lbl" data-i18n="th3">Fabricante o distribuidor</span><span data-i18n="r1c">Vende los equipos al instalador</span></td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r1d">No es parte</span></td></tr>
+          <tr><th scope="row" data-i18n="r2">Contrato de servicios</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r2a">Lo firma</span></td>
+            <td class="py-na">—</td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r2d">Lo firma: diagnóstico, revisión del diseño, coordinación y monitoreo</span></td></tr>
+          <tr><th scope="row" data-i18n="r3">Solicitudes de net billing</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r3a">Es el solicitante ante la distribuidora</span></td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r3b">Entrega los datos técnicos</span></td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r3d">Las presenta por usted, con poder simple</span></td></tr>
+          <tr><th scope="row" data-i18n="r4">Diseño, TE4 y puesta en marcha</th>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r4b">Diseña, declara ante la SEC y pone en marcha; responde con su licencia</span></td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r4d">Revisa el diseño; no firma el TE4</span></td></tr>
+          <tr><th scope="row" data-i18n="r5">Garantía de los equipos</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r5a">La reclama a través del instalador</span></td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r5b">Tramita el reclamo</span></td>
+            <td><span class="py-lbl" data-i18n="th3">Fabricante o distribuidor</span><span data-i18n="r5c">Responde por la garantía</span></td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r5d">Verifica que cada equipo esté autorizado por la SEC</span></td></tr>
+          <tr><th scope="row" data-i18n="r6">Garantía de la mano de obra</th>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r6b">Responde por escrito</span></td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r6d">Hace seguimiento de los reclamos</span></td></tr>
+          <tr><th scope="row" data-i18n="r7">Informe mensual</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r7a">Lo recibe</span></td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r7b">Da acceso a los datos del inversor</span></td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r7d">Lo prepara y lo firma: «reportado por el operador, verificable por terceros»</span></td></tr>
+          <tr><th scope="row" data-i18n="r8">Comisión</th>
+            <td><span class="py-lbl" data-i18n="th1">Usted (cliente)</span><span data-i18n="r8a">Se le informa por escrito, con su monto, antes de elegir</span></td>
+            <td><span class="py-lbl" data-i18n="th2">Instalador SEC Clase A o B</span><span data-i18n="r8b">La paga, si existe</span></td>
+            <td class="py-na">—</td>
+            <td><span class="py-lbl">Quorelia</span><span data-i18n="r8d">La declara por escrito</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="py-after">
+      <div class="note"><p data-i18n="wh_lic"><b>Verifique la licencia antes de firmar.</b> Búsquela en el <a class="q-link" href="https://wlhttp.sec.cl/buscadorinstaladores/buscador.do" target="_blank" rel="noopener">buscador de instaladores de la SEC</a>; el número va escrito en la propuesta. En sistemas con inversor string o central, los habituales en una pyme, sólo un instalador Clase A o B puede declarar el TE4, y todo proyecto con batería exige Clase A o B.</p></div>
+      <p class="q-small" data-i18n="wh_afci">Desde el 1 de enero de 2026 sólo se pueden declarar inversores autorizados por la SEC con protección contra fallas de arco (AFCI) integrada. Lo revisamos modelo por modelo en el <a class="q-link" href="https://wlhttp.sec.cl/productManager/search" target="_blank" rel="noopener">buscador de productos de la SEC</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · Lo que no hacemos ═══ -->
+<section class="q-sec--alt">
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="no_eb">05 · Lo que no hacemos</span><h2 class="q-h2" data-i18n="no_h">Lo que Quorelia no hace, por escrito.</h2></div>
+    <div class="q-grid q-grid--4">
+      <div class="q-card"><h3 data-i18n="no1h">No vende equipos</h3><p data-i18n="no1p">Paneles, inversores y estructuras se los vende el instalador, con su factura y la garantía del fabricante.</p></div>
+      <div class="q-card"><h3 data-i18n="no2h">No es el contratista principal</h3><p data-i18n="no2p">El instalador Clase A o B contrata la obra con usted y responde por ella ante la SEC.</p></div>
+      <div class="q-card"><h3 data-i18n="no3h">No financia</h3><p data-i18n="no3p">Puede usar su banco o una empresa de leasing. Si quiere, comparamos en el diagnóstico las ofertas que reciba.</p></div>
+      <div class="q-card"><h3 data-i18n="no4h">No garantiza ahorro</h3><p data-i18n="no4p">Le mostramos un rango con cada supuesto a la vista, y después medimos cada mes contra su boleta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · Preguntas ═══ -->
+<section>
+  <div class="wrap">
+    <div class="q-head"><span class="q-eyebrow" data-i18n="fq_eb">06 · Preguntas frecuentes</span><h2 class="q-h2" data-i18n="fq_h">Lo que preguntan las pymes antes de enviar sus boletas.</h2></div>
+    <div class="q-faq">
+      <details><summary data-i18n="fq1">¿Garantizan el ahorro?</summary><div><p data-i18n="fa1">No. Le damos un rango con cada supuesto a la vista y medimos cada mes contra su boleta. Si el instalador o el fabricante ofrecen una garantía de desempeño, se la explicamos, pero la garantía es de ellos, no de Quorelia.</p></div></details>
+      <details><summary data-i18n="fq2">¿Pueden financiar el proyecto?</summary><div><p data-i18n="fa2">No financiamos. Puede pagar con recursos propios, con un crédito de su banco o con una empresa de leasing. En el diagnóstico podemos comparar en una misma base las ofertas que reciba.</p></div></details>
+      <details><summary data-i18n="fq3">¿Necesito baterías?</summary><div><p data-i18n="fa3">Para bajar la boleta, casi nunca. Las recomendamos sólo cuando un corte de luz tiene un costo real, por ejemplo en una cámara de frío, y las dimensionamos para respaldar esas cargas. Todo proyecto con batería lo debe hacer un instalador Clase A o B.</p></div></details>
+      <details><summary data-i18n="fq4">¿Incluyen cargadores para autos eléctricos?</summary><div><p data-i18n="fa4">Todavía no. Antes deben cumplirse dos condiciones: contar con un instalador autorizado que pueda declarar cargadores ante la SEC (TE6) y que se publique la versión revisada del pliego técnico RIC N°15, que regula la recarga de vehículos eléctricos.</p></div></details>
+      <details><summary data-i18n="fq5">¿Quién firma ante la SEC?</summary><div><p data-i18n="fa5">El instalador eléctrico autorizado SEC Clase A o B: diseña, instala y presenta la declaración TE4. Quorelia revisa el diseño, pero no firma. Puede verificar la licencia del instalador en el <a class="q-link" href="https://wlhttp.sec.cl/buscadorinstaladores/buscador.do" target="_blank" rel="noopener">buscador de instaladores de la SEC</a>.</p></div></details>
+      <details><summary data-i18n="fq6">¿Ganan una comisión del instalador?</summary><div><p data-i18n="fa6">Si existe una comisión, se la informamos por escrito, con su monto, antes de que usted elija. Nuestros honorarios por el diagnóstico, la coordinación y el monitoreo van en un contrato aparte, con usted.</p></div></details>
+      <details><summary data-i18n="fq7">¿Qué hacen con mis boletas?</summary><div><p data-i18n="fa7">Las usamos sólo para el pre-chequeo y, si sigue adelante, para la propuesta. Más detalle en nuestra <a class="q-link" href="/privacidad.html">política de privacidad</a>.</p></div></details>
+      <details><summary data-i18n="fq8">¿Tienen referencias de pymes?</summary><div><p data-i18n="fa8">Todavía no. Estamos empezando con pymes y no le mostraremos instalaciones que no existen. Publicaremos casos sólo con la autorización escrita de cada cliente. Mientras tanto, puede verificar la licencia del instalador en la SEC y cada cifra del informe contra su propia boleta.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8 · Pre-chequeo (formulario) ═══ -->
+<section class="q-sec--alt" id="pre-chequeo">
+  <div class="wrap">
+    <div class="q-head q-head--split">
+      <div><span class="q-eyebrow" data-i18n="fm_eb">07 · Pre-chequeo</span><h2 class="q-h2" data-i18n="fm_h">Pida su pre-chequeo de boleta.</h2></div>
+      <p class="q-lede" data-i18n="fm_p">Sin costo y sin compromiso. Una vez recibidas sus boletas, le respondemos en 2 días hábiles.</p>
+    </div>
+    <div class="q-split py-split">
+      <div class="py-box">
+        <p class="q-small py-intro" data-i18n="fm_intro">Responda lo que sepa; lo demás lo vemos después. Los campos con * son obligatorios.</p>
+        <form class="q-form" data-endpoint="mljraopz" data-subject="Pyme · pre-chequeo" novalidate>
+          <div class="hp" aria-hidden="true"><label for="p-gotcha">No completar</label><input type="text" id="p-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="formulario" value="Pyme · pre-chequeo">
+          <div class="fgrid">
+            <div class="fld"><label for="p-name"><span data-i18n="f_name">Nombre</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="p-name" name="name" autocomplete="name" required></div>
+            <div class="fld"><label for="p-company"><span data-i18n="f_company">Empresa</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="p-company" name="company" autocomplete="organization" required></div>
+            <div class="fld"><label for="p-email"><span data-i18n="f_email">Correo electrónico</span><span class="req" aria-hidden="true">*</span></label><input type="email" id="p-email" name="email" autocomplete="email" inputmode="email" required placeholder="nombre@empresa.cl" data-i18n-ph="ph_email"></div>
+            <div class="fld"><label for="p-phone" data-i18n="f_phone">Teléfono o WhatsApp</label><input type="tel" id="p-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+56 9"></div>
+            <div class="fld"><label for="p-comuna"><span data-i18n="f_comuna">Comuna del local</span><span class="req" aria-hidden="true">*</span></label><input type="text" id="p-comuna" name="comuna" autocomplete="address-level2" required placeholder="p. ej. Quilicura" data-i18n-ph="ph_comuna"></div>
+            <div class="fld"><label for="p-rubro" data-i18n="f_rubro">Rubro</label>
+              <select id="p-rubro" name="rubro">
+                <option value="" data-i18n="sv_0">Seleccione</option>
+                <option value="Frigorífico o cadena de frío" data-i18n="rb1">Frigorífico o cadena de frío</option>
+                <option value="Procesamiento de alimentos" data-i18n="rb2">Procesamiento de alimentos</option>
+                <option value="Taller o manufactura liviana" data-i18n="rb3">Taller o manufactura liviana</option>
+                <option value="Bodega o logística" data-i18n="rb4">Bodega o logística</option>
+                <option value="Comercio de alimentos 7 días" data-i18n="rb5">Comercio de alimentos, 7 días</option>
+                <option value="Otro" data-i18n="rb6">Otro</option>
+              </select>
+            </div>
+            <div class="fld"><label for="p-bill" data-i18n="f_bill">Cuenta eléctrica mensual</label>
+              <select id="p-bill" name="cuenta_mensual" aria-describedby="p-bill-h">
+                <option value="" data-i18n="sv_0">Seleccione</option>
+                <option value="Menos de CLP 0,5 M" data-i18n="bl1">Menos de CLP 0,5 millones</option>
+                <option value="CLP 0,5-1 M" data-i18n="bl2">CLP 0,5 a 1 millón</option>
+                <option value="CLP 1-2 M" data-i18n="bl3">CLP 1 a 2 millones</option>
+                <option value="CLP 2-5 M" data-i18n="bl4">CLP 2 a 5 millones</option>
+                <option value="Más de CLP 5 M" data-i18n="bl5">Más de CLP 5 millones</option>
+              </select>
+              <span class="hint" id="p-bill-h" data-i18n="f_bill_h">El total de una boleta típica.</span>
+            </div>
+            <div class="fld"><label for="p-crit" data-i18n="f_crit">Cargas críticas o cortes de luz</label><input type="text" id="p-crit" name="cargas_criticas" placeholder="p. ej. cámaras de frío" data-i18n-ph="ph_crit" aria-describedby="p-crit-h"><span class="hint" id="p-crit-h" data-i18n="f_opt">Opcional.</span></div>
+            <fieldset aria-describedby="p-tariff-h">
+              <legend data-i18n="f_tariff">Tarifa</legend>
+              <div class="q-opts">
+                <label><input type="radio" name="tarifa" value="BT2"><span>BT2</span></label>
+                <label><input type="radio" name="tarifa" value="BT3"><span>BT3</span></label>
+                <label><input type="radio" name="tarifa" value="BT4.x"><span>BT4.x</span></label>
+                <label><input type="radio" name="tarifa" value="No sé"><span data-i18n="ns">No sé</span></label>
+              </div>
+              <p class="q-small py-hint" id="p-tariff-h" data-i18n="f_tariff_h">Aparece en su boleta.</p>
+            </fieldset>
+            <fieldset>
+              <legend data-i18n="f_roof">Techo</legend>
+              <div class="q-opts">
+                <label><input type="radio" name="techo" value="Propio"><span data-i18n="rf1">Propio</span></label>
+                <label><input type="radio" name="techo" value="Arrendado, 5+ años"><span data-i18n="rf2">Arrendado, con 5 años o más de contrato</span></label>
+                <label><input type="radio" name="techo" value="Arrendado, menos de 5 años"><span data-i18n="rf3">Arrendado, con menos de 5 años</span></label>
+                <label><input type="radio" name="techo" value="No sé"><span data-i18n="ns">No sé</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend data-i18n="f_hours">Horario de operación</legend>
+              <div class="q-opts">
+                <label><input type="radio" name="horario" value="Sólo de día"><span data-i18n="hr1">Sólo de día</span></label>
+                <label><input type="radio" name="horario" value="Día y noche"><span data-i18n="hr2">Día y noche</span></label>
+                <label><input type="radio" name="horario" value="24/7"><span data-i18n="hr3">24 horas, 7 días</span></label>
+              </div>
+            </fieldset>
+            <div class="fld full"><label for="p-msg" data-i18n="f_msg">Mensaje</label><textarea id="p-msg" name="mensaje" rows="4" placeholder="¿Algo más que debamos saber? Por ejemplo, si piensa ampliar el local o cambiar de tarifa." data-i18n-ph="ph_msg"></textarea></div>
+          </div>
+          <div class="note py-bills"><p data-i18n="fm_bills"><b>Las boletas no se adjuntan aquí.</b> Después de enviar, responda nuestro correo con sus boletas en PDF o foto, o envíelas por <a class="q-link" href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp al +56 9 4211 5562</a>.</p></div>
+          <div class="fsub">
+            <button type="submit" class="btn btn--primary btn--lg" data-send><span data-label data-i18n="f_send">Solicitar pre-chequeo</span><span class="ar" aria-hidden="true">→</span></button>
+            <p class="fnote" data-i18n="f_priv">Usamos sus datos y sus boletas sólo para el pre-chequeo y la propuesta (Ley 19.628 y Ley 21.719, vigente desde el 1 de diciembre de 2026). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
+          </div>
+          <div class="fmsg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+      <aside class="py-aside" aria-label="Después de enviar" data-i18n-aria="as_aria">
+        <div class="q-card">
+          <span class="q-card__k" data-i18n="as_k">Después de enviar</span>
+          <h3 data-i18n="as_h">Qué pasa con su solicitud</h3>
+          <ul class="q-arrow">
+            <li data-i18n="as1">Le escribimos dentro de un día hábil para pedirle las boletas, si todavía no las ha enviado.</li>
+            <li data-i18n="as2">Con las boletas, en 2 días hábiles le decimos si conviene, si no conviene o qué dato falta.</li>
+            <li data-i18n="as3">Si conviene, le proponemos el diagnóstico con su precio fijo por escrito. Usted decide si sigue.</li>
+          </ul>
+          <a class="q-card__link" href="https://wa.me/56942115562" target="_blank" rel="noopener" data-i18n="as_wa">Enviar boletas por WhatsApp</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9 · Cierre ═══ -->
+<section class="q-cta">
+  <div class="wrap">
+    <div class="q-head" style="margin-bottom:0;">
+      <span class="q-eyebrow" data-i18n="ct_eb">¿Prefiere conversar antes?</span>
+      <h2 class="q-h2" data-i18n="ct_h">Le responde uno de los fundadores.</h2>
+      <p class="q-lede" data-i18n="ct_p">30 minutos por video o un mensaje por WhatsApp, como le acomode.</p>
+    </div>
+    <div class="q-actions">
+      <a class="btn btn--on-dark btn--lg" href="https://cal.com/quorelia/30min" target="_blank" rel="noopener"><span data-i18n="cta_cal">Agendar 30 minutos</span><span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost-dark btn--lg" href="https://wa.me/56942115562" target="_blank" rel="noopener" data-i18n="cta_wa">Escribir por WhatsApp</a>
+    </div>
+    <p class="q-cta__alt"><span data-i18n="ct_alt">O escríbanos:</span><a href="mailto:jay@quorelia.org">jay@quorelia.org</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Q:FOOTER -->
+<footer class="q-foot">
+  <div class="wrap">
+    <div class="q-foot__grid">
+      <div class="q-foot__brand">
+        <a href="/" class="brand" aria-label="Quorelia"><img src="/quorelia-mark-64.png" alt="" width="22" height="22" loading="lazy"><img src="/quorelia-wordmark.png" alt="Quorelia" width="86" height="11" style="height:11px;width:auto;" loading="lazy"></a>
+        <p data-i18n-c="f_desc">Gestión de activos energéticos y verificación para dueños, fondos e industria en Chile. Eagle Eye incluido.</p>
+        <p class="q-foot__motto" data-i18n-c="f_motto">Siempre vigilando. Al servicio de la energía del planeta.</p>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_services">Servicios</p>
+        <a href="/servicios/" data-i18n-c="s_all_t">Servicio integral para activos solares</a>
+        <a href="/servicios/gestion-de-activos/" data-i18n-c="s_am_t">Gestión de activos</a>
+        <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
+        <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
+        <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
+        <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
+        <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_industries">Industrias</p>
+        <a href="/industrias/propietarios-renovables/" data-i18n-c="i_ren_t">Propietarios de renovables</a>
+        <a href="/industrias/mineria/" data-i18n-c="i_min_t">Minería</a>
+        <a href="/industrias/agricultura/" data-i18n-c="i_agr_t">Agricultura</a>
+        <a href="/industrias/alimentos-cadena-de-frio/" data-i18n-c="i_food_t">Alimentos y cadena de frío</a>
+        <a href="/industrias/acuicultura-pesca/" data-i18n-c="i_aqua_t">Acuicultura y pesca</a>
+        <a href="/industrias/industria/" data-i18n-c="i_ind_t">Industria</a>
+      </div>
+      <div>
+        <p class="q-foot__h" data-i18n-c="f_ee">Eagle Eye y recursos</p>
+        <a href="/plataforma.html" data-i18n-c="ee_plat_t">La plataforma</a>
+        <a href="/demos.html" data-i18n-c="ee_demo_t">Demo en vivo</a>
+        <a href="/informe.html" data-i18n-c="ee_rep_t">Informes de muestra</a>
+        <a href="/normativa-electrica-chile.html" data-i18n-c="r_guide_t">Guía de normativa eléctrica</a>
+        <a href="/insights.html" data-i18n-c="r_ins_t">Insights</a>
+      </div>
+      <div class="q-foot__contact">
+        <p class="q-foot__h" data-i18n-c="f_company">Empresa</p>
+        <a href="/story.html" data-i18n-c="c_about_t">Nosotros</a>
+        <a href="/gobierno.html" data-i18n-c="c_pub_t">Sector público</a>
+        <a href="/contacto/" data-i18n-c="c_contact_t">Contacto</a>
+        <a href="mailto:jay@quorelia.org">jay@quorelia.org</a>
+        <a href="https://wa.me/56942115562" target="_blank" rel="noopener">WhatsApp +56 9 4211 5562</a>
+        <a href="https://cal.com/quorelia/30min" target="_blank" rel="noopener" data-i18n-c="f_book">Agendar 30 minutos</a>
+      </div>
+    </div>
+    <div class="q-foot__bot">
+      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span data-i18n-c="f_loc">Santiago, Chile</span>
+    </div>
+    <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
+  </div>
+</footer>
+<!-- /Q:FOOTER -->
+
+<script>
+/* Inglés y chino. El español se toma del HTML automáticamente. */
+window.Q_PAGE = {
+ en:{
+  __title:"Solar for SMEs in Santiago · Quorelia",
+  __desc:"Solar for SMEs in Santiago: a bill pre-check at no cost, an SEC Class A or B installer you hire, who files the TE4, and a monthly report against your bill.",
+  cr_aria:"Breadcrumb", cr_home:"Home", cr_svc:"Services", cr_here:"Solar for SMEs",
+  hero_eb:"Solar for SMEs · Santiago",
+  hero_h:"Solar panels for your business, with one coordinator.",
+  hero_p:"We review your power bills, coordinate the project and check each month what the system produces against your bill. The works are done by an SEC-licensed Class A or B electrical installer, whom you hire directly and who declares the installation to the SEC, Chile’s electricity and fuels regulator.",
+  cta_bills:"Request my pre-check", cta_wa:"Message us on WhatsApp", cta_cal:"Book 30 minutes",
+  pc_aria:"Bill pre-check", pc_bar:"Bill pre-check", pc_bar2:"At no cost",
+  pc_k1:"What you send us",
+  pc1:"Your last 12 bills, or as many as you have",
+  pc2:"The comuna where the site is",
+  pc3:"Whether you own or lease the roof",
+  pc4:"Your operating hours",
+  pc_k2:"Our answer within 2 business days of receiving your bills",
+  pc_go:"Go", pc_no:"No-go", pc_miss:"Missing data",
+  pc_p:"If it fits, an indicative size and a savings range with every assumption shown. If it does not, we tell you so and explain why.",
+  pc_foot:"No commitment",
+  w_eb:"01 · Who it is for",
+  w_h:"For businesses that use their power by day.",
+  w_p:"A solar kWh is worth most when it is used on site, at the hour it is produced. These businesses usually do that.",
+  w1k:"Cold chain", w1h:"Cold stores, food processors and refrigerated distribution",
+  w1p:"Cold rooms and compressors that run all day, sunny hours included.",
+  w2k:"Day shifts", w2h:"Workshops, light manufacturing and small logistics",
+  w2p:"In premises you own and on day shifts, when machines, lighting and climate control run while the sun is up.",
+  w3k:"Seven days", w3h:"Food retail open every day",
+  w3p:"Refrigeration and lighting that keep running at weekends, when an office would be closed.",
+  fit_h:"It fits if…",
+  fit1:"You own the roof, or lease it with at least 5 years left on the contract and the landlord consents to the works in writing (to file the TE4, the landlord’s authorisation must be notarised).",
+  fit2:"Most of your consumption happens in daylight.",
+  fit3:"You are a regulated customer on a BT2, BT3 or BT4 tariff (it is printed on your bill).",
+  fit4:"You use roughly 4,000 kWh a month or more.",
+  nofit_h:"It does not fit if…",
+  nofit1:"You use most of your power at night: the system would export most of what it produces, at a lower value.",
+  nofit2:"You do not control the roof, or the lease ends in less than 5 years.",
+  nofit3:"You are looking for a savings guarantee or a subsidy: we offer neither.",
+  fit_route:"Is your bill above CLP 5 million a month, or do you manage generating plants? Use the <a class=\"q-link\" href=\"/contacto/?interes=evaluacion-energetica#energia\">energy assessment</a> or the <a class=\"q-link\" href=\"/contacto/#activos\">asset assessment</a>.",
+  ec_eb:"02 · The numbers, with sources",
+  ec_h:"What a solar kWh is worth on the October 2026 tariff.",
+  ec_p:"Net values, before VAT, from Enel Distribución’s tariff sheet for the Santiago comunas (BT_AA), in force from 1 October 2026. If another distributor serves you, we work from your own bill.",
+  ec1k:"saved for each solar kWh you use as it is produced: energy, transmission and public-service charges, net.",
+  ec2k:"credited on your bill by the distributor for each kWh you export to the grid under net billing, net.",
+  ec3k:"Enel’s BT3 energy charge roughly doubled between January 2024 and October 2026.",
+  src_1:"Source:", src_2:"Sources:", src_oct:"Enel, October 2026 tariffs", src_jan:"Enel, January 2024", src_oct2:"October 2026",
+  ecA_k:"Size", ecA_h:"Size for your daytime use",
+  ecA_p:"Each kWh you use on the spot saves about CLP 154; each surplus kWh exported is credited on your bill at about CLP 110. A system larger than your daytime use returns less for every peso invested.",
+  ecB_k:"Demand charges", ecB_h:"Panels do not lower peak demand",
+  ecB_p:"Peak is measured from 18:00 to 22:00, April to September, when panels produce little or nothing. That is why we count no saving on demand charges.",
+  ecC_k:"Backup", ecC_h:"Batteries for backup only",
+  ecC_p:"We recommend them only where an outage has a real cost, such as a cold room; never to lower your bill.",
+  ec_nh:"We give no savings figure before we see your bills.",
+  ec_np:"The values above apply to Enel in Santiago; if another distributor such as CGE serves you, we use the values on your bill. Net billing covers regulated customers with installations of up to 300 kW (<a class=\"q-link\" href=\"https://www.bcn.cl/leychile/navegar?idNorma=258171\" target=\"_blank\" rel=\"noopener\">LGSE, art. 149 bis</a>).",
+  st_eb:"03 · How it works",
+  st_h:"Five steps, and you decide at each one.",
+  st1h:"Bill pre-check",
+  st1p:"At no cost. From your bills, we answer within 2 business days: go, no-go or missing data.",
+  st2h:"Diagnostic with a site visit",
+  st2p:"We check the roof, the switchboard and your consumption on site. It has a fixed price that we confirm in writing before booking the visit; half is credited against our fees if you sign the project within 90 days.",
+  st3h:"Proposal",
+  st3p:"With the installer’s binding quote, its SEC licence number and every equipment model checked in the <a class=\"q-link\" href=\"https://wlhttp.sec.cl/productManager/search\" target=\"_blank\" rel=\"noopener\">SEC product search</a> on the day of issue.",
+  st4h:"Works and TE4 filing",
+  st4p:"The Class A or B installer signs with you, installs, invoices and files the TE4 with the SEC. Quorelia reviews the design and files the net-billing requests with the distributor on your behalf, under a simple power of attorney.",
+  st5h:"Monthly monitoring",
+  st5p:"A report every month, reconciled with the distributor’s bill and labelled “reported by the operator, verifiable by third parties”.",
+  st_nh:"Why “reported by the operator”?",
+  st_np:"Because Quorelia is paid to coordinate your project, so calling that report independent would not be honest. Every figure carries its source, and you or a third party can check it against the bill and the meter.",
+  wh_eb:"04 · Who does what",
+  wh_h:"Who does what, and who signs what.",
+  wh_p:"You sign two contracts: one for works and equipment with the installer, and one for services with Quorelia.",
+  th0:"Item", th1:"You (customer)", th2:"SEC Class A or B installer", th3:"Manufacturer or distributor",
+  r1:"Works and equipment contract", r1a:"Signs it and pays the installer’s milestones", r1b:"Signs it, invoices and collects", r1c:"Sells the equipment to the installer", r1d:"Not a party",
+  r2:"Services contract", r2a:"Signs it", r2d:"Signs it: diagnostic, design review, coordination and monitoring",
+  r3:"Net-billing requests", r3a:"Applies to the distributor", r3b:"Provides the technical data", r3d:"Files them for you, under a simple power of attorney",
+  r4:"Design, TE4 and commissioning", r4b:"Designs, declares to the SEC and commissions; answers with its licence", r4d:"Reviews the design; does not sign the TE4",
+  r5:"Equipment warranty", r5a:"Claims it through the installer", r5b:"Handles the claim", r5c:"Honours the warranty", r5d:"Checks that every item is SEC-authorised",
+  r6:"Workmanship warranty", r6b:"Answers for it in writing", r6d:"Tracks claims",
+  r7:"Monthly report", r7a:"Receives it", r7b:"Grants access to the inverter data", r7d:"Prepares and signs it: “reported by the operator, verifiable by third parties”",
+  r8:"Commission", r8a:"Told in writing, with the amount, before choosing", r8b:"Pays it, if any", r8d:"Discloses it in writing",
+  wh_lic:"<b>Check the licence before you sign.</b> Look it up in the <a class=\"q-link\" href=\"https://wlhttp.sec.cl/buscadorinstaladores/buscador.do\" target=\"_blank\" rel=\"noopener\">SEC installer search</a>; the number is written in the proposal. For string or central inverter systems, the usual kind for an SME, only a Class A or B installer may file the TE4, and every project with a battery requires Class A or B.",
+  wh_afci:"Since 1 January 2026, only SEC-authorised inverters with built-in arc-fault protection (AFCI) can be declared. We check this model by model in the <a class=\"q-link\" href=\"https://wlhttp.sec.cl/productManager/search\" target=\"_blank\" rel=\"noopener\">SEC product search</a>.",
+  no_eb:"05 · What we do not do",
+  no_h:"What Quorelia does not do, in writing.",
+  no1h:"We do not sell equipment", no1p:"The installer sells you the panels, inverters and mounting, with its invoice and the manufacturer’s warranty.",
+  no2h:"We are not the main contractor", no2p:"The Class A or B installer contracts the works with you and answers to the SEC for them.",
+  no3h:"We do not finance", no3p:"You can use your bank or a leasing company. If you wish, we compare the offers you receive during the diagnostic.",
+  no4h:"We do not guarantee savings", no4p:"We show you a range with every assumption visible, then measure each month against your bill.",
+  fq_eb:"06 · Frequently asked questions",
+  fq_h:"What businesses ask before sending their bills.",
+  fq1:"Do you guarantee the savings?",
+  fa1:"No. We give you a range with every assumption shown and measure each month against your bill. If the installer or the manufacturer offers a performance guarantee, we explain it to you, but the guarantee is theirs, not Quorelia’s.",
+  fq2:"Can you finance the project?",
+  fa2:"We do not finance. You can pay from your own funds, with a loan from your bank or through a leasing company. In the diagnostic we can compare the offers you receive on the same basis.",
+  fq3:"Do I need batteries?",
+  fa3:"To lower your bill, hardly ever. We recommend them only when a power cut has a real cost, for example in a cold room, and size them to back up those loads. Any project with a battery must be done by a Class A or B installer.",
+  fq4:"Do you include electric-vehicle chargers?",
+  fa4:"Not yet. Two conditions must be met first: an authorised installer able to declare chargers to the SEC (TE6), and publication of the revised technical rule RIC N°15, which governs electric-vehicle charging.",
+  fq5:"Who signs the SEC filing?",
+  fa5:"The SEC-licensed Class A or B electrical installer: it designs, installs and files the TE4 declaration. Quorelia reviews the design but does not sign. You can check the installer’s licence in the <a class=\"q-link\" href=\"https://wlhttp.sec.cl/buscadorinstaladores/buscador.do\" target=\"_blank\" rel=\"noopener\">SEC installer search</a>.",
+  fq6:"Do you earn a commission from the installer?",
+  fa6:"If there is a commission, we tell you in writing, with the amount, before you choose. Our fees for the diagnostic, coordination and monitoring go in a separate contract with you.",
+  fq7:"What do you do with my bills?",
+  fa7:"We use them only for the pre-check and, if you go ahead, for the proposal. More detail in our <a class=\"q-link\" href=\"/privacidad.html\">privacy policy</a>.",
+  fq8:"Do you have SME references?",
+  fa8:"Not yet. We are just starting with SMEs and will not show you installations that do not exist. We will publish cases only with each customer’s written authorisation. Meanwhile, you can check the installer’s licence with the SEC and every figure in the report against your own bill.",
+  fm_eb:"07 · Pre-check",
+  fm_h:"Request your bill pre-check.",
+  fm_p:"At no cost and with no commitment. Once we have your bills, we reply within 2 business days.",
+  fm_intro:"Answer what you know; we can cover the rest later. Fields marked * are required.",
+  f_name:"Name", f_company:"Company", f_email:"Email", f_phone:"Phone or WhatsApp",
+  f_comuna:"Comuna of the site", f_rubro:"Type of business", f_bill:"Monthly power bill", f_bill_h:"The total of a typical bill.",
+  f_crit:"Critical loads or power cuts", f_opt:"Optional.",
+  f_tariff:"Tariff", f_tariff_h:"It is printed on your bill.", ns:"Not sure",
+  f_roof:"Roof", rf1:"Owned", rf2:"Leased, 5 or more years left", rf3:"Leased, under 5 years left",
+  f_hours:"Operating hours", hr1:"Daytime only", hr2:"Day and night", hr3:"24 hours, 7 days",
+  f_msg:"Message",
+  ph_email:"name@company.cl", ph_comuna:"e.g. Quilicura", ph_crit:"e.g. cold rooms",
+  ph_msg:"Anything else we should know? For example, plans to expand the site or change tariff.",
+  sv_0:"Select",
+  rb1:"Cold store or cold chain", rb2:"Food processing", rb3:"Workshop or light manufacturing", rb4:"Warehouse or logistics", rb5:"Food retail, 7 days", rb6:"Other",
+  bl1:"Under CLP 0.5 million", bl2:"CLP 0.5 to 1 million", bl3:"CLP 1 to 2 million", bl4:"CLP 2 to 5 million", bl5:"Over CLP 5 million",
+  fm_bills:"<b>Bills are not attached here.</b> After you submit, reply to our email with your bills as PDFs or photos, or send them on <a class=\"q-link\" href=\"https://wa.me/56942115562\" target=\"_blank\" rel=\"noopener\">WhatsApp to +56 9 4211 5562</a>.",
+  f_send:"Request the pre-check",
+  f_priv:"We use your data and your bills only for the pre-check and the proposal (Ley 19.628 and Ley 21.719, in force from 1 December 2026). <a class=\"q-link\" href=\"/privacidad.html\">Privacy policy</a>.",
+  as_aria:"After you submit", as_k:"After you submit", as_h:"What happens to your request",
+  as1:"We write within one business day to ask for your bills, if you have not sent them yet.",
+  as2:"Once we have the bills, within 2 business days we tell you go, no-go or what is missing.",
+  as3:"If it fits, we offer the diagnostic with its fixed price in writing. You decide whether to go on.",
+  as_wa:"Send bills on WhatsApp",
+  ct_eb:"Prefer to talk first?",
+  ct_h:"One of the founders will reply.",
+  ct_p:"30 minutes on video or a WhatsApp message, whichever suits you.",
+  ct_alt:"Or write to us:"
+ },
+ zh:{
+  __title:"圣地亚哥中小企业光伏 · Quorelia",
+  __desc:"圣地亚哥中小企业光伏：不收费的电费单预检；由您签约的 SEC A 级或 B 级安装商施工并提交 TE4；每月对照电费单出具报告。",
+  cr_aria:"面包屑导航", cr_home:"首页", cr_svc:"服务", cr_here:"中小企业光伏",
+  hero_eb:"中小企业光伏 · 圣地亚哥",
+  hero_h:"您企业的光伏项目，只需一个协调方。",
+  hero_p:"我们审核您的电费单、统筹项目，并每月将系统发电量与电费单逐项核对。施工由持有 SEC（智利电力与燃料监管局）A 级或 B 级执照的电气安装商完成：由您直接签约，并由其向 SEC 申报安装。",
+  cta_bills:"申请预检", cta_wa:"通过 WhatsApp 联系", cta_cal:"预约 30 分钟",
+  pc_aria:"电费单预检", pc_bar:"电费单预检", pc_bar2:"不收费",
+  pc_k1:"您需提供",
+  pc1:"最近 12 个月的电费单（有多少发多少）",
+  pc2:"场址所在的区（comuna）",
+  pc3:"屋顶是自有还是租赁",
+  pc4:"营业时间",
+  pc_k2:"收到电费单后 2 个工作日内的答复",
+  pc_go:"适合", pc_no:"不适合", pc_miss:"缺少数据",
+  pc_p:"如适合，给出参考装机规模和节省区间，并列明每项假设；如不适合，我们会直说并解释原因。",
+  pc_foot:"无任何义务",
+  w_eb:"01 · 适用对象",
+  w_h:"适合白天用电的中小企业。",
+  w_p:"光伏电量在发电的同时就地使用，价值最高。以下行业通常符合这一点。",
+  w1k:"冷链", w1h:"冷库、食品加工与冷藏配送",
+  w1p:"冷库和压缩机全天运行，日照时段也不例外。",
+  w2k:"白班生产", w2h:"车间、轻工制造与小型物流",
+  w2p:"使用自有场地、白天作业，机器、照明和空调在有日照时运行。",
+  w3k:"每周 7 天", w3h:"每天营业的食品零售",
+  w3p:"冷藏与照明在周末同样用电，而办公室此时已经关门。",
+  fit_h:"适合的情况",
+  fit1:"屋顶为自有；或租约剩余至少 5 年，且业主书面同意施工（申报 TE4 时，业主的授权须经公证）。",
+  fit2:"大部分用电发生在白天。",
+  fit3:"您是 BT2、BT3 或 BT4 电价的受管制用户（电费单上有标注）。",
+  fit4:"每月用电约 4,000 kWh 或以上。",
+  nofit_h:"不适合的情况",
+  nofit1:"主要在夜间用电：系统的大部分发电会以较低价格送入电网。",
+  nofit2:"您无法支配屋顶，或租约将在 5 年内到期。",
+  nofit3:"您希望获得节省保证或补贴：这两项我们都不提供。",
+  fit_route:"月电费超过 500 万智利比索，或您管理发电站？请使用<a class=\"q-link\" href=\"/contacto/?interes=evaluacion-energetica#energia\">能源评估</a>或<a class=\"q-link\" href=\"/contacto/#activos\">资产评估</a>。",
+  ec_eb:"02 · 有出处的账目",
+  ec_h:"按 2026 年 10 月电价，一度光伏电值多少钱。",
+  ec_p:"以下为不含增值税的净值，取自 Enel Distribución 圣地亚哥各区（BT_AA）电价表，自 2026 年 10 月 1 日起生效。如您的配电公司不是 Enel，我们按您自己的电费单计算。",
+  ec1k:"每就地使用一度光伏电可少付的金额：电能费、输电费与公共服务费，净值。",
+  ec2k:"在净计费（net billing）下，每向电网送出一度电，配电公司在电费单中抵扣的金额，净值。",
+  ec3k:"2024 年 1 月至 2026 年 10 月，Enel BT3 电价的电能费用大约翻了一倍。",
+  src_1:"来源：", src_2:"来源：", src_oct:"Enel，2026 年 10 月电价", src_jan:"Enel，2024 年 1 月", src_oct2:"2026 年 10 月",
+  ecA_k:"规模", ecA_h:"按白天用电量确定规模",
+  ecA_p:"就地使用的每度电约省 154 比索；多余送网的每度电在电费单中约抵扣 110 比索。系统规模超过白天用电量，每一比索投资的回报就会下降。",
+  ecB_k:"需量电费", ecB_h:"光伏不会降低高峰需量",
+  ecB_p:"高峰时段为 4 月至 9 月的 18:00–22:00，此时光伏发电很少或为零，因此我们不计入任何需量电费的节省。",
+  ecC_k:"备用电源", ecC_h:"储能仅用于备用电源",
+  ecC_p:"仅在停电会造成实际损失的场景（如冷库）才建议配置，从不以降低电费为理由。",
+  ec_nh:"在看到您的电费单之前，我们不给出节省数字。",
+  ec_np:"以上数值适用于圣地亚哥的 Enel 用户；如由 CGE 等其他配电公司供电，我们按您电费单上的数值计算。净计费适用于装机不超过 300 kW 的受管制用户（<a class=\"q-link\" href=\"https://www.bcn.cl/leychile/navegar?idNorma=258171\" target=\"_blank\" rel=\"noopener\">《电力服务总法》第 149 条之二</a>）。",
+  st_eb:"03 · 工作流程",
+  st_h:"五个步骤，每一步都由您决定。",
+  st1h:"电费单预检",
+  st1p:"不收费。根据您的电费单，2 个工作日内答复：适合、不适合或缺少数据。",
+  st2h:"现场诊断",
+  st2p:"我们到现场检查屋顶、配电盘和用电情况。诊断为固定价格，预约现场前以书面形式告知；如您在 90 天内签署项目，诊断费的一半将抵扣我们的服务费。",
+  st3h:"方案",
+  st3p:"包含安装商具约束力的报价、其 SEC 执照编号，以及在出具当天于 <a class=\"q-link\" href=\"https://wlhttp.sec.cl/productManager/search\" target=\"_blank\" rel=\"noopener\">SEC 产品查询系统</a>核实过的每个设备型号。",
+  st4h:"施工与 TE4 申报",
+  st4p:"A 级或 B 级安装商与您签约、施工、开具发票，并向 SEC 提交 TE4 申报。Quorelia 审核设计，并凭您出具的简易授权书代您向配电公司提交净计费申请。",
+  st5h:"每月监测",
+  st5p:"每月一份报告，与配电公司电费单核对，并标注“由运营方报告，可由第三方核验”。",
+  st_nh:"为什么标注“由运营方报告”？",
+  st_np:"因为 Quorelia 协调您的项目并收取费用，把这份报告称为“独立”并不诚实。每个数字都注明出处，您或第三方都可以对照电费单和电表进行核查。",
+  wh_eb:"04 · 各方分工",
+  wh_h:"谁做什么，谁签什么。",
+  wh_p:"您将签署两份合同：与安装商签署工程与设备合同，与 Quorelia 签署服务合同。",
+  th0:"事项", th1:"您（客户）", th2:"SEC A/B 级安装商", th3:"制造商或经销商",
+  r1:"工程与设备合同", r1a:"签署合同，并按节点向安装商付款", r1b:"签署合同、开票并收款", r1c:"向安装商销售设备", r1d:"不是合同方",
+  r2:"服务合同", r2a:"签署", r2d:"签署：诊断、设计审核、协调与监测",
+  r3:"净计费申请", r3a:"作为申请人向配电公司申请", r3b:"提供技术资料", r3d:"凭简易授权书代您提交",
+  r4:"设计、TE4 与调试", r4b:"负责设计、向 SEC 申报并调试；以其执照承担责任", r4d:"审核设计；不签署 TE4",
+  r5:"设备质保", r5a:"通过安装商提出索赔", r5b:"处理索赔", r5c:"承担质保责任", r5d:"核实每台设备均获 SEC 授权",
+  r6:"施工质保", r6b:"以书面形式承担", r6d:"跟进索赔",
+  r7:"月度报告", r7a:"接收报告", r7b:"开放逆变器数据访问", r7d:"编制并签署：“由运营方报告，可由第三方核验”",
+  r8:"佣金", r8a:"在做选择前以书面形式获知金额", r8b:"如有佣金，由其支付", r8d:"以书面形式披露",
+  wh_lic:"<b>签约前请核实执照。</b>可在 <a class=\"q-link\" href=\"https://wlhttp.sec.cl/buscadorinstaladores/buscador.do\" target=\"_blank\" rel=\"noopener\">SEC 安装商查询系统</a>中查询，执照编号会写在方案中。采用组串式或集中式逆变器的系统（中小企业项目通常如此）只能由 A 级或 B 级安装商提交 TE4，任何含储能的项目也必须由 A 级或 B 级安装商承接。",
+  wh_afci:"自 2026 年 1 月 1 日起，只有获 SEC 授权且内置电弧故障保护（AFCI）的逆变器才能申报。我们会在 <a class=\"q-link\" href=\"https://wlhttp.sec.cl/productManager/search\" target=\"_blank\" rel=\"noopener\">SEC 产品查询系统</a>中逐一核实型号。",
+  no_eb:"05 · 我们不做什么",
+  no_h:"Quorelia 不做的事，白纸黑字写明。",
+  no1h:"不销售设备", no1p:"光伏板、逆变器和支架由安装商销售给您，附其发票和制造商质保。",
+  no2h:"不是总承包商", no2p:"由 A 级或 B 级安装商与您签订工程合同，并就工程向 SEC 负责。",
+  no3h:"不提供融资", no3p:"您可以通过银行或租赁公司融资。如有需要，我们会在诊断中比较您收到的报价。",
+  no4h:"不保证节省", no4p:"我们给出节省区间并列明全部假设，之后每月对照电费单进行测量。",
+  fq_eb:"06 · 常见问题",
+  fq_h:"企业在发送电费单前常问的问题。",
+  fq1:"你们保证节省吗？",
+  fa1:"不保证。我们给出节省区间并列明每项假设，每月对照电费单测量。如安装商或制造商提供性能保证，我们会向您解释，但保证由他们提供，而非 Quorelia。",
+  fq2:"你们能为项目融资吗？",
+  fa2:"我们不提供融资。您可以使用自有资金、银行贷款或租赁公司。在诊断阶段，我们可以在同一基准上比较您收到的报价。",
+  fq3:"我需要储能电池吗？",
+  fa3:"如果只是为了降低电费，几乎不需要。只有在停电会造成实际损失时（例如冷库），我们才会建议配置，并按需备用的负荷确定容量。任何含储能的项目都必须由 A 级或 B 级安装商实施。",
+  fq4:"你们提供电动车充电桩吗？",
+  fa4:"暂不提供。需先满足两个条件：有能向 SEC 申报充电桩（TE6）的授权安装商，以及修订版技术规程 RIC N°15（规范电动车充电设施）正式发布。",
+  fq5:"谁向 SEC 签署申报？",
+  fa5:"持有 SEC A 级或 B 级执照的电气安装商：负责设计、施工并提交 TE4 申报。Quorelia 审核设计，但不签署。您可以在 <a class=\"q-link\" href=\"https://wlhttp.sec.cl/buscadorinstaladores/buscador.do\" target=\"_blank\" rel=\"noopener\">SEC 安装商查询系统</a>中核实安装商执照。",
+  fq6:"你们会从安装商处收取佣金吗？",
+  fa6:"如有佣金，我们会在您做选择前以书面形式告知金额。我们的诊断、协调与监测服务费另行与您签订合同。",
+  fq7:"你们如何使用我的电费单？",
+  fa7:"仅用于预检，以及在您决定继续时用于编制方案。详情请见我们的<a class=\"q-link\" href=\"/privacidad.html\">隐私政策</a>。",
+  fq8:"你们有中小企业案例吗？",
+  fa8:"还没有。我们的中小企业业务刚刚起步，不会展示不存在的项目。只有在客户书面授权后，我们才会公开案例。在此之前，您可以在 SEC 核实安装商执照，并对照自己的电费单核查报告中的每个数字。",
+  fm_eb:"07 · 预检",
+  fm_h:"申请电费单预检。",
+  fm_p:"不收费、无义务。收到您的电费单后，2 个工作日内答复。",
+  fm_intro:"请填写您了解的信息，其余可稍后补充。带 * 的为必填项。",
+  f_name:"姓名", f_company:"公司", f_email:"电子邮箱", f_phone:"电话或 WhatsApp",
+  f_comuna:"场址所在区（comuna）", f_rubro:"行业", f_bill:"每月电费", f_bill_h:"一张典型电费单的总额。",
+  f_crit:"关键负荷或停电情况", f_opt:"选填。",
+  f_tariff:"电价类型", f_tariff_h:"电费单上有标注。", ns:"不确定",
+  f_roof:"屋顶", rf1:"自有", rf2:"租赁，剩余 5 年或以上", rf3:"租赁，剩余不足 5 年",
+  f_hours:"营业时间", hr1:"仅白天", hr2:"昼夜", hr3:"每天 24 小时、每周 7 天",
+  f_msg:"留言",
+  ph_email:"name@company.cl", ph_comuna:"例如 Quilicura", ph_crit:"例如：冷库",
+  ph_msg:"还有其他需要我们了解的吗？例如扩建场地或更换电价方案的计划。",
+  sv_0:"请选择",
+  rb1:"冷库或冷链", rb2:"食品加工", rb3:"车间或轻工制造", rb4:"仓储或物流", rb5:"每周 7 天营业的食品零售", rb6:"其他",
+  bl1:"低于 50 万智利比索", bl2:"50 万至 100 万智利比索", bl3:"100 万至 200 万智利比索", bl4:"200 万至 500 万智利比索", bl5:"超过 500 万智利比索",
+  fm_bills:"<b>电费单无需在此上传。</b>提交后，请回复我们的邮件并附上电费单的 PDF 或照片，或通过 <a class=\"q-link\" href=\"https://wa.me/56942115562\" target=\"_blank\" rel=\"noopener\">WhatsApp（+56 9 4211 5562）</a>发送。",
+  f_send:"申请预检",
+  f_priv:"您的资料和电费单仅用于预检和编制方案（依据第 19.628 号法律及自 2026 年 12 月 1 日起施行的第 21.719 号法律）。<a class=\"q-link\" href=\"/privacidad.html\">隐私政策</a>。",
+  as_aria:"提交之后", as_k:"提交之后", as_h:"您的申请如何处理",
+  as1:"我们会在一个工作日内联系您索取电费单（如您尚未发送）。",
+  as2:"收到电费单后，2 个工作日内告知您适合、不适合或缺少哪些数据。",
+  as3:"如适合，我们会书面提供诊断方案及其固定价格，由您决定是否继续。",
+  as_wa:"通过 WhatsApp 发送电费单",
+  ct_eb:"想先聊一聊？",
+  ct_h:"由创始人之一亲自回复。",
+  ct_p:"30 分钟视频通话或一条 WhatsApp 消息，随您方便。",
+  ct_alt:"或发邮件给我们："
+ }
+};
+</script>
+<script src="/quorelia-common.js"></script><!--q:common-->
+</body>
+</html>
