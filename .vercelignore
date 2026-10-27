@@ -7,3 +7,13 @@ tools/
 __pycache__/
 *.xlsx
 *.zip
+# Presentaciones, documentos, demo privada y copias antiguas del sitio: no se publican.
+Presentations/
+Documents/
+demo-privado/
+presentacion-sec/
+quorelia-org-site/
+Website/
+*.pptx
+*.docx
+SCADA_Dashboard/

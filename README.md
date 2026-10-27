@@ -9,7 +9,7 @@ Everything built so far for the Quorelia brand and product materials.
 `bess-scada-dashboard.html` — interactive BESS monitoring dashboard sample (neutral/white-label, no Quorelia branding by design). Open directly in a browser.
 
 ## Presentations
-- `Quorelia_Economic_Proposal.pptx/.pdf` — 12-slide pricing/value proposal for the Cavex plant stakeholders (internal, names the real plant figures).
+- `Quorelia_Economic_Proposal.pptx/.pdf` — internal pricing/value proposal for a confidential client; kept on the local machine only (in .gitignore), never in this repository.
 - `Quorelia_Elevator_Pitch.pptx/.pdf` — 12-slide client-facing brand deck: who we are, mission/vision/objectives, four pillars, proof points, contact. Generic — safe to show any prospect.
 - `Quorelia_Corporate_Identity_Manual.pptx/.pdf` — 22-slide brand standards manual: logo system, color, typography, business card, letterhead, email signature, templates.
 

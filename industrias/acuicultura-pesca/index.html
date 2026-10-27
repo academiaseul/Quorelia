@@ -23,7 +23,7 @@
 {"@context":"https://schema.org","@graph":[
  {"@type":"Service","name":"Medición y verificación del ahorro de diésel en pontones","serviceType":"Energy measurement and verification","areaServed":"CL",
   "audience":{"@type":"BusinessAudience","name":"Productores acuícolas, salmonicultores y proveedores de pontones híbridos"},
-  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "provider":{"@type":"Organization","name":"Quorelia","url":"https://www.quorelia.org/"},
   "url":"https://www.quorelia.org/industrias/acuicultura-pesca/"},
  {"@type":"BreadcrumbList","itemListElement":[
   {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
@@ -66,6 +66,7 @@
       <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
       <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
       <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
       <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
       <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
     </div></details>
@@ -112,11 +113,12 @@
           <div class="q-nav__panel q-nav__panel--wide">
             <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
             <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
-            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
-            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
             <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
             <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
             <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
           </div>
         </li>
         <li class="q-nav__item">
@@ -277,7 +279,7 @@
       <li><h3 data-i18n="st3h">Plan con socios</h3><p data-i18n="st3p">Un socio local instala medidores y enlaces donde faltan. El acceso a los datos del proveedor queda por escrito.</p></li>
       <li><h3 data-i18n="st4h">Verificar</h3><p data-i18n="st4p">Informe mensual por pontón y paquete de evidencia firmado, comparable entre proveedores.</p></li>
     </ol>
-    <div class="note" style="margin-top:44px;max-width:880px;"><p data-i18n="how_role"><b>Quién hace qué.</b> Quorelia define el protocolo, analiza, informa y firma. Socios certificados instalan medidores, enlaces de datos y hacen cualquier trabajo eléctrico a bordo, bajo gestión de Quorelia.</p></div>
+    <div class="note" style="margin-top:44px;max-width:880px;"><p data-i18n="how_role"><b>Quién hace qué.</b> Quorelia define el protocolo, analiza, informa y firma. Socios con licencia SEC, presentados por escrito antes de firmar, instalan medidores, enlaces de datos y hacen cualquier trabajo eléctrico a bordo, bajo gestión de Quorelia.</p></div>
   </div>
 </section>
 
@@ -363,12 +365,12 @@
         </ul>
       </div>
       <div>
-        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="who2c">Socios</span><h3 data-i18n="who2h">Socios certificados, bajo gestión de Quorelia</h3></div>
+        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="who2c">Socios</span><h3 data-i18n="who2h">Socios, confirmados por escrito en cada proyecto</h3></div>
         <ul class="q-arrow">
           <li data-i18n="w2a">Instalación de medidores, caudalímetros y enlaces de datos a bordo</li>
           <li data-i18n="w2b">Trabajo eléctrico por personal con licencia SEC; instalador Clase A cuando corresponde</li>
-          <li data-i18n="w2c">Sistema de seguridad DS 44 y control de contratistas según la Ley 20.123</li>
-          <li data-i18n="w2d">El financiamiento de un sistema híbrido, cuando lo hay, viene de socios financieros, no de Quorelia</li>
+          <li data-i18n="w2c">Requisito para cada socio: licencia SEC, seguros vigentes, sistema DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w2d">El financiamiento de un sistema híbrido, cuando lo hay, viene de terceros que usted elige, no de Quorelia</li>
         </ul>
       </div>
     </div>
@@ -378,7 +380,7 @@
         <li data-i18n="no1">No vendemos pontones, baterías, paneles ni generadores.</li>
         <li data-i18n="no2">No vendemos energía, no financiamos sistemas y no somos contratista EPC.</li>
         <li data-i18n="no3">No cobramos un porcentaje del ahorro: un verificador pagado por el resultado que mide no es independiente.</li>
-        <li data-i18n="no4">No llamamos independiente una medición sobre un equipo que nosotros mismos mantenemos. Ahí el informe dice «reportado por el operador, verificable por terceros».</li>
+        <li data-i18n="no4">No llamamos independiente una medición sobre un equipo que nosotros mismos mantenemos, cuya obra coordinamos o supervisamos, o por el que recibimos una comisión. Ahí el informe dice «reportado por el operador, verificable por terceros».</li>
       </ul>
     </div>
   </div>
@@ -470,6 +472,7 @@
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
         <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
         <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
         <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
@@ -501,7 +504,7 @@
       </div>
     </div>
     <div class="q-foot__bot">
-      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span>© 2026 Quorelia · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
       <span data-i18n-c="f_loc">Santiago, Chile</span>
     </div>
     <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
@@ -561,7 +564,7 @@ window.Q_PAGE = {
   st2h:"Baseline", st2p:"Invoice and run-hour history, adjusted with 15-minute load logging before conversion, or with historical data.",
   st3h:"Plan with partners", st3p:"A local partner installs meters and data links where they are missing. Access to the supplier's data is agreed in writing.",
   st4h:"Verify", st4p:"A monthly report per pontoon and a signed evidence pack, comparable across suppliers.",
-  how_role:"<b>Who does what.</b> Quorelia defines the protocol, analyses, reports and signs. Certified partners install meters and data links and carry out any electrical work on board, managed by Quorelia.",
+  how_role:"<b>Who does what.</b> Quorelia defines the protocol, analyses, reports and signs. SEC-licensed partners, introduced to you in writing before you sign, install meters and data links and carry out any electrical work on board, managed by Quorelia.",
   s4_eb:"04 · Sample deliverable", s4_h:"Savings per pontoon, with their coverage.",
   s4_p:"An excerpt from a monthly fleet report. Savings are normalized for energy delivered; where data is missing, the figure is withheld and explained.",
   tb_cap:"M&V report · September 2026 · 5 pontoons · illustrative data · demo fleet",
@@ -592,16 +595,16 @@ window.Q_PAGE = {
   w1b:"Reconciliation of litres, generator hours and kWh",
   w1c:"Monthly reports and signed evidence packs",
   w1d:"Coordination and supervision of field partners",
-  who2c:"Partners", who2h:"Certified partners, managed by Quorelia",
+  who2c:"Partners", who2h:"Partners, confirmed in writing for each project",
   w2a:"Installation of meters, flow meters and data links on board",
   w2b:"Electrical work by SEC-licensed staff; a Class A installer where required",
-  w2c:"DS 44 safety management system and contractor controls under Ley 20.123",
-  w2d:"Financing for a hybrid system, where there is any, comes from financing partners, not from Quorelia",
+  w2c:"Required of every partner: SEC licence, current insurance, a DS 44 safety system and contractor controls under Ley 20.123",
+  w2d:"Financing for a hybrid system, where there is any, comes from third parties you choose, not from Quorelia",
   no_h:"What we do not do",
   no1:"We do not sell pontoons, batteries, panels or generators.",
   no2:"We sell no power, finance no systems and are not an EPC contractor.",
   no3:"We never charge a percentage of the savings: a verifier paid on the result it measures is not independent.",
-  no4:"We never call a measurement independent on equipment we maintain ourselves. There, the report reads “operator-reported, verifiable by third parties”.",
+  no4:"We never call a measurement independent on equipment we maintain ourselves, whose works we coordinated or supervised, or on which we receive a commission. There, the report reads “operator-reported, verifiable by third parties”.",
   s7_eb:"07 · Entry offer", s7_h:"A measurement pilot on 3 to 5 pontoons.",
   s7_p:"For pontoons already hybrid, an M&V pilot. For those still running on diesel only, a fixed-price assessment. Neither is charged as a percentage of savings.",
   of1k:"M&V pilot", of1h:"Pontoons already hybrid or being converted",
@@ -686,7 +689,7 @@ window.Q_PAGE = {
   st2h:"基线", st2p:"以发票和运行小时记录为基础，并用改造前 15 分钟分辨率的负荷记录或历史数据进行调整。",
   st3h:"与合作伙伴制定计划", st3p:"由本地合作伙伴在缺少设备处安装计量表和数据链路。供应商数据的访问权以书面形式确定。",
   st4h:"核验", st4p:"每艘驳船的月度报告和已签名的证据包，可在供应商之间比较。",
-  how_role:"<b>分工。</b>Quorelia 制定规程、进行分析、出具报告并签名。认证合作伙伴在 Quorelia 的管理下安装计量表和数据链路，并执行船上的任何电气作业。",
+  how_role:"<b>分工。</b>Quorelia 制定规程、进行分析、出具报告并签名。持 SEC 执照的合作伙伴（签约前以书面形式向您介绍）在 Quorelia 的管理下安装计量表和数据链路，并执行船上的任何电气作业。",
   s4_eb:"04 · 交付物示例", s4_h:"每艘驳船的节省，注明覆盖率。",
   s4_p:"摘自一份船队月度报告。节省按供电量归一化；数据缺失时，暂不发布该数字并说明原因。",
   tb_cap:"M&V 报告 · 2026 年 9 月 · 5 艘驳船 · 示意数据 · 演示机队",
@@ -717,16 +720,16 @@ window.Q_PAGE = {
   w1b:"升数、发电机运行小时和千瓦时的核对",
   w1c:"月度报告和已签名的证据包",
   w1d:"现场合作伙伴的协调与监督",
-  who2c:"合作伙伴", who2h:"由 Quorelia 管理的认证合作伙伴",
+  who2c:"合作伙伴", who2h:"合作伙伴，每个项目均书面确认",
   w2a:"在船上安装计量表、流量计和数据链路",
-  w2b:"由持 SEC 执照的人员执行电气作业；必要时由 A 类安装商执行",
-  w2c:"DS 44 安全管理体系，以及符合第 20.123 号法律的承包商管控",
-  w2d:"混合动力系统如有融资，来自金融合作伙伴，而非 Quorelia",
+  w2b:"由持 SEC 执照的人员执行电气作业；必要时由 A 级安装商执行",
+  w2c:"每家合作伙伴须具备：SEC 执照、有效保险、DS 44 安全体系，以及符合第 20.123 号法律的承包商管控",
+  w2d:"混合动力系统如有融资，来自您选定的第三方，而非 Quorelia",
   no_h:"我们不做的事",
   no1:"我们不销售驳船、电池、光伏板或发电机。",
   no2:"我们不售电、不为系统提供融资，也不是 EPC 承包商。",
   no3:"我们绝不按节省比例收费：按所测结果收费的核验方不具备独立性。",
-  no4:"对于我们自己维护的设备，我们绝不称测量为独立测量。在这种情况下，报告注明“由运营方报告，可由第三方核验”。",
+  no4:"对于我们自己维护、协调或监督过施工、或从中收取佣金的设备，我们绝不称测量为独立测量。在这种情况下，报告注明“由运营方报告，可由第三方核验”。",
   s7_eb:"07 · 入门服务", s7_h:"在 3 至 5 艘驳船上开展测量试点。",
   s7_p:"已完成混合动力改造的驳船，提供测量与验证试点；仍只用柴油的驳船，提供固定价格评估。两者都不按节省比例收费。",
   of1k:"M&V 试点", of1h:"已改造或正在改造的混合动力驳船",

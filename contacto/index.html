@@ -25,7 +25,7 @@
   "url":"https://www.quorelia.org/contacto/","inLanguage":"es-CL",
   "description":"Solicite una evaluación de activos (plantas solares, eólicas, de baterías o híbridas) o una evaluación energética (usuarios industriales). Respuesta en un día hábil.",
   "about":{"@id":"https://www.quorelia.org/#org"},"breadcrumb":{"@id":"https://www.quorelia.org/contacto/#crumbs"}},
- {"@type":"Organization","@id":"https://www.quorelia.org/#org","name":"Quorelia SpA","url":"https://www.quorelia.org/",
+ {"@type":"Organization","@id":"https://www.quorelia.org/#org","name":"Quorelia","url":"https://www.quorelia.org/",
   "logo":"https://www.quorelia.org/quorelia-mark.png","email":"jay@quorelia.org","telephone":"+56 9 4211 5562",
   "address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"},
   "contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+56 9 4211 5562","email":"jay@quorelia.org",
@@ -57,7 +57,9 @@
 .contacto-cal{min-height:640px;background:var(--paper);border:1px solid var(--line);}
 .contacto-after{margin-top:22px;}
 /* La tarjeta de la pestaña activa va primero */
-.contacto-split:has(#activos[hidden]) .contacto-card-e{order:-1;}
+.contacto-split:has(#activos[hidden]) .contacto-card-e,
+.contacto-split:has(#activos[hidden]) .contacto-card-p{order:-1;}
+.contacto-pyme{margin:-8px 0 30px;}
 @media(min-width:901px) and (min-height:880px){ .contacto-aside{position:sticky;top:88px;} }
 @media(max-width:660px){ .contacto-box{padding:2px 18px 26px;}
   .contacto-box .q-tabs{display:grid;grid-template-columns:1fr 1fr;}
@@ -85,6 +87,7 @@
       <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
       <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
       <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
       <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
       <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
     </div></details>
@@ -131,11 +134,12 @@
           <div class="q-nav__panel q-nav__panel--wide">
             <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
             <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
-            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
-            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
             <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
             <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
             <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
           </div>
         </li>
         <li class="q-nav__item">
@@ -331,7 +335,7 @@
             </div>
             <div class="fsub">
               <button type="submit" class="btn btn--primary btn--lg" data-send><span data-label data-i18n="f_send">Enviar solicitud</span><span class="ar" aria-hidden="true">→</span></button>
-              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 21.719). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
+              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 19.628 y Ley 21.719, vigente desde el 1 de diciembre de 2026). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
             </div>
             <div class="fmsg" role="status" aria-live="polite"></div>
           </form>
@@ -343,6 +347,7 @@
             <p class="q-small" data-i18n="e_intro">Para empresas que consumen energía: minería, agro, alimentos, acuicultura e industria. Responda lo que sepa; lo demás lo vemos en la llamada. Los campos con * son obligatorios.</p>
             <a class="btn btn--link" href="#activos"><span data-i18n="e_sw">¿Es dueño de una planta?</span><span class="ar" aria-hidden="true">→</span></a>
           </div>
+          <div class="note contacto-pyme"><p data-i18n="e_pyme"><b>¿Pyme con cuenta bajo CLP 5 millones al mes?</b> Pida el <a class="q-link" href="/pymes/#pre-chequeo">pre-chequeo de boleta para pymes</a>: es sin costo y, con sus boletas, le respondemos en 2 días hábiles.</p></div>
           <form class="q-form" data-endpoint="mljraopz" data-subject="Evaluación energética" novalidate>
             <div class="hp" aria-hidden="true"><label for="e-gotcha">No completar</label><input type="text" id="e-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
             <input type="hidden" name="formulario" value="Evaluación energética">
@@ -396,8 +401,8 @@
                   <option value="No lo sé" data-i18n="bl_6">No lo sé</option>
                 </select>
               </div>
-              <div class="fld"><label for="e-kva" data-i18n="e_kva">Generadores: potencia (kVA)</label><input type="text" id="e-kva" name="generador_kva" inputmode="numeric" placeholder="p. ej. 500" data-i18n-ph="ph_kva"><span class="hint" data-i18n="e_kva_h">Deje en blanco si no usa generadores.</span></div>
-              <div class="fld"><label for="e-use" data-i18n="e_use">Generadores: uso mensual</label><input type="text" id="e-use" name="generador_uso" placeholder="p. ej. 300 h/mes u 8.000 L/mes" data-i18n-ph="ph_use"><span class="hint" data-i18n="e_use_h">Horas o litros al mes, lo que tenga a mano.</span></div>
+              <div class="fld"><label for="e-kva" data-i18n="e_kva">Generadores: potencia (kVA)</label><input type="text" id="e-kva" name="generador_kva" inputmode="numeric" placeholder="p. ej. 500" data-i18n-ph="ph_kva" aria-describedby="e-kva-h"><span class="hint" id="e-kva-h" data-i18n="e_kva_h">Deje en blanco si no usa generadores.</span></div>
+              <div class="fld"><label for="e-use" data-i18n="e_use">Generadores: uso mensual</label><input type="text" id="e-use" name="generador_uso" placeholder="p. ej. 300 h/mes u 8.000 L/mes" data-i18n-ph="ph_use" aria-describedby="e-use-h"><span class="hint" id="e-use-h" data-i18n="e_use_h">Horas o litros al mes, lo que tenga a mano.</span></div>
               <div class="fld"><label for="e-crit" data-i18n="e_crit">Cargas críticas</label><input type="text" id="e-crit" name="cargas_criticas" placeholder="p. ej. cámaras de frío, bombas, aireación" data-i18n-ph="ph_crit"></div>
               <div class="fld"><label for="e-svc" data-i18n="f_svc">Servicio de interés</label>
                 <select id="e-svc" name="servicio">
@@ -446,7 +451,7 @@
             </div>
             <div class="fsub">
               <button type="submit" class="btn btn--primary btn--lg" data-send><span data-label data-i18n="f_send">Enviar solicitud</span><span class="ar" aria-hidden="true">→</span></button>
-              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 21.719). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
+              <p class="fnote" data-i18n="f_priv">Usamos sus datos solo para responder a esta solicitud (Ley 19.628 y Ley 21.719, vigente desde el 1 de diciembre de 2026). <a class="q-link" href="/privacidad.html">Política de privacidad</a>.</p>
             </div>
             <div class="fmsg" role="status" aria-live="polite"></div>
           </form>
@@ -474,10 +479,21 @@
           <ul class="q-check">
             <li data-i18n="ae1">Línea base de consumo, demanda y diésel, con 12 boletas y datos de 15 minutos</li>
             <li data-i18n="ae2">Dimensionamiento de solar + baterías y caso de negocio</li>
-            <li data-i18n="ae3">Opciones de compra, leasing o energía como servicio, con socios financieros</li>
+            <li data-i18n="ae3">Opciones de compra, leasing o energía como servicio, comparando ofertas de terceros</li>
             <li data-i18n="ae4">El informe es suyo; el 50 % se abona a los honorarios de ingeniería del dueño</li>
           </ul>
           <a class="q-card__link" href="/servicios/solar-y-baterias/" data-i18n="ae_l">Ver solar + baterías</a>
+        </div>
+        <div class="q-card contacto-card-p">
+          <span class="q-card__k" data-i18n="ap_k">Pymes · Santiago</span>
+          <h3 data-i18n="ap_h">Solar para pymes</h3>
+          <p data-i18n="ap_p">Pre-chequeo de boleta sin costo · respuesta en 2 días hábiles desde que recibimos sus boletas</p>
+          <ul class="q-check">
+            <li data-i18n="ap1">Para cuentas bajo unos CLP 5 millones al mes y consumo de día</li>
+            <li data-i18n="ap2">Instala y declara ante la SEC un instalador Clase A o B que usted contrata</li>
+            <li data-i18n="ap3">Quorelia coordina y le envía un informe mensual contra su boleta</li>
+          </ul>
+          <a class="q-card__link" href="/pymes/" data-i18n="ap_l">Ver solar para pymes</a>
         </div>
       </aside>
     </div>
@@ -498,7 +514,7 @@
       <li><h3 data-i18n="st4h">Evaluación e informe</h3><p data-i18n="st4p">30 a 45 días para una Línea Base Verificada; unos 30 días para una evaluación energética. El informe queda con usted, nos contrate o no.</p></li>
     </ol>
     <div class="note" style="margin-top:44px;max-width:880px;">
-      <p><b data-i18n="nt_h">Si su caso no calza, se lo decimos.</b> <span data-i18n="nt_p">Las evaluaciones rinden más en carteras desde unos 3 MW, cuentas eléctricas sobre CLP 5 millones al mes o generadores de uso diario. Si su caso es más pequeño, se lo decimos en la primera respuesta y le sugerimos el camino más económico.</span></p>
+      <p><b data-i18n="nt_h">¿Es una pyme? Tiene su propio camino.</b> <span data-i18n="nt_p">Si su cuenta eléctrica está bajo unos CLP 5 millones al mes, empiece por el <a class="q-link" href="/pymes/#pre-chequeo">pre-chequeo de boleta para pymes</a>: es sin costo y, con sus boletas, le respondemos en 2 días hábiles. Estas dos evaluaciones están pensadas para carteras desde unos 3 MW, cuentas sobre CLP 5 millones al mes o generadores de uso diario.</span></p>
     </div>
   </div>
 </section>
@@ -593,6 +609,7 @@
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
         <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
         <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
         <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
@@ -624,7 +641,7 @@
       </div>
     </div>
     <div class="q-foot__bot">
-      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span>© 2026 Quorelia · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
       <span data-i18n-c="f_loc">Santiago, Chile</span>
     </div>
     <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
@@ -736,9 +753,10 @@ window.Q_PAGE = {
   a_sw:"Looking for the energy assessment?",
   e_intro:"For companies that consume energy: mining, agriculture, food, aquaculture and industry. Answer what you know; the rest we cover on the call. Fields marked * are required.",
   e_sw:"Do you own a plant?",
+  e_pyme:"<b>A small business with a bill under CLP 5 million a month?</b> Request the <a class=\"q-link\" href=\"/pymes/#pre-chequeo\">bill pre-check for SMEs</a>: it is at no cost and, once we have your bills, we reply within 2 business days.",
   f_name:"Name", f_company:"Company", f_role:"Role", f_email:"Email", f_phone:"Phone or WhatsApp",
   f_svc:"Service of interest", f_tf:"Timeframe", f_msg:"Message", f_send:"Send request",
-  f_priv:"We use your data only to answer this request (Ley 21.719). <a class=\"q-link\" href=\"/privacidad.html\">Privacy policy</a>.",
+  f_priv:"We use your data only to answer this request (Ley 19.628 and Ley 21.719, in force from 1 December 2026). <a class=\"q-link\" href=\"/privacidad.html\">Privacy policy</a>.",
   ph_email:"name@company.com",
   sv_0:"Select", sv_am:"Asset management", sv_lb:"Verified Baseline", sv_ver:"Verification",
   sv_om:"Operations &amp; maintenance", sv_bess:"Battery (BESS) assessment", sv_all:"Complete service for solar assets",
@@ -773,17 +791,22 @@ window.Q_PAGE = {
   ae_k:"Industrial energy users", ae_h:"Energy or diesel assessment", ae_p:"Fixed price · about 30 days",
   ae1:"Baseline of consumption, demand and diesel, from 12 bills and 15-minute data",
   ae2:"Solar + battery sizing and business case",
-  ae3:"Purchase, leasing or energy-as-a-service options from financing partners",
+  ae3:"Purchase, leasing or energy-as-a-service options, comparing third-party offers",
   ae4:"The report is yours; 50% is credited to the owner’s-engineer fee",
   ae_l:"See solar + batteries",
+  ap_k:"SMEs · Santiago", ap_h:"Solar for SMEs", ap_p:"Bill pre-check at no cost · reply within 2 business days of receiving your bills",
+  ap1:"For bills under about CLP 5 million a month and daytime consumption",
+  ap2:"An SEC Class A or B installer you hire installs the system and declares it to the SEC",
+  ap3:"Quorelia coordinates and sends you a monthly report against your bill",
+  ap_l:"See solar for SMEs",
   st_eb:"02 · What happens next",
   st_h1:"From form to report:", st_h2:"you decide at every step.",
   st1h:"A reply within one business day", st1p:"One of the founders reads your request and writes or calls. If something is missing, we ask then.",
   st2h:"A 30-minute call", st2p:"We review what data exists — SCADA, meters, settlements, bills or diesel logs — and what you need to prove.",
   st3h:"A fixed-scope proposal", st3p:"Scope, deliverables, timeline and price fixed in writing. Nothing starts until you accept it.",
   st4h:"Assessment and report", st4p:"30 to 45 days for a Verified Baseline; about 30 days for an energy assessment. You keep the report whether or not you hire us.",
-  nt_h:"If your case is not a fit, we will tell you.",
-  nt_p:"Assessments pay off best for portfolios from about 3 MW, power bills above CLP 5 million a month or generators in daily use. If yours is smaller, we say so in our first reply and suggest the most economical path.",
+  nt_h:"A small business? There is a route for you.",
+  nt_p:"If your power bill is under about CLP 5 million a month, start with the <a class=\"q-link\" href=\"/pymes/#pre-chequeo\">bill pre-check for SMEs</a>: it is at no cost and, once we have your bills, we reply within 2 business days. These two assessments are designed for portfolios from about 3 MW, bills above CLP 5 million a month or generators in daily use.",
   ag_eb:"03 · Calendar",
   ag_h:"Prefer to talk? Book 30 minutes.",
   ag_p:"Pick a time and the invitation arrives with a video link. We come with Eagle Eye open on the demo fleet, on a case like yours.",
@@ -839,9 +862,10 @@ window.Q_PAGE = {
   a_sw:"需要能源评估？",
   e_intro:"适用于用能企业：矿业、农业、食品、水产养殖与工业。请填写您了解的信息，其余在通话中补充。带 * 的为必填项。",
   e_sw:"您是电站业主？",
+  e_pyme:"<b>月电费低于 500 万智利比索的中小企业？</b>请申请<a class=\"q-link\" href=\"/pymes/#pre-chequeo\">中小企业电费单预检</a>：不收费，收到电费单后 2 个工作日内答复。",
   f_name:"姓名", f_company:"公司", f_role:"职位", f_email:"电子邮箱", f_phone:"电话或 WhatsApp",
   f_svc:"感兴趣的服务", f_tf:"时间安排", f_msg:"留言", f_send:"提交申请",
-  f_priv:"您的资料仅用于回复本次申请（第 21.719 号法律）。<a class=\"q-link\" href=\"/privacidad.html\">隐私政策</a>。",
+  f_priv:"您的资料仅用于回复本次申请（依据第 19.628 号法律及自 2026 年 12 月 1 日起施行的第 21.719 号法律）。<a class=\"q-link\" href=\"/privacidad.html\">隐私政策</a>。",
   ph_email:"name@company.com",
   sv_0:"请选择", sv_am:"资产管理", sv_lb:"核验基线", sv_ver:"核验服务",
   sv_om:"运维", sv_bess:"储能（BESS）评估", sv_all:"光伏资产一体化服务",
@@ -876,17 +900,22 @@ window.Q_PAGE = {
   ae_k:"工业用能企业", ae_h:"能源或柴油评估", ae_p:"固定价格 · 约 30 天",
   ae1:"依据 12 期电费单与 15 分钟数据，建立用电、需量与柴油基线",
   ae2:"光伏 + 储能容量配置与商业论证",
-  ae3:"由金融合作伙伴提供购买、租赁或能源即服务方案",
+  ae3:"购买、租赁或能源即服务方案，比较第三方报价",
   ae4:"报告归您所有；费用的 50% 可抵扣业主工程师服务费",
   ae_l:"了解光伏 + 储能",
+  ap_k:"中小企业 · 圣地亚哥", ap_h:"中小企业光伏", ap_p:"不收费的电费单预检 · 收到电费单后 2 个工作日内答复",
+  ap1:"适用于月电费低于约 500 万智利比索、白天用电的企业",
+  ap2:"由您签约的 SEC A 级或 B 级安装商施工，并向 SEC 申报",
+  ap3:"Quorelia 负责协调，并每月对照电费单向您提交报告",
+  ap_l:"了解中小企业光伏",
   st_eb:"02 · 后续流程",
   st_h1:"从表单到报告：", st_h2:"每一步都由您决定。",
   st1h:"一个工作日内回复", st1p:"由一位创始人阅读您的申请，并通过邮件或电话联系您。如缺少信息，届时向您索取。",
   st2h:"30 分钟通话", st2p:"我们了解现有数据——SCADA、电表、结算、电费单或柴油记录——以及您需要证明什么。",
   st3h:"固定范围的方案", st3p:"范围、交付物、工期与价格均书面固定。经您接受后才开始工作。",
   st4h:"评估与报告", st4p:"核验基线需 30 至 45 天；能源评估约 30 天。无论是否与我们签约，报告都归您所有。",
-  nt_h:"如果您的情况不适合，我们会直说。",
-  nt_p:"评估最适合约 3 MW 以上的电站组合、每月电费超过 500 万智利比索或每天使用发电机的场址。如果您的规模较小，我们会在首次回复中说明，并建议最经济的做法。",
+  nt_h:"中小企业？有专门的流程。",
+  nt_p:"如果您每月电费低于约 500 万智利比索，请先使用<a class=\"q-link\" href=\"/pymes/#pre-chequeo\">中小企业电费单预检</a>：不收费，收到电费单后 2 个工作日内答复。以上两项评估适用于约 3 MW 以上的电站组合、月电费超过 500 万智利比索或每天使用发电机的场址。",
   ag_eb:"03 · 预约",
   ag_h:"想先聊聊？预约 30 分钟。",
   ag_p:"选择时间后，您会收到带视频链接的邀请。届时我们会在 Eagle Eye 的演示电站组合上，展示与您类似的场景。",

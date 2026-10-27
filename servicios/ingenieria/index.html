@@ -22,17 +22,17 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Service","name":"Ingeniería de proyectos solares y BESS","serviceType":"Owner's engineering, feasibility studies and commissioning oversight","areaServed":"CL",
-  "description":"Estudios de factibilidad, ingeniería del propietario (owner's engineer), licitación de EPC y financiamiento, supervisión de obra y testigo de pruebas de aceptación, con socios certificados para la construcción y las declaraciones SEC.",
-  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "description":"Estudios de factibilidad, ingeniería del propietario (owner's engineer), licitación de EPC y financiamiento, supervisión de obra y testigo de pruebas de aceptación; la construcción y las declaraciones SEC quedan a cargo de un EPC y un instalador autorizado SEC elegidos por el dueño.",
+  "provider":{"@type":"Organization","name":"Quorelia","url":"https://www.quorelia.org/"},
   "url":"https://www.quorelia.org/servicios/ingenieria/"},
  {"@type":"BreadcrumbList","itemListElement":[
   {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
   {"@type":"ListItem","position":2,"name":"Servicios","item":"https://www.quorelia.org/servicios/"},
   {"@type":"ListItem","position":3,"name":"Ingeniería","item":"https://www.quorelia.org/servicios/ingenieria/"}]},
  {"@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"¿Quorelia construye la planta?","acceptedAnswer":{"@type":"Answer","text":"No. Construye un contratista EPC elegido por el dueño en una licitación que prepara Quorelia. Quorelia especifica, supervisa y atestigua las pruebas; nunca es contratista EPC principal ni vende equipos."}},
-  {"@type":"Question","name":"¿Quién firma los diseños y la declaración TE7?","acceptedAnswer":{"@type":"Answer","text":"Un instalador eléctrico Clase A, como exige la normativa para trabajos en media tensión y para las declaraciones TE7 de PMGD. Quorelia lo coordina."}},
-  {"@type":"Question","name":"¿Conviene agregar baterías a un PMGD existente?","acceptedAnswer":{"@type":"Answer","text":"Depende del régimen de precio. Bajo el DS 1/2026, agregar almacenamiento es un cambio significativo y la planta pierde el precio estabilizado antiguo. En plantas a costo marginal o con precio por bloques, un estudio planta por planta lo responde."}}]}]}
+  {"@type":"Question","name":"¿Quorelia construye la planta?","acceptedAnswer":{"@type":"Answer","text":"No. Construye un contratista EPC elegido por usted en una licitación que preparamos. Quorelia especifica, supervisa y atestigua las pruebas; nunca es contratista EPC principal ni vende equipos."}},
+  {"@type":"Question","name":"¿Quién firma los diseños y la declaración TE7?","acceptedAnswer":{"@type":"Answer","text":"Un instalador eléctrico Clase A, como exige la normativa para trabajos en media tensión (DS 92, art. 7) y para las declaraciones TE7 de PMGD (Diario Oficial). Quorelia lo coordina."}},
+  {"@type":"Question","name":"¿Conviene agregar baterías a mi PMGD?","acceptedAnswer":{"@type":"Answer","text":"Depende del régimen de precio. Si su planta vende al precio estabilizado antiguo, agregar almacenamiento es un cambio significativo y pierde ese precio; en general no conviene antes de 2034. Si vende a costo marginal o con precio por bloques, un estudio de su planta lo responde."}}]}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +58,7 @@
       <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
       <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
       <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
       <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
       <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
     </div></details>
@@ -104,11 +105,12 @@
           <div class="q-nav__panel q-nav__panel--wide">
             <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
             <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
-            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
-            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
             <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
             <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
             <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
           </div>
         </li>
         <li class="q-nav__item">
@@ -209,14 +211,14 @@
   <div class="wrap">
     <div class="q-head q-head--split">
       <div><span class="q-eyebrow" data-i18n="s1_eb">01 · Qué hacemos</span><h2 class="q-h2" data-i18n="s1_h">El alcance, listo para pegar en sus bases.</h2></div>
-      <p class="q-lede" data-i18n="s1_p">Trabajamos para el dueño del proyecto, no para el contratista. La obra y el financiamiento los ponen socios; la especificación, el control y la aceptación, nosotros.</p>
+      <p class="q-lede" data-i18n="s1_p">Trabajamos para el dueño del proyecto, no para el contratista. La obra y el financiamiento los ponen terceros que usted elige; la especificación, el control y la aceptación, nosotros.</p>
     </div>
     <ul class="q-check q-check--2col">
       <li data-i18n="c1">Estudio de factibilidad técnica y económica, con 12 boletas y datos de 15 minutos</li>
       <li data-i18n="c2">Dimensionamiento de FV y baterías desde la carga medida</li>
       <li data-i18n="c3">Ingeniería del propietario (owner’s engineer) hasta la puesta en servicio</li>
       <li data-i18n="c4">Especificaciones técnicas y bases de licitación del EPC</li>
-      <li data-i18n="c5">Licitación de socios EPC y de financiamiento: compra, leasing, PPA o energía como servicio</li>
+      <li data-i18n="c5">Licitación de EPC y de financiamiento: compra, leasing, PPA o energía como servicio</li>
       <li data-i18n="c6">Revisión de diseño con instalador eléctrico Clase A</li>
       <li data-i18n="c7">Supervisión de obra: avance, calidad, seguridad y cronograma</li>
       <li data-i18n="c8">Testigo de las pruebas de puesta en servicio y de aceptación</li>
@@ -323,7 +325,7 @@
   <div class="wrap">
     <div class="q-head q-head--split">
       <div><span class="q-eyebrow" data-i18n="s6_eb">06 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="s6_h">Ingeniería de Quorelia; firma y obra de socios.</h2></div>
-      <p class="q-lede" data-i18n="s6_p">Quorelia especifica, compara, supervisa y atestigua. La firma del instalador Clase A, la construcción y el financiamiento quedan en manos de socios.</p>
+      <p class="q-lede" data-i18n="s6_p">Quorelia especifica, compara, supervisa y atestigua. La firma del instalador Clase A, la construcción y el financiamiento quedan en manos de terceros que usted elige, presentados por escrito antes de firmar.</p>
     </div>
     <div class="q-who">
       <div>
@@ -338,18 +340,18 @@
         </ul>
       </div>
       <div>
-        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w4chip">Socios</span><h3 data-i18n="w4h">Socios certificados</h3></div>
+        <div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w4chip">Socios</span><h3 data-i18n="w4h">Socios, confirmados por escrito en cada proyecto</h3></div>
         <ul class="q-arrow">
           <li data-i18n="w4a">Instalador eléctrico Clase A: firma de diseños, trabajos en media tensión y declaraciones TE7</li>
           <li data-i18n="w4b">Contratista EPC: construcción e instalación</li>
-          <li data-i18n="w4c">Socios de financiamiento: leasing, PPA o energía como servicio</li>
-          <li data-i18n="w4d">Proveedores de BESS certificados por el fabricante para la puesta en servicio</li>
-          <li data-i18n="w4e">Contratistas con sistema DS 44 y controles de la Ley 20.123</li>
+          <li data-i18n="w4c">Financiamiento de terceros, si lo necesita: leasing, PPA o energía como servicio</li>
+          <li data-i18n="w4d">Puesta en servicio de BESS: un proveedor autorizado por el fabricante</li>
+          <li data-i18n="w4e">Requisito para cada socio: licencia SEC, seguros vigentes, sistema DS 44 y controles de la Ley 20.123</li>
         </ul>
       </div>
     </div>
     <div class="q-grid q-grid--2" style="margin-top:36px;">
-      <div class="note"><p data-i18n="n1"><b>Lo que Quorelia no hace.</b> No somos contratista EPC principal, no vendemos equipos, no financiamos proyectos ni somos dueños de plantas. El financiamiento viene de socios.</p></div>
+      <div class="note"><p data-i18n="n1"><b>Lo que Quorelia no hace.</b> No somos contratista EPC principal, no vendemos equipos, no financiamos proyectos ni somos dueños de plantas. Si necesita financiamiento, comparamos ofertas de terceros.</p></div>
       <div class="note a"><p data-i18n="n2"><b>Comisiones, por escrito.</b> Usted le paga a Quorelia. Si un EPC o un financista ofreciera pagarnos una comisión por referencia, se lo declaramos por escrito antes de que usted elija.</p></div>
     </div>
   </div>
@@ -394,7 +396,7 @@
       <details><summary data-i18n="q1">¿Quorelia construye la planta?</summary><div><p data-i18n="a1">No. Construye un contratista EPC elegido por usted en una licitación que preparamos. Quorelia especifica, supervisa y atestigua las pruebas; nunca es contratista EPC principal ni vende equipos.</p></div></details>
       <details><summary data-i18n="q2">¿Quién firma los diseños y la declaración TE7?</summary><div><p data-i18n="a2">Un instalador eléctrico Clase A, como exige la normativa para trabajos en media tensión (<a class="q-link" href="https://iura.cl/dto-92-ministerio-de-economa/7" target="_blank" rel="noopener">DS 92, art. 7</a>) y para las declaraciones TE7 de PMGD (<a class="q-link" href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/07/24/43907/01/2521116.pdf" target="_blank" rel="noopener">Diario Oficial</a>). Quorelia lo coordina.</p></div></details>
       <details><summary data-i18n="q3">¿Conviene agregar baterías a mi PMGD?</summary><div><p data-i18n="a3">Depende del régimen de precio. Si su planta vende al precio estabilizado antiguo, agregar almacenamiento es un cambio significativo y pierde ese precio; en general no conviene antes de 2034. Si vende a costo marginal o con precio por bloques, un estudio de su planta lo responde.</p></div></details>
-      <details><summary data-i18n="q4">¿Cómo se financia el proyecto?</summary><div><p data-i18n="a4">Con socios: compra directa, leasing, PPA o energía como servicio. Licitamos entre ellos y comparamos las ofertas por costo por kWh. Quorelia no financia ni toma participación en el proyecto.</p></div></details>
+      <details><summary data-i18n="q4">¿Cómo se financia el proyecto?</summary><div><p data-i18n="a4">Con terceros que usted elige: compra directa, leasing, PPA o energía como servicio. Licitamos entre ellos y comparamos las ofertas por costo por kWh. Quorelia no financia ni toma participación en el proyecto.</p></div></details>
       <details><summary data-i18n="q5">¿Cuánto toma cada etapa?</summary><div><p data-i18n="a5">La evaluación energética, unos 30 días. La ingeniería del propietario acompaña el proyecto hasta la operación comercial, en general entre 6 y 12 meses.</p></div></details>
       <details><summary data-i18n="q6">¿Qué pasa después de la puesta en servicio?</summary><div><p data-i18n="a6">Si lo desea, la planta pasa a <a class="q-link" href="/servicios/gestion-de-activos/">Gestión de activos</a> con Eagle Eye incluido, y la línea base de la puesta en servicio se vuelve el punto de partida de cada informe. El mantenimiento puede quedar con su contratista o con un <a class="q-link" href="/servicios/operacion-y-mantenimiento/">socio de O&amp;M bajo nuestra gestión</a>.</p></div></details>
     </div>
@@ -433,6 +435,7 @@
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
         <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
         <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
         <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
@@ -464,7 +467,7 @@
       </div>
     </div>
     <div class="q-foot__bot">
-      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span>© 2026 Quorelia · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
       <span data-i18n-c="f_loc">Santiago, Chile</span>
     </div>
     <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
@@ -492,12 +495,12 @@ window.Q_PAGE = {
       inst_foot:"Demo project · illustrative data",
       p1:"EPC and O&amp;M contracts negotiated · team experience", p2:"10 PMGD plants operated · team experience", p3:"under monitoring", p4:"reports in three languages",
       s1_eb:"01 · What we do", s1_h:"The scope, ready to paste into your tender.",
-      s1_p:"We work for the project owner, not for the contractor. Partners provide construction and financing; we provide the specification, the control and the acceptance.",
+      s1_p:"We work for the project owner, not for the contractor. Third parties you choose provide construction and financing; we provide the specification, the control and the acceptance.",
       c1:"Technical and economic feasibility study, from 12 bills and 15-minute data",
       c2:"PV and battery sizing from measured load",
       c3:"Owner’s engineering through to commissioning",
       c4:"Technical specifications and EPC tender documents",
-      c5:"Tender of EPC and financing partners: purchase, leasing, PPA or energy-as-a-service",
+      c5:"Tender of EPC contractors and financing: purchase, leasing, PPA or energy-as-a-service",
       c6:"Design review with a Class A electrical installer",
       c7:"Construction monitoring: progress, quality, safety and schedule",
       c8:"Witnessing of commissioning and acceptance tests",
@@ -543,7 +546,7 @@ window.Q_PAGE = {
       b4a:"Equipment warranties", b4b:"Manufacturer curves, with no measurement of your own", b4c:"Capacity, efficiency and degradation measured against the warranty from the first cycle",
       s5_note:'<b>Read-only.</b> Eagle Eye reads SCADA, PPC, BMS/EMS, inverters, meters and weather stations. It never writes setpoints and never replaces the plant’s SCADA. <a class="q-link" href="/plataforma.html">Learn about Eagle Eye</a>.',
       s6_eb:"06 · Who does the work", s6_h:"Engineering by Quorelia; signatures and construction by partners.",
-      s6_p:"Quorelia specifies, compares, supervises and witnesses. Class A installer signatures, construction and financing come from partners.",
+      s6_p:"Quorelia specifies, compares, supervises and witnesses. Class A installer signatures, construction and financing come from third parties you choose, introduced to you in writing before you sign.",
       w3h:"Quorelia team",
       w3a:"A project engineer assigned as your representative",
       w3b:"Studies, specifications and tender documents",
@@ -551,13 +554,13 @@ window.Q_PAGE = {
       w3d:"Construction monitoring and payment-milestone control",
       w3e:"Test witnessing and recomputation of results with Eagle Eye",
       w3f:"DS 1/2026 price models and NTCO specifications",
-      w4chip:"Partners", w4h:"Certified partners",
+      w4chip:"Partners", w4h:"Partners, confirmed in writing for each project",
       w4a:"Class A electrical installer: design sign-off, medium-voltage work and TE7 declarations",
       w4b:"EPC contractor: construction and installation",
-      w4c:"Financing partners: leasing, PPA or energy-as-a-service",
-      w4d:"Manufacturer-certified BESS providers for commissioning",
-      w4e:"Contractors with a DS 44 safety system and Ley 20.123 controls",
-      n1:"<b>What Quorelia does not do.</b> We are not the prime EPC contractor, we do not sell equipment, and we do not finance projects or own plants. Financing comes from partners.",
+      w4c:"Third-party financing, if you need it: leasing, PPA or energy-as-a-service",
+      w4d:"BESS commissioning: a provider the manufacturer authorises",
+      w4e:"Required of every partner: SEC licence, current insurance, a DS 44 safety system and Ley 20.123 controls",
+      n1:"<b>What Quorelia does not do.</b> We are not the prime EPC contractor, we do not sell equipment, and we do not finance projects or own plants. If you need financing, we compare third-party offers.",
       n2:"<b>Fees, in writing.</b> You pay Quorelia. If an EPC or a financier ever offered us a referral fee, we would disclose it to you in writing before you choose.",
       s7_eb:"07 · How it is priced", s7_h:"Fixed fees, locked before work starts.",
       s7_p:"We publish the model, not a price list. Every proposal fixes its scope and its amount before work starts.",
@@ -578,7 +581,7 @@ window.Q_PAGE = {
       q3:"Should I add batteries to my PMGD?",
       a3:"It depends on the price regime. If your plant sells at the legacy stabilized price, adding storage is a significant change and you lose that price; it rarely pays before 2034. If it sells at marginal cost or block prices, a study of your plant answers the question.",
       q4:"How is the project financed?",
-      a4:"Through partners: direct purchase, leasing, PPA or energy-as-a-service. We tender among them and compare offers by cost per kWh. Quorelia does not finance the project or take a stake in it.",
+      a4:"Through third parties you choose: direct purchase, leasing, PPA or energy-as-a-service. We tender among them and compare offers by cost per kWh. Quorelia does not finance the project or take a stake in it.",
       q5:"How long does each stage take?",
       a5:"The energy assessment takes about 30 days. Owner’s engineering stays with the project through commercial operation, usually 6 to 12 months.",
       q6:"What happens after commissioning?",
@@ -600,29 +603,29 @@ window.Q_PAGE = {
       k4k:"已释放的付款节点", k4s:"仅凭进度证据释放",
       r1c:"风险", r1:"中压变压器 · 交货延迟 3 周", r1t:"今天",
       r2c:"待处理", r2:"保护测试规程 · 待 EPC 提交", r2t:"第 17 周",
-      r3c:"已关闭", r3:"与 A 类安装师共同审查设计 · 12 条意见已解决", r3t:"第 9 周",
+      r3c:"已关闭", r3:"与 A 级安装商共同审查设计 · 12 条意见已解决", r3t:"第 9 周",
       inst_foot:"演示项目 · 示意数据",
       p1:"已谈判的 EPC 与运维合同 · 团队经验", p2:"运营过 10 座 PMGD 电站 · 团队经验", p3:"监测容量", p4:"三种语言的报告",
       s1_eb:"01 · 服务内容", s1_h:"服务范围，可直接写入您的招标文件。",
-      s1_p:"我们为项目业主工作，而不是为承包商工作。施工和融资由合作伙伴提供；技术规格、管控和验收由我们负责。",
+      s1_p:"我们为项目业主工作，而不是为承包商工作。施工和融资由您选定的第三方提供；技术规格、管控和验收由我们负责。",
       c1:"技术与经济可行性研究，基于 12 个月电费单和 15 分钟数据",
       c2:"根据实测负荷确定光伏和电池规模",
       c3:"业主工程师服务，直至投运",
       c4:"技术规格书与 EPC 招标文件",
-      c5:"EPC 与融资合作伙伴招标：直接采购、融资租赁、PPA 或能源即服务",
-      c6:"与 A 类电气安装师共同审查设计",
+      c5:"EPC 与融资招标：直接采购、融资租赁、PPA 或能源即服务",
+      c6:"与 A 级电气安装商共同审查设计",
       c7:"施工监督：进度、质量、安全与工期",
       c8:"见证投运测试与验收测试",
-      c9:"通过 A 类安装师办理 SEC 与 TE7 申报",
+      c9:"通过 A 级安装商办理 SEC 与 TE7 申报",
       c10:"监测与控制改造的技术规格（NTCO PMGD）",
       c11:"既有 PMGD 加装储能的决策研究，逐站评估",
       c12:"用于收购、出售或再融资的技术尽职调查",
       s2_eb:"02 · 从研究到运营", s2_h:'<span class="dim">六个阶段。</span>一个团队对您负责。',
       l1t:"可行性研究", l1d:"实测负荷或资源、概念设计和商业论证。",
       l2t:"招标", l2d:"至少三份 EPC 与融资报价，包括零资本支出的 PPA。",
-      l3t:"设计", l3d:"EPC 的详细设计，与 A 类安装师共同审查。", l3w:"Quorelia + A 类",
+      l3t:"设计", l3d:"EPC 的详细设计，与 A 级安装商共同审查。", l3w:"Quorelia + A 级",
       l4t:"施工", l4d:"监督进度、质量与安全；每笔付款都以证据为准。", l4w:"EPC 合作伙伴",
-      l5t:"投运", l5d:"见证测试；TE7 申报由 A 类安装师签署。", l5w:"Quorelia + A 类",
+      l5t:"投运", l5d:"见证测试；TE7 申报由 A 级安装商签署。", l5w:"Quorelia + A 级",
       l6t:"运营", l6d:"从第一天起建立基线，资产管理包含 Eagle Eye。", l6l:"资产管理",
       s3_eb:"03 · 您将获得", s3_h:"可据以签约、付款和验收的文件。",
       d1k:"研究", d1h:"可行性研究报告", d1p:"负荷或资源曲线、规模设计、度电成本对比和监管风险，每个假设都注明来源。",
@@ -640,7 +643,7 @@ window.Q_PAGE = {
       w1k:"NTCO PMGD 窗口期", w1h:"监测与控制改造",
       w1a:"配电公司发布要求后，您的电站有一年时间完成合规。",
       w1b:"预计窗口期：至 2027 年下半年。",
-      w1c:"我们编制技术规格，将施工招标给 A 类安装师，并见证测试。",
+      w1c:"我们编制技术规格，将施工招标给 A 级安装商，并见证测试。",
       w2k:"DS 1/2026", w2h:"既有 PMGD 加装电池：逐站评估",
       w2a:'加装储能属于重大变更：电站将失去旧稳定价格（<a class="q-link" href="https://www.cuatrecasas.com/es/latam/art/energia-infraestructura-pmgd-almacenamiento-alcances-reingreso-ds-1-2026" target="_blank" rel="noopener">Cuatrecasas</a>）。',
       w2b:"按边际成本或分时段价格售电的电站：适合开展改造研究。",
@@ -655,7 +658,7 @@ window.Q_PAGE = {
       b4a:"设备保修", b4b:"制造商曲线，没有自有测量", b4c:"从第一个循环起，对照保修条款测量容量、效率和衰减",
       s5_note:'<b>只读。</b>Eagle Eye 读取 SCADA、PPC、BMS/EMS、逆变器、电表和气象站数据。它从不写入设定值，也不取代电站的 SCADA。<a class="q-link" href="/plataforma.html">了解 Eagle Eye</a>。',
       s6_eb:"06 · 由谁执行", s6_h:"工程由 Quorelia 负责；签署与施工由合作伙伴完成。",
-      s6_p:"Quorelia 负责编制规格、比较报价、监督和见证。A 类安装师签署、施工和融资由合作伙伴提供。",
+      s6_p:"Quorelia 负责编制规格、比较报价、监督和见证。A 级安装商签署、施工和融资由您选定的第三方提供，签约前以书面形式向您介绍。",
       w3h:"Quorelia 团队",
       w3a:"指派一名项目工程师作为您的代表",
       w3b:"研究、技术规格与招标文件",
@@ -663,13 +666,13 @@ window.Q_PAGE = {
       w3d:"施工监督与付款节点管控",
       w3e:"见证测试，并借助 Eagle Eye 重新计算结果",
       w3f:"DS 1/2026 价格模型与 NTCO 技术规格",
-      w4chip:"合作伙伴", w4h:"认证合作伙伴",
-      w4a:"A 类电气安装师：签署设计、执行中压作业并办理 TE7 申报",
+      w4chip:"合作伙伴", w4h:"合作伙伴，每个项目均书面确认",
+      w4a:"A 级电气安装商：签署设计、执行中压作业并办理 TE7 申报",
       w4b:"EPC 承包商：施工与安装",
-      w4c:"融资合作伙伴：融资租赁、PPA 或能源即服务",
-      w4d:"制造商认证的储能供应商，负责投运",
-      w4e:"具备 DS 44 安全体系并符合第 20.123 号法律管控的承包商",
-      n1:"<b>Quorelia 不做的事。</b>我们不是 EPC 总承包商，不销售设备，不为项目融资，也不拥有电站。融资来自合作伙伴。",
+      w4c:"如需融资，由第三方提供：融资租赁、PPA 或能源即服务",
+      w4d:"储能投运：由制造商授权的供应商负责",
+      w4e:"每家合作伙伴须具备：SEC 执照、有效保险、DS 44 安全体系，并符合第 20.123 号法律管控",
+      n1:"<b>Quorelia 不做的事。</b>我们不是 EPC 总承包商，不销售设备，不为项目融资，也不拥有电站。如需融资，我们比较第三方的报价。",
       n2:"<b>佣金书面披露。</b>由您向 Quorelia 付费。如果 EPC 或融资方提出向我们支付推荐佣金，我们会在您做出选择前书面告知。",
       s7_eb:"07 · 收费方式", s7_h:"固定费用，开工前锁定。",
       s7_p:"我们公开定价模式，而不是价目表。每份方案在开始前确定范围和金额。",
@@ -686,11 +689,11 @@ window.Q_PAGE = {
       q1:"Quorelia 负责建设电站吗？",
       a1:"不。电站由您通过我们准备的招标选定的 EPC 承包商建设。Quorelia 负责编制规格、监督并见证测试；从不担任 EPC 总承包商，也不销售设备。",
       q2:"谁签署设计和 TE7 申报？",
-      a2:'由 A 类电气安装师签署，这是中压作业（<a class="q-link" href="https://iura.cl/dto-92-ministerio-de-economa/7" target="_blank" rel="noopener">DS 92 第 7 条</a>）和 PMGD TE7 申报（<a class="q-link" href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/07/24/43907/01/2521116.pdf" target="_blank" rel="noopener">官方公报</a>）的法定要求。由 Quorelia 负责协调。',
+      a2:'由 A 级电气安装商签署，这是中压作业（<a class="q-link" href="https://iura.cl/dto-92-ministerio-de-economa/7" target="_blank" rel="noopener">DS 92 第 7 条</a>）和 PMGD TE7 申报（<a class="q-link" href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/07/24/43907/01/2521116.pdf" target="_blank" rel="noopener">官方公报</a>）的法定要求。由 Quorelia 负责协调。',
       q3:"我的 PMGD 应该加装电池吗？",
       a3:"取决于价格机制。如果您的电站按旧稳定价格售电，加装储能属于重大变更，将失去该价格；在 2034 年前通常不划算。如果按边际成本或分时段价格售电，针对您电站的研究可以给出答案。",
       q4:"项目如何融资？",
-      a4:"通过合作伙伴：直接采购、融资租赁、PPA 或能源即服务。我们在它们之间招标，并按度电成本比较报价。Quorelia 不为项目融资，也不持有项目股份。",
+      a4:"通过您选定的第三方：直接采购、融资租赁、PPA 或能源即服务。我们在它们之间招标，并按度电成本比较报价。Quorelia 不为项目融资，也不持有项目股份。",
       q5:"每个阶段需要多长时间？",
       a5:"能源评估约 30 天。业主工程师服务伴随项目直至商业运营，通常为 6 至 12 个月。",
       q6:"投运之后会怎样？",

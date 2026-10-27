@@ -25,6 +25,7 @@ const PAGES = [
   'industrias/propietarios-renovables/index.html', 'industrias/mineria/index.html',
   'industrias/agricultura/index.html', 'industrias/alimentos-cadena-de-frio/index.html',
   'industrias/acuicultura-pesca/index.html', 'industrias/industria/index.html',
+  'pymes/index.html',
   'contacto/index.html',
 ];
 

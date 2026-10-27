@@ -24,7 +24,7 @@
  {"@type":"Service","name":"Gestión de activos PMGD y BESS","serviceType":"Energy asset management",
   "description":"Gestión de activos por cuenta del dueño para plantas PMGD, solares y de almacenamiento en Chile: desempeño, liquidaciones del CEN y Saldo MEP, contratistas, cumplimiento e informes para financistas. Eagle Eye incluido.",
   "areaServed":"CL",
-  "provider":{"@type":"Organization","name":"Quorelia SpA","url":"https://www.quorelia.org/"},
+  "provider":{"@type":"Organization","name":"Quorelia","url":"https://www.quorelia.org/"},
   "url":"https://www.quorelia.org/servicios/gestion-de-activos/"},
  {"@type":"BreadcrumbList","itemListElement":[
   {"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.quorelia.org/"},
@@ -32,8 +32,8 @@
   {"@type":"ListItem","position":3,"name":"Gestión de activos","item":"https://www.quorelia.org/servicios/gestion-de-activos/"}]},
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"¿Quién es responsable ante el CEN?","acceptedAnswer":{"@type":"Answer","text":"El dueño sigue siendo el coordinado. Quorelia actúa bajo su mandato, nunca firma como operador y accede a los datos en modo solo lectura: Eagle Eye no escribe consignas en la planta."}},
-  {"@type":"Question","name":"¿Qué responsabilidad asume Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Responsabilidad profesional por nuestro trabajo, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&M, que nosotros hacemos cumplir."}},
-  {"@type":"Question","name":"¿Qué seguros respaldan el servicio?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados vigentes de Quorelia y de cada socio que trabaje en su planta: responsabilidad civil y profesional, afiliación a mutualidad y sistema de gestión DS 44."}},
+  {"@type":"Question","name":"¿Qué responsabilidad asume Quorelia?","acceptedAnswer":{"@type":"Answer","text":"Quorelia responde por sus informes y su asesoría, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&M, que nosotros hacemos cumplir."}},
+  {"@type":"Question","name":"¿Qué seguros respaldan el servicio?","acceptedAnswer":{"@type":"Answer","text":"Antes de firmar le entregamos los certificados vigentes de cada socio que trabaje en su planta: responsabilidad civil, afiliación a mutualidad y sistema de gestión DS 44. Los seguros que su contrato exija a Quorelia se acreditan antes de firmar."}},
   {"@type":"Question","name":"¿Qué licencias se necesitan y quién las tiene?","acceptedAnswer":{"@type":"Answer","text":"Nuestro trabajo es de gestión, análisis y supervisión, sin intervenir equipos. Todo trabajo en media tensión, protecciones y declaraciones TE7 lo firma un instalador eléctrico Clase A con licencia SEC, contratado como socio (DS 92)."}},
   {"@type":"Question","name":"¿Cuánto dura el contrato y cómo se sale?","acceptedAnswer":{"@type":"Answer","text":"Tres años con opción de dos más, firmado con la SPV. Desde el mes 18 puede terminarlo por conveniencia con seis meses de aviso. Sus datos y paquetes de evidencia se exportan en formatos abiertos."}},
   {"@type":"Question","name":"¿Tengo que cambiar mi SCADA o mi contratista?","acceptedAnswer":{"@type":"Answer","text":"No. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, clima y órdenes de trabajo en modo solo lectura, y no reemplaza nada. Su contratista de O&M sigue en terreno; nosotros lo supervisamos con datos."}},
@@ -64,6 +64,7 @@
       <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
       <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
       <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+      <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
       <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
       <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
     </div></details>
@@ -110,11 +111,12 @@
           <div class="q-nav__panel q-nav__panel--wide">
             <a class="q-nav__link q-nav__link--feature" href="/servicios/"><span class="t" data-i18n-c="s_all_t">Servicio integral para activos solares</span><span class="d" data-i18n-c="s_all_d">De la ingeniería a la operación: un solo responsable por su planta</span></a>
             <a class="q-nav__link" href="/servicios/gestion-de-activos/"><span class="t" data-i18n-c="s_am_t">Gestión de activos</span><span class="d" data-i18n-c="s_am_d">Representante del dueño: desempeño, liquidaciones, contratistas y cumplimiento</span></a>
-            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras que su financista, su directorio y su contratista aceptan</span></a>
-            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con socios de campo certificados</span></a>
+            <a class="q-nav__link" href="/servicios/verificacion/"><span class="t" data-i18n-c="s_ver_t">Verificación</span><span class="d" data-i18n-c="s_ver_d">Cifras con su cobertura y su fórmula, que un tercero puede volver a comprobar</span></a>
+            <a class="q-nav__link" href="/servicios/operacion-y-mantenimiento/"><span class="t" data-i18n-c="s_om_t">Operación y mantenimiento</span><span class="d" data-i18n-c="s_om_d">Mantenimiento guiado por datos, con su contratista o un socio de terreno</span></a>
             <a class="q-nav__link" href="/servicios/solar-y-baterias/"><span class="t" data-i18n-c="s_sb_t">Solar + baterías</span><span class="d" data-i18n-c="s_sb_d">Autoconsumo, peak shaving y respaldo, dimensionados con su carga real</span></a>
             <a class="q-nav__link" href="/servicios/reemplazo-diesel/"><span class="t" data-i18n-c="s_dsl_t">Reemplazo de diésel</span><span class="d" data-i18n-c="s_dsl_d">Menos horas de generador y un ahorro medido, no estimado</span></a>
             <a class="q-nav__link" href="/servicios/ingenieria/"><span class="t" data-i18n-c="s_eng_t">Ingeniería</span><span class="d" data-i18n-c="s_eng_d">Factibilidad, ingeniería del dueño y supervisión de puesta en marcha</span></a>
+            <a class="q-nav__link" href="/pymes/" style="grid-column:1 / -1;"><span class="t" data-i18n-c="s_pyme_t">Solar para pymes</span><span class="d" data-i18n-c="s_pyme_d">Pre-chequeo de boleta sin costo, obra de un instalador SEC Clase A o B que usted contrata y monitoreo mensual</span></a>
           </div>
         </li>
         <li class="q-nav__item">
@@ -286,7 +288,7 @@
       <div class="q-figs" style="--cols:4;margin-top:16px">
         <div class="q-fig"><span class="q-fig__v">24/7</span><span class="q-fig__k" data-i18n="sl1k">alarmas críticas notificadas; revisión de alarmas cada día hábil</span><span class="q-fig__src" data-i18n="sl_src">Nivel de servicio del contrato</span></div>
         <div class="q-fig"><span class="q-fig__v">4 h</span><span class="q-fig__k" data-i18n="sl2k">hábiles para diagnosticar a distancia una falla crítica, con aviso al dueño y al contratista</span><span class="q-fig__src" data-i18n="sl_src">Nivel de servicio del contrato</span></div>
-        <div class="q-fig"><span class="q-fig__v">3 h</span><span class="q-fig__k" data-i18n="sl3k">para la alerta temprana al cliente de un incidente de ciberseguridad</span><span class="q-fig__src" data-i18n="sl3s">Plazo de la <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434" target="_blank" rel="noopener">Ley 21.663</a></span></div>
+        <div class="q-fig"><span class="q-fig__v">3 h</span><span class="q-fig__k" data-i18n="sl3k">para la alerta temprana al cliente de un incidente de ciberseguridad</span><span class="q-fig__src" data-i18n="sl3s">Para que usted cumpla los plazos de la <a href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434" target="_blank" rel="noopener">Ley 21.663</a></span></div>
         <div class="q-fig"><span class="q-fig__v">24 h</span><span class="q-fig__k" data-i18n="sl4k">para apoyar el aviso de accidente del dueño a la SEC</span><span class="q-fig__src" data-i18n="sl4s">Plazo del <a href="https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/" target="_blank" rel="noopener">DS 109</a></span></div>
       </div>
     </div>
@@ -329,13 +331,13 @@
   <div class="wrap">
     <div class="q-head q-head--split">
       <div><span class="q-eyebrow" data-i18n="s4_eb">04 · Quién hace el trabajo</span><h2 class="q-h2" data-i18n="s4_h">Un solo responsable, de la ingeniería a la operación.</h2></div>
-      <p class="q-lede" data-i18n="s4_p">Quorelia gestiona, verifica y supervisa. El trabajo en terreno lo hacen socios certificados bajo nuestra gestión, y cada contrato dice quién hace qué. <a class="q-link" href="/servicios/">Ver el servicio integral</a></p>
+      <p class="q-lede" data-i18n="s4_p">Quorelia gestiona, verifica y supervisa. El trabajo en terreno lo hacen su contratista o socios que acreditan licencia SEC, seguros y DS 44, presentados por escrito antes de firmar, y cada contrato dice quién hace qué. <a class="q-link" href="/servicios/">Ver el servicio integral</a></p>
     </div>
     <ol class="q-life" style="--steps:6">
       <li><span class="q-life__t" data-i18n="l1t">Factibilidad e ingeniería</span><span class="q-life__d" data-i18n="l1d">Estudio, diseño y caso de negocio; ingeniero del propietario.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span><div><a href="/servicios/ingenieria/" data-i18n="l1a">Ingeniería</a></div></li>
       <li><span class="q-life__t" data-i18n="l2t">Construcción</span><span class="q-life__d" data-i18n="l2d">Obra a precio fijo por un socio EPC, supervisada por Quorelia contra la especificación.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l2w">Socio EPC</span><div><a href="/servicios/solar-y-baterias/" data-i18n="l2a">Solar y baterías</a></div></li>
-      <li><span class="q-life__t" data-i18n="l3t">Puesta en marcha</span><span class="q-life__d" data-i18n="l3d">Pruebas y declaración TE7 firmadas por un instalador Clase A; Quorelia atestigua y fija la línea base.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l3w">Socio Clase A</span></li>
-      <li><span class="q-life__t" data-i18n="l4t">Operación y mantenimiento</span><span class="q-life__d" data-i18n="l4d">Preventivo, correctivo y limpieza, despachados por datos y supervisados por Quorelia.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l4w">Socio certificado</span><div><a href="/servicios/operacion-y-mantenimiento/" data-i18n="l4a">O&amp;M</a></div></li>
+      <li><span class="q-life__t" data-i18n="l3t">Puesta en marcha</span><span class="q-life__d" data-i18n="l3d">Pruebas y declaración TE7 firmadas por un instalador Clase A; Quorelia atestigua y fija la línea base.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l3w">Instalador Clase A</span></li>
+      <li><span class="q-life__t" data-i18n="l4t">Operación y mantenimiento</span><span class="q-life__d" data-i18n="l4d">Preventivo, correctivo y limpieza, despachados por datos y supervisados por Quorelia.</span><span class="q-life__who q-chip q-chip--neutral" data-i18n="l4w">Socio de terreno</span><div><a href="/servicios/operacion-y-mantenimiento/" data-i18n="l4a">O&amp;M</a></div></li>
       <li><span class="q-life__t" data-i18n="l5t">Gestión de activos</span><span class="q-life__d" data-i18n="l5d">Desempeño, liquidaciones, contratistas y cumplimiento, en un informe mensual.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span></li>
       <li><span class="q-life__t" data-i18n="l6t">Informes y evidencia</span><span class="q-life__d" data-i18n="l6d">Cifras firmadas para dueños, financistas y compradores.</span><span class="q-life__who q-chip q-chip--ok">Quorelia</span><div><a href="/servicios/verificacion/" data-i18n="l6a">Verificación</a></div></li>
     </ol>
@@ -349,18 +351,18 @@
           <li data-i18n="w1e">Integración de datos y soporte de Eagle Eye</li>
           <li data-i18n="w1f">Responsables: Jay Kim (COO) y Diego Ostertag (CEO)</li>
         </ul></div>
-      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios certificados, bajo nuestra gestión</h3></div>
+      <div><div class="q-who__h"><span class="q-chip q-chip--neutral" data-i18n="w2c">Socios</span><h3 data-i18n="w2h">Socios, confirmados por escrito en cada proyecto</h3></div>
         <ul class="q-arrow">
-          <li data-i18n="w2a">O&amp;M en terreno, limpieza y seguridad: su contratista actual o un socio certificado</li>
+          <li data-i18n="w2a">O&amp;M en terreno, limpieza y seguridad: su contratista actual o un socio de terreno</li>
           <li data-i18n="w2b">Media tensión, protecciones y declaraciones TE7: instalador eléctrico Clase A con licencia SEC</li>
-          <li data-i18n="w2d">Termografía, curvas IV y vuelos con dron: subcontratista de inspección certificado</li>
-          <li data-i18n="w2e">Seguridad con sistema DS 44 y control de contratistas según la Ley 20.123</li>
+          <li data-i18n="w2d">Termografía, curvas IV y vuelos con dron: un subcontratista de inspección elegido para cada proyecto</li>
+          <li data-i18n="w2e">Requisito para cada socio: licencia SEC, seguros vigentes, sistema DS 44 y control de contratistas según la Ley 20.123</li>
           <li data-i18n="w2f">Pronósticos de generación: proveedor especializado, con control de calidad de Quorelia</li>
         </ul></div>
     </div>
     <div class="note" style="margin-top:32px">
       <h3 class="q-h4" style="margin-bottom:8px" data-i18n="n1h">El dueño sigue siendo el coordinado.</h3>
-      <p data-i18n="n1p">Quorelia actúa bajo el mandato del dueño (<a class="q-link" href="https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171" target="_blank" rel="noopener">LGSE</a>) y no firma como operador. No somos contratista EPC, no vendemos equipos, no somos dueños de plantas ni vendemos energía, y no financiamos proyectos: el financiamiento lo aportan socios.</p>
+      <p data-i18n="n1p">Quorelia actúa bajo el mandato del dueño (<a class="q-link" href="https://www.bcn.cl/leychile/navegar?idNorma=258171" target="_blank" rel="noopener">LGSE</a>) y no firma como operador. No somos contratista EPC, no vendemos equipos, no somos dueños de plantas ni vendemos energía, y no financiamos proyectos: si necesita financiamiento, comparamos ofertas de terceros.</p>
     </div>
   </div>
 </section>
@@ -406,8 +408,8 @@
     <div class="q-head"><span class="q-eyebrow" data-i18n="s7_eb">07 · Preguntas</span><h2 class="q-h2" data-i18n="s7_h">Lo que preguntan los dueños y sus abogados.</h2></div>
     <div class="q-faq">
       <details><summary data-i18n="fq1">¿Quién es responsable ante el CEN?</summary><div><p data-i18n="fa1">El dueño sigue siendo el coordinado. Quorelia actúa bajo su mandato, nunca firma como operador y accede a los datos en modo solo lectura: Eagle Eye no escribe consignas en la planta.</p></div></details>
-      <details><summary data-i18n="fq2">¿Qué responsabilidad asume Quorelia?</summary><div><p data-i18n="fa2">Responsabilidad profesional por nuestro trabajo, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&amp;M, que nosotros hacemos cumplir.</p></div></details>
-      <details><summary data-i18n="fq3">¿Qué seguros respaldan el servicio?</summary><div><p data-i18n="fa3">Antes de firmar le entregamos los certificados vigentes de Quorelia y de cada socio que trabaje en su planta: responsabilidad civil y profesional, afiliación a mutualidad y sistema de gestión DS 44.</p></div></details>
+      <details><summary data-i18n="fq2">¿Qué responsabilidad asume Quorelia?</summary><div><p data-i18n="fa2">Quorelia responde por sus informes y su asesoría, con un tope pactado en el contrato. La gestión de activos no incluye garantías de disponibilidad ni multas: esas quedan en el contrato de O&amp;M, que nosotros hacemos cumplir.</p></div></details>
+      <details><summary data-i18n="fq3">¿Qué seguros respaldan el servicio?</summary><div><p data-i18n="fa3">Antes de firmar le entregamos los certificados vigentes de cada socio que trabaje en su planta: responsabilidad civil, afiliación a mutualidad y sistema de gestión DS 44. Los seguros que su contrato exija a Quorelia se acreditan antes de firmar.</p></div></details>
       <details><summary data-i18n="fq4">¿Qué licencias se necesitan y quién las tiene?</summary><div><p data-i18n="fa4">Nuestro trabajo es de gestión, análisis y supervisión, sin intervenir equipos. Todo trabajo en media tensión, protecciones y declaraciones TE7 lo firma un instalador eléctrico Clase A con licencia SEC, contratado como socio (DS 92).</p></div></details>
       <details><summary data-i18n="fq5">¿Cuánto dura el contrato y cómo se sale?</summary><div><p data-i18n="fa5">Tres años con opción de dos más, firmado con la SPV. Desde el mes 18 puede terminarlo por conveniencia con seis meses de aviso. Sus datos y paquetes de evidencia se exportan en formatos abiertos.</p></div></details>
       <details><summary data-i18n="fq6">¿Tengo que cambiar mi SCADA o mi contratista?</summary><div><p data-i18n="fa6">No. Eagle Eye lee SCADA, PPC, BMS/EMS, inversores, medidores, clima y órdenes de trabajo en modo solo lectura, y no reemplaza nada. Su contratista de O&amp;M sigue en terreno; nosotros lo supervisamos con datos.</p></div></details>
@@ -451,6 +453,7 @@
         <a href="/servicios/verificacion/" data-i18n-c="s_ver_t">Verificación</a>
         <a href="/servicios/operacion-y-mantenimiento/" data-i18n-c="s_om_t">Operación y mantenimiento</a>
         <a href="/servicios/solar-y-baterias/" data-i18n-c="s_sb_t">Solar + baterías</a>
+        <a href="/pymes/" data-i18n-c="s_pyme_t">Solar para pymes</a>
         <a href="/servicios/reemplazo-diesel/" data-i18n-c="s_dsl_t">Reemplazo de diésel</a>
         <a href="/servicios/ingenieria/" data-i18n-c="s_eng_t">Ingeniería</a>
       </div>
@@ -482,7 +485,7 @@
       </div>
     </div>
     <div class="q-foot__bot">
-      <span>© 2026 Quorelia SpA · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
+      <span>© 2026 Quorelia · <a href="/terminos.html" data-i18n-c="f_terms">Términos</a> · <a href="/privacidad.html" data-i18n-c="f_priv">Privacidad</a></span>
       <span data-i18n-c="f_loc">Santiago, Chile</span>
     </div>
     <p class="fine" data-i18n-c="f_fine">Los informes de muestra, el Control Center y el tablero BESS de este sitio usan datos ilustrativos de una flota de demostración y no representan instalaciones ni clientes reales.</p>
@@ -559,7 +562,7 @@ window.Q_PAGE = {
   sl_src:"Contractual service level",
   sl2k:"business hours to diagnose a critical fault remotely, with the owner and the contractor notified",
   sl3k:"for an early alert to the client of a cybersecurity incident",
-  sl3s:"Deadline under <a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>Ley 21.663</a>",
+  sl3s:"So that you can meet the deadlines of <a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>Ley 21.663</a>",
   sl4k:"to support the owner’s accident report to the SEC",
   sl4s:"Deadline under <a href='https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/' target='_blank' rel='noopener'>DS 109</a>",
   s3_eb:"03 · How Eagle Eye changes it",
@@ -580,11 +583,11 @@ window.Q_PAGE = {
   ex2v:"CLP 3.1M", ex2k:"disputed with the CEN, backed by a signed evidence pack",
   ex3v:"6 days", ex3k:"from publication of the settlement to the dispute",
   s4_eb:"04 · Who does the work", s4_h:"One accountable manager for the whole plant.",
-  s4_p:"Quorelia manages, verifies and supervises. Field work is done by certified partners under our management, and every contract says who does what. <a class='q-link' href='/servicios/'>See the complete service</a>",
+  s4_p:"Quorelia manages, verifies and supervises. Field work is done by your contractor or by partners who prove their SEC licence, insurance and DS 44 compliance, introduced to you in writing before you sign, and every contract says who does what. <a class='q-link' href='/servicios/'>See the complete service</a>",
   l1t:"Feasibility and engineering", l1d:"Study, design and business case; owner’s engineer.", l1a:"Engineering",
   l2t:"Construction", l2d:"Built at a fixed price by an EPC partner, supervised by Quorelia against the specification.", l2w:"EPC partner", l2a:"Solar + BESS",
-  l3t:"Commissioning", l3d:"Tests and TE7 declaration signed by a Class A installer; Quorelia witnesses and sets the baseline.", l3w:"Class A partner",
-  l4t:"Operations and maintenance", l4d:"Preventive, corrective and cleaning work, dispatched by data and supervised by Quorelia.", l4w:"Certified partner", l4a:"O&amp;M",
+  l3t:"Commissioning", l3d:"Tests and TE7 declaration signed by a Class A installer; Quorelia witnesses and sets the baseline.", l3w:"Class A installer",
+  l4t:"Operations and maintenance", l4d:"Preventive, corrective and cleaning work, dispatched by data and supervised by Quorelia.", l4w:"Field partner", l4a:"O&amp;M",
   l5t:"Asset management", l5d:"Performance, settlements, contractors and compliance, in one monthly report.",
   l6t:"Reporting and evidence", l6d:"Signed figures for owners, lenders and buyers.", l6a:"Verification",
   w1h:"Quorelia team",
@@ -594,14 +597,14 @@ window.Q_PAGE = {
   w1d:"O&amp;M supervision, desk audits and walk-downs without touching equipment",
   w1e:"Data integration and Eagle Eye support",
   w1f:"Accountable: Jay Kim (COO) and Diego Ostertag (CEO)",
-  w2c:"Partners", w2h:"Certified partners, under our management",
-  w2a:"Field O&amp;M, cleaning and security: your current contractor or a certified partner",
+  w2c:"Partners", w2h:"Partners, confirmed in writing for each project",
+  w2a:"Field O&amp;M, cleaning and security: your current contractor or a field partner",
   w2b:"Medium voltage, protection and TE7 declarations: an SEC-licensed Class A electrical installer",
-  w2d:"Thermography, IV curves and drone surveys: a certified inspection subcontractor",
-  w2e:"Safety under a DS 44 system, and contractor controls under Ley 20.123",
+  w2d:"Thermography, IV curves and drone surveys: an inspection subcontractor chosen for each project",
+  w2e:"Required of every partner: SEC licence, current insurance, a DS 44 system and contractor controls under Ley 20.123",
   w2f:"Generation forecasts: a specialist provider, quality-checked by Quorelia",
   n1h:"The owner remains the coordinado.",
-  n1p:"Quorelia acts under the owner’s mandate (<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a>) and never signs as operator. We are not an EPC prime contractor, we sell no equipment, we own no plants and sell no power, and we do not finance projects: financing comes from partners.",
+  n1p:"Quorelia acts under the owner’s mandate (<a class='q-link' href='https://www.bcn.cl/leychile/navegar?idNorma=258171' target='_blank' rel='noopener'>LGSE</a>) and never signs as operator. We are not an EPC prime contractor, we sell no equipment, we own no plants and sell no power, and we do not finance projects: if you need financing, we compare third-party offers.",
   s5_eb:"05 · How it is priced", s5_h:"A simple pricing model, with no surprises.",
   s5_p:"The model is explained here; the exact figure goes in the proposal, once we know your portfolio.",
   pr1k:"Base fee", pr1h:"Fee per MWp-year", pr1p:"Tiered by the size of the owner group’s portfolio, with a monthly minimum per plant.",
@@ -622,9 +625,9 @@ window.Q_PAGE = {
   fq1:"Who is accountable to the CEN?",
   fa1:"The owner remains the coordinado. Quorelia acts under its mandate, never signs as operator and accesses data read-only: Eagle Eye writes no setpoints to the plant.",
   fq2:"What liability does Quorelia take on?",
-  fa2:"Professional liability for our work, with a cap agreed in the contract. Asset management carries no availability guarantee or damages: those stay in the O&amp;M contract, which we enforce.",
+  fa2:"Quorelia answers for its reports and advice, with a cap agreed in the contract. Asset management carries no availability guarantee or damages: those stay in the O&amp;M contract, which we enforce.",
   fq3:"What insurance backs the service?",
-  fa3:"Before signing, we give you the current certificates of Quorelia and of every partner working on your plant: general and professional liability, membership of a workplace-accident mutual and a DS 44 management system.",
+  fa3:"Before signing, we give you the current certificates of every partner working on your plant: general liability, membership of a workplace-accident mutual and a DS 44 management system. Any insurance your contract requires from Quorelia is evidenced before signing.",
   fq4:"Which licences are needed, and who holds them?",
   fa4:"Our work is management, analysis and supervision, without touching equipment. All medium-voltage work, protection testing and TE7 declarations are signed by an SEC-licensed Class A electrical installer engaged as a partner (DS 92).",
   fq5:"How long is the contract, and how do I exit?",
@@ -706,7 +709,7 @@ window.Q_PAGE = {
   sl_src:"合同服务水平",
   sl2k:"工作时间内完成关键故障远程诊断，并通知业主和承包商",
   sl3k:"内向客户发出网络安全事件预警",
-  sl3s:"<a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>第 21.663 号法</a>规定时限",
+  sl3s:"以便您遵守<a href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=1202434' target='_blank' rel='noopener'>第 21.663 号法</a>规定的时限",
   sl4k:"内协助业主向 SEC 报告事故",
   sl4s:"<a href='https://modulor.cl/especialidades/electricidad/ds-109-reglamento-seguridad/' target='_blank' rel='noopener'>DS 109</a> 规定时限",
   s3_eb:"03 · Eagle Eye 带来的改变",
@@ -727,11 +730,11 @@ window.Q_PAGE = {
   ex2v:"CLP 3.1M", ex2k:"已附签名证据包向 CEN 提出异议",
   ex3v:"6 天", ex3k:"从结算公布到提出异议",
   s4_eb:"04 · 由谁执行", s4_h:"从工程到运营，只有一个责任方。",
-  s4_p:"Quorelia 负责管理、验证与监督。现场工作由经认证的合作伙伴在我们的管理下完成，每份合同都写明分工。<a class='q-link' href='/servicios/'>了解一站式服务</a>",
+  s4_p:"Quorelia 负责管理、验证与监督。现场工作由您的承包商或能证明持有 SEC 执照、有效保险并符合 DS 44 的合作伙伴完成，签约前以书面形式向您介绍，每份合同都写明分工。<a class='q-link' href='/servicios/'>了解一站式服务</a>",
   l1t:"可行性与工程", l1d:"研究、设计与商业论证；业主工程师。", l1a:"工程服务",
   l2t:"建设", l2d:"由 EPC 合作伙伴按固定价格建设，Quorelia 对照技术规范进行监督。", l2w:"EPC 合作伙伴", l2a:"光伏与储能",
-  l3t:"调试投运", l3d:"测试和 TE7 申报由 A 级电气安装师签署；Quorelia 现场见证并建立基线。", l3w:"A 级合作伙伴",
-  l4t:"运行与维护", l4d:"预防性维护、故障维修与清洗，依据数据派单，由 Quorelia 监督。", l4w:"认证合作伙伴", l4a:"运维服务",
+  l3t:"调试投运", l3d:"测试和 TE7 申报由 A 级电气安装商签署；Quorelia 现场见证并建立基线。", l3w:"A 级安装商",
+  l4t:"运行与维护", l4d:"预防性维护、故障维修与清洗，依据数据派单，由 Quorelia 监督。", l4w:"现场合作伙伴", l4a:"运维服务",
   l5t:"资产管理", l5d:"性能、结算、承包商与合规，汇总为一份月度报告。",
   l6t:"报告与证据", l6d:"为业主、融资方和买方提供签名数据。", l6a:"验证服务",
   w1h:"Quorelia 团队",
@@ -741,14 +744,14 @@ window.Q_PAGE = {
   w1d:"运维监督、文件审计及不接触设备的现场巡查",
   w1e:"数据集成与 Eagle Eye 支持",
   w1f:"负责人：Jay Kim（首席运营官）与 Diego Ostertag（首席执行官）",
-  w2c:"合作伙伴", w2h:"经认证的合作伙伴，由我们管理",
-  w2a:"现场运维、清洗与安保：您现有的承包商或经认证的合作伙伴",
-  w2b:"中压作业、保护测试及 TE7 申报：持 SEC 执照的 A 级电气安装师",
-  w2d:"红外热成像、IV 曲线与无人机巡检：经认证的检测分包商",
-  w2e:"现场安全执行 DS 44 管理体系，并按《第 20.123 号法》管控分包商",
+  w2c:"合作伙伴", w2h:"合作伙伴，每个项目均书面确认",
+  w2a:"现场运维、清洗与安保：您现有的承包商或现场合作伙伴",
+  w2b:"中压作业、保护测试及 TE7 申报：持 SEC 执照的 A 级电气安装商",
+  w2d:"红外热成像、IV 曲线与无人机巡检：按项目选定的检测分包商",
+  w2e:"每家合作伙伴须具备：SEC 执照、有效保险、DS 44 体系，并依《第 20.123 号法》管控承包商",
   w2f:"发电预测：由专业供应商提供，Quorelia 负责质量核查",
   n1h:"业主仍是协调成员（coordinado）。",
-  n1p:"Quorelia 依据业主授权行事（<a class='q-link' href='https://www.leychile.cl/Consulta/obtxml?opt=7&amp;idNorma=258171' target='_blank' rel='noopener'>LGSE</a>），从不以运营方身份签约。我们不是 EPC 总承包商，不销售设备，不拥有电站也不售电，也不为项目融资：资金由合作伙伴提供。",
+  n1p:"Quorelia 依据业主授权行事（<a class='q-link' href='https://www.bcn.cl/leychile/navegar?idNorma=258171' target='_blank' rel='noopener'>LGSE</a>），从不以运营方身份签约。我们不是 EPC 总承包商，不销售设备，不拥有电站也不售电，也不为项目融资：如需融资，我们比较第三方的报价。",
   s5_eb:"05 · 收费方式", s5_h:"简单的收费模式，没有意外。",
   s5_p:"此处说明收费模式；具体金额在了解您的资产组合后写入报价。",
   pr1k:"基本费用", pr1h:"按 MWp·年收费", pr1p:"按业主集团资产组合规模分档，并设每座电站的月度最低收费。",
@@ -769,11 +772,11 @@ window.Q_PAGE = {
   fq1:"谁对 CEN 负责？",
   fa1:"业主仍是协调成员（coordinado）。Quorelia 依据其授权行事，从不以运营方身份签约，并以只读方式访问数据：Eagle Eye 不会向电站写入任何设定值。",
   fq2:"Quorelia 承担哪些责任？",
-  fa2:"对我们的工作承担专业责任，上限在合同中约定。资产管理不包含可用率担保或违约金：这些仍保留在运维合同中，由我们督促执行。",
+  fa2:"Quorelia 对其报告与建议负责，责任上限在合同中约定。资产管理不包含可用率担保或违约金：这些仍保留在运维合同中，由我们督促执行。",
   fq3:"服务有哪些保险保障？",
-  fa3:"签约前，我们会向您提供 Quorelia 及每一家在您电站作业的合作伙伴的有效证书：公众责任险与职业责任险、工伤互助保险机构参保证明，以及 DS 44 管理体系。",
+  fa3:"签约前，我们会向您提供每一家在您电站作业的合作伙伴的有效证书：公众责任险、工伤互助保险机构参保证明，以及 DS 44 管理体系。合同要求 Quorelia 投保的险种，签约前提供证明。",
   fq4:"需要哪些执照，由谁持有？",
-  fa4:"我们的工作是管理、分析与监督，不接触设备。所有中压作业、保护测试及 TE7 申报均由作为合作伙伴聘用、持 SEC 执照的 A 级电气安装师签署（DS 92）。",
+  fa4:"我们的工作是管理、分析与监督，不接触设备。所有中压作业、保护测试及 TE7 申报均由作为合作伙伴聘用、持 SEC 执照的 A 级电气安装商签署（DS 92）。",
   fq5:"合同期多长？如何退出？",
   fa5:"合同期三年，可再续两年，与 SPV 签署。自第 18 个月起，您可提前六个月通知无因终止。您的数据和证据包以开放格式导出。",
   fq6:"需要更换 SCADA 或承包商吗？",
