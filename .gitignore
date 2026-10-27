@@ -1,3 +1,8 @@
 # Material comercial con datos de clientes: fuera del repositorio.
 comercial/
 .~lock.*#
+# Material interno con datos del cliente confidencial: solo en el equipo local.
+SCADA_Dashboard/bess-scada-dashboard.html
+quorelia-org-site/bess-scada-dashboard.html
+Presentations/Quorelia_Economic_Proposal.pptx
+Presentations/Quorelia_Economic_Proposal.pdf
